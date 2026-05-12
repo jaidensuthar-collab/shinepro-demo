@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Live demo: AI quote assistant for auto detailing — FAQs, quote flow, and lead CSV. $100 starter package.">
+<meta name="robots" content="noindex, nofollow">
+<title>Live demo — AI quote bot for car detailing</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --brand:   #1a1a2e;
+    --accent:  #e94560;
+    --light:   #f4f4f8;
+    --white:   #ffffff;
+    --gray:    #6b7280;
+    --radius:  12px;
+    --shadow:  0 4px 24px rgba(0,0,0,.12);
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .demo-strip {
+    width: 100%;
+    background: linear-gradient(90deg, #0f3460, #16213e);
+    color: #e8e8e8;
+    text-align: center;
+    font-size: .78rem;
+    padding: 10px 16px;
+    line-height: 1.5;
+  }
+  .demo-strip strong { color: #fff; }
+  .demo-strip a { color: #7dd3fc; }
+
+  /* ── Hero ── */
+  .hero {
+    background: var(--brand);
+    color: var(--white);
+    width: 100%;
+    text-align: center;
+    padding: 40px 20px 60px;
+  }
+  .hero h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); letter-spacing: -.5px; }
+  .hero p  { margin-top: 8px; color: #bbb; font-size: .95rem; }
+  .logo    { font-size: 2rem; margin-bottom: 12px; }
+
+  /* ── Chat card ── */
+  .card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 520px;
+    margin: -28px auto 40px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chat-header {
+    background: var(--accent);
+    color: var(--white);
+    padding: 14px 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: .95rem;
+  }
+  .chat-header .dot {
+    width: 9px; height: 9px;
+    background: #7fff7f;
+    border-radius: 50%;
+    animation: pulse 1.8s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; } 50% { opacity: .4; }
+  }
+
+  .messages {
+    padding: 20px;
+    flex: 1;
+    min-height: 320px;
+    max-height: 420px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .msg {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+  }
+  .msg.bot  { justify-content: flex-start; }
+  .msg.user { justify-content: flex-end; }
+
+  .bubble {
+    max-width: 78%;
+    padding: 10px 14px;
+    border-radius: 18px;
+    font-size: .9rem;
+    line-height: 1.5;
+  }
+  .bot  .bubble { background: var(--light);  color: #111; border-bottom-left-radius: 4px; }
+  .user .bubble { background: var(--accent); color: var(--white); border-bottom-right-radius: 4px; }
+
+  .avatar {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: var(--brand);
+    color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-size: .75rem; font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* quick-reply chips */
+  .chips {
+    padding: 0 20px 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .chip {
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    background: transparent;
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: .82rem;
+    cursor: pointer;
+    transition: .15s;
+    white-space: nowrap;
+  }
+  .chip:hover { background: var(--accent); color: var(--white); }
+
+  /* text input row */
+  .input-row {
+    display: flex;
+    border-top: 1px solid #eee;
+    padding: 12px 16px;
+    gap: 8px;
+  }
+  .input-row input {
+    flex: 1;
+    border: 1.5px solid #ddd;
+    border-radius: 999px;
+    padding: 9px 16px;
+    font-size: .9rem;
+    outline: none;
+    transition: border-color .15s;
+  }
+  .input-row input:focus { border-color: var(--accent); }
+  .input-row button {
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    border-radius: 999px;
+    padding: 9px 20px;
+    font-size: .88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity .15s;
+  }
+  .input-row button:hover { opacity: .85; }
+
+  /* lead summary card */
+  .summary-card {
+    margin: 20px;
+    background: #f0fdf4;
+    border: 1.5px solid #86efac;
+    border-radius: var(--radius);
+    padding: 16px;
+    font-size: .85rem;
+    line-height: 1.8;
+    display: none;
+  }
+  .summary-card h3 { color: #15803d; margin-bottom: 8px; font-size: .95rem; }
+  .summary-card .dl-btn {
+    display: inline-block;
+    margin-top: 12px;
+    background: #16a34a;
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: .85rem;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .summary-card .dl-btn:hover { opacity: .85; }
+
+  /* footer */
+  footer {
+    text-align: center;
+    font-size: .75rem;
+    color: var(--gray);
+    padding: 0 20px 32px;
+  }
+
+  /* typing indicator */
+  .typing .bubble { display: flex; gap: 4px; align-items: center; padding: 12px 16px; }
+  .typing .dot-t  {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--gray);
+    animation: bounce .9s infinite;
+  }
+  .typing .dot-t:nth-child(2) { animation-delay: .15s; }
+  .typing .dot-t:nth-child(3) { animation-delay: .30s; }
+  @keyframes bounce {
+    0%,80%,100% { transform: translateY(0); }
+    40%          { transform: translateY(-6px); }
+  }
+
+  @media (max-width: 560px) {
+    .card { margin: -20px 12px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-strip">
+  <strong>Sample business demo</strong> — This page shows what your $100 quote-bot can look like for customers.
+  Built by Jaiden · <a href="mailto:jaiden.suthar@titaniumit.com">jaiden.suthar@titaniumit.com</a>
+</div>
+
+<div class="hero">
+  <div class="logo">✨</div>
+  <h1>Demo Detail Co.</h1>
+  <p>Example shop · Austin, TX · Mobile detailing · Try the chat below 24/7</p>
+</div>
+
+<div class="card" id="chatCard">
+  <div class="chat-header">
+    <span class="dot"></span>
+    Quote assistant — Online now
+  </div>
+
+  <div class="messages" id="messages"></div>
+
+  <div class="chips" id="chips"></div>
+
+  <div class="input-row" id="inputRow">
+    <input type="text" id="userInput" placeholder="Type a message…" autocomplete="off">
+    <button onclick="handleSend()">Send</button>
+  </div>
+
+  <div class="summary-card" id="summaryCard">
+    <h3>✅ Quote Request Received!</h3>
+    <div id="summaryContent"></div>
+    <button class="dl-btn" onclick="downloadCSV()">⬇ Download Lead (CSV)</button>
+  </div>
+</div>
+
+<footer>Custom AI quote bots for detailers · <a href="mailto:jaiden.suthar@titaniumit.com" style="color:#e94560">Get this for your shop — $100 setup →</a></footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════
+   CONFIGURATION — customize per client
+═══════════════════════════════════════════════════════ */
+const BIZ = {
+  name:     "Demo Detail Co.",
+  initials: "DD",
+  city:     "Austin, TX",
+  phone:    "(512) 555-0190",
+  email:    "hello@demodetail.example",
+  hours:    "Mon–Sat 8am–6pm",
+  area:     "Austin and surrounding areas (within 20 miles)",
+};
+
+const FAQ = {
+  pricing: `Here's a rough idea of our pricing:\n• Exterior Wash & Wax: from $80\n• Interior Detail: from $120\n• Full Detail (in + out): from $180\n• Ceramic Coating: from $450\n\nFor an exact quote just tell me your vehicle type and service! 🚗`,
+  interior: `Our interior detail includes:\n• Vacuum seats, carpet, trunk\n• Wipe-down of all surfaces\n• Window cleaning (inside)\n• Deodorize\n• Leather conditioning (if applicable)\n\nStarts around $120 depending on vehicle size.`,
+  exterior: `Our exterior detail includes:\n• Hand wash & dry\n• Clay bar treatment\n• Wax or sealant\n• Tire dressing & wheel cleaning\n• Windows (outside)\n\nStarts around $80 for sedans.`,
+  ceramic:  `Ceramic coating is a long-lasting protective layer that makes your car easier to clean and keeps it shiny for years.\n\nWe offer:\n• 1-year starter coat: from $450\n• 3-year professional: from $750\n\nIncludes full prep detail.`,
+  mobile:   `Yes — we come to you! 🚙\n\nWe serve ${BIZ.city} and surrounding areas within 20 miles. Just let us know your address when booking and we'll bring everything needed.`,
+  time:     `Here's a rough idea of how long each service takes:\n• Exterior only: 1–2 hours\n• Interior only: 2–3 hours\n• Full detail: 3–5 hours\n• Ceramic coating: full day (prep + coating)\n\nWe'll give you a more accurate estimate when you book.`,
+  location: `We're based in ${BIZ.city} and travel to customers.\n\nService area: ${BIZ.area}.\n\nNot sure if we cover your area? Just ask! 📍`,
+  booking:  `Booking is easy:\n1. Request a quote here (takes 1 min)\n2. We contact you to confirm details\n3. Pick a time that works\n4. We show up and get it done!\n\nWant to get a quote now?`,
+};
+
+/* ═══════════════════════════════════════════════════════
+   STATE MACHINE
+═══════════════════════════════════════════════════════ */
+let state = 'menu';
+let lead  = {};
+const leadFields = ['name','phone','email','vehicle','service','datetime','notes'];
+let fieldIdx = 0;
+
+const fieldPrompts = [
+  "What's your name?",
+  "What's the best phone number to reach you?",
+  "And your email address?",
+  "What type of vehicle is it? (e.g. sedan, SUV, pickup truck)",
+  "Which service are you interested in? (e.g. full detail, exterior, ceramic coating)",
+  "What date and time works best for you? (e.g. Sat May 10, afternoon)",
+  "Anything else we should know? (condition of car, location, special requests — or just say 'none')",
+];
+
+/* ═══════════════════════════════════════════════════════
+   CHAT ENGINE
+═══════════════════════════════════════════════════════ */
+function addMsg(text, who) {
+  const msgs = document.getElementById('messages');
+  const row  = document.createElement('div');
+  row.className = `msg ${who}`;
+  if (who === 'bot') {
+    row.innerHTML = `<div class="avatar">${BIZ.initials}</div><div class="bubble">${text.replace(/\n/g,'<br>')}</div>`;
+  } else {
+    row.innerHTML = `<div class="bubble">${text}</div>`;
+  }
+  msgs.appendChild(row);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function showTyping() {
+  const msgs = document.getElementById('messages');
+  const row  = document.createElement('div');
+  row.className = 'msg bot typing';
+  row.id = 'typing';
+  row.innerHTML = `<div class="avatar">${BIZ.initials}</div><div class="bubble"><span class="dot-t"></span><span class="dot-t"></span><span class="dot-t"></span></div>`;
+  msgs.appendChild(row);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function removeTyping() {
+  const el = document.getElementById('typing');
+  if (el) el.remove();
+}
+
+function botSay(text, delay=600) {
+  showTyping();
+  setTimeout(() => { removeTyping(); addMsg(text,'bot'); }, delay);
+}
+
+function setChips(options) {
+  const c = document.getElementById('chips');
+  c.innerHTML = '';
+  options.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'chip';
+    btn.textContent = opt;
+    btn.onclick = () => handleInput(opt);
+    c.appendChild(btn);
+  });
+}
+
+function clearChips() { document.getElementById('chips').innerHTML = ''; }
+
+function showInput(show=true) {
+  document.getElementById('inputRow').style.display = show ? 'flex' : 'none';
+}
+
+/* ═══════════════════════════════════════════════════════
+   FLOW
+═══════════════════════════════════════════════════════ */
+function handleSend() {
+  const inp = document.getElementById('userInput');
+  const val = inp.value.trim();
+  if (!val) return;
+  inp.value = '';
+  handleInput(val);
+}
+
+document.getElementById('userInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') handleSend();
+});
+
+function handleInput(text) {
+  clearChips();
+  addMsg(text, 'user');
+  processInput(text.toLowerCase().trim(), text);
+}
+
+function processInput(lower, raw) {
+  if (state === 'menu') {
+    routeMenu(lower, raw);
+  } else if (state === 'collecting') {
+    collectLead(raw);
+  }
+}
+
+function routeMenu(lower, raw) {
+  if (lower.includes('price') || lower.includes('cost') || lower.includes('how much') || lower.includes('pricing')) {
+    botSay(FAQ.pricing);
+    setTimeout(() => showMenuChips(), 900);
+  } else if (lower.includes('interior')) {
+    botSay(FAQ.interior);
+    setTimeout(() => showMenuChips(), 900);
+  } else if (lower.includes('exterior')) {
+    botSay(FAQ.exterior);
+    setTimeout(() => showMenuChips(), 900);
+  } else if (lower.includes('ceramic')) {
+    botSay(FAQ.ceramic);
+    setTimeout(() => showMenuChips(), 900);
+  } else if (lower.includes('mobile') || lower.includes('come to me') || lower.includes('travel')) {
+    botSay(FAQ.mobile);
+    setTimeout(() => showMenuChips(), 900);
+  } else if (lower.includes('how long') || lower.includes('time') || lower.includes('duration')) {
+    botSay(FAQ.time);
+    setTimeout(() => showMenuChips(), 900);
+  } else if (lower.includes('location') || lower.includes('area') || lower.includes('where')) {
+    botSay(FAQ.location);
+    setTimeout(() => showMenuChips(), 900);
+  } else if (lower.includes('book') || lower.includes('booking') || lower.includes('how do i')) {
+    botSay(FAQ.booking);
+    setTimeout(() => {
+      setChips(['Get a quote now', 'Ask another question']);
+    }, 900);
+  } else if (lower.includes('quote') || lower.includes('get a quote') || lower.includes('request') || lower.includes('yes')) {
+    startQuote();
+  } else {
+    botSay(`I'm not sure about that one, but I can help with pricing, services, or setting up a quote! What would you like to know?`);
+    setTimeout(() => showMenuChips(), 900);
+  }
+}
+
+function showMenuChips() {
+  setChips(['Get a free quote', 'Pricing', 'Interior detail', 'Exterior detail', 'Ceramic coating', 'Mobile detailing', 'How long does it take?']);
+}
+
+function startQuote() {
+  state = 'collecting';
+  fieldIdx = 0;
+  lead = {};
+  showInput(true);
+  clearChips();
+  setTimeout(() => {
+    botSay(`Great! I just need a few quick details to get you an accurate quote. It takes about a minute. 🙌`);
+    setTimeout(() => botSay(fieldPrompts[0], 400), 900);
+  }, 400);
+}
+
+function collectLead(raw) {
+  lead[leadFields[fieldIdx]] = raw;
+  fieldIdx++;
+
+  if (fieldIdx < leadFields.length) {
+    botSay(fieldPrompts[fieldIdx], 500);
+  } else {
+    // Done collecting
+    state = 'done';
+    showInput(false);
+    clearChips();
+    botSay(`Perfect — I've got everything! 🎉\n\nWe'll reach out to confirm your appointment within a few hours. You can also call or text us directly at ${BIZ.phone}.`, 600);
+    setTimeout(() => showSummary(), 1200);
+  }
+}
+
+function showSummary() {
+  const card = document.getElementById('summaryCard');
+  const content = document.getElementById('summaryContent');
+  card.style.display = 'block';
+  content.innerHTML = `
+    <b>Name:</b> ${lead.name}<br>
+    <b>Phone:</b> ${lead.phone}<br>
+    <b>Email:</b> ${lead.email}<br>
+    <b>Vehicle:</b> ${lead.vehicle}<br>
+    <b>Service:</b> ${lead.service}<br>
+    <b>Date/Time:</b> ${lead.datetime}<br>
+    <b>Notes:</b> ${lead.notes}
+  `;
+  card.scrollIntoView({ behavior: 'smooth' });
+}
+
+function downloadCSV() {
+  const headers = ['name','phone','email','vehicle','service','datetime','notes','submitted_at'];
+  const row     = [...leadFields.map(f => `"${(lead[f]||'').replace(/"/g,'""')}"`), `"${new Date().toLocaleString()}"`];
+  const csv     = [headers.join(','), row.join(',')].join('\n');
+  const blob    = new Blob([csv], {type:'text/csv'});
+  const url     = URL.createObjectURL(blob);
+  const a       = document.createElement('a');
+  a.href = url; a.download = 'demo_detail_lead.csv'; a.click();
+  URL.revokeObjectURL(url);
+}
+
+/* ═══════════════════════════════════════════════════════
+   INIT
+═══════════════════════════════════════════════════════ */
+window.onload = () => {
+  showInput(true);
+  setTimeout(() => {
+    botSay(`Hey there! 👋 Welcome to ${BIZ.name}.\n\nI can answer questions about our services, pricing, and help you request a free quote. What can I help you with?`, 400);
+    setTimeout(() => showMenuChips(), 1200);
+  }, 300);
+};
+</script>
+</body>
+</html>
