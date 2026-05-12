@@ -279,7 +279,7 @@ const BIZ = {
 };
 
 const FAQ = {
-  pricing: `Here's a rough idea of our pricing:\n• Exterior Wash & Wax: from $80\n• Interior Detail: from $120\n• Full Detail (in + out): from $180\n• Ceramic Coating: from $450\n\nFor an exact quote just tell me your vehicle type and service! 🚗`,
+  pricing: `Here's a rough idea of our pricing:\n• Exterior Wash & Wax: from $80\n• Interior Detail: from $120\n• Full Detail (in + out): from $180\n• Ceramic Coating: from $450\n\nReply with your vehicle type (e.g. sedan, SUV) and service if you know it — I'll give a tighter ballpark. For a firm, exact price, use Get a free quote. 🚗`,
   interior: `Our interior detail includes:\n• Vacuum seats, carpet, trunk\n• Wipe-down of all surfaces\n• Window cleaning (inside)\n• Deodorize\n• Leather conditioning (if applicable)\n\nStarts around $120 depending on vehicle size.`,
   exterior: `Our exterior detail includes:\n• Hand wash & dry\n• Clay bar treatment\n• Wax or sealant\n• Tire dressing & wheel cleaning\n• Windows (outside)\n\nStarts around $80 for sedans.`,
   ceramic:  `Ceramic coating is a long-lasting protective layer that makes your car easier to clean and keeps it shiny for years.\n\nWe offer:\n• 1-year starter coat: from $450\n• 3-year professional: from $750\n\nIncludes full prep detail.`,
@@ -390,6 +390,41 @@ function processInput(lower, raw) {
   }
 }
 
+function mentionsVehicle(lower) {
+  return /\b(sedan|suv|s\.u\.v|crossovers?|truck|pickup|van|minivan|coupe|hatchback|wagon|compact|midsize)\b/.test(lower)
+    || /\b(full[\s-]?size)\b/.test(lower)
+    || /\b(my car|my vehicle|my truck|i drive|it's a|its a|i have a|vehicle is|car is)\b/.test(lower)
+    || /\b(tesla|bmw|mercedes|audi|jeep|ford|chevy|chevrolet|toyota|honda|ram|gmc|subaru|hyundai|kia|nissan)\b/.test(lower);
+}
+
+function mentionsServiceHint(lower) {
+  return lower.includes('interior') || lower.includes('exterior') || lower.includes('full detail')
+    || lower.includes('wash') || lower.includes('wax') || (lower.includes('detail') && !lower.includes('demo'))
+    || lower.includes('ceramic') || lower.includes('coating');
+}
+
+/** After pricing FAQ, users often reply with vehicle only — don't fall through to "not sure". */
+function vehicleFollowUpReply(lower) {
+  const big = /\b(suv|crossovers?|minivan|full[\s-]?size|truck|pickup|van)\b/.test(lower);
+  const bump = big
+    ? 'Larger SUVs, vans, and pickups often run about **$25–$75 above** the sedan “from” prices depending on size and condition.'
+    : 'Your size is usually right in line with the **“from”** prices below.';
+
+  if (lower.includes('ceramic') || lower.includes('coating')) {
+    return `Thanks for the details! Ceramic starts from $450 (includes prep). ${bump}\n\nI can't give a binding price in chat — tap Get a free quote and we'll confirm the exact total for your vehicle.`;
+  }
+  if (lower.includes('interior') && !lower.includes('exterior')) {
+    return `Got it — interior detail starts around $120. ${bump}\n\nFor a firm price for your car, use Get a free quote (takes about a minute).`;
+  }
+  if (lower.includes('exterior') || lower.includes('wash') || lower.includes('wax')) {
+    return `Got it — exterior wash & wax starts around $80. ${bump}\n\nGet a free quote locks the exact price for your vehicle.`;
+  }
+  if (lower.includes('full') && lower.includes('detail')) {
+    return `Full detail (in + out) starts around $180. ${bump}\n\nI'll need your details off-chat for an exact quote — tap Get a free quote.`;
+  }
+  return `Thanks — here's how we use vehicle size: we quote from the same menu (exterior from $80 · interior from $120 · full from $180 · ceramic from $450). ${bump}\n\nTell me which service you want in the quote form, or tap Get a free quote now and we'll nail the exact number.`;
+}
+
 function routeMenu(lower, raw) {
   if (lower.includes('price') || lower.includes('cost') || lower.includes('how much') || lower.includes('pricing')) {
     botSay(FAQ.pricing);
@@ -419,6 +454,11 @@ function routeMenu(lower, raw) {
     }, 900);
   } else if (lower.includes('quote') || lower.includes('get a quote') || lower.includes('request') || lower.includes('yes')) {
     startQuote();
+  } else if (mentionsVehicle(lower) || (mentionsServiceHint(lower) && raw.trim().length < 120)) {
+    botSay(vehicleFollowUpReply(lower));
+    setTimeout(() => {
+      setChips(['Get a free quote', 'Pricing', 'Interior detail', 'Exterior detail']);
+    }, 900);
   } else {
     botSay(`I'm not sure about that one, but I can help with pricing, services, or setting up a quote! What would you like to know?`);
     setTimeout(() => showMenuChips(), 900);
