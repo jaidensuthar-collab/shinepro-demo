@@ -200,6 +200,26 @@
   }
   .summary-card .dl-btn:hover { opacity: .85; }
 
+  .estimate-box {
+    margin: 14px 0 10px;
+    padding: 12px 14px;
+    background: var(--white);
+    border: 1px solid #86efac;
+    border-radius: 10px;
+  }
+  .estimate-box .estimate-amount {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #15803d;
+    margin-top: 6px;
+  }
+  .estimate-box .estimate-note {
+    font-size: .78rem;
+    color: var(--gray);
+    margin-top: 8px;
+    line-height: 1.45;
+  }
+
   /* footer */
   footer {
     text-align: center;
@@ -294,6 +314,7 @@ const FAQ = {
 ═══════════════════════════════════════════════════════ */
 let state = 'menu';
 let lead  = {};
+let lastEstimate = null;
 const leadFields = ['name','phone','email','vehicle','service','datetime','notes'];
 let fieldIdx = 0;
 
@@ -306,6 +327,70 @@ const fieldPrompts = [
   "What date and time works best for you? (e.g. Sat May 10, afternoon)",
   "Anything else we should know? (condition of car, location, special requests — or just say 'none')",
 ];
+
+function escapeHtml(s) {
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function vehicleSizeBump(vehicleStr) {
+  const v = (vehicleStr || '').toLowerCase();
+  if (/\b(truck|pickup|pick[\s-]?up|van|full[\s-]?size)\b/.test(v)) {
+    return { add: 55, label: 'larger truck / van' };
+  }
+  if (/\b(suv|crossover|minivan|wagon)\b/.test(v)) {
+    return { add: 35, label: 'SUV / larger vehicle' };
+  }
+  return { add: 0, label: 'car / sedan size' };
+}
+
+function matchServiceLine(text) {
+  const s = (text || '').toLowerCase();
+  const bands = [
+    { test: () => s.includes('ceramic') || s.includes('coating'), low: 450, high: 750, label: 'Ceramic coating' },
+    {
+      test: () =>
+        /\bfull\s+detail\b|\bcomplete\s+detail\b|inside\s+and\s+out|\bin\s*[+&]\s*out\b|\bboth\b.*\bdetail\b/.test(s),
+      low: 180,
+      high: 230,
+      label: 'Full detail',
+    },
+    { test: () => s.includes('interior'), low: 120, high: 160, label: 'Interior detail' },
+    { test: () => s.includes('exterior') || s.includes('wash') || s.includes('wax'), low: 80, high: 110, label: 'Exterior wash & wax' },
+  ];
+  for (const b of bands) {
+    if (b.test()) return b;
+  }
+  return null;
+}
+
+function computeEstimate(lead) {
+  const bump = vehicleSizeBump(lead.vehicle);
+  const addLo = Math.round(bump.add * 0.65);
+  const addHi = bump.add;
+  const line = matchServiceLine(lead.service) || matchServiceLine(lead.notes);
+  const disclaimer = 'Final price depends on condition and extras — we confirm before we book.';
+  if (!line) {
+    return {
+      chat:
+        "We'll give you a firm number when we reach out. Our menus usually start around $80 exterior · $120 interior · $180 full · $450+ ceramic.",
+      rangeText: 'Callback for firm quote (tell us service in notes next time for an instant ballpark)',
+      disclaimer,
+      csvRange: '',
+    };
+  }
+  const lo = Math.round((line.low + addLo) / 5) * 5;
+  const hi = Math.round((line.high + addHi) / 5) * 5;
+  return {
+    chat: `Ballpark for ${line.label} (${bump.label}): about $${lo} – $${hi}. ${disclaimer}`,
+    rangeText: `$${lo} – $${hi} · ${line.label}`,
+    disclaimer,
+    csvRange: `${lo}-${hi} ${line.label}`,
+  };
+}
 
 /* ═══════════════════════════════════════════════════════
    CHAT ENGINE
@@ -473,10 +558,11 @@ function startQuote() {
   state = 'collecting';
   fieldIdx = 0;
   lead = {};
+  lastEstimate = null;
   showInput(true);
   clearChips();
   setTimeout(() => {
-    botSay(`Great! I just need a few quick details to get you an accurate quote. It takes about a minute. 🙌`);
+    botSay(`Great! I just need a few quick details. You'll get a ballpark $ range at the end, then we confirm by call or text. Takes about a minute. 🙌`);
     setTimeout(() => botSay(fieldPrompts[0], 400), 900);
   }, 400);
 }
@@ -492,8 +578,12 @@ function collectLead(raw) {
     state = 'done';
     showInput(false);
     clearChips();
-    botSay(`Perfect — I've got everything! 🎉\n\nWe'll reach out to confirm your appointment within a few hours. You can also call or text us directly at ${BIZ.phone}.`, 600);
-    setTimeout(() => showSummary(), 1200);
+    lastEstimate = computeEstimate(lead);
+    botSay(
+      `Perfect — I've got everything! 🎉\n\n${lastEstimate.chat}\n\nWe'll reach out to confirm your appointment within a few hours. You can also call or text us directly at ${BIZ.phone}.`,
+      600,
+    );
+    setTimeout(() => showSummary(), 1400);
   }
 }
 
@@ -501,21 +591,33 @@ function showSummary() {
   const card = document.getElementById('summaryCard');
   const content = document.getElementById('summaryContent');
   card.style.display = 'block';
+  const estBlock =
+    lastEstimate != null
+      ? `<div class="estimate-box"><b>Ballpark estimate</b><div class="estimate-amount">${escapeHtml(
+          lastEstimate.rangeText,
+        )}</div><div class="estimate-note">${escapeHtml(lastEstimate.disclaimer)}</div></div>`
+      : '';
   content.innerHTML = `
-    <b>Name:</b> ${lead.name}<br>
-    <b>Phone:</b> ${lead.phone}<br>
-    <b>Email:</b> ${lead.email}<br>
-    <b>Vehicle:</b> ${lead.vehicle}<br>
-    <b>Service:</b> ${lead.service}<br>
-    <b>Date/Time:</b> ${lead.datetime}<br>
-    <b>Notes:</b> ${lead.notes}
+    ${estBlock}
+    <b>Name:</b> ${escapeHtml(lead.name)}<br>
+    <b>Phone:</b> ${escapeHtml(lead.phone)}<br>
+    <b>Email:</b> ${escapeHtml(lead.email)}<br>
+    <b>Vehicle:</b> ${escapeHtml(lead.vehicle)}<br>
+    <b>Service:</b> ${escapeHtml(lead.service)}<br>
+    <b>Date/Time:</b> ${escapeHtml(lead.datetime)}<br>
+    <b>Notes:</b> ${escapeHtml(lead.notes)}
   `;
   card.scrollIntoView({ behavior: 'smooth' });
 }
 
 function downloadCSV() {
-  const headers = ['name','phone','email','vehicle','service','datetime','notes','submitted_at'];
-  const row     = [...leadFields.map(f => `"${(lead[f]||'').replace(/"/g,'""')}"`), `"${new Date().toLocaleString()}"`];
+  const headers = ['name', 'phone', 'email', 'vehicle', 'service', 'datetime', 'notes', 'estimate_range', 'submitted_at'];
+  const est = (lastEstimate && lastEstimate.csvRange) || '';
+  const row = [
+    ...leadFields.map(f => `"${(lead[f] || '').replace(/"/g, '""')}"`),
+    `"${est.replace(/"/g, '""')}"`,
+    `"${new Date().toLocaleString().replace(/"/g, '""')}"`,
+  ];
   const csv     = [headers.join(','), row.join(',')].join('\n');
   const blob    = new Blob([csv], {type:'text/csv'});
   const url     = URL.createObjectURL(blob);
