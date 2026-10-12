@@ -83,17 +83,22 @@ P = [
       "Find the Euclid substation location in the ERCOT documents and map nearby parcels.", rpg="26RPG001",
       links=[("ERCOT RPG April 2026 status update", "https://www.ercot.com/files/docs/2026/04/10/EIR-Euclid-765-kV-Substation-and-Transmission-Line-Addition-Status-Update-RPG-April_2026.pdf")]),
     p("bell-east-big-hill", "Bell County East to Big Hill", "765", "LCRA TSC and Oncor", 5,
-      "Route case filed March 26, 2026 with 122 route options. Opponents have asked for an independent audit of ERCOT's "
-      "765 kV plan, and news on Oct 8, 2026 reported regulators weighing rehearing motions on 765 kV lines.",
-      "PUC decision expected fall 2026; energize by end of 2030.",
+      "Route case filed March 26, 2026 with 122 route options. In August the state judges (SOAH) recommended denying it: "
+      "need not shown, and about 1,400 landowners may not have been properly notified. On Sept. 11 the PUC sent it back to "
+      "the judges for a supplemental recommendation on two points, so the decision is delayed and no route is chosen yet.",
+      "Waiting on the judges' supplemental recommendation, then a PUC vote. The PUC can still approve it. Energize target "
+      "was end of 2030.",
       "Route options and the landowner list are public. The end substations (Big Hill, Schleicher County; Bell County "
       "East, Bell County) are fixed.",
-      "Pull the landowner list and route map from Docket 59475; focus on parcels near both end substations.",
+      "Pull the landowner list and route map from Docket 59475; focus on parcels near both end substations. With the case "
+      "delayed and possibly denied, weigh land near Big Hill (which other 765 kV lines also use) over land along the "
+      "middle of the route.",
       miles="214 to 244 (endpoints 199 miles apart)", endpoints="Big Hill (Schleicher County) to Bell County East (Bell County)",
       counties="Study area: Bell, Burnet, Concho, Coryell, Lampasas, Llano, Mason, McCulloch, Menard, Milam, San Saba, Schleicher, Tom Green, Williamson",
       docket="59475", links=[("LCRA project page", "https://www.lcra.org/energy/electric-transmission/transmission-line-routing/bell-county-east-to-big-hill-765-kv-transmission-project/"),
-                             ("PUCT Docket 59475", "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=59475&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending")],
-      checked="checked 2026-10-09"),
+                             ("PUCT Docket 59475", "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=59475&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"),
+                             ("DailyTrib: decision delayed by remand (Sept. 25, 2026)", "https://www.dailytrib.com/2026/09/25/transmission-line-decision-delayed/")],
+      checked="checked 2026-10-12"),
     p("big-hill-sand-lake", "Big Hill to Sand Lake", "765", "LCRA TSC and Oncor", 5,
       "One of the three PUCT-approved 765 kV Permian import paths (plan approved April 24, 2025). Route-case status "
       "needs checking: the PUC acted on several 765 kV route cases in August and September 2026.",

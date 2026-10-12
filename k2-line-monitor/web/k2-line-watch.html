@@ -88,6 +88,23 @@ aside.chat { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); 
 .chat-head { padding: 12px 14px; border-bottom: 1px solid var(--rule); display: grid; gap: 4px }
 .chat-head h2 { font-family: var(--display); font-size: 20px; margin: 0 }
 .webstate { font-size: 12px; color: var(--muted) }
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--rule); margin-top: -8px }
+.tabs button { font: 600 15px var(--display); letter-spacing: .02em; color: var(--muted); background: none; border: 0; border-bottom: 3px solid transparent; padding: 8px 12px; cursor: pointer }
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--flag) }
+.tabs button:focus-visible { outline: 2px solid var(--flag); outline-offset: 2px }
+.panel { display: grid; gap: 18px }
+.panel[hidden] { display: none }
+.help { max-width: 820px; gap: 26px }
+.help h2 { font-family: var(--display); font-size: 22px; margin: 0 0 6px }
+.help p, .help li { line-height: 1.55; margin: 0 0 8px }
+.help ol, .help ul { padding-left: 22px; margin: 0 0 8px }
+.steps { width: 100%; border-collapse: collapse; font-size: 14px; margin: 6px 0 12px; display: block; overflow-x: auto }
+.steps th, .steps td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--rule) }
+.steps th { font: 600 12px var(--mono); text-transform: uppercase; letter-spacing: .04em; color: var(--muted) }
+.steps td:first-child { font: 600 16px var(--mono) }
+.win { display: inline-block; white-space: nowrap; font: 600 12px var(--body); padding: 2px 8px; border-radius: 999px }
+.win.open { color: var(--open); background: var(--open-soft) } .win.fast { color: var(--fast); background: var(--fast-soft) } .win.late { color: var(--late); background: var(--late-soft) }
+.new-tag { font: 700 11px var(--display); color: #fff; background: var(--flag); padding: 1px 6px; border-radius: 2px }
 .webstate b { color: var(--ink) }
 .webok { margin-left: 6px; font: inherit; font-weight: 600; color: var(--flag); background: none; border: 1px solid currentColor; border-radius: 4px; padding: 1px 8px; cursor: pointer }
 .log { overflow-y: auto; padding: 12px 14px; display: flex; flex-direction: column; gap: 12px; min-height: 160px }
@@ -120,11 +137,17 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   <header class="top">
     <div>
       <h1><span class="tape" aria-hidden="true"></span>K2 Line Watch</h1>
-      <p class="sub">New high-voltage lines in Texas, earliest signal first. Each project says where it stands, why K2 cares and what to do next.</p>
+      <p class="sub">New high-voltage lines across the US, starting with Texas, earliest signal first. Each project says where it stands, why K2 cares and what to do next.</p>
     </div>
     <div class="stamp" id="stamp">Loading the watch list...</div>
   </header>
 
+  <nav class="tabs" role="tablist" aria-label="Page sections">
+    <button type="button" role="tab" id="t-watch" aria-controls="p-watch" aria-selected="true">Watch list</button>
+    <button type="button" role="tab" id="t-help" aria-controls="p-help" aria-selected="false" tabindex="-1">How to use</button>
+  </nav>
+
+  <div id="p-watch" role="tabpanel" aria-labelledby="t-watch" class="panel">
   <nav class="ladder" id="ladder" aria-label="Projects by stage"></nav>
 
   <div class="main">
@@ -173,6 +196,69 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     <p class="sub">Questions that needed the web while live search was off. They are answered at the next scheduled check (7:45am and 12:45pm Central, weekdays).</p>
     <div id="research"><div class="empty">No research requests yet.</div></div>
   </section>
+  </div>
+
+  <div id="p-help" role="tabpanel" aria-labelledby="t-help" class="panel help" hidden>
+    <section>
+      <h2>What this page is</h2>
+      <p>K2 Renew buys land before the grid gets to it. Land near a new high-voltage line, and above all near the substations at each end, becomes worth much more once the line is built. This page lists the new lines that matter, shows how far along each one is, and says what K2 should do now.</p>
+      <p>A line monitor checks the public sources twice every weekday (7:45am and 12:45pm Central) and adds anything new. The same items also go to the <b>K2 Watch</b> tab of the K2 Transmission Intel Plan sheet.</p>
+    </section>
+
+    <section>
+      <h2>Reading a project</h2>
+      <p>Every new line goes through the same steps. The earlier K2 hears about it, the cheaper the land.</p>
+      <table class="steps">
+        <thead><tr><th scope="col">Stage</th><th scope="col">What is happening</th><th scope="col">Usual lead time</th><th scope="col">Window</th></tr></thead>
+        <tbody>
+          <tr><td>2</td><td>ERCOT, the grid operator, is reviewing whether the line is needed. Its documents already name the two end substations.</td><td>1 to 2 years before a route is filed</td><td><span class="win open">Open now</span></td></tr>
+          <tr><td>3</td><td>The utility has a project page or is holding open houses with draft route maps.</td><td>4 to 9 months before a route is filed</td><td><span class="win open">Open now</span></td></tr>
+          <tr><td>4</td><td>The utility asked the Texas PUC for a case number. The request names the voltage, end substations and every county.</td><td>About 2 weeks before a route is filed</td><td><span class="win fast">Act fast</span></td></tr>
+          <tr><td>5</td><td>Route case at the PUC. All route options and the landowner list are public.</td><td>About 6 months to a decision</td><td><span class="win fast">Act fast</span></td></tr>
+          <tr><td>6</td><td>The PUC picked a route.</td><td>Land prices already reflect it</td><td><span class="win late">Late</span></td></tr>
+          <tr><td>7</td><td>The utility is buying easements and building.</td><td>Too late for most deals</td><td><span class="win late">Late</span></td></tr>
+        </tbody>
+      </table>
+      <p><b>Importance</b> is High for 345 kV and 765 kV lines, the big ones that open up the most land, and Medium for smaller lines or ones further from K2's focus.</p>
+      <p><b>Why the end substations matter:</b> the route can move during the case, but the two end substations almost never do. Land next to them is the safest early bet.</p>
+    </section>
+
+    <section>
+      <h2>Using it day to day</h2>
+      <ol>
+        <li>Check <b>Latest signals</b> for anything marked <span class="new-tag">NEW</span>. Those arrived since the watch started.</li>
+        <li>Click a stage on the strip at the top, or a window (Open now, Act fast, Late), to narrow the list. The search box takes a line, county, utility or case number.</li>
+        <li>Click a project to open it: where it runs, the end substations, case numbers, sources and what to do next.</li>
+        <li>Press <b>Ask about this line</b> to start a question about that project in the assistant.</li>
+        <li>Always open the source link before acting. The page is a guide, not the official record.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Asking the assistant</h2>
+      <p>The assistant answers from this page's own database first: every project and signal shown here. Good questions:</p>
+      <ul>
+        <li>Which lines are still early enough for K2 to get ahead?</li>
+        <li>What counties does the Howard to Solstice line cross?</li>
+        <li>What changed in the Bell County East to Big Hill case this month?</li>
+        <li>Which end substations show up in more than one project?</li>
+      </ul>
+      <p><b>Live web search.</b> If you have the free Parallel Search connector in Claude (Settings, Connectors), press <b>Turn on web search</b> in the assistant panel and allow it. The assistant can then look up the latest news and filings and will say which facts came from the web. Without it, questions that need the web are saved under <b>Research requests</b> and answered at the next scheduled check.</p>
+      <p>The first question asks your permission to use Claude. Choose Allow.</p>
+    </section>
+
+    <section>
+      <h2>Where the information comes from</h2>
+      <ul>
+        <li><b>ERCOT Regional Planning Group</b> meeting documents (stage 2).</li>
+        <li><b>Utility project pages</b>: Oncor, AEP Texas, LCRA and CPS Energy (stage 3).</li>
+        <li><b>Texas PUC filings</b>: new route cases, and new filings in cases already on the list (stages 4 to 6).</li>
+        <li><b>News</b> about new lines and route fights across the US.</li>
+      </ul>
+      <p>Items that don't matter to K2 are dropped before they reach this page: repairs of existing lines, lines under 138 kV, short hookups for single wind or solar farms, and routine case paperwork.</p>
+      <p><b>Not covered yet:</b> most utilities outside Texas (only news covers them), county commissioners court agendas, and county easement records. ERCOT's planning email list is faster than the meeting pages, but it needs a personal subscription.</p>
+    </section>
+  </div>
 </div>
 
 <script>
@@ -353,15 +439,36 @@ How to answer: plain English for someone new to the grid; short; lead with the a
       } },
   ];
 
+  // Parallel Search tool inputs, used when the viewer's shell can't describe the tool yet.
+  const WEB_SCHEMAS = {
+    web_search: { type: "object", required: ["objective", "search_queries"], properties: {
+      objective: { type: "string", description: "What the search is trying to find, in plain language." },
+      search_queries: { type: "array", items: { type: "string" }, description: "2 or 3 short keyword queries, 3 to 6 words each." } } },
+    web_fetch: { type: "object", required: ["urls"], properties: {
+      urls: { type: "array", items: { type: "string" }, description: "Pages to read (up to 20)." },
+      objective: { type: "string", description: "What to pull out of those pages (under 200 characters)." } } },
+  };
+  const WEB_SESSION = Array.from(crypto.getRandomValues(new Uint8Array(16)), (b) => b.toString(16).padStart(2, "0")).join("");
+
+  // Keep web results small: title, link, date and the relevant excerpt of each page.
+  function compactWeb(payload) {
+    const list = payload && Array.isArray(payload.results) ? payload.results : null;
+    if (!list) return typeof payload === "string" ? payload : JSON.stringify(payload);
+    return JSON.stringify(list.slice(0, 8).map((r) => ({ title: r.title, url: r.url, date: r.publish_date || undefined,
+      text: (Array.isArray(r.excerpts) ? r.excerpts.join(" ") : (r.full_content || r.content || "")).slice(0, 1200) })));
+  }
+
   function webToolDefs() {
     if (!webTools) return [];
     return webTools.map((t) => ({ name: "web_" + t.name.replace(/[^A-Za-z0-9_]/g, "_"), description: (t.description || t.name) + " (live web, via the Parallel Search connector)",
-      inputSchema: t.inputSchema || { type: "object" },
+      inputSchema: t.inputSchema,
       execute: async (input, ctx) => {
-        setNote("Searching the web...");
-        const r = await mcp.callTool(WEB, t.name, input, { signal: ctx && ctx.signal });
-        const out = typeof r.payload === "string" ? r.payload : JSON.stringify(r.payload ?? r.content);
-        return out.length > 6000 ? out.slice(0, 6000) + " ...(cut)" : out;
+        setNote(t.name === "web_fetch" ? "Reading the page..." : "Searching the web...");
+        const args = { ...(input || {}) };
+        if (t.sessionArg && !args.session_id) args.session_id = WEB_SESSION;
+        const r = await mcp.callTool(WEB, t.name, args, { signal: ctx && ctx.signal });
+        const out = compactWeb(r.payload ?? r.content);
+        return out.length > 9000 ? out.slice(0, 9000) + " ...(cut)" : out;
       } }));
   }
 
@@ -372,14 +479,22 @@ How to answer: plain English for someone new to the grid; short; lead with the a
       const listed = await mcp.listTools(WEB);
       const server = (listed.servers || []).find((s) => s.server === WEB);
       if (!server || !(server.tools || []).length) return showWeb(false, "not_connected");
+      if (server.authStatus === "needs_reauth") return showWeb(false, "needs_reauth");
       const tools = [];
       for (const t of server.tools) {
         const d = await mcp.describeTool(WEB, t.name).catch(() => null);
-        tools.push({ name: t.name, description: (d && d.description) || t.description || "", inputSchema: d && d.inputSchema });
+        const schema = (d && d.inputSchema) || WEB_SCHEMAS[t.name];
+        // Without a schema we cannot be sure of the argument names: leave that tool out.
+        if (!schema) continue;
+        const props = (schema && schema.properties) || {};
+        tools.push({ name: t.name, description: (d && d.description) || t.description || "", inputSchema: schema, sessionArg: "session_id" in props });
       }
-      // Without a schema we cannot be sure of the argument names: leave those tools out.
-      webTools = tools.filter((t) => t.inputSchema);
-      showWeb(true, webTools.length ? "ready" : "needs_ok");
+      webTools = tools;
+      if (!tools.length) return showWeb(false, "not_connected");
+      const perms = await claude.use("permissions");
+      const st = perms ? await perms.state("mcp:" + WEB) : "prompt";
+      if (st === "denied") return showWeb(false, "denied");
+      showWeb(true, st === "granted" ? "ready" : "needs_ok");
     } catch (e) { showWeb(false, e && e.code); }
   }
 
@@ -394,8 +509,9 @@ How to answer: plain English for someone new to the grid; short; lead with the a
   function showWeb(on, why) {
     const el = $("webstate");
     if (on && why === "ready") el.innerHTML = "<b>Live web search on.</b> Answers can include the latest news and filings.";
-    else if (on) { el.innerHTML = "<b>Web search connected.</b> <button type=\"button\" class=\"webok\" id=\"webok\">Turn on web search</button>"; $("webok").onclick = allowWeb; }
+    else if (on) { el.innerHTML = "<b>Web search ready.</b> <button type=\"button\" class=\"webok\" id=\"webok\">Turn on web search</button>"; $("webok").onclick = allowWeb; }
     else if (why === "not_connected" || why === "server_not_connected") el.innerHTML = "<b>Live web search off.</b> To turn it on, add the free <b>Parallel Search</b> connector in Claude settings, Connectors. Until then, web questions are queued and answered at the next scheduled check.";
+    else if (why === "denied") el.innerHTML = "<b>Live web search off.</b> Web search was turned off for this page. Turn it back on from the page's Permissions menu. Until then, web questions are queued for the next scheduled check.";
     else if (why === "needs_reauth") el.innerHTML = "<b>Web search needs reconnecting.</b> Reconnect Parallel Search in Claude settings, Connectors.";
     else el.innerHTML = "<b>Live web search off</b> in this view. Web questions are queued for the next scheduled check.";
   }
@@ -434,6 +550,23 @@ How to answer: plain English for someone new to the grid; short; lead with the a
       turns.pop();
     } finally { noteEl && noteEl.remove(); noteEl = null; busy = false; $("askbtn").disabled = false; }
   }
+
+  const TABS = [["t-watch", "p-watch"], ["t-help", "p-help"]];
+  function showTab(id) {
+    for (const [t, panel] of TABS) {
+      const on = t === id;
+      $(t).setAttribute("aria-selected", String(on)); $(t).tabIndex = on ? 0 : -1; $(panel).hidden = !on;
+    }
+    try { localStorage.setItem("k2tab", id); } catch (e) {}
+  }
+  for (const [t] of TABS) $(t).addEventListener("click", () => showTab(t));
+  $("t-watch").parentElement.addEventListener("keydown", (e) => {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    const i = TABS.findIndex(([t]) => t === document.activeElement.id); if (i < 0) return;
+    const next = TABS[(i + (e.key === "ArrowRight" ? 1 : TABS.length - 1)) % TABS.length][0];
+    showTab(next); $(next).focus();
+  });
+  try { const saved = localStorage.getItem("k2tab"); if (saved && TABS.some(([t]) => t === saved)) showTab(saved); } catch (e) {}
 
   $("askform").addEventListener("submit", (e) => { e.preventDefault(); const v = $("askbox").value; $("askbox").value = ""; ask(v); });
   $("askbox").addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); $("askform").requestSubmit(); } });
