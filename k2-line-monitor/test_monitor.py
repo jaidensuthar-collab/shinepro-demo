@@ -63,6 +63,33 @@ class ParserTests(unittest.TestCase):
         self.assertEqual(monitor.priority("69", "Mt Pleasant-Petty 69-kV line"), "Low")
         self.assertEqual(monitor.priority("", "Hillje-Blu Lacy Transmission Improvement Project"), "Medium")
 
+    def test_watched_case_filings(self):
+        page = ("<tr><td>6608</td><td>9/28/2026</td><td>SOAH</td><td>PL</td>"
+                "<td>SOAH ORDER NO. 36 IN DOCKET NO. 59475- NOTICE TO PARTIES</td></tr>"
+                "<tr><td>6620</td><td>10/8/2026</td><td>PUC OPDM</td><td>PL</td>"
+                "<td>ORDER ON REHEARING</td></tr>"
+                "<tr><td>6621</td><td>10/8/2026</td><td>Gail Perez</td><td>COM</td><td>STOP ALL 765kV lines</td></tr>"
+                "<tr><td>6622</td><td>10/9/2026</td><td>ONCOR ELECTRIC DELIVERY COMPANY LLC</td><td>PL</td>"
+                "<td>NOTICE OF ERRATA TO ROUTE MAP</td></tr>"
+                "<tr><td>6623</td><td>10/9/2026</td><td>ONCOR ELECTRIC DELIVERY COMPANY LLC</td><td>PL</td>"
+                "<td>NOTICE OF CHANGE OF COUNSEL</td></tr>"
+                "<tr><td>6626</td><td>10/9/2026</td><td>PUC OPDM</td><td>PL</td><td>ORDER NO. 5- GRANTING INTERVENTION</td></tr>"
+                "<tr><td>6624</td><td>10/9/2026</td><td>PUC LEGAL</td><td>PL</td><td>PROTECTIVE ORDER CERTIFICATIONS</td></tr>"
+                "<tr><td>6625</td><td>10/9/2026</td><td>ONCOR ELECTRIC DELIVERY COMPANY LLC</td><td>PL</td>"
+                "<td>ONCOR'S SUPPLEMENTAL RESPONSE TO FIRST REQUEST FOR INFORMATION</td></tr>")
+        rows = monitor.parse_puct_filings(page)
+        self.assertEqual([r["item"] for r in rows], ["6608", "6620", "6621", "6622", "6623", "6626", "6624", "6625"])
+        levels = [monitor.classify_filing(r) for r in rows]
+        self.assertEqual(levels, [None, "High", None, "Medium", None, None, None, None])
+
+    def test_parse_news(self):
+        xml = ("<rss><channel><item><title>Open house set for 765-kV line - Victoria Advocate</title>"
+               "<link>https://news.example/a</link><pubDate>Thu, 08 Oct 2026 10:00:00 GMT</pubDate>"
+               "<source url='x'>Victoria Advocate</source></item></channel></rss>")
+        items = monitor.parse_news(xml)
+        self.assertEqual(items[0]["source"], "Victoria Advocate")
+        self.assertIn("765-kV", items[0]["title"])
+
     def test_guess_utility(self):
         self.assertEqual(monitor.guess_utility("EIR - Oncor and LCRA TSC - Muscovy Voss"), "Oncor, LCRA TSC")
         self.assertEqual(monitor.guess_utility("AEPSC Laredo Area Upgrades"), "AEP")
