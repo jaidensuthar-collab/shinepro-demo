@@ -33,15 +33,43 @@ how far back to look for new PUCT cases, `--watch-days 4` and `--news-days 3` fo
 news windows, `--watch 59475` to follow another case, `--rpg-seed URL` to point at a recent RPG
 meeting page.
 
+## What counts as "K2 cares"
+
+`k2filter.py` keeps a signal only if it points at a new high-voltage line whose land is still in
+play, and rewrites it in plain English (what happened, where, why K2 cares, what to do next).
+It drops:
+
+* work on existing lines: rebuilds, reconductoring, relocations, pole or cable swaps
+* anything under 138 kV, and generator hookup lines (wind, solar, POI, collector)
+* ERCOT planning documents under 345 kV, scope documents and meeting admin
+* utility project pages under 345 kV, or pages that say the line is already energized
+* routine case paperwork (procedural orders, counsel changes, discovery); route maps,
+  amended applications and errata stay
+* news that doesn't name a specific line or route
+
+`--all` turns the filter off. On the first full run it kept 51 of 175 signals.
+
+## Where results go
+
+* **K2 Watch tab** in the sheet: one plain-English row per signal (`--rows`). Column L is the ID.
+* **K2 Line Watch webpage** (https://claude.ai/artifact/FCARNQ1KQBr5r5DX9V6XfG): reads its own
+  database. `signals` holds every kept signal (`--db-dir` writes them ready for a batch
+  write), `projects` holds one card per line (seeded from `data/projects.json`, built by
+  `data/build_projects.py`), `meta/status` has the last check, and `research` holds questions
+  people asked the page's assistant that need a web lookup.
+* **Monitor Feed tab**: the old raw log from before the filter. Kept as an archive.
+
 ## How a scheduled run works
 
-The Monitor Feed tab is the memory. Its ID column holds every signal already reported.
+1. Read the IDs in `'K2 Watch'!L2:L` and `'Monitor Feed'!J2:J` into `seen.txt`, one per line.
+2. Run `python3 monitor.py --seen seen.txt --rows rows.json --json report.json --db-dir db/`.
+3. Append `rows.json` to `'K2 Watch'!A:M` (Status `New`).
+4. Batch-write `db/writes.json` to the webpage database, update `meta/status`, and move a
+   project card along the ladder when a new signal clearly belongs to it.
+5. Answer any `research` documents with status `queued`, then mark them `answered`.
 
-1. Read `'Monitor Feed'!J2:J` from the sheet and save the IDs to `seen.txt`, one per line.
-2. Run `python3 monitor.py --seen seen.txt --rows rows.json`.
-3. Append the rows in `rows.json` to the Monitor Feed tab. Their Status is `New`.
-4. For each High priority row, look at the source and decide whether it deserves an
-   Opportunity Card.
+Signals the filter drops are not saved, so they are checked again on the next run. That is
+on purpose: a case that later gets a route map comes back in.
 
 ## When something breaks
 
@@ -66,4 +94,4 @@ These can't be automated from here because they need an account in your name.
 ## Not covered yet
 
 CenterPoint has no single project-list page (the news search covers it), utilities outside
-Texas, county commissioners court agendas for data-center deals, and county easement records.
+Texas (the news search and the webpage assistant cover them), county commissioners court agendas for data-center deals, and county easement records.

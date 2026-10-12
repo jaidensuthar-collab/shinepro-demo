@@ -1,0 +1,1074 @@
+[
+ {
+  "id": "hillje-blu-lacy",
+  "name": "Hillje to Blu Lacy",
+  "kv": "765",
+  "utility": "CenterPoint and AEP Texas",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "window": "Open now",
+  "importance": "High",
+  "status": "Open houses ran late July to August 1, 2026 in Wharton, Victoria, El Campo and nearby towns. Comments closed August 26. No route has been chosen.",
+  "next_step": "Route filing (CCN) expected early 2027; PUC decision expected fall 2027.",
+  "why_k2": "First Eastern Backbone segment to show draft route links. The open-house map shows every segment the line could use; stretches most options share are the next-safest land after the end substations.",
+  "k2_action": "Get the open-house route-link map (AEP virtual open house), mark shared segments, map parcels near Hillje and Blu Lacy.",
+  "miles": "about 155",
+  "endpoints": "Hillje substation (Wharton County) to Blu Lacy substation (near Nueces County)",
+  "counties": "Wharton, Nueces and counties between (study area)",
+  "docket": "",
+  "rpg": "25RPG025 (Eastern Backbone)",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "AEP Texas project page",
+    "url": "https://aeptransmission.com/texas/hillje-blulacy/"
+   },
+   {
+    "label": "CenterPoint open-house boards",
+    "url": "https://www.centerpointenergy.com/en-us/Documents/Hillje-Blu-Lacy/Hillje-Blu-Lacy-Transmission-Improvement-Project-Open-House-Board.pdf"
+   },
+   {
+    "label": "ERCOT Board item 14.1",
+    "url": "https://www.ercot.com/files/docs/2025/12/01/14.1-25RPG025-AEP-Texas-CPS-Energy-Oncor-and-CNP-Texas-765-kV-STEP-Eastern-Backbone-Project.pdf"
+   }
+  ],
+  "checked": "checked 2026-10-09",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "blu-lacy-howard",
+  "name": "Blu Lacy to Howard",
+  "kv": "765",
+  "utility": "AEP Texas and CPS Energy",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "window": "Open now",
+  "importance": "High",
+  "status": "Open houses planned for August 25 to 27, 2026 are being rescheduled. No route has been chosen.",
+  "next_step": "New open-house dates, then route filing (CCN) early 2027; PUC decision expected fall 2027.",
+  "why_k2": "Open houses have not happened yet, so almost nobody has seen draft routes. End substations are known.",
+  "k2_action": "Watch AEP and CPS pages for the new open-house dates. Map parcels near Howard (Bexar) and Blu Lacy now.",
+  "miles": "about 150",
+  "endpoints": "Blu Lacy substation (near Nueces County) to Howard substation (Bexar County)",
+  "counties": "Nueces area to Bexar (study area not yet published)",
+  "docket": "",
+  "rpg": "25RPG025 (Eastern Backbone)",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "AEP Texas project page",
+    "url": "https://aeptransmission.com/texas/blulacy-howard/"
+   },
+   {
+    "label": "CPS Energy project page",
+    "url": "https://www.cpsenergy.com/content/corporate/en/about-us/new-infrastructure/blulacy-howard.html"
+   },
+   {
+    "label": "ERCOT Board item 14.1",
+    "url": "https://www.ercot.com/files/docs/2025/12/01/14.1-25RPG025-AEP-Texas-CPS-Energy-Oncor-and-CNP-Texas-765-kV-STEP-Eastern-Backbone-Project.pdf"
+   }
+  ],
+  "checked": "checked 2026-10-09",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "dinosaur-watermill",
+  "name": "Dinosaur to Watermill",
+  "kv": "765",
+  "utility": "Eastern Backbone utilities (AEP Texas, CPS, Oncor, CenterPoint)",
+  "stage": 2,
+  "stage_label": "ERCOT review",
+  "window": "Open now",
+  "importance": "High",
+  "status": "Endorsed by the ERCOT Board in December 2025 as part of the Eastern Backbone. No open houses found yet.",
+  "next_step": "Open houses, then a route filing. In service 2030 to 2032.",
+  "why_k2": "Part of ERCOT's 765 kV Eastern Backbone, endorsed by the ERCOT Board in December 2025. The end substations are public but no route options are yet, which is K2's best window: land near both end substations is safe whichever route wins.",
+  "k2_action": "Map parcels within about 2 miles of both end substations and find the owners. Watch for open-house notices.",
+  "miles": "about 78",
+  "endpoints": "Dinosaur substation to Watermill substation (Dallas County)",
+  "counties": "",
+  "docket": "",
+  "rpg": "25RPG025",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "ERCOT Board item 14.1",
+    "url": "https://www.ercot.com/files/docs/2025/12/01/14.1-25RPG025-AEP-Texas-CPS-Energy-Oncor-and-CNP-Texas-765-kV-STEP-Eastern-Backbone-Project.pdf"
+   }
+  ],
+  "checked": "checked 2026-10-09",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "watermill-martin-lake",
+  "name": "Watermill to Martin Lake",
+  "kv": "765",
+  "utility": "Eastern Backbone utilities (AEP Texas, CPS, Oncor, CenterPoint)",
+  "stage": 2,
+  "stage_label": "ERCOT review",
+  "window": "Open now",
+  "importance": "High",
+  "status": "Endorsed by the ERCOT Board in December 2025. No open houses found yet.",
+  "next_step": "Open houses, then a route filing. In service 2030 to 2032.",
+  "why_k2": "Part of ERCOT's 765 kV Eastern Backbone, endorsed by the ERCOT Board in December 2025. The end substations are public but no route options are yet, which is K2's best window: land near both end substations is safe whichever route wins.",
+  "k2_action": "Map parcels within about 2 miles of both end substations and find the owners. Watch for open-house notices.",
+  "miles": "about 152",
+  "endpoints": "Watermill (Dallas County) to Martin Lake (Rusk County)",
+  "counties": "",
+  "docket": "",
+  "rpg": "25RPG025",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "ERCOT Board item 14.1",
+    "url": "https://www.ercot.com/files/docs/2025/12/01/14.1-25RPG025-AEP-Texas-CPS-Energy-Oncor-and-CNP-Texas-765-kV-STEP-Eastern-Backbone-Project.pdf"
+   }
+  ],
+  "checked": "checked 2026-10-09",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "martin-lake-hillje",
+  "name": "Martin Lake to Hillje",
+  "kv": "765",
+  "utility": "Eastern Backbone utilities (AEP Texas, CPS, Oncor, CenterPoint)",
+  "stage": 2,
+  "stage_label": "ERCOT review",
+  "window": "Open now",
+  "importance": "High",
+  "status": "Endorsed by the ERCOT Board in December 2025. The longest Eastern Backbone segment. No open houses found yet.",
+  "next_step": "Open houses, then a route filing. In service 2030 to 2032.",
+  "why_k2": "Part of ERCOT's 765 kV Eastern Backbone, endorsed by the ERCOT Board in December 2025. The end substations are public but no route options are yet, which is K2's best window: land near both end substations is safe whichever route wins.",
+  "k2_action": "Map parcels within about 2 miles of both end substations and find the owners. Watch for open-house notices.",
+  "miles": "about 293",
+  "endpoints": "Martin Lake (Rusk County) to Hillje (Wharton County)",
+  "counties": "",
+  "docket": "",
+  "rpg": "25RPG025",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "ERCOT Board item 14.1",
+    "url": "https://www.ercot.com/files/docs/2025/12/01/14.1-25RPG025-AEP-Texas-CPS-Energy-Oncor-and-CNP-Texas-765-kV-STEP-Eastern-Backbone-Project.pdf"
+   }
+  ],
+  "checked": "checked 2026-10-09",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "howard-bell-east",
+  "name": "Howard to Bell County East",
+  "kv": "765",
+  "utility": "Eastern Backbone utilities (AEP Texas, CPS, Oncor, CenterPoint)",
+  "stage": 2,
+  "stage_label": "ERCOT review",
+  "window": "Open now",
+  "importance": "High",
+  "status": "Endorsed by the ERCOT Board in December 2025. No open houses found yet.",
+  "next_step": "Open houses, then a route filing. In service 2030 to 2032.",
+  "why_k2": "Part of ERCOT's 765 kV Eastern Backbone, endorsed by the ERCOT Board in December 2025. The end substations are public but no route options are yet, which is K2's best window: land near both end substations is safe whichever route wins.",
+  "k2_action": "Map parcels within about 2 miles of both end substations and find the owners. Watch for open-house notices.",
+  "miles": "about 170",
+  "endpoints": "Howard (Bexar County) to Bell County East (Bell County)",
+  "counties": "",
+  "docket": "",
+  "rpg": "25RPG025",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "ERCOT Board item 14.1",
+    "url": "https://www.ercot.com/files/docs/2025/12/01/14.1-25RPG025-AEP-Texas-CPS-Energy-Oncor-and-CNP-Texas-765-kV-STEP-Eastern-Backbone-Project.pdf"
+   }
+  ],
+  "checked": "checked 2026-10-09",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "bell-east-watermill",
+  "name": "Bell County East to Watermill",
+  "kv": "765",
+  "utility": "Eastern Backbone utilities (AEP Texas, CPS, Oncor, CenterPoint)",
+  "stage": 2,
+  "stage_label": "ERCOT review",
+  "window": "Open now",
+  "importance": "High",
+  "status": "Endorsed by the ERCOT Board in December 2025. No open houses found yet.",
+  "next_step": "Open houses, then a route filing. In service 2030 to 2032.",
+  "why_k2": "Part of ERCOT's 765 kV Eastern Backbone, endorsed by the ERCOT Board in December 2025. The end substations are public but no route options are yet, which is K2's best window: land near both end substations is safe whichever route wins.",
+  "k2_action": "Map parcels within about 2 miles of both end substations and find the owners. Watch for open-house notices.",
+  "miles": "about 133",
+  "endpoints": "Bell County East (Bell County) to Watermill (Dallas County)",
+  "counties": "",
+  "docket": "",
+  "rpg": "25RPG025",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "ERCOT Board item 14.1",
+    "url": "https://www.ercot.com/files/docs/2025/12/01/14.1-25RPG025-AEP-Texas-CPS-Energy-Oncor-and-CNP-Texas-765-kV-STEP-Eastern-Backbone-Project.pdf"
+   }
+  ],
+  "checked": "checked 2026-10-09",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "euclid-765",
+  "name": "Euclid 765 kV substation and line",
+  "kv": "765",
+  "utility": "LCRA TSC and CenterPoint",
+  "stage": 2,
+  "stage_label": "ERCOT review",
+  "window": "Open now",
+  "importance": "High",
+  "status": "Tier 1 project endorsed by the ERCOT Board on June 1, 2026. ERCOT documents give a 2031 in-service target for a Euclid to Hillje segment.",
+  "next_step": "Route filings and open houses to come; details to confirm.",
+  "why_k2": "A brand-new 765 kV hub plus line, endorsed but early. Endpoint land is the play.",
+  "k2_action": "Find the Euclid substation location in the ERCOT documents and map nearby parcels.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "",
+  "rpg": "26RPG001",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "ERCOT RPG April 2026 status update",
+    "url": "https://www.ercot.com/files/docs/2026/04/10/EIR-Euclid-765-kV-Substation-and-Transmission-Line-Addition-Status-Update-RPG-April_2026.pdf"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "bell-east-big-hill",
+  "name": "Bell County East to Big Hill",
+  "kv": "765",
+  "utility": "LCRA TSC and Oncor",
+  "stage": 5,
+  "stage_label": "Route case at PUC",
+  "window": "Act fast",
+  "importance": "High",
+  "status": "Route case filed March 26, 2026 with 122 route options. Opponents have asked for an independent audit of ERCOT's 765 kV plan, and news on Oct 8, 2026 reported regulators weighing rehearing motions on 765 kV lines.",
+  "next_step": "PUC decision expected fall 2026; energize by end of 2030.",
+  "why_k2": "Route options and the landowner list are public. The end substations (Big Hill, Schleicher County; Bell County East, Bell County) are fixed.",
+  "k2_action": "Pull the landowner list and route map from Docket 59475; focus on parcels near both end substations.",
+  "miles": "214 to 244 (endpoints 199 miles apart)",
+  "endpoints": "Big Hill (Schleicher County) to Bell County East (Bell County)",
+  "counties": "Study area: Bell, Burnet, Concho, Coryell, Lampasas, Llano, Mason, McCulloch, Menard, Milam, San Saba, Schleicher, Tom Green, Williamson",
+  "docket": "59475",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "LCRA project page",
+    "url": "https://www.lcra.org/energy/electric-transmission/transmission-line-routing/bell-county-east-to-big-hill-765-kv-transmission-project/"
+   },
+   {
+    "label": "PUCT Docket 59475",
+    "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=59475&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+   }
+  ],
+  "checked": "checked 2026-10-09",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "big-hill-sand-lake",
+  "name": "Big Hill to Sand Lake",
+  "kv": "765",
+  "utility": "LCRA TSC and Oncor",
+  "stage": 5,
+  "stage_label": "Route case at PUC",
+  "window": "Act fast",
+  "importance": "High",
+  "status": "One of the three PUCT-approved 765 kV Permian import paths (plan approved April 24, 2025). Route-case status needs checking: the PUC acted on several 765 kV route cases in August and September 2026.",
+  "next_step": "Confirm whether the final route is approved.",
+  "why_k2": "Ends at Sand Lake in Reeves County, next to the Pecos County queue pile-up (56 projects waiting).",
+  "k2_action": "Confirm status on the LCRA page; map parcels near Sand Lake and Big Hill.",
+  "miles": "",
+  "endpoints": "Big Hill (Schleicher County) to Sand Lake (Reeves County)",
+  "counties": "",
+  "docket": "",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "LCRA project page",
+    "url": "https://www.lcra.org/energy/electric-transmission/transmission-line-routing/big-hill-to-sand-lake-765-kv-transmission-project/"
+   },
+   {
+    "label": "Oncor project page",
+    "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/big-hill-switch-to-sand-lake-switch-765-kv-transmission-line-project.html"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "howard-solstice",
+  "name": "Howard to Solstice",
+  "kv": "765",
+  "utility": "AEP Texas and CPS Energy",
+  "stage": 5,
+  "stage_label": "Route case at PUC",
+  "window": "Act fast",
+  "importance": "High",
+  "status": "About 370 miles from Bexar County to Pecos County. Open houses were held in August 2025 (Atascosa, Uvalde, Del Rio, Fort Stockton). Secondary sources report PUC action in September 2026; needs checking.",
+  "next_step": "Confirm the PUC decision and the approved route.",
+  "why_k2": "A 765 kV import path into the Permian; Solstice (Pecos County) becomes a major hub.",
+  "k2_action": "Confirm status; map parcels near Solstice and Howard.",
+  "miles": "about 370",
+  "endpoints": "Howard (Bexar County) to Solstice (Pecos County)",
+  "counties": "Bexar, Atascosa, Uvalde, Val Verde, Pecos and counties between",
+  "docket": "",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "AEP Texas project page",
+    "url": "https://aeptransmission.com/texas/howard-solstice/"
+   },
+   {
+    "label": "CPS Energy project page",
+    "url": "https://www.cpsenergy.com/content/corporate/en/about-us/new-infrastructure/howard-solstice-transmission.html"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "dinosaur-longshore",
+  "name": "Dinosaur to Longshore",
+  "kv": "765",
+  "utility": "Oncor",
+  "stage": 6,
+  "stage_label": "Route approved",
+  "window": "Late",
+  "importance": "High",
+  "status": "Part of the PUCT-approved Permian import path (Dinosaur to Longshore to Drill Hole). A secondary source reports the PUC approved two Oncor 765 kV route amendments on August 28, 2026; needs checking which.",
+  "next_step": "If approved, right-of-way buying follows.",
+  "why_k2": "Large new 765 kV corridor; route likely fixed, so K2 is late on the line itself but early on new substations along it.",
+  "k2_action": "Confirm status; focus on the new substations.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "Oncor project page",
+    "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/dinosaur-to-longshore-765-kv-transmission-line-project.html"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "longshore-drill-hole",
+  "name": "Longshore to Drill Hole",
+  "kv": "765",
+  "utility": "Oncor",
+  "stage": 6,
+  "stage_label": "Route approved",
+  "window": "Late",
+  "importance": "High",
+  "status": "Second half of the Dinosaur-Longshore-Drill Hole Permian import path. Status needs checking (see Dinosaur to Longshore).",
+  "next_step": "If approved, right-of-way buying follows.",
+  "why_k2": "Drill Hole becomes a 765 kV hub in the Delaware Basin.",
+  "k2_action": "Confirm status; map parcels near Drill Hole.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "Oncor project page",
+    "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/longshore-switch---drill-hole-switch-765-kv-transmission-line-pr.html"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "white-baker-bottlebrush",
+  "name": "White Baker to Bottlebrush",
+  "kv": "345",
+  "utility": "TNMP",
+  "stage": 5,
+  "stage_label": "Route case at PUC",
+  "window": "Act fast",
+  "importance": "High",
+  "status": "TNMP opened a route case at the PUC in the week of October 8, 2026 (Docket 60382).",
+  "next_step": "Application with route options and landowner list; PUC decision in about 6 months.",
+  "why_k2": "Brand new case in Pecos County, the busiest Permian queue county. Bottlebrush also connects to Solstice (765 kV hub).",
+  "k2_action": "Open Docket 60382, get the route map and end substations, map parcels around Bottlebrush.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "Pecos",
+  "docket": "60382",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "PUCT Docket 60382",
+    "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=60382&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+   }
+  ],
+  "checked": "checked 2026-10-12",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "bottlebrush-solstice",
+  "name": "Bottlebrush to Solstice",
+  "kv": "345",
+  "utility": "AEP Texas",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "window": "Open now",
+  "importance": "High",
+  "status": "AEP Texas project page is live. Stage and dates need checking.",
+  "next_step": "Check the page for open houses and filing date.",
+  "why_k2": "Links Bottlebrush to the Solstice 765 kV hub in Pecos County.",
+  "k2_action": "Read the project page; note end substations.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "AEP Texas project page",
+    "url": "https://aeptransmission.com/texas/bottlebrush-solstice/"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "bakersfield-white-baker",
+  "name": "Bakersfield to White Baker",
+  "kv": "345",
+  "utility": "LCRA TSC",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "window": "Open now",
+  "importance": "High",
+  "status": "LCRA project page is live. Stage and dates need checking.",
+  "next_step": "Check the page for open houses and filing date.",
+  "why_k2": "Feeds White Baker, the start of TNMP's new White Baker to Bottlebrush case.",
+  "k2_action": "Read the project page; note end substations.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "LCRA project page",
+    "url": "https://www.lcra.org/energy/electric-transmission/transmission-line-routing/bakersfield-to-white-baker-345-kv-transmission-line-project/"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "consavvy-long-creek",
+  "name": "Consavvy to Long Creek",
+  "kv": "345",
+  "utility": "Oncor",
+  "stage": 5,
+  "stage_label": "Route case at PUC",
+  "window": "Act fast",
+  "importance": "High",
+  "status": "Route case filed late August or early September 2026 (Docket 60190).",
+  "next_step": "PUC decision in about 6 months from filing.",
+  "why_k2": "Crosses eight West-Central Texas counties; route options and landowners are public now.",
+  "k2_action": "Get the route map from Docket 60190; map parcels near both end switches.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "Glasscock, Howard, Jones, Midland, Mitchell, Nolan, Shackelford, Taylor",
+  "docket": "60190",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "PUCT Docket 60190",
+    "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=60190&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+   },
+   {
+    "label": "Oncor project page",
+    "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/Consavvy-to-Long-Creek-Switch-345kV.html"
+   }
+  ],
+  "checked": "checked 2026-10-12",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "pine-mccloud",
+  "name": "Pine to McCloud",
+  "kv": "345",
+  "utility": "El Paso Electric",
+  "stage": 5,
+  "stage_label": "Route case at PUC",
+  "window": "Act fast",
+  "importance": "Medium",
+  "status": "Route case opened September 2026 (Docket 60319); the full application with routes was filed October 9, 2026.",
+  "next_step": "PUC decision in about 6 months.",
+  "why_k2": "New 345 kV line in El Paso County, outside ERCOT (El Paso Electric is in the Western grid).",
+  "k2_action": "Lower priority unless K2 works El Paso; check route map.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "El Paso",
+  "docket": "60319",
+  "rpg": "",
+  "region": "Texas (Western grid, El Paso)",
+  "links": [
+   {
+    "label": "PUCT Docket 60319",
+    "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=60319&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+   }
+  ],
+  "checked": "checked 2026-10-12",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "tuskegee-pine",
+  "name": "Tuskegee to Pine",
+  "kv": "345",
+  "utility": "El Paso Electric",
+  "stage": 5,
+  "stage_label": "Route case at PUC",
+  "window": "Act fast",
+  "importance": "Medium",
+  "status": "Route case filed August 2026 (Docket 60152). An intervenor asked for a route-adequacy hearing.",
+  "next_step": "PUC decision in about 6 months.",
+  "why_k2": "New 345 kV lines in El Paso County (Western grid).",
+  "k2_action": "Lower priority unless K2 works El Paso.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "El Paso",
+  "docket": "60152",
+  "rpg": "",
+  "region": "Texas (Western grid, El Paso)",
+  "links": [
+   {
+    "label": "PUCT Docket 60152",
+    "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=60152&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+   }
+  ],
+  "checked": "checked 2026-10-12",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "rockhound-longshore",
+  "name": "Rockhound to Longshore (double circuit)",
+  "kv": "345",
+  "utility": "Oncor",
+  "stage": 2,
+  "stage_label": "ERCOT review",
+  "window": "Open now",
+  "importance": "High",
+  "status": "Oncor submitted a 345 kV double-circuit line to ERCOT's planning review in June 2026; Oncor also has a project page.",
+  "next_step": "ERCOT review, then open houses and a route filing.",
+  "why_k2": "Connects into Longshore, a new 765 kV hub. Early stage.",
+  "k2_action": "Read the ERCOT submission for end substations and counties.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "ERCOT submission (June 2026)",
+    "url": "https://www.ercot.com/files/docs/2026/06/19/8.-Oncor_Rockhound-to-Longshore-345-kV-Double-Circuit-Line_Project_RPG_06192026.pdf"
+   },
+   {
+    "label": "Oncor project page",
+    "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/longshore-to-rockhound-345-kv-transmission-line-project.html"
+   }
+  ],
+  "checked": "checked 2026-10-12",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "panhandle-plan",
+  "name": "Panhandle Reliability Transmission Plan",
+  "kv": "",
+  "utility": "Cross Texas and AEP",
+  "stage": 2,
+  "stage_label": "ERCOT review",
+  "window": "Open now",
+  "importance": "Medium",
+  "status": "Presented to ERCOT's planning group in July 2026; ERCOT is reviewing a combined AEP and Cross Texas Panhandle project.",
+  "next_step": "ERCOT recommendation, then route filings.",
+  "why_k2": "Regional build-out in the Panhandle, a strong wind and solar area.",
+  "k2_action": "Read the July 2026 presentation for line voltages and substations.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "Cross Texas presentation (July 2026)",
+    "url": "https://www.ercot.com/files/docs/2026/07/20/12.-ERCOT-RPG_CTT-PH-Reliability-Transmission-Plan_Presentation_July_21_2026.pdf"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "border-clearfork",
+  "name": "Border to Clearfork",
+  "kv": "345",
+  "utility": "Oncor",
+  "stage": 6,
+  "stage_label": "Route approved",
+  "window": "Late",
+  "importance": "Medium",
+  "status": "Route case filed May 29, 2025 (Docket 58126), Loving to Andrews counties, 58 to 77 miles; completion planned 2028. Decision status needs checking.",
+  "next_step": "Right-of-way buying and construction.",
+  "why_k2": "Delaware Basin capacity; likely approved, so late.",
+  "k2_action": "Confirm the approved route; check for new substations along it.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "Loving, Andrews",
+  "docket": "58126",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "Oncor project page",
+    "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/border-switch-clearfork-switch-345-kv-transmission-line-project.html"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "el-capitan-dry-lake",
+  "name": "El Capitan to Dry Lake",
+  "kv": "345",
+  "utility": "Oncor",
+  "stage": 6,
+  "stage_label": "Route approved",
+  "window": "Late",
+  "importance": "Medium",
+  "status": "Route case filed February 26, 2026 (Docket 59353); Oncor's page says the PUC approved it August 20, 2026.",
+  "next_step": "Right-of-way buying next.",
+  "why_k2": "Approved, so the route is fixed; utility land agents are likely active.",
+  "k2_action": "Low priority for new land; note the substations.",
+  "miles": "about 25",
+  "endpoints": "",
+  "counties": "Culberson, Reeves",
+  "docket": "59353",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "Oncor project page",
+    "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/el-capitan-to-dry-lake-345kv-transmission-line-project.html"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "rockhound-connell",
+  "name": "Rockhound to Connell",
+  "kv": "345",
+  "utility": "Oncor",
+  "stage": 6,
+  "stage_label": "Route approved",
+  "window": "Late",
+  "importance": "Medium",
+  "status": "Route case filed September 2025 (Docket 58519); notice of approval signed March 12, 2026.",
+  "next_step": "Right-of-way buying and construction.",
+  "why_k2": "Approved; late for the line itself.",
+  "k2_action": "Low priority.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "58519",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "Oncor project page",
+    "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/rockhound-switch---connell-switch-345-kv-transmission-line-proje.html"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "ranger-camp-tonkawa",
+  "name": "Ranger Camp to Tonkawa",
+  "kv": "345",
+  "utility": "Oncor",
+  "stage": 6,
+  "stage_label": "Route approved",
+  "window": "Late",
+  "importance": "Medium",
+  "status": "Notice of approval signed February 19, 2026 (Docket 58848).",
+  "next_step": "Right-of-way buying and construction.",
+  "why_k2": "Approved; late for the line itself.",
+  "k2_action": "Low priority.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "58848",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "Oncor project page",
+    "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/ranger-camp-to-tonkawa-345-kV-transmission-line-project.html"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "oncor-liggett-to-skyview",
+  "name": "Liggett to Skyview",
+  "kv": "345",
+  "utility": "Oncor",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "window": "Open now",
+  "importance": "Medium",
+  "status": "Oncor project page is live. Stage and dates not yet reviewed.",
+  "next_step": "Open the page for open-house dates, route case number and in-service date.",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "k2_action": "Review the page and update this record.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "Oncor project page",
+    "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/liggett-switch-to-skyview-switch-345-kv-transmission-line-projec.html"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "oncor-ranger-camp-to-midland-east",
+  "name": "Ranger Camp to Midland East",
+  "kv": "345",
+  "utility": "Oncor",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "window": "Open now",
+  "importance": "Medium",
+  "status": "Oncor project page is live. Stage and dates not yet reviewed.",
+  "next_step": "Open the page for open-house dates, route case number and in-service date.",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "k2_action": "Review the page and update this record.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "Oncor project page",
+    "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/ranger-camp-switch-to-midland-east-switch-345kv-transmission-lin.html"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "oncor-temple-to-salado",
+  "name": "Temple to Salado",
+  "kv": "345",
+  "utility": "Oncor",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "window": "Open now",
+  "importance": "Medium",
+  "status": "Oncor project page is live. Stage and dates not yet reviewed.",
+  "next_step": "Open the page for open-house dates, route case number and in-service date.",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "k2_action": "Review the page and update this record.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "Oncor project page",
+    "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/temple-switch---salado-switch-345-138-kv-transmission-line-proje.html"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "oncor-lamesa-to-faraday",
+  "name": "Lamesa to Faraday",
+  "kv": "345",
+  "utility": "Oncor",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "window": "Open now",
+  "importance": "Medium",
+  "status": "Oncor project page is live. Stage and dates not yet reviewed.",
+  "next_step": "Open the page for open-house dates, route case number and in-service date.",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "k2_action": "Review the page and update this record.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "Oncor project page",
+    "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/lamesa---faraday-345kv.html"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "oncor-mascho-to-lamesa",
+  "name": "Mascho to Lamesa",
+  "kv": "345",
+  "utility": "Oncor",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "window": "Open now",
+  "importance": "Medium",
+  "status": "Oncor project page is live. Stage and dates not yet reviewed.",
+  "next_step": "Open the page for open-house dates, route case number and in-service date.",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "k2_action": "Review the page and update this record.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "Oncor project page",
+    "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/mascho-switch-to-lamesa-switch-345kv-transmission-line-project.html"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "oncor-border-to-quarry-field",
+  "name": "Border to Quarry Field",
+  "kv": "345",
+  "utility": "Oncor",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "window": "Open now",
+  "importance": "Medium",
+  "status": "Oncor project page is live. Stage and dates not yet reviewed.",
+  "next_step": "Open the page for open-house dates, route case number and in-service date.",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "k2_action": "Review the page and update this record.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "Oncor project page",
+    "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/border-switch---quarry-field-switch-345-kv-transmission-line-pro.html"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "oncor-drill-hole-to-border",
+  "name": "Drill Hole to Border",
+  "kv": "345",
+  "utility": "Oncor",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "window": "Open now",
+  "importance": "Medium",
+  "status": "Oncor project page is live. Stage and dates not yet reviewed.",
+  "next_step": "Open the page for open-house dates, route case number and in-service date.",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "k2_action": "Review the page and update this record.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "Oncor project page",
+    "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/drill-hole-switch-border-switch-345-kv-transmission-line-proje.html"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "oncor-drill-hole-to-el-capitan",
+  "name": "Drill Hole to El Capitan",
+  "kv": "345",
+  "utility": "Oncor",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "window": "Open now",
+  "importance": "Medium",
+  "status": "Oncor project page is live. Stage and dates not yet reviewed.",
+  "next_step": "Open the page for open-house dates, route case number and in-service date.",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "k2_action": "Review the page and update this record.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "Oncor project page",
+    "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/Drill_Hole_Switch_to_El_Capitan_Switch_345_kV_Transmission_Line_Project.html"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "oncor-drill-hole-to-riverton",
+  "name": "Drill Hole to Riverton",
+  "kv": "345",
+  "utility": "Oncor",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "window": "Open now",
+  "importance": "Medium",
+  "status": "Oncor project page is live. Stage and dates not yet reviewed.",
+  "next_step": "Open the page for open-house dates, route case number and in-service date.",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "k2_action": "Review the page and update this record.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "Oncor project page",
+    "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/drill-hole-switch---riverton-switch-345-kv-transmission-line-pro.html"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "oncor-dry-lake-to-faulkner",
+  "name": "Dry Lake to Faulkner",
+  "kv": "345",
+  "utility": "Oncor",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "window": "Open now",
+  "importance": "Medium",
+  "status": "Oncor project page is live. Stage and dates not yet reviewed.",
+  "next_step": "Open the page for open-house dates, route case number and in-service date.",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "k2_action": "Review the page and update this record.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "Oncor project page",
+    "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/dry-lake-to-faulkner-345kv-transmission-line-project.html"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "oncor-redland-to-longleaf",
+  "name": "Redland to Longleaf",
+  "kv": "345",
+  "utility": "Oncor",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "window": "Open now",
+  "importance": "Medium",
+  "status": "Oncor project page is live. Stage and dates not yet reviewed.",
+  "next_step": "Open the page for open-house dates, route case number and in-service date.",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "k2_action": "Review the page and update this record.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "",
+  "rpg": "",
+  "region": "Texas (ERCOT)",
+  "links": [
+   {
+    "label": "Oncor project page",
+    "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/REDLAND_LONGLEAF_345_kV_TRANSMISSION_LINE_PROJECT.html"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ },
+ {
+  "id": "valley-link",
+  "name": "Valley Link",
+  "kv": "765",
+  "utility": "Valley Link Transmission (PJM)",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "window": "Open now",
+  "importance": "Medium",
+  "status": "Billion-dollar 765 kV line in the PJM region; Campbell County, Virginia passed a resolution opposing it (Oct 2026 news).",
+  "next_step": "State route approvals in Virginia and neighboring states.",
+  "why_k2": "Outside Texas, but K2 works US-wide; a major new corridor.",
+  "k2_action": "Read the news story; add PJM routing filings to the US Regions watch.",
+  "miles": "",
+  "endpoints": "",
+  "counties": "",
+  "docket": "",
+  "rpg": "",
+  "region": "Other US (PJM: Virginia area)",
+  "links": [
+   {
+    "label": "News (Lynchburg News and Advance)",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOQjJmelJWallUT1ZBczEza1ZDSENCLWJwWVN2MGVYdmVlX21oeWw5a0NRcEhoRW4zTzBwZmJsOElLS2RxOHFrbk9ZemhsN3lLbzVJdWFTekE1ZGpkbEJyc0JOdmZWWUhOZFdLYTN2UlBHaTdwM05qTGFrUGdScXdDSjNhYkRybHRJXzNDVjBWLTlBNDVJQmI4YmF5NmYybXY1aVNRVWZJMA?oc=5"
+   }
+  ],
+  "checked": "needs checking",
+  "updated": "2026-10-12"
+ }
+]

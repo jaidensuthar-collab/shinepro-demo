@@ -28,6 +28,7 @@ import datetime as dt
 import hashlib
 import html
 import json
+import os
 import re
 import sys
 import time
@@ -36,6 +37,8 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 from dataclasses import asdict, dataclass
+
+import k2filter
 
 USER_AGENT = "Mozilla/5.0 (compatible; K2LineMonitor/1.0)"
 
@@ -132,6 +135,7 @@ class Signal:
     source_date: str
     url: str
     priority: str = ""
+    note: str = ""
 
 
 def fetch(url, timeout=45, retries=2):
@@ -464,17 +468,47 @@ def news_signals(days, today):
     return signals
 
 
+# ---------------------------------------------------------------- reading project pages
+
+# Only phrases that say THIS line is finished ("energized" alone also appears in history and plans).
+DONE_WORDS = ("complete and energized", "has been energized", "was energized", "is energized",
+              "is now energized", "placed in service", "project is complete", "construction is complete",
+              "construction was completed", "now in service", "project has been completed")
+
+
+def enrich_project_page(sig):
+    """Open a utility project page to read its voltage and whether it is already built."""
+    try:
+        text = clean(fetch(sig.url, timeout=30, retries=1)).lower()
+    except RuntimeError:
+        return
+    if not sig.voltage_kv:
+        sig.voltage_kv = voltage(text)
+    if any(word in text for word in DONE_WORDS):
+        sig.note = "completed"
+
+
 # ---------------------------------------------------------------- main
 
-SHEET_HEADER = ["Found", "Priority", "Step", "Source", "Utility", "kV", "Title", "Source date", "Link",
-                "ID", "Status"]
+SHEET_HEADER = ["Found", "Importance", "What happened", "Project", "Utility", "kV", "Where",
+                "What this kind of signal means",
+                "Why K2 cares", "What to do next", "Link", "ID", "Status"]
 
 
-def to_row(sig, found, status):
-    # The leading apostrophe keeps Sheets from turning "345/138" into a date.
-    kv = ("'" + sig.voltage_kv) if sig.voltage_kv else ""
-    return [found, sig.priority, sig.step, sig.source, sig.utility, kv, sig.title,
-            sig.source_date, sig.url, sig.id, status]
+def to_row(sig, k2, found, status):
+    """One row for the K2 Watch tab. The ID is column L; the leading apostrophe keeps kV as text."""
+    kv_text = sig.voltage_kv or k2.get("kv", "")
+    kv = ("'" + kv_text) if kv_text else ""
+    return [found, k2["importance"], k2["what_happened"], k2["project"], sig.utility, kv, k2["where"],
+            k2["stage"], k2["why_k2"], k2["next_step"], sig.url, sig.id, status]
+
+
+def to_record(sig, k2, found, status):
+    """The same signal as a database record for the K2 Line Watch page."""
+    rec = asdict(sig)
+    rec.update(k2)
+    rec.update({"found": found, "status": status})
+    return rec
 
 
 def run(args):
@@ -528,31 +562,82 @@ def run(args):
     unique.sort(key=lambda s: (order[s.priority], s.step))
     new = [s for s in unique if s.id not in seen]
 
+    # Utility project pages rarely put the voltage in the title: read the page itself.
+    for sig in new:
+        if sig.step.startswith("3 ") and sig.id.startswith("util:"):
+            enrich_project_page(sig)
+            time.sleep(0.3)
+
+    # Keep only what K2 cares about, explained in plain English (unless --all).
+    kept, filing_keys = [], set()
+    for sig in new:
+        if sig.step.startswith("5-6"):
+            # A filing split into parts ("- PART 2") is one event: keep the first part only.
+            key = (sig.source.split(" item")[0], re.sub(r"\s*-\s*PART\s*\d+$", "", sig.title.upper()))
+            if key in filing_keys:
+                sig.note = "duplicate part"
+            filing_keys.add(key)
+    for sig in new:
+        if sig.note == "duplicate part":
+            continue
+        k2 = k2filter.explain(asdict(sig))
+        if k2 is None and not args.all:
+            continue
+        kept.append((sig, k2 or {"importance": sig.priority, "what_happened": sig.title, "project": "",
+                                 "where": "", "stage": sig.step, "why_k2": "", "next_step": ""}))
+    dropped = len(new) - len(kept)
+    kept.sort(key=lambda pair: (pair[1]["importance"] != "High", pair[0].step))
+    new = [sig for sig, _ in kept]
+
     status = "Known at start" if args.baseline else "New"
-    rows = [to_row(s, today.isoformat(), status) for s in new]
-    report = {"checked": today.isoformat(), "total_found": len(unique), "new": [asdict(s) for s in new],
-              "errors": errors}
+    found = today.isoformat()
+    rows = [to_row(sig, k2, found, status) for sig, k2 in kept]
+    records = [to_record(sig, k2, found, status) for sig, k2 in kept]
+    report = {"checked": found, "total_found": len(unique), "dropped_not_k2": dropped,
+              "new": records, "errors": errors}
     if args.json:
         with open(args.json, "w", encoding="utf-8") as fh:
             json.dump(report, fh, indent=2)
     if args.rows:
         with open(args.rows, "w", encoding="utf-8") as fh:
             json.dump(rows, fh)
+    if args.db_dir:
+        write_db_files(args.db_dir, records)
 
-    print("Checked %s: %d signals found, %d new." % (today.isoformat(), len(unique), len(new)))
-    for s in new:
-        print("- %-6s [%s] %s | %s | %s kV | %s" % (s.priority, s.step, s.source, s.utility or "?",
-                                                    s.voltage_kv or "?", s.title))
+    print("Checked %s: %d signals found, %d new for K2, %d new but not relevant to K2."
+          % (found, len(unique), len(kept), dropped))
+    for sig, k2 in kept:
+        print("- %-6s %s" % (k2["importance"], k2["what_happened"]))
     for e in errors:
         print("! " + e, file=sys.stderr)
     return 2 if errors and not unique else 0
+
+
+def db_doc_id(signal_id):
+    """K2 Line Watch database id for a signal: 'puct:60319:83' -> 'puct_60319_83'."""
+    return re.sub(r"[^A-Za-z0-9_-]", "_", signal_id)
+
+
+def write_db_files(folder, records):
+    """One JSON file per new signal plus writes.json, ready for a database batch write."""
+    os.makedirs(folder, exist_ok=True)
+    writes = []
+    for rec in records:
+        path = os.path.abspath(os.path.join(folder, db_doc_id(rec["id"]) + ".json"))
+        with open(path, "w", encoding="utf-8") as fh:
+            json.dump(rec, fh)
+        writes.append({"op": "set", "collection": "signals", "doc_id": db_doc_id(rec["id"]), "file_path": path})
+    with open(os.path.join(folder, "writes.json"), "w", encoding="utf-8") as fh:
+        json.dump(writes, fh)
 
 
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--seen", help="file of IDs already reported, one per line")
     p.add_argument("--json", help="write the full report as JSON here")
-    p.add_argument("--rows", help="write new signals as rows for the Monitor Feed tab (JSON 2D array)")
+    p.add_argument("--rows", help="write new K2 signals as rows for the K2 Watch tab (JSON 2D array)")
+    p.add_argument("--all", action="store_true", help="keep signals the K2 filter would drop")
+    p.add_argument("--db-dir", help="write new K2 signals as K2 Line Watch database files (one JSON each + writes.json)")
     p.add_argument("--baseline", action="store_true", help="mark everything as 'Known at start' (first run)")
     p.add_argument("--only", choices=["all", "puct", "rpg", "util", "news", "dockets"], default="all")
     p.add_argument("--news-days", type=int, default=3, help="how many days of news to scan")

@@ -1,6 +1,8 @@
 """Offline tests for the page parsers. Run: python3 -m unittest test_monitor.py"""
 
 import datetime as dt
+import json
+import os
 import unittest
 
 import monitor
@@ -97,3 +99,16 @@ class ParserTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class DbFilesTest(unittest.TestCase):
+    def test_writes_one_file_per_record_and_batch_list(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            monitor.write_db_files(d, [{"id": "puct:60319:83", "what_happened": "x"}])
+            with open(os.path.join(d, "writes.json")) as fh:
+                writes = json.load(fh)
+            self.assertEqual(writes[0]["doc_id"], "puct_60319_83")
+            self.assertEqual(writes[0]["collection"], "signals")
+            with open(writes[0]["file_path"]) as fh:
+                self.assertEqual(json.load(fh)["id"], "puct:60319:83")
