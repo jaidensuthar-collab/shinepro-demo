@@ -61,6 +61,12 @@ It drops:
   geojson.io with the same shapes. Pins were researched from utility pages, PUC filings and
   OpenStreetMap; `data/merge_geo.py` checks each pin sits in the county it names and writes
   `data/geo.json`. County outlines are `web/counties.json` (built by `data/build_counties.py`).
+* **GIS export**: `data/export_gis.py` writes `web/exports/` (substations, study areas, straight
+  lines, project table, Google Earth file, IRP table) and zips them with a readme as
+  `k2-gis-export.zip`, downloadable from the page's "Data for GIS" section.
+* **IRP pilot**: the "Utility plans (IRPs)" tab. Research records (one schema, every number
+  sourced, confidence per section) are in `data/irp_research/`; `data/build_irps.py` merges them
+  into `data/irps.json`, which is loaded into the page database's `irps` collection.
 * **Monitor Feed tab**: the old raw log from before the filter. Kept as an archive.
 
 ## How a scheduled run works

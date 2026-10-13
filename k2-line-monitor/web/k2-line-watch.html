@@ -227,8 +227,8 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
       <p class="pmeta">Pilot: a first set of utilities in K2's priority markets, plus ERCOT's long-term forecast for Texas (most Texas utilities don't file IRPs). Every number links to its source; confidence is marked per section.</p>
       <div class="tools" role="group" aria-label="Sort utilities">
         <span class="pmeta">Sort by</span>
-        <button class="chip" data-isort="dc" aria-pressed="true">Data-center load</button>
-        <button class="chip" data-isort="growth" aria-pressed="false">Load growth per year</button>
+        <button class="chip" data-isort="growth" aria-pressed="true">Load growth per year</button>
+        <button class="chip" data-isort="dc" aria-pressed="false">Data-center load</button>
         <button class="chip" data-isort="gen" aria-pressed="false">New generation planned</button>
       </div>
     </section>
@@ -309,7 +309,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     { n: 7, l: "Land buying / build", s: "too late for route", cls: "late" },
   ];
   const WEB = "Parallel Search";
-  const state = { irps: [], isort: "dc", iopen: new Set(), projects: [], signals: [], research: [], meta: null, win: "all", stage: null, q: "", open: new Set(), sigShown: 25 };
+  const state = { irps: [], isort: "growth", iopen: new Set(), projects: [], signals: [], research: [], meta: null, win: "all", stage: null, q: "", open: new Set(), sigShown: 25 };
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const winCls = (w) => (w === "Open now" ? "open" : w === "Act fast" ? "fast" : "late");
@@ -465,7 +465,9 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   function renderIrps() {
     if (!state.irps.length) return;
     const k = state.isort;
-    const list = [...state.irps].sort((a, b) => (irpKeys(b)[k] ?? -1) - (irpKeys(a)[k] ?? -1) || a.utility.localeCompare(b.utility));
+    // Grid-operator context records (ERCOT) sit on top and are not ranked against utilities.
+    const list = [...state.irps.filter((u) => u.context), ...state.irps.filter((u) => !u.context)
+      .sort((a, b) => (irpKeys(b)[k] ?? -1) - (irpKeys(a)[k] ?? -1) || a.utility.localeCompare(b.utility))];
     const conf = (c) => c ? `<span class="pill ${c === "High" ? "open" : c === "Medium" ? "fast" : "late"}">${esc(c)}</span>` : "";
     $("irps").innerHTML = list.map((u) => {
       const K = irpKeys(u), L = u.load || {}, I = u.irp || {}, C = u.confidence || {};
@@ -476,14 +478,14 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
         <button type="button" aria-expanded="${open}">
           <span class="kv irp-st">${esc((u.states || []).join(" "))}<small>${esc(u.rto || "")}</small></span>
           <span><span class="pname">${esc(u.utility)}</span><span class="pmeta">${esc([u.type, I.title, I.filed && "filed " + I.filed].filter(Boolean).join(" · "))}</span></span>
-          <span class="badges"><span class="pill check">${esc(I.status || "")}</span></span>
+          <span class="badges">${u.context ? `<span class="pill fast">Context, not ranked</span>` : ""}${I.status ? `<span class="pill check" title="${esc(I.status)}">${esc(String(I.status).split(" (")[0])}</span>` : ""}</span>
           <span class="pstat">${esc(u.headline || "")}</span>
         </button>
         <dl class="irp-nums">
           <div><dt>Data-center load</dt><dd>${mw(K.dc)}</dd></div>
           <div><dt>Peak demand growth</dt><dd>${esc(growth)}</dd></div>
           <div><dt>Peak demand</dt><dd>${num(L.base_peak_mw) !== null ? mw(L.base_peak_mw) + " (" + esc(L.base_year) + ")" : "not published"}${num(L.end_peak_mw) !== null ? " → " + mw(L.end_peak_mw) + " (" + esc(L.end_year) + ")" : ""}</dd></div>
-          <div><dt>New generation planned</dt><dd>${mw(K.gen)}</dd></div>
+          <div><dt>${u.queue_not_plan ? "Generation in the queue" : "New generation planned"}</dt><dd>${mw(K.gen)}</dd></div>
         </dl>
         ${open ? `<div class="detail"><dl>
           <dt>Where growth is</dt><dd>${esc(L.large_load_notes || "Not stated")}${(u.places_named || []).length ? `<br><span class="pmeta">Places named: ${esc(u.places_named.join(", "))}</span>` : ""}</dd>

@@ -44,6 +44,9 @@ k2-projects.csv
   Act fast / Late), case numbers, next step and source links.
 k2-line-watch.kml
   Everything above for Google Earth.
+k2-irp-pilot.csv
+  IRP pilot: one row per utility (load growth, data-center load, new generation,
+  retirements, transmission, active procurement, plan link). Not map data.
 routes/ (if present)
   Route option links from PUC filings or utility GIS services, one file per case.
 
@@ -117,6 +120,27 @@ def kml(subs, areas, lines):
     return '<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>K2 Line Watch</name>%s%s</Document></kml>' % (styles, body)
 
 
+def irp_rows(irps):
+    def total(items):
+        vals = [x.get("mw") for x in items or [] if isinstance(x.get("mw"), (int, float))]
+        return round(sum(vals)) if vals else ""
+    out = []
+    for u in irps:
+        load, plan = u.get("load") or {}, u.get("irp") or {}
+        out.append({"utility": u["utility"], "type": u.get("type", ""), "states": " ".join(u.get("states") or []), "grid": u.get("rto", ""),
+                    "plan": plan.get("title", ""), "filed": plan.get("filed", ""), "status": plan.get("status", ""),
+                    "data_center_mw": load.get("data_center_mw") if load.get("data_center_mw") is not None else "",
+                    "peak_growth_pct_per_year": load.get("peak_growth_pct_per_year") if load.get("peak_growth_pct_per_year") is not None else "",
+                    "peak_mw_start": load.get("base_peak_mw") or "", "start_year": load.get("base_year") or "",
+                    "peak_mw_end": load.get("end_peak_mw") or "", "end_year": load.get("end_year") or "",
+                    "new_generation_mw": total(u.get("generation_adds")), "retirements_mw": total(u.get("retirements")),
+                    "transmission_projects": "; ".join(t.get("name", "") for t in u.get("transmission") or []),
+                    "buying_power_now": u.get("rfp_or_procurement", ""), "places_named": "; ".join(u.get("places_named") or []),
+                    "headline": u.get("headline", ""), "plan_url": plan.get("url", ""),
+                    "note": "ERCOT: context only, numbers are queue requests" if u.get("context") else ""})
+    return out
+
+
 def write_csv(path, rows):
     keys = list(rows[0].keys())
     with open(path, "w", newline="", encoding="utf-8") as fh:
@@ -135,6 +159,9 @@ def main():
     write_csv(os.path.join(OUT, "k2-projects.csv"), rows)
     write_csv(os.path.join(OUT, "k2-substations.csv"), sub_rows)
     open(os.path.join(OUT, "k2-line-watch.kml"), "w", encoding="utf-8").write(kml(subs, areas, lines))
+    irp_path = os.path.join(HERE, "irps.json")
+    if os.path.exists(irp_path):
+        write_csv(os.path.join(OUT, "k2-irp-pilot.csv"), irp_rows(json.load(open(irp_path, encoding="utf-8"))))
     readme = README.format(n=len(rows), s=len(subs))
     with zipfile.ZipFile(os.path.join(OUT, "k2-gis-export.zip"), "w", zipfile.ZIP_DEFLATED) as z:
         z.writestr("README.txt", readme)

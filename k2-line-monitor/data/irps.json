@@ -1,0 +1,3075 @@
+[
+ {
+  "id": "entergy-mississippi",
+  "utility": "Entergy Mississippi",
+  "type": "IOU",
+  "states": [
+   "MS"
+  ],
+  "rto": "MISO",
+  "irp": {
+   "title": "No IRP report located. The last identifiable cycle is the '2024 IRP' cycle under MPSC Rule 29 (Notice of IRP Cycle filed May 12, 2023; initial public workshop Aug 9, 2023). A secondary source mentions an Entergy Mississippi resource-planning workshop in Aug 2026 (not verified).",
+   "filed": null,
+   "regulator": "Mississippi PSC",
+   "docket": "2019-UA-232",
+   "url": "https://www.psc.ms.gov/sites/default/files/2023-07/EML-2024-IRP-Notice-Initial-Public-Workshop.pdf",
+   "horizon": null,
+   "next_due": "unknown",
+   "status": "unknown (IRP report not found online; MPSC e-docket portal was unreachable)"
+  },
+  "load": {
+   "base_year": null,
+   "base_peak_mw": null,
+   "end_year": null,
+   "end_peak_mw": null,
+   "peak_growth_pct_per_year": null,
+   "energy_growth_note": "No system peak or energy forecast found in a primary source. Secondary source (Substack, Sep 2026) says Entergy's MISO filings show 1.0-1.3 GW of peak-load growth in Mississippi, including hyperscale data centers. This is unverified.",
+   "data_center_mw": null,
+   "large_load_notes": "Amazon Web Services: two campuses in Madison County (Canton and Ridgeland). Entergy proposed 3 new substations sized for 1,034 MW of customer load in Madison County: Virlilia 230 kV (267 MW), Cosmos 230 kV (267 MW) and Andes 500/230 kV (537 MW) (MISO expedited project review, Oct 2023). That 1,034 MW is the studied substation load, not a forecast peak. Further AWS sites: a Warren County (Vicksburg) campus (supply agreement Feb 2025) and a $1B project in Clinton (Hinds County), announced Apr 2026. Amazon's Madison County expansion is $11B. Entergy's 2024 Annual Report ties 650 MW of planned solar to the Amazon project. AVAIO Digital says it has secured utility power in Mississippi; size and site are not confirmed for Entergy Mississippi. (Data-center MW left blank here: the 1,034 MW is substation capacity built for Amazon, not a load forecast.)"
+  },
+  "generation_adds": [
+   {
+    "type": "gas CC",
+    "mw": 754,
+    "years": "2028",
+    "note": "Delta Blues Advanced Power Station, Greenville (Washington County). Replaces Gerald Andrus. Expected in service May 2028."
+   },
+   {
+    "type": "gas CC",
+    "mw": 754,
+    "years": "2028",
+    "note": "Vicksburg Advanced Power Station at the former Baxter Wilson site (Warren County), expected Aug 2028."
+   },
+   {
+    "type": "gas CC",
+    "mw": 754,
+    "years": "2029",
+    "note": "Traceview Advanced Power Station, Ridgeland (Madison/Hinds border), ~1 mile from AWS Ridgeland. Entergy targets 2029 (blog: Aug 2029). A secondary source says Entergy presented Traceview and Vicksburg as resources pre-approved under 2024 state legislation."
+   },
+   {
+    "type": "solar",
+    "mw": 650,
+    "years": "not stated",
+    "note": "Solar tied to the Amazon project (Entergy 2024 Annual Report). Entergy names solar sites in Bolivar, DeSoto, Tallahatchie and Washington counties."
+   },
+   {
+    "type": "solar",
+    "mw": 100,
+    "years": "2025",
+    "note": "Wildwood Solar PPA (Webb, MS), per Entergy renewable portfolio list (Jul 2026)."
+   },
+   {
+    "type": "other",
+    "mw": 250,
+    "years": "by 2030",
+    "note": "2026 EML Renewables and Storage RFP target: 250 MWac of new solar, wind and/or BESS."
+   }
+  ],
+  "retirements": [
+   {
+    "plant": "Gerald Andrus Steam Electric Station (Greenville)",
+    "type": "gas",
+    "mw": null,
+    "year": 2028,
+    "note": "To be replaced by Delta Blues. MW not found in sources reviewed."
+   },
+   {
+    "plant": "Baxter Wilson (Vicksburg)",
+    "type": "gas",
+    "mw": null,
+    "year": 2022,
+    "note": "Already retired (2022). The site is being reused for the Vicksburg Advanced Power Station."
+   },
+   {
+    "plant": "Other legacy units (unspecified)",
+    "type": "gas",
+    "mw": 1000,
+    "year": 2030,
+    "note": "Secondary source only: Entergy expects to retire roughly 1 GW more by the end of the decade. Not verified in a primary document."
+   }
+  ],
+  "transmission": [
+   {
+    "name": "Andes 500/230 kV substation (+ Mantero 230/34.5 kV customer substation)",
+    "kv": "500",
+    "description": "New 4-breaker ring cutting into the Lakeover-McAdams 500 kV line to serve 537 MW of AWS load",
+    "where": "Madison County (Canton campus)",
+    "year": "Nov 2026 planned (secondary source); MISO MTEP24 expedited"
+   },
+   {
+    "name": "Green Acres 500/230 kV substation + County Line customer substation",
+    "kv": "500",
+    "description": "Serves the second, larger phase of AWS Ridgeland, next to Traceview. About $312M per secondary source citing MISO.",
+    "where": "Ridgeland, Madison County",
+    "year": "Dec 2029"
+   },
+   {
+    "name": "Virlilia 230 kV substation (Catlett Road rebuild)",
+    "kv": "230",
+    "description": "267 MW customer load, $79.5M est.",
+    "where": "Madison County (Canton)",
+    "year": "Jan 2025 ISD (MISO)"
+   },
+   {
+    "name": "Cosmos 230 kV substation",
+    "kv": "230",
+    "description": "Cuts into Lake Castle-North Park 230 kV line; 267 MW customer load; $44.5M est.",
+    "where": "Madison County (Ridgeland)",
+    "year": "Jan 2026 ISD (MISO); in service Nov 2025 per secondary source"
+   },
+   {
+    "name": "DeSoto County T&D reliability CPCN",
+    "kv": null,
+    "description": "Petition to continue reliability and modernization upgrades to transmission and distribution in DeSoto County (MPSC docket 2024-UA-44)",
+    "where": "DeSoto County",
+    "year": "filed May 2024"
+   }
+  ],
+  "places_named": [
+   "Madison County (Canton, Ridgeland)",
+   "Hinds County (Clinton)",
+   "Warren County (Vicksburg)",
+   "Washington County (Greenville)",
+   "Bolivar County",
+   "DeSoto County",
+   "Tallahatchie County"
+  ],
+  "rfp_or_procurement": "2026 EML Renewables and Storage RFP: issued Mar 26, 2026 (revised Apr 14, 2026). Target 250 MWac of new solar, wind and/or BESS (50-250 MW per bid) with service by Dec 31, 2030. Must interconnect in MISO LRZ 10 (Mississippi). Also the 2024 EML Existing Resource Energy & Capacity RFP (May 1, 2024; delivery from Jun 1, 2026).",
+  "headline": "No current IRP is published. In practice, Entergy Mississippi is building three 754 MW gas plants (2,262 MW, 2028-2029) and about 650 MW of solar, mainly to serve Amazon's data centers around Jackson (Madison, Hinds and Warren counties).",
+  "confidence": {
+   "load": "Low",
+   "generation_adds": "High",
+   "transmission": "Medium"
+  },
+  "sources": [
+   {
+    "claim": "IRP docket and 2023 cycle notice",
+    "url": "https://www.psc.ms.gov/sites/default/files/2023-07/EML-2024-IRP-Notice-Initial-Public-Workshop.pdf",
+    "where": "paras 1-4"
+   },
+   {
+    "claim": "AWS Madison County substations, 1,034 MW",
+    "url": "https://cdn.misoenergy.org/20231005%20STSTF%20Item%2002%20Mississippi%20Load%20Addition%20EPR630435.pdf",
+    "where": "slides 3-6"
+   },
+   {
+    "claim": "AWS Madison and Warren County supply agreements",
+    "url": "https://www.sec.gov/Archives/edgar/data/7323/000006598426000222/etr-20260331.htm",
+    "where": "Entergy Q1 2026 10-Q, Entergy Mississippi section"
+   },
+   {
+    "claim": "650 MW solar tied to Amazon",
+    "url": "https://s201.q4cdn.com/714390239/files/doc_financials/2024/ar/2024-Annual-Report.pdf",
+    "where": "letter/overview"
+   },
+   {
+    "claim": "Traceview 754 MW, Ridgeland, 2029",
+    "url": "https://www.entergymississippi.com/generation/traceview",
+    "where": "page body"
+   },
+   {
+    "claim": "Vicksburg 754 MW, Aug 2028",
+    "url": "https://www.entergymississippi.com/generation/vicksburg",
+    "where": "page body"
+   },
+   {
+    "claim": "Delta Blues 754 MW, Greenville",
+    "url": "https://www.entergy.com/news/entergy-mississippi-breaks-ground-on-delta-blues-advanced-power-station",
+    "where": "news release Nov 2024"
+   },
+   {
+    "claim": "In-service dates and Superpower Mississippi",
+    "url": "https://www.entergy.com/blog/were-investing-now-to-power-mississippis-energy-future",
+    "where": "blog May 2026"
+   },
+   {
+    "claim": "Amazon expansion (Madison $11B, Clinton $1B), solar counties",
+    "url": "https://www.entergy.com/blog/amazon-expands-and-entergy-mississippi-stands-ready-to-deliver-benefits-for-all-our-customers",
+    "where": "blog Apr 2026"
+   },
+   {
+    "claim": "2026 renewables and storage RFP",
+    "url": "https://rfp.entergy.com/ENTRFP/SEND/2026EMLRenewablesandStorageRFP/Documents/Main%20Body.pdf",
+    "where": "Section 1"
+   },
+   {
+    "claim": "SECONDARY: 1-1.3 GW MISO load growth, Green Acres, Aug 2026 workshop",
+    "url": "https://measuredai.substack.com/p/amazon-mississippi-data-centers",
+    "where": "sections V-VI"
+   }
+  ],
+  "gaps": "Could not find any Entergy Mississippi IRP report, so there is no published load forecast, preferred portfolio or horizon. The MPSC docket portal (ctsportal.psc.ms.gov) returned 503 / TLS errors. The 1,034 MW data-center figure is substation design load from MISO, not a forecast. Retirement MW for Andrus is not found. AWS Warren and Clinton load and AVAIO's Mississippi load are not published.",
+  "priority_market": true
+ },
+ {
+  "id": "entergy-louisiana",
+  "utility": "Entergy Louisiana",
+  "type": "IOU",
+  "states": [
+   "LA"
+  ],
+  "rto": "MISO",
+  "irp": {
+   "title": "Entergy Louisiana 2027 IRP, in progress (Data Filing Jan 21, 2026; Supplemental Data Filing Apr 24, 2026). The last final IRP report is the 2023 IRP, submitted May 22, 2023.",
+   "filed": "2026-04-24",
+   "regulator": "Louisiana PSC",
+   "docket": "I-37764 (the Apr 2026 supplemental cover reads U-37764)",
+   "url": "https://www.entergylouisiana.com/wp-content/uploads/2027-ELL-IRP-Data-Assumptions-Supplemental_2026_04_24_PUBLIC.pdf",
+   "horizon": "2026-2045 (20-year)",
+   "next_due": "Final 2027 IRP report: May 21, 2027 per the data filings. ELL's IRP web page lists a draft Apr 17, 2027 and a final Nov 17, 2027, so the schedule is inconsistent.",
+   "status": "in progress"
+  },
+  "load": {
+   "base_year": 2026,
+   "base_peak_mw": 10432,
+   "end_year": 2035,
+   "end_peak_mw": 18484,
+   "peak_growth_pct_per_year": 6.6,
+   "energy_growth_note": "These are Reference-future MISO summer coincident peaks; CAGR 2026-2035 is computed. Low (BP26): 15,511 MW in 2035 (4.5%/yr). High: 20,484 MW in 2035. Reference energy rises from 64,333 GWh (2026) to 126,797 GWh (2035), about 7.8%/yr, nearly doubling. Most of the step-up is 2027-2031 (11,221 to 17,725 MW). The Jan 2026 filing showed BP26 at 9,872 MW (2026), 13,915 MW (2030) and 14,740 MW (2035), lower than the Apr 'Low' case. The supplement says it 'clarified what load is included'. Summer capacity surplus/deficit: deficit of 427 MW in 2028, 1,393 MW in 2035 and 8,402 MW in 2045 (BP26).",
+   "data_center_mw": null,
+   "large_load_notes": "Meta has two data centers in Richland Parish (north LA). (1) Laidley LLC ('Hyperion'): approved in Order U-37425 with three 754 MW CCCTs and the Mt. Olive-Sarepta 500 kV line. Entergy says this load was NOT in the 2023 IRP. (2) Evest LLC: an adjacent second campus with an ESA signed Mar 2026. ELL filed Mar 25-26, 2026 under the LPSC 'Lightning' directive for 5,278 MW of new CCCTs plus batteries and 500 kV transmission. The Evest peak load is redacted in the filings. Trade press (ENR) says Meta's Richland campus could scale to 5 GW. The IRP 'High' future adds about 1.5-2 GW above Reference from 2032."
+  },
+  "generation_adds": [
+   {
+    "type": "gas CC",
+    "mw": 2262,
+    "years": "~2028",
+    "note": "Approved for Meta Laidley: Franklin Farms CCCT 1 and 2 (Richland Parish) plus Waterford 5 (St. Charles Parish), 3 x 754 MW. MISO ERAS lists an 8/4/2028 in-service date for the Smalling (Richland) and Waterford entries."
+   },
+   {
+    "type": "gas CC",
+    "mw": 5278,
+    "years": "not confirmed (LPSC decision targeted Dec 2026)",
+    "note": "Pending for Meta Evest: seven 1x1 CCCTs, about $12.9B. Richland Parish Units 1-4 near the customer site and Pointe Coupee Units 1-3 near Big Cajun. CCS-enabled."
+   },
+   {
+    "type": "gas CC",
+    "mw": 1508,
+    "years": "2030",
+    "note": "Pending: Waterford 6 (754 MW, Killona, St. Charles Parish, Jul 2030) and Westlake Power Station (754 MW, Roy S. Nelson site, Westlake, Calcasieu Parish, Oct 2030). LPSC decision requested by Dec 2026."
+   },
+   {
+    "type": "solar",
+    "mw": 200,
+    "years": "2028",
+    "note": "Cypress Harvest Solar (Iberville Parish), targeted 2028. Other planned solar in the IRP resource-need chart includes Sterlington, Mondu, Segno (self-build), Votaw (BOT), Bogalusa and a 2028 solar PPA; MW for these are not stated in the IRP filing."
+   },
+   {
+    "type": "battery",
+    "mw": null,
+    "years": "2028-2029",
+    "note": "'2028 ELL Battery' and '2029 ELL Battery' appear in the resource-need chart. The Evest filing adds 3 BESS, two co-located at Cypress Harvest (Iberville) and Bogalusa West Solar (Washington Parish). MW not found."
+   },
+   {
+    "type": "other",
+    "mw": null,
+    "years": "not stated",
+    "note": "Nelson 6 gas conversion (coal to gas) and a market transaction (Cottonwood, an existing plant ELL may buy) are both listed in the 2027 IRP resource-need chart."
+   }
+  ],
+  "retirements": [
+   {
+    "plant": "Big Cajun 2 Unit 3 (ELL share)",
+    "type": "coal",
+    "mw": 135,
+    "year": 2028
+   },
+   {
+    "plant": "Waterford 2",
+    "type": "gas",
+    "mw": 410,
+    "year": 2028
+   },
+   {
+    "plant": "Roy S. Nelson 6 (ELL share)",
+    "type": "coal",
+    "mw": 208,
+    "year": 2028,
+    "note": "Listed as a BP26 deactivation, but the same filing also shows an 'NL 6 Gas Conversion'."
+   },
+   {
+    "plant": "Little Gypsy 2 and 3",
+    "type": "gas",
+    "mw": 881,
+    "year": 2030
+   },
+   {
+    "plant": "White Bluff 1-2 (ELL share)",
+    "type": "coal",
+    "mw": 19,
+    "year": 2028
+   },
+   {
+    "plant": "Independence 1-2 (ELL share)",
+    "type": "coal",
+    "mw": 7,
+    "year": 2030
+   },
+   {
+    "plant": "Vidalia hydro PPA expiry",
+    "type": "other",
+    "mw": 125,
+    "year": 2031
+   }
+  ],
+  "transmission": [
+   {
+    "name": "Mt. Olive - Sarepta 500 kV line",
+    "kv": "500",
+    "description": "Approved in Docket U-37425. Described as an essential building block for the Meta Richland Parish data center.",
+    "where": "North Louisiana",
+    "year": "under construction"
+   },
+   {
+    "name": "Smalling 500/230 kV substation",
+    "kv": "500",
+    "description": "New substation adjacent to the Baxter Wilson-Perryville 500 kV line, stepping down to serve Meta Laidley",
+    "where": "Richland Parish",
+    "year": "~2028"
+   },
+   {
+    "name": "West Fork Creek - St. Landry 500 kV line",
+    "kv": "500",
+    "description": "New line in the Evest application, est. $1.4B (pending). ENR (trade press) reports about 240 miles of 500 kV in total in the Evest package.",
+    "where": "Richland Parish to St. Landry Parish",
+    "year": "pending (LPSC vote targeted Dec 2026)"
+   },
+   {
+    "name": "Babel - Webre 500 kV line + Webre switching station rebuild",
+    "kv": "500",
+    "description": "New 147-mile line; CPCN application filed Dec 2025. Coordinated with a ~4-mile 500 kV line in Texas by Entergy Texas.",
+    "where": "Southwest Louisiana (Webre) toward Texas",
+    "year": "pending"
+   },
+   {
+    "name": "West Fork Creek 230 kV and Nelson 230 kV substations (new)",
+    "kv": "230",
+    "description": "Points of interconnection for new CCCTs in the MISO ERAS queue (2 x 1,531 MW at West Fork Creek; 768-770 MW at Nelson)",
+    "where": "Richland Parish; Calcasieu Parish",
+    "year": "ERAS requested ISD 2028"
+   }
+  ],
+  "places_named": [
+   "Richland Parish",
+   "Pointe Coupee Parish (Big Cajun)",
+   "St. Charles Parish (Waterford, Killona)",
+   "Calcasieu Parish (Westlake / Roy S. Nelson)",
+   "St. Landry Parish",
+   "Iberville Parish (Cypress Harvest Solar)",
+   "Washington Parish (Bogalusa)",
+   "Monroe MSA (Morehouse, Ouachita, Richland, Union)"
+  ],
+  "rfp_or_procurement": "3 GW Alternative MBM Solar RFP: issued Jul 22, 2025, up to 3,000 MWac of solar with optional BESS; Window 4 final results announced Jun 1, 2026, with selections pending definitive agreements. 2024 CCCT RFP targeted up to 2,000 MW. The LPSC 'Lightning' directive (Dec 17, 2025) fast-tracks large-load generation certifications, with a vote targeted within about 8 months. Waterford 6 and Westlake hearings are Oct-Nov 2026.",
+  "headline": "In the 2027 IRP data filing, Entergy Louisiana's reference peak nearly doubles from about 10.4 GW (2026) to 18.5 GW (2035). Meta's Richland Parish campuses drive most of it. About 9 GW of new gas CCs are approved or pending, along with several new 500 kV lines.",
+  "confidence": {
+   "load": "High",
+   "generation_adds": "High",
+   "transmission": "Medium"
+  },
+  "sources": [
+   {
+    "claim": "Peak and energy forecasts by future (Apr 2026)",
+    "url": "https://www.entergylouisiana.com/wp-content/uploads/2027-ELL-IRP-Data-Assumptions-Supplemental_2026_04_24_PUBLIC.pdf",
+    "where": "slides 8-10"
+   },
+   {
+    "claim": "BP26 peak forecast, deficits, deactivations, owned capacity (Jan 2026)",
+    "url": "https://www.entergylouisiana.com/wp-content/uploads/Entergy-Louisiana-2027-IRP-Data-Assumptions.pdf",
+    "where": "slides 7-10, timeline slide"
+   },
+   {
+    "claim": "2027 IRP schedule (web)",
+    "url": "https://www.entergylouisiana.com/irp/2027-irp",
+    "where": "Proposed Schedule of Events"
+   },
+   {
+    "claim": "2023 IRP final report",
+    "url": "https://www.entergylouisiana.com/wp-content/uploads/Combined-Final-Report-05-22-23.pdf",
+    "where": "cover"
+   },
+   {
+    "claim": "Meta load not in 2023 IRP",
+    "url": "https://www.entergy.com/news/statement-from-phillip-may-president-and-ceo-entergy-louisiana",
+    "where": "statement Jun 2026"
+   },
+   {
+    "claim": "Evest 5,278 MW, $12.9B, West Fork Creek-St. Landry 500 kV, Babel-Webre, Waterford 6/Westlake",
+    "url": "https://www.sec.gov/Archives/edgar/data/7323/000006598426000222/etr-20260331.htm",
+    "where": "Entergy Q1 2026 10-Q, Entergy Louisiana sections"
+   },
+   {
+    "claim": "Evest application filed Mar 2026 under Lightning Directive",
+    "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=vuPR4bwXjsw%3D",
+    "where": "LPSC staff document"
+   },
+   {
+    "claim": "Laidley 3 x 754 MW CCCT, Smalling substation",
+    "url": "https://s201.q4cdn.com/714390239/files/doc_downloads/2024/10/E-LA-application.pdf",
+    "where": "Application (Oct 2024)"
+   },
+   {
+    "claim": "Mt. Olive-Sarepta 500 kV",
+    "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=uaIcSKt%2BC%2Fg%3D",
+    "where": "Ladner testimony Q13 (Feb 2026)"
+   },
+   {
+    "claim": "MISO ERAS entries (Smalling, West Fork Creek, Nelson, Big Cajun, Waterford)",
+    "url": "https://cdn.misoenergy.org/ERAS%20Interconnection%20Requests718481.pdf",
+    "where": "ELL rows"
+   },
+   {
+    "claim": "3 GW Solar RFP",
+    "url": "https://rfp.entergy.com/ENTRFP/SEND/ELL3GWSolarRFP/Index.htm",
+    "where": "notices"
+   },
+   {
+    "claim": "2024 CCCT RFP up to 2,000 MW",
+    "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=hsljNiQroZw%3D",
+    "where": "testimony excerpt"
+   },
+   {
+    "claim": "SECONDARY: Meta campus could scale to 5 GW; ~240 mi of 500 kV",
+    "url": "https://www.enr.com/articles/62766-27b-meta-data-center-pushes-louisiana-toward-massive-power-expansion",
+    "where": "article Apr 2026"
+   }
+  ],
+  "gaps": "The final 2027 IRP and its preferred portfolio are not published yet. The load numbers are data-filing scenarios. Meta Laidley and Evest peak loads are redacted. The Jan and Apr 2026 forecasts for the 'Low/BP26' case disagree by about 560-600 MW. MW for the planned batteries and most planned solar are not stated. New-plant and line in-service years for Evest are not confirmed. Transmission came from certification filings, not the IRP.",
+  "priority_market": true
+ },
+ {
+  "id": "entergy-arkansas",
+  "utility": "Entergy Arkansas",
+  "type": "IOU",
+  "states": [
+   "AR"
+  ],
+  "rto": "MISO",
+  "irp": {
+   "title": "Entergy Arkansas, LLC 2024 Integrated Resource Plan (plus 2024 IRP Mid-Cycle Update filed Jun 17, 2026)",
+   "filed": "2024-10-30",
+   "regulator": "Arkansas PSC",
+   "docket": "07-016-U",
+   "url": "http://entergyarkansas.com/wp-content/uploads/2024/11/EAL-IRP-2024.pdf",
+   "horizon": "2026-2045",
+   "next_due": "2027 IRP (per Mid-Cycle Update)",
+   "status": "filed"
+  },
+  "load": {
+   "base_year": null,
+   "base_peak_mw": null,
+   "end_year": null,
+   "end_peak_mw": null,
+   "peak_growth_pct_per_year": null,
+   "energy_growth_note": "The IRP shows peak forecasts only as charts (Charts 12-13), with no tables, so no peak numbers are recorded here. Growth is attributed to large new industrial loads, chemical and crypto-mining customers. By 2026, industrial is forecast at 49% of energy sales, more than 10 points above the 2023 mix. The 2024 stakeholder slides tabulate seasonal capacity balance: summer deficit 802 MW in 2028, 1,049 MW in 2035, 4,099 MW in 2045; winter deficit 1,147 MW in 2028, 4,670 MW in 2045. The IRP text says the need could exceed 8,300 MW by 2045 in the high-load future. The Jun 2026 Mid-Cycle says load is tracking the IRP's Future 2 (reference) forecast.",
+   "data_center_mw": null,
+   "large_load_notes": "Mid-Cycle (Jun 2026): EAL signed agreements with Avaio, Google and others for about 1 GW of new supply in the past 12 months. That figure is not data centers only. Google: $4B data center in West Memphis (Crittenden County) on 1,000+ acres; Google funds the 600 MW solar + 350 MW BESS Arkansas Cypress project in Jefferson County. Google's MW is not disclosed. AVAIO Digital 'Leo' campus in Pulaski County near Wrightsville/Little Rock: 150 MW contracted from about Jun 30, 2027, potentially up to 1 GW, needing two new 115 kV lines."
+  },
+  "generation_adds": [
+   {
+    "type": "gas CT",
+    "mw": 446,
+    "years": "2028",
+    "note": "Ironwood CT replaces Lake Catherine 4 at its site and reuses its interconnection rights. Approved (Docket 24-072-U); COD Q4 2028."
+   },
+   {
+    "type": "gas CC",
+    "mw": 754,
+    "years": "2029",
+    "note": "Jefferson Power Station 1x1 CCCT, Jefferson County. Approved (Docket 25-047-U), $1,602M; COD Q4 2029."
+   },
+   {
+    "type": "solar",
+    "mw": 600,
+    "years": "2028-2030",
+    "note": "Arkansas Cypress Solar, Jefferson County, paired with a 350 MW BESS. Approved (Docket 25-054-U) and tied to the Google contract. Ahead of the 2030 IRP date; Entergy lists 2028 as targeted."
+   },
+   {
+    "type": "battery",
+    "mw": 350,
+    "years": "2028-2030",
+    "note": "Arkansas Cypress BESS (see above)."
+   },
+   {
+    "type": "solar",
+    "mw": 440,
+    "years": "2028-2029",
+    "note": "Big Island Solar PPA, Mississippi County (Docket 26-003-U, filed Jan 2026). Entergy lists 2028 as targeted."
+   },
+   {
+    "type": "gas CC",
+    "mw": null,
+    "years": "2031",
+    "note": "Project selected in Q1 2026 from the 2025 CCCT RFP, COD 2031. MW not disclosed."
+   },
+   {
+    "type": "gas CT",
+    "mw": 2995,
+    "years": "2030-2045",
+    "note": "Preferred Portfolio P2A CC (2024 IRP Table 28; column alignment parsed from PDF text). Thermal total is about 5.1 GW: ~1,963 MW CCCT (a 733 MW 1x1 in 2030 and a 1,230 MW 2x1 later) plus ~2,995 MW CT (multiple 428 MW units)."
+   },
+   {
+    "type": "solar",
+    "mw": 1400,
+    "years": "2030-2045",
+    "note": "Preferred Portfolio P2A CC renewables: ~1,400 MW solar plus ~600 MW onshore wind, about 2 GW renewable per IRP text."
+   }
+  ],
+  "retirements": [
+   {
+    "plant": "White Bluff 1-2 (near Redfield)",
+    "type": "coal",
+    "mw": 1659,
+    "year": 2030,
+    "note": "1,659 MW is the full station rating; EAL owns a share. EAL plans to cease coal by end of 2030 and is evaluating a coal-to-gas conversion. ELL's BP26 assumes White Bluff deactivation in 2028."
+   },
+   {
+    "plant": "Independence 1-2 (near Newark)",
+    "type": "coal",
+    "mw": null,
+    "year": 2030,
+    "note": "Coal operations end by 2030. EAL's combined White Bluff + Independence coal share is 1,026 MW per IRP."
+   },
+   {
+    "plant": "Lake Catherine 4",
+    "type": "gas",
+    "mw": null,
+    "year": 2027,
+    "note": "Committed to deactivate by Dec 31, 2027; replaced by Ironwood CT."
+   }
+  ],
+  "transmission": [
+   {
+    "name": "Galet 500/230 kV new substation",
+    "kv": "500",
+    "description": "Customer-driven (MTEP24 Target Appendix A)",
+    "where": "not stated",
+    "year": "2026-09"
+   },
+   {
+    "name": "Wheatley 500 kV new POI (J1710, J1819-J1821)",
+    "kv": "500",
+    "description": "Generator interconnection switching station",
+    "where": "not stated in IRP",
+    "year": "2026-09"
+   },
+   {
+    "name": "West Memphis 500/161 kV autotransformer replacement",
+    "kv": "500",
+    "description": "Generator-interconnection driven",
+    "where": "West Memphis",
+    "year": "2026-12"
+   },
+   {
+    "name": "Wrightsville 115 kV: two new 115 kV lines",
+    "kv": "115",
+    "description": "Customer-driven (MTEP25). Press coverage ties two new 115 kV lines to the AVAIO data center near Wrightsville.",
+    "where": "Pulaski County",
+    "year": "2027-02"
+   },
+   {
+    "name": "Driver - Hybar 230 kV new line",
+    "kv": "230",
+    "description": "Customer-driven (MTEP23)",
+    "where": "not stated in IRP",
+    "year": "2025-05"
+   },
+   {
+    "name": "Keo 500 kV bus reconfiguration",
+    "kv": "500",
+    "description": "Baseline reliability",
+    "where": "not stated",
+    "year": "2027-12"
+   },
+   {
+    "name": "Everton Road - Harrison East / Saint Joe - Everton Road 161 kV rebuilds",
+    "kv": "161",
+    "description": "Baseline reliability line rebuilds (MTEP25)",
+    "where": "north Arkansas (Harrison area)",
+    "year": "2028-2029"
+   }
+  ],
+  "places_named": [
+   "West Memphis (Crittenden County)",
+   "Jefferson County (Pine Bluff area)",
+   "Pulaski County (Wrightsville / Little Rock)",
+   "Mississippi County (Big Island Solar; Osceola, Blytheville)",
+   "Redfield (White Bluff)",
+   "Newark (Independence)",
+   "Brinkley (Flat Fork Solar)"
+  ],
+  "rfp_or_procurement": "2025 EAL CCCT RFP: selection made Q1 2026, COD 2031. 2025 EAL Renewables and Storage RFP concluded Nov 2025, with selected proposals being advanced. 2022 Renewable RFP (up to 1,000 MW solar/wind) is still yielding contracts, e.g. Big Island. Also the 2024 Existing Resource and Energy Capacity RFP. EAL is monitoring a seasonal capacity deficit for 2027-2029 and may buy short-term capacity.",
+  "headline": "Entergy Arkansas expects capacity shortfalls from 2027-28 that grow to about 4-4.7 GW by 2045. The preferred plan adds about 5 GW of gas plus 2 GW of renewables (2030-2045), on top of ~2.6 GW of approved or pending gas/solar/storage driven by Google (West Memphis), AVAIO (Little Rock) and industrial growth.",
+  "confidence": {
+   "load": "Low",
+   "generation_adds": "High",
+   "transmission": "Medium"
+  },
+  "sources": [
+   {
+    "claim": "2024 IRP report, preferred portfolio, MTEP projects, coal exit by 2030",
+    "url": "http://entergyarkansas.com/wp-content/uploads/2024/11/EAL-IRP-2024.pdf",
+    "where": "Ch.1 exec summary pp.7-8; Ch.3 p.28; Ch.6 Table 28 p.88; Appendix C"
+   },
+   {
+    "claim": "Mid-Cycle Update: approved resources, ~1 GW new agreements, White Bluff conversion study",
+    "url": "https://apps.apsc.arkansas.gov/pdf/07/07-016-U_129_1.pdf",
+    "where": "pp.2-6"
+   },
+   {
+    "claim": "Capacity surplus/deficit tables 2026-2045",
+    "url": "https://www.entergyarkansas.com/wp-content/uploads/2024/11/IRP-Stakeholder-Kickoff-Meeting1-Slides.pdf",
+    "where": "slides 7-8"
+   },
+   {
+    "claim": "Jefferson Power Station cost",
+    "url": "https://www.sec.gov/Archives/edgar/data/7323/000006598426000222/etr-20260331.htm",
+    "where": "Entergy Q1 2026 10-Q"
+   },
+   {
+    "claim": "Project locations and target years",
+    "url": "https://www.entergy.com/wp-content/uploads/15/Entergy-renewable-portfolio.pdf",
+    "where": "table"
+   },
+   {
+    "claim": "Google West Memphis + Cypress solar",
+    "url": "https://www.entergy.com/news/entergy-arkansas-powers-googles-4b-investment-in-the-state",
+    "where": "news release Oct 2025"
+   },
+   {
+    "claim": "AVAIO 150 MW to 1 GW, Pulaski County",
+    "url": "http://avaiodigital.com/updates/avaio-digital-announces-new-large-scale-ai-ready-data-center-and-power-campus-in-little-rock-arkansas",
+    "where": "press release Jan 2026"
+   },
+   {
+    "claim": "SECONDARY: AVAIO service ~Jun 30, 2027, two 115 kV lines",
+    "url": "https://www.arkansasonline.com/news/2026/sep/09/entergy-re-submits-avaio-power-agreement-to",
+    "where": "article Sep 2026"
+   },
+   {
+    "claim": "RFP list",
+    "url": "https://www.entergyarkansas.com/rfp",
+    "where": "page"
+   }
+  ],
+  "gaps": "Peak load forecast values are published only as charts, so no base or end peak or growth rate is recorded. Google's MW is not public. MW is not stated for the 2031 CCCT RFP winner, the Lake Catherine 4 unit or EAL's share of each coal plant. The preferred portfolio's year-by-year schedule was read from a chart whose labels did not parse cleanly. Locations of the Galet and Wheatley substations are not stated in the IRP.",
+  "priority_market": true
+ },
+ {
+  "id": "evergy",
+  "utility": "Evergy (Kansas Central, Kansas Metro/Missouri Metro, Missouri West)",
+  "type": "IOU",
+  "states": [
+   "KS",
+   "MO"
+  ],
+  "rto": "SPP",
+  "irp": {
+   "title": "Evergy 2026 IRP Annual Updates: Missouri Metro and Missouri West filed May 7, 2026; Kansas (Central + Metro) update filed Jun 24, 2026. Missouri West filed a Notice of Revised Resource Plan on Aug 31, 2026. All follow the 2024 Triennial IRP.",
+   "filed": "2026-05-07",
+   "regulator": "Missouri PSC; Kansas Corporation Commission",
+   "docket": "MO: EO-2026-0188 (Metro), EO-2026-0189 (Missouri West); KS: 24-EKCE-387-CPL",
+   "url": "https://efis.psc.mo.gov/Document/Display/876130",
+   "horizon": "2026-2045",
+   "next_due": "Next triennial IRP expected 2027 (estimate: 3-year cycle after the 2024 triennial; date not confirmed)",
+   "status": "filed"
+  },
+  "load": {
+   "base_year": 2026,
+   "base_peak_mw": null,
+   "end_year": 2032,
+   "end_peak_mw": null,
+   "peak_growth_pct_per_year": null,
+   "energy_growth_note": "No system-wide peak forecast was found, so per-jurisdiction figures are given. Missouri Metro summer peak: ~3.7 GW (2026) to 4.6 GW (2032) to 5.4 GW (2045), about 3.7%/yr to 2032 (computed). Missouri West summer peak: ~2.2 GW (2026) to 2.9 GW (2032), about 4.7%/yr (computed). The Aug 31, 2026 revised plan raises the MO West load forecast further. Kansas Central peak forecast was not found. Evergy-wide weather-normalized retail demand (energy) CAGR is ~7-8% for 2025-2030 (KS Central ~7-8%, Metro ~6-7%, MO West ~10-11%). Large-load ramp: ~350-400 MW (2026), ~1,250-1,350 MW (2028), ~2,050-2,250 MW (2030), ~3,000 MW at peak.",
+   "data_center_mw": 2500,
+   "large_load_notes": "ESAs under the Large Load Power Service tariff total ~2.5 GW steady-state peak, or ~3.0 GW including non-LLPS customers such as Panasonic. Customers: Digital Realty (Kansas Central, signed May 2026), Beale Infrastructure (Kansas Central), Google (Missouri West), Google (Missouri Metro), Meta (Missouri West). Site locations are not stated in the sources reviewed. Pipeline: Tier 1 expansions ~2.0-2.5 GW; Tier 2 ~1-2 GW; Tier 3 >10 GW, mostly after 2030. Missouri West's 2026 IRP lists 4 more data-center prospects not in the base forecast, requesting 1,125 MW (2028) rising to 1,750 MW (2030+). Missouri Metro's base forecast holds ~900 MW of large load, ~90% of it in Metro's Missouri territory. MO West's holds ~800 MW from 5 customers."
+  },
+  "generation_adds": [
+   {
+    "type": "gas CC",
+    "mw": 1420,
+    "years": "2029-2030",
+    "note": "Viola (710 MW, Sumner County KS near Conway Springs, 2029) and McNew (710 MW, Reno County KS, 2030). Each is split 50/50 between Kansas Central and Missouri West. Both are in SPP's ERAS queue."
+   },
+   {
+    "type": "gas CT",
+    "mw": 910,
+    "years": "2031",
+    "note": "Kansas Central CT capacity in the 2026 IRP. Site not stated."
+   },
+   {
+    "type": "gas CT",
+    "mw": 880,
+    "years": "2030-2031",
+    "note": "Mullin Creek #1 (440 MW SCGT, Missouri West, 2030) and Mullin Creek #2 (440 MW SCGT, Metro, 2031), both in Nodaway County MO. Mullin Creek #2 CCN case is EA-2026-0154."
+   },
+   {
+    "type": "gas CC",
+    "mw": 710,
+    "years": "2032",
+    "note": "One CCGT shared 355/355 by Metro and Missouri West. MO West's plan adds another 355 MW half-CCGT in 2036 and one in 2040. Aug 2026 MO West revised plan and CCN EA-2026-0343 cover a 710 MW CC plus 109 MW battery; Staff says Evergy proposes two CCs in EMW territory."
+   },
+   {
+    "type": "solar",
+    "mw": 774,
+    "years": "2027-2029",
+    "note": "Kansas Central 459 MW (2028-2029), Metro 150 MW (2028), Missouri West 165 MW (2027)."
+   },
+   {
+    "type": "battery",
+    "mw": 450,
+    "years": "2029-2030",
+    "note": "Kansas Central 300 MW and Metro 150 MW. The Metro 'Foxtrot BESS' project is referenced in MO PSC filings."
+   }
+  ],
+  "retirements": [
+   {
+    "plant": "Jeffrey Energy Center 3",
+    "type": "coal",
+    "mw": null,
+    "year": 2036,
+    "note": "Postponed from Mar 2031 to Mar 2036 in the 2026 plan. MO West share is 59 MW accredited."
+   },
+   {
+    "plant": "Lake Road 4/6",
+    "type": "gas",
+    "mw": 89,
+    "year": 2038,
+    "note": "Accredited MW. Postponed from 2030 to Mar 2038."
+   },
+   {
+    "plant": "Jeffrey Energy Center 2 (coal-to-gas conversion)",
+    "type": "coal",
+    "mw": null,
+    "year": 2036,
+    "note": "Conversion postponed from 2030. The MO West document says 2035 in one place and 2036 in another."
+   },
+   {
+    "plant": "Iatan 1 and Jeffrey 1",
+    "type": "coal",
+    "mw": null,
+    "year": null,
+    "note": "Retirement pushed from Mar 2040 to beyond 2045 (outside the horizon)."
+   }
+  ],
+  "transmission": [
+   {
+    "name": "No specific projects listed in IRP",
+    "kv": null,
+    "description": "The IRP defers to SPP's Integrated Transmission Planning / STEP project lists. The MO West IRP says customer ramps depend heavily on transmission network upgrades and interconnection timing.",
+    "where": "Evergy footprint",
+    "year": null
+   },
+   {
+    "name": "Possible additional 345 kV outlet at Wolf Creek site",
+    "kv": "345",
+    "description": "Noted as a consideration if new generation is built at the existing Wolf Creek station (Coffey County cooling lake)",
+    "where": "Coffey County, KS",
+    "year": "not planned; evaluation only"
+   }
+  ],
+  "places_named": [
+   "Sumner County, KS (Viola, near Conway Springs)",
+   "Reno County, KS (McNew)",
+   "Nodaway County, MO (Mullin Creek #1 and #2)",
+   "Coffey County, KS (Wolf Creek)"
+  ],
+  "rfp_or_procurement": "The 2025 all-source RFP results fed solar/wind/storage costs into the 2026 IRP. Open approvals: Kansas predetermination for gas, solar and battery (notice Jul 1, 2026; application expected Q3 2026; docket reference 23-EKCE-775-RTS per Evergy deck); Missouri CCN EA-2026-0343 for gas, solar and battery (notice Jun 1, 2026); Mullin Creek #2 CCN EA-2026-0154 (hearings Oct 2026). Evergy says any load beyond the ~3 GW already signed will need more capacity.",
+  "headline": "About 3 GW of signed large load, mostly data centers (Google, Meta, Digital Realty, Beale), is driving ~7-8%/yr retail demand growth through 2030. Evergy's 2026 IRPs add ~5.1 GW of new resources by 2032 (3.9 GW gas, 774 MW solar, 450 MW batteries) and delay coal retirements.",
+  "confidence": {
+   "load": "Medium",
+   "generation_adds": "High",
+   "transmission": "Low"
+  },
+  "sources": [
+   {
+    "claim": "MO West 2026 IRP: peak 2.2 to 2.9 GW, preferred plan, retirement delays, pipeline Table 46",
+    "url": "https://efis.psc.mo.gov/Document/Display/876130",
+    "where": "Sections 1.3, 3 (p.24), 12.2-12.3 (pp.112-113), 14 (Table 46)"
+   },
+   {
+    "claim": "Metro peak 3.7 to 4.6 to 5.4 GW; ~900 MW large load; Mullin Creek #2 440 MW",
+    "url": "https://efis.psc.mo.gov/Document/Display/876576",
+    "where": "Mullin Creek #2 CCN testimony (May 2026)"
+   },
+   {
+    "claim": "2026 IRP resource additions by opco (5,144 MW), ESAs, large-load ramp, filing dates",
+    "url": "https://investors.evergy.com/static-files/73352465-a5e0-4dbf-ac4b-98692902443f",
+    "where": "Q2 2026 earnings deck slides 6-9, 14, 19"
+   },
+   {
+    "claim": "MO West revised plan Aug 31, 2026 (710 MW CC + 109 MW battery)",
+    "url": "https://www.efis.psc.mo.gov/Document/Display/892685",
+    "where": "Staff memo Oct 5, 2026"
+   },
+   {
+    "claim": "Viola (Sumner Co.), McNew (Reno Co.), Mullin Creek #1 (Nodaway Co.)",
+    "url": "https://efis.psc.mo.gov/Document/Display/834694",
+    "where": "CCN testimony Nov 2024"
+   },
+   {
+    "claim": "2024 triennial: 2024-2043 horizon, large loads >100 MW in forecast (Panasonic, Google)",
+    "url": "https://estar.kcc.ks.gov/estar/ViewFile.aspx/S202405171645034245.pdf?Id=4d0e9668-f7f7-42ce-9fd8-2c35b910595a",
+    "where": "Volume 6, pp.4, 13"
+   }
+  ],
+  "gaps": "No Kansas Central peak forecast and no system-wide peak table (the KCC filing was not retrieved), so base and end peak are null. Data center sites (city/county) for the Google, Meta, Digital Realty and Beale ESAs are not stated in the sources reviewed. Kansas Central's 910 MW CT site is not stated. No transmission projects are itemized in the IRP; SPP 345/765 kV plans were not researched. The details of the Aug 2026 MO West revised plan are known only through the Staff memo.",
+  "priority_market": true
+ },
+ {
+  "id": "oge",
+  "utility": "OG&E (Oklahoma Gas & Electric)",
+  "type": "IOU",
+  "states": [
+   "OK",
+   "AR"
+  ],
+  "rto": "SPP",
+  "irp": {
+   "title": "OG&E 2026 Integrated Resource Plan (annual; draft Feb 2026; OK technical conference Mar 12, 2026; final posted ~Jul 2026)",
+   "filed": "2026-07",
+   "regulator": "Oklahoma Corporation Commission (OAC 165:35-37); also submitted under Arkansas PSC Resource Planning Guidelines",
+   "docket": null,
+   "url": "https://www.oge.com/documents/d/portal/oge-2026-irp-final",
+   "horizon": "2027-2036 (10-year forecast)",
+   "next_due": "2027 IRP (OG&E has filed annually in 2024, 2025 and 2026; date not confirmed)",
+   "status": "filed"
+  },
+  "load": {
+   "base_year": 2027,
+   "base_peak_mw": 7613,
+   "end_year": 2036,
+   "end_peak_mw": 9185,
+   "peak_growth_pct_per_year": 2.1,
+   "energy_growth_note": "These are gross summer demand forecasts before DSM; CAGR is computed. Net planning demand rises from 7,811 MW (2028) to 8,746 MW (2036). It is 6,513 MW in 2027 only because 925 MW of load-reduction programs still count as load modifiers that year. Energy grows from 42,404 GWh (2027) to 55,249 GWh (2036), about 3.0%/yr. The commercial class, which includes data centers, jumps from 18,208 GWh (2027) to 27,448 GWh (2035), about +51%. Winter peak forecast: 6,741 to 7,951 MW. Summer capacity need: 976 MW (2028), 1,613 MW (2031), 3,506 MW (2036). Winter need is larger: 1,187 MW (2028/29), 1,922 MW (2031/32), 3,670 MW (2036/37). OG&E set a new all-time peak above 6,800 MW in summer 2026 (secondary: earnings-call summary).",
+   "data_center_mw": null,
+   "large_load_notes": "Some individual requests are for hundreds or even thousands of MW; historically most were 50 MW or less. Requests come from manufacturing, refining, federal facilities, data centers and crypto. Only contract-signed large loads are generally included in the forecast. The share of new load from customers of 50 MW or more is confidential. Google: OG&E will serve three new Google data centers in Muskogee and Stillwater. Electric Service Agreements and Capacity Purchase Agreements were announced Apr 30, 2026 and filed at the OCC; MW was not disclosed. OG&E has filed a new large-load tariff."
+  },
+  "generation_adds": [
+   {
+    "type": "gas CT",
+    "mw": 448,
+    "years": "2026-2027",
+    "note": "Horseshoe Lake 11 and 12 (2 x GE 7FA.05, ~224 MW each), from the 2022 Flexible Resource RFP. OCC Order 738566 (PUD2023-000038). In service late 2026."
+   },
+   {
+    "type": "gas CT",
+    "mw": 448,
+    "years": "2029",
+    "note": "Horseshoe Lake 13 and 14 from the 2024 All Source RFP, approved in OCC Order 753440 (PUD2025-000038). The IRP calls them 'virtually identical' to Units 11-12, so 448 MW is an estimate based on that."
+   },
+   {
+    "type": "gas CT",
+    "mw": 84,
+    "years": "2026",
+    "note": "Tinker 1 and 2 (2 x GE LM6000, ~42 MW each) at Tinker AFB, Oklahoma City. In service Mar 2026, replacing Mustang 5A/5B."
+   },
+   {
+    "type": "battery",
+    "mw": null,
+    "years": "not stated",
+    "note": "Frontier Energy Storage Project; pre-approval sought in OCC PUD2025-000084 and Arkansas Docket 25-070-U. MW not stated in IRP. The Black Kettle storage capacity agreement was terminated Feb 3, 2026."
+   },
+   {
+    "type": "other",
+    "mw": 1163,
+    "years": "2027-2030",
+    "note": "Total 'Planned Additions' in the summer capacity table: 491 MW (2027), 759 MW (2028), 1,163 MW (2030+). Also capacity purchases: 600 MW (2027), 300 MW (2028-2030), 450 MW (2031-2033), plus a Kiamichi capacity purchase agreement shown in the technical-conference slides."
+   },
+   {
+    "type": "other",
+    "mw": null,
+    "years": "by Mar 15, 2032",
+    "note": "2026 All Source RFP (any technology, with a stated preference for gas; 200-400 MW cap on standalone storage) and 2026 Bridge Capacity RFP. A secondary source says bid evaluations cover ~1.8 GW."
+   }
+  ],
+  "retirements": [
+   {
+    "plant": "Horseshoe Lake 8",
+    "type": "gas",
+    "mw": 377,
+    "year": 2027
+   },
+   {
+    "plant": "Seminole 1 (Konawa)",
+    "type": "gas",
+    "mw": 500,
+    "year": 2031
+   },
+   {
+    "plant": "Seminole 2 (Konawa)",
+    "type": "gas",
+    "mw": 513,
+    "year": 2033
+   },
+   {
+    "plant": "Seminole 3 (Konawa)",
+    "type": "gas",
+    "mw": 509,
+    "year": 2035
+   },
+   {
+    "plant": "Horseshoe Lake 9 and 10",
+    "type": "gas",
+    "mw": 91,
+    "year": 2035
+   },
+   {
+    "plant": "Centennial Wind (nameplate)",
+    "type": "other",
+    "mw": 120,
+    "year": 2031
+   },
+   {
+    "plant": "OU Spirit Wind (nameplate)",
+    "type": "other",
+    "mw": 101,
+    "year": 2034
+   },
+   {
+    "plant": "Keenan / Taloga / Blackwell wind PPAs expire",
+    "type": "other",
+    "mw": 342,
+    "year": 2030,
+    "note": "Nameplate 152 + 130 + 60 MW. Contracts end 2030, 2031 and 2032."
+   }
+  ],
+  "transmission": [
+   {
+    "name": "Muskogee Area 345 kV new lines and Keefton 345 kV substation",
+    "kv": "345",
+    "description": "SPP ITP 2025 regional reliability (NTC 220965)",
+    "where": "Muskogee area",
+    "year": "not stated (ITP 2025)"
+   },
+   {
+    "name": "Muskogee - Fort Smith 345 kV Circuit 2",
+    "kv": "345",
+    "description": "New line plus substation upgrade; SPP ITP 2024 economic (NTC 220914)",
+    "where": "Muskogee, OK to Fort Smith, AR",
+    "year": "not stated (ITP 2024)"
+   },
+   {
+    "name": "Beckham - Potter 345 kV new line (OG&E substation upgrades)",
+    "kv": "345",
+    "description": "SPP ITP 2024 economic (NTC 220812)",
+    "where": "western Oklahoma toward Texas Panhandle",
+    "year": "not stated (ITP 2024)"
+   },
+   {
+    "name": "Redbud and Matthewson 345 kV terminal upgrades",
+    "kv": "345",
+    "description": "SPP ITP 2023 economic (NTC 220772)",
+    "where": "Oklahoma",
+    "year": "not stated (ITP 2023)"
+   },
+   {
+    "name": "Horseshoe Lake - Midway 138 kV new line; Horseshoe Lake reconfiguration; Horseshoe Lake-Dunjee-Reno 138 kV reconductor",
+    "kv": "138",
+    "description": "SPP ITP 2025 regional reliability",
+    "where": "Oklahoma City area",
+    "year": "not stated (ITP 2025)"
+   },
+   {
+    "name": "Lone Oak - Chisholm Creek 138 kV new line",
+    "kv": "138",
+    "description": "SPP ITP 2025 regional reliability",
+    "where": "Oklahoma",
+    "year": "not stated (ITP 2025)"
+   },
+   {
+    "name": "Anadarko - Gracemont 138 kV Circuits 2 and 3",
+    "kv": "138",
+    "description": "New lines; SPP ITP 2023 economic",
+    "where": "Anadarko/Gracemont, OK",
+    "year": "not stated (ITP 2023)"
+   },
+   {
+    "name": "NE 10th - Reno and Trosper - Reno 138 kV rebuilds",
+    "kv": "138",
+    "description": "SPP ITP 2025 regional reliability",
+    "where": "Oklahoma City",
+    "year": "not stated (ITP 2025)"
+   }
+  ],
+  "places_named": [
+   "Oklahoma City (Tinker AFB, Horseshoe Lake)",
+   "Muskogee",
+   "Stillwater",
+   "Konawa (Seminole plant)",
+   "Anadarko / Gracemont",
+   "Fort Smith, AR",
+   "Canton, OK (Crossroads surplus interconnection)",
+   "Fort Gibson (Muskogee plant surplus interconnection)"
+  ],
+  "rfp_or_procurement": "2026 All Source RFP: final issue Feb 26, 2026; bids due May 20, 2026; shortlist expected Sep 3, 2026. Minimum 100 MW accredited per bid; capacity needed by Mar 15, 2032 (earlier preferred); gas preferred; 200-400 MW cap on standalone storage. It offers surplus interconnection at Crossroads (Canton), Muskogee (Fort Gibson) and Mustang (OKC). 2026 Bridge Capacity RFP also active (capacity purchase agreements invited). Earnings-call summary (secondary): ~1.8 GW of bids under evaluation. The 2024 RFPs produced Horseshoe Lake 13-14, Frontier storage and the Kiamichi capacity purchase.",
+  "headline": "OG&E forecasts summer peak rising from 7.6 GW (2027) to 9.2 GW (2036), with commercial and data-center energy up about 50%. Its capacity need grows from ~1 GW in 2028 to ~3.5 GW (summer) / 3.7 GW (winter) by 2036 as old Seminole and Horseshoe Lake gas units retire, and it is running two RFPs for capacity by 2032.",
+  "confidence": {
+   "load": "High",
+   "generation_adds": "Medium",
+   "transmission": "High"
+  },
+  "sources": [
+   {
+    "claim": "Demand, energy, capacity-need tables; retirements; additions; SPP transmission list",
+    "url": "https://www.oge.com/documents/d/portal/oge-2026-irp-final",
+    "where": "Exec summary pp.ii-iii; Sections II.A (p.7), II.B (pp.8-11), II.D (pp.12-13), II.J (p.16), App. A"
+   },
+   {
+    "claim": "Large-load forecast policy, Black Kettle termination, 2026 RFPs",
+    "url": "https://www.oge.com/documents/d/portal/oge-2026-irp-final",
+    "where": "Section I.A (p.1); Appendix B technical conference minutes"
+   },
+   {
+    "claim": "Draft 2026 IRP (Feb 2026)",
+    "url": "https://www.oge.com/documents/d/portal/draft-og-e-2026-integrated-resource-plan",
+    "where": "cover"
+   },
+   {
+    "claim": "2026 All Source RFP terms",
+    "url": "https://www.oge.com/documents/d/portal/draft-og-e-2026-all-source-rfp",
+    "where": "Table 1; Appendix G"
+   },
+   {
+    "claim": "Google data centers in Muskogee and Stillwater",
+    "url": "https://www.oge.com/web/portal/-/200-press-release",
+    "where": "press release Apr 30, 2026"
+   },
+   {
+    "claim": "2024 IRP capacity need (1,096 MW 2028 to 2,592 MW 2034)",
+    "url": "https://ogeenergy.gcs-web.com/static-files/9fefc5d9-5150-4888-b085-bf31c3a68727",
+    "where": "OCC application, Facts A"
+   },
+   {
+    "claim": "SECONDARY: ~1.8 GW RFP evaluation; new peak >6,800 MW",
+    "url": "https://quartr.com/companies/oge-energy-corp_12823",
+    "where": "Q2 2026 call summary"
+   }
+  ],
+  "gaps": "The OCC cause number for the 2026 IRP was not identified; the IRP itself shows no docket. The IRP has no preferred portfolio beyond the action plan and RFPs; it is a needs assessment. MW is not given for Frontier storage, the Kiamichi agreement, the Google load or the 2026 RFP targets. Transmission in-service years are not given, only the SPP ITP year. Exact filing date: the final PDF is dated around Jul 2026.",
+  "priority_market": true
+ },
+ {
+  "id": "pso",
+  "utility": "Public Service Company of Oklahoma",
+  "type": "IOU",
+  "states": [
+   "OK"
+  ],
+  "rto": "SPP",
+  "irp": {
+   "title": "2026 Integrated Resource Plan Refresh (load-forecast update to the 2024 PSO IRP; no new preferred portfolio)",
+   "filed": "2026-08-27",
+   "regulator": "Oklahoma Corporation Commission (OCC)",
+   "docket": "Refresh ordered in OCC PUD Case 2025-000064 (report also cites the RFP-approval case as 2024-000064; approval Order No. 757495, May 11, 2026). Underlying full IRP: 2024 PSO IRP filed 2024-10-01.",
+   "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+   "horizon": "2026-2036 (refresh tables); 2024 IRP covered 2025-2034",
+   "next_due": "Full traditional IRP in 2027 (per refresh report)",
+   "status": "filed"
+  },
+  "load": {
+   "base_year": 2026,
+   "base_peak_mw": 4528,
+   "end_year": 2036,
+   "end_peak_mw": 10869,
+   "peak_growth_pct_per_year": 9.2,
+   "energy_growth_note": "Gross summer peak (before EE/DR). Annual load rises from 23,957 GWh (2027) to 76,640 GWh (2036), roughly 3.2x. The 2036 peak is 6,456 MW (+146%) above the 2024 IRP forecast of 4,413 MW. PSO says nearly all of the increase comes from new large-load customers; load from existing customers is roughly flat. Growth rate is computed from the refresh's Table 2.",
+   "data_center_mw": null,
+   "large_load_notes": "New customers over 75 MW: about 3,100 MW with signed Contracts for Electric Service plus about 3,400 MW with signed Letters of Agreement, all in the forecast without risk adjustment. The data-processing sub-sector (data centers and crypto) is modeled separately, but the refresh gives no separate data-center MW and names no customers. Trade press (not the IRP): Google confirmed in Aug 2026 that it is the end user of 'Project Clydesdale', a 506-acre data center campus built by Beale Infrastructure in unincorporated Tulsa County near Owasso and Cherokee Industrial Park, powered by PSO with a new on-site substation. Google's Muskogee and Stillwater campuses are served by OG&E, not PSO."
+  },
+  "generation_adds": [
+   {
+    "type": "gas CT",
+    "mw": 450,
+    "years": "2029",
+    "note": "Northeastern Units 5 & 6, two GE F-class CTs at PSO's Northeastern site (Rogers County, OK). Approved by OCC in May 2026 and studied under SPP's ERAS fast-track process."
+   },
+   {
+    "type": "gas CC",
+    "mw": 795,
+    "years": "2026",
+    "note": "Green Country (existing CC) listed as owned capacity from 2026. It appears as 795 MW 'New CC' in the 2024 IRP preferred plan for 2025/26. This is an acquisition, not new construction."
+   },
+   {
+    "type": "other",
+    "mw": 420,
+    "years": "2026",
+    "note": "Northeastern 3 converted from coal to gas-only; it stopped burning coal on 2025-12-31."
+   },
+   {
+    "type": "wind",
+    "mw": 475,
+    "years": "2026-2028",
+    "note": "Wind PPAs approved May 2026: Weatherford 147 MW (2026), Caddo 80 MW (2027), King Plains 248 MW (2028). MW are 'SPP installed capacity' from refresh Table 6."
+   },
+   {
+    "type": "battery",
+    "mw": 224,
+    "years": "2029",
+    "note": "Six-hour BESS approved May 2026: Northeastern 1&2 100 MW, Dover 74 MW, Rock Falls 50 MW. The full 2023-RFP package, including NE 5&6, is 1,299 MW nameplate and about 923 MW summer accredited."
+   },
+   {
+    "type": "other",
+    "mw": null,
+    "years": "COD by 2029-11-30",
+    "note": "OPEN NEED: the refresh projects a summer accredited-capacity deficit of 99 MW in 2027, growing to 7,145 MW by 2036 (winter deficit 7,425 MW by 2035/36). It has no preferred plan; resource types will come from the 2026 All-Source RFP and the 2027 IRP."
+   }
+  ],
+  "retirements": [
+   {
+    "plant": "Northeastern 3 (coal operation ended; unit continues on gas)",
+    "type": "coal",
+    "mw": 420,
+    "year": 2025
+   },
+   {
+    "plant": "Southwestern 1 & 2",
+    "type": "gas",
+    "mw": 135,
+    "year": 2030
+   },
+   {
+    "plant": "Weleetka 4 & 5",
+    "type": "gas",
+    "mw": 75,
+    "year": 2030
+   },
+   {
+    "plant": "Tulsa 2 & 4",
+    "type": "gas",
+    "mw": 317,
+    "year": 2034
+   },
+   {
+    "plant": "Comanche 1 (G1&2, 1S)",
+    "type": "gas",
+    "mw": 204,
+    "year": 2035
+   },
+   {
+    "plant": "Expiring PPAs/CPAs (e.g., Oneta 260 MW 2031, Kiamichi 150 MW 2032, several wind PPAs)",
+    "type": "other",
+    "mw": null,
+    "year": 2036
+   }
+  ],
+  "transmission": [
+   {
+    "name": "PSO transmission capital program",
+    "kv": null,
+    "description": "Forecast transmission capex: $287.5M (2026), $331.6M (2027), $246.9M (2028), $284.2M (2029), $164.0M (2030), $178.3M (2031), $179.1M (2032). Individual projects are not listed.",
+    "where": "PSO service territory (eastern and southwestern OK)",
+    "year": "2026-2032"
+   },
+   {
+    "name": "Seminole - Southwest Shreveport / Anthem 765 kV facilities (SPP 2025 ITP)",
+    "kv": "765",
+    "description": "Listed as improving transfer capability between AEP-SPP and neighbors. Includes Seminole 765 kV terminal upgrades, Woodward 765 kV facilities, a new Anthem 765 kV substation and 345 kV expansion.",
+    "where": "AEP-SPP footprint (OK / East TX / LA)",
+    "year": "per SPP 2026 STEP (dates not given in refresh)"
+   },
+   {
+    "name": "Oklahoma-area 2025 ITP upgrades",
+    "kv": null,
+    "description": "2026 STEP upgrades named for the Talihina, Choctaw, Duncan/Marlow and Southeast Oklahoma areas.",
+    "where": "Southeast and southwest Oklahoma",
+    "year": "unknown"
+   }
+  ],
+  "places_named": [
+   "Tulsa County (Owasso / Cherokee Industrial Park - Google 'Project Clydesdale', per press)",
+   "Northeastern plant site, Oologah (Rogers County)",
+   "Talihina",
+   "Duncan/Marlow",
+   "Lawton district",
+   "McAlester district"
+  ],
+  "rfp_or_procurement": "2026 All-Source RFP: issued 2026-01-02 for up to 4,000 MW of SPP accredited capacity (PSA, PPA or CPA); COD by 2029-11-30; proposals were due 2026-03-16 and are under evaluation. Separately, a joint PSO/SWEPCO 2025 SPP Capacity RFP seeks up to 350 MW (2028) and 600 MW (2029-2030) of accredited capacity.",
+  "headline": "PSO's August 2026 refresh more than doubles its outlook: summer peak goes from about 4.5 GW in 2026 to about 10.9 GW in 2036, almost all from large-load contracts, leaving a capacity gap of about 7 GW. A 4 GW all-source RFP is under way and a full IRP follows in 2027.",
+  "confidence": {
+   "load": "High",
+   "generation_adds": "Medium",
+   "transmission": "Low"
+  },
+  "sources": [
+   {
+    "claim": "peak load forecast 2026-2036, +146% vs 2024 IRP",
+    "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+    "where": "Sec. 2.6, Table 2 (p.10); Table 3 (p.16)"
+   },
+   {
+    "claim": "large-load contracts 3,100 MW CES + 3,400 MW LOA",
+    "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+    "where": "Sec. 2.6"
+   },
+   {
+    "claim": "energy forecast and deficit",
+    "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+    "where": "Table 5 (p.17)"
+   },
+   {
+    "claim": "capacity deficit 99 MW (2027) to 7,145 MW (2036)",
+    "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+    "where": "Executive Summary; Table 10"
+   },
+   {
+    "claim": "approved resources (NE 5&6, wind, BESS), unit retirement dates",
+    "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+    "where": "Sec. 2.7; Table 6 (p.18); Sec. 3.7 action plan update"
+   },
+   {
+    "claim": "2026 All-Source RFP 4,000 MW",
+    "url": "https://www.psoklahoma.com/business/b2b/energy-rfps",
+    "where": "RFP page"
+   },
+   {
+    "claim": "transmission capex and SPP 765 kV projects",
+    "url": "https://www.psoklahoma.com/lib/docs/community/projects/PSO_2026_IRP_Refresh_Final_Report.pdf",
+    "where": "Table 9 (p.23); Sec. 3.10 Schedule J (pp.26-27)"
+   },
+   {
+    "claim": "2024 IRP preferred plan (solar/wind/storage, NE3 gas)",
+    "url": "https://oklahoma.gov/content/dam/ok/en/occ/documents/pu/pud-reports-page/2024-pso-irp.pdf",
+    "where": "Executive Summary, Table ES-1 (p.12)"
+   },
+   {
+    "claim": "Google 'Project Clydesdale' Tulsa County, powered by PSO (trade press)",
+    "url": "https://ktul.com/news/local/google-beale-infrastructure-share-details-around-new-data-center-campus-in-tulsa-county-08-19-2026",
+    "where": "KTUL, 2026-08-19"
+   }
+  ],
+  "gaps": "The refresh has no preferred portfolio, so the type mix for the roughly 7 GW need is unknown until RFP results and the 2027 IRP. It gives no separate data-center MW and names no customers; the Google/Tulsa County link comes from trade press. Per-unit summer vs. winter accredited MW were not extracted; Table 6 MW are 'SPP installed capacity'. The refresh's text and action plan disagree on the OCC case number (2025-000064 vs 2024-000064). Transmission is described only as capex totals plus SPP-wide 765 kV items, with no in-service dates.",
+  "priority_market": true
+ },
+ {
+  "id": "nipsco",
+  "utility": "Northern Indiana Public Service Company (NIPSCO)",
+  "type": "IOU",
+  "states": [
+   "IN"
+  ],
+  "rto": "MISO",
+  "irp": {
+   "title": "NIPSCO 2024 Integrated Resource Plan (2026 IRP in progress)",
+   "filed": "2024-12-09",
+   "regulator": "Indiana Utility Regulatory Commission (IURC)",
+   "docket": "IURC IRP No. 46172 (as cited in Clean Grid Alliance comments); related GenCo data-center causes: 46183 (GenCo), 46322 (Amazon), 46362 (GenCo generation), 46393 (Alphabet)",
+   "url": "https://www.in.gov/iurc/files/NIPSCO-2024-Integrated-Resource-Plan-Document.pdf",
+   "horizon": "2025-2044 (20-year)",
+   "next_due": "2026 IRP under way: stakeholder meeting #1 held 2026-09-23 and #2 set for 2026-10-20; filing date not confirmed (Indiana requires an IRP at least every 3 years)",
+   "status": "filed"
+  },
+  "load": {
+   "base_year": 2028,
+   "base_peak_mw": 2900,
+   "end_year": 2035,
+   "end_peak_mw": 5100,
+   "peak_growth_pct_per_year": 8.4,
+   "energy_growth_note": "2024 IRP Reference Case: about 2,300 MW 'flat load' peak plus 600 MW of data-center load in 2028, 1,600 MW in 2030 and 2,600 MW by 2035. Data centers could add 21,810-72,140 GWh/yr by 2035. Emerging-load sensitivity reaches 11,100 MW peak in 2035. The IRP uses 2028 as the base year, so no 2024 actual is given here. 2026 IRP materials put NIPSCO native (non-data-center) peak at about 1,767 MW and 2,170 MW in 2027 (two seasonal charts; season labels not captured) and say signed data-center contract peaks with reserve margin are just over 3,100 MW. Growth rate is computed.",
+   "data_center_mw": 2600,
+   "large_load_notes": "The 2024 IRP assumed 2-3 hyperscaler projects (2,600 MW by 2035), out of six active projects (up to 8,600 MW). Since the IRP, NiSource created NIPSCO Generation LLC (GenCo; IURC approved Sept 2025) to serve data centers under special contracts. (1) Amazon Data Services: up to 2,400 MW by end-2032, service from 2027-01-01, 15-year contract approved 2026-06-17 (Cause 46322). Sites are studied at Hobart (Lake County) and Schahfer (Jasper County); Amazon has a one-time option to cut 1,200 MW by 2029-03-31. (2) Alphabet subsidiary: data center in Michigan City (LaPorte County), service from summer 2026 (Cause 46393; MW not public)."
+  },
+  "generation_adds": [
+   {
+    "type": "gas CC",
+    "mw": 2600,
+    "years": "about 2029-2032 (exact CODs not captured)",
+    "note": "GenCo: two 1,300 MW CCGTs at the Schahfer site (Jasper County), under construction, dedicated to Amazon. This exceeds the 2024 IRP data-center path (1,285 MW CCGT plus 420 MW peaking by 2029)."
+   },
+   {
+    "type": "battery",
+    "mw": 400,
+    "years": "under construction",
+    "note": "GenCo Mitchell BESS (dedicated to Amazon), plus pool assets: Mitchell 100 MW, Tipton 167 MW (BTA), Nebo 75 MW (PPA), and about 500 MW of contracted generation (NiSource investor deck, Sept 2026)."
+   },
+   {
+    "type": "gas CT",
+    "mw": 400,
+    "years": "2027",
+    "note": "NIPSCO gas peaker at Schahfer (Jasper County), pre-construction per the Sept 2026 IRP deck. Replaces Schahfer 16A/B."
+   },
+   {
+    "type": "battery",
+    "mw": 900,
+    "years": "2028-2029",
+    "note": "2024 IRP native-load path: 900-1,150 MW of storage tied to MISO DLOL accreditation, plus 150-350 MW short-term thermal PPAs and 440 MW DSM. The 2026 IRP is reconsidering the storage size."
+   },
+   {
+    "type": "wind",
+    "mw": 650,
+    "years": "2030-2034",
+    "note": "2024 IRP mid-term: 150-650 MW wind plus 125 MW storage. Long-term: a further 200-900 MW wind. Upper bound shown."
+   },
+   {
+    "type": "solar",
+    "mw": 525,
+    "years": "beyond 2035",
+    "note": "2024 IRP, only if data-center load is contracted."
+   },
+   {
+    "type": "other",
+    "mw": 1700,
+    "years": "through 2028",
+    "note": "Previously IURC-approved renewables (~1,700 MW wind/solar/solar+storage, e.g., Carpenter Wind 195 MW in Jasper County and Appleseed Solar 200 MW in Cass County, both 2025)."
+   }
+  ],
+  "retirements": [
+   {
+    "plant": "R.M. Schahfer Units 17 & 18",
+    "type": "coal",
+    "mw": 722,
+    "year": 2025
+   },
+   {
+    "plant": "R.M. Schahfer Units 16A/16B (gas peakers)",
+    "type": "gas",
+    "mw": 155,
+    "year": 2027
+   },
+   {
+    "plant": "Michigan City Unit 12",
+    "type": "coal",
+    "mw": 455,
+    "year": 2028
+   }
+  ],
+  "transmission": [
+   {
+    "name": "Reliability/transmission upgrades for Michigan City 12 and Schahfer 16A/B retirements",
+    "kv": null,
+    "description": "In the 2024 IRP short-term action plan; specific projects not listed in the excerpts read.",
+    "where": "LaPorte and Jasper Counties",
+    "year": "by 2028"
+   },
+   {
+    "name": "Data-center transmission for Amazon (NIPSCO-owned)",
+    "kv": null,
+    "description": "NIPSCO will build, own and operate the transmission needed to serve Amazon. MISO ERAS interconnection agreements cover the Schahfer CCGTs and Mitchell BESS, and feasibility studies cover the Hobart and Schahfer data-center sites (compliance filing 2026-07-16).",
+    "where": "Hobart (Lake County); Schahfer site (Jasper County)",
+    "year": "2027-2032"
+   },
+   {
+    "name": "Advanced transmission technologies assessment",
+    "kv": null,
+    "description": "Required by Indiana law for the 2026 IRP; no projects named yet.",
+    "where": "system",
+    "year": "2026 IRP"
+   }
+  ],
+  "places_named": [
+   "Jasper County (Schahfer: coal retirement, gas peaker, GenCo CCGTs, Amazon site)",
+   "Hobart, Lake County (Amazon data-center site)",
+   "Michigan City, LaPorte County (coal retirement; Alphabet data center)",
+   "Mitchell (BESS site)",
+   "Tipton (BESS)",
+   "Cass County (Appleseed Solar)",
+   "Vigo County (Sugar Creek CC)"
+  ],
+  "rfp_or_procurement": "The 2024 IRP followed an all-source RFP (RFP 1 and 2), and NIPSCO said it will likely run more RFPs if hyperscaler opportunities materialize. For the 2026 IRP it issued a 2026 RFI for technology costs, including RFI 1 for dispatchable resources (2028-2032). GenCo procures capacity for data-center contracts and says the 2026 IRP will 'directly inform the amount of capacity GenCo can procure'.",
+  "headline": "The 2024 IRP planned for 2,600 MW of hyperscaler load by 2035 (doubling NIPSCO's peak). Contracts have already passed that: Amazon up to 2.4 GW plus Alphabet in Michigan City, over 3,100 MW with reserves. Those loads are served by about 3 GW of new GenCo gas and batteries at Schahfer and Mitchell, while NIPSCO retires its last coal in 2028.",
+  "confidence": {
+   "load": "High",
+   "generation_adds": "High",
+   "transmission": "Low"
+  },
+  "sources": [
+   {
+    "claim": "Reference load 2,900 MW (2028) to 5,100 MW (2035); data center 600/1,600/2,600 MW",
+    "url": "https://www.in.gov/iurc/files/NIPSCO-2024-Integrated-Resource-Plan-Document.pdf",
+    "where": "Sec. 3.7 All-in Load Summary; Sec. 9.3.6"
+   },
+   {
+    "claim": "preferred plan two-path additions and retirements",
+    "url": "https://www.in.gov/iurc/files/NIPSCO-2024-Integrated-Resource-Plan-Document.pdf",
+    "where": "Executive summary Action Plans; Sec. 1.1 Table 1-1; Sec. 9.4"
+   },
+   {
+    "claim": "2026 IRP underway; signed DC contracts >3,100 MW; native peak; Schahfer peaker 400 MW 2027",
+    "url": "https://www.nipsco.com/docs/librariesprovider11/rates-and-tariffs/irp/meetings/2026-irp-stakeholder-advisory-meeting-1.pdf",
+    "where": "Stakeholder Meeting #1 deck, 2026-09-23 (slides ~13-21, 61-62)"
+   },
+   {
+    "claim": "Amazon up to 2,400 MW by 2032; 2 x 1,300 MW CCGT + 400 MW BESS",
+    "url": "https://iurc.portal.in.gov/_entity/sharepointdocumentlocation/4d752a03-686a-f111-a824-001dd804183b/bb9c6bba-fd52-45ad-8e64-a444aef13c39?file=ord_46322_061726.pdf",
+    "where": "IURC Order, Cause 46322, 2026-06-17"
+   },
+   {
+    "claim": "GenCo assets table (Mitchell, Tipton, Nebo)",
+    "url": "https://s1.q4cdn.com/829981032/files/doc_events/2026/Sep/11/September-2026-Investor-Deck.pdf",
+    "where": "NiSource Sept 2026 investor deck, p.24"
+   },
+   {
+    "claim": "Alphabet data center in Michigan City",
+    "url": "https://www.in.gov/iurc/files/ord_46393_072726_.pdf",
+    "where": "IURC Order, Cause 46393, 2026-07-27"
+   },
+   {
+    "claim": "Hobart and Schahfer data-center sites; ERAS GIAs",
+    "url": "https://iurc.portal.in.gov/_entity/sharepointdocumentlocation/5e9dd35d-4d81-f111-ab0f-001dd80a623a/bb9c6bba-fd52-45ad-8e64-a444aef13c39?file=46322_GenCo_NIPSCO_Compliance%20Filing%20-%20Transmission%20Studies_07162026.pdf",
+    "where": "Compliance filing 2026-07-16"
+   }
+  ],
+  "gaps": "The 2026 IRP filing date and new load forecast are not yet published (GenCo load before summer 2030 is withheld as confidential). Alphabet contract MW are not public. CCGT in-service years were not confirmed. The 2024 IRP gives no 2024 actual peak in the excerpts read. No named transmission lines or kV ratings were found.",
+  "priority_market": true
+ },
+ {
+  "id": "duke-indiana",
+  "utility": "Duke Energy Indiana",
+  "type": "IOU",
+  "states": [
+   "IN"
+  ],
+  "rto": "MISO",
+  "irp": {
+   "title": "2024 Duke Energy Indiana Integrated Resource Plan",
+   "filed": "2024-11-01",
+   "regulator": "Indiana Utility Regulatory Commission (IURC)",
+   "docket": "IURC IRP No. 46155 (as cited in Clean Grid Alliance comments); Cayuga CC CPCN Cause 46193 (approved 2025-10-29)",
+   "url": "https://www.in.gov/iurc/files/2024-Duke-Energy-Indiana-Integrated-Resource-Plan-Volume-I.pdf",
+   "horizon": "2025-2044",
+   "next_due": "Not announced; Indiana requires at least every 3 years, so about late 2027",
+   "status": "filed"
+  },
+  "load": {
+   "base_year": 2025,
+   "base_peak_mw": 5563,
+   "end_year": 2044,
+   "end_peak_mw": 6530,
+   "peak_growth_pct_per_year": 0.85,
+   "energy_growth_note": "Base winter peak (Duke plans for winter in MISO); 2030 is 5,650 MW. The IRP states summer peak CAGR of 0.39% and winter 0.85% for 2025-2044. Energy CAGR 2025-2044 is 0.55% (low), 1.02% (base) and 1.67% (high), per Table D-18 as read. Historical peak was about 6,000 MW (2023). High-case winter peak is 6,584 MW in 2030 and 7,767 MW in 2044.",
+   "data_center_mw": null,
+   "large_load_notes": "Base forecast includes about 300 MW of large economic-development projects (≥20 MW) by 2030, at about 60% weighting of announced projects. Data centers appear only in the high case (+500 MW, about 100 MW/yr from 2027). No customers are named in the excerpts read. The IRP predates Duke's 2026 data-center surge: Duke Energy (corporate, Q2 2026) reports 7.8 GW of signed data-center ESAs company-wide and 'potential for $5-10 billion of additional capital to serve large loads in Indiana and Florida', without giving Indiana-specific MW."
+  },
+  "generation_adds": [
+   {
+    "type": "gas CC",
+    "mw": 1476,
+    "years": "2029-2030",
+    "note": "Cayuga Energy Complex, two 1x1 CCs (Vermillion County) replacing Cayuga coal and adding about 470 MW net. CPCN approved 2025-10-29, about $3.3B, ground broken 2026-05-14. The IRP listed 719 MW each; the CPCN rates them about 738 MW winter each."
+   },
+   {
+    "type": "gas CC",
+    "mw": 1438,
+    "years": "by 2032",
+    "note": "Planned Gibson 2x1 CC (Gibson County), replacing Gibson 3 & 4. CPCN was to be filed 2025-2026; status not confirmed."
+   },
+   {
+    "type": "solar",
+    "mw": 499,
+    "years": "2025-2030",
+    "note": "Includes Speedway Solar PPA 199 MW (2025) plus about 300 MW via RFP."
+   },
+   {
+    "type": "battery",
+    "mw": 400,
+    "years": "by 2030",
+    "note": "Procured through RFP."
+   },
+   {
+    "type": "other",
+    "mw": 304,
+    "years": "2030",
+    "note": "Gibson 1 & 2 co-fire 50% natural gas (blend), plus Edwardsport IGCC conversion to 100% gas. Conversions, not new builds."
+   },
+   {
+    "type": "other",
+    "mw": 300,
+    "years": "by 2032",
+    "note": "EE and demand response programs (more than 300 MW). Blend 2 adds over 1,100 MW of winter firm capacity net of retirements by 2032."
+   }
+  ],
+  "retirements": [
+   {
+    "plant": "Cayuga 1 & 2",
+    "type": "coal",
+    "mw": 1005,
+    "year": 2030
+   },
+   {
+    "plant": "Gibson 3 & 4 (retire, replaced by Gibson 2x1 CC)",
+    "type": "coal",
+    "mw": null,
+    "year": 2032
+   },
+   {
+    "plant": "Gibson 1 & 2 (co-fire 50% gas, not full retirement)",
+    "type": "coal",
+    "mw": null,
+    "year": 2030
+   },
+   {
+    "plant": "Edwardsport IGCC (gasifiers; convert to natural gas, decision 2026-2027)",
+    "type": "coal",
+    "mw": 578,
+    "year": 2030
+   }
+  ],
+  "transmission": [
+   {
+    "name": "Reuse of existing interconnections at Cayuga and Gibson",
+    "kv": null,
+    "description": "New CCs are sited at existing coal stations to reuse transmission interconnections; MISO Generator Replacement Requests filed. The IRP excerpts read name no new lines.",
+    "where": "Vermillion County (Cayuga); Gibson County",
+    "year": "2029-2032"
+   }
+  ],
+  "places_named": [
+   "Vermillion County (Cayuga)",
+   "Gibson County (Gibson Station)",
+   "Knox County (Edwardsport IGCC)",
+   "Speedway Solar"
+  ],
+  "rfp_or_procurement": "2024-2025 RFPs targeting about 300 MW of solar and 400 MW of battery storage in service by 2030 (bids evaluated late 2024 to mid-2025). No new all-source RFP was found for 2026. Duke corporate cites potential $5-10B of additional Indiana/Florida large-load capital, so watch for a new Indiana resource filing or RFP.",
+  "headline": "Duke Energy Indiana's 2024 IRP shows slow underlying growth (winter peak about 0.85%/yr) but plans about 2.9 GW of new gas combined cycle at Cayuga (under construction, 2029-30) and Gibson (by 2032), plus about 500 MW solar and 400 MW storage, as it moves off coal. Duke's 2026 data-center pipeline is not in this IRP.",
+  "confidence": {
+   "load": "Medium",
+   "generation_adds": "High",
+   "transmission": "Low"
+  },
+  "sources": [
+   {
+    "claim": "winter peak forecast 2025-2044",
+    "url": "https://www.in.gov/iurc/files/2024-Duke-Energy-Indiana-Integrated-Resource-Plan-Volume-I.pdf",
+    "where": "Appendix C, Table C-5 (p.225); Appendix D, Tables D-14/15 (p.372)"
+   },
+   {
+    "claim": "~300 MW economic development by 2030; +500 MW data center in high case",
+    "url": "https://www.in.gov/iurc/files/2024-Duke-Energy-Indiana-Integrated-Resource-Plan-Volume-I.pdf",
+    "where": "Ch.1 Load Growth; Ch.3 Alternate Load Forecasts; Appendix D"
+   },
+   {
+    "claim": "Blend 2 additions and short-term action plan",
+    "url": "https://www.in.gov/iurc/files/2024-dei-irp-executive-summary.pdf",
+    "where": "Executive Summary pp.13-19, Figure 13"
+   },
+   {
+    "claim": "Cayuga CC CPCN approved, ~$3.33B",
+    "url": "https://www.in.gov/oucc/electric/key-cases-by-utility/duke-energy-rates/cayuga-generating-station-cpcn/",
+    "where": "OUCC case page (Cause 46193)"
+   },
+   {
+    "claim": "Cayuga CC 1,476 MW, groundbreaking, online 2029/2030",
+    "url": "https://news.duke-energy.com/releases/duke-energy-breaks-ground-on-cayuga-energy-complex-project-in-vermillion-county",
+    "where": "Duke news release 2026-05-14"
+   },
+   {
+    "claim": "corporate data-center ESAs 7.8 GW; $5-10B Indiana/Florida large-load upside",
+    "url": "https://www.investing.com/news/company-news/duke-energy-q2-2026-slides-eps-beats-amid-data-center-boom-93CH-4835216",
+    "where": "Q2 2026 earnings slides (secondary: Investing.com)"
+   }
+  ],
+  "gaps": "Indiana-specific data-center MW are not published; corporate figures are not broken out by state. The 2034 peak value was not extracted (2030 and 2044 only). Gibson CC CPCN status and in-service date were not confirmed. MW for the Gibson 3/4 retirement were not extracted (Gibson 1-4 total 2,532 MW winter). No transmission project list was found in the IRP excerpts. The next IRP date has not been announced.",
+  "priority_market": true
+ },
+ {
+  "id": "hoosier",
+  "utility": "Hoosier Energy Rural Electric Cooperative",
+  "type": "G&T co-op",
+  "states": [
+   "IN",
+   "IL"
+  ],
+  "rto": "MISO (also PJM)",
+  "irp": {
+   "title": "Hoosier Energy 2023 Integrated Resource Plan",
+   "filed": "2024-04-02",
+   "regulator": "Indiana Utility Regulatory Commission (IURC); IRP filed under 170 IAC 4-7. The IURC does not regulate Hoosier's rates.",
+   "docket": "No cause number shown on the filing; IURC Director's draft report issued 2025-04-28",
+   "url": "https://www.in.gov/iurc/files/HoosierEnergy_IntegratedResourcePlan-Volume1-040124.pdf",
+   "horizon": "2024-2043",
+   "next_due": "unknown (Indiana rule requires at least every 3 years)",
+   "status": "filed"
+  },
+  "load": {
+   "base_year": 2024,
+   "base_peak_mw": 1638,
+   "end_year": 2034,
+   "end_peak_mw": 1707,
+   "peak_growth_pct_per_year": 0.41,
+   "energy_growth_note": "Base-normal winter generation peak (winter-peaking system); 2040 is 1,728 MW. Load forecast is from the July 2022 RUS Power Requirements Study (2020-2040): energy CAGR 1.01% (front-loaded, 3.0%/yr 2020-2025, then about 0.3-0.5%/yr). Extreme-weather winter peak is 1,960 MW in 2040. All-time system peak is 1,828 MW (as stated in the May 2026 IURC forum deck). Growth rate is computed.",
+   "data_center_mw": null,
+   "large_load_notes": "The IRP has no data-center load. Hoosier's May 2026 IURC Summer Reliability Forum deck shows large-load interest across member systems rising from 594 MW (2020) to 6,761 MW (2023), 17,532 MW (2024) and 20,930 MW (2025): 'all projects received in calendar year with at least one site in Hoosier territory', counted as inquiries, not contracts. A Large Load/Data Center Service Policy (50 MW+) requires the customer to cover all costs to serve plus a margin. Members are 17 distribution co-ops in central/southern Indiana and southeastern Illinois."
+  },
+  "generation_adds": [
+   {
+    "type": "nuclear",
+    "mw": 400,
+    "years": "2026",
+    "note": "Palisades nuclear PPA (Michigan restart). The IURC Director flagged restart uncertainty."
+   },
+   {
+    "type": "gas CC",
+    "mw": 360,
+    "years": "2025 (acquired)",
+    "note": "50% share of the 720 MW St. Joseph Energy Center CC (New Carlisle, St. Joseph County), bought jointly with Wabash Valley Power Alliance, closed 2025-03-13. Hoosier said its IRP showed gas need at end of decade. MW is computed as 50% of 720 MW."
+   },
+   {
+    "type": "gas CC",
+    "mw": 200,
+    "years": "2027",
+    "note": "Lincoln Land CC capacity-only PPA (Sangamon County, IL); the IRP calls it tentative. Also an Invenergy Nelson capacity PPA, 157 MW, 2026."
+   },
+   {
+    "type": "gas CT",
+    "mw": 600,
+    "years": "2029 (200 MW), 2040 (400 MW)",
+    "note": "Generic new gas CTs in the preferred plan. Also a new gas CC of 325 MW in 2036 and new RICE of 216 MW in 2040."
+   },
+   {
+    "type": "battery",
+    "mw": 520,
+    "years": "2029-2040",
+    "note": "80 MW (2029), 20 (2030), 100 (2033), 240 (2034), 80 (2040)."
+   },
+   {
+    "type": "solar",
+    "mw": 175,
+    "years": "2026-2033",
+    "note": "Clenera Rustic Hills Solar PPA 100 MW (2026) and new solar 75 MW (2033). Board also approved a 150 MW solar resource for planning year 2026-27."
+   },
+   {
+    "type": "wind",
+    "mw": 150,
+    "years": "2040-2041",
+    "note": "New wind 100 MW (2040) plus 50 MW (2041)."
+   }
+  ],
+  "retirements": [
+   {
+    "plant": "Hallador Merom PPA ends (former Hoosier Merom coal plant, Sullivan County, sold to Hallador 2022)",
+    "type": "coal",
+    "mw": 300,
+    "year": 2028
+   },
+   {
+    "plant": "Duke Energy Indiana 250 MW cost-based PPA ends",
+    "type": "other",
+    "mw": 250,
+    "year": 2028
+   },
+   {
+    "plant": "Holland Combined Cycle (share) exits plan",
+    "type": "gas",
+    "mw": 316,
+    "year": 2040
+   }
+  ],
+  "transmission": [
+   {
+    "name": "Five-year capital work plan",
+    "kv": null,
+    "description": "$427M over five years, mostly modernizing the transmission system and replacing aging infrastructure. Hoosier cites transmission cost as the biggest upward pressure on wholesale rates.",
+    "where": "Hoosier system (about 1,724 miles of line; MISO and PJM)",
+    "year": "2026-2030"
+   },
+   {
+    "name": "Tie-line import dependence (Quanta reliability study)",
+    "kv": null,
+    "description": "Load inside Hoosier's area relies on 1,463 MW of tie-line import capability; 682 MW of third-party solar is in the MISO queue at four sites in Hoosier's area.",
+    "where": "Hoosier control area, southern Indiana",
+    "year": "2030 study year"
+   }
+  ],
+  "places_named": [
+   "Sullivan County / Merom (former coal plant site)",
+   "New Carlisle, St. Joseph County (St. Joseph Energy Center)",
+   "Shelby County (Earthwise solar PPA, expiring)",
+   "Bloomington (HQ)"
+  ],
+  "rfp_or_procurement": "None active found. The 2020 IRP led to an all-source RFP in 2020, and the 2023 plan relies on bilateral PPAs and acquisitions (e.g., St. Joseph). The IRP says Hoosier may pursue market products, joint development, PPAs and renewables.",
+  "headline": "Hoosier's 2023 IRP (filed April 2024) shows nearly flat load (about 0.4%/yr) and replaces expiring coal-backed PPAs around 2028 with nuclear (Palisades), gas (St. Joseph CC share, new CTs) and batteries. Its 2026 data shows 20.9 GW of data-center/large-load inquiries the plan does not yet reflect.",
+  "confidence": {
+   "load": "Medium",
+   "generation_adds": "Medium",
+   "transmission": "Low"
+  },
+  "sources": [
+   {
+    "claim": "peak demand forecast 2020-2040 (Base-Normal)",
+    "url": "https://www.in.gov/iurc/files/HoosierEnergy_IntegratedResourcePlan-Volume1-040124.pdf",
+    "where": "Power Requirements Study within Vol. I, p.38 table; growth table p.~12"
+   },
+   {
+    "claim": "Preferred plan additions/subtractions by year",
+    "url": "https://www.in.gov/iurc/files/HoosierEnergy_IntegratedResourcePlan-Volume1-040124.pdf",
+    "where": "Sec. 5.3, Table 20 (p.204)"
+   },
+   {
+    "claim": "short-term action plan (3 general items)",
+    "url": "https://www.in.gov/iurc/files/HoosierEnergy_IntegratedResourcePlan-Volume1-040124.pdf",
+    "where": "Sec. 1.4 (pp.14-15)"
+   },
+   {
+    "claim": "large-load interest 20,930 MW (2025); $427M capital plan; 1,828 MW all-time peak",
+    "url": "https://www.in.gov/iurc/files/6.-SRF_26_Hoosier-Energy.pdf",
+    "where": "IURC Summer Reliability Forum deck, 2026-05-19, slides 2, 6, 8"
+   },
+   {
+    "claim": "St. Joseph Energy Center 50% purchase, 720 MW",
+    "url": "https://hoosierenergy.com/news-resources/wabash-valley-power-alliance-hoosier-energy-finalize-purchase-of-st-joseph-energy-center",
+    "where": "Press release 2025-03-13"
+   },
+   {
+    "claim": "Director critique (vague action plan, Palisades risk, 857 MW pre-selected)",
+    "url": "https://www.in.gov/iurc/files/Hoosier-Energys-2023-IRP-Draft-Directors-Final-4-28-25.pdf",
+    "where": "Draft Director's Report 2025-04-28"
+   },
+   {
+    "claim": "tie-line import 1,463 MW; 682 MW solar in queue",
+    "url": "https://www.in.gov/iurc/files/HoosierEnergy_Integrated-ResourcePlan_TechnicalAppendices_Volume2_040124.pdf",
+    "where": "Vol. II Appendix B (Quanta)"
+   }
+  ],
+  "gaps": "The plan is old: its load forecast dates from 2022, it has no data-center load, and its action plan is generic (the IURC Director called it vague). No specific new generation sites are named. Palisades restart and PPA status as of late 2026 were not checked. The next IRP date is unknown. No named transmission projects or kV were found. The co-op RUS load forecast/work plan is not public beyond what is in the IRP.",
+  "priority_market": true
+ },
+ {
+  "id": "great-river-energy",
+  "utility": "Great River Energy",
+  "type": "G&T co-op",
+  "states": [
+   "MN",
+   "ND"
+  ],
+  "rto": "MISO",
+  "irp": {
+   "title": "Great River Energy 2026-2040 Integrated Resource Plan",
+   "filed": "2026-04-01",
+   "regulator": "Minnesota Public Utilities Commission (MPUC)",
+   "docket": "MPUC IRP docket 26-145 (pending); GRE's utility prefix, likely ET2, not verified",
+   "url": "https://greatriverenergy.com/wp-content/uploads/2026/05/2026-2040-GRE-IRP-FINAL-4-24-2026.pdf",
+   "horizon": "2026-2040",
+   "next_due": "unknown (MN IRPs are generally filed every 2-3 years per Commission order)",
+   "status": "in progress"
+  },
+  "load": {
+   "base_year": 2026,
+   "base_peak_mw": 1834,
+   "end_year": 2036,
+   "end_peak_mw": 2369,
+   "peak_growth_pct_per_year": 2.59,
+   "energy_growth_note": "Base Case (Legacy + 400 MW of large load), per Table 4. 2040 peak is 2,413 MW (2.0% CAGR 2026-2040). The step-up arrives in 2029 (1,881 MW in 2028 to 2,294 MW in 2029). Energy goes from 9,766 GWh (2026) to 13,673 GWh (2029) to 14,479 GWh (2040), a 2.85% CAGR. Legacy load without large loads grows only 0.59%/yr in peak and 0.70%/yr in energy. The High Case (+2,700 MW) reaches 4,690 MW in 2036 and 4,839 MW in 2040.",
+   "data_center_mw": 400,
+   "large_load_notes": "The 400 MW Base Case large load is 'primarily driven by emerging data center development in GRE member service territory'. Medium Case is 900 MW and High Case 2,700 MW. No customers or locations are named. GRE commits to serve a portion and requires large customers to bring and fund additional resources. Large-load requests start through the member co-op (26 members, e.g., Dakota Electric in Farmington, Connexus, Stearns). GRE also runs a data-center site certification program."
+  },
+  "generation_adds": [
+   {
+    "type": "wind",
+    "mw": 1105,
+    "years": "2027-2030",
+    "note": "Planned wind PPAs: Dodge County 228 MW (2027, Dodge County MN), Big Bend 300 MW (2028, near Mountain Lake MN), New Salem 426 MW (2029, ND), Three Waters 151 MW (2030, southern MN)."
+   },
+   {
+    "type": "wind",
+    "mw": 250,
+    "years": "by 2029",
+    "note": "Additional new wind PPA to be procured."
+   },
+   {
+    "type": "battery",
+    "mw": 420,
+    "years": "by 2029",
+    "note": "New storage, self-build or contracted. RFPs possible 2027-2028; GRE favors sites with existing wind GIAs via MISO Surplus Interconnection Service."
+   },
+   {
+    "type": "battery",
+    "mw": 140,
+    "years": "2027",
+    "note": "Emmons-Logan BESS (ND), 4-hour, with NextEra."
+   },
+   {
+    "type": "gas CT",
+    "mw": 420,
+    "years": "2031-2032",
+    "note": "280 MW (2031) plus 140 MW (2032) of new gas CTs with fuel-oil backup. Sites under evaluation, 'in or near member-owner territory or existing power supply resource locations'."
+   },
+   {
+    "type": "other",
+    "mw": 1.5,
+    "years": "2026",
+    "note": "Form Energy 100-hour iron-air storage pilot at Cambridge Station."
+   }
+  ],
+  "retirements": [
+   {
+    "plant": "Rainbow Energy Center PPA (Coal Creek Station output, ND; final step-down)",
+    "type": "coal",
+    "mw": 350,
+    "year": 2031
+   },
+   {
+    "plant": "Manitoba Hydro diversity exchange ends",
+    "type": "other",
+    "mw": 200,
+    "year": 2030
+   },
+   {
+    "plant": "Elm Creek Wind PPA ends",
+    "type": "other",
+    "mw": 99,
+    "year": 2027
+   },
+   {
+    "plant": "Prairie Star Wind PPA ends",
+    "type": "other",
+    "mw": 100,
+    "year": 2037
+   }
+  ],
+  "transmission": [
+   {
+    "name": "Northland Reliability Project (MISO LRTP Tranche 1)",
+    "kv": "345",
+    "description": "About 180-mile double-circuit line, joint with Minnesota Power; certificate of need and route approved 2025-01-23; under construction.",
+    "where": "Grand Rapids - St. Cloud - Becker, MN",
+    "year": "2030"
+   },
+   {
+    "name": "Alexandria to Big Oaks (Tranche 1)",
+    "kv": "345",
+    "description": "Second circuit on existing CapX2020 structures; new Big Oaks Substation near the Mississippi River crossing.",
+    "where": "Alexandria - Monticello area, MN",
+    "year": "2027"
+   },
+   {
+    "name": "Lakefield - Pleasant Valley - North Rochester (Tranche 2.1)",
+    "kv": "765",
+    "description": "About 160-mile 765 kV line; certificate of need filed 2026-02-03.",
+    "where": "Jackson, Mower and Goodhue Counties, MN",
+    "year": "unknown"
+   },
+   {
+    "name": "Maple River to Cuyuna (Tranche 2.1)",
+    "kv": "345",
+    "description": "About 160-mile double-circuit-capable line; certificate of need filed 2026-01-30.",
+    "where": "Cass County ND to Crow Wing County MN",
+    "year": "unknown"
+   },
+   {
+    "name": "Alexandria to Bison (Tranche 2.1)",
+    "kv": "345",
+    "description": "Second circuit on an existing 136-mile line; certificate of need filed 2026-01-15.",
+    "where": "Douglas County MN to Cass County ND",
+    "year": "unknown"
+   },
+   {
+    "name": "Load-serving line rebuilds",
+    "kv": null,
+    "description": "Goal of 55-80 miles of aging line rebuilt per year (44 miles completed in 2025).",
+    "where": "GRE system (5,000+ miles)",
+    "year": "ongoing"
+   }
+  ],
+  "places_named": [
+   "Dodge County MN (Dodge County Wind)",
+   "Mountain Lake MN (Big Bend Wind)",
+   "New Salem ND",
+   "Emmons/Logan Counties ND",
+   "Cambridge MN (Form Energy pilot)",
+   "Grand Rapids, St. Cloud, Becker MN (Northland line)",
+   "Jackson, Mower, Goodhue Counties MN (765 kV)",
+   "Crow Wing and Douglas Counties MN"
+  ],
+  "rfp_or_procurement": "Planned: a 250 MW wind PPA (by 2029). Up to 420 MW of storage, with RFPs possibly issued 2027-2028 and vendor selection 2027-2028. Up to 420 MW of gas CTs, with land and siting 2026-2027, MISO interconnection 2026-2027 and long-lead equipment procurement 2026-2030. GRE also has an $812M USDA New ERA award for about 1,200 MW of wind and storage.",
+  "headline": "GRE's April 2026 IRP adds 400 MW of mostly data-center load from 2029 (peak about 1.8 GW to 2.4 GW). It meets that and the 2031 end of its Coal Creek (Rainbow) PPA with about 1.35 GW of new wind, 560 MW of batteries and 420 MW of new gas CTs. It also co-develops several MISO 345/765 kV lines through Minnesota.",
+  "confidence": {
+   "load": "High",
+   "generation_adds": "High",
+   "transmission": "High"
+  },
+  "sources": [
+   {
+    "claim": "demand and energy forecasts (Legacy/Base/Mid/High)",
+    "url": "https://greatriverenergy.com/wp-content/uploads/2026/05/2026-2040-GRE-IRP-FINAL-4-24-2026.pdf",
+    "where": "Sec. 10.5-10.6, Tables 3 and 4 (pp.35-36)"
+   },
+   {
+    "claim": "400 MW large load primarily data centers",
+    "url": "https://greatriverenergy.com/wp-content/uploads/2026/05/2026-2040-GRE-IRP-FINAL-4-24-2026.pdf",
+    "where": "Sec. 4 (p.9); Sec. 10.6 (p.34)"
+   },
+   {
+    "claim": "Preferred Plan resource table",
+    "url": "https://greatriverenergy.com/wp-content/uploads/2026/05/2026-2040-GRE-IRP-FINAL-4-24-2026.pdf",
+    "where": "Sec. 4, Table 2 (p.9); Sec. 4.1 highlights (pp.10-12)"
+   },
+   {
+    "claim": "5-year action plan (storage, CTs, wind)",
+    "url": "https://greatriverenergy.com/wp-content/uploads/2026/05/2026-2040-GRE-IRP-FINAL-4-24-2026.pdf",
+    "where": "Sec. 4.2 (pp.12-13)"
+   },
+   {
+    "claim": "Rainbow PPA step-down ends 2031",
+    "url": "https://greatriverenergy.com/wp-content/uploads/2026/05/2026-2040-GRE-IRP-FINAL-4-24-2026.pdf",
+    "where": "Sec. 5.5 (p.18)"
+   },
+   {
+    "claim": "transmission projects",
+    "url": "https://greatriverenergy.com/wp-content/uploads/2026/05/2026-2040-GRE-IRP-FINAL-4-24-2026.pdf",
+    "where": "Sec. 6.2 (pp.19-20)"
+   },
+   {
+    "claim": "docket 26-145 pending, filed 2026-04-01",
+    "url": "https://mn.gov/puc/activities/economic-analysis/planning/irp",
+    "where": "MPUC IRP status table"
+   }
+  ],
+  "gaps": "The IRP names no data-center customers or locations. Gas CT sites are not chosen. The MPUC decision is pending, so the plan may change. In-service dates for the Tranche 2.1 lines are not in the IRP. The docket prefix (likely ET2) was not verified.",
+  "priority_market": true
+ },
+ {
+  "id": "tva",
+  "utility": "Tennessee Valley Authority",
+  "type": "federal",
+  "states": [
+   "TN",
+   "AL",
+   "MS",
+   "KY",
+   "GA",
+   "NC",
+   "VA"
+  ],
+  "rto": "TVA",
+  "irp": {
+   "title": "2026 Integrated Resource Plan (Final) and Programmatic EIS",
+   "filed": "2026-08",
+   "regulator": "TVA Board of Directors (self-regulated federal utility; no state commission docket)",
+   "docket": "none (NEPA programmatic EIS)",
+   "url": "https://www.tva.com/environment/final-2026-integrated-resource-plan",
+   "horizon": "2026-2050 (recommendations focused through 2040)",
+   "next_due": "unknown (signpost-driven; prior IRPs 2015, 2019)",
+   "status": "approved",
+   "status_note": "Board approved IRP recommendations at Aug 20, 2026 board meeting. Draft was released Sept 2024 as the '2025 IRP'; renamed 2026 IRP; preliminary final released June 2026."
+  },
+  "load": {
+   "base_year": 2026,
+   "base_peak_mw": 33014,
+   "end_year": 2036,
+   "end_peak_mw": 35971,
+   "peak_growth_pct_per_year": 0.86,
+   "energy_growth_note": "Reference scenario energy 174,586 GWh (2026) -> 197,704 GWh (2036). IRP text: Reference load growth ~0.8%/yr avg; High Growth ~1.4%/yr; Carbon Legislation ~0.5%/yr. Peak CAGR 2026-2050: ~0.7% Reference, ~1.3% High Growth (2050 annual peak 39,451 MW Reference; 46,498 MW High Growth). TVA says actual/forecast demand has moved above the draft IRP Reference case and is 'approaching the Higher Growth Economy scenario primarily due to data center growth'. Peak growth % computed from Reference annual peak table (2026->2036).",
+   "data_center_mw": null,
+   "large_load_notes": "IRP gives no data-center MW figure; it says industrial growth is 'primarily data center'. Secondary (TVA Q1 FY26 earnings call, Feb 2026): data centers were 18% of TVA industrial load in 2025 and TVA projects data-center growth to double in its region by 2030. Winter peak records: 35,319 MW (Jan 2025, per Utility Dive). Aug 2026 board created a new data-center wholesale rate class. Named projects in IRP: Kairos Hermes (Gen IV reactor) in Oak Ridge; Type One Energy 'Infinity Two' fusion pilot at the former Bull Run site; Clinch River SMR site (Oak Ridge). No named data-center customers/locations in the IRP."
+  },
+  "generation_adds": [
+   {
+    "type": "gas CC",
+    "mw": 8580,
+    "years": "2027-2040",
+    "note": "Reference scenario/Baseline strategy (portfolio 1A) incremental summer net dependable capacity by 2040. Range across all cases 4-13 GW. In progress: ~2 GW of CC being added by 2028."
+   },
+   {
+    "type": "gas CT",
+    "mw": 5440,
+    "years": "2027-2040",
+    "note": "Portfolio 1A by 2040. Range 3-13 GW. In progress: ~2 GW of frame and aero CT capacity by 2028."
+   },
+   {
+    "type": "solar",
+    "mw": 1650,
+    "years": "2027-2040",
+    "note": "Portfolio 1A 'renewables' by 2040 (summer net dependable). Range 2-5 GW SND = 3-12 GW nameplate. 3 GW nameplate of Green Invest/self-directed/Generation Flexibility solar contracted to come online by 2030. Wind additions suspended."
+   },
+   {
+    "type": "battery",
+    "mw": 1070,
+    "years": "2027-2040",
+    "note": "Portfolio 1A storage by 2040. Range 1-5 GW SND (1-8 GW nameplate). 0.7 GW of contracted battery projects online by 2030; pumped storage option being evaluated."
+   },
+   {
+    "type": "nuclear",
+    "mw": 300,
+    "years": "no construction date announced",
+    "note": "Clinch River Unit 1 BWRX-300 SMR, Oak Ridge TN; NRC construction permit issued Sept 2026. IRP range: up to 5 GW new nuclear by 2040 (Innovation strategy); Reference/Baseline portfolio adds ~0 nuclear by 2040."
+   },
+   {
+    "type": "other",
+    "mw": null,
+    "years": "2027-2040",
+    "note": "Energy efficiency 1-2 GW and demand response up to 2 GW (DR used to 'enable interconnection of new industrial loads'). Total incremental capacity need 11-32 GW through 2040 across scenarios."
+   }
+  ],
+  "retirements": [
+   {
+    "plant": "TVA coal fleet (4 plants, 24 units incl. Cumberland and Kingston)",
+    "type": "coal",
+    "mw": 5815,
+    "year": 2039,
+    "note": "Planning assumption: existing coal reaches end of life by 2039, subject to Board approval. In Feb 2026 TVA Board authorized continued operation of Cumberland and Kingston (previously slated to retire). Sensitivities tested full fleet end-of-life by 2034 vs operating all units through 2039."
+   },
+   {
+    "plant": "Mississippi coal PPA (440 MW, plant not named in IRP)",
+    "type": "coal",
+    "mw": 440,
+    "year": 2032,
+    "note": "Long-term PPA expires 2032."
+   },
+   {
+    "plant": "Expiring contracts and end-of-life units (aggregate)",
+    "type": "mixed",
+    "mw": 11000,
+    "year": 2040,
+    "note": "~11,000 MW of existing capacity expires or reaches end of life by 2040 (~14,000 MW by 2050)."
+   }
+  ],
+  "transmission": [
+   {
+    "name": "Not site-specific in IRP",
+    "kv": null,
+    "description": "IRP recommends 'pursue transmission system enhancements to deliver low-cost generation', reconductoring, substation upgrades, grid-enhancing technologies (advanced conductors, STATCOMs, dynamic line ratings); prefers brownfield sites with existing infrastructure. TVA said it will initiate a separate integrated transmission plan.",
+    "where": "TVA system-wide",
+    "year": null
+   }
+  ],
+  "places_named": [
+   "Oak Ridge, TN (Clinch River SMR site; Kairos Hermes)",
+   "Bull Run site, Anderson County TN (fusion pilot)",
+   "Kingston Fossil Plant, Roane County TN",
+   "Cumberland Fossil Plant, Stewart County TN",
+   "Lowndes County, MS (New Caledonia CT, secondary)"
+  ],
+  "rfp_or_procurement": "IRP says solar additions will use 'regular procurement cycles'; Green Invest and Generation Flexibility programs contract solar/storage (3 GW solar + 0.7 GW storage contracted by 2030). No specific open all-source RFP identified. Secondary: TVA has ~6.2 GW of new generation planned, 3.7 GW under construction (Feb 2026), including ~1,500 MW Kingston and ~1,450 MW Cumberland gas plants, 500 MW New Caledonia (MS) and 200 MW at Allen (Memphis).",
+  "headline": "TVA's Board-approved 2026 IRP says the Valley needs 11-32 GW of new capacity by 2040, led by 7-26 GW of new gas plus storage, with load now tracking toward its high-growth case because of data centers, while keeping coal running to ~2039.",
+  "confidence": {
+   "load": "High",
+   "generation_adds": "High",
+   "transmission": "Low"
+  },
+  "sources": [
+   {
+    "claim": "IRP approval, 11-32 GW need",
+    "url": "https://www.tva.com/environment/final-2026-integrated-resource-plan",
+    "where": "Final 2026 IRP web page"
+   },
+   {
+    "claim": "Board approval Aug 20, 2026",
+    "url": "https://s205.q4cdn.com/318912997/files/doc_news/2026/Aug/20/20260820-TVA-Board-Press-Release_FINAL.pdf",
+    "where": "press release"
+   },
+   {
+    "claim": "Peak/energy forecast by scenario",
+    "url": "https://tva-azr-eastus-cdn-ep-tvawcm-prd.azureedge.net/cdn-tvawcma/docs/default-source/environment/environmental-stewardship/integrated-resource-plan/2026-irp/data-files/1---tva-final-2026-irp_load-and-commodity-forecast-tables.xlsx?sfvrsn=750b4c04_1",
+    "where": "Load and Commodity Forecast Tables, Scenario 1-3 sheets"
+   },
+   {
+    "claim": "Incremental capacity by portfolio/year",
+    "url": "https://tva-azr-eastus-cdn-ep-tvawcm-prd.azureedge.net/cdn-tvawcma/docs/default-source/environment/environmental-stewardship/integrated-resource-plan/2026-irp/data-files/3---tva-final-2026-irp_incremental-capacity-tables.xlsx?sfvrsn=97c71ef1_1",
+    "where": "Incremental Capacity Summary sheet, portfolio 1A"
+   },
+   {
+    "claim": "Resource ranges, actions in progress (2 GW CC, 2 GW CT by 2028; 3 GW solar, 0.7 GW storage by 2030), transmission approach",
+    "url": "https://tva-azr-eastus-cdn-ep-tvawcm-prd.azureedge.net/cdn-tvawcma/docs/default-source/environment/environmental-stewardship/integrated-resource-plan/2026-final-irp/final-2026-irp---executive-summary.pdf?sfvrsn=d3463090_3",
+    "where": "Executive Summary pp. ES-11 to ES-13"
+   },
+   {
+    "claim": "Coal fleet 5,815 MW, end of life by 2039; 440 MW MS coal PPA to 2032; Cumberland/Kingston continued",
+    "url": "https://tva-azr-eastus-cdn-ep-tvawcm-prd.azureedge.net/cdn-tvawcma/docs/default-source/environment/environmental-stewardship/integrated-resource-plan/2026-final-irp/final-2026-irp-(vol-1).pdf?sfvrsn=f9e7519b_3",
+    "where": "Vol 1 Appendix E.5 and Ch. 1/3"
+   },
+   {
+    "claim": "Load CAGRs 0.8/1.4/0.5%",
+    "url": "https://tva-azr-eastus-cdn-ep-tvawcm-prd.azureedge.net/cdn-tvawcma/docs/default-source/environment/environmental-stewardship/integrated-resource-plan/2026-final-irp/final-2026-irp-(vol-1).pdf?sfvrsn=f9e7519b_3",
+    "where": "Vol 1 Appendix B, Load Forecast"
+   },
+   {
+    "claim": "Load approaching High Growth due to data centers; 35,319 MW winter peak (secondary)",
+    "url": "https://www.utilitydive.com/news/tva-proposes-7-to-26-gw-natural-gas-2026-irp/823520",
+    "where": "Utility Dive, June 23, 2026"
+   },
+   {
+    "claim": "Data centers 18% of industrial load; 6.2 GW planned (secondary)",
+    "url": "https://finance.yahoo.com/news/tva-pursues-6-2-gw-090000853.html",
+    "where": "Feb 4, 2026 article"
+   },
+   {
+    "claim": "Clinch River construction permit (300 MW)",
+    "url": "https://www.world-nuclear-news.org/articles/first-construction-permit-issued-for-bwrx300-smr-in-us",
+    "where": "WNN Sept 30, 2026"
+   },
+   {
+    "claim": "Gas projects Kingston/Cumberland/New Caledonia/Allen MW (secondary)",
+    "url": "https://dailyenergyinsider.com/news/52422-tennessee-valley-authority-reports-new-generation-projects-under-construction",
+    "where": "Daily Energy Insider"
+   }
+  ],
+  "gaps": "IRP is not site-specific: no transmission projects, no data-center MW, no county-level siting of new gas. TVA's separate integrated transmission plan was not found. MW for individual coal units/retirement years not published in the IRP (fleet-level 2039 assumption). Gas plant sizes/locations come from secondary press, not the IRP.",
+  "priority_market": true
+ },
+ {
+  "id": "ekpc",
+  "utility": "East Kentucky Power Cooperative",
+  "type": "G&T co-op",
+  "states": [
+   "KY",
+   "TN"
+  ],
+  "rto": "PJM",
+  "irp": {
+   "title": "2025 Integrated Resource Plan",
+   "filed": "2025-04-01",
+   "regulator": "Kentucky Public Service Commission",
+   "docket": "Case No. 2025-00087",
+   "url": "https://psc.ky.gov/pscecf/2025-00087/jessica.fitch-snedegar%40ekpc.coop/04012025042343/EKPC_2025_IRP_-_Public_Redacted_Version.pdf",
+   "horizon": "2025-2039",
+   "next_due": "2028 (per PSC Staff Report)",
+   "status": "filed",
+   "status_note": "Kentucky PSC does not approve IRPs; Commission Staff Report entered by Order June 1, 2026 closing the review with recommendations for the 2028 IRP."
+  },
+  "load": {
+   "base_year": 2025,
+   "base_peak_mw": 3517,
+   "end_year": 2039,
+   "end_peak_mw": 3933,
+   "peak_growth_pct_per_year": 0.8,
+   "energy_growth_note": "Winter-peaking system. Net energy 15.4 -> 18.4 million MWh (1.3%/yr, 2025-2039). Winter peak +416 MW (0.8%/yr), summer peak +411 MW (1.1%/yr). Record peak 3,754 MW (Jan 17, 2024). Base-year peak is the 2024-25 winter value in Table 3-2; end value is 2038-39 winter. 7% reserve margin now applied to winter and summer.",
+   "data_center_mw": 1680,
+   "large_load_notes": "The IRP base forecast EXCLUDES data centers and 'megaloads' (>450 MW); data centers are to be served separately under Rate DCP (approved Oct 30, 2025, Case 2025-00140; dedicated resources required above 250 MW). The 1,680 MW figure is NOT from the IRP: it is EKPC's July 16, 2026 RFP to serve a Deca Digital hyperscale data-center load ramping 27 MW (summer 2027) -> 200 -> 600 -> 1,000 -> 1,400 -> 1,680 MW (winter 2029/30). Site not named in the RFP; trade/local press report DECA proposing a ~$4B data center in Carroll County, KY (link to the EKPC RFP is an inference). EKPC also publicly supported a proposed data center near Spurlock Station, Maysville/Mason County (Dec 2025 planning-commission comments). In response to PSC staff, EKPC modeled a hypothetical 1 GW, 95% load-factor load: least-cost answer was two additional 745 MW 2x1 F-class NGCC units."
+  },
+  "generation_adds": [
+   {
+    "type": "gas CC",
+    "mw": 745,
+    "years": "winter 2030/31",
+    "note": "Cooper Station CCGT, Pulaski County near Somerset (CPCN Case 2024-00370 granted; ~$1.317B per intervenor brief)."
+   },
+   {
+    "type": "gas CT",
+    "mw": 214,
+    "years": "~2027-2028 (not stated precisely)",
+    "note": "Liberty RICE (reciprocating engines), Casey County / Liberty, KY (CPCN 2024-00310 granted); groundbreaking May 2026. Type is RICE, listed as gas CT for schema."
+   },
+   {
+    "type": "solar",
+    "mw": 136,
+    "years": "2026-2027 (approx.)",
+    "note": "Cooperative Solar Marion 96 MW + Fayette 40 MW (CPCN 2024-00129 granted)."
+   },
+   {
+    "type": "solar",
+    "mw": 321,
+    "years": "not stated",
+    "note": "Four additional New ERA (USDA RUS)-funded solar farms, 321 MW peak output, accredited ~80 MW summer / 0 MW winter; includes 80 MW in Casey County; not yet filed at PSC as of IRP."
+   },
+   {
+    "type": "other",
+    "mw": 1571,
+    "years": "by ~2030",
+    "note": "Natural-gas co-firing conversions of existing coal units: Spurlock 1-4 (1,346 MW, up to 50% gas) and Cooper 2 (225 MW). Converts fuel, not new capacity."
+   },
+   {
+    "type": "other",
+    "mw": 300,
+    "years": "not stated",
+    "note": "300 MW energy-only hydro PPA assumed in IRP; under negotiation, no CPCN filed."
+   },
+   {
+    "type": "other",
+    "mw": null,
+    "years": "2025-2030",
+    "note": "Short-term winter seasonal PPAs to bridge until Cooper CCGT; IRP does not meet 7% winter reserve until 2030/31."
+   }
+  ],
+  "retirements": [],
+  "transmission": [
+   {
+    "name": "Cooper Station 161 kV double-circuit line",
+    "kv": "161",
+    "description": "~4.5-mile new double-circuit 161 kV line to deliver output of new 745 MW Cooper CCGT (CPCN Case 2025-00311).",
+    "where": "Pulaski County, KY (Somerset)",
+    "year": "~2030"
+   },
+   {
+    "name": "Liberty RICE 161 kV station",
+    "kv": "161",
+    "description": "New 161 kV transmission station 'Liberty RICE' plus uprate of Liberty RICE-Liberty line.",
+    "where": "Casey County, KY",
+    "year": "with RICE in-service"
+   },
+   {
+    "name": "2025-2027 transmission program",
+    "kv": "69/161",
+    "description": "Rebuild 176.7 mi of 69 kV, four new 69 kV switching stations, 42.9 mi new 69 kV line, 3.2 mi new 161 kV line.",
+    "where": "EKPC system",
+    "year": "through 2027"
+   },
+   {
+    "name": "Bonnieville-Cub Run 69 kV",
+    "kv": "69",
+    "description": "~11 mi new 69 kV line and substation near Nolin Lake.",
+    "where": "Hart County, KY",
+    "year": "construction 2026"
+   }
+  ],
+  "places_named": [
+   "Pulaski County / Somerset (Cooper Station)",
+   "Casey County / Liberty (Liberty RICE, 80 MW solar)",
+   "Mason County / Maysville (Spurlock Station; proposed data center nearby)",
+   "Marion County (96 MW solar)",
+   "Fayette County (40 MW solar)",
+   "Clark County / Winchester (J.K. Smith)",
+   "Oldham County (Bluegrass Station)",
+   "Carroll County (DECA data-center proposal, press report)",
+   "Hart County"
+  ],
+  "rfp_or_procurement": "ACTIVE: EKPC 2026 RFP for PJM energy and capacity (administered by ACES), released July 16, 2026: min 27 MW from summer 2027 ramping to 1,680 MW by winter 2029/30, terms up to May 31, 2050, any technology, capacity must qualify for PJM BRA; preference for net new generation; delivery to EKPC Load Zone or AEP-Dayton Hub preferred. Proposals were due Aug 14, 2026; final results Sept 30; contract execution targeted Nov 4, 2026. Purpose: serve Deca Digital data-center load.",
+  "headline": "EKPC's 2025 IRP shows modest native growth (~0.8%/yr winter peak) met by a 745 MW Cooper gas plant, 214 MW of engines and coal-to-gas co-firing, but a separate July 2026 RFP shows a single data center (Deca Digital) could add 1,680 MW by 2029/30, nearly half of today's peak.",
+  "confidence": {
+   "load": "High",
+   "generation_adds": "High",
+   "transmission": "Medium"
+  },
+  "sources": [
+   {
+    "claim": "IRP filing, load forecast, resource additions",
+    "url": "https://psc.ky.gov/pscecf/2025-00087/jessica.fitch-snedegar%40ekpc.coop/04012025042343/EKPC_2025_IRP_-_Public_Redacted_Version.pdf",
+    "where": "Sec. 1.2, 1.6-1.7 (pp. 3-15); Table 3-1, 3-2 (pp. 44-45); megaload definition p. 71"
+   },
+   {
+    "claim": "PSC Staff Report: data-center treatment, 1 GW test case, next IRP 2028, transmission plan through 2027",
+    "url": "https://psc.ky.gov/order_vault/Orders_2026/202500087_06012026.pdf",
+    "where": "Appendix A, Sections 2, 4 and 6 (pp. 15-16, 42-43)"
+   },
+   {
+    "claim": "Procedural order (filed Apr 1, 2025)",
+    "url": "https://psc.ky.gov/pscscf/2025%20Cases/2025-00087/20250410_PSC_ORDER.pdf",
+    "where": "Order"
+   },
+   {
+    "claim": "1,680 MW RFP for Deca Digital data center",
+    "url": "https://www.acespower.com/wp-content/uploads/2026/07/EKPC-RFP-7-16-2026.pdf",
+    "where": "Sections 1.1-3.1, Figure 2"
+   },
+   {
+    "claim": "Data Center Power tariff approved",
+    "url": "https://psc.ky.gov/agencies/psc/press/102025/1030_r01.pdf",
+    "where": "PSC press release Oct 2025"
+   },
+   {
+    "claim": "Cooper 161 kV line CPCN",
+    "url": "https://psc.ky.gov/pscecf/2025-00311/allyson@hloky.com/02062026064503/Application_-_ERRATA.pdf",
+    "where": "Application para. 8"
+   },
+   {
+    "claim": "CPCNs granted (Cooper CCGT, Liberty RICE, solar)",
+    "url": "https://kyrc.org/wp-content/uploads/2025/12/Kentuckys-Energy-Transition.pdf",
+    "where": "Table 1 (secondary)"
+   },
+   {
+    "claim": "DECA ~$4B data center Carroll County (secondary)",
+    "url": "https://kentuckylantern.com/2026/07/07/see-where-data-center-developers-are-looking-to-build-in-kentucky",
+    "where": "Kentucky Lantern Jul 7, 2026"
+   },
+   {
+    "claim": "Mason County data center support",
+    "url": "https://psc.ky.gov/pscecf/2025-00087/allyson%40hloky.com/04202026051754/EKPC_Post-Hearing_Comments_.pdf",
+    "where": "EKPC post-hearing comments attachment"
+   },
+   {
+    "claim": "Liberty RICE groundbreaking May 2026",
+    "url": "https://www.ekpc.coop/news-releases",
+    "where": "news list 05/20/2026"
+   }
+  ],
+  "gaps": "IRP is pre-data-center; no MW for named data centers beyond the RFP. Deca Digital site not confirmed by EKPC (Carroll County is a press-report inference). Liberty RICE and solar in-service dates not confirmed. RFP results (Sept 30, 2026) not published. No retirements planned through 2039 per IRP (Spurlock 1 beyond 2039 unknown).",
+  "priority_market": true
+ },
+ {
+  "id": "consumers",
+  "utility": "Consumers Energy",
+  "type": "IOU",
+  "states": [
+   "MI"
+  ],
+  "rto": "MISO",
+  "irp": {
+   "title": "2026 Integrated Resource Plan / 'Energy Supply Plan' (with Clean Energy Plan and 4 Certificates of Necessity)",
+   "filed": "2026-09-03",
+   "regulator": "Michigan Public Service Commission",
+   "docket": "U-22127",
+   "url": "https://www.consumersenergy.com/-/media/CE/Documents/company/IRP-2026-Exec-Summary.pdf",
+   "horizon": "20-year plan (to ~2045); Clean Energy Plan resource additions 2029-2045",
+   "next_due": "MPSC decision expected within ~12 months of filing (~Sept 2027); next IRP unknown",
+   "status": "in progress",
+   "status_note": "Contested case; prehearing held Oct 1, 2026 before ALJ Heather Durian."
+  },
+  "load": {
+   "base_year": null,
+   "base_peak_mw": null,
+   "end_year": null,
+   "end_peak_mw": null,
+   "peak_growth_pct_per_year": null,
+   "energy_growth_note": "Peak-demand MW forecast not found in public summaries (it is in testimony/exhibits in U-22127). CMS investor deck (Sept 3, 2026): IRP assumes annual sales growth of 3%-3.5%/yr (CAGR) through 2040 vs ~2%-3% in current plan. CMS earlier guided 3% weather-normalized load growth in 2026 and 2-3% through 2030. Total portfolio nameplate in exec-summary chart rises from ~14.1 GW (2028) to ~33.8 GW (2040) (read from chart labels; Medium confidence); Michigan Public: capacity to 'more than double' between 2028 and 2040.",
+   "data_center_mw": 1000,
+   "large_load_notes": "Signed agreement under Consumers' Large Load Tariff (MPSC-approved Nov 2025) with an unnamed hyperscale data center adding >1 GW (CMS Q2 2026 10-Q/deck; customer 'pursuing multiple sites'; ~20-yr agreement; incorporated into the IRP). Large-load pipeline ~9 GW (data centers 4-5 GW; 1.5-2 GW in final stages; advanced manufacturing ~1-2 GW). Recent new loads named in CMS deck: Hemlock Semiconductor, Corning, Switch data center, Ford BlueOval, Michigan Potash & Salt (~660 MW combined). Locations of the >1 GW data center not disclosed."
+  },
+  "generation_adds": [
+   {
+    "type": "gas CT",
+    "mw": 456,
+    "years": "2031",
+    "note": "Karn peaker (CON requested), existing D.E. Karn site, Hampton Township near Bay City, Bay County."
+   },
+   {
+    "type": "gas CT",
+    "mw": 919,
+    "years": "2031",
+    "note": "Thetford peaker (CON requested), existing industrial site, Thetford Township, Genesee County."
+   },
+   {
+    "type": "gas CC",
+    "mw": 1200,
+    "years": "2031+",
+    "note": "New long-term PPA with Midland Cogeneration Venture (MCV, 1,647 MW CC cogeneration plant in Midland) ~1.2 GW, replacing existing MCV PPA expiring 2031 (CON requested). Plus a second confidential thermal baseload PPA."
+   },
+   {
+    "type": "solar",
+    "mw": 9600,
+    "years": "2029-2045",
+    "note": "Clean Energy Plan per filing announcement. CMS deck frames total 'clean energy resources' as ~15.8 GW by 2040 incl. already-approved Renewable Energy Plan; press: 'over 19 GW' of solar, wind and storage by 2040."
+   },
+   {
+    "type": "wind",
+    "mw": 3200,
+    "years": "2029-2045",
+    "note": "Per filing announcement."
+   },
+   {
+    "type": "battery",
+    "mw": 3300,
+    "years": "2029-2045",
+    "note": "Per filing announcement (CMS deck: ~4.1 GW battery by 2040). Proposes ex parte approval path for future battery projects."
+   },
+   {
+    "type": "gas CC",
+    "mw": 1200,
+    "years": "2040",
+    "note": "'New gas w/CCS ~1.2 GW (in 2040)' per CMS deck."
+   },
+   {
+    "type": "gas CT",
+    "mw": 700,
+    "years": "2040",
+    "note": "'Jackson Plant replacement ~0.7 GW (in 2040)' per CMS deck."
+   }
+  ],
+  "retirements": [
+   {
+    "plant": "D.E. Karn Units 3 & 4 (Bay County)",
+    "type": "gas/oil",
+    "mw": 1200,
+    "year": 2030,
+    "note": "~1.2 GW per CMS deck; filing says company intends to retire two natural gas units at Karn; asks regulatory-asset treatment for Karn retention/separation costs."
+   },
+   {
+    "plant": "J.H. Campbell (West Olive, Ottawa County)",
+    "type": "coal",
+    "mw": 1420,
+    "year": 2025,
+    "note": "MPSC-approved retirement May 31, 2025, but kept running under repeated DOE Federal Power Act 202(c) emergency orders; actual retirement date uncertain. MW varies by source (1,407 nameplate in 10-Q; 1,420 DOE; 1,560 Utility Dive)."
+   },
+   {
+    "plant": "Existing MCV PPA (Midland)",
+    "type": "gas CC (contract expiry)",
+    "mw": 1200,
+    "year": 2031,
+    "note": "Contract expiration, to be replaced by new MCV PPA."
+   }
+  ],
+  "transmission": [
+   {
+    "name": "No transmission projects in public IRP summaries",
+    "kv": null,
+    "description": "Consumers does not own bulk transmission (METC/ITC does). Plan emphasizes siting the two peakers at existing industrial sites to reuse existing grid interconnection.",
+    "where": "Karn (Bay County), Thetford (Genesee County)",
+    "year": null
+   }
+  ],
+  "places_named": [
+   "Bay County / Hampton Township near Bay City (Karn)",
+   "Genesee County / Thetford Township",
+   "Midland (MCV)",
+   "West Olive, Ottawa County (Campbell)",
+   "Jackson (Jackson plant replacement)",
+   "Muskegon (250 MW solar center operating)"
+  ],
+  "rfp_or_procurement": "IRP asks MPSC to approve a competitive procurement process with TWO annual competitive solicitations (all-source opportunities for third-party projects) and an ex parte approval path for battery storage selected via solicitation or bilateral deals; PURPA avoided-cost changes proposed. Clean Energy Plan implies ~16 GW of solar/wind/storage procurement 2029-2045.",
+  "headline": "Consumers' Sept 2026 plan (pending at MPSC) builds for 3-3.5%/yr sales growth driven by a >1 GW data center and a ~9 GW large-load pipeline, adding 1.4 GW of gas peakers in Bay and Genesee counties by 2031, a 1.2 GW Midland gas PPA, and ~16-19 GW of solar, wind and storage through 2040-45.",
+  "confidence": {
+   "load": "Low",
+   "generation_adds": "Medium",
+   "transmission": "Low"
+  },
+  "sources": [
+   {
+    "claim": "Exec summary: 456 MW Karn, 919 MW Thetford in 2031; 19 GW clean; MCV PPA",
+    "url": "https://www.consumersenergy.com/-/media/CE/Documents/company/IRP-2026-Exec-Summary.pdf",
+    "where": "pp. 1-4"
+   },
+   {
+    "claim": "Docket, CONs, two annual solicitations, Karn 3&4 retention",
+    "url": "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002RPMo2AAH",
+    "where": "MPSC notice of hearing, Sept 3, 2026"
+   },
+   {
+    "claim": "9.6 GW solar/3.3 GW storage/3.2 GW wind 2029-2045; retire two Karn gas units; data-center-driven load growth",
+    "url": "https://mi-psc.my.site.com/sfc/servlet.shepherd/version/download/068cs00002MIzXDAA1",
+    "where": "Corrected filing announcement, Aug 14, 2026"
+   },
+   {
+    "claim": "Sales growth 3-3.5%/yr; Karn 3&4 ~1.2 GW 2030; MCV 1.2 GW; CCS and Jackson 2040; 15.8 GW clean / 4.1 GW battery",
+    "url": "https://s26.q4cdn.com/888045447/files/doc_presentations/2026/09/September-2026-Presentation.pdf",
+    "where": "CMS Sept 2026 investor presentation slides 6-8"
+   },
+   {
+    "claim": ">1 GW data center under Large Load Tariff; ~9 GW pipeline",
+    "url": "https://s26.q4cdn.com/888045447/files/doc_financials/2026/q2/CMS-Energy-Second-Quarter-2026-Results-Outlook.pdf",
+    "where": "CMS Q2 2026 deck slide 6"
+   },
+   {
+    "claim": "MCV 1,647 MW; >1 GW data center agreement; Campbell 1,407 MW nameplate",
+    "url": "https://cdn.prod.nntech.io/company-events/reports/c7bcc445-954b-34a7-aa87-befc120ac0b7/report.pdf",
+    "where": "CMS Q2 2026 Form 10-Q (third-party mirror)"
+   },
+   {
+    "claim": "Campbell 202(c) orders, 1,420 MW",
+    "url": "https://www.energy.gov/documents/order-no-202-26-16-campbell",
+    "where": "DOE Order 202-26-16"
+   },
+   {
+    "claim": "Plan accounts for data center growth; capacity more than doubles 2028-2040 (secondary)",
+    "url": "https://www.michiganpublic.org/environment-climate-change/2026-09-04/consumers-energy-says-it-will-nearly-double-electricity-production-in-next-20-years",
+    "where": "Michigan Public Sept 4, 2026"
+   }
+  ],
+  "gaps": "Peak MW forecast and data-center MW assumed in the base case were not found in public documents (need U-22127 testimony/exhibits). Data-center customer identity/location undisclosed. Second thermal PPA is confidential. No transmission specifics. Discrepancy between 'over 19 GW' (press), 15.8 GW clean + 4.1 GW battery (investor deck) and 9.6+3.2+3.3 GW (filing announcement, 2029-2045) reflects different scopes/timeframes.",
+  "priority_market": true
+ },
+ {
+  "id": "xcel_um",
+  "utility": "Xcel Energy Upper Midwest (Northern States Power-Minnesota/Wisconsin)",
+  "type": "IOU",
+  "states": [
+   "MN",
+   "WI",
+   "ND",
+   "SD",
+   "MI"
+  ],
+  "rto": "MISO",
+  "irp": {
+   "title": "2024-2040 Upper Midwest Integrated Resource Plan",
+   "filed": "2024-02-01",
+   "regulator": "Minnesota Public Utilities Commission",
+   "docket": "E002/RP-24-67",
+   "url": "https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20%26%20Regulations/Resource%20Plans/01%202024%20to%202040%20Upper%20Midwest%20IRP_Cover%20Letter%2C%20Chapters%201%20thru%206%2C%20Service%20Lists.pdf",
+   "horizon": "2024-2040",
+   "next_due": "November 2026 (MN PUC docket 26-212) - imminent",
+   "status": "approved",
+   "status_note": "PUC approved settlement Feb 20, 2025; written order April 21, 2025. Wisconsin has no IRP filing for NSP-W; the NSP system plan covers both."
+  },
+  "load": {
+   "base_year": 2024,
+   "base_peak_mw": 9309,
+   "end_year": 2040,
+   "end_peak_mw": 12414,
+   "peak_growth_pct_per_year": 1.8,
+   "energy_growth_note": "Base case: peak +194 MW/yr (1.8%/yr); energy 43,823 GWh (2024) -> 60,215 GWh (2040), 2.0%/yr, driven 'primarily' by large new data centers and EVs. Xcel has since published higher 2024v2 and 2025v2 forecasts (chart only, values not given) - the Nov 2026 IRP will reset these.",
+   "data_center_mw": null,
+   "large_load_notes": "Google ~1 GW data center in Pine Island, MN (announced Feb 2026), with Xcel adding 1.9 GW of new wind, solar and a 100-hour iron-air battery for it (secondary/newsroom). Elk River Technologies bought 348 acres at Sherco (Becker) for a data center (IRP Ch. 2). NSP 'Tier 3' requests: 7.1 GW from 13 requests by 2035; one 250 MW request in North Dakota (Xcel Dec 2025 ND legislative presentation). Xcel-wide: ~2 GW of data centers contracted/under construction, ~20 GW potential pipeline (Utility Dive, May 2026). IRP 'Data Center Load' sensitivity added ~8,100 MW more resources (23,682 vs 15,592 MW cumulative 2024-2040)."
+  },
+  "generation_adds": [
+   {
+    "type": "wind",
+    "mw": 3200,
+    "years": "through 2030",
+    "note": "Approved 5-year action plan; ~2,800 MW expected to use the Minnesota Energy Connection line. IRP preferred plan: 8,400 MW wind by 2040."
+   },
+   {
+    "type": "solar",
+    "mw": 400,
+    "years": "through 2030",
+    "note": "Approved; uses King interconnection in 2030. Preferred plan 1,500 MW utility solar by 2040."
+   },
+   {
+    "type": "battery",
+    "mw": 600,
+    "years": "through 2030",
+    "note": "Approved; includes 300 MW Sherco West energy storage. Preferred plan 2,100 MW storage by 2040."
+   },
+   {
+    "type": "gas CT",
+    "mw": 420,
+    "years": "~2029",
+    "note": "Lyon County NGCT (company-owned), needs Certificate of Need and site permit; near southern end of MNEC line."
+   },
+   {
+    "type": "gas CC",
+    "mw": 375,
+    "years": "near term",
+    "note": "Mankato Energy Center CC PPA extension (from 800 MW firm dispatchable RFP)."
+   },
+   {
+    "type": "gas CT",
+    "mw": 357,
+    "years": "near term",
+    "note": "Cannon Falls CT PPA extension."
+   },
+   {
+    "type": "other",
+    "mw": 1900,
+    "years": "not stated",
+    "note": "Wind, solar and 100-hr iron-air storage dedicated to Google Pine Island data center (outside IRP; secondary)."
+   },
+   {
+    "type": "other",
+    "mw": 3592,
+    "years": "2024-2040",
+    "note": "IRP preferred plan 'firm peaking' additions by 2040 (technology-neutral). Approved plan: ~2,100 MW of peaking/dispatchable by 2029 (about half renewables+storage, half gas). Nuclear: Monticello extended to 2050, Prairie Island to 2053-54."
+   }
+  ],
+  "retirements": [
+   {
+    "plant": "Sherco Unit 1 (Becker)",
+    "type": "coal",
+    "mw": null,
+    "year": 2026,
+    "note": "Unit MW not stated in IRP excerpt read."
+   },
+   {
+    "plant": "Allen S. King (Bayport)",
+    "type": "coal",
+    "mw": null,
+    "year": 2028,
+    "note": "Interconnection reused for 400 MW solar in 2030."
+   },
+   {
+    "plant": "Sherco Unit 3 (Becker; jointly owned with SMMPA)",
+    "type": "coal",
+    "mw": null,
+    "year": 2030,
+    "note": "Sherco 2 (~700 MW) retired Dec 31, 2023; total coal reduction 2,400 MW incl. Sherco 1, 2, 3 and King."
+   },
+   {
+    "plant": "Red Wing and Wilmarth (refuse-derived fuel)",
+    "type": "other",
+    "mw": null,
+    "year": 2037,
+    "note": "Proposed life extension to 2037 (not a retirement before then)."
+   }
+  ],
+  "transmission": [
+   {
+    "name": "Minnesota Energy Connection (MNEC)",
+    "kv": "345",
+    "description": "New double-circuit 345 kV line ~171-175 mi; reuses Sherco interconnection; enables up to 4,000 MW of new renewables; approved by MN PUC; construction starting.",
+    "where": "Lyon County (Garvin substation) to Sherco, Becker (Sherburne County), with support substation in Meeker/Kandiyohi/Renville County",
+    "year": "2028"
+   },
+   {
+    "name": "MISO LRTP Tranche 1: Alexandria-Big Oaks",
+    "kv": "345",
+    "description": "~105-108 mi new 345 kV circuit on existing double-circuit-capable structures.",
+    "where": "Alexandria to Becker, MN",
+    "year": "not stated"
+   },
+   {
+    "name": "MISO LRTP Tranche 2.1: Big Stone South-Brookings-Lakefield Junction",
+    "kv": "765",
+    "description": "New 765 kV across southern MN, part of 765 kV path linking MN, SD, IA, WI (MISO approved Tranche 2.1 Dec 12, 2024).",
+    "where": "southern Minnesota / eastern SD",
+    "year": "not stated"
+   },
+   {
+    "name": "MISO LRTP Tranche 2.1: Lakefield Junction-East Adair",
+    "kv": "765",
+    "description": "New 765 kV line from southern MN into Iowa.",
+    "where": "Jackson County MN area to East Adair, IA",
+    "year": "not stated"
+   },
+   {
+    "name": "Bison-Alexandria second circuit",
+    "kv": "345",
+    "description": "Joint project (Xcel, GRE, Minnesota Power, Otter Tail, MRES).",
+    "where": "ND/MN (Bison to Alexandria)",
+    "year": "not stated"
+   },
+   {
+    "name": "MISO-SPP JTIQ: Brookings County-Lyon County & Helena-Hampton second circuits",
+    "kv": "345",
+    "description": "Joint targeted interconnection queue portfolio project.",
+    "where": "SW Minnesota / Twin Cities south metro",
+    "year": "not stated"
+   }
+  ],
+  "places_named": [
+   "Becker / Sherburne County (Sherco retirements, data-center site, storage, solar, MNEC terminus)",
+   "Bayport (King)",
+   "Lyon County (gas CT, MNEC terminus)",
+   "Pine Island (Google data center)",
+   "Monticello",
+   "Red Wing (Prairie Island)",
+   "Mankato",
+   "Cannon Falls"
+  ],
+  "rfp_or_procurement": "Completed: 800 MW Firm Dispatchable RFP (selections listed). 2024 Minnesota RFP for renewables (status not confirmed). Next IRP due Nov 2026 (docket 26-212) will set the next round of needs; Xcel says it plans ~2.1 GW wind/solar/battery deployment in 2026 and ~2.2 GW/yr in 2027-2028 (system-wide, secondary).",
+  "headline": "Xcel's approved 2024-2040 plan already assumed 1.8%/yr peak growth (9.3 GW to 12.4 GW) from data centers and EVs, adds 4.2 GW of wind, solar and storage by 2030 plus ~2.1 GW of firm capacity, and builds a 175-mile 345 kV line from Lyon County to Becker; a new plan due Nov 2026 will reflect a much larger data-center pipeline.",
+  "confidence": {
+   "load": "High",
+   "generation_adds": "High",
+   "transmission": "Medium"
+  },
+  "sources": [
+   {
+    "claim": "Peak 9,309->12,414 MW, energy 2%/yr, data centers, Data Center sensitivity table",
+    "url": "https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20%26%20Regulations/Resource%20Plans/01%202024%20to%202040%20Upper%20Midwest%20IRP_Cover%20Letter%2C%20Chapters%201%20thru%206%2C%20Service%20Lists.pdf",
+    "where": "Ch. 1 p. 7; Ch. 3 pp. 2-4; Ch. 5 p. 43 Table 5-13"
+   },
+   {
+    "claim": "Coal retirement schedule; Elk River Technologies data center at Sherco",
+    "url": "https://www.xcelenergy.com/staticfiles/xe-responsive/Company/Rates%20%26%20Regulations/Resource%20Plans/01%202024%20to%202040%20Upper%20Midwest%20IRP_Cover%20Letter%2C%20Chapters%201%20thru%206%2C%20Service%20Lists.pdf",
+    "where": "Ch. 2 and Ch. 5 p. 2"
+   },
+   {
+    "claim": "PUC approval, 4,200 MW by 2030, coal out by 2030, nuclear extensions",
+    "url": "https://content.govdelivery.com/accounts/MNPUBUC/bulletins/3d38825",
+    "where": "PUC news release Feb 21, 2025"
+   },
+   {
+    "claim": "Approved plan: 3,200 wind/400 solar/600 storage, ~2,100 MW peaking by 2029, Lyon County",
+    "url": "https://mn.gov/puc/activities/economic-analysis/planning/xcel-energy-irp",
+    "where": "PUC Xcel IRP page"
+   },
+   {
+    "claim": "Next IRP Nov 2026 docket 26-212; order Apr 21, 2025",
+    "url": "https://mn.gov/puc/activities/economic-analysis/planning/irp",
+    "where": "PUC IRP status table"
+   },
+   {
+    "claim": "Action plan project list (Lyon NGCT 420, Sherco storage 300, MEC 375, Cannon Falls 357); NSP 7.1 GW Tier 3 requests",
+    "url": "https://ndlegis.gov/sites/default/files/pdf/committees/69-2025/27.5083.02000presentation1415xe.pdf",
+    "where": "slides 4-7"
+   },
+   {
+    "claim": "MNEC 345 kV ~175 mi, 2028, up to 4,000 MW",
+    "url": "https://iprsoftwaremedia.com/418/files/202509/25-06-504-MN-Energy-Connection-Info-Sheet-p3.pdf",
+    "where": "Xcel info sheet"
+   },
+   {
+    "claim": "MNEC route/ substations",
+    "url": "http://puc.eip.mn.gov/web/project/15000",
+    "where": "MN EIP project page"
+   },
+   {
+    "claim": "Tranche 2.1 765 kV lines in MN",
+    "url": "https://puc.eip.mn.gov/node/35801",
+    "where": "MN EIP Tranche 2.1 page"
+   },
+   {
+    "claim": "Google Pine Island 1.9 GW; 2 GW contracted, 20 GW pipeline (secondary)",
+    "url": "http://utilitydive.com/news/xcel-energy-ceo-google-deal-sets-template-for-large-load-tariff-strategy/819409",
+    "where": "Utility Dive May 6, 2026"
+   }
+  ],
+  "gaps": "Plan is 2.5 years old; the Nov 2026 IRP (docket 26-212) was not yet filed/located as of Oct 13, 2026. Updated 2024v2/2025v2 forecast values are shown only as charts. Coal unit MW and Tranche 1/2.1 in-service years not captured. Data-center MW embedded in base forecast not stated.",
+  "priority_market": true
+ },
+ {
+  "id": "pnm",
+  "utility": "Public Service Company of New Mexico (PNM)",
+  "type": "IOU",
+  "states": [
+   "NM"
+  ],
+  "rto": "none",
+  "irp": {
+   "title": "PNM 2026 Integrated Resource Plan (2026-2045)",
+   "filed": "2026-09-01",
+   "regulator": "New Mexico Public Regulation Commission",
+   "docket": "unknown (not found; 2023 IRP was Case No. 23-00409-UT)",
+   "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+   "horizon": "2026-2045",
+   "next_due": "2029 IRP (per Action Plan item 11)",
+   "status": "filed",
+   "status_note": "Pending NMPRC acceptance. Balancing authority PNM; participates in CAISO WEIM and preparing for EDAM."
+  },
+  "load": {
+   "base_year": 2026,
+   "base_peak_mw": 2262,
+   "end_year": 2045,
+   "end_peak_mw": null,
+   "peak_growth_pct_per_year": 2.5,
+   "energy_growth_note": "IRP: peak 'exceeds 2,200 MW in 2026' and grows ~2.5%/yr over the 20-year horizon (Current Trends & Policy future); highest load future grows 3.2%/yr through 2045. 2,262 MW is the preliminary actual summer 2026 peak (as of Aug 3, 2026; Table 3-3). End-year peak MW not extracted (charts); a straight 2.5%/yr from 2,262 MW would imply ~3,600 MW in 2045 - that is an ESTIMATE, not a PNM number.",
+   "data_center_mw": null,
+   "large_load_notes": "Rate 36B Special Service Contract customer = Meta's data center near Los Lunas, Valencia County (identified in PNM's earlier resource-filing exec summary; the IRP itself does not name it). Dedicated 36B resources approved Dec 2025: Four Mile (100 MW solar + 100 MW storage), Windy Lane (90 MW solar + 68 MW storage), Star Light (100 MW solar + 100 MW storage). 2029-2032 RFP load forecast included Rate 36B load increases, 350 MW of new large load with signed reimbursement agreements, and 200 MW to accommodate Senate Bill 170 (2025). One of two 400 MW Palomas wind PPAs is dedicated to the SSC customer. PNM will file a Large Load Tariff."
+  },
+  "generation_adds": [
+   {
+    "type": "wind",
+    "mw": 800,
+    "years": "2029-2032",
+    "note": "Palomas Wind (Pattern Energy), two 400 MW PPAs, San Miguel and Torrance counties; one PPA for Rate 36B customer. Pending in Docket 26-0000114 (hearing Oct 7-9, 2026)."
+   },
+   {
+    "type": "solar",
+    "mw": 240,
+    "years": "2029-2032",
+    "note": "Two solar PPAs (one is the Cat Hills combined PPA/ESA in Valencia County; the other not confirmed); pending 26-0000114."
+   },
+   {
+    "type": "battery",
+    "mw": 610,
+    "years": "2029-2032",
+    "note": "Six 4- and 8-hour ESAs; pending 26-0000114."
+   },
+   {
+    "type": "gas CT",
+    "mw": 40,
+    "years": "2029-2032",
+    "note": "La Luz II, PNM-owned build-transfer, depreciated by 2044; pending."
+   },
+   {
+    "type": "battery",
+    "mw": 350,
+    "years": "2028",
+    "note": "Approved 2028 Resource Filing (24-00271-UT) with 100 MW solar and continuation of 167 MW Valencia Energy Facility PPA."
+   },
+   {
+    "type": "solar",
+    "mw": 290,
+    "years": "2026-2027",
+    "note": "Rate 36B dedicated solar (plus 268 MW BESS) approved Dec 18, 2025 (25-00048-UT)."
+   },
+   {
+    "type": "other",
+    "mw": 794,
+    "years": "2033-2036",
+    "note": "Statement of Need, CTP future: 556-794 MW carbon-free energy, 15-45 MW dynamic balancing, 0-200 MW firm dispatchable (nameplate, through 2036). High Economic Growth: 1,223-1,398 / 46-695 / 80-400 MW; Extreme growth sensitivity up to 5,396 / 2,373 / 1,360 MW."
+   }
+  ],
+  "retirements": [
+   {
+    "plant": "Four Corners Power Plant (PNM 200 MW share), San Juan County",
+    "type": "coal",
+    "mw": 200,
+    "year": 2031,
+    "note": "Abandonment requested in 26-0000114; exit July 2031."
+   },
+   {
+    "plant": "Reeves Generating Station (Albuquerque) - NOT retiring",
+    "type": "gas",
+    "mw": null,
+    "year": 2044,
+    "note": "Life extended through end of 2044 instead of 2030 retirement."
+   },
+   {
+    "plant": "Gas fleet (aggregate)",
+    "type": "gas",
+    "mw": null,
+    "year": 2044,
+    "note": "Many gas-fired firm resources exit by end of 2044 to meet 100% carbon-free by 2045."
+   }
+  ],
+  "transmission": [
+   {
+    "name": "Rio Sol connection (IRP alternative)",
+    "kv": "345",
+    "description": "Tie into Western Spirit-Hidden Mountain and line to Pinnacle Peak (APS); 600 MW transfer to Palo Verde market; ~$262M; 4-6 years.",
+    "where": "central NM to AZ",
+    "year": "~2030-2032"
+   },
+   {
+    "name": "SunZia AC connection (IRP alternative)",
+    "kv": "345",
+    "description": "345 kV line from Western Spirit to SunZia; 800 MW transfer; ~$219M; 4-6 years.",
+    "where": "central/eastern NM",
+    "year": "~2030-2032"
+   },
+   {
+    "name": "Blackwater/SPP connection (IRP alternative)",
+    "kv": "345",
+    "description": "Second Clines Corners-Blackwater 345 kV circuit; 1,000 MW bidirectional to SPP; ~$1.5B; 8-10 years.",
+    "where": "Clines Corners to Blackwater (east-central NM)",
+    "year": "~2034-2036"
+   },
+   {
+    "name": "Rio Puerco-Four Corners second 345 kV (IRP alternative)",
+    "kv": "345",
+    "description": "700 MW added transfer between PNM North and Four Corners; ~$448M; 8-10 years.",
+    "where": "Four Corners to Albuquerque area",
+    "year": "~2034-2036"
+   },
+   {
+    "name": "RioSol merchant line (SWPG)",
+    "kv": "500",
+    "description": "550-mi single-circuit 500 kV (~350 mi in NM), 1,500-1,600 MW, co-located with SunZia.",
+    "where": "NM to AZ",
+    "year": "2028-2029 target"
+   },
+   {
+    "name": "Hidden Mountain Extension (Agua Fria Energy)",
+    "kv": "345",
+    "description": "~20-mi 345 kV multi-circuit line, RioSol Tom Ray substation to PNM Hidden Mountain; unlocks Torrance/San Miguel wind/solar.",
+    "where": "Valencia County",
+    "year": "2028-12-31 target"
+   },
+   {
+    "name": "North Path (Invenergy/RETA)",
+    "kv": "525 HVDC",
+    "description": "~400-mi HVDC up to 4,000 MW.",
+    "where": "Union County to Four Corners",
+    "year": "not stated (permitting)"
+   }
+  ],
+  "places_named": [
+   "Albuquerque (load pocket)",
+   "Los Lunas / Valencia County (Meta data center; Cat Hills; Hidden Mountain)",
+   "San Miguel County and Torrance County (Palomas wind)",
+   "Four Corners / San Juan County",
+   "Belen",
+   "Union County (North Path)",
+   "Clines Corners / Blackwater"
+  ],
+  "rfp_or_procurement": "2029-2032 All-Source Generation Resource RFP Supplement issued May 1, 2026 (evaluation ongoing). Planned All-Source RFP (supply- and demand-side) for 2033-2036 needs, to issue within ~5 months after NMPRC accepts the 2026 IRP (variance possible). Large Load Tariff filing planned.",
+  "headline": "PNM's Sept 2026 IRP plans for ~2.5%/yr peak growth (up to 3.2% in the high case) from data centers and economic development, is replacing its last coal (Four Corners, 2031) with 800 MW wind, 240 MW solar and 610 MW storage, and flags transmission ties to SunZia, RioSol and SPP as key to adding more.",
+  "confidence": {
+   "load": "Medium",
+   "generation_adds": "High",
+   "transmission": "High"
+  },
+  "sources": [
+   {
+    "claim": "2026 IRP report: exec summary, statement of need, action plan, load forecast",
+    "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+    "where": "Exec Summary pp. 1-11; Sec. 3 p. 79-82; Table ES-2; Sec. 11 pp. 271-274"
+   },
+   {
+    "claim": "Transmission alternatives and merchant projects",
+    "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+    "where": "Sec. 5.8 and Table 8-9 (p. 202)"
+   },
+   {
+    "claim": "Rate 36B resources and large-load additions (350 MW, 200 MW SB170)",
+    "url": "https://www.pnm.com/documents/d/pnm.com/pnm-2026-irp_final_report_only_sc-pdf",
+    "where": "Sec. 1.5.6-1.5.7, Table 1-5 (p. 29)"
+   },
+   {
+    "claim": "IRP filed Sept 1, 2026",
+    "url": "https://gridworks.org/initiatives/pnm-2026-integrated-resource-plan",
+    "where": "Gridworks facilitator page"
+   },
+   {
+    "claim": "2029-2032 application: 800 MW wind, 240 solar, 610 storage, 40 MW gas, Four Corners exit 2031",
+    "url": "https://www.txnmenergy.com/~/media/Files/P/PNM-Resources/rates-and-filings/2026%20PNM%202029-2032%20Resources/Filing/1%20-%20Executive%20Summary.pdf",
+    "where": "Application executive summary"
+   },
+   {
+    "claim": "Palomas wind in San Miguel/Torrance counties; Cat Hills in Valencia County; Reeves to 2044",
+    "url": "https://www.txnmenergy.com/~/media/Files/P/PNM-Resources/rates-and-filings/2026%20PNM%202029-2032%20Resources/Filing/2%20-%20Application.pdf",
+    "where": "Application Sec. I"
+   },
+   {
+    "claim": "Docket 26-0000114 hearing Oct 7-9, 2026",
+    "url": "https://www.prc.nm.gov/public-hearings/",
+    "where": "NMPRC public hearings"
+   },
+   {
+    "claim": "Rate 36B customer is Meta Los Lunas",
+    "url": "https://www.pnm.com/documents/d/pnm.com/2-executive-summary",
+    "where": "PNM resource filing exec summary"
+   }
+  ],
+  "gaps": "NMPRC docket number for the 2026 IRP not found. Year-by-year peak forecast and 2045 peak MW only in charts/appendices not extracted. Data-center MW not disclosed (Meta load aggregated/confidential in Appendix H). In-service years for the four PNM transmission alternatives are inferred from stated build times.",
+  "priority_market": true
+ },
+ {
+  "id": "ercot",
+  "utility": "ERCOT (Electric Reliability Council of Texas)",
+  "type": "grid operator",
+  "states": [
+   "TX"
+  ],
+  "rto": "ERCOT",
+  "irp": {
+   "title": "2026 Preliminary Long-Term Load Forecast (2026-2032) + 2025 Regional Transmission Plan (Dec 2025)",
+   "filed": "2026-04-15",
+   "regulator": "Public Utility Commission of Texas",
+   "docket": "PUCT Project 58777 (preliminary LTLF); Project 59772 (LTLF adjustment)",
+   "url": "https://www.ercot.com/news/release/04152026-ercot-releases-preliminary",
+   "horizon": "2026-2032 (LTLF); RTP six-year horizon",
+   "next_due": "Adjusted LTLF (Batch Zero method) expected mid-to-late Dec 2026; PUCT granted good-cause exception to skip a 2026 RTP and May 2026 CDR",
+   "status": "filed",
+   "status_note": "Preliminary LTLF; ERCOT itself said it is likely higher than actual future growth and asked to adjust it. Most Texas utilities do not file IRPs."
+  },
+  "load": {
+   "base_year": 2026,
+   "base_peak_mw": 112000,
+   "end_year": 2032,
+   "end_peak_mw": 367790,
+   "peak_growth_pct_per_year": null,
+   "energy_growth_note": "Not ranked with the utilities: the preliminary forecast's growth rate (about 22% a year) comes from a large-load request queue that ERCOT itself is cutting. Preliminary LTLF peak: ~112,000 MW (2026), 278,003 MW (2029), 367,790 MW (2032) - driven overwhelmingly by TSP-reported large loads. Reality check: new unofficial all-time peak 91,134 MW on Jul 22, 2026 (prior record 85,508 MW, Aug 2023); ERCOT had projected summer 2026 peak of 90,500-98,000 MW. Alternative 'historical realization' adjustment (32% cut to data-center/crypto) would give ~168 GW (2029) and ~201 GW (2032). Growth % is computed from LTLF 2026->2032 values and is not credible as a planning number; it shows forecast inflation.",
+   "data_center_mw": null,
+   "large_load_notes": "Large Load Interconnection (LLI) requests: ~410 GW as of Mar 26, 2026 (~87% data centers; +178 GW since end-2025); 438 GW by May 2026; third-party tracker shows 466 GW (90% data centers) for Aug 2026. Batch Zero (one-time transitional study, loads >=75 MW): conditional classification Sept 3, 2026 - 204 projects / 66.4 GW base load and 158 projects / 127.9 GW studied load; 373 projects / 302.2 GW excluded. Governor Abbott's Aug 3, 2026 directive: ERCOT paused approvals to energize data centers and crypto facilities >=75 MW pending a verification audit; final Batch Zero classifications in December; Batch Zero study originally due Apr 9, 2027; Batch 1 targeted ~June 2027. Permian Basin load (oil & gas) forecast 23.7-26.4 GW drives 765 kV build."
+  },
+  "generation_adds": [
+   {
+    "type": "battery",
+    "mw": 166000,
+    "years": "queue",
+    "note": "Interconnection requests in ERCOT's queue, not planned plants. Interconnection queue requests as of July 2026 (not a plan): 166 GW / 398 GWh."
+   },
+   {
+    "type": "solar",
+    "mw": 158000,
+    "years": "queue",
+    "note": "Interconnection requests in ERCOT's queue, not planned plants. Queue requests, July 2026."
+   },
+   {
+    "type": "gas CT",
+    "mw": 80000,
+    "years": "queue",
+    "note": "Interconnection requests in ERCOT's queue, not planned plants. Gas (CT+CC combined) queue requests, July 2026; up 271% since Texas Energy Fund passed (2023)."
+   },
+   {
+    "type": "wind",
+    "mw": 49000,
+    "years": "queue",
+    "note": "Interconnection requests in ERCOT's queue, not planned plants. Queue requests, July 2026."
+   }
+  ],
+  "retirements": [],
+  "transmission": [
+   {
+    "name": "Permian Basin Reliability Plan - three 765 kV import paths",
+    "kv": "765",
+    "description": "PUCT approved Apr 24, 2025 (~$13.8B total plan incl. local upgrades). Import Path 1 ~442 mi (~$3.22B) Fort Worth area to Permian; Path 2 ~443 mi (~$3.16B) Bell County to Permian; Path 3 ~370 mi (~$2.56B) San Antonio area to Permian; ~4,000 MW each. Press: PUCT approved first 765 kV CCNs Aug 2026.",
+    "where": "Fort Worth area, Bell County, San Antonio area to Permian Basin (Far West Texas)",
+    "year": "~2030"
+   },
+   {
+    "name": "Texas 765-kV STEP Eastern Backbone",
+    "kv": "765",
+    "description": "AEP Texas/CPS/Oncor/CenterPoint; ~$9.384B; endorsed by ERCOT Board Dec 9, 2025; includes Hillje-Blu Lacy (~142.8 mi) and Blu Lacy-Howard (~139.2 mi) segments; CCNs required.",
+    "where": "Bexar, Dallas, Bell, Kleberg, Rusk, Wharton and other counties (South, Central, Coast, East, North Central)",
+    "year": "2030-2032"
+   },
+   {
+    "name": "Texas 765-kV STEP Western loop",
+    "kv": "765",
+    "description": "Endorsed by ERCOT Board Dec 9, 2025 alongside eastern loop.",
+    "where": "West Texas",
+    "year": "not stated"
+   },
+   {
+    "name": "Drill Hole-Sand Lake-Solstice 765 kV",
+    "kv": "765",
+    "description": "Oncor/AEP; ~$742.2M Tier 1.",
+    "where": "Culberson, Ward, Reeves, Pecos counties (Far West)",
+    "year": "not stated"
+   },
+   {
+    "name": "2025 Regional Transmission Plan",
+    "kv": "various",
+    "description": "Proposed 192 reliability projects (most ever) and added 765 kV equipment for growing Central Texas import need. ERCOT endorsed $14.036B of projects in 2025 and $12.111B in 2026 through Jul 31; $22.947B under RPG review, of which $21.311B is large-load dependent and may not proceed.",
+    "where": "ERCOT-wide; Central Texas load pocket",
+    "year": "through ~2031"
+   }
+  ],
+  "places_named": [
+   "Permian Basin / Far West Texas (Culberson, Ward, Reeves, Pecos counties)",
+   "Bell County (Central Texas)",
+   "Fort Worth area",
+   "San Antonio area / Bexar County",
+   "Dallas County",
+   "Kleberg, Rusk, Wharton counties",
+   "Central Texas load pocket"
+  ],
+  "rfp_or_procurement": "No IRP-style procurement: energy-only market. Gas additions supported by Texas Energy Fund loans (slow progress per trade press). For large loads, the gating process is ERCOT's Batch Zero / Batch 1 study (Batch 1 ~June 2027), now subject to a state verification audit and an energization pause for data centers >=75 MW (since Aug 2026). Senate Bill 6 (2025) curtailment provisions apply to large loads.",
+  "headline": "ERCOT's preliminary forecast (367,790 MW by 2032, about 4x today's 91 GW record) is inflated by a 410-466 GW large-load queue that is ~90% data centers; regulators are cutting it to a Batch Zero view (66 GW base / 128 GW studied) due in December 2026, while a 765 kV backbone (Permian import paths plus the $9.4B Eastern Backbone) is the big transmission build.",
+  "confidence": {
+   "load": "Medium",
+   "generation_adds": "Low",
+   "transmission": "High"
+  },
+  "sources": [
+   {
+    "claim": "Preliminary LTLF 367,790 MW by 2032",
+    "url": "https://www.ercot.com/news/release/04152026-ercot-releases-preliminary",
+    "where": "ERCOT news release Apr 15, 2026"
+   },
+   {
+    "claim": "278,003 MW in 2029; adjustment proposal",
+    "url": "https://www.ercot.com/services/comm/mkt_notices/M-B051826-01",
+    "where": "Market notice May 18, 2026"
+   },
+   {
+    "claim": "Summer 2026 forecast 112,000 MW vs 90.5-98 GW expected (secondary)",
+    "url": "https://www.levellandnews.net/news/ercot-files-long-term-load-forecast-through-2032-0",
+    "where": "May 5, 2026 article"
+   },
+   {
+    "claim": "Realization-rate alt.: 168 GW 2029 / 201 GW 2032",
+    "url": "https://interchange.puc.texas.gov/Documents/59772_6_1650785.PDF",
+    "where": "TPPA comments, Project 59772, p. 2 fn. 3"
+   },
+   {
+    "claim": "LLI queue ~410 GW, ~87% data centers; gen queue 453,562 MW; gas +271%",
+    "url": "https://interchange.puc.texas.gov/Documents/59475_5588_1652419.PDF",
+    "where": "ERCOT Senate B&C testimony Apr 1, 2026"
+   },
+   {
+    "claim": "438 GW LLI requests (May 2026)",
+    "url": "https://www.ercot.com/files/docs/2026/05/24/8-Interconnection-and-Grid-Analysis-Update.pdf",
+    "where": "Board item 8, June 2026"
+   },
+   {
+    "claim": "Batch Zero conditional classification 66.4 GW base/127.9 GW studied; energization pause",
+    "url": "https://www.ercot.com/files/docs/2026/09/11/14-Batch-Zero-Update.pdf",
+    "where": "Board item 14, Sept 2026"
+   },
+   {
+    "claim": "New LTLF delayed to Dec 2026; transmission endorsed totals; $22.9B under review",
+    "url": "https://www.ercot.com/files/docs/2026/09/07/8-System-Planning-and-Weatherization-Update.pdf",
+    "where": "Board item 8, Sept 2026"
+   },
+   {
+    "claim": "91,134 MW record; gen queue by fuel (July 2026)",
+    "url": "https://www.ercot.com/files/docs/2026/08/17/ERCOT-Monthly-Operational-Overview-July-2026.pdf",
+    "where": "pp. 2-5"
+   },
+   {
+    "claim": "2025 RTP: 192 reliability projects, added 765 kV for Central Texas",
+    "url": "https://www.ercot.com/files/docs/2026/02/02/9.1-System-Planning-and-Weatherization-Update.pdf",
+    "where": "Board item 9.1, Feb 2026, slide 5"
+   },
+   {
+    "claim": "Eastern Backbone $9.384B, ISD 2030-2032, segments",
+    "url": "https://www.ercot.com/files/docs/2025/11/10/EIR-Joint_AEP_CPS_Oncor_CEHE_Texas_765-kV_STEP_Eastern_Backbone-Status-Update-RPG-Nov_2025_Final.pdf",
+    "where": "RPG presentation Nov 2025"
+   },
+   {
+    "claim": "Permian import paths approved Apr 24, 2025; Drill Hole-Sand Lake-Solstice",
+    "url": "https://interchange.puc.texas.gov/Documents/55999_195_1566927.PDF",
+    "where": "ERCOT filing Dec 2025"
+   },
+   {
+    "claim": "Import path lengths/costs (intervenor testimony citing CCN applications)",
+    "url": "https://interchange.puc.texas.gov/Documents/59182_220_1592941.PDF",
+    "where": "Krenek testimony, PUC Docket 59182"
+   },
+   {
+    "claim": "Board endorsed eastern and western 765 kV loops Dec 9, 2025",
+    "url": "https://www.ercot.com/files/docs/2025/08/12/ERCOT_Trending_Topic-Transmission-Planning-Process.pdf",
+    "where": "Trending Topic doc (updated)"
+   },
+   {
+    "claim": "466 GW LLI Aug 2026 (third-party tracker)",
+    "url": "https://www.ercotqueue.com/charts/large-load.md",
+    "where": "ERCOTQueue chartbook"
+   }
+  ],
+  "gaps": "No adjusted/official 2026 LTLF yet (due Dec 2026) and no 2026 RTP. The 2025 RTP report itself was not opened (summary via ERCOT board slides). Location breakdown of large-load requests by county not captured. Generation 'adds' are interconnection requests, not committed builds; no retirement plan exists for ERCOT. Western 765 kV loop details and CCN approval dates (Aug 2026, per RTO Insider headline) not verified from primary source.",
+  "context": true,
+  "queue_not_plan": true,
+  "priority_market": true
+ }
+]
