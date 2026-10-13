@@ -330,6 +330,12 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     return { ends, counties, basis: g.counties_basis || "" };
   }
 
+  // Lines to draw: geo.segments (lists of pin positions) when a project is several lines, else the two end substations.
+  function segsOf(p, ends) {
+    const segs = p.geo && Array.isArray(p.geo.segments) ? p.geo.segments : (ends.length === 2 ? [[0, 1]] : []);
+    return segs.map((s) => s.map((i) => ends[i]).filter(Boolean)).filter((s) => s.length > 1);
+  }
+
   function mapSVG(p) {
     const { ends, counties } = geoOf(p);
     if (!COUNTIES || (!ends.length && !counties.length)) return "";
@@ -348,9 +354,9 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     const base = near.filter((key) => !hi.has(key)).map((key) => COUNTIES[key].map(ring).join("")).join("");
     const shade = counties.map((key) => COUNTIES[key].map(ring).join("")).join("");
     const fs = Math.max(W, H) * 0.032;
-    const line = ends.length > 1 ? `<path class="m-line" d="M${ends.map((e) => X(e.lon) + " " + Y(e.lat)).join("L")}"/>` : "";
+    const line = segsOf(p, ends).map((seg) => `<path class="m-line" d="M${seg.map((e) => X(e.lon) + " " + Y(e.lat)).join("L")}"/>`).join("");
     const pins = ends.map((e) => `<g><circle class="m-pin" cx="${X(e.lon)}" cy="${Y(e.lat)}" r="${(fs * 0.38).toFixed(3)}"/>
-      <text class="m-lbl" x="${(+X(e.lon) + (+X(e.lon) > W / 2 ? -fs * 0.6 : fs * 0.6)).toFixed(3)}" y="${(+Y(e.lat) - fs * 0.5).toFixed(3)}" font-size="${fs.toFixed(3)}" text-anchor="${+X(e.lon) > W / 2 ? "end" : "start"}">${esc(String(e.name).replace(/\s+(Substation|Switch(yard)?|Station)$/i, ""))}</text></g>`).join("");
+      <text class="m-lbl" x="${(+X(e.lon) + (+X(e.lon) > W / 2 ? -fs * 0.6 : fs * 0.6)).toFixed(3)}" y="${(+Y(e.lat) - fs * 0.5).toFixed(3)}" font-size="${fs.toFixed(3)}" text-anchor="${+X(e.lon) > W / 2 ? "end" : "start"}">${esc(String(e.name).split(" (")[0].replace(/\s+(Substation|Switch(yard)?|Station|POI)$/i, ""))}</text></g>`).join("");
     const pinned = new Set(ends.map((e) => e.county));
     const labels = counties.length <= 16 ? counties.filter((key) => !pinned.has(key)).map((key) => { const c = CBOX[key];
       return `<text class="m-cty" x="${X((c[0] + c[2]) / 2)}" y="${Y((c[1] + c[3]) / 2)}" font-size="${(fs * 0.62).toFixed(3)}" text-anchor="middle">${esc(key.split("|")[1])}</text>`; }).join("") : "";
@@ -363,8 +369,8 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     const { ends, counties } = geoOf(p);
     const feats = counties.map((key) => ({ type: "Feature", properties: { name: key.split("|")[1] + " County, " + key.split("|")[0], fill: "#c4136b", "fill-opacity": 0.18, stroke: "#c4136b", "stroke-width": 1.5 },
       geometry: { type: "MultiPolygon", coordinates: COUNTIES[key].map((r) => [r]) } }));
-    if (ends.length > 1) feats.push({ type: "Feature", properties: { name: "Straight line between the end substations (not the route)", stroke: "#1d211b", "stroke-width": 2 },
-      geometry: { type: "LineString", coordinates: ends.map((e) => [+fmt(e.lon), +fmt(e.lat)]) } });
+    segsOf(p, ends).forEach((seg) => feats.push({ type: "Feature", properties: { name: "Straight line between the end substations (not the route)", stroke: "#1d211b", "stroke-width": 2 },
+      geometry: { type: "LineString", coordinates: seg.map((e) => [+fmt(e.lon), +fmt(e.lat)]) } }));
     ends.forEach((e) => feats.push({ type: "Feature", properties: { name: e.name, location: CONF[e.confidence] || e.confidence, how_placed: e.basis || "", "marker-color": "#c4136b", "marker-symbol": "star" },
       geometry: { type: "Point", coordinates: [+fmt(e.lon), +fmt(e.lat)] } }));
     // Encoded twice: geojson.io decodes the hash once, then reads it as a data: URL (a raw "#" in a colour would cut it short).
@@ -378,7 +384,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
       <span class="mono">${fmt(e.lat)}, ${fmt(e.lon)}</span> <span class="pmeta">(${esc(CONF[e.confidence] || e.confidence || "approximate")}${e.basis ? ": " + esc(e.basis) : ""})</span></li>`).join("");
     return `<dt>Map</dt><dd>${mapSVG(p)}
       <p class="maplinks">${COUNTIES ? `<a class="mapbtn" href="${esc(mapLink(p))}" target="_blank" rel="noopener">Open the area on a map</a>` : ""}</p>
-      <p class="pmeta">Shaded: ${counties.length ? esc(basis || "counties the line could cross") : "no county list yet"}. Pins: end substations. The dashed line is a straight line between them, not the route.</p>
+      <p class="pmeta">Shaded: ${counties.length ? esc(basis || "counties the line could cross") : "no county list yet"}. Pins: end substations. Dashed lines are straight lines between them, not the route.</p>
       ${gm ? `<ul class="pins">${gm}</ul>` : ""}</dd>`;
   }
 

@@ -229,7 +229,79 @@ P += [
       links=[("News (Lynchburg News and Advance)", "https://news.google.com/rss/articles/CBMipwFBVV95cUxOQjJmelJWallUT1ZBczEza1ZDSENCLWJwWVN2MGVYdmVlX21oeWw5a0NRcEhoRW4zTzBwZmJsOElLS2RxOHFrbk9ZemhsN3lLbzVJdWFTekE1ZGpkbEJyc0JOdmZWWUhOZFdLYTN2UlBHaTdwM05qTGFrUGdScXdDSjNhYkRybHRJXzNDVjBWLTlBNDVJQmI4YmF5NmYybXY1aVNRVWZJMA?oc=5")]),
 ]
 
+# Status found while researching the maps (2026-10-13): PUCT case records, utility pages and news.
+DOCKET_URL = "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber={}&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+FOUND = "checked 2026-10-13"
+UPDATES = {
+    "big-hill-sand-lake": dict(stage=5, docket="59182", checked=FOUND,
+        status="Route case filed January 15, 2026 with 106 route options. The judges' proposal for decision came in June 2026; "
+               "as of September no final order had been signed.",
+        next_step="PUC vote on the route. Target in service winter 2030.",
+        why_k2="Route options and the landowner list are public. Ends at Sand Lake (Ward County, about 6 miles northeast of Pecos) "
+               "and Big Hill (Schleicher County).",
+        k2_action="Pull the route map and landowner list from Docket 59182; focus on parcels near both end substations.",
+        endpoints="Big Hill (Schleicher County) to Sand Lake (Ward County)"),
+    "howard-solstice": dict(stage=6, docket="59336", checked=FOUND,
+        status="Route case at the PUC (Docket 59336). Final order on September 18, 2026 approved Route 4-Mod 1.",
+        next_step="AEP Texas and CPS Energy buy easements along the approved route, then build.",
+        why_k2="The route is fixed, so land along it is already priced in. Solstice (Pecos County) and Howard (Bexar County) "
+               "become 765 kV hubs that new lines and projects will connect to.",
+        k2_action="Look at land near the two hubs, not along the route."),
+    "dinosaur-longshore": dict(stage=6, docket="59315", checked=FOUND,
+        status="The PUC unanimously approved the route on August 28, 2026 (Docket 59315). Oncor expects to finish in 2028.",
+        next_step="Oncor buys easements along the approved route, then builds."),
+    "longshore-drill-hole": dict(stage=6, docket="59029", checked=FOUND,
+        status="The PUC unanimously approved the route on August 28, 2026 (Docket 59029). About 160 miles; Oncor expects to finish in 2029.",
+        next_step="Oncor buys easements along the approved route, then builds."),
+    "bakersfield-white-baker": dict(stage=5, docket="59908", checked=FOUND,
+        status="LCRA TSC filed the route case on June 23, 2026 (Docket 59908). The line is in Pecos County.",
+        next_step="PUC decision expected about 6 months after filing.",
+        k2_action="Pull the route map and landowner list from Docket 59908; focus on parcels near White Baker."),
+    "rockhound-longshore": dict(next_step="Oncor expects to file the route case in February 2027.", checked=FOUND),
+    "oncor-border-to-quarry-field": dict(stage=6, docket="57837", checked=FOUND,
+        status="Route approved by the PUC on July 11, 2025 (Docket 57837). Loving County."),
+    "oncor-redland-to-longleaf": dict(stage=6, docket="57553", checked=FOUND,
+        status="Route case decided (Docket 57553; Oncor has sent landowners notice of the final order). Angelina County. "
+               "Longleaf is the hookup point for a new power plant, so this is mostly a plant connection."),
+    "oncor-mascho-to-lamesa": dict(stage=5, docket="60082", checked=FOUND,
+        status="Oncor filed the route case on August 21, 2026 (Docket 60082). Andrews, Dawson, Gaines and Martin counties."),
+    "oncor-lamesa-to-faraday": dict(stage=5, docket="60083", checked=FOUND,
+        status="Oncor and Wind Energy Transmission Texas filed the route case in August 2026 (Docket 60083). Borden and Dawson counties."),
+    "oncor-dry-lake-to-faulkner": dict(stage=5, docket="59487", checked=FOUND,
+        status="Route case with Texas-New Mexico Power (Docket 59487). The judges' proposal for decision came on August 13, 2026; "
+               "the PUC vote may already have happened. Reeves County."),
+    "oncor-drill-hole-to-el-capitan": dict(stage=5, docket="57828",
+        status="Route case filed in 2025 (Docket 57828); the judges' proposal for decision came in August 2025, so the route "
+               "has probably been decided. Confirm in the docket. Culberson County."),
+    "oncor-drill-hole-to-riverton": dict(stage=5, docket="58007",
+        status="Route case filed in 2025 (Docket 58007), so the route has probably been decided. Confirm in the docket. "
+               "Culberson, Loving and Reeves counties."),
+    "oncor-drill-hole-to-border": dict(stage=5, docket="58050",
+        status="Route case filed in 2025 (Docket 58050), so the route has probably been decided. Confirm in the docket. "
+               "Culberson, Reeves and Loving counties."),
+    "valley-link": dict(endpoints="Two lines: Joshua Falls (Campbell County, VA) to Yeat (Culpeper County, VA), and Amos "
+                                  "(Putnam County, WV) to Welton Spring (Hardy County, WV) to Rocky Point (Frederick County, MD)"),
+    "oncor-temple-to-salado": dict(next_step="Oncor expects to file the route case in December 2026.", checked=FOUND,
+        status="Oncor project page is live; no route case yet. Bell County."),
+}
+for _p in P:
+    _u = UPDATES.get(_p["id"])
+    if not _u:
+        continue
+    _p.update(_u)
+    _p["stage_label"], _p["window"] = STAGE[_p["stage"]], WINDOW[_p["stage"]]
+    _p["updated"] = "2026-10-13"
+    if _u.get("docket") and not any("PUCT Docket" in l["label"] for l in _p["links"]):
+        _p["links"].append({"label": "PUCT Docket " + _u["docket"], "url": DOCKET_URL.format(_u["docket"])})
+    if _p["id"].startswith("oncor-") and _p["stage"] >= 5 and "Review the page" in _p["k2_action"]:
+        _p["k2_action"] = ("Pull the approved route map from the docket and look at land near the end substations."
+                           if _p["stage"] == 6 else "Pull the route map and landowner list from the docket; focus on parcels near the end substations.")
+        _p["next_step"] = ("Oncor buys easements along the approved route, then builds." if _p["stage"] == 6
+                           else "PUC decision on the route (usually about 6 months after filing).")
+
 # Map data (end substation pins and shaded counties), researched separately: see merge_geo.py.
+# Which pins a straight line joins, by position in geo endpoints, when a project is more than one line.
+SEGMENTS = {"valley-link": [[0, 1], [2, 3, 4]], "panhandle-plan": []}
 _GEO = os.path.join(os.path.dirname(os.path.abspath(__file__)), "geo.json")
 if os.path.exists(_GEO):
     with open(_GEO, encoding="utf-8") as _fh:
@@ -238,6 +310,13 @@ if os.path.exists(_GEO):
         if _p["id"] in _geo:
             _g = _geo[_p["id"]]
             _p["geo"] = {"endpoints": _g["endpoints"], "counties": _g["counties"], "counties_basis": _g["counties_basis"]}
+            if _p["id"] in SEGMENTS:
+                _p["geo"]["segments"] = SEGMENTS[_p["id"]]
+            _ends = [e for e in _g["endpoints"] if e.get("county")]
+            if not _p["endpoints"] and len(_ends) == 2:
+                _p["endpoints"] = " to ".join("%s (%s County)" % (e["name"].split(" (")[0], e["county"].split("|")[1]) for e in _ends)
+            if not _p["counties"] and _g["counties"]:
+                _p["counties"] = ", ".join(k.split("|")[1] for k in _g["counties"])
 
 if __name__ == "__main__":
     print(json.dumps(P, indent=1))

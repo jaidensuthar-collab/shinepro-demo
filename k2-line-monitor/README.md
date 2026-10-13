@@ -57,6 +57,10 @@ It drops:
   write), `projects` holds one card per line (seeded from `data/projects.json`, built by
   `data/build_projects.py`), `meta/status` has the last check, and `research` holds questions
   people asked the page's assistant that need a web lookup.
+* **Maps**: each project card draws its study-area counties and end substations, and links to
+  geojson.io with the same shapes. Pins were researched from utility pages, PUC filings and
+  OpenStreetMap; `data/merge_geo.py` checks each pin sits in the county it names and writes
+  `data/geo.json`. County outlines are `web/counties.json` (built by `data/build_counties.py`).
 * **Monitor Feed tab**: the old raw log from before the filter. Kept as an archive.
 
 ## How a scheduled run works
