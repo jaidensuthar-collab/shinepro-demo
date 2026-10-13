@@ -7,6 +7,7 @@ Stage numbers follow the Signal Ladder: 2 ERCOT review, 3 project page / open ho
 4 docket-number request, 5 route case at the PUC, 6 route approved, 7 land buying or construction.
 """
 import json
+import os
 
 STAGE = {2: "ERCOT review", 3: "Open houses / project page", 4: "Docket requested", 5: "Route case at PUC",
          6: "Route approved", 7: "Land buying / construction"}
@@ -227,6 +228,16 @@ P += [
       "Read the news story; add PJM routing filings to the US Regions watch.", importance="Medium", region="Other US (PJM: Virginia area)",
       links=[("News (Lynchburg News and Advance)", "https://news.google.com/rss/articles/CBMipwFBVV95cUxOQjJmelJWallUT1ZBczEza1ZDSENCLWJwWVN2MGVYdmVlX21oeWw5a0NRcEhoRW4zTzBwZmJsOElLS2RxOHFrbk9ZemhsN3lLbzVJdWFTekE1ZGpkbEJyc0JOdmZWWUhOZFdLYTN2UlBHaTdwM05qTGFrUGdScXdDSjNhYkRybHRJXzNDVjBWLTlBNDVJQmI4YmF5NmYybXY1aVNRVWZJMA?oc=5")]),
 ]
+
+# Map data (end substation pins and shaded counties), researched separately: see merge_geo.py.
+_GEO = os.path.join(os.path.dirname(os.path.abspath(__file__)), "geo.json")
+if os.path.exists(_GEO):
+    with open(_GEO, encoding="utf-8") as _fh:
+        _geo = json.load(_fh)
+    for _p in P:
+        if _p["id"] in _geo:
+            _g = _geo[_p["id"]]
+            _p["geo"] = {"endpoints": _g["endpoints"], "counties": _g["counties"], "counties_basis": _g["counties_basis"]}
 
 if __name__ == "__main__":
     print(json.dumps(P, indent=1))
