@@ -279,7 +279,11 @@ UPDATES = {
     "oncor-drill-hole-to-border": dict(stage=5, docket="58050",
         status="Route case filed in 2025 (Docket 58050), so the route has probably been decided. Confirm in the docket. "
                "Culberson, Reeves and Loving counties."),
-    "valley-link": dict(endpoints="Two lines: Joshua Falls (Campbell County, VA) to Yeat (Culpeper County, VA), and Amos "
+    "valley-link": dict(importance="Medium",
+        why_k2="Mixed fit with K2's plan: the West Virginia part (Amos to Welton Spring) is in a priority market, but the "
+               "northern end runs toward Northern Virginia, the one market the plan avoids. Kept for awareness.",
+        k2_action="Watch the West Virginia segment only; skip Northern Virginia.",
+        endpoints="Two lines: Joshua Falls (Campbell County, VA) to Yeat (Culpeper County, VA), and Amos "
                                   "(Putnam County, WV) to Welton Spring (Hardy County, WV) to Rocky Point (Frederick County, MD)"),
     "oncor-temple-to-salado": dict(next_step="Oncor expects to file the route case in December 2026.", checked=FOUND,
         status="Oncor project page is live; no route case yet. Bell County."),
