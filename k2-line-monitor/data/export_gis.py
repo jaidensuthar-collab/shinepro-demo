@@ -47,8 +47,13 @@ k2-line-watch.kml
 k2-irp-pilot.csv
   IRP pilot: one row per utility (load growth, data-center load, new generation,
   retirements, transmission, active procurement, plan link). Not map data.
-routes/ (if present)
-  Route option links from PUC filings or utility GIS services, one file per case.
+routes/<docket>.geojson
+  Route option links for active PUC cases, one file per docket, from the utilities' public
+  ArcGIS services and the KMZ files in PUC filings. Each link has the filed routes that use it
+  (route_ids) and whether it is on the utility's recommended route. Files marked
+  "preliminary" are open-house draft links, not the filed set. routes/summary.json gives
+  the source and notes for each docket. Bakersfield to White Baker (59908) filed one route
+  only, so it has no alternatives here.
 
 Live version: https://claude.ai/artifact/FCARNQ1KQBr5r5DX9V6XfG
 """
@@ -163,11 +168,19 @@ def main():
     if os.path.exists(irp_path):
         write_csv(os.path.join(OUT, "k2-irp-pilot.csv"), irp_rows(json.load(open(irp_path, encoding="utf-8"))))
     readme = README.format(n=len(rows), s=len(subs))
+    # The web page serves these and zips them in the browser (.kml and .zip are not served as-is).
+    open(os.path.join(OUT, "README.txt"), "w", encoding="utf-8").write(readme)
+    open(os.path.join(OUT, "k2-line-watch.kml.xml"), "w", encoding="utf-8").write(kml(subs, areas, lines))
     with zipfile.ZipFile(os.path.join(OUT, "k2-gis-export.zip"), "w", zipfile.ZIP_DEFLATED) as z:
         z.writestr("README.txt", readme)
         for name in sorted(os.listdir(OUT)):
-            if name != "k2-gis-export.zip" and not name.endswith(".zip"):
-                z.write(os.path.join(OUT, name), name)
+            path = os.path.join(OUT, name)
+            if os.path.isfile(path) and not name.endswith((".zip", ".kml.xml", "README.txt")):
+                z.write(path, name)
+        routes = os.path.join(OUT, "routes")
+        if os.path.isdir(routes):
+            for name in sorted(os.listdir(routes)):
+                z.write(os.path.join(routes, name), "routes/" + name)
     print("%d projects, %d substations, %d study areas, %d straight lines -> %s" % (len(rows), len(subs), len(areas), len(lines), OUT))
 
 

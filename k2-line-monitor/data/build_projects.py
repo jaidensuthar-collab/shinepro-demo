@@ -267,9 +267,9 @@ UPDATES = {
         status="Oncor filed the route case on August 21, 2026 (Docket 60082). Andrews, Dawson, Gaines and Martin counties."),
     "oncor-lamesa-to-faraday": dict(stage=5, docket="60083", checked=FOUND,
         status="Oncor and Wind Energy Transmission Texas filed the route case in August 2026 (Docket 60083). Borden and Dawson counties."),
-    "oncor-dry-lake-to-faulkner": dict(stage=5, docket="59487", checked=FOUND,
-        status="Route case with Texas-New Mexico Power (Docket 59487). The judges' proposal for decision came on August 13, 2026; "
-               "the PUC vote may already have happened. Reeves County."),
+    "oncor-dry-lake-to-faulkner": dict(stage=6, docket="59487", checked=FOUND,
+        status="Route case with Texas-New Mexico Power (Docket 59487). The docket shows a PUC order (about September 2026) and "
+               "Oncor's map service marks Route 75, the recommended route, as approved. Reeves County."),
     "oncor-drill-hole-to-el-capitan": dict(stage=5, docket="57828",
         status="Route case filed in 2025 (Docket 57828); the judges' proposal for decision came in August 2025, so the route "
                "has probably been decided. Confirm in the docket. Culberson County."),

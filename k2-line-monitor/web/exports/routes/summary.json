@@ -1,0 +1,82 @@
+[
+ {
+  "docket": "59475",
+  "project": "Bell County East to Big Hill 765 kV (Oncor + LCRA TSC)",
+  "status": "got GIS",
+  "features": "171",
+  "source": "https://services1.arcgis.com/UN4R3TyArTjDlnhb/arcgis/rest/services/Permian_Publishing_AGOL/FeatureServer/0",
+  "notes": "171 filed \"primary route segments\" from LCRA TSC hosted layer behind the BCBH CCN filing map (same 171 link IDs as Oncor CCN service project 1022). route_ids = the 122 filed alternative routes (Routing Memo Table 1). Applicants recommended Route 894 (on_applicant_recommended_route). Geometry served in Web Mercator (EPSG:3857), requested server-side as EPSG:4326."
+ },
+ {
+  "docket": "59182",
+  "project": "Big Hill to Sand Lake 765 kV (Oncor + LCRA TSC)",
+  "status": "got GIS",
+  "features": "106",
+  "source": "https://services1.arcgis.com/UN4R3TyArTjDlnhb/arcgis/rest/services/Permian_Publishing_AGOL/FeatureServer/34",
+  "notes": "106 filed primary route segments from LCRA TSC hosted layer behind the BHSL CCN filing map (same 106 link IDs as Oncor CCN service project 1021). route_ids = 173 filed alternative routes from native-file routing memo Table 1. Applicants recommended Route 228. Source CRS EPSG:3857, requested as EPSG:4326."
+ },
+ {
+  "docket": "60190",
+  "project": "Consavvy to Long Creek 345 kV (Oncor)",
+  "status": "got GIS",
+  "features": "75",
+  "source": "https://interchange.puc.texas.gov/Documents/60190_6_1683881.ZIP",
+  "notes": "75 filed links from the KMZ in the PUCT native-files filing (item 6). Only 3 filed routes (Route 1 build-adjacent, Route 2 existing centerline, Route 3 hybrid); Oncor recommends Route 1. KML is WGS84. Oncor CCN service (project 1048) has only 2 unlabeled multipart features, so not used."
+ },
+ {
+  "docket": "60382",
+  "project": "White Baker to Bottlebrush 345 kV",
+  "status": "got GIS",
+  "features": "28",
+  "source": "https://services.arcgis.com/04HiymDgLlsbhaV4/arcgis/rest/services/WhiteBaker_Bottlebrush_PublicMeetingMap_WFL1/FeatureServer/9",
+  "notes": "28 PRELIMINARY links from TNMP/HDR public-meeting web map (layer named Links_20240516; open house Nov 2025). Docket 60382 so far only has the control-number request (Oct 2026); CCN application/filed links not yet on Interchange, so the filed set may differ. No route compositions. Source CRS EPSG:3857 -> 4326 server-side."
+ },
+ {
+  "docket": "59908",
+  "project": "Bakersfield to White Baker 345 kV (LCRA TSC + TNMP)",
+  "status": "map only",
+  "features": "0",
+  "source": "https://www.lcra.org/download/bakwb-notice-map/?wpdmdl=42419",
+  "notes": "Single proposed route only (no alternatives): application states all directly affected landowners (University Lands) consented, so applicants filed one route. No GIS found (LCRA AGOL has no BKWB layer; Interchange application ZIP/PDF returned HTTP 500). Maps: notice map above; public viewing map https://www.lcra.org/download/bakwb-public-viewing-map/?wpdmdl=42420 ; constraints map https://www.lcra.org/download/bakwb-constraints-map/?wpdmdl=42418"
+ },
+ {
+  "docket": "60082",
+  "project": "Mascho to Lamesa 345 kV (Oncor)",
+  "status": "got GIS",
+  "features": "83",
+  "source": "https://interchange.puc.texas.gov/Documents/60082_4_1676439.ZIP",
+  "notes": "83 links from the KMZ in PUCT native files (item 4); route_ids = 40 filed routes (Routing Memo Table 1). Oncor recommended Route 526. KML is WGS84. Same 83 link IDs in Oncor CCN service project 1035."
+ },
+ {
+  "docket": "60083",
+  "project": "Lamesa to Faraday 345 kV (Oncor + WETT)",
+  "status": "got GIS",
+  "features": "81",
+  "source": "https://interchange.puc.texas.gov/Documents/60083_4_1676482.ZIP",
+  "notes": "81 links from the KMZ in PUCT native files (item 4); route_ids = 86 filed routes (Routing Memo Table 1). Applicants recommended Route 104. KML is WGS84. Same 81 link IDs in Oncor CCN service project 1036."
+ },
+ {
+  "docket": "59487",
+  "project": "Dry Lake to Faulkner 345 kV (Oncor + TNMP)",
+  "status": "got GIS",
+  "features": "51",
+  "source": "https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer/2 (project_id=1032)",
+  "notes": "51 links from Oncor public CCN mapping service (status Proposed); route_ids = 22 filed routes (Routing Memo Table 1 from PUCT native files item 2). Oncor service also carries 14 duplicate links with status \"Approved\" = exactly the links of Route 75 (applicants' recommended route); the docket shows a Commission ORDER (item 96, ~Sept 2026), so this case may already be decided. Link J4 is in GIS but in no filed route. Source CRS EPSG:3857, requested as EPSG:4326."
+ },
+ {
+  "docket": "60319",
+  "project": "Pine to McCloud Central 345 kV",
+  "status": "got GIS",
+  "features": "36",
+  "source": "https://services.arcgis.com/04HiymDgLlsbhaV4/arcgis/rest/services/PublicMeetingWebMap_WFL1/FeatureServer/4",
+  "notes": "36 PRELIMINARY links from the EPE/HDR public-meeting map embedded on pine-mccloudcentral.com (service is generically named \"PublicMeetingWebMap\"; identified by extent NE El Paso to NM line and link labels such as 1R cited in docket comments). Application not yet filed (docket has only the number request + comments). EPE notice map dated Oct 2026: https://www.epelectric.com/el-paso-electric/uploads/PDFs/pine-mccloud-central_noticemap.pdf ; detailed map: https://www.epelectric.com/el-paso-electric/uploads/PDFs/pine-mccloud-central_detailed-map.pdf"
+ },
+ {
+  "docket": "60152",
+  "project": "Tuskegee to Pine 345 kV",
+  "status": "got GIS",
+  "features": "66",
+  "source": "https://services.arcgis.com/04HiymDgLlsbhaV4/arcgis/rest/services/Pine_Tuskegee_PublicMeeting_Links/FeatureServer/2 and /3",
+  "notes": "33 PRELIMINARY link labels x 2 service layers (66 features; layers 2 and 3 have identical labels but slightly offset geometry, apparently one per circuit of the double line; property service_layer tells them apart). From EPE/HDR public-meeting map (Mar 2026). Application was filed Aug 31 2026 (items 2-5) but no native GIS files found; filed links may differ. Filed-application maps: https://www.epelectric.com/el-paso-electric/uploads/PDFs/tuskegee-pine_noticemap.pdf and tuskegee-pine_constraints-map.pdf."
+ }
+]

@@ -80,6 +80,8 @@ h1 .tape { display: inline-block; width: 18px; height: 30px; background: var(--f
 .minimap .m-base { fill: none; stroke: var(--rule); stroke-width: 1; vector-effect: non-scaling-stroke }
 .minimap .m-hi { fill: var(--flag-soft); stroke: var(--flag); stroke-width: 1; vector-effect: non-scaling-stroke }
 .minimap .m-line { fill: none; stroke: var(--ink); stroke-width: 2; stroke-dasharray: 6 5; vector-effect: non-scaling-stroke }
+.minimap .m-route { fill: none; stroke: var(--ink); stroke-opacity: .45; stroke-width: 1; vector-effect: non-scaling-stroke }
+.minimap .m-rec { fill: none; stroke: var(--flag); stroke-width: 3; stroke-linecap: round; vector-effect: non-scaling-stroke }
 .minimap .m-pin { fill: var(--flag); stroke: var(--panel); stroke-width: 2; vector-effect: non-scaling-stroke }
 .minimap .m-lbl { fill: var(--ink); font-family: var(--display); font-weight: 700; paint-order: stroke; stroke: var(--panel); stroke-width: 3px; vector-effect: non-scaling-stroke }
 .minimap .m-cty { fill: var(--muted); font-family: var(--body) }
@@ -347,6 +349,23 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     if (state.open.size) renderProjects();
   }).catch(() => {});
 
+  // Route option links per docket (exports/routes), fetched when a project with that docket is opened.
+  const ROUTES = {}; let ROUTE_INFO = null;
+  fetch("exports/routes/summary.json").then((r) => r.ok ? r.json() : []).then((list) => {
+    ROUTE_INFO = {}; (list || []).forEach((x) => { if (Number(x.features) > 0) ROUTE_INFO[x.docket] = x; });
+    if (state.open.size) renderProjects();
+  }).catch(() => { ROUTE_INFO = {}; });
+  function routesFor(p) {
+    const d = p.docket;
+    if (!d || !ROUTE_INFO || !ROUTE_INFO[d]) return null;
+    if (ROUTES[d] === undefined) {
+      ROUTES[d] = null;
+      fetch("exports/routes/" + d + ".geojson").then((r) => r.ok ? r.json() : null).then((fc) => { ROUTES[d] = fc; renderProjects(); }).catch(() => {});
+    }
+    return ROUTES[d];
+  }
+  const lineCoords = (g) => g.type === "LineString" ? [g.coordinates] : g.type === "MultiLineString" ? g.coordinates : [];
+
   const CONF = { exact: "exact", approx: "approximate", town: "nearest town", county: "county only" };
   const fmt = (n) => Number(n).toFixed(4);
   function geoOf(p) {
@@ -369,6 +388,8 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     const grow = (x, y) => { b = [Math.min(b[0], x), Math.min(b[1], y), Math.max(b[2], x), Math.max(b[3], y)]; };
     counties.forEach((k) => { const c = CBOX[k]; grow(c[0], c[1]); grow(c[2], c[3]); });
     ends.forEach((e) => grow(e.lon, e.lat));
+    const routes = routesFor(p);
+    if (routes) routes.features.forEach((f) => lineCoords(f.geometry).forEach((l) => l.forEach(([x, y]) => grow(x, y))));
     const padX = Math.max((b[2] - b[0]) * 0.12, 0.35), padY = Math.max((b[3] - b[1]) * 0.12, 0.35);
     b = [b[0] - padX, b[1] - padY, b[2] + padX, b[3] + padY];
     const k = Math.cos(((b[1] + b[3]) / 2) * Math.PI / 180);
@@ -383,11 +404,14 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     const line = segsOf(p, ends).map((seg) => `<path class="m-line" d="M${seg.map((e) => X(e.lon) + " " + Y(e.lat)).join("L")}"/>`).join("");
     const pins = ends.map((e) => `<g><circle class="m-pin" cx="${X(e.lon)}" cy="${Y(e.lat)}" r="${(fs * 0.38).toFixed(3)}"/>
       <text class="m-lbl" x="${(+X(e.lon) + (+X(e.lon) > W / 2 ? -fs * 0.6 : fs * 0.6)).toFixed(3)}" y="${(+Y(e.lat) - fs * 0.5).toFixed(3)}" font-size="${fs.toFixed(3)}" text-anchor="${+X(e.lon) > W / 2 ? "end" : "start"}">${esc(String(e.name).split(" (")[0].replace(/\s+(Substation|Switch(yard)?|Station|POI)$/i, ""))}</text></g>`).join("");
+    const rpath = (rec) => routes ? routes.features.filter((f) => !!f.properties.on_applicant_recommended_route === rec)
+      .map((f) => lineCoords(f.geometry).map((l) => "M" + l.map(([x, y]) => X(x) + " " + Y(y)).join("L")).join("")).join("") : "";
+    const routeSvg = routes ? `<path class="m-route" d="${rpath(false)}"/><path class="m-rec" d="${rpath(true)}"/>` : "";
     const pinned = new Set(ends.map((e) => e.county));
     const labels = counties.length <= 16 ? counties.filter((key) => !pinned.has(key)).map((key) => { const c = CBOX[key];
       return `<text class="m-cty" x="${X((c[0] + c[2]) / 2)}" y="${Y((c[1] + c[3]) / 2)}" font-size="${(fs * 0.62).toFixed(3)}" text-anchor="middle">${esc(key.split("|")[1])}</text>`; }).join("") : "";
     return `<svg class="minimap" viewBox="0 0 ${W.toFixed(3)} ${H.toFixed(3)}" role="img" aria-label="Map of ${esc(p.name)}: shaded counties and end substations">
-      <path class="m-base" d="${base}"/><path class="m-hi" d="${shade}"/>${labels}${line}${pins}</svg>`;
+      <path class="m-base" d="${base}"/><path class="m-hi" d="${shade}"/>${labels}${routes ? routeSvg : line}${pins}</svg>`;
   }
 
   // A GeoJSON link that opens geojson.io with the counties shaded and the substations pinned.
@@ -403,6 +427,17 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     return "https://geojson.io/#data=" + encodeURIComponent("data:application/json," + encodeURIComponent(JSON.stringify({ type: "FeatureCollection", features: feats })));
   }
 
+  function routeNote(p) {
+    const info = ROUTE_INFO && p.docket ? ROUTE_INFO[p.docket] : null;
+    const r = info ? ROUTES[p.docket] : null;
+    if (!info) return "Dashed lines are straight lines between them, not the route.";
+    if (!r) return "Loading route options...";
+    const prelim = r.features.some((f) => /preliminary/i.test(f.properties.kind || ""));
+    const rec = r.features.some((f) => f.properties.on_applicant_recommended_route);
+    return `Thin lines: ${r.features.length} route option links ${prelim ? "shown at the utility's open houses (draft, not the filed set)" : "filed in the PUC case"}.` +
+      (rec ? " Bold: the utility's recommended route." : "") + " Route files are in the GIS download.";
+  }
+
   function mapBlock(p) {
     const { ends, counties, basis } = geoOf(p);
     if (!ends.length && !counties.length) return "";
@@ -410,7 +445,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
       <span class="mono">${fmt(e.lat)}, ${fmt(e.lon)}</span> <span class="pmeta">(${esc(CONF[e.confidence] || e.confidence || "approximate")}${e.basis ? ": " + esc(e.basis) : ""})</span></li>`).join("");
     return `<dt>Map</dt><dd>${mapSVG(p)}
       <p class="maplinks">${COUNTIES ? `<a class="mapbtn" href="${esc(mapLink(p))}" target="_blank" rel="noopener">Open the area on a map</a>` : ""}</p>
-      <p class="pmeta">Shaded: ${counties.length ? esc(basis || "counties the line could cross") : "no county list yet"}. Pins: end substations. Dashed lines are straight lines between them, not the route.</p>
+      <p class="pmeta">Shaded: ${counties.length ? esc(basis || "counties the line could cross") : "no county list yet"}. Pins: end substations. ${routeNote(p)}</p>
       ${gm ? `<ul class="pins">${gm}</ul>` : ""}</dd>`;
   }
 
@@ -745,20 +780,36 @@ How to answer: plain English for someone new to the grid; short; lead with the a
     } finally { noteEl && noteEl.remove(); noteEl = null; busy = false; $("askbtn").disabled = false; }
   }
 
-  // GIS bundle: saved through the downloads capability when the viewer allows it, else opened directly.
+  // GIS bundle: the page zips the published export files (JSZip) and saves the zip through the downloads capability.
+  const GIS_FILES = ["README.txt", "k2-substations.geojson", "k2-substations.csv", "k2-study-areas.geojson", "k2-straight-lines.geojson",
+    "k2-projects.csv", "k2-irp-pilot.csv", ["k2-line-watch.kml.xml", "k2-line-watch.kml"]];
+  function loadJSZip() {
+    if (window.JSZip) return Promise.resolve(window.JSZip);
+    return new Promise((ok, bad) => { const t = document.createElement("script");
+      t.src = "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"; t.onload = () => ok(window.JSZip); t.onerror = bad; document.head.appendChild(t); });
+  }
   $("gisbtn").addEventListener("click", async () => {
-    const note = $("gisnote"); note.textContent = "";
+    const note = $("gisnote"), btn = $("gisbtn");
     const dl = await claude.use("downloads");
-    if (!dl) { window.open("exports/k2-gis-export.zip", "_blank", "noopener"); return; }
+    if (!dl) { note.textContent = "Downloads aren't available in this view. Open the page on claude.ai."; return; }
+    btn.disabled = true; note.textContent = "Preparing the files...";
     try {
-      const r = await fetch("exports/k2-gis-export.zip");
-      if (!r.ok) throw { code: "missing" };
-      await dl.save({ filename: "k2-gis-export.zip", data: await r.blob() });
+      const JSZip = await loadJSZip(), zip = new JSZip();
+      const routes = Object.keys(ROUTE_INFO || {}).map((d) => ["routes/" + d + ".geojson", "routes/" + d + ".geojson"]);
+      const list = [...GIS_FILES, ...routes, ["routes/summary.json", "routes/summary.json"]];
+      for (const f of list) {
+        const [src, name] = Array.isArray(f) ? f : [f, f];
+        const r = await fetch("exports/" + src);
+        if (r.ok) zip.file(name, await r.blob());
+      }
+      const blob = await zip.generateAsync({ type: "blob", compression: "DEFLATE" });
+      note.textContent = "";
+      await dl.save({ filename: "k2-gis-export.zip", data: blob });
     } catch (e) {
-      if (e && e.code === "declined") return;
-      if (e && e.code === "rate_limited") { note.textContent = "A save is already open. Try again in a moment."; return; }
-      window.open("exports/k2-gis-export.zip", "_blank", "noopener");
-    }
+      const code = e && e.code;
+      note.textContent = code === "declined" ? "" : code === "rate_limited" ? "A save is already open. Try again in a moment."
+        : "Couldn't build the download here. Try again from claude.ai in a desktop browser.";
+    } finally { btn.disabled = false; }
   });
 
   const TABS = [["t-watch", "p-watch"], ["t-irp", "p-irp"], ["t-help", "p-help"]];
