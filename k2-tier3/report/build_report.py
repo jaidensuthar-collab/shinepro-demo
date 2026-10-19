@@ -393,7 +393,8 @@ a { color: var(--steel); } a:focus-visible { outline: 2px solid var(--steel); ou
 .muted { display: block; color: var(--muted); font-size: 13px; }
 .muted-in { color: var(--muted); font-size: 13px; }
 section { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
-header { display: grid; gap: 14px; }
+header { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+.status .chip { white-space: normal; line-height: 1.3; }
 .lede { font-size: 18px; max-width: 62ch; }
 .status { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { display: inline-block; font: 500 12px/1 var(--mono); padding: 6px 9px; border-radius: 4px; white-space: nowrap; }
