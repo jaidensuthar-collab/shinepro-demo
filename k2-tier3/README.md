@@ -83,6 +83,20 @@ Save on one Mac, then load on the other. If you edit on both without syncing, th
 API keys live inside each Mac's n8n, never in git. Lead CSVs stay in `output/`, which git ignores:
 they hold landowner names and addresses, and this repo is public.
 
+## Keeping it running
+
+A scheduled task runs every Monday at 8:52am CT (after the morning Line Watch check):
+
+1. Refreshes `data/substations.json` from the Line Watch project cards, and adds cards for new
+   High-priority lines when their substation locations can be sourced.
+2. Runs the whole workflow for every Texas substation (`run_headless.sh`, about 10 minutes).
+3. `report/build_report.py` compares owners against `data/seen-owners.txt` and lists what is new:
+   new substations, new landowners, new acres. That file holds one-way fingerprints, not names.
+4. Updates the group page and sends Jaiden the private list with full names.
+
+To run the same thing by hand: `./run_headless.sh output/run-today demo 0` then
+`python3 report/build_report.py output/run-today`.
+
 ## Settings
 
 | Setting | Default | Meaning |
