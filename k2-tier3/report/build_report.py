@@ -2,7 +2,7 @@
 
     python3 report/build_report.py <run_dir> [--update-seen]
 
-<run_dir> holds execution.json from run_headless.sh plus the lead CSV n8n wrote.
+<run_dir> holds run-record.json and the lead CSV the workflow wrote (see run_headless.sh).
 Writes into <run_dir>:
   line-watch-to-call-list.html   shareable page (owners as type + initials, no street addresses)
   private-step-by-step.html      the same steps with real names and addresses (never publish)
@@ -55,26 +55,23 @@ def table(cols, rows, num=()):
 
 class Run:
     def __init__(self, run_dir):
-        raw = open(os.path.join(run_dir, "execution.json")).read()
-        self.rd = json.loads(raw[raw.index("{"):])["data"]["resultData"]["runData"]
-        self.st = self.out("Settings")[0]
-        self.subs = self.out("Pick substations")
-        self.total_subs = len(self.out("Get Line Watch substations")[0]["substations"])
-        self.tiles = self.out("Make map tiles")
-        self.failed = len(self.out("Any tile failed?", 0))
-        self.leads = self.out("Score parcels and owners")
-        self.stats = json.loads(self.leads[0]["_run_stats"]) if self.leads else {}
-        self.final = self.out("Pick next step")
+        rec = json.load(open(os.path.join(run_dir, "run-record.json")))
+        rec = rec[0] if isinstance(rec, list) else rec
+        self.st = rec["settings"]
+        self.subs = rec["substations"]
+        self.total_subs = rec["substations_in_line_watch"]
+        self.tile_count = rec["tiles"]
+        self.first_tiles = rec["first_tiles"]
+        self.per_sub = rec["parcel_records_per_substation"]
+        self.failed = rec["failed_first_try"]
+        self.stats = rec["stats"]
+        self.scored_count = rec["scored_count"]
+        self.final = rec["leads"]
         self.land = [r for r in self.final if r["category"] == "landowner"]
-        self.phones = self.out("Make demo phones") or self.out("Attach phones")
+        self.phones = rec["phones"]
         self.mode = self.st.get("phoneLookup", "off")
-        self.secs = sum(r[0].get("executionTime", 0) for r in self.rd.values()) / 1000
-
-    def out(self, name, branch=0):
-        if name not in self.rd:
-            return []
-        main = (self.rd[name][0].get("data") or {}).get("main") or []
-        return [i["json"] for i in (main[branch] if len(main) > branch and main[branch] else [])]
+        timing = os.path.join(run_dir, "timing.json")
+        self.secs = json.load(open(timing))["seconds"] if os.path.exists(timing) else 0
 
 
 class View:
@@ -109,7 +106,7 @@ def phone_cell(ps):
 
 
 def steps_html(run, v):
-    st, subs, tiles = run.st, run.subs, run.tiles
+    st, subs = run.st, run.subs
     out = []
 
     def step(i, title, node, count, what, body):
@@ -126,26 +123,22 @@ def steps_html(run, v):
          f"Read {run.total_subs} substations from Line Watch and kept Texas ones with a usable location, High projects and early timing first.",
          table(["Substation", "County", "Project", "Stage", "Timing", "Location"], rows))
 
-    first = [t for t in tiles if t["subId"] == subs[0]["id"]][:4] if subs else []
-    rows = [(e(short(subs[0]["name"])), e(t["tile"]), f"<code>{e(t['envelope'])}</code>") for t in first]
-    step(3, "Make map tiles", "Make map tiles", f"{len(tiles)} tiles",
+    rows = [(e(short(subs[0]["name"])), e(t["tile"]), f"<code>{e(t['envelope'])}</code>") for t in run.first_tiles]
+    step(3, "Make map tiles", "Make map tiles", f"{n(run.tile_count)} tiles",
          f"Each substation gets a 4 x 4 mile square cut into 16 one-mile tiles. First 4 for {e(short(subs[0]['name'])) if subs else ''}:",
          table(["Substation", "Tile", "Box (west, south, east, north)"], rows))
 
-    resp = run.out("Look up parcels (Texas parcel layer)")
-    per = collections.Counter()
-    for i, r in enumerate(resp):
-        per[tiles[i]["subId"]] += len(r.get("results") or [])
+    per = collections.Counter(run.per_sub)
     rows = [(e(short(s["name"])), n(per[s["id"]])) for s in subs]
     step(4, "Look up parcels", "Look up parcels (Texas parcel layer)", f"{n(sum(per.values()))} parcel records",
-         f"Every tile asks the Texas statewide parcel layer for its parcels. {run.failed} of {len(tiles)} tiles failed the first time"
+         f"Every tile asks the Texas statewide parcel layer for its parcels. {run.failed} of {n(run.tile_count)} tiles failed the first time"
          f"{(' and got a second try; ' + str(run.stats.get('tileErrors', 0)) + ' still failed after it') if run.failed else ''}. A parcel that crosses two tiles counts twice here; the next step removes duplicates and anything over {st.get('radiusMiles', 2)} miles away.",
          table(["Substation", "Parcel records"], rows, num=("Parcel records",)))
 
     s = run.stats
     rows = [(f"<b>{r['lead_score']}</b>", v.who(r["owner_name"], r["owner_type"]), e(r["owner_type"]), f"{r['total_acres']:,.0f}",
              f"{r['miles_to_substation']:.2f}", e(short(r["substation"].split(";")[0]))) for r in sorted(run.land, key=lambda r: -r["lead_score"])[:15]]
-    step(5, "Score parcels and owners", "Score parcels and owners", f"{len(run.leads)} owners",
+    step(5, "Score parcels and owners", "Score parcels and owners", f"{n(run.scored_count)} owners",
          f"{n(s.get('parcelsInRadius', 0))} unique parcels within {st.get('radiusMiles', 2)} miles, grouped by owner. "
          f"{n(s.get('ownersBelowMinAcres', 0))} owners under {st.get('minAcres', 20)} acres dropped, leaving {s.get('landowners', 0)} landowners and {s.get('skipped', 0)} set aside. Top 15:",
          table(["Score", "Owner", "Type", "Acres", "Miles", "Substation"], rows, num=("Score", "Acres", "Miles")))
@@ -282,13 +275,13 @@ def build(run_dir, update_seen):
   <h2 id="flow">From substation to landowner</h2>
   <div class="pipe">
     <div class="step"><div class="dot">1</div><div class="big">{len(run.subs)}</div><h3>Substations</h3><p>Texas substations from the Line Watch project cards ({run.total_subs} cards' worth in total).</p></div>
-    <div class="step"><div class="dot">2</div><div class="big">{n(len(run.tiles))}</div><h3>Map tiles</h3><p>Each 4 x 4 mile square cut into 1-mile tiles so busy areas are not cut off.</p></div>
+    <div class="step"><div class="dot">2</div><div class="big">{n(run.tile_count)}</div><h3>Map tiles</h3><p>Each 4 x 4 mile square cut into 1-mile tiles so busy areas are not cut off.</p></div>
     <div class="step"><div class="dot">3</div><div class="big">{n(run.stats.get('parcelsInRadius', 0))}</div><h3>Parcels within {e(run.st.get('radiusMiles', 2))} mi</h3><p>Texas statewide parcel layer: owner, mailing address, acres. Free and public.</p></div>
     <div class="step"><div class="dot">4</div><div class="big">{n(len(run.land))}</div><h3>Landowners, {e(run.st.get('minAcres', 20))}+ acres</h3><p>Parcels grouped by owner. City, utility and railroad land set aside.</p></div>
     <div class="step"><div class="dot">5</div><div class="big">0&ndash;100</div><h3>Lead score</h3><p>Acres, closeness, project importance and timing.</p></div>
     <div class="step"><div class="dot">6</div><div class="big">3</div><h3>Next-step lists</h3><p>Letter, salesperson call, or Wendy call for owners who opted in.</p></div>
   </div>
-  <p>The run took about {round(run.secs / 60, 1)} minutes. The {n(len(run.land))} owners hold {n(round(acres_total))} acres; {over200} own 200 acres or more and {over640} own a full section (640 acres) or more. {outstate} have a mailing address outside Texas, which usually means absentee owners.</p>
+  <p>{f"The run took about {round(run.secs / 60, 1)} minutes. " if run.secs else ""}The {n(len(run.land))} owners hold {n(round(acres_total))} acres; {over200} own 200 acres or more and {over640} own a full section (640 acres) or more. {outstate} have a mailing address outside Texas, which usually means absentee owners.</p>
 </section>
 
 <section aria-labelledby="subs">

@@ -49,9 +49,16 @@ json.dump(wf, open(dst, "w"))
 PY
 
 "$N8N" import:workflow --input="$RUN_DIR/workflow.json" >/dev/null 2>&1
-echo "Running the workflow (all substations take about 6 minutes)..."
-"$N8N" execute --id=k2tier3headless1 --rawOutput > "$RUN_DIR/execution.json" 2> "$RUN_DIR/n8n.log" || {
-  echo "n8n run failed, see $RUN_DIR/n8n.log"; exit 1; }
+echo "Running the workflow (all substations take about 10 minutes)..."
+rm -f "$RUN_DIR/run-record.json"
+START=$(date +%s)
+# The workflow saves its own compact run-record.json; n8n's printed log can be too big
+# for a full run, so only its tail is kept for troubleshooting.
+"$N8N" execute --id=k2tier3headless1 --rawOutput 2>&1 | tail -c 20000 > "$RUN_DIR/n8n.log" || true
+if [ ! -s "$RUN_DIR/run-record.json" ]; then
+  echo "n8n run failed, see $RUN_DIR/n8n.log"; exit 1
+fi
+echo "{\"seconds\": $(( $(date +%s) - START ))}" > "$RUN_DIR/timing.json"
 rm -rf "$RUN_DIR/.n8n"
 echo "Done: $RUN_DIR"
 ls "$RUN_DIR"/*.csv
