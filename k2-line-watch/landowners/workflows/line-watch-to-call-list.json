@@ -1,5 +1,5 @@
 {
-  "name": "K2 Tier 3: Line Watch to call list",
+  "name": "K2 Line Watch: landowners near new lines",
   "nodes": [
     {
       "parameters": {
@@ -59,6 +59,24 @@
               "id": "a258796a-27c8-58e2-89e6-7b589ee11b98",
               "name": "substationsUrl",
               "value": "https://raw.githubusercontent.com/jaidensuthar-collab/shinepro-demo/claude/vibrant-euler-urtmp2/k2-line-watch/landowners/data/substations.json",
+              "type": "string"
+            },
+            {
+              "id": "6d45562e-d95a-5457-906c-ca8eb3e5e3f2",
+              "name": "parcelSourcesUrl",
+              "value": "https://raw.githubusercontent.com/jaidensuthar-collab/shinepro-demo/claude/vibrant-euler-urtmp2/k2-line-watch/landowners/data/parcel_sources.json",
+              "type": "string"
+            },
+            {
+              "id": "6e8ae534-2ff5-5b81-984f-ad2b15327071",
+              "name": "states",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "aef4a42e-c6df-5443-9d60-41da2def82ba",
+              "name": "paidParcelProvider",
+              "value": "off",
               "type": "string"
             },
             {
@@ -185,15 +203,36 @@
     },
     {
       "parameters": {
-        "jsCode": "// Keep Texas substations with a usable location, best projects first.\nconst s = $('Settings').first().json;\nconst data = $input.first().json;\nconst confOk = String(s.locationQuality).split(',').map(x => x.trim());\nconst impRank = { High: 2, Medium: 1, Low: 0 };\nconst windowRank = { 'Open now': 0, 'Act fast': 1, 'Late': 2 };\nconst minImp = impRank[s.minImportance] ?? 1;\nconst only = String(s.onlySubstations || '').split(',').map(x => x.trim().toLowerCase()).filter(Boolean);\n\nlet subs = (data.substations || []).filter(x => x.state === 'TX' && confOk.includes(x.confidence));\nsubs = subs.map(x => {\n  let best = null;\n  for (const p of x.projects) {\n    const r = impRank[p.importance] ?? 0, w = windowRank[p.window] ?? 3;\n    if (!best || r > best.r || (r === best.r && w < best.w)) best = { r, w, p };\n  }\n  return { ...x, bestImportance: best.p.importance, bestWindow: best.p.window, bestProject: best.p.name,\n           bestStageLabel: best.p.stage_label, impRank: best.r, windowRank: best.w };\n}).filter(x => x.impRank >= minImp);\n\nif (only.length) subs = subs.filter(x => only.some(o => x.id.toLowerCase() === o || x.name.toLowerCase().includes(o)));\nsubs.sort((a, b) => b.impRank - a.impRank || a.windowRank - b.windowRank\n  || (a.confidence === 'exact' ? 0 : 1) - (b.confidence === 'exact' ? 0 : 1));\nconst max = Number(s.maxSubstations) || subs.length;\nreturn subs.slice(0, max).map(x => ({ json: x }));"
+        "url": "={{ $('Settings').first().json.parcelSourcesUrl }}",
+        "options": {
+          "timeout": 30000,
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "ccfeb875-d930-5053-8684-a67559acd18b",
+      "name": "Get parcel sources",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        120,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Keep substations with a usable location in states we can search, best projects first.\n// A state is searchable if parcel_sources.json has a free state parcel layer for it, or a paid\n// nationwide provider is switched on in Settings.\nconst s = $('Settings').first().json;\nconst data = $('Get Line Watch substations').first().json;\nconst sources = ($input.first().json.states) || {};\nconst paid = String(s.paidParcelProvider || 'off');\nconst onlyStates = String(s.states || '').toUpperCase().split(',').map(x => x.trim()).filter(Boolean);\nconst confOk = String(s.locationQuality).split(',').map(x => x.trim());\nconst impRank = { High: 2, Medium: 1, Low: 0 };\nconst windowRank = { 'Open now': 0, 'Act fast': 1, 'Late': 2 };\nconst minImp = impRank[s.minImportance] ?? 1;\nconst only = String(s.onlySubstations || '').split(',').map(x => x.trim().toLowerCase()).filter(Boolean);\n\nlet subs = (data.substations || []).filter(x => confOk.includes(x.confidence)\n  && (!onlyStates.length || onlyStates.includes(x.state))\n  && (sources[x.state] || paid !== 'off'));\nsubs = subs.map(x => {\n  let best = null;\n  for (const p of x.projects) {\n    const r = impRank[p.importance] ?? 0, w = windowRank[p.window] ?? 3;\n    if (!best || r > best.r || (r === best.r && w < best.w)) best = { r, w, p };\n  }\n  return { ...x, bestImportance: best.p.importance, bestWindow: best.p.window, bestProject: best.p.name,\n           bestStageLabel: best.p.stage_label, impRank: best.r, windowRank: best.w,\n           parcelSource: sources[x.state] ? 'free' : 'paid' };\n}).filter(x => x.impRank >= minImp);\n\nif (only.length) subs = subs.filter(x => only.some(o => x.id.toLowerCase() === o || x.name.toLowerCase().includes(o)));\nsubs.sort((a, b) => b.impRank - a.impRank || a.windowRank - b.windowRank\n  || (a.confidence === 'exact' ? 0 : 1) - (b.confidence === 'exact' ? 0 : 1));\nconst max = Number(s.maxSubstations) || subs.length;\nreturn subs.slice(0, max).map(x => ({ json: x }));"
       },
       "id": "57eee43c-f02a-5af5-8c8a-8ef722978451",
       "name": "Pick substations",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        120,
-        300
+        340,
+        460
       ]
     },
     {
@@ -214,7 +253,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Cut the square around each substation into small map tiles.\n// The state parcel service returns at most 2,000 parcels per lookup, so small tiles keep\n// busy areas (near San Antonio or Dallas) from being cut off.\nconst s = $('Settings').first().json;\nconst R = Number(s.radiusMiles), T = Number(s.tileMiles);\nconst out = [];\nfor (const it of $input.all()) {\n  const { id, lat, lon } = it.json;\n  const dLat = 1 / 69.0, dLon = 1 / (69.172 * Math.cos(lat * Math.PI / 180));\n  const n = Math.ceil((2 * R) / T);\n  for (let i = 0; i < n; i++) {\n    for (let j = 0; j < n; j++) {\n      const x0 = -R + i * T, y0 = -R + j * T;\n      const x1 = Math.min(x0 + T, R), y1 = Math.min(y0 + T, R);\n      const env = [lon + x0 * dLon, lat + y0 * dLat, lon + x1 * dLon, lat + y1 * dLat].map(v => v.toFixed(6)).join(',');\n      out.push({ json: { subId: id, tile: `${i}-${j}`, envelope: env } });\n    }\n  }\n}\nreturn out;"
+        "jsCode": "// Cut the square around each substation into small map tiles, one parcel lookup per tile.\n// State parcel services return at most 1,000 to 2,000 parcels per lookup, so small tiles keep\n// busy areas from being cut off. Paid providers take one radius search per substation instead.\nconst s = $('Settings').first().json;\nconst sources = $('Get parcel sources').first().json.states || {};\nconst R = Number(s.radiusMiles);\nconst enc = encodeURIComponent;\nfunction freeUrl(src, env) {\n  if (src.op === 'identify') {\n    return `${src.url}/identify?geometry=${enc(env)}&geometryType=esriGeometryEnvelope&sr=4326&layers=${enc(src.layer || 'all:0')}`\n      + `&tolerance=0&mapExtent=${enc(env)}&imageDisplay=800,800,96&returnGeometry=true&maxAllowableOffset=0.0005&f=json`;\n  }\n  const where = src.where || '1=1';\n  return `${src.url}/query?where=${enc(where)}&geometry=${enc(env)}&geometryType=esriGeometryEnvelope&inSR=4326`\n    + `&spatialRel=esriSpatialRelIntersects&outFields=${enc(src.outFields || '*')}&returnGeometry=true&outSR=4326`\n    + `&geometryPrecision=6&maxAllowableOffset=0.0005&resultRecordCount=${src.max || 1000}&f=json`;\n}\nconst out = [];\nfor (const it of $input.all()) {\n  const { id, lat, lon, state } = it.json;\n  const src = sources[state];\n  if (!src) {\n    out.push({ json: { subId: id, tile: 'radius', kind: 'paid', state, lat, lon, radiusMiles: R } });\n    continue;\n  }\n  const T = Number(src.tileMiles || s.tileMiles);\n  const dLat = 1 / 69.0, dLon = 1 / (69.172 * Math.cos(lat * Math.PI / 180));\n  const n = Math.ceil((2 * R) / T);\n  for (let i = 0; i < n; i++) {\n    for (let j = 0; j < n; j++) {\n      const x0 = -R + i * T, y0 = -R + j * T;\n      const x1 = Math.min(x0 + T, R), y1 = Math.min(y0 + T, R);\n      const env = [lon + x0 * dLon, lat + y0 * dLat, lon + x1 * dLon, lat + y1 * dLat].map(v => v.toFixed(6)).join(',');\n      out.push({ json: { subId: id, tile: `${i}-${j}`, kind: 'free', state, envelope: env, url: freeUrl(src, env) } });\n    }\n  }\n}\nreturn out;"
       },
       "id": "48b67a10-cee5-5117-8e4b-b15bd5f0e2ed",
       "name": "Make map tiles",
@@ -227,52 +266,40 @@
     },
     {
       "parameters": {
-        "url": "https://feature.geographic.texas.gov/arcgis/rest/services/Parcels/stratmap_land_parcels_48_most_recent/MapServer/identify",
-        "sendQuery": true,
-        "queryParameters": {
-          "parameters": [
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
             {
-              "name": "geometry",
-              "value": "={{ $json.envelope }}"
-            },
-            {
-              "name": "geometryType",
-              "value": "esriGeometryEnvelope"
-            },
-            {
-              "name": "sr",
-              "value": "4326"
-            },
-            {
-              "name": "layers",
-              "value": "all:0"
-            },
-            {
-              "name": "tolerance",
-              "value": "0"
-            },
-            {
-              "name": "mapExtent",
-              "value": "={{ $json.envelope }}"
-            },
-            {
-              "name": "imageDisplay",
-              "value": "800,800,96"
-            },
-            {
-              "name": "returnGeometry",
-              "value": "true"
-            },
-            {
-              "name": "maxAllowableOffset",
-              "value": "0.0005"
-            },
-            {
-              "name": "f",
-              "value": "json"
+              "id": "k1",
+              "leftValue": "={{ $json.kind }}",
+              "rightValue": "free",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
             }
-          ]
+          ],
+          "combinator": "and"
         },
+        "options": {}
+      },
+      "id": "d8dae887-1b81-543d-9abc-f0f8006556c1",
+      "name": "Free or paid source?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        450,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
         "options": {
           "batching": {
             "batch": {
@@ -288,8 +315,8 @@
           }
         }
       },
-      "id": "ed2da699-669a-5c4d-a765-b22eef57a91f",
-      "name": "Look up parcels (Texas parcel layer)",
+      "id": "291f2886-2035-53b0-9fb0-f36433b6dc80",
+      "name": "Look up parcels (free state layer)",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -297,6 +324,61 @@
         300
       ],
       "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "url": "={{ 'https://app.regrid.com/api/v2/parcels/point?lat=' + $json.lat + '&lon=' + $json.lon + '&radius=' + Math.round($json.radiusMiles * 1609.344) + '&limit=1000&return_geometry=true' }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 1,
+              "batchInterval": 1000
+            }
+          },
+          "timeout": 120000,
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          },
+          "pagination": {
+            "pagination": {
+              "paginationMode": "updateAParameterInEachRequest",
+              "parameters": {
+                "parameters": [
+                  {
+                    "type": "qs",
+                    "name": "offset_id",
+                    "value": "={{ $response.body.parcels.features[$response.body.parcels.features.length - 1].id }}"
+                  }
+                ]
+              },
+              "paginationCompleteWhen": "other",
+              "completeExpression": "={{ !$response.body.parcels || $response.body.parcels.features.length < 1000 }}",
+              "limitPagesFetched": true,
+              "maxRequests": 10,
+              "requestInterval": 500
+            }
+          }
+        }
+      },
+      "id": "fadefa47-e136-5217-bfe7-e2fe9fb865b9",
+      "name": "Look up parcels (paid provider)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        780,
+        820
+      ],
+      "onError": "continueRegularOutput",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "k2ParcelProvider",
+          "name": "Parcel data provider API"
+        }
+      }
     },
     {
       "parameters": {
@@ -347,52 +429,7 @@
     },
     {
       "parameters": {
-        "url": "https://feature.geographic.texas.gov/arcgis/rest/services/Parcels/stratmap_land_parcels_48_most_recent/MapServer/identify",
-        "sendQuery": true,
-        "queryParameters": {
-          "parameters": [
-            {
-              "name": "geometry",
-              "value": "={{ $json.envelope }}"
-            },
-            {
-              "name": "geometryType",
-              "value": "esriGeometryEnvelope"
-            },
-            {
-              "name": "sr",
-              "value": "4326"
-            },
-            {
-              "name": "layers",
-              "value": "all:0"
-            },
-            {
-              "name": "tolerance",
-              "value": "0"
-            },
-            {
-              "name": "mapExtent",
-              "value": "={{ $json.envelope }}"
-            },
-            {
-              "name": "imageDisplay",
-              "value": "800,800,96"
-            },
-            {
-              "name": "returnGeometry",
-              "value": "true"
-            },
-            {
-              "name": "maxAllowableOffset",
-              "value": "0.0005"
-            },
-            {
-              "name": "f",
-              "value": "json"
-            }
-          ]
-        },
+        "url": "={{ $json.url }}",
         "options": {
           "batching": {
             "batch": {
@@ -419,7 +456,9 @@
       "onError": "continueRegularOutput"
     },
     {
-      "parameters": {},
+      "parameters": {
+        "numberInputs": 3
+      },
       "id": "f9f19c8c-b0eb-5c66-94cf-3bfc3111caf6",
       "name": "Join tiles",
       "type": "n8n-nodes-base.merge",
@@ -447,7 +486,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Turn raw parcels into one lead per landowner.\nconst s = $('Settings').first().json;\nconst R = Number(s.radiusMiles), minAcres = Number(s.minAcres);\nconst subs = Object.fromEntries($('Pick substations').all().map(i => [i.json.id, i.json]));\nconst tileCount = $('Make map tiles').all().length;\n\nconst num = v => { const n = parseFloat(v); return Number.isFinite(n) ? n : null; };\nconst clean = v => (v == null || v === 'Null' || v === 'null') ? '' : String(v).trim();\n\n// Miles from the substation to the parcel's edge (0 if the substation is inside the parcel).\nfunction milesToParcel(lat0, lon0, rings) {\n  if (!rings || !rings.length) return null;\n  const kx = 69.172 * Math.cos(lat0 * Math.PI / 180), ky = 69.0;\n  let inside = false, best = Infinity;\n  for (const ring of rings) {\n    const pts = ring.map(([x, y]) => [(x - lon0) * kx, (y - lat0) * ky]);\n    for (let i = 0, j = pts.length - 1; i < pts.length; j = i++) {\n      const [xi, yi] = pts[i], [xj, yj] = pts[j];\n      if ((yi > 0) !== (yj > 0) && 0 < ((xj - xi) * (0 - yi)) / (yj - yi) + xi) inside = !inside;\n      const dx = xj - xi, dy = yj - yi, L = dx * dx + dy * dy;\n      let t = L ? -(xi * dx + yi * dy) / L : 0;\n      t = Math.max(0, Math.min(1, t));\n      best = Math.min(best, Math.hypot(xi + t * dx, yi + t * dy));\n    }\n  }\n  return inside ? 0 : best;\n}\n\nconst PUBLIC = /\\b(STATE OF|COUNTY|CITY OF|TOWN OF|ISD|SCHOOL|UNIVERSITY|UNITED STATES|U S A|USA|TXDOT|DEPARTMENT|DEPT|GLO|PERMANENT SCHOOL FUND|RAILROAD|RAILWAY|PIPELINE|WATER (DISTRICT|SUPPLY|AUTHORITY)|MUD|CHURCH|CEMETERY|ELECTRIC|ELEC|COOPERATIVE|CO-OP|TRANSMISSION|ONCOR|AEP|CPS ENERGY|LCRA|CENTERPOINT|ENTERGY|XCEL|SOUTHWESTERN PUBLIC|POWER (CO|COMPANY|AUTHORITY))\\b/;\nconst ENERGY = /\\b(SOLAR|WIND|RENEWABLE|RENEWABLES|ENERGY STORAGE|BATTERY|BESS|POWER LLC|ENERGY LLC|ENERGY LP|DATA CENTER)\\b/;\nfunction ownerType(n) {\n  if (/\\b(TRUST|TR|TRUSTEE|TRS)\\b/.test(n)) return 'Trust';\n  if (/\\b(ESTATE|EST|HEIRS)\\b/.test(n)) return 'Estate';\n  if (/\\b(LLC|L L C|INC|CORP|CORPORATION|LP|LTD|LLP|COMPANY|CO|PARTNERS|PARTNERSHIP|HOLDINGS|FAMILY LP|MINERALS|INVESTMENTS)\\b/.test(n)) return 'Business';\n  return 'Person';\n}\n\nconst parcels = new Map();\nconst truncated = [];\nlet tileErrors = 0;\n$input.all().forEach((it, i) => {\n  const tile = $('Make map tiles').itemMatching(i).json, sub = subs[tile.subId];\n  if (it.json.error || !Array.isArray(it.json.results)) { tileErrors++; return; }\n  if (it.json.results.length >= 2000) truncated.push(`${sub.name} tile ${tile.tile}`);\n  for (const r of it.json.results) {\n    const a = r.attributes || {};\n    const dist = milesToParcel(sub.lat, sub.lon, r.geometry && r.geometry.rings);\n    if (dist == null || dist > R) continue;\n    const acres = num(a.LEGAL_AREA) > 0 ? num(a.LEGAL_AREA) : num(a.GIS_AREA);\n    const key = `${clean(a.FIPS) || clean(a.COUNTY)}|${clean(a.PROP_ID) || clean(a.GEO_ID) || clean(a.objectid)}`;\n    const prev = parcels.get(key);\n    if (prev) {\n      prev.subs.add(sub.id);\n      prev.miles = Math.min(prev.miles, dist);\n      continue;\n    }\n    parcels.set(key, {\n      owner: clean(a.OWNER_NAME).toUpperCase(), careOf: clean(a.NAME_CARE),\n      acres: acres || 0, miles: dist, county: clean(a.COUNTY), fips: clean(a.FIPS),\n      propId: clean(a.PROP_ID), geoId: clean(a.GEO_ID), legal: clean(a.LEGAL_DESC),\n      value: num(a.MKT_VALUE) || 0, situs: clean(a.SITUS_ADDR),\n      mail1: clean(a.MAIL_LINE1), mail2: clean(a.MAIL_LINE2), mailCity: clean(a.MAIL_CITY),\n      mailState: clean(a.MAIL_STAT), mailZip: clean(a.MAIL_ZIP), taxYear: clean(a.TAX_YEAR),\n      source: clean(a.SOURCE), subs: new Set([sub.id]),\n    });\n  }\n});\n\n// Roll parcels up to owners (same name + mailing ZIP = same owner).\nconst owners = new Map();\nlet small = 0;\nfor (const p of parcels.values()) {\n  if (!p.owner) continue;\n  const k = `${p.owner}|${p.mailZip}`;\n  let o = owners.get(k);\n  if (!o) owners.set(k, o = { ...p, parcels: [], acres: 0, value: 0, subs: new Set(), miles: Infinity });\n  o.parcels.push(p);\n  o.acres += p.acres;\n  o.value += p.value;\n  o.miles = Math.min(o.miles, p.miles);\n  p.subs.forEach(x => o.subs.add(x));\n}\n\nconst windowPts = { 'Open now': 15, 'Act fast': 10, 'Late': 3 };\nconst leads = [];\nfor (const o of owners.values()) {\n  if (o.acres < minAcres) { small++; continue; }\n  const subList = [...o.subs].map(id => subs[id]);\n  const top = subList.slice().sort((a, b) => b.impRank - a.impRank || a.windowRank - b.windowRank)[0];\n  const category = PUBLIC.test(o.owner) ? 'public-or-utility' : ENERGY.test(o.owner) ? 'energy-company' : 'landowner';\n  const approx = subList.some(x => x.confidence !== 'exact');\n  const score = Math.round(\n    Math.min(o.acres, 640) / 640 * 35 +\n    Math.max(0, 1 - o.miles / R) * 30 +\n    (top.bestImportance === 'High' ? 15 : 8) +\n    (windowPts[top.bestWindow] ?? 3) -\n    (approx ? 5 : 0));\n  leads.push({\n    lead_score: score,\n    category,\n    owner_name: o.owner,\n    owner_type: category === 'public-or-utility' ? 'Public or utility' : ownerType(o.owner),\n    care_of: o.careOf !== o.owner ? o.careOf : '',\n    total_acres: Math.round(o.acres * 10) / 10,\n    parcel_count: o.parcels.length,\n    miles_to_substation: Math.round(o.miles * 100) / 100,\n    county: o.county,\n    substation: subList.map(x => x.name).join('; '),\n    project: top.bestProject,\n    project_importance: top.bestImportance,\n    project_stage: top.bestStageLabel,\n    timing: top.bestWindow,\n    location_check: approx ? 'Substation location is approximate: GIS team to confirm' : 'Substation location confirmed',\n    mail_line1: o.mail1, mail_line2: o.mail2, mail_city: o.mailCity, mail_state: o.mailState, mail_zip: o.mailZip,\n    parcel_ids: o.parcels.map(p => p.geoId || p.propId).join('; '),\n    prop_ids: o.parcels.map(p => p.propId).join('; '),\n    market_value: o.value,\n    tax_year: o.taxYear,\n    data_source: `${o.source} via TxGIO StratMap parcels`,\n    why: `${Math.round(o.acres)} acres, ${(Math.round(o.miles * 10) / 10)} mi from ${subList[0].name} (${top.bestProject}, ${top.bestStageLabel}).`,\n  });\n}\n// Landowners first (best score first, capped at maxLeads), then the skipped owners for reference.\nconst byScore = (a, b) => b.lead_score - a.lead_score;\nconst land = leads.filter(l => l.category === 'landowner').sort(byScore);\nconst other = leads.filter(l => l.category !== 'landowner').sort(byScore);\nconst max = Number(s.maxLeads) || land.length;\nconst kept = land.slice(0, max).concat(other);\nconst stats = { substations: Object.keys(subs).length, tiles: tileCount, tileErrors, truncatedTiles: truncated,\n  parcelsInRadius: parcels.size, ownersBelowMinAcres: small, landowners: land.length, skipped: other.length, kept: kept.length };\nreturn kept.map((l, i) => ({ json: i === 0 ? { ...l, _run_stats: JSON.stringify(stats) } : l }));"
+        "jsCode": "// Turn raw parcels into one lead per landowner.\nconst s = $('Settings').first().json;\nconst R = Number(s.radiusMiles), minAcres = Number(s.minAcres);\nconst subs = Object.fromEntries($('Pick substations').all().map(i => [i.json.id, i.json]));\nconst tileCount = $('Make map tiles').all().length;\n\nconst num = v => { const n = parseFloat(v); return Number.isFinite(n) ? n : null; };\nconst clean = v => (v == null || v === 'Null' || v === 'null') ? '' : String(v).trim();\n\n// Miles from the substation to the parcel's edge (0 if the substation is inside the parcel).\nfunction milesToParcel(lat0, lon0, rings) {\n  if (!rings || !rings.length) return null;\n  const kx = 69.172 * Math.cos(lat0 * Math.PI / 180), ky = 69.0;\n  let inside = false, best = Infinity;\n  for (const ring of rings) {\n    const pts = ring.map(([x, y]) => [(x - lon0) * kx, (y - lat0) * ky]);\n    for (let i = 0, j = pts.length - 1; i < pts.length; j = i++) {\n      const [xi, yi] = pts[i], [xj, yj] = pts[j];\n      if ((yi > 0) !== (yj > 0) && 0 < ((xj - xi) * (0 - yi)) / (yj - yi) + xi) inside = !inside;\n      const dx = xj - xi, dy = yj - yi, L = dx * dx + dy * dy;\n      let t = L ? -(xi * dx + yi * dy) / L : 0;\n      t = Math.max(0, Math.min(1, t));\n      best = Math.min(best, Math.hypot(xi + t * dx, yi + t * dy));\n    }\n  }\n  return inside ? 0 : best;\n}\n\nconst PUBLIC = /\\b(STATE OF|COMMONWEALTH OF|COUNTY|PARISH|CITY OF|TOWN OF|VILLAGE OF|TOWNSHIP|BOROUGH OF|ISD|SCHOOL|BOARD OF EDUCATION|UNIVERSITY|COLLEGE|UNITED STATES|U S A|USA|US GOVT|BUREAU OF|FOREST SERVICE|CORPS OF ENGINEERS|NATIONAL PARK|TXDOT|DOT|DEPARTMENT|DEPT|DNR|GLO|PERMANENT SCHOOL FUND|RAILROAD|RAILWAY|R R CO|PIPELINE|WATER (DISTRICT|SUPPLY|AUTHORITY)|MUD|DRAINAGE DISTRICT|LEVEE|CONSERVANCY|CONSERVATION|CHURCH|CEMETERY|ELECTRIC|ELEC|COOPERATIVE|CO-OP|TRANSMISSION|ONCOR|AEP|CPS ENERGY|LCRA|CENTERPOINT|ENTERGY|XCEL|AMEREN|DUKE ENERGY|DOMINION|EVERGY|PACIFICORP|TENNESSEE VALLEY AUTHORITY|TVA|SOUTHWESTERN PUBLIC|POWER (CO|COMPANY|AUTHORITY|DISTRICT))\\b/;\nconst ENERGY = /\\b(SOLAR|WIND|RENEWABLE|RENEWABLES|ENERGY STORAGE|BATTERY|BESS|POWER LLC|ENERGY LLC|ENERGY LP|DATA CENTER)\\b/;\nfunction ownerType(n) {\n  if (/\\b(TRUST|TR|TRUSTEE|TRS)\\b/.test(n)) return 'Trust';\n  if (/\\b(ESTATE|EST|HEIRS)\\b/.test(n)) return 'Estate';\n  if (/\\b(LLC|L L C|INC|CORP|CORPORATION|LP|LTD|LLP|COMPANY|CO|PARTNERS|PARTNERSHIP|HOLDINGS|FAMILY LP|MINERALS|INVESTMENTS)\\b/.test(n)) return 'Business';\n  return 'Person';\n}\n\n// Acres from the polygon itself, for state layers without an acreage field.\nfunction ringAcres(lat0, rings) {\n  if (!rings || !rings.length) return 0;\n  const kx = 69.172 * Math.cos(lat0 * Math.PI / 180), ky = 69.0;\n  let sq = 0;\n  for (const ring of rings) {\n    let a = 0;\n    for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) a += (ring[j][0] * kx) * (ring[i][1] * ky) - (ring[i][0] * kx) * (ring[j][1] * ky);\n    sq += a / 2;  // outer rings and holes have opposite signs\n  }\n  return Math.abs(sq) * 640;\n}\nconst UNITS = { acres: 1, sqft: 1 / 43560, sqm: 1 / 4046.856, sqmi: 640, hectares: 2.471054 };\n\n// One parcel record from a free state layer (field names come from parcel_sources.json).\nfunction fromFree(r, src, sub, state) {\n  const a = r.attributes || {};\n  const f = src.fields || {};\n  const get = (k) => { const v = f[k]; if (!v) return ''; return (Array.isArray(v) ? v : [v]).map(x => clean(a[x])).filter(Boolean).join(' '); };\n  const rings = r.geometry && r.geometry.rings;\n  const miles = milesToParcel(sub.lat, sub.lon, rings);\n  let acres = (num(get('acres')) || 0) * (UNITS[src.areaUnits || 'acres'] || 1);\n  if (!(acres > 0) && f.acres2) acres = (num(get('acres2')) || 0) * (UNITS[src.areaUnits2 || src.areaUnits || 'acres'] || 1);\n  if (!(acres > 0)) acres = ringAcres(sub.lat, rings);\n  const parcelId = get('parcel_id');\n  return {\n    miles, key: `${state}|${get('county') || sub.county}|${parcelId || clean(a.OBJECTID ?? a.objectid ?? a.FID)}`,\n    owner: get('owner').toUpperCase(), careOf: get('care_of') || get('owner2'),\n    acres, county: get('county') || sub.county, state,\n    propId: parcelId, geoId: get('geo_id'), legal: get('legal'),\n    value: num(get('value')) || 0, situs: get('situs'),\n    mail1: get('mail1'), mail2: get('mail2'), mailCity: get('mail_city'),\n    mailState: get('mail_state'), mailZip: get('mail_zip').slice(0, 5), taxYear: get('tax_year'),\n    source: src.label,\n  };\n}\n\n// Paid provider (Regrid): GeoJSON parcels with owner and mailing fields.\nfunction paidRecords(j) { return j && j.parcels && Array.isArray(j.parcels.features) ? j.parcels.features : null; }\nfunction fromPaid(f, sub, state) {\n  const p = (f.properties && f.properties.fields) || {};\n  const g = f.geometry || {};\n  const rings = g.type === 'Polygon' ? g.coordinates : g.type === 'MultiPolygon' ? g.coordinates.flat() : null;\n  let miles = milesToParcel(sub.lat, sub.lon, rings);\n  if (miles == null && num(p.lat) != null) miles = Math.hypot((num(p.lon) - sub.lon) * 69.172 * Math.cos(sub.lat * Math.PI / 180), (num(p.lat) - sub.lat) * 69.0);\n  return {\n    miles, key: `${state}|${clean(p.county)}|${clean(p.parcelnumb) || clean(f.id)}`,\n    owner: clean(p.owner).toUpperCase(), careOf: clean(p.owner2),\n    acres: num(p.ll_gisacre) || num(p.gisacre) || ringAcres(sub.lat, rings), county: clean(p.county) || sub.county, state: clean(p.state2) || state,\n    propId: clean(p.parcelnumb) || clean(f.id), geoId: '', legal: clean(p.legaldesc),\n    value: num(p.parval) || 0, situs: clean(p.address),\n    mail1: clean(p.mailadd), mail2: clean(p.mail_addr2), mailCity: clean(p.mail_city),\n    mailState: clean(p.mail_state2), mailZip: clean(p.mail_zip).slice(0, 5), taxYear: '',\n    source: 'Regrid nationwide parcels (paid)',\n  };\n}\n\nconst sources = $('Get parcel sources').first().json.states || {};\nconst parcels = new Map();\nconst truncated = [];\nconst recordsPerSub = {};\nlet tileErrors = 0;\n$input.all().forEach((it, i) => {\n  const tile = $('Make map tiles').itemMatching(i).json, sub = subs[tile.subId];\n  if (!sub) return;\n  let recs;\n  if (tile.kind === 'paid') recs = paidRecords(it.json);\n  else recs = Array.isArray(it.json.results) ? it.json.results : Array.isArray(it.json.features) ? it.json.features : null;\n  if (it.json.error || !recs) { tileErrors++; return; }\n  const src = sources[tile.state] || {};\n  recordsPerSub[sub.id] = (recordsPerSub[sub.id] || 0) + recs.length;\n  if (tile.kind === 'free' && (it.json.exceededTransferLimit || recs.length >= Number(src.max || 2000))) truncated.push(`${sub.name} tile ${tile.tile}`);\n  for (const r of recs) {\n    const p = tile.kind === 'paid' ? fromPaid(r, sub, tile.state) : fromFree(r, src, sub, tile.state);\n    if (!p || p.miles == null || p.miles > R) continue;\n    const prev = parcels.get(p.key);\n    if (prev) {\n      prev.subs.add(sub.id);\n      prev.miles = Math.min(prev.miles, p.miles);\n      continue;\n    }\n    p.subs = new Set([sub.id]);\n    parcels.set(p.key, p);\n  }\n});\n\n// Roll parcels up to owners (same name + mailing ZIP = same owner).\nconst owners = new Map();\nlet small = 0;\nfor (const p of parcels.values()) {\n  if (!p.owner) continue;\n  const k = `${p.owner}|${p.mailZip}`;\n  let o = owners.get(k);\n  if (!o) owners.set(k, o = { ...p, parcels: [], acres: 0, value: 0, subs: new Set(), miles: Infinity });\n  o.parcels.push(p);\n  o.acres += p.acres;\n  o.value += p.value;\n  o.miles = Math.min(o.miles, p.miles);\n  p.subs.forEach(x => o.subs.add(x));\n}\n\nconst windowPts = { 'Open now': 15, 'Act fast': 10, 'Late': 3 };\nconst leads = [];\nfor (const o of owners.values()) {\n  if (o.acres < minAcres) { small++; continue; }\n  const subList = [...o.subs].map(id => subs[id]);\n  const top = subList.slice().sort((a, b) => b.impRank - a.impRank || a.windowRank - b.windowRank)[0];\n  const category = PUBLIC.test(o.owner) ? 'public-or-utility' : ENERGY.test(o.owner) ? 'energy-company' : 'landowner';\n  const approx = subList.some(x => x.confidence !== 'exact');\n  const score = Math.round(\n    Math.min(o.acres, 640) / 640 * 35 +\n    Math.max(0, 1 - o.miles / R) * 30 +\n    (top.bestImportance === 'High' ? 15 : 8) +\n    (windowPts[top.bestWindow] ?? 3) -\n    (approx ? 5 : 0));\n  leads.push({\n    lead_score: score,\n    category,\n    owner_name: o.owner,\n    owner_type: category === 'public-or-utility' ? 'Public or utility' : ownerType(o.owner),\n    care_of: o.careOf !== o.owner ? o.careOf : '',\n    total_acres: Math.round(o.acres * 10) / 10,\n    parcel_count: o.parcels.length,\n    miles_to_substation: Math.round(o.miles * 100) / 100,\n    county: o.county,\n    state: o.state,\n    substation: subList.map(x => x.name).join('; '),\n    substation_id: subList[0].id,\n    substation_name: subList[0].name,\n    project: top.bestProject,\n    project_importance: top.bestImportance,\n    project_stage: top.bestStageLabel,\n    timing: top.bestWindow,\n    location_check: approx ? 'Substation location is approximate: GIS team to confirm' : 'Substation location confirmed',\n    mail_line1: o.mail1, mail_line2: o.mail2, mail_city: o.mailCity, mail_state: o.mailState, mail_zip: o.mailZip,\n    parcel_ids: o.parcels.map(p => p.geoId || p.propId).join('; '),\n    prop_ids: o.parcels.map(p => p.propId).join('; '),\n    market_value: o.value,\n    tax_year: o.taxYear,\n    data_source: o.source,\n    why: `${Math.round(o.acres)} acres, ${(Math.round(o.miles * 10) / 10)} mi from ${subList[0].name} (${top.bestProject}, ${top.bestStageLabel}).`,\n  });\n}\n// Landowners first (best score first, capped at maxLeads), then the skipped owners for reference.\nconst byScore = (a, b) => b.lead_score - a.lead_score;\nconst land = leads.filter(l => l.category === 'landowner').sort(byScore);\nconst other = leads.filter(l => l.category !== 'landowner').sort(byScore);\nconst max = Number(s.maxLeads) || land.length;\nconst kept = land.slice(0, max).concat(other);\nconst stats = { substations: Object.keys(subs).length, tiles: tileCount, tileErrors, truncatedTiles: truncated, recordsPerSub,\n  parcelsInRadius: parcels.size, ownersBelowMinAcres: small, landowners: land.length, skipped: other.length, kept: kept.length };\nreturn kept.map((l, i) => ({ json: i === 0 ? { ...l, _run_stats: JSON.stringify(stats) } : l }));"
       },
       "id": "e00cf3e7-d788-5eed-b348-540ae47775b7",
       "name": "Score parcels and owners",
@@ -570,7 +609,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ parcel_id: $json.parcel_ids.split('; ')[0], county: $json.county, state: 'TX' }) }}",
+        "jsonBody": "={{ JSON.stringify({ parcel_id: $json.parcel_ids.split('; ')[0], county: $json.county, state: $json.state }) }}",
         "options": {
           "batching": {
             "batch": {
@@ -697,7 +736,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// A compact record of this run (what each step produced), saved next to the CSV.\n// The weekly report is built from it, so it never needs n8n's full execution log.\nconst pick = (name, branch = 0) => { try { return $(name).all(branch).map(i => i.json); } catch (e) { return []; } };\nconst tiles = pick('Make map tiles');\nconst perSub = {};\npick('Look up parcels (Texas parcel layer)').forEach((r, i) => {\n  const id = tiles[i] ? tiles[i].subId : '?';\n  perSub[id] = (perSub[id] || 0) + (Array.isArray(r.results) ? r.results.length : 0);\n});\nconst scored = pick('Score parcels and owners');\nconst phones = pick('Make demo phones').concat(pick('Attach phones'))\n  .map(p => ({ owner_name: p.owner_name, owner_type: p.owner_type, phones: p.phones || [] }));\nconst record = {\n  settings: $('Settings').first().json,\n  substations_in_line_watch: (pick('Get Line Watch substations')[0] || {}).substations?.length || 0,\n  substations: pick('Pick substations'),\n  tiles: tiles.length,\n  first_tiles: tiles.slice(0, 4),\n  parcel_records_per_substation: perSub,\n  failed_first_try: pick('Any tile failed?', 0).length,\n  stats: scored[0] && scored[0]._run_stats ? JSON.parse(scored[0]._run_stats) : {},\n  scored_count: scored.length,\n  phones,\n  leads: $input.all().map(i => i.json),\n};\nreturn [{ json: record }];"
+        "jsCode": "// A compact record of this run (what each step produced), saved next to the CSV.\n// The weekly report is built from it, so it never needs n8n's full execution log.\nconst pick = (name, branch = 0) => { try { return $(name).all(branch).map(i => i.json); } catch (e) { return []; } };\nconst tiles = pick('Make map tiles');\nconst perSub = {};\nconst paidTiles = tiles.filter(t => t.kind === 'paid');\nconst sources = (pick('Get parcel sources')[0] || {}).states || {};\nconst scored = pick('Score parcels and owners');\nconst stats0 = scored[0] && scored[0]._run_stats ? JSON.parse(scored[0]._run_stats) : {};\nObject.assign(perSub, stats0.recordsPerSub || {});\nconst phones = pick('Make demo phones').concat(pick('Attach phones'))\n  .map(p => ({ owner_name: p.owner_name, owner_type: p.owner_type, phones: p.phones || [] }));\nconst record = {\n  settings: $('Settings').first().json,\n  substations_in_line_watch: (pick('Get Line Watch substations')[0] || {}).substations?.length || 0,\n  all_substations: ((pick('Get Line Watch substations')[0] || {}).substations || []).map(x => ({ id: x.id, name: x.name, state: x.state,\n    county: x.county, confidence: x.confidence, project_ids: (x.projects || []).map(p => p.id), projects: x.projects })),\n  parcel_sources: Object.fromEntries(Object.entries(sources).map(([k, v]) => [k, { label: v.label, note: v.note || '' }])),\n  paid_tiles: paidTiles.length,\n  substations: pick('Pick substations'),\n  tiles: tiles.length,\n  first_tiles: tiles.slice(0, 4),\n  parcel_records_per_substation: perSub,\n  failed_first_try: pick('Any tile failed?', 0).length,\n  stats: scored[0] && scored[0]._run_stats ? JSON.parse(scored[0]._run_stats) : {},\n  scored_count: scored.length,\n  phones,\n  leads: $input.all().map(i => i.json),\n};\nreturn [{ json: record }];"
       },
       "id": "5e19d612-db33-578e-85ee-401d1fecdab2",
       "name": "Run record",
@@ -831,6 +870,17 @@
       "main": [
         [
           {
+            "node": "Get parcel sources",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get parcel sources": {
+      "main": [
+        [
+          {
             "node": "Pick substations",
             "type": "main",
             "index": 0
@@ -853,20 +903,49 @@
       "main": [
         [
           {
-            "node": "Look up parcels (Texas parcel layer)",
+            "node": "Free or paid source?",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Look up parcels (Texas parcel layer)": {
+    "Free or paid source?": {
+      "main": [
+        [
+          {
+            "node": "Look up parcels (free state layer)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Look up parcels (paid provider)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Look up parcels (free state layer)": {
       "main": [
         [
           {
             "node": "Any tile failed?",
             "type": "main",
             "index": 0
+          }
+        ]
+      ]
+    },
+    "Look up parcels (paid provider)": {
+      "main": [
+        [
+          {
+            "node": "Join tiles",
+            "type": "main",
+            "index": 2
           }
         ]
       ]

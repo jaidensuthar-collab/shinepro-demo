@@ -3,7 +3,8 @@
 #
 #   ./sync.sh load    get the latest from GitHub and load it into this Mac's n8n
 #   ./sync.sh save    copy this Mac's n8n version into the repo and push it to GitHub
-#   ./sync.sh key     store the Tracerfy API key in this Mac's n8n (never in git)
+#   ./sync.sh key     store the Tracerfy API key (phone numbers) in this Mac's n8n (never in git)
+#   ./sync.sh parcels-key   store the Regrid token (owners in states without free parcel data)
 #
 # Run "save" after editing in n8n, and "load" before editing on the other Mac.
 set -e
@@ -60,8 +61,22 @@ PY
     rm -f "$tmp"
     echo "Saved in this Mac's n8n as 'Tracerfy API'."
     ;;
+  parcels-key)
+    # Paid nationwide parcels (Regrid) for states without a free state parcel layer.
+    read -r -s -p "Paste the Regrid API token: " KEY; echo
+    umask 077
+    tmp="$(mktemp)"
+    python3 - "$tmp" "$KEY" <<'PY'
+import json, sys
+json.dump([{"id": "k2ParcelProvider", "name": "Parcel data provider API", "type": "httpHeaderAuth",
+            "data": {"name": "x-regrid-token", "value": sys.argv[2]}}], open(sys.argv[1], "w"))
+PY
+    "$N8N" import:credentials --input="$tmp" >/dev/null
+    rm -f "$tmp"
+    echo "Saved in this Mac's n8n as 'Parcel data provider API'. Set paidParcelProvider to regrid in Settings."
+    ;;
   *)
-    sed -n '2,8p' "$0"
+    sed -n '2,9p' "$0"
     exit 1
     ;;
 esac

@@ -36,6 +36,11 @@ TYPE = {"Business": "Company", "Person": "Individual", "Trust": "Family trust", 
 STOP = {"ETAL", "ET", "AL", "JR", "SR", "II", "III", "THE", "OF", "AND"}
 
 
+def first_sub(r):
+    """Nearest substation of a lead. Names can contain '; ', so use the dedicated field when present."""
+    return r.get("substation_name") or r["substation"].split("; ")[0]
+
+
 def short(name):
     return re.sub(r"\s*\(.*?\)", "", name or "")
 
@@ -125,24 +130,24 @@ def steps_html(run, v):
              '<span class="chip ok">exact</span>' if s["confidence"] == "exact" else '<span class="chip warn">approx</span>')
             for s in subs]
     step(2, "Pick substations", "Get Line Watch substations, Pick substations", f"{run.total_subs} in, {len(subs)} out",
-         f"Read {run.total_subs} substations from Line Watch and kept Texas ones with a usable location, High projects and early timing first.",
+         f"Read {run.total_subs} substations from Line Watch and kept those with a usable location in a state with a parcel data source, High projects and early timing first.",
          table(["Substation", "County", "Project", "Stage", "Timing", "Location"], rows))
 
-    rows = [(e(short(subs[0]["name"])), e(t["tile"]), f"<code>{e(t['envelope'])}</code>") for t in run.first_tiles]
+    rows = [(e(short(subs[0]["name"])), e(t["tile"]), f"<code>{e(t.get('envelope', 'radius search (paid provider)'))}</code>") for t in run.first_tiles]
     step(3, "Make map tiles", "Make map tiles", f"{n(run.tile_count)} tiles",
          f"Each substation gets a 4 x 4 mile square cut into 16 one-mile tiles. First 4 for {e(short(subs[0]['name'])) if subs else ''}:",
          table(["Substation", "Tile", "Box (west, south, east, north)"], rows))
 
     per = collections.Counter(run.per_sub)
     rows = [(e(short(s["name"])), n(per[s["id"]])) for s in subs]
-    step(4, "Look up parcels", "Look up parcels (Texas parcel layer)", f"{n(sum(per.values()))} parcel records",
-         f"Every tile asks the Texas statewide parcel layer for its parcels. {run.failed} of {n(run.tile_count)} tiles failed the first time"
+    step(4, "Look up parcels", "Look up parcels (free state layer, paid provider)", f"{n(sum(per.values()))} parcel records",
+         f"Every tile asks its state's free parcel layer for its parcels; in states without one, the paid provider gets one radius search per substation. {run.failed} of {n(run.tile_count)} tiles failed the first time"
          f"{(' and got a second try; ' + str(run.stats.get('tileErrors', 0)) + ' still failed after it') if run.failed else ''}. A parcel that crosses two tiles counts twice here; the next step removes duplicates and anything over {st.get('radiusMiles', 2)} miles away.",
          table(["Substation", "Parcel records"], rows, num=("Parcel records",)))
 
     s = run.stats
     rows = [(f"<b>{r['lead_score']}</b>", v.who(r["owner_name"], r["owner_type"]), e(r["owner_type"]), f"{r['total_acres']:,.0f}",
-             f"{r['miles_to_substation']:.2f}", e(short(r["substation"].split(";")[0]))) for r in sorted(run.land, key=lambda r: -r["lead_score"])[:15]]
+             f"{r['miles_to_substation']:.2f}", e(short(first_sub(r)))) for r in sorted(run.land, key=lambda r: -r["lead_score"])[:15]]
     step(5, "Score parcels and owners", "Score parcels and owners", f"{n(run.scored_count)} owners",
          f"{n(s.get('parcelsInRadius', 0))} unique parcels within {st.get('radiusMiles', 2)} miles, grouped by owner. "
          f"{n(s.get('ownersBelowMinAcres', 0))} owners under {st.get('minAcres', 20)} acres dropped, leaving {s.get('landowners', 0)} landowners and {s.get('skipped', 0)} set aside. Top 15:",
@@ -161,14 +166,14 @@ def steps_html(run, v):
     cnt = collections.Counter(r["list"] for r in run.final)
     lane = lambda k: [r for r in run.final if r["list"] == k]
     wrows = [(v.who(r["owner_name"], r["owner_type"]), f'<span class="tel">{phone(r["best_phone"])}</span>' if r["best_phone"] else '<span class="muted-in">number comes with their reply</span>',
-              f"{r['total_acres']:,.0f}", e(short(r["substation"].split(';')[0]))) for r in lane("wendy")]
+              f"{r['total_acres']:,.0f}", e(short(first_sub(r)))) for r in lane("wendy")]
     srows = [(f"<b>{r['lead_score']}</b>", v.who(r["owner_name"], r["owner_type"]), f'<span class="tel">{phone(r["best_phone"])}</span> {e(r["best_phone_type"])}',
-              f"{r['total_acres']:,.0f}", f"{r['miles_to_substation']:.2f}", e(short(r["substation"].split(';')[0]))) for r in lane("sales-call")[:25]]
+              f"{r['total_acres']:,.0f}", f"{r['miles_to_substation']:.2f}", e(short(first_sub(r)))) for r in lane("sales-call")[:25]]
     mrows = [(f"<b>{r['lead_score']}</b>", v.who(r["owner_name"], r["owner_type"]), v.mail(r), f"{r['total_acres']:,.0f}",
               e("all numbers blocked" if int(r.get("phones_blocked") or 0) else "no number found" if run.mode != "off" else "phone lookup off"))
              for r in lane("mail-first")[:12]]
     aside = lane("skip: energy-company") + lane("skip: public-or-utility")
-    krows = [(e(r["owner_name"]), e(r["list"].replace("skip: ", "")), f"{r['total_acres']:,.0f}", e(short(r["substation"].split(';')[0]))) for r in aside[:10]]
+    krows = [(e(r["owner_name"]), e(r["list"].replace("skip: ", "")), f"{r['total_acres']:,.0f}", e(short(first_sub(r)))) for r in aside[:10]]
     body = f"""<div class="lanes4">
 <div class="lane wendy"><b>{cnt['wendy']}</b> Wendy</div><div class="lane"><b>{cnt['sales-call']}</b> Salesperson call</div>
 <div class="lane"><b>{cnt['mail-first']}</b> Letter first</div><div class="lane"><b>{len(aside)}</b> Set aside</div></div>
@@ -199,7 +204,7 @@ def build(run_dir, update_seen):
         by_sub[s["name"]] = {"s": s, "owners": 0, "acres": 0.0, "big": 0, "new": 0}
     new_keys = {owner_key(r) for r in new_land}
     for r in run.land:
-        name = r["substation"].split("; ")[0]
+        name = first_sub(r)
         if name in by_sub:
             b = by_sub[name]
             b["owners"] += 1; b["acres"] += float(r["total_acres"]); b["big"] += float(r["total_acres"]) >= 200
@@ -207,17 +212,17 @@ def build(run_dir, update_seen):
     acres_total = sum(float(r["total_acres"]) for r in run.land)
     over200 = sum(float(r["total_acres"]) >= 200 for r in run.land)
     over640 = sum(float(r["total_acres"]) >= 640 for r in run.land)
-    outstate = sum(r["mail_state"] not in ("TX", "") for r in run.land)
+    outstate = sum(r["mail_state"] not in (r.get("state", "TX"), "") for r in run.land)
     approx_n = sum(s["confidence"] != "exact" for s in run.subs)
     energy = [r for r in run.final if r["category"] == "energy-company"]
-    energy_subs = {short(r["substation"].split("; ")[0]) for r in energy}
+    energy_subs = {short(first_sub(r)) for r in energy}
 
     summary = {"date": date, "substations": len(run.subs), "substations_in_line_watch": run.total_subs,
                "new_substations": [short(s["name"]) for s in new_subs], "landowners": len(run.land),
                "new_landowners": 0 if baseline else len(new_land), "baseline": baseline,
                "acres": round(acres_total), "failed_tiles_first_try": run.failed, "failed_tiles_after_retry": run.stats.get("tileErrors", 0), "phone_mode": run.mode,
                "lanes": dict(collections.Counter(r["list"] for r in run.final)),
-               "biggest_new": [] if baseline else [f"{r['total_acres']:,.0f} ac near {short(r['substation'].split('; ')[0])}"
+               "biggest_new": [] if baseline else [f"{r['total_acres']:,.0f} ac near {short(first_sub(r))}"
                                                     for r in sorted(new_land, key=lambda r: -float(r["total_acres"]))[:3]],
                "approx_substations": approx_n}
 
@@ -259,19 +264,19 @@ def build(run_dir, update_seen):
             lead_rows += f"""<tr><td class="num score">{r['lead_score']}</td>
 <td><div class="bar" role="img" aria-label="Acres {a:.0f}, closeness {c:.0f}, importance {imp}, timing {tim}">{seg('s-acres', a)}{seg('s-close', c)}{seg('s-imp', imp)}{seg('s-time', tim)}</div>{'<span class="pen">&minus;5</span>' if pen else ''}</td>
 <td>{v.who(r['owner_name'], r['owner_type'])}</td><td class="num">{n(round(float(r['total_acres'])))}</td><td class="num">{float(r['miles_to_substation']):.2f}</td>
-<td>{e(short(r['substation'].split('; ')[0]))}<span class="muted">{e(r['county'].title())} County</span></td></tr>"""
+<td>{e(short(first_sub(r)))}<span class="muted">{e(r['county'].title())} County</span></td></tr>"""
         if baseline:
             news = f"""<p>This is the first full run, so it sets the baseline: {len(run.land)} landowners near {len(run.subs)} substations. Starting next week this section lists only owners and substations that were not here before.</p>"""
         else:
             nl = sorted(new_land, key=lambda r: -r["lead_score"])[:15]
             rows = [(f"<b>{r['lead_score']}</b>", v.who(r["owner_name"], r["owner_type"]), f"{float(r['total_acres']):,.0f}",
-                     f"{float(r['miles_to_substation']):.2f}", e(short(r["substation"].split('; ')[0])), e(r["project"])) for r in nl]
+                     f"{float(r['miles_to_substation']):.2f}", e(short(first_sub(r))), e(r["project"])) for r in nl]
             subs_txt = (", ".join(e(short(s["name"])) for s in new_subs)) if new_subs else "none"
             news = f"""<div class="newstats"><div><b>{len(new_subs)}</b>new substations</div><div><b>{len(new_land)}</b>new landowners</div>
 <div><b>{n(round(sum(float(r['total_acres']) for r in new_land)))}</b>new acres</div></div>
 <p>New substations from Line Watch: {subs_txt}.</p>
 {table(["Score", "Owner", "Acres", "Miles", "Substation", "Project"], rows, num=("Score", "Acres", "Miles"))}"""
-        energy_html = "".join(f"<li>{e(r['owner_name'].title().replace(' Llc', ' LLC').replace(' Lp', ' LP').replace('Db ', 'DB '))} ({e(short(r['substation'].split('; ')[0]))})</li>" for r in energy)
+        energy_html = "".join(f"<li>{e(r['owner_name'].title().replace(' Llc', ' LLC').replace(' Lp', ' LP').replace('Db ', 'DB '))} ({e(short(first_sub(r)))})</li>" for r in energy)
         demo_note = {"demo": "Phone numbers on this page are made up (demo mode).", "off": "Phone lookup was off for this run.",
                      "sandbox": "Phone numbers are fake (Tracerfy test server).", "live": "Phone numbers are real (Tracerfy)."}[run.mode]
         private = "" if v.mask else '<p class="banner"><b>Private, for Jaiden.</b> Real owner names and addresses from public appraisal records. Do not forward; the shareable page hides them.</p>'
@@ -298,14 +303,14 @@ def build(run_dir, update_seen):
   <div class="eyebrow">How it works &middot; this run</div>
   <h2 id="flow">From substation to landowner</h2>
   <div class="pipe">
-    <div class="step"><div class="dot">1</div><div class="big">{len(run.subs)}</div><h3>Substations</h3><p>Texas substations from the Line Watch project cards ({run.total_subs} cards' worth in total).</p></div>
+    <div class="step"><div class="dot">1</div><div class="big">{len(run.subs)}</div><h3>Substations</h3><p>Substations from the Line Watch project cards ({run.total_subs} cards' worth in total).</p></div>
     <div class="step"><div class="dot">2</div><div class="big">{n(run.tile_count)}</div><h3>Map tiles</h3><p>Each 4 x 4 mile square cut into 1-mile tiles so busy areas are not cut off.</p></div>
-    <div class="step"><div class="dot">3</div><div class="big">{n(run.stats.get('parcelsInRadius', 0))}</div><h3>Parcels within {e(run.st.get('radiusMiles', 2))} mi</h3><p>Texas statewide parcel layer: owner, mailing address, acres. Free and public.</p></div>
+    <div class="step"><div class="dot">3</div><div class="big">{n(run.stats.get('parcelsInRadius', 0))}</div><h3>Parcels within {e(run.st.get('radiusMiles', 2))} mi</h3><p>Free state parcel layers (or the paid provider): owner, mailing address, acres.</p></div>
     <div class="step"><div class="dot">4</div><div class="big">{n(len(run.land))}</div><h3>Landowners, {e(run.st.get('minAcres', 20))}+ acres</h3><p>Parcels grouped by owner. City, utility and railroad land set aside.</p></div>
     <div class="step"><div class="dot">5</div><div class="big">0&ndash;100</div><h3>Lead score</h3><p>Acres, closeness, project importance and timing.</p></div>
     <div class="step"><div class="dot">6</div><div class="big">3</div><h3>Next-step lists</h3><p>Letter, salesperson call, or Wendy call for owners who opted in.</p></div>
   </div>
-  <p>{f"The run took about {round(run.secs / 60, 1)} minutes. " if run.secs else ""}The {n(len(run.land))} owners hold {n(round(acres_total))} acres; {over200} own 200 acres or more and {over640} own a full section (640 acres) or more. {outstate} have a mailing address outside Texas, which usually means absentee owners.</p>
+  <p>{f"The run took about {round(run.secs / 60, 1)} minutes. " if run.secs else ""}The {n(len(run.land))} owners hold {n(round(acres_total))} acres; {over200} own 200 acres or more and {over640} own a full section (640 acres) or more. {outstate} have a mailing address in another state, which usually means absentee owners.</p>
 </section>
 
 <section aria-labelledby="subs">
@@ -370,7 +375,7 @@ def build(run_dir, update_seen):
 
 <footer>
   <p>Workflow and setup steps on GitHub: <a href="{REPO}">k2-line-watch folder</a> &middot; <a href="{WF}">workflow file</a> (import into n8n 1.123 or later).</p>
-  <p>Data: K2 Line Watch project cards; Texas Geographic Information Office StratMap land parcels (county appraisal districts). Built by Jaiden Suthar.</p>
+  <p>Data: K2 Line Watch project cards; free state parcel layers ({e(", ".join(v.get("label", k) for k, v in run.sources.items()) or "Texas StratMap")}). Built by Jaiden Suthar.</p>
 </footer>
 </div>
 """
@@ -410,14 +415,14 @@ def write_db(run_dir, run, baseline, new_land, new_subs, last, v):
     def masked(r):
         return {"score": r["lead_score"], "type": TYPE.get(r["owner_type"], "Owner"), "initials": initials(r["owner_name"]),
                 "acres": round(float(r["total_acres"])), "miles": round(float(r["miles_to_substation"]), 2),
-                "substation": short(r["substation"].split("; ")[0]), "county": str(r.get("county", "")).title(),
+                "substation": short(first_sub(r)), "county": str(r.get("county", "")).title(),
                 "state": r.get("state", ""), "mail_from": ", ".join(x for x in [str(r["mail_city"]).title(), r["mail_state"]] if x),
                 "lane": lane_of(r)}
 
     by_sub = collections.defaultdict(list)
     names = {s["name"]: s["id"] for s in run.subs}
     for r in run.land:
-        sid = names.get(r["substation"].split("; ")[0])
+        sid = r.get("substation_id") or names.get(first_sub(r))
         if sid:
             by_sub[sid].append(r)
     docs = {}
@@ -433,7 +438,7 @@ def write_db(run_dir, run, baseline, new_land, new_subs, last, v):
              "project_ids": s.get("project_ids") or [], "project": bp.get("name", ""), "timing": bp.get("window", "")}
         if s["id"] in searched:
             rows = sorted(by_sub.get(s["id"], []), key=lambda r: -r["lead_score"])
-            d.update({"status": "searched", "source": (run.sources.get(s["state"]) or {}).get("label", "Paid provider"),
+            d.update({"status": "searched", "source": (run.sources.get(s["state"]) or {}).get("label", "Regrid nationwide parcels (paid)"),
                       "landowners": len(rows), "acres": round(sum(float(r["total_acres"]) for r in rows)),
                       "parcels": int(run.per_sub.get(s["id"], 0)),
                       "new_landowners": 0 if baseline else sum(owner_key(r) in new_keys for r in rows),
@@ -456,7 +461,7 @@ def write_db(run_dir, run, baseline, new_land, new_subs, last, v):
         c["landowners"] += docs[s["id"]].get("landowners", 0)
         src = run.sources.get(s["state"])
         c["status"] = "free" if src else ("paid" if s["id"] in searched else "none")
-        c["source"] = src["label"] if src else ("Paid provider" if c["status"] == "paid" else "No free statewide parcel layer with owner names")
+        c["source"] = src["label"] if src else ("Regrid nationwide parcels (paid)" if c["status"] == "paid" else "No free statewide parcel layer with owner names")
         if src and src.get("note"):
             c["note"] = src["note"]
     energy = sorted([r for r in run.final if r["category"] == "energy-company"], key=lambda r: -float(r["total_acres"]))
@@ -476,8 +481,8 @@ def write_db(run_dir, run, baseline, new_land, new_subs, last, v):
             "coverage": list(cov.values()),
             "top": [masked(r) for r in sorted(run.land, key=lambda r: -r["lead_score"])[:25]],
             "energy": [{"owner": r["owner_name"].title(), "acres": round(float(r["total_acres"])),
-                        "substation": short(r["substation"].split("; ")[0]), "state": r.get("state", "")} for r in energy[:12]],
-            "energy_substations": len({r["substation"].split("; ")[0] for r in energy})}
+                        "substation": short(first_sub(r)), "state": r.get("state", "")} for r in energy[:12]],
+            "energy_substations": len({first_sub(r) for r in energy})}
     json.dump(meta, open(os.path.join(out, "meta", "landowners.json"), "w"), indent=1)
 
 

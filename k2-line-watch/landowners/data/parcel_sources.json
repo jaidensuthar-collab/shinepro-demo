@@ -1,0 +1,34 @@
+{
+ "about": "Free state parcel layers with owner names, used by the landowner search. States not listed need the paid provider (Settings: paidParcelProvider).",
+ "checked": "2026-10-19",
+ "states": {
+  "TX": {
+   "label": "Texas statewide parcels (TxGIO StratMap, from county appraisal districts)",
+   "op": "identify",
+   "url": "https://feature.geographic.texas.gov/arcgis/rest/services/Parcels/stratmap_land_parcels_48_most_recent/MapServer",
+   "layer": "all:0",
+   "max": 2000,
+   "tileMiles": 1,
+   "areaUnits": "acres",
+   "fields": {
+    "owner": "OWNER_NAME",
+    "care_of": "NAME_CARE",
+    "mail1": "MAIL_LINE1",
+    "mail2": "MAIL_LINE2",
+    "mail_city": "MAIL_CITY",
+    "mail_state": "MAIL_STAT",
+    "mail_zip": "MAIL_ZIP",
+    "acres": "LEGAL_AREA",
+    "acres2": "GIS_AREA",
+    "parcel_id": "PROP_ID",
+    "geo_id": "GEO_ID",
+    "county": "COUNTY",
+    "value": "MKT_VALUE",
+    "situs": "SITUS_ADDR",
+    "tax_year": "TAX_YEAR",
+    "legal": "LEGAL_DESC"
+   },
+   "docs": "https://geographic.texas.gov/"
+  }
+ }
+}
