@@ -1,2 +1,3 @@
 .n8n-local/
 output/
+__pycache__/
