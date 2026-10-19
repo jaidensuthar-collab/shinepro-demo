@@ -58,7 +58,7 @@
             {
               "id": "a258796a-27c8-58e2-89e6-7b589ee11b98",
               "name": "substationsUrl",
-              "value": "https://raw.githubusercontent.com/jaidensuthar-collab/shinepro-demo/claude/vibrant-euler-urtmp2/k2-tier3/data/substations.json",
+              "value": "https://raw.githubusercontent.com/jaidensuthar-collab/shinepro-demo/claude/vibrant-euler-urtmp2/k2-line-watch/landowners/data/substations.json",
               "type": "string"
             },
             {

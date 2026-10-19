@@ -1,7 +1,7 @@
 #!/bin/bash
 # Start the K2 Tier 3 n8n on http://localhost:5679
 #
-# Uses its own folder (k2-tier3/.n8n-local) and port 5679 so it never touches another
+# Uses its own folder (k2-line-watch/landowners/.n8n-local) and port 5679 so it never touches another
 # n8n on this Mac (~/.n8n, port 5678). Stop it with Ctrl+C.
 set -e
 HERE="$(cd "$(dirname "$0")" && pwd)"

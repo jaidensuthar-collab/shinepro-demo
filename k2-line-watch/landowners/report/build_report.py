@@ -7,6 +7,8 @@ Writes into <run_dir>:
   line-watch-to-call-list.html   shareable page (owners as type + initials, no street addresses)
   private-step-by-step.html      the same steps with real names and addresses (never publish)
   summary.json                   counts and what is new, for the run reply
+  db/meta/landowners.json, db/landowners/<substation id>.json
+                                 the Landowners tab of K2 Line Watch (masked: type + initials, city)
 With --update-seen it also updates data/seen-owners.txt and data/last-run.json, which hold
 only one-way fingerprints and counts (no names), so they are safe in the public repo.
 """
@@ -24,8 +26,8 @@ DATA = os.path.join(HERE, "..", "data")
 SEEN = os.path.join(DATA, "seen-owners.txt")
 LAST = os.path.join(DATA, "last-run.json")
 GIS = os.path.join(DATA, "gis-check.json")
-REPO = "https://github.com/jaidensuthar-collab/shinepro-demo/tree/claude/vibrant-euler-urtmp2/k2-tier3"
-WF = "https://github.com/jaidensuthar-collab/shinepro-demo/blob/claude/vibrant-euler-urtmp2/k2-tier3/workflows/line-watch-to-call-list.json"
+REPO = "https://github.com/jaidensuthar-collab/shinepro-demo/tree/claude/vibrant-euler-urtmp2/k2-line-watch"
+WF = "https://github.com/jaidensuthar-collab/shinepro-demo/blob/claude/vibrant-euler-urtmp2/k2-line-watch/landowners/workflows/line-watch-to-call-list.json"
 FCC = "https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf"
 e = lambda x: html.escape(str(x))
 n = lambda x: f"{x:,}"
@@ -70,6 +72,8 @@ class Run:
         self.final = rec["leads"]
         self.land = [r for r in self.final if r["category"] == "landowner"]
         self.phones = rec["phones"]
+        self.all_subs = rec.get("all_substations") or []
+        self.sources = rec.get("parcel_sources") or {}
         self.mode = self.st.get("phoneLookup", "off")
         timing = os.path.join(run_dir, "timing.json")
         self.secs = json.load(open(timing))["seconds"] if os.path.exists(timing) else 0
@@ -365,12 +369,13 @@ def build(run_dir, update_seen):
 </section>
 
 <footer>
-  <p>Workflow and setup steps on GitHub: <a href="{REPO}">k2-tier3 folder</a> &middot; <a href="{WF}">workflow file</a> (import into n8n 1.123 or later).</p>
+  <p>Workflow and setup steps on GitHub: <a href="{REPO}">k2-line-watch folder</a> &middot; <a href="{WF}">workflow file</a> (import into n8n 1.123 or later).</p>
   <p>Data: K2 Line Watch project cards; Texas Geographic Information Office StratMap land parcels (county appraisal districts). Built by Jaiden Suthar.</p>
 </footer>
 </div>
 """
 
+    write_db(run_dir, run, baseline, new_land, new_subs, last, View(mask=True))
     open(os.path.join(run_dir, "line-watch-to-call-list.html"), "w").write(page(View(mask=True)))
     open(os.path.join(run_dir, "private-step-by-step.html"), "w").write(
         "<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'></head><body>"
@@ -383,6 +388,97 @@ def build(run_dir, update_seen):
         json.dump({"date": date, "substations": [s["id"] for s in run.subs], "landowners": len(run.land),
                    "acres": round(acres_total), "lanes": summary["lanes"]}, open(LAST, "w"), indent=1)
     print(json.dumps(summary, indent=1))
+
+
+def initials(name):
+    parts = [x for x in re.split(r"[^A-Z0-9]+", str(name).upper()) if x and x not in STOP]
+    return ".".join(x[0] for x in parts[:3]) + "." if parts else ""
+
+
+def write_db(run_dir, run, baseline, new_land, new_subs, last, v):
+    """Docs for the Line Watch page database. Owners appear only as type + initials and a mailing city."""
+    out = os.path.join(run_dir, "db")
+    os.makedirs(os.path.join(out, "landowners"), exist_ok=True)
+    os.makedirs(os.path.join(out, "meta"), exist_ok=True)
+    st = run.st
+    radius, min_acres = st.get("radiusMiles", 2), st.get("minAcres", 20)
+    searched = {s["id"]: s for s in run.subs}
+    new_keys = {owner_key(r) for r in new_land}
+    lane_of = lambda r: "skip" if r["list"].startswith("skip") else r["list"]
+    usable = [s for s in run.all_subs if s.get("confidence") in ("exact", "approx")]
+
+    def masked(r):
+        return {"score": r["lead_score"], "type": TYPE.get(r["owner_type"], "Owner"), "initials": initials(r["owner_name"]),
+                "acres": round(float(r["total_acres"])), "miles": round(float(r["miles_to_substation"]), 2),
+                "substation": short(r["substation"].split("; ")[0]), "county": str(r.get("county", "")).title(),
+                "state": r.get("state", ""), "mail_from": ", ".join(x for x in [str(r["mail_city"]).title(), r["mail_state"]] if x),
+                "lane": lane_of(r)}
+
+    by_sub = collections.defaultdict(list)
+    names = {s["name"]: s["id"] for s in run.subs}
+    for r in run.land:
+        sid = names.get(r["substation"].split("; ")[0])
+        if sid:
+            by_sub[sid].append(r)
+    docs = {}
+    for s in run.all_subs:
+        best = None
+        rank = {"High": 2, "Medium": 1}
+        for p in s.get("projects") or []:
+            key = (rank.get(p.get("importance"), 0), -{"Open now": 0, "Act fast": 1, "Late": 2}.get(p.get("window"), 3))
+            if best is None or key > best[0]:
+                best = (key, p)
+        bp = best[1] if best else {}
+        d = {"name": s["name"], "state": s["state"], "county": s["county"], "confidence": s.get("confidence", ""),
+             "project_ids": s.get("project_ids") or [], "project": bp.get("name", ""), "timing": bp.get("window", "")}
+        if s["id"] in searched:
+            rows = sorted(by_sub.get(s["id"], []), key=lambda r: -r["lead_score"])
+            d.update({"status": "searched", "source": (run.sources.get(s["state"]) or {}).get("label", "Paid provider"),
+                      "landowners": len(rows), "acres": round(sum(float(r["total_acres"]) for r in rows)),
+                      "parcels": int(run.per_sub.get(s["id"], 0)),
+                      "new_landowners": 0 if baseline else sum(owner_key(r) in new_keys for r in rows),
+                      "top_score": rows[0]["lead_score"] if rows else None,
+                      "lanes": dict(collections.Counter(lane_of(r) for r in rows)), "top": [masked(r) for r in rows[:5]]})
+        elif s.get("confidence") not in ("exact", "approx"):
+            d.update({"status": "location", "note": "Location only known to the " + ("town" if s.get("confidence") == "town" else "county") + "; needs a GIS check before a search"})
+        elif s["state"] not in run.sources:
+            d.update({"status": "no_source", "note": "Needs a parcel data source for " + s["state"]})
+        else:
+            d.update({"status": "skipped", "note": "Left out of this run by the filters (importance or limit)"})
+        docs[s["id"]] = d
+    for sid, d in docs.items():
+        json.dump(d, open(os.path.join(out, "landowners", sid + ".json"), "w"), indent=1)
+
+    cov = collections.OrderedDict()
+    for s in sorted(usable, key=lambda s: s["state"]):
+        c = cov.setdefault(s["state"], {"state": s["state"], "substations": 0, "landowners": 0})
+        c["substations"] += 1
+        c["landowners"] += docs[s["id"]].get("landowners", 0)
+        src = run.sources.get(s["state"])
+        c["status"] = "free" if src else ("paid" if s["id"] in searched else "none")
+        c["source"] = src["label"] if src else ("Paid provider" if c["status"] == "paid" else "No free statewide parcel layer with owner names")
+        if src and src.get("note"):
+            c["note"] = src["note"]
+    energy = sorted([r for r in run.final if r["category"] == "energy-company"], key=lambda r: -float(r["total_acres"]))
+    acres_total = sum(float(r["total_acres"]) for r in run.land)
+    lanes = collections.Counter(lane_of(r) for r in run.final)
+    phone_note = {"demo": "Phone numbers in this run are made up (demo mode), so the salesperson-call count is only an example. Real numbers need a phone data service.",
+                  "off": "Phone lookup was off for this run, so every landowner starts with a letter.",
+                  "sandbox": "Phone numbers in this run are test data.", "live": "Phone numbers are real, with Do Not Call and litigator flags."}.get(run.mode, "")
+    meta = {"run_date": st.get("runDate", ""), "phone_mode": run.mode, "radius_miles": radius, "min_acres": min_acres,
+            "totals": {"lines": len({pid for s in run.all_subs for pid in (s.get("project_ids") or [])}),
+                       "substations_total": len(run.all_subs), "substations_searched": len(run.subs),
+                       "parcels": run.stats.get("parcelsInRadius", 0), "landowners": len(run.land), "acres": round(acres_total),
+                       "leads_to_contact": lanes["mail-first"] + lanes["sales-call"] + lanes["wendy"]},
+            "lanes": dict(lanes), "phone_note": phone_note,
+            "new": {"baseline": baseline, "since": (last or {}).get("date", ""), "landowners": len(new_land),
+                    "acres": round(sum(float(r["total_acres"]) for r in new_land)), "substations": [short(s["name"]) for s in new_subs]},
+            "coverage": list(cov.values()),
+            "top": [masked(r) for r in sorted(run.land, key=lambda r: -r["lead_score"])[:25]],
+            "energy": [{"owner": r["owner_name"].title(), "acres": round(float(r["total_acres"])),
+                        "substation": short(r["substation"].split("; ")[0]), "state": r.get("state", "")} for r in energy[:12]],
+            "energy_substations": len({r["substation"].split("; ")[0] for r in energy})}
+    json.dump(meta, open(os.path.join(out, "meta", "landowners.json"), "w"), indent=1)
 
 
 CSS = """

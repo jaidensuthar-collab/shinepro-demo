@@ -3,7 +3,7 @@
 One row per substation (the same substation shows up in several projects), with the
 projects that end there. The n8n workflow reads this file from GitHub.
 
-    python3 export_substations.py ../../k2-line-monitor/data/projects.json
+    python3 export_substations.py ../../data/projects.json
     python3 export_substations.py <dir of project JSON files from the Line Watch database>
 """
 import glob
@@ -69,5 +69,5 @@ def main(src, out_path):
 
 if __name__ == "__main__":
     here = os.path.dirname(os.path.abspath(__file__))
-    main(sys.argv[1] if len(sys.argv) > 1 else os.path.join(here, "..", "..", "k2-line-monitor", "data", "projects.json"),
+    main(sys.argv[1] if len(sys.argv) > 1 else os.path.join(here, "..", "..", "data", "projects.json"),
          os.path.join(here, "substations.json"))

@@ -147,6 +147,29 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 .more { margin-top: 8px }
 .qa { padding: 10px 0; border-bottom: 1px solid var(--rule) }
 .qa .q { font-weight: 600 } .qa .state { font-size: 12px; color: var(--muted) }
+/* Landowners tab */
+.stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border: 1px solid var(--rule); background: var(--panel) }
+.stats > div { padding: 10px 12px; border-right: 1px solid var(--rule); min-width: 0 }
+.stats > div:last-child { border-right: 0 }
+.stats b { display: block; font-family: var(--display); font-weight: 700; font-size: 28px; line-height: 1.05; font-variant-numeric: tabular-nums }
+.stats span { font-size: 12px; color: var(--muted) }
+.stats .arrow b::after { content: " \2192"; color: var(--muted); font-weight: 500; font-size: 18px }
+@media (max-width: 760px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)) } .stats > div { border-bottom: 1px solid var(--rule) } .stats .arrow b::after { content: "" } }
+.tbl { overflow-x: auto; border: 1px solid var(--rule); background: var(--panel) }
+.tbl table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 14px }
+.tbl th { text-align: left; font: 600 11px var(--mono); text-transform: uppercase; letter-spacing: .04em; color: var(--muted); padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: bottom }
+.tbl td { padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top }
+.tbl tr:last-child td { border-bottom: 0 }
+.tbl .n { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap }
+.tbl .ini { font-family: var(--mono); color: var(--muted); font-size: 13px }
+.land h2 { font-family: var(--display); font-size: 22px; margin: 0 0 6px }
+.land p { max-width: 78ch; margin: 0 0 8px }
+.lanes3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px }
+.lanes3 > div { border: 1px solid var(--rule); background: var(--panel); padding: 12px 14px; min-width: 0 }
+.lanes3 b { display: block; font-family: var(--display); font-size: 26px; line-height: 1.1 }
+@media (max-width: 760px) { .lanes3 { grid-template-columns: minmax(0, 1fr) } }
+.landrow { display: grid; gap: 4px }
+.linkbtn { background: none; border: 0; padding: 0; color: var(--flag); font-weight: 600; cursor: pointer; text-decoration: underline; text-underline-offset: 2px }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important } }
 </style>
 
@@ -154,13 +177,14 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   <header class="top">
     <div>
       <h1><span class="tape" aria-hidden="true"></span>K2 Line Watch</h1>
-      <p class="sub">New high-voltage lines across the US, starting with Texas, earliest signal first. Each project says where it stands, why K2 cares and what to do next.</p>
+      <p class="sub">New high-voltage lines across the US, earliest signal first, and the landowners near their end substations. Each project says where it stands, why K2 cares and what to do next.</p>
     </div>
     <div class="stamp" id="stamp">Loading the watch list...</div>
   </header>
 
   <nav class="tabs" role="tablist" aria-label="Page sections">
     <button type="button" role="tab" id="t-watch" aria-controls="p-watch" aria-selected="true">Watch list</button>
+    <button type="button" role="tab" id="t-land" aria-controls="p-land" aria-selected="false" tabindex="-1">Landowners</button>
     <button type="button" role="tab" id="t-irp" aria-controls="p-irp" aria-selected="false" tabindex="-1">Utility plans (IRPs)</button>
     <button type="button" role="tab" id="t-help" aria-controls="p-help" aria-selected="false" tabindex="-1">How to use</button>
   </nav>
@@ -176,6 +200,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
         <button class="chip" data-win="Open now" aria-pressed="false">Open now</button>
         <button class="chip" data-win="Act fast" aria-pressed="false">Act fast</button>
         <button class="chip" data-win="Late" aria-pressed="false">Late</button>
+        <select class="chip" id="region" aria-label="Region"><option value="">All regions</option></select>
         <input class="search" id="q" type="search" placeholder="Search a line, county, utility or docket" aria-label="Search projects">
       </div>
       <div class="ledger" id="ledger"><div class="empty">Projects will appear here once the watch list loads.</div></div>
@@ -191,7 +216,8 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
         <div class="suggest" id="suggest">
           <button type="button">Which lines are still early enough for K2 to get ahead?</button>
           <button type="button">What's the newest route case and what should we do about it?</button>
-          <button type="button">Explain the Eastern Backbone in plain English.</button>
+          <button type="button">Which substations have the most landowners near them?</button>
+          <button type="button">What new 765 kV lines are planned outside Texas?</button>
           <button type="button">Which counties come up most often?</button>
         </div>
       </div>
@@ -222,6 +248,38 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   </section>
   </div>
 
+  <div id="p-land" role="tabpanel" aria-labelledby="t-land" class="panel land" hidden>
+    <section>
+      <h2>Landowners near the lines</h2>
+      <p>Every week the landowner search takes the end substations on the watch list, finds every parcel within <span data-l="radius">2</span> miles, groups the parcels by owner, scores each owner and picks a next step: a letter, a salesperson call, or a Wendy call for owners who opted in. Owners show as type and initials here; the full list with names and mailing addresses goes to Jaiden as a private file.</p>
+      <p class="pmeta" id="landstamp">Loading the landowner search...</p>
+    </section>
+    <div class="stats" id="landstats"></div>
+    <section id="landnew"></section>
+    <section>
+      <h2>Coverage by state</h2>
+      <p>Where the landowner data comes from. Free state parcel layers are used where a state publishes owner names; other states need a paid nationwide property data service before their substations can be searched.</p>
+      <div class="tbl" id="landcov"></div>
+    </section>
+    <section>
+      <h2>Substations</h2>
+      <div class="tools"><input class="search" id="lq" type="search" placeholder="Search a substation, state or project" aria-label="Search substations"></div>
+      <div class="tbl" id="landsubs"></div>
+    </section>
+    <section>
+      <h2>Top leads by score</h2>
+      <p>Score (0 to 100) = acres (up to 35, full marks at 640) + closeness to the substation (up to 30) + project importance (High 15, Medium 8) + timing (Open now 15, Act fast 10, Late 3), minus 5 when the substation location is approximate.</p>
+      <div class="tbl" id="landtop"></div>
+    </section>
+    <section>
+      <h2>Next step for every lead</h2>
+      <p>The FCC ruled in February 2024 that AI-generated voices count as an "artificial voice" under the TCPA, so an AI call needs the person's prior consent (<a href="https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf" target="_blank" rel="noopener">FCC 24-17</a>). No cold lead goes straight to Wendy.</p>
+      <div class="lanes3" id="landlanes"></div>
+      <p class="pmeta" id="landphone"></p>
+    </section>
+    <section id="landcomp"></section>
+  </div>
+
   <div id="p-irp" role="tabpanel" aria-labelledby="t-irp" class="panel" hidden>
     <section class="irp-intro">
       <h2>Utility plans (IRPs)</h2>
@@ -240,25 +298,25 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   <div id="p-help" role="tabpanel" aria-labelledby="t-help" class="panel help" hidden>
     <section>
       <h2>What this page is</h2>
-      <p>K2 Renew buys land before the grid gets to it. Land near a new high-voltage line, and above all near the substations at each end, becomes worth much more once the line is built. This page lists the new lines that matter, shows how far along each one is, and says what K2 should do now.</p>
-      <p>A line monitor checks the public sources twice every weekday (7:45am and 12:45pm Central) and adds anything new. The same items also go to the <b>K2 Watch</b> tab of the K2 Transmission Intel Plan sheet.</p>
+      <p>K2 Renew buys land before the grid gets to it. Land near a new high-voltage line, and above all near the substations at each end, becomes worth much more once the line is built. This page lists the new lines that matter across the US, shows how far along each one is, says what K2 should do now, and lists the landowners near each line's end substations.</p>
+      <p>A line monitor checks the public sources twice every weekday (7:45am and 12:45pm Central) and adds anything new. The same items also go to the <b>K2 Watch</b> tab of the K2 Transmission Intel Plan sheet. Every Monday the landowner search reruns on every end substation, so new lines bring new landowners automatically.</p>
     </section>
 
     <section>
       <h2>Reading a project</h2>
-      <p>Every new line goes through the same steps. The earlier K2 hears about it, the cheaper the land.</p>
+      <p>Every new line goes through the same steps. The earlier K2 hears about it, the cheaper the land. Texas uses ERCOT and the Texas PUC; elsewhere the regional grid operator (MISO, SPP, PJM and others) plans the line and a state commission approves the route.</p>
       <table class="steps">
         <thead><tr><th scope="col">Stage</th><th scope="col">What is happening</th><th scope="col">Usual lead time</th><th scope="col">Window</th></tr></thead>
         <tbody>
-          <tr><td>2</td><td>ERCOT, the grid operator, is reviewing whether the line is needed. Its documents already name the two end substations.</td><td>1 to 2 years before a route is filed</td><td><span class="win open">Open now</span></td></tr>
+          <tr><td>2</td><td>The grid operator (ERCOT, MISO, SPP, PJM...) is reviewing or has approved the line in its plan. Its documents already name the two end substations.</td><td>1 to 2 years before a route is filed</td><td><span class="win open">Open now</span></td></tr>
           <tr><td>3</td><td>The utility has a project page or is holding open houses with draft route maps.</td><td>4 to 9 months before a route is filed</td><td><span class="win open">Open now</span></td></tr>
-          <tr><td>4</td><td>The utility asked the Texas PUC for a case number. The request names the voltage, end substations and every county.</td><td>About 2 weeks before a route is filed</td><td><span class="win fast">Act fast</span></td></tr>
-          <tr><td>5</td><td>Route case at the PUC. All route options and the landowner list are public.</td><td>About 6 months to a decision</td><td><span class="win fast">Act fast</span></td></tr>
-          <tr><td>6</td><td>The PUC picked a route.</td><td>Land prices already reflect it</td><td><span class="win late">Late</span></td></tr>
+          <tr><td>4</td><td>The utility is preparing its state siting case (in Texas it asks the PUC for a case number, which names the voltage, end substations and every county).</td><td>Weeks before a route is filed</td><td><span class="win fast">Act fast</span></td></tr>
+          <tr><td>5</td><td>Route case at the state commission (CCN, CPCN or route permit). Route options are public, and in Texas so is the landowner list.</td><td>About 6 to 12 months to a decision</td><td><span class="win fast">Act fast</span></td></tr>
+          <tr><td>6</td><td>The state commission picked a route.</td><td>Land prices already reflect it</td><td><span class="win late">Late</span></td></tr>
           <tr><td>7</td><td>The utility is buying easements and building.</td><td>Too late for most deals</td><td><span class="win late">Late</span></td></tr>
         </tbody>
       </table>
-      <p><b>Importance</b> is High for 345 kV and 765 kV lines, the big ones that open up the most land, and Medium for smaller lines or ones further from K2's focus.</p>
+      <p><b>Importance</b> is High for 345 kV and bigger lines in K2's priority markets, the big ones that open up the most land, and Medium for smaller lines or ones further from K2's focus (Northern Virginia is always Medium). Use the region menu to see one part of the country.</p>
       <p><b>Why the end substations matter:</b> the route can move during the case, but the two end substations almost never do. Land next to them is the safest early bet.</p>
     </section>
 
@@ -271,6 +329,16 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
         <li>Press <b>Ask about this line</b> to start a question about that project in the assistant.</li>
         <li>Always open the source link before acting. The page is a guide, not the official record.</li>
       </ol>
+    </section>
+
+    <section>
+      <h2>Landowners</h2>
+      <p>The <b>Landowners</b> tab shows the weekly landowner search: for each end substation, the owners of 20 or more acres within 2 miles, their lead score and their next step. Each project card also says how many landowners are near its substations.</p>
+      <ul>
+        <li><b>Where owner data comes from:</b> free statewide parcel layers where a state publishes owner names (Texas and a growing list of others, shown under Coverage by state). Other states need a paid nationwide property data service; until K2 picks one, their substations show "not searched".</li>
+        <li><b>Privacy:</b> this page shows owners only as type and initials with a city. The full list with names, mailing addresses and parcel IDs goes to Jaiden as a private file.</li>
+        <li><b>Next step:</b> letter first for everyone without a clean phone number; a salesperson call for clean numbers; Wendy only for owners who opted in, because AI calls need prior consent.</li>
+      </ul>
     </section>
 
     <section>
@@ -303,15 +371,15 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 <script>
 (() => {
   const STAGES = [
-    { n: 2, l: "ERCOT review", s: "1-2 yrs out", cls: "early" },
+    { n: 2, l: "Grid plan review", s: "1-2 yrs out", cls: "early" },
     { n: 3, l: "Open houses / page", s: "4-9 mo out", cls: "early" },
-    { n: 4, l: "Docket requested", s: "~2 wks out", cls: "mid" },
-    { n: 5, l: "Route case at PUC", s: "~6 mo decision", cls: "mid" },
+    { n: 4, l: "Siting case prepared", s: "weeks out", cls: "mid" },
+    { n: 5, l: "Route case at state", s: "~6-12 mo decision", cls: "mid" },
     { n: 6, l: "Route approved", s: "land agents active", cls: "late" },
     { n: 7, l: "Land buying / build", s: "too late for route", cls: "late" },
   ];
   const WEB = "Parallel Search";
-  const state = { irps: [], isort: "growth", iopen: new Set(), projects: [], signals: [], research: [], meta: null, win: "all", stage: null, q: "", open: new Set(), sigShown: 25 };
+  const state = { region: "", land: null, landSubs: [], lq: "", irps: [], isort: "growth", iopen: new Set(), projects: [], signals: [], research: [], meta: null, win: "all", stage: null, q: "", open: new Set(), sigShown: 25 };
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const winCls = (w) => (w === "Open now" ? "open" : w === "Act fast" ? "fast" : "late");
@@ -328,11 +396,20 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     }));
   }
 
+  // Region group for the filter: the part of "MISO (Indiana)" or "Texas (ERCOT)" before the bracket.
+  const regionOf = (p) => String(p.region || "Other").split(" (")[0].replace(/^Other US$/, "Other US");
+  function fillRegions() {
+    const sel = $("region"), have = [...new Set(state.projects.map(regionOf))].sort();
+    const cur = sel.value;
+    sel.innerHTML = `<option value="">All regions</option>` + have.map((r) => `<option value="${esc(r)}">${esc(r)} (${state.projects.filter((p) => regionOf(p) === r).length})</option>`).join("");
+    sel.value = have.includes(cur) ? cur : "";
+  }
   function matches(p) {
     if (state.win !== "all" && p.window !== state.win) return false;
     if (state.stage && p.stage !== state.stage) return false;
+    if (state.region && regionOf(p) !== state.region) return false;
     if (!state.q) return true;
-    const hay = [p.name, p.utility, p.counties, p.endpoints, p.docket, p.rpg, p.region, p.status].join(" ").toLowerCase();
+    const hay = [p.name, p.utility, p.counties, p.endpoints, p.docket, p.rpg, p.region, (p.states || []).join(" "), p.status].join(" ").toLowerCase();
     return state.q.toLowerCase().split(/\s+/).every((t) => hay.includes(t));
   }
 
@@ -472,8 +549,9 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
           <dt>What happens next</dt><dd>${esc(p.next_step)}</dd>
           <dt>Why K2 cares</dt><dd>${esc(p.why_k2)}</dd>
           <dt>What to do</dt><dd>${esc(p.k2_action)}</dd>
-          ${p.docket || p.rpg ? `<dt>Case numbers</dt><dd class="mono">${[p.docket && "PUCT Docket " + p.docket, p.rpg && "ERCOT " + p.rpg].filter(Boolean).map(esc).join(" · ")}</dd>` : ""}
+          ${p.docket || p.rpg ? `<dt>Case numbers</dt><dd class="mono">${[p.docket && (/^Texas/.test(p.region || "Texas") ? "PUCT Docket " : "Docket ") + p.docket, p.rpg && (/^Texas/.test(p.region || "Texas") ? "ERCOT " : "") + p.rpg].filter(Boolean).map(esc).join(" · ")}</dd>` : ""}
           ${mapBlock(p)}
+          ${landBlock(p)}
           <dt>Sources</dt><dd><span class="links">${links || "None yet"}</span></dd>
           <dt>Facts</dt><dd class="pmeta">${esc(p.checked || "needs checking")}, updated ${esc(p.updated || "")}</dd>
         </dl><button type="button" class="askbtn" data-askp="${esc(p.id)}">Ask about this line</button></div>` : ""}
@@ -487,6 +565,73 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
       if (p) { $("askbox").value = `What should K2 do about the ${p.name} line right now, and what's the latest on it?`; $("askbox").focus(); }
     }));
   }
+
+  // ---------- landowners (weekly search, masked) ----------
+  const nf = (x) => Number(x || 0).toLocaleString();
+  const subShort = (n) => String(n || "").split(" (")[0];
+  const LANE = { "sales-call": "Salesperson call", "mail-first": "Letter first", "wendy": "Wendy", "skip": "Set aside" };
+  const SRC = { free: ["open", "Free state data"], paid: ["fast", "Paid data service"], none: ["late", "Needs a data source"], failed: ["late", "Lookup failed"] };
+
+  function landBlock(p) {
+    const subs = state.landSubs.filter((s) => (s.project_ids || []).includes(p.id));
+    if (!subs.length) return "";
+    const rows = subs.map((s) => s.status === "searched"
+      ? `<li><b>${esc(subShort(s.name))}</b>: ${nf(s.landowners)} landowners with ${nf(s.acres)} acres within ${esc((state.land || {}).radius_miles || 2)} mi${s.new_landowners ? `, <span class="new-tag">${nf(s.new_landowners)} NEW</span>` : ""}${s.top_score ? `, best score ${esc(s.top_score)}` : ""}</li>`
+      : `<li><b>${esc(subShort(s.name))}</b>: <span class="pmeta">${esc(s.status === "no_source" ? "not searched yet: " + (s.note || "needs a parcel data source for " + s.state) : s.note || "not searched")}</span></li>`).join("");
+    return `<dt>Landowners</dt><dd class="landrow"><ul class="pins">${rows}</ul><span><button type="button" class="linkbtn" data-goland="${esc(subs[0].id)}">See the landowner list</button></span></dd>`;
+  }
+
+  function renderLand() {
+    const L = state.land;
+    if (!L) { $("landstamp").textContent = "The landowner search has not run yet. It runs every Monday morning."; return; }
+    document.querySelectorAll('[data-l="radius"]').forEach((x) => (x.textContent = L.radius_miles || 2));
+    const phone = { demo: "phone numbers are made up (demo)", off: "phone lookup off", sandbox: "phone numbers are test data", live: "real phone numbers" }[L.phone_mode] || "";
+    $("landstamp").textContent = `Last run ${L.run_date || ""} · ${phone} · owners with ${L.min_acres || 20}+ acres`;
+    const T = L.totals || {};
+    $("landstats").innerHTML = [[T.lines, "lines on the watch list"], [T.substations_searched, `substations searched (of ${nf(T.substations_total)})`],
+      [T.parcels, `parcels within ${L.radius_miles || 2} miles`], [T.landowners, `landowners, ${nf(T.acres)} acres`], [T.leads_to_contact, "leads to contact"]]
+      .map(([v, l], i) => `<div class="${i < 4 ? "arrow" : ""}"><b>${nf(v)}</b><span>${esc(l)}</span></div>`).join("");
+    const N = L.new || {};
+    $("landnew").innerHTML = N.baseline
+      ? `<h2>What is new</h2><p>This run set the baseline (${nf(T.landowners)} landowners). From the next weekly run, this section lists only owners and substations that were not here before.</p>`
+      : `<h2>What is new since ${esc(N.since || "the last run")}</h2><p><b>${nf(N.landowners)}</b> new landowners with <b>${nf(N.acres)}</b> acres${(N.substations || []).length ? `, near ${N.substations.length} new substations: ${esc(N.substations.join(", "))}` : ""}.</p>`;
+    $("landcov").innerHTML = `<table><thead><tr><th>State</th><th class="n">Substations</th><th>Owner data</th><th class="n">Landowners</th><th>Status</th></tr></thead><tbody>${
+      (L.coverage || []).map((c) => { const [cls, lbl] = SRC[c.status] || SRC.none;
+        return `<tr><td><b>${esc(c.state)}</b></td><td class="n">${nf(c.substations)}</td><td>${esc(c.source || "")}${c.note ? `<br><span class="pmeta">${esc(c.note)}</span>` : ""}</td><td class="n">${c.status === "free" || c.status === "paid" ? nf(c.landowners) : ""}</td><td><span class="pill ${cls}">${esc(lbl)}</span></td></tr>`; }).join("")}</tbody></table>`;
+    renderLandSubs();
+    const top = L.top || [];
+    $("landtop").innerHTML = `<table><thead><tr><th class="n">Score</th><th>Owner</th><th class="n">Acres</th><th class="n">Miles</th><th>Substation</th><th>Mails from</th><th>Next step</th></tr></thead><tbody>${
+      top.length ? top.map((r) => `<tr><td class="n"><b>${esc(r.score)}</b></td><td>${esc(r.type)} <span class="ini">${esc(r.initials)}</span></td><td class="n">${nf(r.acres)}</td><td class="n">${Number(r.miles).toFixed(2)}</td><td>${esc(subShort(r.substation))}<br><span class="pmeta">${esc(r.county)}, ${esc(r.state)}</span></td><td>${esc(r.mail_from)}</td><td>${esc(LANE[r.lane] || r.lane)}</td></tr>`).join("")
+        : `<tr><td colspan="7" class="pmeta">No leads in this run.</td></tr>`}</tbody></table>`;
+    const ln = L.lanes || {};
+    $("landlanes").innerHTML = [["mail-first", "Landowners without a clean phone number. A letter invites them to call or reply; a reply is the opt-in."],
+      ["sales-call", "Numbers not on Do Not Call and not a known litigator. A K2 salesperson dials by hand."],
+      ["wendy", "Owners who opted in. Wendy qualifies interest and books the sales call."]]
+      .map(([k, d]) => `<div><b>${nf(ln[k])}</b><span class="label">${esc(LANE[k])}</span><p class="pmeta">${esc(d)}</p></div>`).join("");
+    $("landphone").textContent = L.phone_note || "";
+    const E = L.energy || [];
+    $("landcomp").innerHTML = E.length ? `<h2>Competition signal</h2><p>Energy companies already own land within ${esc(L.radius_miles || 2)} miles of ${nf(L.energy_substations)} searched substations. They are set aside, not contacted, but show where developers are already buying.</p>
+      <ul class="pins">${E.map((x) => `<li>${esc(x.owner)} <span class="pmeta">${nf(x.acres)} acres near ${esc(subShort(x.substation))}, ${esc(x.state)}</span></li>`).join("")}</ul>` : "";
+  }
+
+  function renderLandSubs() {
+    const q = state.lq.toLowerCase().split(/\s+/).filter(Boolean);
+    const list = state.landSubs.filter((s) => q.every((w) => [s.name, s.state, s.county, s.project].join(" ").toLowerCase().includes(w)))
+      .sort((a, b) => (b.landowners || 0) - (a.landowners || 0) || String(a.state).localeCompare(String(b.state)) || String(a.name).localeCompare(String(b.name)));
+    const conf = { exact: "Confirmed", approx: "GIS to confirm", town: "Town only", county: "County only" };
+    $("landsubs").innerHTML = `<table><thead><tr><th>Substation</th><th>Project</th><th class="n">Landowners</th><th class="n">Acres</th><th class="n">New</th><th class="n">Best score</th><th>Location</th></tr></thead><tbody>${
+      list.length ? list.map((s) => `<tr id="ls-${esc(s.id)}"><td><b>${esc(subShort(s.name))}</b><br><span class="pmeta">${esc(s.county)}, ${esc(s.state)}</span></td><td>${esc(s.project || "")}<br><span class="pmeta">${esc(s.timing || "")}</span></td>${
+        s.status === "searched" ? `<td class="n">${nf(s.landowners)}</td><td class="n">${nf(s.acres)}</td><td class="n">${s.new_landowners ? nf(s.new_landowners) : ""}</td><td class="n">${esc(s.top_score || "")}</td>`
+          : `<td colspan="4" class="pmeta">${esc(s.status === "no_source" ? "Not searched: no parcel data source for " + s.state + " yet" : s.note || "Not searched")}</td>`}<td>${esc(conf[s.confidence] || s.confidence || "")}</td></tr>`).join("")
+        : `<tr><td colspan="7" class="pmeta">No substations match.</td></tr>`}</tbody></table>`;
+  }
+  $("lq").addEventListener("input", (e) => { state.lq = e.target.value.trim(); renderLandSubs(); });
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest && e.target.closest("[data-goland]");
+    if (!b) return;
+    showTab("t-land"); state.lq = ""; $("lq").value = ""; renderLandSubs();
+    const row = document.getElementById("ls-" + b.dataset.goland); if (row) row.scrollIntoView({ block: "center" });
+  });
 
   // ---------- IRP pilot ----------
   const num = (n) => (n === null || n === undefined || n === "" || isNaN(Number(n))) ? null : Number(n);
@@ -570,7 +715,8 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   function renderStamp() {
     const m = state.meta;
     const n = state.projects.length, s = state.signals.length;
-    $("stamp").innerHTML = (m && m.last_checked ? `Last check ${esc(m.last_checked)}<br>` : "") + `${n} projects · ${s} signals`;
+    const lo = state.land && state.land.totals ? ` · ${Number(state.land.totals.landowners || 0).toLocaleString()} landowners` : "";
+    $("stamp").innerHTML = (m && m.last_checked ? `Last check ${esc(m.last_checked)}<br>` : "") + `${n} projects · ${s} signals${lo}`;
   }
 
   // ---------- tiny markdown for answers (escaped first) ----------
@@ -597,6 +743,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     renderProjects();
   }));
   $("q").addEventListener("input", (e) => { state.q = e.target.value.trim(); renderProjects(); });
+  $("region").addEventListener("change", (e) => { state.region = e.target.value; renderProjects(); });
   $("moreSig").addEventListener("click", () => { state.sigShown += 25; renderSignals(); });
 
   // ---------- data ----------
@@ -605,11 +752,13 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     db = await claude.use("db");
     if (!db) { $("stamp").textContent = "Sign in to Claude to load the watch list."; return; }
     const fail = () => { $("stamp").textContent = "The watch list could not load. Reload the page to try again."; };
-    db.collection("projects").onSnapshot((snap) => { state.projects = snap.docs.map((d) => ({ id: d.id, ...d.data() })); renderLadder(); renderProjects(); renderStamp(); }, fail);
+    db.collection("projects").onSnapshot((snap) => { state.projects = snap.docs.map((d) => ({ id: d.id, ...d.data() })); fillRegions(); renderLadder(); renderProjects(); renderStamp(); }, fail);
     db.collection("signals").onSnapshot((snap) => { state.signals = snap.docs.map((d) => ({ id: d.id, ...d.data() })); renderSignals(); renderStamp(); }, fail);
     db.collection("irps").onSnapshot((snap) => { state.irps = snap.docs.map((d) => ({ id: d.id, ...d.data() })); renderIrps(); }, () => {});
     db.collection("research").onSnapshot((snap) => { state.research = snap.docs.map((d) => ({ id: d.id, ...d.data() })); renderResearch(); }, () => {});
     db.doc("meta/status").onSnapshot((d) => { state.meta = d.exists ? d.data() : null; renderStamp(); }, () => {});
+    db.doc("meta/landowners").onSnapshot((d) => { state.land = d.exists ? d.data() : null; renderLand(); renderStamp(); }, () => renderLand());
+    db.collection("landowners").onSnapshot((snap) => { state.landSubs = snap.docs.map((d) => ({ id: d.id, ...d.data() })); renderLandSubs(); renderProjects(); }, () => {});
   })();
   renderLadder();
 
@@ -617,6 +766,8 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   let sample = null, mcp = null, webTools = null; // webTools: [{name, description, inputSchema}] from the connector
   const turns = [];
   const RULES = `You are the research assistant on "K2 Line Watch", a page for K2 Renew. K2 Renew finds land for solar, battery and data-center developers near NEW high-voltage transmission capacity, and wants to know about new lines before anyone else.
+The watch list covers the whole US (Texas/ERCOT, MISO, SPP, PJM, the Southeast, the West and the Northeast). Outside Texas the same ladder applies with the regional grid operator's plan (MISO, SPP, PJM...) at stage 2 and the state siting commission (CPCN, CCN or route permit) at stages 4-6.
+Landowners: every week a search finds landowners with 20+ acres within 2 miles of each end substation, scores them 0-100 and picks a next step (letter first, salesperson call, or Wendy for owners who opted in; AI calls need prior consent under the TCPA). Use landowner_summary for this; owner names are not on the page, only type and initials.
 How a Texas line becomes public (the Signal Ladder): 2 ERCOT planning review (names end substations, 1-2 years before a route filing) -> 3 utility project page and open houses with draft route links (4-9 months before filing) -> 4 PUCT docket-number request (about 2 weeks before) -> 5 route case (CCN) at the Texas PUC, route options and landowner list public, decision in about 6 months -> 6 route approved -> 7 easement buying and construction.
 Endpoint tactic: the two end substations are fixed whatever route wins, so land near them is the safest early target; next safest are stretches most route options share.
 Window: "Open now" = stages 2-3, "Act fast" = 4-5, "Late" = 6-7.
@@ -659,6 +810,15 @@ How to answer: plain English for someone new to the grid; short; lead with the a
       execute: ({ limit = 10, importance } = {}) => [...state.signals].filter((s) => !importance || s.importance === importance)
         .sort((a, b) => String(b.found).localeCompare(String(a.found))).slice(0, Math.min(Number(limit) || 10, 25))
         .map((s) => ({ found: s.found, importance: s.importance, what: s.what_happened, where: s.where, link: s.url })) },
+    { name: "landowner_summary", description: "Weekly landowner search: totals, coverage by state, and per-substation landowner counts (optionally filtered by words: substation, state, project). Owner names are never included.",
+      inputSchema: { type: "object", properties: { query: { type: "string" } } },
+      execute: ({ query = "" } = {}) => {
+        const L = state.land || {};
+        const t = String(query).toLowerCase().split(/\s+/).filter(Boolean);
+        return { run_date: L.run_date, totals: L.totals, lanes: L.lanes, phone_mode: L.phone_mode, coverage: L.coverage,
+          substations: state.landSubs.filter((s) => t.every((w) => JSON.stringify(s).toLowerCase().includes(w))).slice(0, 25)
+            .map((s) => ({ name: s.name, state: s.state, county: s.county, project: s.project, status: s.status, landowners: s.landowners, acres: s.acres, new_landowners: s.new_landowners, top_score: s.top_score, top: s.top })) };
+      } },
     { name: "queue_research", description: "Save a question for the scheduled monitor run to research on the web and answer on this page. Use only when the watch list lacks the answer and no web tool is available.",
       inputSchema: { type: "object", properties: { question: { type: "string" } }, required: ["question"] },
       execute: async ({ question } = {}) => {
@@ -812,7 +972,7 @@ How to answer: plain English for someone new to the grid; short; lead with the a
     } finally { btn.disabled = false; }
   });
 
-  const TABS = [["t-watch", "p-watch"], ["t-irp", "p-irp"], ["t-help", "p-help"]];
+  const TABS = [["t-watch", "p-watch"], ["t-land", "p-land"], ["t-irp", "p-irp"], ["t-help", "p-help"]];
   function showTab(id) {
     for (const [t, panel] of TABS) {
       const on = t === id;
