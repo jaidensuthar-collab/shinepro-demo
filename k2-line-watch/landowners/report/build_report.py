@@ -461,7 +461,7 @@ def write_db(run_dir, run, baseline, new_land, new_subs, last, v):
         c["landowners"] += docs[s["id"]].get("landowners", 0)
         src = run.sources.get(s["state"])
         c["status"] = "free" if src else ("paid" if s["id"] in searched else "none")
-        c["source"] = src["label"] if src else ("Regrid nationwide parcels (paid)" if c["status"] == "paid" else "No free statewide parcel layer with owner names")
+        c["source"] = src["label"] if src else ("Regrid nationwide parcels (paid)" if c["status"] == "paid" else "Not set up yet: needs a state parcel layer or the paid provider")
         if src and src.get("note"):
             c["note"] = src["note"]
     energy = sorted([r for r in run.final if r["category"] == "energy-company"], key=lambda r: -float(r["total_acres"]))

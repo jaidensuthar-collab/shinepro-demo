@@ -147,6 +147,9 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 .more { margin-top: 8px }
 .qa { padding: 10px 0; border-bottom: 1px solid var(--rule) }
 .qa .q { font-weight: 600 } .qa .state { font-size: 12px; color: var(--muted) }
+.wrap > *, .panel > *, .land section > * { min-width: 0 }
+.tabs { overflow-x: auto; scrollbar-width: none }
+@media (max-width: 560px) { .tabs button { padding: 8px 8px; font-size: 14px; white-space: nowrap } }
 /* Landowners tab */
 .stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border: 1px solid var(--rule); background: var(--panel) }
 .stats > div { padding: 10px 12px; border-right: 1px solid var(--rule); min-width: 0 }
