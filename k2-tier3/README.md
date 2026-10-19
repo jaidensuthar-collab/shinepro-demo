@@ -22,7 +22,7 @@ about 75 seconds.
 | 4 | Make map tiles | Cuts the 4 x 4 mile square around each substation into 1-mile tiles (the parcel service returns at most 2,000 parcels per call). |
 | 5 | Look up parcels | Texas statewide parcel layer (TxGIO StratMap, from each county appraisal district): owner, mailing address, acres, value. Free and public. Failed tiles get a second, slower try. |
 | 6 | Score parcels and owners | Keeps parcels within the radius, rolls them up by owner, skips public/utility/railroad land, flags energy companies, scores each owner. |
-| 7 | Phone lookup on? / Find phones | Off by default. Looks up phones for landowners only (Tracerfy), with Do Not Call and TCPA litigator flags. |
+| 7 | Phone lookup on? / Find phones | Off by default. Looks up phones for landowners only (Tracerfy), with Do Not Call and TCPA litigator flags. `demo` mode fills in made-up 555-01xx numbers instead, so you can see the whole flow for free. |
 | 8 | Pick next step | `mail-first`, `sales-call`, `wendy` or `skip: ...` (see below). |
 | 9 | Make CSV / Save CSV | Writes `output/k2-tier3-leads-YYYY-MM-DD.csv`. |
 | 10 | Send to Wendy | Off until Deepak shares Wendy's input format. Only gets `wendy` leads. |
@@ -67,6 +67,8 @@ The CSV appears in `k2-tier3/output/`.
 This n8n uses **port 5679** and its own folder (`k2-tier3/.n8n-local`). It never touches another
 n8n on the same Mac (port 5678, `~/.n8n`).
 
+To see what each step produced, click any node in n8n after a run: its output shows on the right.
+
 ## Editing on two Macs
 
 GitHub holds the master copy of the workflow.
@@ -93,7 +95,7 @@ they hold landowner names and addresses, and this repo is public.
 | `onlySubstations` | (blank) | Comma list of ids or names, e.g. `solstice,longshore`. Blank means all. |
 | `maxSubstations` | 8 | How many substations per run (all 43 Texas ones take about 6 minutes). |
 | `maxLeads` | 500 | Cap on landowner rows. |
-| `phoneLookup` | off | `off`, `sandbox` (fake numbers, free) or `live` (paid, needs `./sync.sh key`). |
+| `phoneLookup` | off | `off`, `demo` (made-up 555-01xx numbers, nothing leaves your Mac), `sandbox` (Tracerfy's free test server, fake numbers) or `live` (real numbers, paid, needs `./sync.sh key`). |
 | `consentedParcelIds` | (blank) | Parcel ids of owners who opted in. Later this becomes a sheet or Wendy's own log. |
 
 ## Refreshing the substations
@@ -110,6 +112,7 @@ python3 data/export_substations.py ../k2-line-monitor/data/projects.json
 * Acres are whole parcels that reach within the radius, not just the part inside it.
 * 26 of the 43 Texas substation locations are approximate. Those leads say "GIS team to confirm".
 * Owner and address data is as fresh as the county appraisal roll (tax year 2026 in the test).
+* Real phone numbers need a paid Tracerfy account. `demo` and `sandbox` numbers are fake: never dial them.
 * Phone lookup was tested against a local fake server shaped like Tracerfy's documented
   responses, not against Tracerfy itself. Try `sandbox` first.
 * n8n 1.123.85 is the last line that runs on Node 22. Moving to n8n 2.x later needs Node 24;

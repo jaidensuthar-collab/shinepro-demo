@@ -460,9 +460,9 @@
     },
     {
       "parameters": {
-        "content": "### 4. Phone numbers (off by default)\nSet `phoneLookup` to `sandbox` to test with fake numbers from Tracerfy's free test server, or `live` once K2 has an account (5 credits per hit, nothing on a miss; check current credit pricing). Add the key on each Mac with `./sync.sh key` (it is stored in n8n, never in git). Each phone comes back with Do Not Call and TCPA litigator flags.",
-        "height": 200,
-        "width": 440,
+        "content": "### 4. Phone numbers (off by default)\nSet `phoneLookup` to `demo` for made-up 555-01xx numbers (no account, nothing leaves your Mac), `sandbox` for fake numbers from Tracerfy's free test server, or `live` once K2 has an account (5 credits per hit, nothing on a miss; check current credit pricing). Add the key on each Mac with `./sync.sh key` (it is stored in n8n, never in git). Each phone comes back with Do Not Call and TCPA litigator flags.",
+        "height": 220,
+        "width": 460,
         "color": 3
       },
       "id": "361041ec-5bbd-5308-95ce-655ed29ce53d",
@@ -470,7 +470,7 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1020,
+        1660,
         480
       ]
     },
@@ -512,8 +512,54 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1020,
+        1440,
         300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "d1",
+              "leftValue": "={{ $('Settings').first().json.phoneLookup }}",
+              "rightValue": "demo",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "af638d42-5a70-54eb-a311-13de5fd28880",
+      "name": "Demo or real lookup?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1660,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Demo mode: made-up numbers in the 555-0100 to 555-0199 range (reserved for fiction),\n// so the whole flow can be seen end to end without paying for lookups. Never dial these.\nlet k = 0;\nconst num = () => '512555' + String(100 + (k++ % 100)).padStart(4, '0');\nreturn $input.all().map((it, i) => {\n  const lead = { ...it.json };\n  const r = (i * 37) % 10;\n  const phones = [];\n  if (r < 7) {\n    phones.push({ number: num(), type: r % 2 ? 'Mobile' : 'Landline', dnc: r === 3, litigator: r === 5, person: lead.owner_name });\n    if (r < 3) phones.push({ number: num(), type: 'Mobile', dnc: false, litigator: false, person: lead.owner_name });\n  }\n  lead.phones = phones;\n  lead.phone_lookup = phones.length ? `demo: ${phones.length} found` : 'demo: no match';\n  return { json: lead, pairedItem: { item: i } };\n});"
+      },
+      "id": "51260039-06c5-5f6b-96a6-ca1cf4216b5d",
+      "name": "Make demo phones",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1880,
+        40
       ]
     },
     {
@@ -540,8 +586,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1240,
-        180
+        1880,
+        200
       ],
       "onError": "continueRegularOutput",
       "credentials": {
@@ -560,18 +606,20 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1460,
-        180
+        2100,
+        200
       ]
     },
     {
-      "parameters": {},
+      "parameters": {
+        "numberInputs": 3
+      },
       "id": "f856932d-c437-534a-a456-f3b2702836ab",
       "name": "Join leads",
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        1600,
+        2320,
         300
       ]
     },
@@ -587,20 +635,20 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1680,
+        2540,
         -60
       ]
     },
     {
       "parameters": {
-        "jsCode": "// Decide the next step for every lead.\n// AI-voice calls (Wendy) need the person's prior consent under the TCPA (FCC ruling, Feb 2024),\n// so cold leads go to a letter or a human caller first. Wendy only gets people who said yes.\nconst s = $('Settings').first().json;\nconst fake = s.phoneLookup === 'sandbox';\nconst consent = new Set(String(s.consentedParcelIds || '').split(',').map(x => x.trim()).filter(Boolean));\nconst steps = {\n  'wendy': 'Owner opted in: Wendy can call to qualify and book a sales call.',\n  'sales-call': 'A K2 salesperson dials by hand (no AI voice, no autodialer) to introduce K2.',\n  'mail-first': 'Send a letter asking the owner to call or reply if open to a lease. Replies become Wendy leads.',\n  'skip: public-or-utility': 'Public, utility or railroad land: not a lease target.',\n  'skip: energy-company': 'Already an energy company: may already be leased. Useful as a competition signal.',\n};\nreturn $input.all().map(it => {\n  const L = { ...it.json };\n  const phones = L.phones || [];\n  const ok = phones.filter(p => !p.dnc && !p.litigator);\n  const hasConsent = String(L.parcel_ids).split('; ').some(id => consent.has(id));\n  L.list = L.category !== 'landowner' ? `skip: ${L.category}` : hasConsent ? 'wendy' : ok.length ? 'sales-call' : 'mail-first';\n  L.next_step = steps[L.list];\n  // Someone who opted in can be called even if their number is on a Do Not Call list\n  // (their consent covers K2), but never a number flagged as a known TCPA litigator.\n  const pick = hasConsent ? phones.find(p => !p.litigator) : ok[0];\n  L.best_phone = pick ? pick.number : '';\n  L.best_phone_type = pick ? pick.type : '';\n  L.phones_found = phones.length;\n  L.phones_blocked = phones.length - ok.length;\n  L.phones_are_fake = fake ? 'YES (sandbox)' : '';\n  L.consent = hasConsent ? 'yes' : '';\n  delete L.phones;\n  delete L._run_stats;\n  return { json: L };\n});"
+        "jsCode": "// Decide the next step for every lead.\n// AI-voice calls (Wendy) need the person's prior consent under the TCPA (FCC ruling, Feb 2024),\n// so cold leads go to a letter or a human caller first. Wendy only gets people who said yes.\nconst s = $('Settings').first().json;\nconst fake = ['sandbox', 'demo'].includes(s.phoneLookup) ? `YES (${s.phoneLookup})` : '';\nconst consent = new Set(String(s.consentedParcelIds || '').split(',').map(x => x.trim()).filter(Boolean));\nconst steps = {\n  'wendy': 'Owner opted in: Wendy can call to qualify and book a sales call.',\n  'sales-call': 'A K2 salesperson dials by hand (no AI voice, no autodialer) to introduce K2.',\n  'mail-first': 'Send a letter asking the owner to call or reply if open to a lease. Replies become Wendy leads.',\n  'skip: public-or-utility': 'Public, utility or railroad land: not a lease target.',\n  'skip: energy-company': 'Already an energy company: may already be leased. Useful as a competition signal.',\n};\nconst order = { 'wendy': 0, 'sales-call': 1, 'mail-first': 2 };\nreturn $input.all().map(it => {\n  const L = { ...it.json };\n  const phones = L.phones || [];\n  const ok = phones.filter(p => !p.dnc && !p.litigator);\n  const hasConsent = String(L.parcel_ids).split('; ').some(id => consent.has(id));\n  L.list = L.category !== 'landowner' ? `skip: ${L.category}` : hasConsent ? 'wendy' : ok.length ? 'sales-call' : 'mail-first';\n  L.next_step = steps[L.list];\n  // Someone who opted in can be called even if their number is on a Do Not Call list\n  // (their consent covers K2), but never a number flagged as a known TCPA litigator.\n  const pick = hasConsent ? phones.find(p => !p.litigator) : ok[0];\n  L.best_phone = pick ? pick.number : '';\n  L.best_phone_type = pick ? pick.type : '';\n  L.phones_found = phones.length;\n  L.phones_blocked = phones.length - ok.length;\n  L.phones_are_fake = phones.length ? fake : '';\n  L.consent = hasConsent ? 'yes' : '';\n  delete L.phones;\n  delete L._run_stats;\n  return { json: L };\n}).sort((a, b) => (order[a.json.list] ?? 3) - (order[b.json.list] ?? 3) || b.json.lead_score - a.json.lead_score);"
       },
       "id": "b8f83559-695d-5461-bf89-79853acacaa9",
       "name": "Pick next step",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1800,
+        2540,
         300
       ]
     },
@@ -615,7 +663,7 @@
       "type": "n8n-nodes-base.convertToFile",
       "typeVersion": 1.1,
       "position": [
-        2040,
+        2760,
         160
       ]
     },
@@ -630,7 +678,7 @@
       "type": "n8n-nodes-base.readWriteFile",
       "typeVersion": 1,
       "position": [
-        2260,
+        2980,
         160
       ]
     },
@@ -643,7 +691,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2040,
+        2760,
         320
       ]
     },
@@ -676,7 +724,7 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.2,
       "position": [
-        2040,
+        2760,
         480
       ]
     },
@@ -694,7 +742,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2260,
+        2980,
         480
       ],
       "disabled": true
@@ -844,7 +892,7 @@
       "main": [
         [
           {
-            "node": "Find phones (Tracerfy)",
+            "node": "Demo or real lookup?",
             "type": "main",
             "index": 0
           }
@@ -854,6 +902,35 @@
             "node": "Join leads",
             "type": "main",
             "index": 1
+          }
+        ]
+      ]
+    },
+    "Demo or real lookup?": {
+      "main": [
+        [
+          {
+            "node": "Make demo phones",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Find phones (Tracerfy)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Make demo phones": {
+      "main": [
+        [
+          {
+            "node": "Join leads",
+            "type": "main",
+            "index": 2
           }
         ]
       ]
