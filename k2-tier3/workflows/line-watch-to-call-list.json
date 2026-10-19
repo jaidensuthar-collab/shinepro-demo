@@ -1,0 +1,949 @@
+{
+  "name": "K2 Tier 3: Line Watch to call list",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## K2 Tier 3 prototype: Line Watch to call list\n**What it does:** takes the substations from K2 Line Watch, finds the land within a few miles of each one, rolls the parcels up to their owners, scores them, and sorts them into next steps (letter, human call, Wendy).\n\nChange the knobs in **Settings**. Nothing here sends mail, texts or calls anyone.",
+        "height": 240,
+        "width": 420,
+        "color": 4
+      },
+      "id": "133e6523-8a0c-5e1c-9a4b-8fd25c084b55",
+      "name": "Note: intro",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -560,
+        -60
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "e9dce978-6c21-5430-8397-0dfcaebdc733",
+      "name": "Run by hand",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -560,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                1
+              ],
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "id": "3709e425-6a5c-5218-a71a-d03148f08a32",
+      "name": "Every Monday 8am",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -560,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a258796a-27c8-58e2-89e6-7b589ee11b98",
+              "name": "substationsUrl",
+              "value": "https://raw.githubusercontent.com/jaidensuthar-collab/shinepro-demo/claude/vibrant-euler-urtmp2/k2-tier3/data/substations.json",
+              "type": "string"
+            },
+            {
+              "id": "3b640b17-72c5-589b-9dcb-6640ad1e2a27",
+              "name": "radiusMiles",
+              "value": 2,
+              "type": "number"
+            },
+            {
+              "id": "77cb5552-8585-5a79-8676-ec08086532fe",
+              "name": "tileMiles",
+              "value": 1,
+              "type": "number"
+            },
+            {
+              "id": "124d6576-7306-5ac7-a3cb-4d656e3ec4dc",
+              "name": "minAcres",
+              "value": 20,
+              "type": "number"
+            },
+            {
+              "id": "60cbc2a4-7be9-5b94-9569-59c47274b932",
+              "name": "minImportance",
+              "value": "Medium",
+              "type": "string"
+            },
+            {
+              "id": "d4297e00-bef6-524c-8c40-0d8dd8b101ce",
+              "name": "locationQuality",
+              "value": "exact,approx",
+              "type": "string"
+            },
+            {
+              "id": "b874751e-d7e4-507a-966a-59fcad225ebf",
+              "name": "onlySubstations",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "67bdc9f0-33d8-54ae-9a56-3fbac1983a5c",
+              "name": "maxSubstations",
+              "value": 8,
+              "type": "number"
+            },
+            {
+              "id": "ab52c631-1653-5d5c-9d98-e86bc4184eca",
+              "name": "maxLeads",
+              "value": 500,
+              "type": "number"
+            },
+            {
+              "id": "73e50d6d-5883-5689-8ad6-6b91ed9af90a",
+              "name": "phoneLookup",
+              "value": "off",
+              "type": "string"
+            },
+            {
+              "id": "7c9138d7-8554-5336-bb56-3cfebaa5a8a6",
+              "name": "consentedParcelIds",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "b3a7c7e9-9f38-5400-bcfa-786713ad63ef",
+              "name": "outputFolder",
+              "value": "={{ $env.K2_TIER3_OUTPUT || '/tmp' }}",
+              "type": "string"
+            },
+            {
+              "id": "ec6efe64-7eaf-591b-aaa1-96159c89f83c",
+              "name": "runDate",
+              "value": "={{ $now.toFormat('yyyy-MM-dd') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "33942abe-9fc6-5541-bac9-0046f8106bbb",
+      "name": "Settings",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -320,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 1. Where to look\nSubstations come from the Line Watch project cards (`k2-tier3/data/substations.json` on GitHub). Only Texas substations with an exact or approximate location are used, best projects first.",
+        "height": 200,
+        "width": 420,
+        "color": 7
+      },
+      "id": "ef2fbfe5-724b-5514-a91e-19c4f774b8ec",
+      "name": "Note: data",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -120,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.substationsUrl }}",
+        "options": {
+          "timeout": 30000,
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "fc3fa80e-d79a-5276-81f9-6c48349d88e7",
+      "name": "Get Line Watch substations",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -100,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Keep Texas substations with a usable location, best projects first.\nconst s = $('Settings').first().json;\nconst data = $input.first().json;\nconst confOk = String(s.locationQuality).split(',').map(x => x.trim());\nconst impRank = { High: 2, Medium: 1, Low: 0 };\nconst windowRank = { 'Open now': 0, 'Act fast': 1, 'Late': 2 };\nconst minImp = impRank[s.minImportance] ?? 1;\nconst only = String(s.onlySubstations || '').split(',').map(x => x.trim().toLowerCase()).filter(Boolean);\n\nlet subs = (data.substations || []).filter(x => x.state === 'TX' && confOk.includes(x.confidence));\nsubs = subs.map(x => {\n  let best = null;\n  for (const p of x.projects) {\n    const r = impRank[p.importance] ?? 0, w = windowRank[p.window] ?? 3;\n    if (!best || r > best.r || (r === best.r && w < best.w)) best = { r, w, p };\n  }\n  return { ...x, bestImportance: best.p.importance, bestWindow: best.p.window, bestProject: best.p.name,\n           bestStageLabel: best.p.stage_label, impRank: best.r, windowRank: best.w };\n}).filter(x => x.impRank >= minImp);\n\nif (only.length) subs = subs.filter(x => only.some(o => x.id.toLowerCase() === o || x.name.toLowerCase().includes(o)));\nsubs.sort((a, b) => b.impRank - a.impRank || a.windowRank - b.windowRank\n  || (a.confidence === 'exact' ? 0 : 1) - (b.confidence === 'exact' ? 0 : 1));\nconst max = Number(s.maxSubstations) || subs.length;\nreturn subs.slice(0, max).map(x => ({ json: x }));"
+      },
+      "id": "57eee43c-f02a-5af5-8c8a-8ef722978451",
+      "name": "Pick substations",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        120,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 2. Who owns the land\nThe Texas statewide parcel layer (TxGIO StratMap, from each county appraisal district) gives owner name, mailing address, acres and value. Free, public, no key.",
+        "height": 200,
+        "width": 420,
+        "color": 7
+      },
+      "id": "1684bc80-b387-58d8-bfe3-b64c30821969",
+      "name": "Note: parcels",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        340,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Cut the square around each substation into small map tiles.\n// The state parcel service returns at most 2,000 parcels per lookup, so small tiles keep\n// busy areas (near San Antonio or Dallas) from being cut off.\nconst s = $('Settings').first().json;\nconst R = Number(s.radiusMiles), T = Number(s.tileMiles);\nconst out = [];\nfor (const it of $input.all()) {\n  const { id, lat, lon } = it.json;\n  const dLat = 1 / 69.0, dLon = 1 / (69.172 * Math.cos(lat * Math.PI / 180));\n  const n = Math.ceil((2 * R) / T);\n  for (let i = 0; i < n; i++) {\n    for (let j = 0; j < n; j++) {\n      const x0 = -R + i * T, y0 = -R + j * T;\n      const x1 = Math.min(x0 + T, R), y1 = Math.min(y0 + T, R);\n      const env = [lon + x0 * dLon, lat + y0 * dLat, lon + x1 * dLon, lat + y1 * dLat].map(v => v.toFixed(6)).join(',');\n      out.push({ json: { subId: id, tile: `${i}-${j}`, envelope: env } });\n    }\n  }\n}\nreturn out;"
+      },
+      "id": "48b67a10-cee5-5117-8e4b-b15bd5f0e2ed",
+      "name": "Make map tiles",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        340,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://feature.geographic.texas.gov/arcgis/rest/services/Parcels/stratmap_land_parcels_48_most_recent/MapServer/identify",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "geometry",
+              "value": "={{ $json.envelope }}"
+            },
+            {
+              "name": "geometryType",
+              "value": "esriGeometryEnvelope"
+            },
+            {
+              "name": "sr",
+              "value": "4326"
+            },
+            {
+              "name": "layers",
+              "value": "all:0"
+            },
+            {
+              "name": "tolerance",
+              "value": "0"
+            },
+            {
+              "name": "mapExtent",
+              "value": "={{ $json.envelope }}"
+            },
+            {
+              "name": "imageDisplay",
+              "value": "800,800,96"
+            },
+            {
+              "name": "returnGeometry",
+              "value": "true"
+            },
+            {
+              "name": "maxAllowableOffset",
+              "value": "0.0005"
+            },
+            {
+              "name": "f",
+              "value": "json"
+            }
+          ]
+        },
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 3,
+              "batchInterval": 1500
+            }
+          },
+          "timeout": 90000,
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "ed2da699-669a-5c4d-a765-b22eef57a91f",
+      "name": "Look up parcels (Texas parcel layer)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        560,
+        300
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f1",
+              "leftValue": "={{ !!$json.error || !Array.isArray($json.results) }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "4347ef7a-d5a4-50dc-9085-e94a8472b835",
+      "name": "Any tile failed?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        560,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Tiles whose first lookup failed (dropped connection, timeout): send them again, slowly.\nreturn $input.all().map((it, i) => ({\n  json: { ...$('Make map tiles').itemMatching(i).json, firstError: String(it.json.error?.message || 'no results') },\n  pairedItem: { item: i },\n}));"
+      },
+      "id": "b4378774-daa2-579b-89fe-ae7c4d773717",
+      "name": "Failed tile areas",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        780,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://feature.geographic.texas.gov/arcgis/rest/services/Parcels/stratmap_land_parcels_48_most_recent/MapServer/identify",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "geometry",
+              "value": "={{ $json.envelope }}"
+            },
+            {
+              "name": "geometryType",
+              "value": "esriGeometryEnvelope"
+            },
+            {
+              "name": "sr",
+              "value": "4326"
+            },
+            {
+              "name": "layers",
+              "value": "all:0"
+            },
+            {
+              "name": "tolerance",
+              "value": "0"
+            },
+            {
+              "name": "mapExtent",
+              "value": "={{ $json.envelope }}"
+            },
+            {
+              "name": "imageDisplay",
+              "value": "800,800,96"
+            },
+            {
+              "name": "returnGeometry",
+              "value": "true"
+            },
+            {
+              "name": "maxAllowableOffset",
+              "value": "0.0005"
+            },
+            {
+              "name": "f",
+              "value": "json"
+            }
+          ]
+        },
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 1,
+              "batchInterval": 4000
+            }
+          },
+          "timeout": 90000,
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "c40ce200-eeed-55b8-860a-832cf5d4386c",
+      "name": "Second try for failed tiles",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1000,
+        420
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {},
+      "id": "f9f19c8c-b0eb-5c66-94cf-3bfc3111caf6",
+      "name": "Join tiles",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        1000,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 3. Score\nLead score (0 to 100) = acres (up to 35) + closeness to the substation (up to 30) + project importance (8 or 15) + timing (Open now 15, Act fast 10, Late 3) minus 5 if the substation location is only approximate.\nPublic, utility and railroad land is skipped. Energy companies are flagged.",
+        "height": 220,
+        "width": 420,
+        "color": 7
+      },
+      "id": "759f285d-08dd-523d-b99a-b0d125e746e6",
+      "name": "Note: score",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        780,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Turn raw parcels into one lead per landowner.\nconst s = $('Settings').first().json;\nconst R = Number(s.radiusMiles), minAcres = Number(s.minAcres);\nconst subs = Object.fromEntries($('Pick substations').all().map(i => [i.json.id, i.json]));\nconst tileCount = $('Make map tiles').all().length;\n\nconst num = v => { const n = parseFloat(v); return Number.isFinite(n) ? n : null; };\nconst clean = v => (v == null || v === 'Null' || v === 'null') ? '' : String(v).trim();\n\n// Miles from the substation to the parcel's edge (0 if the substation is inside the parcel).\nfunction milesToParcel(lat0, lon0, rings) {\n  if (!rings || !rings.length) return null;\n  const kx = 69.172 * Math.cos(lat0 * Math.PI / 180), ky = 69.0;\n  let inside = false, best = Infinity;\n  for (const ring of rings) {\n    const pts = ring.map(([x, y]) => [(x - lon0) * kx, (y - lat0) * ky]);\n    for (let i = 0, j = pts.length - 1; i < pts.length; j = i++) {\n      const [xi, yi] = pts[i], [xj, yj] = pts[j];\n      if ((yi > 0) !== (yj > 0) && 0 < ((xj - xi) * (0 - yi)) / (yj - yi) + xi) inside = !inside;\n      const dx = xj - xi, dy = yj - yi, L = dx * dx + dy * dy;\n      let t = L ? -(xi * dx + yi * dy) / L : 0;\n      t = Math.max(0, Math.min(1, t));\n      best = Math.min(best, Math.hypot(xi + t * dx, yi + t * dy));\n    }\n  }\n  return inside ? 0 : best;\n}\n\nconst PUBLIC = /\\b(STATE OF|COUNTY|CITY OF|TOWN OF|ISD|SCHOOL|UNIVERSITY|UNITED STATES|U S A|USA|TXDOT|DEPARTMENT|DEPT|GLO|PERMANENT SCHOOL FUND|RAILROAD|RAILWAY|PIPELINE|WATER (DISTRICT|SUPPLY|AUTHORITY)|MUD|CHURCH|CEMETERY|ELECTRIC|ELEC|COOPERATIVE|CO-OP|TRANSMISSION|ONCOR|AEP|CPS ENERGY|LCRA|CENTERPOINT|ENTERGY|XCEL|SOUTHWESTERN PUBLIC|POWER (CO|COMPANY|AUTHORITY))\\b/;\nconst ENERGY = /\\b(SOLAR|WIND|RENEWABLE|RENEWABLES|ENERGY STORAGE|BATTERY|BESS|POWER LLC|ENERGY LLC|ENERGY LP|DATA CENTER)\\b/;\nfunction ownerType(n) {\n  if (/\\b(TRUST|TR|TRUSTEE|TRS)\\b/.test(n)) return 'Trust';\n  if (/\\b(ESTATE|EST|HEIRS)\\b/.test(n)) return 'Estate';\n  if (/\\b(LLC|L L C|INC|CORP|CORPORATION|LP|LTD|LLP|COMPANY|CO|PARTNERS|PARTNERSHIP|HOLDINGS|FAMILY LP|MINERALS|INVESTMENTS)\\b/.test(n)) return 'Business';\n  return 'Person';\n}\n\nconst parcels = new Map();\nconst truncated = [];\nlet tileErrors = 0;\n$input.all().forEach((it, i) => {\n  const tile = $('Make map tiles').itemMatching(i).json, sub = subs[tile.subId];\n  if (it.json.error || !Array.isArray(it.json.results)) { tileErrors++; return; }\n  if (it.json.results.length >= 2000) truncated.push(`${sub.name} tile ${tile.tile}`);\n  for (const r of it.json.results) {\n    const a = r.attributes || {};\n    const dist = milesToParcel(sub.lat, sub.lon, r.geometry && r.geometry.rings);\n    if (dist == null || dist > R) continue;\n    const acres = num(a.LEGAL_AREA) > 0 ? num(a.LEGAL_AREA) : num(a.GIS_AREA);\n    const key = `${clean(a.FIPS) || clean(a.COUNTY)}|${clean(a.PROP_ID) || clean(a.GEO_ID) || clean(a.objectid)}`;\n    const prev = parcels.get(key);\n    if (prev) {\n      prev.subs.add(sub.id);\n      prev.miles = Math.min(prev.miles, dist);\n      continue;\n    }\n    parcels.set(key, {\n      owner: clean(a.OWNER_NAME).toUpperCase(), careOf: clean(a.NAME_CARE),\n      acres: acres || 0, miles: dist, county: clean(a.COUNTY), fips: clean(a.FIPS),\n      propId: clean(a.PROP_ID), geoId: clean(a.GEO_ID), legal: clean(a.LEGAL_DESC),\n      value: num(a.MKT_VALUE) || 0, situs: clean(a.SITUS_ADDR),\n      mail1: clean(a.MAIL_LINE1), mail2: clean(a.MAIL_LINE2), mailCity: clean(a.MAIL_CITY),\n      mailState: clean(a.MAIL_STAT), mailZip: clean(a.MAIL_ZIP), taxYear: clean(a.TAX_YEAR),\n      source: clean(a.SOURCE), subs: new Set([sub.id]),\n    });\n  }\n});\n\n// Roll parcels up to owners (same name + mailing ZIP = same owner).\nconst owners = new Map();\nlet small = 0;\nfor (const p of parcels.values()) {\n  if (!p.owner) continue;\n  const k = `${p.owner}|${p.mailZip}`;\n  let o = owners.get(k);\n  if (!o) owners.set(k, o = { ...p, parcels: [], acres: 0, value: 0, subs: new Set(), miles: Infinity });\n  o.parcels.push(p);\n  o.acres += p.acres;\n  o.value += p.value;\n  o.miles = Math.min(o.miles, p.miles);\n  p.subs.forEach(x => o.subs.add(x));\n}\n\nconst windowPts = { 'Open now': 15, 'Act fast': 10, 'Late': 3 };\nconst leads = [];\nfor (const o of owners.values()) {\n  if (o.acres < minAcres) { small++; continue; }\n  const subList = [...o.subs].map(id => subs[id]);\n  const top = subList.slice().sort((a, b) => b.impRank - a.impRank || a.windowRank - b.windowRank)[0];\n  const category = PUBLIC.test(o.owner) ? 'public-or-utility' : ENERGY.test(o.owner) ? 'energy-company' : 'landowner';\n  const approx = subList.some(x => x.confidence !== 'exact');\n  const score = Math.round(\n    Math.min(o.acres, 640) / 640 * 35 +\n    Math.max(0, 1 - o.miles / R) * 30 +\n    (top.bestImportance === 'High' ? 15 : 8) +\n    (windowPts[top.bestWindow] ?? 3) -\n    (approx ? 5 : 0));\n  leads.push({\n    lead_score: score,\n    category,\n    owner_name: o.owner,\n    owner_type: category === 'public-or-utility' ? 'Public or utility' : ownerType(o.owner),\n    care_of: o.careOf !== o.owner ? o.careOf : '',\n    total_acres: Math.round(o.acres * 10) / 10,\n    parcel_count: o.parcels.length,\n    miles_to_substation: Math.round(o.miles * 100) / 100,\n    county: o.county,\n    substation: subList.map(x => x.name).join('; '),\n    project: top.bestProject,\n    project_importance: top.bestImportance,\n    project_stage: top.bestStageLabel,\n    timing: top.bestWindow,\n    location_check: approx ? 'Substation location is approximate: GIS team to confirm' : 'Substation location confirmed',\n    mail_line1: o.mail1, mail_line2: o.mail2, mail_city: o.mailCity, mail_state: o.mailState, mail_zip: o.mailZip,\n    parcel_ids: o.parcels.map(p => p.geoId || p.propId).join('; '),\n    prop_ids: o.parcels.map(p => p.propId).join('; '),\n    market_value: o.value,\n    tax_year: o.taxYear,\n    data_source: `${o.source} via TxGIO StratMap parcels`,\n    why: `${Math.round(o.acres)} acres, ${(Math.round(o.miles * 10) / 10)} mi from ${subList[0].name} (${top.bestProject}, ${top.bestStageLabel}).`,\n  });\n}\n// Landowners first (best score first, capped at maxLeads), then the skipped owners for reference.\nconst byScore = (a, b) => b.lead_score - a.lead_score;\nconst land = leads.filter(l => l.category === 'landowner').sort(byScore);\nconst other = leads.filter(l => l.category !== 'landowner').sort(byScore);\nconst max = Number(s.maxLeads) || land.length;\nconst kept = land.slice(0, max).concat(other);\nconst stats = { substations: Object.keys(subs).length, tiles: tileCount, tileErrors, truncatedTiles: truncated,\n  parcelsInRadius: parcels.size, ownersBelowMinAcres: small, landowners: land.length, skipped: other.length, kept: kept.length };\nreturn kept.map((l, i) => ({ json: i === 0 ? { ...l, _run_stats: JSON.stringify(stats) } : l }));"
+      },
+      "id": "e00cf3e7-d788-5eed-b348-540ae47775b7",
+      "name": "Score parcels and owners",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1220,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 4. Phone numbers (off by default)\nSet `phoneLookup` to `sandbox` to test with fake numbers from Tracerfy's free test server, or `live` once K2 has an account (5 credits per hit, nothing on a miss; check current credit pricing). Add the key on each Mac with `./sync.sh key` (it is stored in n8n, never in git). Each phone comes back with Do Not Call and TCPA litigator flags.",
+        "height": 200,
+        "width": 440,
+        "color": 3
+      },
+      "id": "361041ec-5bbd-5308-95ce-655ed29ce53d",
+      "name": "Note: phones",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ $('Settings').first().json.phoneLookup }}",
+              "rightValue": "off",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            },
+            {
+              "id": "c2",
+              "leftValue": "={{ $json.category }}",
+              "rightValue": "landowner",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "4d251d7d-09fe-5ecf-b113-39bb3ce32c02",
+      "name": "Phone lookup on?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1020,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ ($('Settings').first().json.phoneLookup === 'live' ? 'https://tracerfy.com' : 'https://mock.tracerfy.com') + '/v1/api/trace/parcel/lookup/' }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ parcel_id: $json.parcel_ids.split('; ')[0], county: $json.county, state: 'TX' }) }}",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 5,
+              "batchInterval": 1000
+            }
+          },
+          "timeout": 30000
+        }
+      },
+      "id": "0c1a4645-ecfe-5e21-a5c0-c5fa611b51ca",
+      "name": "Find phones (Tracerfy)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1240,
+        180
+      ],
+      "onError": "continueRegularOutput",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "k2Tier3Tracerfy",
+          "name": "Tracerfy API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Add the phone numbers the lookup found to each lead.\nconst leads = $('Phone lookup on?').all(0);\nreturn $input.all().map((it, i) => {\n  const pi = (Array.isArray(it.pairedItem) ? it.pairedItem[0] : it.pairedItem)?.item ?? i;\n  const lead = { ...leads[pi].json };\n  const phones = [];\n  for (const person of (it.json.persons || [])) {\n    if (person.deceased) continue;\n    for (const ph of (person.phones || [])) {\n      phones.push({ number: ph.number, type: ph.type, dnc: !!ph.dnc,\n        litigator: !!(ph.tcpa || person.litigator), person: person.full_name || '' });\n    }\n  }\n  lead.phones = phones;\n  lead.phone_lookup = it.json.error ? 'lookup error' : (it.json.hit ? `found ${phones.length}` : 'no match');\n  return { json: lead };\n});"
+      },
+      "id": "629ad7a2-e2a7-5ed3-a906-4bc8b636e7fc",
+      "name": "Attach phones",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1460,
+        180
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "f856932d-c437-534a-a456-f3b2702836ab",
+      "name": "Join leads",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        1600,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 5. Next step and Wendy\nAI-voice calls need prior consent (FCC, Feb 2024), so: **mail-first** for everyone, **sales-call** for clean numbers a person dials by hand, **wendy** only for owners who opted in. The Wendy node is off until Deepak shares the format.",
+        "height": 220,
+        "width": 440,
+        "color": 5
+      },
+      "id": "efd8a641-f3b8-5fe6-919d-f3357dce93cf",
+      "name": "Note: lists",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1680,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Decide the next step for every lead.\n// AI-voice calls (Wendy) need the person's prior consent under the TCPA (FCC ruling, Feb 2024),\n// so cold leads go to a letter or a human caller first. Wendy only gets people who said yes.\nconst s = $('Settings').first().json;\nconst fake = s.phoneLookup === 'sandbox';\nconst consent = new Set(String(s.consentedParcelIds || '').split(',').map(x => x.trim()).filter(Boolean));\nconst steps = {\n  'wendy': 'Owner opted in: Wendy can call to qualify and book a sales call.',\n  'sales-call': 'A K2 salesperson dials by hand (no AI voice, no autodialer) to introduce K2.',\n  'mail-first': 'Send a letter asking the owner to call or reply if open to a lease. Replies become Wendy leads.',\n  'skip: public-or-utility': 'Public, utility or railroad land: not a lease target.',\n  'skip: energy-company': 'Already an energy company: may already be leased. Useful as a competition signal.',\n};\nreturn $input.all().map(it => {\n  const L = { ...it.json };\n  const phones = L.phones || [];\n  const ok = phones.filter(p => !p.dnc && !p.litigator);\n  const hasConsent = String(L.parcel_ids).split('; ').some(id => consent.has(id));\n  L.list = L.category !== 'landowner' ? `skip: ${L.category}` : hasConsent ? 'wendy' : ok.length ? 'sales-call' : 'mail-first';\n  L.next_step = steps[L.list];\n  // Someone who opted in can be called even if their number is on a Do Not Call list\n  // (their consent covers K2), but never a number flagged as a known TCPA litigator.\n  const pick = hasConsent ? phones.find(p => !p.litigator) : ok[0];\n  L.best_phone = pick ? pick.number : '';\n  L.best_phone_type = pick ? pick.type : '';\n  L.phones_found = phones.length;\n  L.phones_blocked = phones.length - ok.length;\n  L.phones_are_fake = fake ? 'YES (sandbox)' : '';\n  L.consent = hasConsent ? 'yes' : '';\n  delete L.phones;\n  delete L._run_stats;\n  return { json: L };\n});"
+      },
+      "id": "b8f83559-695d-5461-bf89-79853acacaa9",
+      "name": "Pick next step",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1800,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "options": {
+          "fileName": "={{ 'k2-tier3-leads-' + $('Settings').first().json.runDate + '.csv' }}"
+        }
+      },
+      "id": "dcf070bd-8ce9-5650-84f4-1e8f3a1e8ae8",
+      "name": "Make CSV",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        2040,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ $('Settings').first().json.outputFolder + '/k2-tier3-leads-' + $('Settings').first().json.runDate + '.csv' }}",
+        "options": {}
+      },
+      "id": "292fba76-3a4b-5edf-a3c0-c6917947564c",
+      "name": "Save CSV",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        2260,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const rows = $input.all().map(i => i.json);\nconst by = {};\nfor (const r of rows) by[r.list] = (by[r.list] || 0) + 1;\nconst first = $('Score parcels and owners').first();\nconst stats = first && first.json._run_stats ? JSON.parse(first.json._run_stats) : {};\nreturn [{ json: { ran_at: $now.toISO(), leads: rows.length, by_next_step: by, ...stats,\n  top10: rows.filter(r => r.category === 'landowner').slice(0, 10).map(r => `${r.lead_score}  ${r.owner_name}  ${r.total_acres} ac  ${r.miles_to_substation} mi  ${r.substation}`) } }];"
+      },
+      "id": "69577e5a-aa21-5db1-8f04-dc0137c59c3b",
+      "name": "Run summary",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2040,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "w1",
+              "leftValue": "={{ $json.list }}",
+              "rightValue": "wendy",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "d741097d-a12a-5a88-a22b-dd9cb7c1707a",
+      "name": "Wendy leads only",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        2040,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://WENDY-WEBHOOK-URL-FROM-DEEPAK",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ name: $json.owner_name, phone: $json.best_phone, county: $json.county, acres: $json.total_acres, substation: $json.substation, project: $json.project, reason: $json.why, consent: $json.consent }) }}",
+        "options": {}
+      },
+      "id": "7a032302-d502-5e8b-ae95-75a7fd2c7820",
+      "name": "Send to Wendy (off until Deepak's format)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2260,
+        480
+      ],
+      "disabled": true
+    }
+  ],
+  "connections": {
+    "Run by hand": {
+      "main": [
+        [
+          {
+            "node": "Settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Every Monday 8am": {
+      "main": [
+        [
+          {
+            "node": "Settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Settings": {
+      "main": [
+        [
+          {
+            "node": "Get Line Watch substations",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Line Watch substations": {
+      "main": [
+        [
+          {
+            "node": "Pick substations",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pick substations": {
+      "main": [
+        [
+          {
+            "node": "Make map tiles",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Make map tiles": {
+      "main": [
+        [
+          {
+            "node": "Look up parcels (Texas parcel layer)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Look up parcels (Texas parcel layer)": {
+      "main": [
+        [
+          {
+            "node": "Any tile failed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Any tile failed?": {
+      "main": [
+        [
+          {
+            "node": "Failed tile areas",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Join tiles",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Failed tile areas": {
+      "main": [
+        [
+          {
+            "node": "Second try for failed tiles",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Second try for failed tiles": {
+      "main": [
+        [
+          {
+            "node": "Join tiles",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Join tiles": {
+      "main": [
+        [
+          {
+            "node": "Score parcels and owners",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Score parcels and owners": {
+      "main": [
+        [
+          {
+            "node": "Phone lookup on?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Phone lookup on?": {
+      "main": [
+        [
+          {
+            "node": "Find phones (Tracerfy)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Join leads",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Find phones (Tracerfy)": {
+      "main": [
+        [
+          {
+            "node": "Attach phones",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Attach phones": {
+      "main": [
+        [
+          {
+            "node": "Join leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Join leads": {
+      "main": [
+        [
+          {
+            "node": "Pick next step",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pick next step": {
+      "main": [
+        [
+          {
+            "node": "Make CSV",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Run summary",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Wendy leads only",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Make CSV": {
+      "main": [
+        [
+          {
+            "node": "Save CSV",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wendy leads only": {
+      "main": [
+        [
+          {
+            "node": "Send to Wendy (off until Deepak's format)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Chicago"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "id": "k2tier3linewatch",
+  "active": false,
+  "pinData": {},
+  "tags": []
+}
