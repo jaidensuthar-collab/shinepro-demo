@@ -23,6 +23,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "..", "data")
 SEEN = os.path.join(DATA, "seen-owners.txt")
 LAST = os.path.join(DATA, "last-run.json")
+GIS = os.path.join(DATA, "gis-check.json")
 REPO = "https://github.com/jaidensuthar-collab/shinepro-demo/tree/claude/vibrant-euler-urtmp2/k2-tier3"
 WF = "https://github.com/jaidensuthar-collab/shinepro-demo/blob/claude/vibrant-euler-urtmp2/k2-tier3/workflows/line-watch-to-call-list.json"
 FCC = "https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf"
@@ -216,6 +217,25 @@ def build(run_dir, update_seen):
                                                     for r in sorted(new_land, key=lambda r: -float(r["total_acres"]))[:3]],
                "approx_substations": approx_n}
 
+    gis_html = ""
+    if os.path.exists(GIS):
+        g = json.load(open(GIS))
+        res = g["results"]
+        cnt = collections.Counter(r["result"] for r in res)
+        chip = {"confirmed": "ok", "likely": "off", "not on map": "warn"}
+        label = {"confirmed": "Confirmed", "likely": "Likely", "not on map": "Not on map yet"}
+        order = {"confirmed": 0, "likely": 1, "not on map": 2}
+        rows = [(f'<span class="sub">{e(short(r["name"]))}</span>', f'<span class="chip {chip[r["result"]]}">{label[r["result"]]}</span>', e(r["note"]))
+                for r in sorted(res, key=lambda r: (order[r["result"]], r["name"]))]
+        gis_html = f"""<section aria-labelledby="gis">
+  <div class="eyebrow">GIS check &middot; {e(g['date'])}</div>
+  <h2 id="gis">Checking the approximate substation points</h2>
+  <p>Each of the {len(res)} substation points that started out approximate was checked against the national substation map (<a href="{e(g['source_url'])}">HIFLD Electric Substations</a>), matching by name within 15 miles. Confirmed points now use the map's location.</p>
+  <div class="newstats"><div><b>{cnt['confirmed']}</b>confirmed and corrected</div><div><b>{cnt['likely']}</b>likely match</div><div><b>{cnt['not on map']}</b>not on the map yet</div></div>
+  {table(["Substation", "Result", "What was found"], rows)}
+  <p class="muted">The ones not on the map are new or proposed, so no public point exists yet. Their locations come from utility filings and maps, and still need a check by the GIS team.</p>
+</section>"""
+
     def page(v):
         sub_rows = "".join(f"""<tr><td><span class="sub">{e(short(name))}</span><span class="muted">{e(b['s']['county'])} County</span></td>
 <td>{e(b['s']['bestProject'])}<span class="muted">{e(b['s']['bestStageLabel'])}</span></td>
@@ -292,6 +312,8 @@ def build(run_dir, update_seen):
     <tbody>{sub_rows}</tbody></table></div>
   <p class="muted">Acres count whole parcels that reach within the radius. {approx_n} of these {len(run.subs)} substation points are approximate, so their results need a GIS check before anyone calls.</p>
 </section>
+
+{gis_html}
 
 <section aria-labelledby="leads">
   <div class="eyebrow">What a lead looks like</div>

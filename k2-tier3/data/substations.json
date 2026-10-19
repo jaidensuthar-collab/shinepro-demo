@@ -299,11 +299,11 @@
    "name": "ETT Tesla Substation (existing 345 kV)",
    "state": "TX",
    "county": "Childress",
-   "lat": 34.3643,
-   "lon": -100.1309,
-   "confidence": "approx",
-   "basis": "PUC Docket 37956 says Tesla is about 6 mi southeast of Childress. The point is Childress (OSM 34.4258, -100.2054) moved 6 mi southeast.",
-   "source": "https://interchange.puc.texas.gov/Documents/37956_9_649865.PDF",
+   "lat": 34.37378,
+   "lon": -100.08701,
+   "confidence": "exact",
+   "basis": "GIS check Oct 19, 2026: matched by name to 'TESLA' in the HIFLD Electric Substations layer (345 kV, in service); the earlier estimate was 2.59 mi away. Earlier note: PUC Docket 37956 says Tesla is about 6 mi southeast of Childress. The point is Childress (OSM 34.4258, -100.2054) moved 6 mi southeast.",
+   "source": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0",
    "projects": [
     {
      "id": "panhandle-plan",
@@ -431,11 +431,11 @@
    "name": "Watermill Switch (Oncor)",
    "state": "TX",
    "county": "Dallas",
-   "lat": 32.5612,
-   "lon": -96.7245,
-   "confidence": "approx",
-   "basis": "PUC Docket 57918 order says Watermill switch is about 3.5 mi west of the IH-45 / Malloy Bridge Rd intersection. The point is that intersection (OSM 32.5612, -96.6643) moved 3.5 mi west. It lands on Watermill Rd, which fits.",
-   "source": "https://interchange.puc.texas.gov/Documents/57918_22_1510937.PDF",
+   "lat": 32.55854,
+   "lon": -96.72618,
+   "confidence": "exact",
+   "basis": "GIS check Oct 19, 2026: matched by name to 'WATERMILL' in the HIFLD Electric Substations layer (345 kV, in service); the earlier estimate was 0.21 mi away. Earlier note: PUC Docket 57918 order says Watermill switch is about 3.5 mi west of the IH-45 / Malloy Bridge Rd intersection. The point is that intersection (OSM 32.5612, -96.6643) moved 3.5 mi west. It lands on Watermill Rd, which fits.",
+   "source": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0",
    "projects": [
     {
      "id": "bell-east-watermill",
@@ -586,11 +586,11 @@
    "name": "CTT Gray Substation (existing 345 kV; new 765 kV)",
    "state": "TX",
    "county": "Gray",
-   "lat": 35.4274,
-   "lon": -100.8369,
-   "confidence": "approx",
-   "basis": "PUC Docket 37956 says Gray Substation is about 2 mi west-southwest of Lefors. The point is Lefors (OSM 35.4385, -100.8040) moved 2 mi WSW.",
-   "source": "https://interchange.puc.texas.gov/Documents/37956_9_649865.PDF",
+   "lat": 35.40751,
+   "lon": -100.81984,
+   "confidence": "exact",
+   "basis": "GIS check Oct 19, 2026: matched by name to 'GRAY' in the HIFLD Electric Substations layer (345 kV, in service); the earlier estimate was 1.68 mi away. Earlier note: PUC Docket 37956 says Gray Substation is about 2 mi west-southwest of Lefors. The point is Lefors (OSM 35.4385, -100.8040) moved 2 mi WSW.",
+   "source": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0",
    "projects": [
     {
      "id": "panhandle-plan",
@@ -856,7 +856,7 @@
    "lat": 32.332,
    "lon": -100.918,
    "confidence": "approx",
-   "basis": "Same site as in the Ranger Camp-Tonkawa project: 0.7 mi WSW of S FM 1229 & SH 163, read from a georeferenced Oncor notice map; the RC-ME inset map agrees.",
+   "basis": "Same site as in the Ranger Camp-Tonkawa project: 0.7 mi WSW of S FM 1229 & SH 163, read from a georeferenced Oncor notice map; the RC-ME inset map agrees. GIS check Oct 19, 2026: an unnamed, in-service 345 kV substation in the HIFLD layer is 0.18 mi from this point, so this is likely the switch. Still approximate until named.",
    "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/ranger-camp-switch-to-midland-east-switch-345kv-transmission-lin.html",
    "projects": [
     {
@@ -1120,11 +1120,11 @@
    "name": "Martin Lake (Oncor 765 kV switchyard at existing Martin Lake 345 kV substation)",
    "state": "TX",
    "county": "Rusk",
-   "lat": 32.2583,
-   "lon": -94.5741,
-   "confidence": "approx",
-   "basis": "Centroid of the Martin Lake Power Plant in OpenStreetMap (Nominatim), near Tatum. ERCOT plans the new 765 kV switchyard at the existing Martin Lake 345 kV substation at the plant, so the yard itself may sit 1-2 mi from this point.",
-   "source": "https://www.openstreetmap.org/search?query=Martin%20Lake%20Power%20Plant",
+   "lat": 32.25747,
+   "lon": -94.57488,
+   "confidence": "exact",
+   "basis": "GIS check Oct 19, 2026: matched by name to 'MARTIN LAKES' in the HIFLD Electric Substations layer (345 kV, in service); the earlier estimate was 0.07 mi away. Earlier note: Centroid of the Martin Lake Power Plant in OpenStreetMap (Nominatim), near Tatum. ERCOT plans the new 765 kV switchyard at the existing Martin Lake 345 kV substation at the plant, so the yard itself may sit 1-2 mi from this point.",
+   "source": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0",
    "projects": [
     {
      "id": "martin-lake-hillje",
@@ -1186,11 +1186,11 @@
    "name": "Tonkawa Switch",
    "state": "TX",
    "county": "Scurry",
-   "lat": 32.543,
-   "lon": -100.682,
-   "confidence": "approx",
-   "basis": "Read from the Oncor notice map (just north of the Mitchell/Scurry line, west of the Fisher County line near US 84), georeferenced to OSM town points.",
-   "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/ranger-camp-to-tonkawa-345-kV-transmission-line-project.html",
+   "lat": 32.53073,
+   "lon": -100.6842,
+   "confidence": "exact",
+   "basis": "GIS check Oct 19, 2026: matched by name to 'TONKAWA' in the HIFLD Electric Substations layer (345 kV, in service); the earlier estimate was 0.86 mi away. Earlier note: Read from the Oncor notice map (just north of the Mitchell/Scurry line, west of the Fisher County line near US 84), georeferenced to OSM town points.",
+   "source": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0",
    "projects": [
     {
      "id": "ranger-camp-tonkawa",
@@ -1212,7 +1212,7 @@
    "lat": 32.63,
    "lon": -99.54,
    "confidence": "approx",
-   "basis": "Placed from Oncor notice map Fig. 12, georeferenced to the Jones/Shackelford county line and the OSM FM 604/SH 351 junction (Oncor text: 5.4 mi NE of that junction).",
+   "basis": "Placed from Oncor notice map Fig. 12, georeferenced to the Jones/Shackelford county line and the OSM FM 604/SH 351 junction (Oncor text: 5.4 mi NE of that junction). GIS check Oct 19, 2026: an unnamed, in-service 345 kV substation in the HIFLD layer is 0.09 mi from this point, so this is likely the switch. Still approximate until named.",
    "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/Consavvy-to-Long-Creek-Switch-345kV.html",
    "projects": [
     {
@@ -1311,11 +1311,11 @@
    "name": "Hillje Substation (CenterPoint; new 765 kV yard at existing 345 kV site)",
    "state": "TX",
    "county": "Wharton",
-   "lat": 29.0296,
-   "lon": -96.236,
-   "confidence": "approx",
-   "basis": "Existing Hillje 345 kV substation at 10973 CR 403 (29.029634, -96.235950) per CenterPoint's Docket 51568 notice. The new 765 kV substation is planned next to it, and the route links on the Hillje-Blu Lacy map end within about 1 mile of this point.",
-   "source": "https://www.centerpointenergy.com/en-us/Corp/Documents/Space-City/Attachment-6.pdf",
+   "lat": 29.02954,
+   "lon": -96.23605,
+   "confidence": "exact",
+   "basis": "GIS check Oct 19, 2026: matched by name to 'HILLJE' in the HIFLD Electric Substations layer (345 kV, in service); the earlier estimate was 0.0 mi away. Earlier note: Existing Hillje 345 kV substation at 10973 CR 403 (29.029634, -96.235950) per CenterPoint's Docket 51568 notice. The new 765 kV substation is planned next to it, and the route links on the Hillje-Blu Lacy map end within about 1 mile of this point.",
+   "source": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0",
    "projects": [
     {
      "id": "euclid-765",

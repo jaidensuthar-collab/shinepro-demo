@@ -1,0 +1,163 @@
+{
+ "date": "2026-10-19",
+ "source": "HIFLD Electric Substations layer (national substation map), matched by name within 15 miles",
+ "source_url": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0",
+ "results": [
+  {
+   "id": "tx-andrews-clearfork",
+   "name": "Clearfork Switch",
+   "result": "not on map",
+   "note": "Not in the national substation layer yet (new or proposed). Location comes from the utility filing or map; needs the GIS team."
+  },
+  {
+   "id": "tx-angelina-longleaf",
+   "name": "Longleaf POI",
+   "result": "not on map",
+   "note": "Not in the national substation layer yet (new or proposed). Location comes from the utility filing or map; needs the GIS team."
+  },
+  {
+   "id": "tx-bell-bell-county-east",
+   "name": "Bell County East Switch (Oncor)",
+   "result": "not on map",
+   "note": "Not in the national substation layer yet (new or proposed). Location comes from the utility filing or map; needs the GIS team."
+  },
+  {
+   "id": "tx-childress-ett-tesla",
+   "name": "ETT Tesla Substation (existing 345 kV)",
+   "result": "confirmed",
+   "note": "Matched by name to TESLA (345 kV, in service); point moved 2.59 mi."
+  },
+  {
+   "id": "tx-culberson-drill-hole",
+   "name": "Drill Hole Switch (Oncor)",
+   "result": "not on map",
+   "note": "Not in the national substation layer yet (new or proposed). Location comes from the utility filing or map; needs the GIS team."
+  },
+  {
+   "id": "tx-culberson-el-capitan",
+   "name": "El Capitan Switch",
+   "result": "not on map",
+   "note": "Not in the national substation layer yet (new or proposed). Location comes from the utility filing or map; needs the GIS team."
+  },
+  {
+   "id": "tx-dallas-watermill",
+   "name": "Watermill Switch (Oncor)",
+   "result": "confirmed",
+   "note": "Matched by name to WATERMILL (345 kV, in service); point moved 0.21 mi."
+  },
+  {
+   "id": "tx-el-paso-mccloud-central",
+   "name": "McCloud Central Substation",
+   "result": "not on map",
+   "note": "Not in the national substation layer yet (new or proposed). Location comes from the utility filing or map; needs the GIS team."
+  },
+  {
+   "id": "tx-el-paso-tuskegee",
+   "name": "Tuskegee Substation",
+   "result": "not on map",
+   "note": "Not in the national substation layer yet (new or proposed). Location comes from the utility filing or map; needs the GIS team."
+  },
+  {
+   "id": "tx-gray-ctt-gray",
+   "name": "CTT Gray Substation (existing 345 kV; new 765 kV)",
+   "result": "confirmed",
+   "note": "Matched by name to GRAY (345 kV, in service); point moved 1.68 mi."
+  },
+  {
+   "id": "tx-loving-border",
+   "name": "Border Switch",
+   "result": "not on map",
+   "note": "Not in the national substation layer yet (new or proposed). Location comes from the utility filing or map; needs the GIS team."
+  },
+  {
+   "id": "tx-martin-connell",
+   "name": "Connell Switch",
+   "result": "not on map",
+   "note": "Not in the national substation layer yet (new or proposed). Location comes from the utility filing or map; needs the GIS team."
+  },
+  {
+   "id": "tx-midland-consavvy",
+   "name": "Consavvy Switch",
+   "result": "not on map",
+   "note": "Not in the national substation layer yet (new or proposed). Location comes from the utility filing or map; needs the GIS team."
+  },
+  {
+   "id": "tx-midland-rockhound",
+   "name": "Rockhound Switch",
+   "result": "not on map",
+   "note": "Not in the national substation layer yet (new or proposed). Location comes from the utility filing or map; needs the GIS team."
+  },
+  {
+   "id": "tx-mitchell-ranger-camp",
+   "name": "Ranger Camp Switch",
+   "result": "likely",
+   "note": "Unnamed in-service 345 kV substation 0.18 mi from the point; probably this switch."
+  },
+  {
+   "id": "tx-nueces-blu-lacy",
+   "name": "Blu Lacy Substation (AEP Texas, proposed)",
+   "result": "not on map",
+   "note": "Not in the national substation layer yet (new or proposed). Location comes from the utility filing or map; needs the GIS team."
+  },
+  {
+   "id": "tx-pecos-bottlebrush",
+   "name": "Bottlebrush Station (TNMP, proposed)",
+   "result": "not on map",
+   "note": "Not in the national substation layer yet (new or proposed). Location comes from the utility filing or map; needs the GIS team."
+  },
+  {
+   "id": "tx-reeves-dry-lake",
+   "name": "Dry Lake Switch",
+   "result": "not on map",
+   "note": "Not in the national substation layer yet (new or proposed). Location comes from the utility filing or map; needs the GIS team."
+  },
+  {
+   "id": "tx-reeves-faulkner",
+   "name": "Faulkner Substation",
+   "result": "not on map",
+   "note": "Not in the national substation layer yet (new or proposed). Location comes from the utility filing or map; needs the GIS team."
+  },
+  {
+   "id": "tx-rusk-martin-lake",
+   "name": "Martin Lake (Oncor 765 kV switchyard at existing Martin Lake 345 kV substation)",
+   "result": "confirmed",
+   "note": "Matched by name to MARTIN LAKES (345 kV, in service); point moved 0.07 mi."
+  },
+  {
+   "id": "tx-scurry-tonkawa",
+   "name": "Tonkawa Switch",
+   "result": "confirmed",
+   "note": "Matched by name to TONKAWA (345 kV, in service); point moved 0.86 mi."
+  },
+  {
+   "id": "tx-shackelford-long-creek",
+   "name": "Long Creek Switch",
+   "result": "likely",
+   "note": "Unnamed in-service 345 kV substation 0.09 mi from the point; probably this switch."
+  },
+  {
+   "id": "tx-somervell-dinosaur",
+   "name": "Dinosaur Switch (Oncor, proposed)",
+   "result": "not on map",
+   "note": "Not in the national substation layer yet (new or proposed). Location comes from the utility filing or map; needs the GIS team."
+  },
+  {
+   "id": "tx-tarrant-skyview",
+   "name": "Skyview Switch",
+   "result": "not on map",
+   "note": "Not in the national substation layer yet (new or proposed). Location comes from the utility filing or map; needs the GIS team."
+  },
+  {
+   "id": "tx-ward-sand-lake",
+   "name": "Sand Lake Switch (Oncor)",
+   "result": "not on map",
+   "note": "Not in the national substation layer yet (new or proposed). Location comes from the utility filing or map; needs the GIS team."
+  },
+  {
+   "id": "tx-wharton-hillje",
+   "name": "Hillje Substation (CenterPoint; new 765 kV yard at existing 345 kV site)",
+   "result": "confirmed",
+   "note": "Matched by name to HILLJE (345 kV, in service); point moved 0.0 mi."
+  }
+ ]
+}
