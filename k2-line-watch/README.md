@@ -1,4 +1,12 @@
-# K2 line monitor
+# K2 Line Watch
+
+One project: the **line monitor** (this folder) finds new high-voltage lines early, and the
+**landowner search** (`landowners/`, an n8n workflow) finds the landowners near each line's end
+substations every Monday. Both feed one page, **K2 Line Watch**
+(https://claude.ai/artifact/FCARNQ1KQBr5r5DX9V6XfG): the watch list, a Landowners tab, utility plans
+and help. Texas today; the landowner search is built to add other states (see `landowners/README.md`).
+
+## Line monitor
 
 Finds new Texas transmission lines while they are still early, and lists them in the
 **Monitor Feed** tab of the *K2 Transmission Intel Plan* Google Sheet.

@@ -1,11 +1,18 @@
-# K2 Tier 3 prototype: Line Watch to call list
+# K2 Line Watch: landowners near new lines
 
-An n8n workflow that turns K2 Line Watch's substations into a scored list of
-landowners, with each lead's next step: a letter, a human call, or a Wendy call.
+The landowner half of K2 Line Watch (the line monitor and page are one folder up). An n8n
+workflow turns the end substations on the Line Watch project cards into a scored list of
+landowners, with each lead's next step: a letter, a human call, or a Wendy call. Results show
+on the Line Watch page's **Landowners** tab (owners masked) and in a private CSV.
+
+Texas runs today on the free statewide parcel layer. The workflow is built for the whole US:
+add a state's free parcel layer to `data/parcel_sources.json`, or switch on the paid nationwide
+provider (Regrid) for every other state.
 
 ```
 Line Watch substations ─> land within 2 miles ─> owners ─> score ─> phone lookup ─> next step ─> CSV / Wendy
-   (GitHub file)          (Texas parcel layer)              (0-100)   (off by default)
+   (GitHub file)          (state parcel layer,               (0-100)   (off by default)
+                           or paid provider)
 ```
 
 Test run on Oct 19, 2026, using the 8 best substations (all High, "Open now"): 128 map tiles,
@@ -17,10 +24,10 @@ about 75 seconds.
 | Step | n8n node | What happens |
 |---|---|---|
 | 1 | Settings | All the knobs (table below). |
-| 2 | Get Line Watch substations | Reads `data/substations.json` from GitHub: 51 substations from the Line Watch project cards, each with its projects, stage and timing. |
-| 3 | Pick substations | Texas only, location exact or approximate, Medium or High projects, best first ("Open now" before "Late"). |
-| 4 | Make map tiles | Cuts the 4 x 4 mile square around each substation into 1-mile tiles (the parcel service returns at most 2,000 parcels per call). |
-| 5 | Look up parcels | Texas statewide parcel layer (TxGIO StratMap, from each county appraisal district): owner, mailing address, acres, value. Free and public. Failed tiles get a second, slower try. |
+| 2 | Get Line Watch substations, Get parcel sources | Reads `data/substations.json` (51 substations from the Line Watch project cards, each with its projects, stage and timing) and `data/parcel_sources.json` (which states have a free parcel layer, and its field names) from GitHub. |
+| 3 | Pick substations | States with a parcel source (or every state when the paid provider is on), location exact or approximate, Medium or High projects, best first ("Open now" before "Late"). |
+| 4 | Make map tiles | Cuts the 4 x 4 mile square around each substation into 1-mile tiles (state parcel services return at most 1,000 to 2,000 parcels per call). Paid-provider states get one radius search per substation instead. |
+| 5 | Look up parcels | Free state parcel layer (Texas: TxGIO StratMap, from each county appraisal district): owner, mailing address, acres, value. Failed tiles get a second, slower try. Paid provider: Regrid radius search, 1,000 parcels per page. |
 | 6 | Score parcels and owners | Keeps parcels within the radius, rolls them up by owner, skips public/utility/railroad land, flags energy companies, scores each owner. |
 | 7 | Phone lookup on? / Find phones | Off by default. Looks up phones for landowners only (Tracerfy), with Do Not Call and TCPA litigator flags. `demo` mode fills in made-up 555-01xx numbers instead, so you can see the whole flow for free. |
 | 8 | Pick next step | `mail-first`, `sales-call`, `wendy` or `skip: ...` (see below). |
@@ -56,15 +63,16 @@ Works on this MacBook and the home desktop the same way. Node 20 to 24 is fine (
 git clone https://github.com/jaidensuthar-collab/shinepro-demo.git   # or git pull if you have it
 cd shinepro-demo && git checkout claude/vibrant-euler-urtmp2
 npm install --prefix ~/.npm-global n8n@1.123.85
-cd k2-tier3
+cd k2-line-watch/landowners
 ./start-n8n.sh
 ```
 
 Open http://localhost:5679. The first time, n8n asks you to make a local owner account
-(type it yourself). Open **K2 Tier 3: Line Watch to call list** and click **Execute workflow**.
-The CSV appears in `k2-tier3/output/`.
+(type it yourself). Open **K2 Line Watch: landowners near new lines** and click **Execute workflow**.
+The CSV appears in `k2-line-watch/landowners/output/`.
 
-This n8n uses **port 5679** and its own folder (`k2-tier3/.n8n-local`). It never touches another
+This n8n uses **port 5679** and its own folder (`k2-line-watch/landowners/.n8n-local`; before Oct 19,
+2026 this folder was `k2-tier3`, so a Mac set up earlier needs `./sync.sh load` from the new folder). It never touches another
 n8n on the same Mac (port 5678, `~/.n8n`).
 
 To see what each step produced, click any node in n8n after a run: its output shows on the right.
@@ -76,7 +84,8 @@ GitHub holds the master copy of the workflow.
 ```
 ./sync.sh load    # before you start editing: pull from GitHub and load into n8n
 ./sync.sh save    # after editing in n8n: write it to the repo and push to GitHub
-./sync.sh key     # once per Mac, only when phone lookup is turned on
+./sync.sh key           # once per Mac, only when phone lookup is turned on (Tracerfy)
+./sync.sh parcels-key   # once per Mac, only when the paid parcel provider is turned on (Regrid)
 ```
 
 Save on one Mac, then load on the other. If you edit on both without syncing, the last save wins.
@@ -92,7 +101,8 @@ A scheduled task runs every Monday at 8:52am CT (after the morning Line Watch ch
 2. Runs the whole workflow for every Texas substation (`run_headless.sh`, about 10 minutes).
 3. `report/build_report.py` compares owners against `data/seen-owners.txt` and lists what is new:
    new substations, new landowners, new acres. That file holds one-way fingerprints, not names.
-4. Updates the group page and sends Jaiden the private list with full names.
+4. Loads the masked results into the Line Watch page (Landowners tab and each project card) and
+   sends Jaiden the private list with full names.
 
 To run the same thing by hand: `./run_headless.sh output/run-today demo 0` then
 `python3 report/build_report.py output/run-today`.
@@ -107,7 +117,9 @@ To run the same thing by hand: `./run_headless.sh output/run-today demo 0` then
 | `minImportance` | Medium | `High` keeps only High projects. |
 | `locationQuality` | exact,approx | Substation location quality to accept. |
 | `onlySubstations` | (blank) | Comma list of ids or names, e.g. `solstice,longshore`. Blank means all. |
-| `maxSubstations` | 8 | How many substations per run (all 43 Texas ones take about 6 minutes). |
+| `maxSubstations` | 8 | How many substations per run (all 43 Texas ones take about 10 minutes). |
+| `states` | (blank) | Comma list of states to search, e.g. `TX`. Blank means every state that has a source. |
+| `paidParcelProvider` | off | `regrid` searches states without a free layer through Regrid (paid; needs `./sync.sh parcels-key`). |
 | `maxLeads` | 500 | Cap on landowner rows. |
 | `phoneLookup` | off | `off`, `demo` (made-up 555-01xx numbers, nothing leaves your Mac), `sandbox` (Tracerfy's free test server, fake numbers) or `live` (real numbers, paid, needs `./sync.sh key`). |
 | `consentedParcelIds` | (blank) | Parcel ids of owners who opted in. Later this becomes a sheet or Wendy's own log. |
@@ -117,17 +129,22 @@ To run the same thing by hand: `./run_headless.sh output/run-today demo 0` then
 `data/substations.json` is built from the Line Watch project cards:
 
 ```
-python3 data/export_substations.py ../k2-line-monitor/data/projects.json
+python3 data/export_substations.py ../data/projects.json
 ```
 
 ## Known limits
 
-* Texas only (the free statewide parcel layer). Other states need their own parcel source.
+* Texas only for now. To add a state with a free parcel layer that has owner names, add an entry to
+  `data/parcel_sources.json` (layer URL, `identify` or `query`, field names). Everything else needs the
+  paid provider: Regrid ($0.10 a parcel record after the first 2,000 a month on its self-serve plan;
+  above 10,000 a month it is an enterprise quote). Test it on Regrid's free 30-day trial first.
 * Acres are whole parcels that reach within the radius, not just the part inside it.
 * 26 of the 43 Texas substation locations are approximate. Those leads say "GIS team to confirm".
 * Owner and address data is as fresh as the county appraisal roll (tax year 2026 in the test).
 * Real phone numbers need a paid Tracerfy account. `demo` and `sandbox` numbers are fake: never dial them.
 * Phone lookup was tested against a local fake server shaped like Tracerfy's documented
   responses, not against Tracerfy itself. Try `sandbox` first.
+* The Regrid branch was tested against a local stand-in shaped like Regrid's documented
+  `/api/v2/parcels/point` response (including paging with `offset_id`), not against Regrid itself.
 * n8n 1.123.85 is the last line that runs on Node 22. Moving to n8n 2.x later needs Node 24;
   the workflow imports as is.
