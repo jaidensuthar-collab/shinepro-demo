@@ -23,7 +23,7 @@
      "region": "Other US (PJM: Virginia area)"
     }
    ],
-   "id": "sub-001-rocky-point"
+   "id": "md-frederick-rocky-point"
   },
   {
    "name": "Clearfork Switch",
@@ -46,7 +46,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-002-clearfork"
+   "id": "tx-andrews-clearfork"
   },
   {
    "name": "Mascho Switch (formerly Clearfork Switch)",
@@ -69,7 +69,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-003-mascho"
+   "id": "tx-andrews-mascho"
   },
   {
    "name": "Longleaf POI",
@@ -92,7 +92,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-004-longleaf"
+   "id": "tx-angelina-longleaf"
   },
   {
    "name": "Redland Switch",
@@ -115,7 +115,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-005-redland"
+   "id": "tx-angelina-redland"
   },
   {
    "name": "Bell County East Switch (Oncor)",
@@ -158,7 +158,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-006-bell-county-east"
+   "id": "tx-bell-bell-county-east"
   },
   {
    "name": "Salado Switch",
@@ -181,7 +181,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-007-salado"
+   "id": "tx-bell-salado"
   },
   {
    "name": "Temple Switch",
@@ -204,7 +204,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-008-temple"
+   "id": "tx-bell-temple"
   },
   {
    "name": "Howard (Howard Road) Station (CPS Energy)",
@@ -247,7 +247,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-009-howard"
+   "id": "tx-bexar-howard"
   },
   {
    "name": "Faraday Switch",
@@ -270,7 +270,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-010-faraday"
+   "id": "tx-borden-faraday"
   },
   {
    "name": "Euclid Substation (LCRA TSC; new 765 kV yard next to existing Euclid 345 kV station)",
@@ -293,7 +293,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-011-euclid"
+   "id": "tx-caldwell-euclid"
   },
   {
    "name": "ETT Tesla Substation (existing 345 kV)",
@@ -316,7 +316,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-012-ett-tesla"
+   "id": "tx-childress-ett-tesla"
   },
   {
    "name": "Drill Hole Switch (Oncor)",
@@ -369,7 +369,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-013-drill-hole"
+   "id": "tx-culberson-drill-hole"
   },
   {
    "name": "El Capitan Switch",
@@ -402,7 +402,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-014-el-capitan"
+   "id": "tx-culberson-el-capitan"
   },
   {
    "name": "Liggett Switch",
@@ -425,7 +425,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-015-liggett"
+   "id": "tx-dallas-liggett"
   },
   {
    "name": "Watermill Switch (Oncor)",
@@ -468,7 +468,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-016-watermill"
+   "id": "tx-dallas-watermill"
   },
   {
    "name": "Lamesa Switch",
@@ -501,7 +501,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-017-lamesa"
+   "id": "tx-dawson-lamesa"
   },
   {
    "name": "McCloud Central Substation",
@@ -524,7 +524,7 @@
      "region": "Texas (Western grid, El Paso)"
     }
    ],
-   "id": "sub-018-mccloud-central"
+   "id": "tx-el-paso-mccloud-central"
   },
   {
    "name": "Pine Substation",
@@ -557,7 +557,7 @@
      "region": "Texas (Western grid, El Paso)"
     }
    ],
-   "id": "sub-019-pine"
+   "id": "tx-el-paso-pine"
   },
   {
    "name": "Tuskegee Substation",
@@ -580,7 +580,7 @@
      "region": "Texas (Western grid, El Paso)"
     }
    ],
-   "id": "sub-020-tuskegee"
+   "id": "tx-el-paso-tuskegee"
   },
   {
    "name": "CTT Gray Substation (existing 345 kV; new 765 kV)",
@@ -603,7 +603,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-021-ctt-gray"
+   "id": "tx-gray-ctt-gray"
   },
   {
    "name": "CTT Cross Substation (existing 345 kV; new 765 kV)",
@@ -626,7 +626,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-022-ctt-cross"
+   "id": "tx-hall-ctt-cross"
   },
   {
    "name": "Longshore Switch (Oncor)",
@@ -679,7 +679,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-023-longshore"
+   "id": "tx-howard-longshore"
   },
   {
    "name": "Border Switch",
@@ -722,7 +722,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-024-border"
+   "id": "tx-loving-border"
   },
   {
    "name": "Quarry Field Switch",
@@ -745,7 +745,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-025-quarry-field"
+   "id": "tx-loving-quarry-field"
   },
   {
    "name": "Connell Switch",
@@ -768,7 +768,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-026-connell"
+   "id": "tx-martin-connell"
   },
   {
    "name": "Consavvy Switch",
@@ -791,7 +791,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-027-consavvy"
+   "id": "tx-midland-consavvy"
   },
   {
    "name": "Midland East Switch",
@@ -814,7 +814,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-028-midland-east"
+   "id": "tx-midland-midland-east"
   },
   {
    "name": "Rockhound Switch",
@@ -847,7 +847,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-029-rockhound"
+   "id": "tx-midland-rockhound"
   },
   {
    "name": "Ranger Camp Switch",
@@ -880,7 +880,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-030-ranger-camp"
+   "id": "tx-mitchell-ranger-camp"
   },
   {
    "name": "Blu Lacy Substation (AEP Texas, proposed)",
@@ -913,7 +913,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-031-blu-lacy"
+   "id": "tx-nueces-blu-lacy"
   },
   {
    "name": "Bakersfield Substation (LCRA TSC)",
@@ -936,7 +936,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-032-bakersfield"
+   "id": "tx-pecos-bakersfield"
   },
   {
    "name": "Bottlebrush Station (TNMP, proposed)",
@@ -969,7 +969,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-033-bottlebrush"
+   "id": "tx-pecos-bottlebrush"
   },
   {
    "name": "Solstice Substation (AEP Texas)",
@@ -1002,7 +1002,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-034-solstice"
+   "id": "tx-pecos-solstice"
   },
   {
    "name": "White Baker Substation (TNMP; new 345 kV yard at existing 138 kV station)",
@@ -1035,7 +1035,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-035-white-baker"
+   "id": "tx-pecos-white-baker"
   },
   {
    "name": "Dry Lake Switch",
@@ -1068,7 +1068,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-036-dry-lake"
+   "id": "tx-reeves-dry-lake"
   },
   {
    "name": "Faulkner Substation",
@@ -1091,7 +1091,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-037-faulkner"
+   "id": "tx-reeves-faulkner"
   },
   {
    "name": "Riverton Switch",
@@ -1114,7 +1114,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-038-riverton"
+   "id": "tx-reeves-riverton"
   },
   {
    "name": "Martin Lake (Oncor 765 kV switchyard at existing Martin Lake 345 kV substation)",
@@ -1147,7 +1147,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-039-martin-lake"
+   "id": "tx-rusk-martin-lake"
   },
   {
    "name": "Big Hill Substation (LCRA TSC; new 765 kV yard adjacent to existing 345 kV)",
@@ -1180,7 +1180,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-040-big-hill"
+   "id": "tx-schleicher-big-hill"
   },
   {
    "name": "Tonkawa Switch",
@@ -1203,7 +1203,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-041-tonkawa"
+   "id": "tx-scurry-tonkawa"
   },
   {
    "name": "Long Creek Switch",
@@ -1226,7 +1226,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-042-long-creek"
+   "id": "tx-shackelford-long-creek"
   },
   {
    "name": "Dinosaur Switch (Oncor, proposed)",
@@ -1259,7 +1259,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-043-dinosaur"
+   "id": "tx-somervell-dinosaur"
   },
   {
    "name": "Skyview Switch",
@@ -1282,7 +1282,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-044-skyview"
+   "id": "tx-tarrant-skyview"
   },
   {
    "name": "Sand Lake Switch (Oncor)",
@@ -1305,7 +1305,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-045-sand-lake"
+   "id": "tx-ward-sand-lake"
   },
   {
    "name": "Hillje Substation (CenterPoint; new 765 kV yard at existing 345 kV site)",
@@ -1348,7 +1348,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-046-hillje"
+   "id": "tx-wharton-hillje"
   },
   {
    "name": "CTT Celtic Green Substation (proposed 765/345 kV)",
@@ -1371,7 +1371,7 @@
      "region": "Texas (ERCOT)"
     }
    ],
-   "id": "sub-047-ctt-celtic-green"
+   "id": "tx-wheeler-ctt-celtic-green"
   },
   {
    "name": "Joshua Falls Substation (Appalachian Power; to be relocated ~2 mi SE)",
@@ -1394,7 +1394,7 @@
      "region": "Other US (PJM: Virginia area)"
     }
    ],
-   "id": "sub-048-joshua-falls"
+   "id": "va-campbell-joshua-falls"
   },
   {
    "name": "Yeat Substation (proposed, Dominion/Valley Link)",
@@ -1417,7 +1417,7 @@
      "region": "Other US (PJM: Virginia area)"
     }
    ],
-   "id": "sub-049-yeat"
+   "id": "va-culpeper-yeat"
   },
   {
    "name": "Welton Spring(s) Substation (proposed)",
@@ -1440,7 +1440,7 @@
      "region": "Other US (PJM: Virginia area)"
     }
    ],
-   "id": "sub-050-welton-spring"
+   "id": "wv-hardy-welton-spring"
   },
   {
    "name": "Amos Substation (John E. Amos plant, AEP)",
@@ -1463,7 +1463,7 @@
      "region": "Other US (PJM: Virginia area)"
     }
    ],
-   "id": "sub-051-amos"
+   "id": "wv-putnam-amos"
   }
  ]
 }

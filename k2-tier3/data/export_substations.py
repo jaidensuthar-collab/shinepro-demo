@@ -59,8 +59,9 @@ def main(src, out_path):
                 "region": p.get("region", ""),
             })
     rows = sorted(subs.values(), key=lambda s: (s["state"], s["county"], s["name"]))
-    for i, s in enumerate(rows):
-        s["id"] = "sub-%03d-%s" % (i + 1, base_name(s["name"]).replace(" ", "-"))
+    for s in rows:
+        # Stable id: adding a substation later never renumbers the others.
+        s["id"] = "-".join(re.sub(r"[^a-z0-9]+", "-", x.lower()).strip("-") for x in (s["state"], s["county"], base_name(s["name"])))
     with open(out_path, "w") as f:
         json.dump({"source": "K2 Line Watch project cards", "count": len(rows), "substations": rows}, f, indent=1)
     print("%d substations from %s -> %s" % (len(rows), src, out_path))
