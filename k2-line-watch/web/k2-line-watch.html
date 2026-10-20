@@ -150,6 +150,17 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 .wrap > *, .panel > *, .land section > * { min-width: 0 }
 .tabs { overflow-x: auto; scrollbar-width: none }
 @media (max-width: 560px) { .tabs button { padding: 8px 8px; font-size: 14px; white-space: nowrap } }
+/* Texas lines tab (phase 1 catalog) */
+.recs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px }
+.recs button { text-align: left; border: 1px solid var(--rule); background: var(--panel); padding: 10px 12px; cursor: pointer; min-width: 0 }
+.recs button[aria-pressed="true"] { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink) }
+.recs b { display: block; font-family: var(--display); font-size: 26px; line-height: 1.1 }
+.recs span { font-size: 12px; color: var(--muted) }
+@media (max-width: 760px) { .recs { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
+.rec { font: 600 11px var(--body); padding: 2px 8px; border-radius: 3px; white-space: nowrap; display: inline-block }
+.rec.sub { background: var(--flag-soft); color: var(--flag) } .rec.line { background: var(--open-soft); color: var(--open) }
+.rec.follow { background: var(--fast-soft); color: var(--fast) } .rec.info { background: var(--late-soft); color: var(--late) }
+.lines-tools select { border: 1px solid var(--rule); background: var(--panel); padding: 5px 8px; border-radius: 4px; max-width: 100% }
 /* Landowners tab */
 .stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border: 1px solid var(--rule); background: var(--panel) }
 .stats > div { padding: 10px 12px; border-right: 1px solid var(--rule); min-width: 0 }
@@ -187,6 +198,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 
   <nav class="tabs" role="tablist" aria-label="Page sections">
     <button type="button" role="tab" id="t-watch" aria-controls="p-watch" aria-selected="true">Watch list</button>
+    <button type="button" role="tab" id="t-lines" aria-controls="p-lines" aria-selected="false" tabindex="-1">Texas lines</button>
     <button type="button" role="tab" id="t-land" aria-controls="p-land" aria-selected="false" tabindex="-1">Landowners</button>
     <button type="button" role="tab" id="t-irp" aria-controls="p-irp" aria-selected="false" tabindex="-1">Utility plans (IRPs)</button>
     <button type="button" role="tab" id="t-help" aria-controls="p-help" aria-selected="false" tabindex="-1">How to use</button>
@@ -249,6 +261,35 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     <p class="sub">Questions that needed the web while live search was off. They are answered at the next scheduled check (7:45am and 12:45pm Central, weekdays).</p>
     <div id="research"><div class="empty">No research requests yet.</div></div>
   </section>
+  </div>
+
+  <div id="p-lines" role="tabpanel" aria-labelledby="t-lines" class="panel land" hidden>
+    <section>
+      <h2>Every new or upgraded line in Texas</h2>
+      <p>Phase 1: every new or upgraded ERCOT transmission line (138 kV and up) and new 345 kV and bigger substations, from proposed to built this year, with its stage, in-service date and a recommended next step. Bigger lines that come online sooner rank higher.</p>
+      <p class="pmeta" id="linesstamp">Loading the Texas lines...</p>
+    </section>
+    <div class="recs" id="linesrecs"></div>
+    <div class="tools lines-tools">
+      <select id="lf-life" aria-label="Lifecycle"><option value="">Every stage</option></select>
+      <select id="lf-kv" aria-label="Voltage"><option value="">Every voltage</option></select>
+      <select id="lf-type" aria-label="Project type"><option value="">Every type</option></select>
+      <input class="search" id="lf-q" type="search" placeholder="Search a line, substation, county, utility or ERCOT number" aria-label="Search lines">
+    </div>
+    <p class="pmeta" id="linescount"></p>
+    <div class="tbl" id="linestable"></div>
+    <button class="chip more" id="moreLines" hidden>Show more</button>
+    <section>
+      <h2>How the next step is picked</h2>
+      <ul class="pins">
+        <li><span class="rec sub">Substation campaign</span> The end substations are located and the line is planned or further along. Always the choice for 765 kV, which is not tapped: projects connect at the substations.</li>
+        <li><span class="rec line">Line campaign</span> The route is set (an upgrade of an existing line, an approved route, or a line being built) and the line is 345 kV or below, so it can be tapped.</li>
+        <li><span class="rec follow">Follow updates</span> Still proposed, or the end substations are not located yet.</li>
+        <li><span class="rec info">Informational</span> Serves one generator or one large load, so it adds no new shared capacity.</li>
+      </ul>
+      <p class="pmeta">Sources: ERCOT's Transmission Project and Information Tracking report (TPIT, July 2026 update), the Line Watch project cards, and the HIFLD national substation map for locations. "About to enter construction" is estimated from an in-service date within 18 months unless a card says the route is approved. Download every field from <b>Data for GIS</b> on the Watch list tab.</p>
+    </section>
+    <p><button type="button" class="mapbtn" id="linesdl">Download the Texas lines (.csv)</button> <button type="button" class="mapbtn" id="linesdlg">Map file (.geojson)</button> <span class="pmeta" id="linesdlnote"></span></p>
   </div>
 
   <div id="p-land" role="tabpanel" aria-labelledby="t-land" class="panel land" hidden>
@@ -361,6 +402,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     <section>
       <h2>Where the information comes from</h2>
       <ul>
+        <li><b>ERCOT's Transmission Project and Information Tracking report</b> (TPIT): every planned ERCOT project with its end substations, voltage, status and in-service date. It feeds the Texas lines tab.</li>
         <li><b>ERCOT Regional Planning Group</b> meeting documents (stage 2).</li>
         <li><b>Utility project pages</b>: Oncor, AEP Texas, LCRA and CPS Energy (stage 3).</li>
         <li><b>Texas PUC filings</b>: new route cases, and new filings in cases already on the list (stages 4 to 6).</li>
@@ -555,6 +597,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
           <dt>What to do</dt><dd>${esc(p.k2_action)}</dd>
           ${p.docket || p.rpg ? `<dt>Case numbers</dt><dd class="mono">${[p.docket && (/^Texas/.test(p.region || "Texas") ? "PUCT Docket " : "Docket ") + p.docket, p.rpg && (/^Texas/.test(p.region || "Texas") ? "ERCOT " : "") + p.rpg].filter(Boolean).map(esc).join(" · ")}</dd>` : ""}
           ${mapBlock(p)}
+          ${phaseBlock(p)}
           ${landBlock(p)}
           <dt>Sources</dt><dd><span class="links">${links || "None yet"}</span></dd>
           <dt>Facts</dt><dd class="pmeta">${esc(p.checked || "needs checking")}, updated ${esc(p.updated || "")}</dd>
@@ -568,6 +611,76 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
       const p = state.projects.find((x) => x.id === b.dataset.askp);
       if (p) { $("askbox").value = `What should K2 do about the ${p.name} line right now, and what's the latest on it?`; $("askbox").focus(); }
     }));
+  }
+
+  // ---------- Texas lines (phase 1 catalog, data/texas-lines.json) ----------
+  const REC = { "substation campaign": ["sub", "Substation campaign"], "line campaign": ["line", "Line campaign"],
+                "follow updates": ["follow", "Follow updates"], "informational": ["info", "Informational"] };
+  const LIFE = ["proposed", "planned", "about to enter construction", "in construction", "operating (recently built)"];
+  const LS = { all: [], rec: "", life: "", kv: "", type: "", q: "", shown: 40, built: "" };
+  fetch("data/texas-lines.json").then((r) => r.ok ? r.json() : null).then((d) => {
+    if (!d) { $("linesstamp").textContent = "The Texas line list could not load. Reload the page to try again."; return; }
+    LS.all = d.lines || []; LS.built = d.built || "";
+    const opts = (id, vals, label) => { $(id).innerHTML = `<option value="">${label}</option>` + vals.map((v) => `<option value="${esc(v)}">${esc(v)}</option>`).join(""); };
+    opts("lf-life", LIFE.filter((l) => LS.all.some((x) => x.lifecycle === l)), "Every stage");
+    opts("lf-kv", [...new Set(LS.all.map((x) => x.kv))].sort((a, b) => b - a).map(String), "Every voltage");
+    opts("lf-type", [...new Set(LS.all.map((x) => x.project_type))].sort(), "Every type");
+    renderLines(); renderProjects();
+  }).catch(() => { $("linesstamp").textContent = "The Texas line list could not load. Reload the page to try again."; });
+  const linesFor = (p) => LS.all.filter((x) => x.card_id === p.id);
+  function lineMatch(x) {
+    if (LS.rec && x.recommended_next_step !== LS.rec) return false;
+    if (LS.life && x.lifecycle !== LS.life) return false;
+    if (LS.kv && String(x.kv) !== LS.kv) return false;
+    if (LS.type && x.project_type !== LS.type) return false;
+    if (!LS.q) return true;
+    const hay = [x.name, x.from, x.to, x.county_from, x.county_to, x.utility, x.ercot_project, x.program, x.docket].join(" ").toLowerCase();
+    return LS.q.toLowerCase().split(/\s+/).every((t) => hay.includes(t));
+  }
+  function renderLines() {
+    const all = LS.all;
+    $("linesstamp").textContent = `${all.length.toLocaleString()} lines and substations · list built ${LS.built} from ERCOT's July 2026 project report and the Line Watch cards`;
+    $("linesrecs").innerHTML = Object.entries(REC).map(([k, [, lbl]]) => `<button type="button" data-rec="${esc(k)}" aria-pressed="${LS.rec === k}"><b>${all.filter((x) => x.recommended_next_step === k).length}</b><span>${esc(lbl)}</span></button>`).join("");
+    $("linesrecs").querySelectorAll("[data-rec]").forEach((b) => b.addEventListener("click", () => { LS.rec = LS.rec === b.dataset.rec ? "" : b.dataset.rec; LS.shown = 40; renderLines(); }));
+    const list = all.filter(lineMatch);
+    $("linescount").textContent = `${list.length.toLocaleString()} shown, highest priority first (bigger lines that come online sooner rank higher).`;
+    const where = (x) => [x.county_from, x.county_to].filter((c, i, a) => c && a.indexOf(c) === i).join(" to ");
+    const ends = (x) => (x.endpoints || []).map((e) => e.lat != null ? `<a href="https://www.google.com/maps/search/?api=1&query=${Number(e.lat).toFixed(4)},${Number(e.lon).toFixed(4)}" target="_blank" rel="noopener">${esc(subShort(e.name))}</a>` : esc(subShort(e.name))).join(" to ");
+    $("linestable").innerHTML = `<table><thead><tr><th>Line</th><th class="n">kV</th><th>Type</th><th>Stage</th><th>In service</th><th>Where</th><th>Next step</th></tr></thead><tbody>${
+      list.slice(0, LS.shown).map((x) => { const [cls, lbl] = REC[x.recommended_next_step] || ["info", x.recommended_next_step];
+        return `<tr><td><b>${esc(x.name)}</b><br><span class="pmeta">${ends(x) || "No end substations listed"} · ${esc(x.utility)}${x.ercot_project ? " · ERCOT " + esc(x.ercot_project) : ""}${x.card_id ? ` · <button type="button" class="linkbtn" data-gocard="${esc(x.card_id)}">project card</button>` : ""}</span></td>
+          <td class="n">${esc(x.kv)}</td><td>${esc(x.project_type)}${x.upgrade_kind ? `<br><span class="pmeta">${esc(x.upgrade_kind)}</span>` : ""}${x.miles_new || x.miles_upgraded ? `<br><span class="pmeta">${x.miles_new ? esc(x.miles_new) + " mi new" : esc(x.miles_upgraded) + " mi upgraded"}</span>` : ""}</td>
+          <td>${esc(x.lifecycle)}</td><td class="n">${esc(x.in_service || "not set")}${x.in_service_kind === "actual" ? "<br><span class=\"pmeta\">actual</span>" : ""}</td>
+          <td>${esc(where(x))}</td><td><span class="rec ${cls}">${esc(lbl)}</span><br><span class="pmeta">${esc(x.recommendation_reason)}</span></td></tr>`; }).join("")
+      || `<tr><td colspan="7" class="pmeta">No lines match. Clear a filter.</td></tr>`}</tbody></table>`;
+    $("moreLines").hidden = list.length <= LS.shown;
+  }
+  [["lf-life", "life"], ["lf-kv", "kv"], ["lf-type", "type"]].forEach(([id, k]) => $(id).addEventListener("change", (e) => { LS[k] = e.target.value; LS.shown = 40; renderLines(); }));
+  $("lf-q").addEventListener("input", (e) => { LS.q = e.target.value.trim(); LS.shown = 40; renderLines(); });
+  $("moreLines").addEventListener("click", () => { LS.shown += 60; renderLines(); });
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest && e.target.closest("[data-gocard]");
+    if (!b) return;
+    showTab("t-watch"); state.win = "all"; state.stage = null; state.region = ""; state.q = ""; $("q").value = "";
+    state.open.add(b.dataset.gocard); renderLadder(); renderProjects();
+    const el = document.querySelector(`article.proj[data-id="${CSS.escape(b.dataset.gocard)}"]`); if (el) el.scrollIntoView({ block: "start" });
+  });
+  async function saveExport(file, name) {
+    const note = $("linesdlnote");
+    const dl = await claude.use("downloads");
+    if (!dl) { note.textContent = "Downloads aren't available in this view. Open the page on claude.ai."; return; }
+    try {
+      const r = await fetch("exports/" + file); if (!r.ok) throw new Error("missing");
+      note.textContent = ""; await dl.save({ filename: name, data: await r.blob() });
+    } catch (e) { note.textContent = e && e.code === "declined" ? "" : "Couldn't prepare the download. Try again from claude.ai."; }
+  }
+  $("linesdl").addEventListener("click", () => saveExport("k2-texas-lines.csv", "k2-texas-lines.csv"));
+  $("linesdlg").addEventListener("click", () => saveExport("k2-texas-lines.geojson", "k2-texas-lines.geojson"));
+  function phaseBlock(p) {
+    const xs = linesFor(p);
+    if (!xs.length) return "";
+    return `<dt>Phase 1</dt><dd><ul class="pins">${xs.map((x) => { const [cls, lbl] = REC[x.recommended_next_step] || ["info", ""];
+      return `<li><span class="rec ${cls}">${esc(lbl)}</span> ${esc(x.lifecycle)}${x.in_service ? ", in service " + esc(x.in_service) + (x.in_service_kind === "actual" ? "" : " (projected)") : ""} · ${esc(x.project_type)}${x.ercot_project ? " · ERCOT " + esc(x.ercot_project) : ""}<br><span class="pmeta">${esc(x.recommendation_reason)}</span></li>`; }).join("")}</ul></dd>`;
   }
 
   // ---------- landowners (weekly search, masked) ----------
@@ -945,7 +1058,7 @@ How to answer: plain English for someone new to the grid; short; lead with the a
   }
 
   // GIS bundle: the page zips the published export files (JSZip) and saves the zip through the downloads capability.
-  const GIS_FILES = ["README.txt", "k2-substations.geojson", "k2-substations.csv", "k2-study-areas.geojson", "k2-straight-lines.geojson",
+  const GIS_FILES = ["README.txt", "k2-texas-lines.csv", "k2-texas-lines.geojson", "k2-substations.geojson", "k2-substations.csv", "k2-study-areas.geojson", "k2-straight-lines.geojson",
     "k2-projects.csv", "k2-irp-pilot.csv", ["k2-line-watch.kml.xml", "k2-line-watch.kml"]];
   function loadJSZip() {
     if (window.JSZip) return Promise.resolve(window.JSZip);
@@ -976,7 +1089,7 @@ How to answer: plain English for someone new to the grid; short; lead with the a
     } finally { btn.disabled = false; }
   });
 
-  const TABS = [["t-watch", "p-watch"], ["t-land", "p-land"], ["t-irp", "p-irp"], ["t-help", "p-help"]];
+  const TABS = [["t-watch", "p-watch"], ["t-lines", "p-lines"], ["t-land", "p-land"], ["t-irp", "p-irp"], ["t-help", "p-help"]];
   function showTab(id) {
     for (const [t, panel] of TABS) {
       const on = t === id;

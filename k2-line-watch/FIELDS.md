@@ -34,6 +34,13 @@ project table, Google Earth file. Download from the page's "Data for GIS" sectio
 
 ## Fields phase 1 adds
 
+Built into the **Texas lines** tab and `web/exports/k2-texas-lines.csv` / `.geojson` (one row per line or new
+substation, 732 on Oct 20, 2026). Made by `data/build_catalog.py` from ERCOT's Transmission Project and
+Information Tracking report (TPIT, July 13, 2026 update: every planned ERCOT project with its end
+substations, counties, voltage, new and upgraded miles, status and in-service date), the Line Watch cards,
+and the HIFLD substation map for locations. Not in TPIT yet: construction start and MW capacity (TPIT gives
+transformer MVA only), so those stay blank until a source publishes them.
+
 | Field | Values |
 |---|---|
 | `project_type` | new line / upgrade (rebuild, reconductor, voltage upgrade) / new substation |
