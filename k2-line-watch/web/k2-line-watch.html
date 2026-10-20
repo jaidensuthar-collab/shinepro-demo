@@ -245,7 +245,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 
   <section class="feed" aria-labelledby="fh">
     <h2 id="fh">Latest signals</h2>
-    <p class="sub">What the line monitor found, checked twice each weekday. Only items that matter to K2 are kept.</p>
+    <p class="sub">What the line monitor found, checked every day at 7am and 5pm Central. Only items that matter to K2 are kept.</p>
     <div id="feed"><div class="empty">Signals will appear here once the watch list loads.</div></div>
     <button class="chip more" id="moreSig" hidden>Show more</button>
   </section>
@@ -258,7 +258,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 
   <section class="research" aria-labelledby="rh">
     <h2 id="rh">Research requests</h2>
-    <p class="sub">Questions that needed the web while live search was off. They are answered at the next scheduled check (7:45am and 12:45pm Central, weekdays).</p>
+    <p class="sub">Questions that needed the web while live search was off. They are answered at the next scheduled check (7am and 5pm Central, every day).</p>
     <div id="research"><div class="empty">No research requests yet.</div></div>
   </section>
   </div>
@@ -344,7 +344,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     <section>
       <h2>What this page is</h2>
       <p>K2 Renew buys land before the grid gets to it. Land near a new high-voltage line, and above all near the substations at each end, becomes worth much more once the line is built. This page lists the new lines that matter across the US, shows how far along each one is, says what K2 should do now, and lists the landowners near each line's end substations.</p>
-      <p>A line monitor checks the public sources twice every weekday (7:45am and 12:45pm Central) and adds anything new. The same items also go to the <b>K2 Watch</b> tab of the K2 Transmission Intel Plan sheet. Every Monday the landowner search reruns on every end substation, so new lines bring new landowners automatically.</p>
+      <p>A line monitor checks the public sources every day at 7am and 5pm Central and adds anything new; the Texas lines list is checked for a new ERCOT report at the same times. The same items also go to the <b>K2 Watch</b> tab of the K2 Transmission Intel Plan sheet. Every Monday the landowner search reruns on every end substation, so new lines bring new landowners automatically.</p>
     </section>
 
     <section>
@@ -813,7 +813,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 
   function renderSignals() {
     const list = [...state.signals].sort((a, b) => String(b.found).localeCompare(String(a.found)) || (a.importance === "High" ? -1 : 1));
-    if (!list.length) { $("feed").innerHTML = `<div class="empty">No signals yet. The monitor checks at 7:45am and 12:45pm Central on weekdays.</div>`; $("moreSig").hidden = true; return; }
+    if (!list.length) { $("feed").innerHTML = `<div class="empty">No signals yet. The monitor checks every day at 7am and 5pm Central.</div>`; $("moreSig").hidden = true; return; }
     $("feed").innerHTML = list.slice(0, state.sigShown).map((s) => `<div class="sig ${s.status === "New" ? "new" : ""}">
       <div class="when">${esc(s.found)}<br>${esc(s.importance)}</div>
       <div><div class="what"><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.what_happened)}</a></div>
@@ -941,7 +941,7 @@ How to answer: plain English for someone new to the grid; short; lead with the a
       execute: async ({ question } = {}) => {
         if (!db) throw new Error("The database is not available in this view.");
         await db.collection("research").add({ question: String(question).slice(0, 500), status: "queued", asked_at: new Date().toISOString().slice(0, 16).replace("T", " ") });
-        return "Queued. It will be answered at the next scheduled check (7:45am or 12:45pm Central, weekdays) and shown under Research requests.";
+        return "Queued. It will be answered at the next scheduled check (7am or 5pm Central, every day) and shown under Research requests.";
       } },
   ];
 
