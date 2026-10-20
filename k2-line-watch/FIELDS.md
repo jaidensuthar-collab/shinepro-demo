@@ -38,7 +38,8 @@ Built into the **Texas lines** tab and `web/exports/k2-texas-lines.csv` / `.geoj
 substation, 732 on Oct 20, 2026). Made by `data/build_catalog.py` from ERCOT's Transmission Project and
 Information Tracking report (TPIT, July 13, 2026 update: every planned ERCOT project with its end
 substations, counties, voltage, new and upgraded miles, status and in-service date), the Line Watch cards,
-and the HIFLD substation map for locations. Not in TPIT yet: construction start and MW capacity (TPIT gives
+and for substation locations: the Line Watch cards, hand-researched points from utility filings and maps
+(`data/sources/substation-locations.json`), the HIFLD substation map and OpenStreetMap (each point says how it was placed). Not in TPIT yet: construction start and MW capacity (TPIT gives
 transformer MVA only), so those stay blank until a source publishes them.
 
 | Field | Values |

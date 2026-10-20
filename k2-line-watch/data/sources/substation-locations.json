@@ -1,0 +1,1253 @@
+{
+ "about": "Hand-researched points (Oct 20, 2026) for end substations of Texas 345/765 kV lines that the Line Watch cards and HIFLD map don't place. Keys are names as ERCOT's TPIT writes them. Only exact and approx points are used by build_catalog.py; town and county entries are kept for reference.",
+ "stations": {
+  "Kingfisher": {
+   "county": "Cameron",
+   "lat": 26.1295,
+   "lon": -97.5815,
+   "confidence": "approx",
+   "basis": "PUC Docket 53727 order: new Kingfisher station on the west side of CR 315 (Casey Road) ~0.8 mi south of FM 510 near San Benito; placed 0.8 mi south of the Casey Rd/FM 510 intersection from OSM road data. Not yet mapped in OSM.",
+   "source": "https://www.aeptransmission.com/texas/LaPalma-Kingfisher/docs/Kingfisher-La%20Palma_Final%20Order_1-18-2023.pdf"
+  },
+  "MORLEY": {
+   "county": "Wharton",
+   "lat": 29.2455,
+   "lon": -96.2291,
+   "confidence": "county",
+   "basis": "No public site yet for CenterPoint's planned MORLEY 765 kV station; placed at the Wharton County centroid.",
+   "source": "https://www.openstreetmap.org/relation/1837773"
+  },
+  "Cruce": {
+   "county": "Jim Hogg",
+   "lat": 27.268,
+   "lon": -98.522,
+   "confidence": "approx",
+   "basis": "PUC orders place the future Cruce 345 kV station on the north side of SH 285 about 4 mi west of the SH 285/CR 109 intersection (~9-10 mi SE of Hebbronville); point measured 4 mi along SH 285 in OSM road data. Not yet mapped in OSM.",
+   "source": "https://interchange.puc.texas.gov/Documents/55151_314_1390792.PDF"
+  },
+  "Long Draw 345 kV": {
+   "county": "Borden",
+   "lat": 32.7213,
+   "lon": -101.63327,
+   "confidence": "exact",
+   "basis": "OSM 'Long Draw Substation' (Wind Energy Transmission Texas, 345 kV) in western Borden County; also an HIFLD 345 kV point at the same spot.",
+   "source": "https://www.openstreetmap.org/way/453310291"
+  },
+  "5400": {
+   "county": "Bexar",
+   "lat": 29.31216,
+   "lon": -98.31978,
+   "confidence": "exact",
+   "basis": "TPIT lists bus 5400 (Bexar) as the from-end of 'Rebuild Spruce to Pawnee' (to-bus 5725, Karnes), so 5400 is CPS's J.K. Spruce 345 kV switchyard; placed at OSM 'J. K. Spruce Switchyard' (CPS Energy, 345 kV) at Calaveras Lake.",
+   "source": "https://www.openstreetmap.org/way/342839479"
+  },
+  "Ramhorn Switch": {
+   "county": "Tarrant",
+   "lat": 33.018,
+   "lon": -97.473,
+   "confidence": "approx",
+   "basis": "PUC Docket 55067 order: Ramhorn Hill Switch is ~2 mi south of the US 287/SH 114 intersection near Rhome on the Hicks-Willow Creek 345 kV line; placed 2 mi south of that interchange. The filing says Wise County (just north of the Tarrant line), not Tarrant.",
+   "source": "https://interchange.puc.texas.gov/Documents/55067_1829_1363360.PDF"
+  },
+  "Ajo": {
+   "county": "Kenedy",
+   "lat": 27.09194,
+   "lon": -97.77427,
+   "confidence": "exact",
+   "basis": "OSM power=substation 'Ajo Switching Station' (AEP, 345 kV) south of Sarita in Kenedy County, matching AEP/ETT's 'Ajo Substation south of Sarita'.",
+   "source": "https://www.openstreetmap.org/way/174713049"
+  },
+  "Cattleman": {
+   "county": "Mitchell",
+   "lat": 32.30774,
+   "lon": -100.93811,
+   "confidence": "exact",
+   "basis": "Oncor's CCN Public Viewer endpoint layer gives the 'Cattleman' station point (Cattleman Retermination project). This fits Oncor's description of 0.8 mi west of FM 2836 / SH 163 in Mitchell County. The input lists Cattleman twice (Howard and Nolan, the counties of its lines); the station itself is in Mitchell County.",
+   "source": "https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer/3"
+  },
+  "Tango": {
+   "county": "Bee",
+   "lat": 28.57646,
+   "lon": -97.95348,
+   "confidence": "exact",
+   "basis": "OSM unnamed 345 kV power=substation 0.2 mi NE of FM 673 and ~12 mi SE of Pawnee, matching the Pawnee-Tango EA/CCN notice ('Tango Substation ... approximately 0.15-0.2 mile northeast of FM 673').",
+   "source": "https://www.openstreetmap.org/way/1095740610"
+  },
+  "Buck Canyon 345 kV": {
+   "county": "Borden",
+   "lat": 32.6879,
+   "lon": -101.4257,
+   "confidence": "county",
+   "basis": "WETT's Buck Canyon is a new 345 kV station in Borden County (PUC construction report, Docket 57477) with no published site; placed at the Borden County centroid.",
+   "source": "https://interchange.puc.texas.gov/Documents/57477_114_1489706.PDF"
+  },
+  "Mulberry Creek": {
+   "county": "Jones",
+   "lat": 32.524,
+   "lon": -99.82254,
+   "confidence": "exact",
+   "basis": "OSM 'Mulberry Creek Substation' (AEP, 345/138 kV) northwest of Abilene; HIFLD 'ABILENE MULBERRY CREEK' (Jones, 345 kV) at the same spot.",
+   "source": "https://www.openstreetmap.org/way/171734088"
+  },
+  "5068": {
+   "county": "Wilson",
+   "lat": 29.234,
+   "lon": -97.9608,
+   "confidence": "town",
+   "basis": "TPIT 65837 names bus 5068 as the new CPS Cachena 345 kV switchyard (looped into Elm Creek-New Hickory); a construction listing gives its site as Stockdale, TX 78160, so it is placed at Stockdale (Wilson County) only.",
+   "source": "https://projects.constructconnect.com/details/7114216-cachena-345kv-switchyard&find_loc=texas-78160"
+  },
+  "Mantle": {
+   "county": "Hidalgo",
+   "lat": 26.353,
+   "lon": -98.2164,
+   "confidence": "county",
+   "basis": "No public location found for AEP Texas's new Mantle 345 kV station; placed at the Hidalgo County centroid.",
+   "source": "https://www.openstreetmap.org/relation/1828367"
+  },
+  "Bynum Switch": {
+   "county": "Hill",
+   "lat": 31.9694,
+   "lon": -97.004,
+   "confidence": "town",
+   "basis": "No public location for the new Oncor Bynum 345 kV Switch; placed at the town of Bynum (Hill County). Its TPIT buses include Lone Star bus 68090, so it may sit next to LST's Sam Switching Station ~5 mi south (31.897,-97.018), where OSM shows a new unnamed substation; not confirmed.",
+   "source": "https://www.openstreetmap.org/relation/6571615"
+  },
+  "WAParish/Whaley": {
+   "county": "Fort Bend",
+   "lat": 29.4809,
+   "lon": -95.62368,
+   "confidence": "exact",
+   "basis": "Compound end point; placed at the first name, CenterPoint's W. A. Parish 345 kV station (OSM 'W. A. Parish Station (345 kV)'; HIFLD PARISH, Fort Bend, 345 kV). Whaley not located.",
+   "source": "https://www.openstreetmap.org/way/20875804"
+  },
+  "CEHE_NewSub": {
+   "county": "Harris",
+   "lat": null,
+   "lon": null,
+   "confidence": "not_found",
+   "basis": "Placeholder name for an unnamed new CenterPoint substation (to King/Greens Bayou); not identifiable.",
+   "source": ""
+  },
+  "Gunter": {
+   "county": "Collin",
+   "lat": 33.4499,
+   "lon": -96.7446,
+   "confidence": "town",
+   "basis": "Oncor Gunter 345/138 kV Switch (ERCOT 78363) not found in OSM/HIFLD; placed at the town of Gunter (Grayson County, just north of the Collin line). It is ~16 mi from Collin Switch per ERCOT's Gunter-Collin 138 kV line, so it may lie on either side of the county line.",
+   "source": "https://www.ercot.com/files/docs/2026/05/07/5.-EIR_Recommendation-Oncor-Combined-Set-1-and-Set-2-North-and-Central-Texas-Reliability-Projects-RPG-May-2026.pdf"
+  },
+  "Claytonville": {
+   "county": "Fisher",
+   "lat": 32.62797,
+   "lon": -100.54544,
+   "confidence": "exact",
+   "basis": "OSM 'Claytonville Substation' (NextEra Energy, 345/138 kV) near Claytonville in Fisher County.",
+   "source": "https://www.openstreetmap.org/way/632013150"
+  },
+  "Wags": {
+   "county": "Milam",
+   "lat": 30.7627,
+   "lon": -96.9982,
+   "confidence": "county",
+   "basis": "No public location found for the new Oncor Wags 345 kV Switch (TPIT buses 3377/3704/3805); placed at the Milam County centroid.",
+   "source": "https://www.openstreetmap.org/relation/1837641"
+  },
+  "Notus Switch": {
+   "county": "Navarro",
+   "lat": 32.028,
+   "lon": -96.4985,
+   "confidence": "county",
+   "basis": "No public location for the new Oncor Notus 345 kV Switch (TPIT 87804, Navarro County; the Old Country-Notus line is listed under Ellis). TPIT buses include LST bus 68091, which suggests it is next to LST's Navarro Switching Station (31.9645,-96.5186), but this is not confirmed; placed at the Navarro County centroid.",
+   "source": "https://www.openstreetmap.org/relation/1837710"
+  },
+  "Limestone": {
+   "county": "Limestone",
+   "lat": 31.42377,
+   "lon": -96.24711,
+   "confidence": "exact",
+   "basis": "TPIT's from-end 'Limestone' (Limestone County, Singleton-Jewett loop project) taken as the Limestone 345/138 kV station at the Limestone generating plant; OSM 'Limestone Station' (CenterPoint, 345/138 kV), HIFLD 345 kV point at the same spot.",
+   "source": "https://www.openstreetmap.org/way/100353514"
+  },
+  "Limmer (LCRA TSC)": {
+   "county": "Williamson",
+   "lat": 30.54527,
+   "lon": -97.52165,
+   "confidence": "town",
+   "basis": "Doubtful match, kept off campaigns until checked: ERCOT 25RPG009: Limmer 345 kV (LCRA TSC) is co-located with Oncor's 138 kV Teal Switch in east Hutto, ~3.3 mi west of the planned Muscovy Switch (0.7 mi NE of FM 3349/US 79); placed at an unnamed OSM 345/138 kV substation 0.6 mi south of Limmer Loop that fits that description. The OSM feature carries no name.",
+   "source": "https://www.ercot.com/files/docs/2026/05/22/5.3-25RPG009-Oncor-and-LCRA-TSC-Muscovy-and-Voss-Lake-345_138-kV-Regional-Planning-Group-RPG-Project.pdf"
+  },
+  "Greene Rd Switch": {
+   "county": "Dallas",
+   "lat": 32.589,
+   "lon": -96.6853,
+   "confidence": "town",
+   "basis": "New Oncor Greene Road 345/138 kV Switch (rebuild of Green Road 138 kV, bus 3069) is ~3.0 mi from Wilmer Switch per ERCOT 25RPG040, and Greene Road runs just NW of Wilmer; placed at the town of Wilmer only.",
+   "source": "https://www.ercot.com/files/docs/2026/05/07/5.-EIR_Recommendation-Oncor-Combined-Set-1-and-Set-2-North-and-Central-Texas-Reliability-Projects-RPG-May-2026.pdf"
+  },
+  "Tower": {
+   "county": "Bell",
+   "lat": 31.0432,
+   "lon": -97.3305,
+   "confidence": "approx",
+   "basis": "ERCOT 25RPG041: new Tower Switch cuts into the Salado-Knob Creek 345 kV line ~1.2 mi from Knob Creek (12.4 mi from Salado); placed 1.2 mi along that line (OSM way 173163012) from OSM 'Knob Creek Switching Station'.",
+   "source": "https://www.ercot.com/files/docs/2026/04/09/9.-EIR-Status-Update-Oncor-Combined-Set-1-Set-2-North-Central-South-Central-TX-Reliability-Project_RPG-Apr_2026_Final.pdf"
+  },
+  "Blue Goose": {
+   "county": "Pecos",
+   "lat": 31.4254,
+   "lon": -103.4952,
+   "confidence": "town",
+   "basis": "AEP says Oncor's Blue Goose Substation (fka Toyah Creek) is 'located east of Pecos'; placed at the city of Pecos only. It is likely in Reeves County, not Pecos County; 'Pecos' in ERCOT's county field may refer to the city.",
+   "source": "https://aeptransmission.com/texas/BlueGoose-Creosote/"
+  },
+  "Navarro": {
+   "county": "Hill",
+   "lat": 31.96453,
+   "lon": -96.51863,
+   "confidence": "exact",
+   "basis": "Lone Star Transmission's Navarro station = OSM 'Navarro Switching Station' (NextEra Energy, 345 kV) and an HIFLD 345 kV point; it is in Navarro County, not Hill (TPIT lists Hill/Navarro for the two ends of the Liberty-Navarro line).",
+   "source": "https://www.openstreetmap.org/way/454919461"
+  },
+  "Creosote": {
+   "county": "Reeves",
+   "lat": 31.2421,
+   "lon": -103.0653,
+   "confidence": "town",
+   "basis": "AEP says its Creosote Substation will be 'west of Coyanosa' and the site is not yet chosen (east or west option); placed at Coyanosa (just across the line in Pecos County) only.",
+   "source": "https://aeptransmission.com/texas/BlueGoose-Creosote/docs/BlueGoose-Creosote_FactSheet.pdf"
+  },
+  "Water Valley Substation": {
+   "county": "Tom Green",
+   "lat": 31.6677,
+   "lon": -100.717,
+   "confidence": "town",
+   "basis": "LCRA TSC's new Water Valley 345 kV substation (TPIT 107132, generation interconnection) has no published site; placed at the community of Water Valley, Tom Green County.",
+   "source": "https://www.openstreetmap.org/node/151656205"
+  },
+  "Fisher Road Switch": {
+   "county": "Wichita",
+   "lat": 33.88656,
+   "lon": -98.42932,
+   "confidence": "exact",
+   "basis": "OSM 'Fisher Road Substation' (Oncor, 345/138 kV) east of Wichita Falls; HIFLD 345 kV point at the same spot. The new Hammon Ranch switch (TPIT 105012) is on the Bowman-Fisher Road line and is not located.",
+   "source": "https://www.openstreetmap.org/way/171321012"
+  },
+  "Welsh HVDC": {
+   "county": "Titus",
+   "lat": 33.0583,
+   "lon": -94.84432,
+   "confidence": "exact",
+   "basis": "OSM 'East DC-Tie' (AEP back-to-back HVDC converter, 345 kV) at the Welsh plant site; the Welsh plant 345 kV switchyard is 0.4 mi east.",
+   "source": "https://www.openstreetmap.org/way/165669465"
+  },
+  "Raider": {
+   "county": "Fort Bend",
+   "lat": 29.5112,
+   "lon": -95.7807,
+   "confidence": "county",
+   "basis": "No public location found for CenterPoint's Raider substation (capacitor additions, TPIT 110084C-E); placed at the Fort Bend County centroid.",
+   "source": "https://www.openstreetmap.org/relation/1560525"
+  },
+  "Nevill Road": {
+   "county": "Upton",
+   "lat": 31.372,
+   "lon": -102.0386,
+   "confidence": "county",
+   "basis": "Garland Power & Light's existing Nevill Road 345 kV station on the Bakersfield-North McCamey line is not named in OSM/HIFLD and no site description was found; placed at the Upton County centroid.",
+   "source": "https://interchange.puc.texas.gov/Documents/57441_46_1492532.PDF"
+  },
+  "Naismith": {
+   "county": "San Patricio",
+   "lat": 27.93501,
+   "lon": -97.24813,
+   "confidence": "exact",
+   "basis": "OSM 'Naismith Substation' (345/138 kV) east of Gregory, matching AEP's Naismith project area (City of Gregory, San Patricio County). ERCOT gave no county.",
+   "source": "https://www.openstreetmap.org/way/1448341706"
+  },
+  "Lon Hill": {
+   "county": "Nueces",
+   "lat": 27.84479,
+   "lon": -97.61617,
+   "confidence": "exact",
+   "basis": "OSM 'Lon Hill Substation' (AEP, 345/138/69 kV) at Calallen, Corpus Christi. ERCOT gave no county; this is Nueces County.",
+   "source": "https://www.openstreetmap.org/way/174682093"
+  },
+  "San Pedro": {
+   "county": "",
+   "lat": null,
+   "lon": null,
+   "confidence": "not_found",
+   "basis": "Proposed AEP Texas San Pedro 345 kV station (loop of Lon Hill-Grissom, line to Chalcedony); no public location and ERCOT gives no county (probably Nueces/San Patricio area).",
+   "source": ""
+  },
+  "7040": {
+   "county": "Travis",
+   "lat": 30.25109,
+   "lon": -97.48718,
+   "confidence": "exact",
+   "basis": "TPIT 91312 'Austrop - Garfield' runs bus 7040 (Travis) to 7048 (Bastrop), so 7040 is LCRA's Austrop 345/138 kV substation; placed at OSM 'Austrop Substation' (LCRA), also HIFLD AUSTROP (Travis, 345 kV).",
+   "source": "https://www.openstreetmap.org/way/127245722"
+  },
+  "Gascondades": {
+   "county": "Mitchell",
+   "lat": null,
+   "lon": null,
+   "confidence": "not_found",
+   "basis": "LCRA's Gasconades Creek 345 kV station (Morgan Creek/Cattleman-Gasconades line, which continues toward Divide in Coke County and Twin Buttes) could not be found in OSM, HIFLD or filings; its county is unconfirmed.",
+   "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/cattleman-gasconades-retermination-345kv.html"
+  },
+  "Bitter Creek and Champion Creek": {
+   "county": "Mitchell",
+   "lat": 32.2719,
+   "lon": -100.3988,
+   "confidence": "county",
+   "basis": "Compound end point of the Cattleman-Bitter Creek/Champion Creek line; LCRA's Bitter Creek 345 kV switching station is in Nolan County per a 2003 PUC filing, so placed at the Nolan County centroid, not Mitchell. Champion Creek was not located (OSM's Champion Wind Farm 345 kV substation is at 32.399,-100.648 but is not confirmed as it).",
+   "source": "https://interchange.puc.texas.gov/Documents/27131_6_384932.PDF"
+  },
+  "Rattlesnake Road": {
+   "county": "McLennan",
+   "lat": 31.47351,
+   "lon": -96.96038,
+   "confidence": "exact",
+   "basis": "OSM 'Rattlesnake Road Substation' (345 kV) next to Sandy Creek Energy Station, on the Lake Creek-Jewett 345 kV line.",
+   "source": "https://www.openstreetmap.org/way/125920534"
+  },
+  "Elkton": {
+   "county": "Smith",
+   "lat": 32.3403,
+   "lon": -95.2564,
+   "confidence": "county",
+   "basis": "Existing Oncor Elkton 345/138 kV Switch (to be rebuilt 'at a nearby location' per ERCOT 25RPG041) is not named in OSM/HIFLD; placed at the Smith County centroid. An unnamed OSM 345 kV substation at 32.2775,-95.2576 SE of Tyler is a candidate but is not confirmed.",
+   "source": "https://www.ercot.com/files/docs/2026/05/22/5.5-25RPG041_25RPG043-Combined-Oncor-Set-1-North-Central-and-South-Central.pdf"
+  },
+  "Rosebud": {
+   "county": "Milam",
+   "lat": 30.7627,
+   "lon": -96.9982,
+   "confidence": "county",
+   "basis": "No public location found for the new Oncor Rosebud 345 kV Switch (cuts into the Gibson-Littlepond area 345 kV lines per TPIT buses); placed at the Milam County centroid. The town of Rosebud is just north in Falls County.",
+   "source": "https://www.openstreetmap.org/relation/1837641"
+  },
+  "Bob White": {
+   "county": "Bell",
+   "lat": 31.0082,
+   "lon": -97.4314,
+   "confidence": "county",
+   "basis": "No public location found for the new Oncor Bob White 345 kV Switch; placed at the Bell County centroid.",
+   "source": "https://www.openstreetmap.org/relation/1836995"
+  },
+  "Candela": {
+   "county": "Cameron",
+   "lat": 26.1291,
+   "lon": -97.4134,
+   "confidence": "county",
+   "basis": "No public location found for AEP Texas's proposed Candela 345 kV station (Ciruela-Candela, Candela-Wren); placed at the Cameron County centroid.",
+   "source": "https://www.openstreetmap.org/relation/1828370"
+  },
+  "Mhos 345 kV": {
+   "county": "Scurry",
+   "lat": 32.90681,
+   "lon": -101.008,
+   "confidence": "exact",
+   "basis": "OSM 'Mhos Substation' (WETT, 345 kV switching, 2024), ~3.2 mi north of Oncor's Dermott Switch, consistent with the 3.33-mile Mhos-Dermott line in TPIT.",
+   "source": "https://www.openstreetmap.org/way/1454572836"
+  },
+  "7048": {
+   "county": "Bastrop",
+   "lat": 30.14231,
+   "lon": -97.54591,
+   "confidence": "exact",
+   "basis": "TPIT 104635 'Garfield - Lytton Springs' runs bus 7048 (Bastrop) to 9074 (Caldwell), so 7048 is the Garfield 345/138 kV substation; placed at OSM 'Garfield Substation' (345/138 kV), also HIFLD GARFIELD (Bastrop, 345 kV).",
+   "source": "https://www.openstreetmap.org/way/173298395"
+  },
+  "Hick Switch": {
+   "county": "Tarrant",
+   "lat": 32.90444,
+   "lon": -97.38395,
+   "confidence": "exact",
+   "basis": "TPIT spelling of Oncor's Hicks Switch; OSM 'Hicks Substation' (Oncor, 345/138 kV) in north Fort Worth, HIFLD HICKS (Tarrant, 345 kV).",
+   "source": "https://www.openstreetmap.org/way/454696267"
+  },
+  "Pin Oak Switch": {
+   "county": "Freestone",
+   "lat": 31.81986,
+   "lon": -96.05755,
+   "confidence": "exact",
+   "basis": "ERCOT 25RPG004 scope: the rebuilt Big Brown 345 kV Switch 'will be renamed as Pin Oak Switch'; placed at OSM 'Big Brown Station' (Oncor, 345 kV), also HIFLD BIG BROWN (Freestone).",
+   "source": "https://www.ercot.com/files/docs/2025/04/28/EIR_Scope_Oncor_Southern_DFW_Load_Interconnection_Project_-_RPG_April_2025.pdf"
+  },
+  "CTT Cross Substation (existing 345 kV; new 765 kV)": {
+   "county": "Hall",
+   "lat": 34.34392,
+   "lon": -100.89453,
+   "confidence": "exact",
+   "basis": "OSM 'Cross Substation' (LS Power/Cross Texas, 345 kV) near Turkey; HIFLD CROSS (Hall, 345 kV) at the same spot.",
+   "source": "https://www.openstreetmap.org/way/453794429"
+  },
+  "Loop Nine Switch": {
+   "county": "Dallas",
+   "lat": 32.55174,
+   "lon": -96.78384,
+   "confidence": "town",
+   "basis": "Doubtful match, kept off campaigns until checked: Unnamed OSM 345/138 kV transmission substation next to Loop 9 in south Dallas County, 3.4 mi west of Watermill Switch and 3.5 mi east of DeSoto Switch, matching ERCOT's ~4.0-mi Loop Nine-Watermill 345 kV and ~3.8-mi DeSoto-Loop Nine 138 kV lines; the name is not confirmed by a source.",
+   "source": "https://www.openstreetmap.org/way/1466130274"
+  },
+  "Farmland": {
+   "county": "Lynn",
+   "lat": 33.04046,
+   "lon": -101.68562,
+   "confidence": "town",
+   "basis": "Doubtful match, kept off campaigns until checked: Unnamed OSM 345 kV transmission substation in eastern Lynn County at the north end of the ex-Sharyland 345 kV line running ~22 mi from WETT's Long Draw, matching TPIT's 22.8-mile Farmland-Long Draw line; the name is not confirmed by a source.",
+   "source": "https://www.openstreetmap.org/way/1021855839"
+  },
+  "Old Country Switch": {
+   "county": "Ellis",
+   "lat": 32.261,
+   "lon": -96.907,
+   "confidence": "approx",
+   "basis": "PUC Docket 52455 notice: Old Country Switch is on the Venus-Navarro 345 kV line ~2 mi west of I-35E and ~0.3 mi east of FM 876; placed where the OSM 345 kV line is 0.3 mi east of FM 876 and ~2 mi from I-35E. Not mapped as a substation in OSM.",
+   "source": "https://interchange.puc.texas.gov/Documents/52455_2_1158686.DOCX"
+  },
+  "TNP One": {
+   "county": "Robertson",
+   "lat": 31.09108,
+   "lon": -96.69361,
+   "confidence": "exact",
+   "basis": "OSM 'TNP One Substation' (345 kV) beside the Twin Oaks Power Station (old name TNP One) near Bremond.",
+   "source": "https://www.openstreetmap.org/way/173222711"
+  },
+  "Fayetteville Power Plant Yard 2": {
+   "county": "Fayette",
+   "lat": 29.91346,
+   "lon": -96.75604,
+   "confidence": "exact",
+   "basis": "OSM 'Fayette Plant #2 Substation' (LCRA, 345 kV) at the Fayette Power Project; HIFLD 'FAYETTE PLANT #2' (Fayette, 345 kV).",
+   "source": "https://www.openstreetmap.org/way/510838837"
+  },
+  "Valley South Switch": {
+   "county": "Lamar",
+   "lat": 33.61394,
+   "lon": -96.37312,
+   "confidence": "exact",
+   "basis": "OSM 'Valley South Substation' (Oncor, 345 kV) ~1 mi south of Valley Switching Station near Savoy; this is in Fannin County, not Lamar (Lamar is the Paris Switch end of the line).",
+   "source": "https://www.openstreetmap.org/way/171694580"
+  },
+  "El Puma": {
+   "county": "Cameron",
+   "lat": 26.1029,
+   "lon": -97.479,
+   "confidence": "county",
+   "basis": "New AEP 'Puma' 765/345 kV station (ERCOT RGV System Improvement EIR, 26RPG009). No public site description or map coordinates were found; county from ERCOT TPIT; point is the Cameron County centroid.",
+   "source": "https://www.ercot.com/files/docs/2026/07/17/15.-EIR_SCOPE_AEPSC-Rio_Grand_Valley_System_Improvement_Project_July_2026_RPG_Final.pdf"
+  },
+  "South Watermill 765 kV Switch": {
+   "county": "Ellis",
+   "lat": 32.469,
+   "lon": -96.706,
+   "confidence": "town",
+   "basis": "Doubtful match, kept off campaigns until checked: Oncor bought land on Farrar Road (north Ellis County, near Palmer) for a new 765/345 kV substation and switch near Stainback; placed at the middle of Farrar Road (OSM extent 32.465-32.474, -96.715 to -96.696). No source found that uses the name 'South Watermill' for this site, so the link is inferred.",
+   "source": "https://www.businesswire.com/news/home/20260326178579/en/Oncor-Electric-Acquires-Key-Land-in-Ellis-County-for-765-kV-Substation-Project"
+  },
+  "Theory": {
+   "county": "Deaf Smith",
+   "lat": 34.96599,
+   "lon": -102.60214,
+   "confidence": "exact",
+   "basis": "Oncor's CCN Public Viewer endpoint layer gives the 'Theory' station point (Deaf Smith-Theory-Aurelius, Docket 59980). This fits the filing: about 11.3 mi SW of US 385 / RR 1057, with the Aurelius POI 475 ft to the NW.",
+   "source": "https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer/3"
+  },
+  "Oncor's ODESEHV2_5 345 kV station": {
+   "county": "Ector",
+   "lat": 31.83513,
+   "lon": -102.32794,
+   "confidence": "exact",
+   "basis": "ODESEHV2_5 is Oncor's Odessa EHV 345 kV bus; placed at the OSM power=substation relation 'Odessa EHV Substation' (Oncor, 345/138 kV), Ector County.",
+   "source": "https://www.openstreetmap.org/relation/6709972"
+  },
+  "Sandlake": {
+   "county": "Ward",
+   "lat": 31.5105,
+   "lon": -103.46451,
+   "confidence": "exact",
+   "basis": "OSM power=substation 'Sand Lake Switching Station' (Oncor, 345/138 kV), about 6 mi NE of Pecos as the PUC describes. It is just across the Pecos River in Ward County; ERCOT's 'Reeves' is the county of the Riverton-Sand Lake line.",
+   "source": "https://www.openstreetmap.org/way/1006103059"
+  },
+  "Celtic Green": {
+   "county": "Wheeler",
+   "lat": 35.21594,
+   "lon": -100.28101,
+   "confidence": "approx",
+   "basis": "ERCOT: CTT's new Celtic Green 765/345 kV substation cuts into the existing Gray-Tesla 345 kV double-circuit line about 39 mi from Gray. Placed 39 mi along the OSM geometry of that line (LS Power way 453794445) from Gray. The error could pass 2 mi if ERCOT's 39 mi is a straight-line figure.",
+   "source": "https://www.ercot.com/files/docs/2026/07/17/13.-EIR_Scope_Combined-AEPSC-Panhandle-Project-and-CTT-Panhandle-Reliability-Transmission-Plan-Project_RPG-July-2026.pdf"
+  },
+  "Exchange Switch": {
+   "county": "Tarrant",
+   "lat": 32.95803,
+   "lon": -97.30218,
+   "confidence": "town",
+   "basis": "Doubtful match, kept off campaigns until checked: Oncor/ERCOT put the new Exchange 345/138 kV switch adjacent to the Alliance 345 kV substation, SE of IH-35W and SH-170; placed on an unnamed OSM power=substation 0.24 mi ENE of OSM 'Alliance Substation' (32.9567,-97.3060).",
+   "source": "https://www.ercot.com/files/docs/2022/08/08/12%20Roanoke%20Area%20Upgrades%20RPG%20Project.pdf"
+  },
+  "Tesoro": {
+   "county": "Midland",
+   "lat": 31.8504,
+   "lon": -102.2851,
+   "confidence": "approx",
+   "basis": "Oncor: existing Tesoro Switch is about 1.5 mi SE of the IH-20 / SH Loop 338 interchange (OSM geometry: 31.8658,-102.3032) in Midland County; point offset 1.5 mi SE from that interchange; not found as a mapped substation.",
+   "source": "https://www.oncor.com/content/dam/oncorwww/documents/about-us/transmission-system/current-trasmission-line-projects/reiter-switch-tesoro-switch/Reiter%20Switch%20-%20Tesoro%20Switch%20OnePager.pdf"
+  },
+  "Buck canyon 345 kV": {
+   "county": "Borden",
+   "lat": 32.724,
+   "lon": -101.633,
+   "confidence": "approx",
+   "basis": "WETT's Docket 59199 EA puts Buck Canyon Station 0.1 mi east of FM 1054 S/Vealmoor Rd and 0.2 mi north of the existing Long Draw switching station (OSM 32.7211,-101.6330); offset 0.2 mi north of Long Draw.",
+   "source": "https://interchange.puc.texas.gov/Documents/59199_2_1579927.PDF"
+  },
+  "Pitchfork 345 kV": {
+   "county": "Dickens",
+   "lat": 33.77494,
+   "lon": -100.87854,
+   "confidence": "exact",
+   "basis": "OSM power=substation 'Pitchfork Switchyard' (tagged construction=yes), matching WETT's new Pitchfork 345 kV station in Dickens County.",
+   "source": "https://www.openstreetmap.org/way/1490401522"
+  },
+  "Chalybe": {
+   "county": "Cameron",
+   "lat": 25.96819,
+   "lon": -97.37513,
+   "confidence": "approx",
+   "basis": "Chalybe is AEP's renamed Union Carbide 138 kV substation (OSM 'Union Carbide Substation', AEP, 25.9682,-97.3751), about 1.2 mi from Palmito. ERCOT calls for expanding it with a 345 kV ring bus, but Sharyland's filing says AEP had considered other sites, one about 500 ft from Palmito, so the 345 kV yard may be up to about 1 mi away.",
+   "source": "https://interchange.puc.texas.gov/Documents/58408_22_1540204.PDF"
+  },
+  "Herndon": {
+   "county": "Milam",
+   "lat": 30.7912,
+   "lon": -96.9844,
+   "confidence": "county",
+   "basis": "New Oncor Herndon 345 kV switch (ERCOT 99138); no public location description found and no named OSM/HIFLD substation; point is the Milam County centroid.",
+   "source": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2023_Gazetteer/2023_Gaz_counties_national.zip"
+  },
+  "Concho River": {
+   "county": "Concho",
+   "lat": 31.3189,
+   "lon": -99.8636,
+   "confidence": "county",
+   "basis": "New LCRA TSC Concho River 345 kV substation (ERCOT 107128); not on OSM/HIFLD by name and no location description found; point is the Concho County centroid.",
+   "source": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2023_Gazetteer/2023_Gaz_counties_national.zip"
+  },
+  "Highline Substation": {
+   "county": "Bastrop",
+   "lat": 30.1008,
+   "lon": -97.3106,
+   "confidence": "county",
+   "basis": "New LCRA TSC Highline 345 kV substation (ERCOT 107130); not on OSM/HIFLD by name and no location description found; point is the Bastrop County centroid.",
+   "source": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2023_Gazetteer/2023_Gaz_counties_national.zip"
+  },
+  "NEWSUB": {
+   "county": "Harris",
+   "lat": null,
+   "lon": null,
+   "confidence": "not_found",
+   "basis": "Placeholder for a new CenterPoint substation (NEWSUB to Jordan/King, ERCOT 110090A); no site identified.",
+   "source": null
+  },
+  "King/Greens Bayou": {
+   "county": "Harris",
+   "lat": 29.91534,
+   "lon": -95.21631,
+   "confidence": "exact",
+   "basis": "Placed at the first-named station, King: OSM power=substation 'King Substation' (CenterPoint, 345 kV), the same point as HIFLD 'KING REIT' (345 kV). Greens Bayou 345 kV (OSM 29.8185,-95.2183) is the other station, 6.7 mi south.",
+   "source": "https://www.openstreetmap.org/way/102326939"
+  },
+  "Pathfinder 345 kV Switch": {
+   "county": "Freestone",
+   "lat": 31.7017,
+   "lon": -96.145,
+   "confidence": "county",
+   "basis": "Oncor's Piedra Solar interconnection agreement puts the Pathfinder Switch (345 kV ring bus) in Freestone County, on the Navarro Switch (LST) to Limestone SES 345 kV line, but redacts the exact site as CEII; point is the Freestone County centroid.",
+   "source": "https://interchange.puc.texas.gov/Documents/35077_2310_1558933.PDF"
+  },
+  "Odessa EHV": {
+   "county": "Ector",
+   "lat": 31.83513,
+   "lon": -102.32794,
+   "confidence": "exact",
+   "basis": "OSM power=substation relation 'Odessa EHV Substation' (Oncor, 345/138 kV) in Ector County.",
+   "source": "https://www.openstreetmap.org/relation/6709972"
+  },
+  "Wolf": {
+   "county": "Ward",
+   "lat": 31.6018,
+   "lon": -102.9328,
+   "confidence": "exact",
+   "basis": "OSM power=substation 'Wolf Switching Station' (Oncor, 345/138 kV), the Wolf end of the Odessa EHV-Moss/Wolf 345 kV line; it lies in Ward County (ERCOT gave no county).",
+   "source": "https://www.openstreetmap.org/way/1006561811"
+  },
+  "Possum Trot": {
+   "county": "McLennan",
+   "lat": 31.5496,
+   "lon": -97.2015,
+   "confidence": "county",
+   "basis": "Existing Oncor Possum Trot 345 kV switch (ERCOT bus 3791), about 6.1 mi of line from Lake Hall and 9.6 mi from Tradinghouse. No named mapped substation or site description was found; point is the McLennan County centroid.",
+   "source": "https://www.ercot.com/files/docs/2026/05/07/6.-EIR_Recommendation_Oncor_Combined-Set_1_Set_2_North_Central_South_Central_TX_Reliability_Project_Group2_RPG-May_2026.pdf"
+  },
+  "Nova Prime 345 kV": {
+   "county": "Kent",
+   "lat": 33.33318,
+   "lon": -100.96018,
+   "confidence": "exact",
+   "basis": "OSM power=substation 'Nova Prime Substation' (Wind Energy Transmission Texas, 345 kV), Kent County.",
+   "source": "https://www.openstreetmap.org/way/1490401506"
+  },
+  "Limmer (LCRA)": {
+   "county": "Williamson",
+   "lat": 30.54531,
+   "lon": -97.52187,
+   "confidence": "town",
+   "basis": "Doubtful match, kept off campaigns until checked: ERCOT/Oncor put LCRA's 345 kV Limmer substation together with Oncor's 138 kV Teal switch, about 3.3 mi west of the planned Muscovy switch (0.7 mi NE of FM 3349 / US 79). Placed on an unnamed OSM 345/138 kV power=substation that fits that description, 3.6 mi east of Oncor's Hutto switch.",
+   "source": "https://www.ercot.com/files/docs/2025/07/28/EIR-Oncor-and-LCRA-TSC-Muscovy-Voss-_StatusUpdate_July2025_RPG.pdf"
+  },
+  "Palmito": {
+   "county": "Cameron",
+   "lat": 25.98456,
+   "lon": -97.37989,
+   "confidence": "exact",
+   "basis": "OSM power=substation 'Palmito Substation' (Sharyland Utilities), north of the Port of Brownsville in Cameron County.",
+   "source": "https://www.openstreetmap.org/way/487061712"
+  },
+  "Navarro Switch": {
+   "county": "Navarro",
+   "lat": 31.96399,
+   "lon": -96.518,
+   "confidence": "exact",
+   "basis": "OSM power=substation 'Navarro Switching Station' (NextEra Energy, i.e. Lone Star Transmission, 345 kV), Navarro County.",
+   "source": "https://www.openstreetmap.org/way/454919461"
+  },
+  "Liberty": {
+   "county": "Hill",
+   "lat": 31.74338,
+   "lon": -96.88696,
+   "confidence": "exact",
+   "basis": "Lone Star's existing Liberty Station is at 116 CR 3274, Mount Calm, about 1 mi SW of FM 339 & N 1st St (Hill County); an unnamed OSM 345 kV power=substation sits 0.3 mi from that point. The input lists Liberty twice (Hill and Navarro); the station is in Hill County, and the Navarro entry is just the far end of the Liberty-Navarro line.",
+   "source": "https://www.co.hill.tx.us/upload/page/12665/Lone%20Star%20Tansmission/Lonestar%20transmission.pdf"
+  },
+  "Toyah Creek": {
+   "county": "Reeves",
+   "lat": 31.3084,
+   "lon": -103.7127,
+   "confidence": "county",
+   "basis": "Planned Toyah Creek 345 kV switch (other end of the AEP TNC Creosote line). Not on OSM/HIFLD and no site description found. ERCOT's 2024 Delaware Basin study listed it under Ward County, while the TPIT gives Reeves; point is the Reeves County centroid.",
+   "source": "https://www.ercot.com/files/docs/2024/11/22/10-3-2-oncor-delaware-basin-stages-3-and-4-project.pdf"
+  },
+  "WAParish/Wolf": {
+   "county": "Fort Bend",
+   "lat": 29.48078,
+   "lon": -95.62422,
+   "confidence": "exact",
+   "basis": "Placed at the first-named station, W. A. Parish: OSM power=substation 'W. A. Parish Station (345 kV)' (CenterPoint), Fort Bend County. 'Wolf' is the other existing station on that line position and was not located separately.",
+   "source": "https://www.openstreetmap.org/way/20875804"
+  },
+  "Greene Switch": {
+   "county": "Dallas",
+   "lat": 32.5992,
+   "lon": -96.72987,
+   "confidence": "exact",
+   "basis": "Oncor's CCN Public Viewer endpoint layer gives the 'Greene Road Switch' point (Greene-Wilmer 345 kV project), about 2.8 mi north of Watermill near Greene Rd, Lancaster, Dallas County.",
+   "source": "https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer/3"
+  },
+  "NewSub": {
+   "county": "Harris",
+   "lat": null,
+   "lon": null,
+   "confidence": "not_found",
+   "basis": "Placeholder for a new CenterPoint substation (NewSub to Zenith/Mission and Zenith/Gibbons Creek, ERCOT 110077A/110057A); no site identified.",
+   "source": null
+  },
+  "Misty": {
+   "county": "Caldwell",
+   "lat": 29.8324,
+   "lon": -97.6281,
+   "confidence": "county",
+   "basis": "Existing LCRA TSC Misty substation getting a 345 kV transformer (ERCOT 103468); not found by name on OSM/HIFLD; point is the Caldwell County centroid.",
+   "source": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2023_Gazetteer/2023_Gaz_counties_national.zip"
+  },
+  "Frontera": {
+   "county": "Hidalgo",
+   "lat": 26.21789,
+   "lon": -98.39713,
+   "confidence": "exact",
+   "basis": "OSM power=substation 'Frontera Substation' (AEP, tagged 138 kV) at the Frontera generating station near Mission, Hidalgo County. The 345 kV work under Sharyland's Arrow project would be at or next to this station.",
+   "source": "https://www.openstreetmap.org/way/512644995"
+  },
+  "Jacaranda": {
+   "county": "Taylor",
+   "lat": 32.2971,
+   "lon": -99.8904,
+   "confidence": "county",
+   "basis": "New AEP TNC Jacaranda station feeding two new 345 kV lines to Mulberry Creek (ERCOT 109737); no public site description found; point is the Taylor County centroid.",
+   "source": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2023_Gazetteer/2023_Gaz_counties_national.zip"
+  },
+  "Grissom": {
+   "county": "Bee",
+   "lat": 28.21826,
+   "lon": -97.55666,
+   "confidence": "exact",
+   "basis": "AEP: existing Grissom 345 kV station is about 8 mi SE of Skidmore and about 5.5 mi east of US 181 in Bee County. An unnamed OSM 345 kV power=substation sits 8.2 mi ESE of Skidmore and 5.9 mi east of US 181, matching both distances (ERCOT gave no county).",
+   "source": "https://www.aeptransmission.com/texas/Angstrom-Grissom/docs/Angstrom-Grissom%20Regulatory%20FAQs_ENGLISH.pdf"
+  },
+  "Chalcedony": {
+   "county": "",
+   "lat": null,
+   "lon": null,
+   "confidence": "not_found",
+   "basis": "AEP TCC Chalcedony (Chalcedony to San Pedro 345 kV, ERCOT 110391) has no county given and no public source was found describing it or San Pedro.",
+   "source": null
+  },
+  "Sam": {
+   "county": "Hill",
+   "lat": 31.8977,
+   "lon": -97.01809,
+   "confidence": "exact",
+   "basis": "OSM power=substation 'Sam Switching Station' (NextEra/Lone Star, 345 kV), southeast of Hillsboro in Hill County; Oncor's Venus-Sam line ends here.",
+   "source": "https://www.openstreetmap.org/way/386799112"
+  },
+  "Monticello": {
+   "county": "Titus",
+   "lat": 33.0916,
+   "lon": -95.04204,
+   "confidence": "exact",
+   "basis": "OSM power=substation 'Monticello substation' (345/138 kV) at the Monticello plant, Titus County.",
+   "source": "https://www.openstreetmap.org/way/171859709"
+  },
+  "Stainback Switch": {
+   "county": "Dallas",
+   "lat": 32.767,
+   "lon": -96.7784,
+   "confidence": "county",
+   "basis": "New Oncor Stainback 345 kV switch cut into the Watermill-Elrod/Big Onion line, about 3.0 mi of line from Watermill and 3.2 mi from Batchler Road switch, near the Dallas/Ellis line. The exact site was not found; point is the Dallas County centroid.",
+   "source": "https://www.ercot.com/files/docs/2025/07/28/EIR_Status_Update_Oncor_Southern_DFW_Load_Interconnection_Project_RPG_July_2025.pdf"
+  },
+  "Nolan County": {
+   "county": "Nolan",
+   "lat": 32.3123,
+   "lon": -100.4181,
+   "confidence": "county",
+   "basis": "The TPIT names no station here, only 'Nolan County', for the new Central Bluff-Oak Spring 345 kV line (ERCOT 110487). Both ends appear to be in Nolan County (HIFLD Central Bluff 32.117,-100.154; Oncor CCN viewer Oak Springs 32.415,-100.525), so only the county is known; point is the Nolan County centroid.",
+   "source": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2023_Gazetteer/2023_Gaz_counties_national.zip"
+  },
+  "Hutto": {
+   "county": "Williamson",
+   "lat": 30.55117,
+   "lon": -97.56134,
+   "confidence": "exact",
+   "basis": "OSM power=substation 'Hutto Switching Station' (Oncor, 345/138 kV), Williamson County.",
+   "source": "https://www.openstreetmap.org/way/174024844"
+  },
+  "Bear Pen 345 kV Switch": {
+   "county": "Franklin",
+   "lat": 33.1758,
+   "lon": -95.2191,
+   "confidence": "county",
+   "basis": "New Oncor Bear Pen 345 kV switch (ERCOT 92874); no public site description found and no named mapped substation; point is the Franklin County centroid.",
+   "source": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2023_Gazetteer/2023_Gaz_counties_national.zip"
+  },
+  "7052 Gooseneck": {
+   "county": "Guadalupe",
+   "lat": 29.5827,
+   "lon": -97.949,
+   "confidence": "county",
+   "basis": "New LCRA TSC Gooseneck 345 kV substation (ERCOT bus 7052, project 99857); not on OSM/HIFLD by name and no site description found; point is the Guadalupe County centroid.",
+   "source": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2023_Gazetteer/2023_Gaz_counties_national.zip"
+  },
+  "Galvani 345 kV": {
+   "county": "Scurry",
+   "lat": 32.60365,
+   "lon": -100.97405,
+   "confidence": "town",
+   "basis": "Doubtful match, kept off campaigns until checked: WETT's Galvani station loops the Long Draw-Scurry South and Faraday-Scurry South circuits, 8.1 line-miles from Oncor's Scurry County South (ERCOT 110639 rebuild length). Placed 8.1 mi along the OSM double-circuit WETT line west of Scurry County South. An untagged OSM power=substation 1.2 mi ESE (32.5945,-100.9562) may be the new station.",
+   "source": "https://interchange.puc.texas.gov/Documents/57477_209_1520434.PDF"
+  },
+  "Paris": {
+   "county": "Lamar",
+   "lat": 33.63908,
+   "lon": -95.58098,
+   "confidence": "exact",
+   "basis": "OSM power=substation 'Paris Substation' (345/138 kV), Lamar County.",
+   "source": "https://www.openstreetmap.org/way/171704766"
+  },
+  "WA Parish": {
+   "county": "Fort Bend",
+   "lat": 29.48078,
+   "lon": -95.62422,
+   "confidence": "exact",
+   "basis": "OSM power=substation 'W. A. Parish Station (345 kV)' (CenterPoint), matching HIFLD 'PARISH' 345 kV (29.4807,-95.6241); Fort Bend County.",
+   "source": "https://www.openstreetmap.org/way/20875804"
+  },
+  "Wren": {
+   "county": "Cameron",
+   "lat": 26.1029,
+   "lon": -97.479,
+   "confidence": "county",
+   "basis": "ERCOT's RGV EIR calls Wren an existing 345 kV station 0.1 mi from Candela (two tie lines), but neither name is on OSM or HIFLD and no site description was found; point is the Cameron County centroid.",
+   "source": "https://www.ercot.com/files/docs/2026/07/17/15.-EIR_SCOPE_AEPSC-Rio_Grand_Valley_System_Improvement_Project_July_2026_RPG_Final.pdf"
+  },
+  "Cedar Hill Switch": {
+   "county": "Dallas",
+   "lat": 32.66553,
+   "lon": -96.96106,
+   "confidence": "exact",
+   "basis": "HIFLD substation 'CEDAR HILL SW' (345 kV, Dallas County), matching an OSM 345/138 kV power=substation polygon at the same spot.",
+   "source": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0"
+  },
+  "Long Draw": {
+   "county": "Borden",
+   "lat": 32.72112,
+   "lon": -101.63297,
+   "confidence": "exact",
+   "basis": "OSM power=substation 'Long Draw Substation' (Wind Energy Transmission Texas, 345 kV), Borden County.",
+   "source": "https://www.openstreetmap.org/way/453310291"
+  },
+  "Webb/Kennedale": {
+   "county": "Tarrant",
+   "lat": 32.7721,
+   "lon": -97.2912,
+   "confidence": "county",
+   "basis": "Existing Oncor Webb and Kennedale stations; neither is named on OSM or HIFLD, though ERCOT's map shows a 'Webb Sub' south of the Arlington area, and no site description was found. Point is the Tarrant County centroid.",
+   "source": "https://www.ercot.com/files/docs/2026/04/13/5.1-25RPG004-Oncor-Southern-DFW-Load-Interconnection-and-General-Grid-Strengthening-Project.pdf"
+  },
+  "Garvey Road Switch": {
+   "county": "Young",
+   "lat": 33.1588,
+   "lon": -98.6784,
+   "confidence": "county",
+   "basis": "Existing Oncor Garvey Road switching station, built in 2011 as a tap on the Bowman-Graham 345 kV line (Oncor construction report). It is not named on OSM/HIFLD; point is the Young County centroid.",
+   "source": "https://interchange.puc.texas.gov/Documents/40142_1_716704.PDF"
+  },
+  "9073": {
+   "county": "Travis",
+   "lat": null,
+   "lon": null,
+   "confidence": "not_found",
+   "basis": "Bus number only. The AEN Holman-Hillje circuit 3123 reconductor suggests it may be the Holman end (an AEN/LCRA joint station), but the context does not clearly identify the bus, so it is not placed.",
+   "source": null
+  },
+  "Bowman Switch": {
+   "county": "Archer",
+   "lat": 33.8106,
+   "lon": -98.60077,
+   "confidence": "exact",
+   "basis": "OSM power=substation 'Bowman Substation' (Oncor, 345/138 kV).",
+   "source": "https://www.openstreetmap.org/way/171410587"
+  },
+  "Saltillo Switch": {
+   "county": "Hunt",
+   "lat": 33.1233,
+   "lon": -96.0842,
+   "confidence": "county",
+   "basis": "Existing Oncor Saltillo 345 kV switch (Saltillo-Farmersville line). It is not named on OSM/HIFLD and no site description was found. ERCOT gives Hunt County, though the town of Saltillo is in Hopkins County; point is the Hunt County centroid.",
+   "source": "https://www.ercot.com/files/docs/2026/03/16/EIR-Oncor-Combined-Set-1-and-Set-2-North-and-Central-Texas-Reliability-Project-Scope-Update-RPG-Mar-2026.pdf"
+  },
+  "Bearkat": {
+   "county": "Glasscock",
+   "lat": 31.76605,
+   "lon": -101.5315,
+   "confidence": "exact",
+   "basis": "OSM 'Bearkat Substation' (WETT, 345 kV), the existing endpoint LCRA describes for the North McCamey-Bearkat line.",
+   "source": "https://www.openstreetmap.org/way/453310293"
+  },
+  "5231": {
+   "county": "Bexar",
+   "lat": 29.28051,
+   "lon": -98.572,
+   "confidence": "exact",
+   "basis": "TPIT rows for bus 5231 describe the Howard Rd-San Miguel line and the Cagnon-Howard rebuild, so 5231 is CPS Energy's Howard (Howard Road) station; placed at OSM 'Howard Substation' (CPS Energy), matching HIFLD HOWARD (29.2806,-98.5723).",
+   "source": "https://www.openstreetmap.org/way/105422464"
+  },
+  "Reforzar": {
+   "county": "Brooks",
+   "lat": 27.243,
+   "lon": -98.01,
+   "confidence": "approx",
+   "basis": "PUC Docket 55397 order: future Reforzar 345-kV station on the north side of SH 285, about 8 mi northeast of Falfurrias; point is about 8 road-miles out SH 285 east-northeast of Falfurrias (OSM geometry), north side; uncertainty about 1-2 mi.",
+   "source": "https://www.aeptransmission.com/texas/Cruce-Reforzar/docs/Cruce-Reforzar_Final%20Order_01-29-2024.PDF"
+  },
+  "Dunham Switch": {
+   "county": "Tarrant",
+   "lat": 33.03657,
+   "lon": -97.19092,
+   "confidence": "exact",
+   "basis": "OSM 'Oncor Dunham Substation' (345 kV) in Flower Mound, matching the PUC Docket 55067 description (about 1.4 mi SE of US 377 & FM 1171). It is in Denton County, about 3 mi north of the Tarrant line, not in Tarrant.",
+   "source": "https://www.openstreetmap.org/way/1413037708"
+  },
+  "5725": {
+   "county": "Karnes",
+   "lat": 28.73986,
+   "lon": -98.02393,
+   "confidence": "exact",
+   "basis": "TPIT 84900 'Rebuild Pawnee to Tango' runs from bus 5725 (Karnes) to 8689 (Bee), so 5725 is the Pawnee 345-kV station; placed at OSM 'Pawnee Substation' (STEC, 345/138 kV), matching HIFLD PAWNEE (Karnes).",
+   "source": "https://www.openstreetmap.org/way/174560152"
+  },
+  "Red Rock": {
+   "county": "Hall",
+   "lat": 34.34399,
+   "lon": -100.89393,
+   "confidence": "exact",
+   "basis": "TPIT 110577 calls the line 'Tule Canyon - Red Rock (Cross)', so CTT's Red Rock is the Cross 345-kV station; placed at OSM 'Cross Substation' (LS Power/CTT, 345 kV) near Turkey in Hall County. (LCRA's unrelated Red Rock 138-kV substation is in Bastrop County.)",
+   "source": "https://www.openstreetmap.org/way/453794429"
+  },
+  "Reiter": {
+   "county": "Ector",
+   "lat": 31.819,
+   "lon": -102.301,
+   "confidence": "town",
+   "basis": "Doubtful match, kept off campaigns until checked: Oncor: planned Reiter Switch about 1.2 mi north of SH Loop 338 & FM 3503, south of Odessa; Loop 338 (east side) and FM 3503 (Dora Roberts Rd) taken from OSM via Nominatim, junction inferred near 31.802,-102.300 and offset 1.2 mi north. ERCOT also says about 3 mi south of Odessa EHV; this point is about 2 mi SE of it, so treat as within about 2 mi.",
+   "source": "https://www.oncor.com/content/dam/oncorwww/documents/about-us/transmission-system/current-trasmission-line-projects/reiter-switch-tesoro-switch/Reiter%20Switch%20-%20Tesoro%20Switch%20OnePager.pdf"
+  },
+  "Euclid Substation (LCRA TSC; new 765 kV yard next to existing Euclid 345 kV station)": {
+   "county": "Caldwell",
+   "lat": 29.8832,
+   "lon": -97.6736,
+   "confidence": "town",
+   "basis": "LCRA TSC board (Mar 2025): Euclid is a ~28-acre greenfield site northwest of Lockhart in Caldwell County, cut into the John Dumas-Hornsby 345-kV line about 2 mi from Misty; the exact site is not public, so the point is the town of Lockhart.",
+   "source": "https://citizenportal.ai/articles/6620493/lcra-tsc-board-approves-three-transmission-projects-and-authorizes-land-rights-acquisitions"
+  },
+  "Ghost Town": {
+   "county": "Gray",
+   "lat": 35.5557,
+   "lon": -100.69,
+   "confidence": "approx",
+   "basis": "PUC Docket 56402: Ghost Town substation is 0.5 mi north of SH 152, 1.8 mi east of CR 21 and directly west of CR 23; placed from OSM SH 152/CR 21/CR 23 geometry (CR 21 ~-100.722, CR 23 ~-100.687).",
+   "source": "http://interchange.puc.texas.gov/Documents/56402_30_1419944.PDF"
+  },
+  "5380": {
+   "county": "DeWitt",
+   "lat": 29.0931,
+   "lon": -97.3158,
+   "confidence": "county",
+   "basis": "TPIT 73025: bus 5380 is CPS Energy's new Shaula 345-kV substation looped into the Elm Creek-STP line in DeWitt County; no site found, so the point is Nominatim's representative point for DeWitt County.",
+   "source": "https://www.ercot.com/files/docs/2026/04/09/3.-EIR-CPS-Energy-Helotes-Reactive-Power-Planning-Project-Recommendation-RPG_April_2026_FINAL.pdf"
+  },
+  "Pastor": {
+   "county": "Concho",
+   "lat": 31.3103,
+   "lon": -99.8508,
+   "confidence": "county",
+   "basis": "TPIT 107120: new LCRA TSC 345-kV 'Pastor' generation-interconnection substation in Concho County; no public site found, so the point is Nominatim's representative point for Concho County.",
+   "source": "https://www.ercot.com/gridinfo/planning"
+  },
+  "Dunham": {
+   "county": "Denton",
+   "lat": 33.03657,
+   "lon": -97.19092,
+   "confidence": "exact",
+   "basis": "OSM 'Oncor Dunham Substation' (345 kV) in Flower Mound, Denton County, matching the PUC Docket 55067 description (about 1.4 mi SE of US 377 & FM 1171).",
+   "source": "https://www.openstreetmap.org/way/1413037708"
+  },
+  "CEHE_Newsub": {
+   "county": "Fort Bend",
+   "lat": null,
+   "lon": null,
+   "confidence": "not_found",
+   "basis": "Placeholder for an unnamed CenterPoint load substation looped into the W.A. Parish-Whaley/Wolf 345-kV circuits; no site is public. (W.A. Parish itself is at 29.4808,-95.6242.)",
+   "source": "https://www.ercot.com/gridinfo/planning"
+  },
+  "Jordan/King": {
+   "county": "Harris",
+   "lat": 29.91534,
+   "lon": -95.21631,
+   "confidence": "exact",
+   "basis": "Compound name for CenterPoint's Jordan-King circuit 97; Jordan was not found in OSM or HIFLD, so this is the King end: OSM 'King Substation' (CenterPoint, 345 kV), matching HIFLD 'KING REIT'. The new substation that loops into the line is not public.",
+   "source": "https://www.openstreetmap.org/way/102326939"
+  },
+  "Pin Oak 345 kV Switch": {
+   "county": "Freestone",
+   "lat": 31.81952,
+   "lon": -96.05745,
+   "confidence": "exact",
+   "basis": "ERCOT (25RPG004): the existing Big Brown 345-kV Switch is to be rebuilt and renamed Pin Oak Switch; placed at OSM 'Big Brown Station' (Oncor, 345 kV).",
+   "source": "https://www.openstreetmap.org/way/172475137"
+  },
+  "Stainback 345 kV Switch": {
+   "county": "Dallas",
+   "lat": 32.762,
+   "lon": -96.779,
+   "confidence": "county",
+   "basis": "ERCOT 25RPG004: new Stainback switch cuts the Watermill-Elrod/Big Onion 345-kV line about 3 mi from Watermill (OSM 32.559,-96.726) and also ties to Batchler Road; no site published, so the point is Nominatim's representative point for Dallas County.",
+   "source": "https://www.ercot.com/files/docs/2025/04/28/EIR_Scope_Oncor_Southern_DFW_Load_Interconnection_Project_-_RPG_April_2025.pdf"
+  },
+  "Tecumseh Creek": {
+   "county": "Throckmorton",
+   "lat": 33.1571,
+   "lon": -99.2018,
+   "confidence": "county",
+   "basis": "Existing 345-kV station at the far end of the Clear Crossing-Tecumseh Creek line (TPIT 61601, Coody Crossing switch); not in OSM/HIFLD under this name and no location found, so the point is Nominatim's representative point for Throckmorton County.",
+   "source": "https://www.infrasure.ai/project/ercot-21inr0263-monarch-creek-wind"
+  },
+  "Meteor": {
+   "county": "",
+   "lat": null,
+   "lon": null,
+   "confidence": "not_found",
+   "basis": "TPIT 89988: Oncor's McGee switch (Crane County) cuts the Wolf-Meteor 345-kV line; no station named Meteor was found in OSM, HIFLD or utility documents, and ERCOT gives no county.",
+   "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/McGee-Switch---Sisters-Solar-POI-345kV-.html"
+  },
+  "Drane 345 kV Switch": {
+   "county": "Navarro",
+   "lat": 32.028,
+   "lon": -96.4985,
+   "confidence": "county",
+   "basis": "TPIT 91457 'Establish Drane 345 kV Switch' in Navarro County; no site published, so the point is Nominatim's representative point for Navarro County.",
+   "source": "https://www.ercot.com/gridinfo/planning"
+  },
+  "Muscovy": {
+   "county": "Williamson",
+   "lat": 30.56,
+   "lon": -97.476,
+   "confidence": "approx",
+   "basis": "Oncor/City of Taylor: Muscovy Switch is about 0.7 mi NE of FM 3349 & US 79 in west Taylor; the junction (~30.553,-97.485) is from OSM road geometry, then offset 0.7 mi NE. ERCOT's '3.3 mi east of Limmer' agrees.",
+   "source": "https://www.taylortx.gov/1387/Oncor-Proposed-345kV-East-West-Transmiss"
+  },
+  "Muscovy (ONCOR)": {
+   "county": "Williamson",
+   "lat": 30.56,
+   "lon": -97.476,
+   "confidence": "approx",
+   "basis": "Same station as 'Muscovy': about 0.7 mi NE of FM 3349 & US 79 in west Taylor (City of Taylor/Oncor), junction from OSM road geometry.",
+   "source": "https://www.taylortx.gov/1387/Oncor-Proposed-345kV-East-West-Transmiss"
+  },
+  "Ironwood Switch": {
+   "county": "Ellis",
+   "lat": 32.3348,
+   "lon": -96.792,
+   "confidence": "county",
+   "basis": "TPIT 105322 / ERCOT 25RPG004: new Ironwood 345/138-kV switch cutting the Liggett-Endeavor line near Midlothian Tap in Ellis County; no site published, so the point is Nominatim's representative point for Ellis County.",
+   "source": "https://www.ercot.com/files/docs/2025/04/28/EIR_Scope_Oncor_Southern_DFW_Load_Interconnection_Project_-_RPG_April_2025.pdf"
+  },
+  "Trading House_Bullock_Navarro": {
+   "county": "McLennan",
+   "lat": 31.57473,
+   "lon": -96.96419,
+   "confidence": "exact",
+   "basis": "Compound name; TPIT 110223 starts the line at Oncor's Trading House, placed at OSM 'Tradinghouse Substation' (345/138 kV) in McLennan County. (Lone Star's Navarro Switch is OSM 31.964,-96.518; Bullock not found.)",
+   "source": "https://www.openstreetmap.org/way/172472755"
+  },
+  "Voss Lake": {
+   "county": "Milam",
+   "lat": 30.6047,
+   "lon": -97.083,
+   "confidence": "approx",
+   "basis": "Two descriptions agree within ~0.8 mi: Oncor/City of Taylor 'about 2.1 mi south of US 79 & FM 1786' (junction from OSM, 30.635,-97.090) and ERCOT 'about 1.9 mi north of Sandow' (OSM Sandow Station 30.577,-97.077); point is their average.",
+   "source": "https://www.taylortx.gov/1387/Oncor-Proposed-345kV-East-West-Transmiss"
+  },
+  "Duff Ranch": {
+   "county": "Tom Green",
+   "lat": 31.3783,
+   "lon": -100.4134,
+   "confidence": "county",
+   "basis": "TPIT 107136: new LCRA TSC 345-kV 'Duff Ranch' generation-interconnection substation in Tom Green County; no site found, so the point is Nominatim's representative point for Tom Green County (San Angelo).",
+   "source": "https://www.ercot.com/gridinfo/planning"
+  },
+  "5201": {
+   "county": "Bexar",
+   "lat": 29.54818,
+   "lon": -98.68187,
+   "confidence": "exact",
+   "basis": "TPIT 110263: bus 5201 is the new Helotes 345-kV substation, which ERCOT (25RPG013/017) says converts the existing Helotes 138-kV substation; placed at OSM 'Helotes Substation' (CPS Energy), matching HIFLD HELOTES.",
+   "source": "https://www.openstreetmap.org/way/97043744"
+  },
+  "Stewart Road": {
+   "county": "Hidalgo",
+   "lat": 26.12552,
+   "lon": -98.15386,
+   "confidence": "town",
+   "basis": "Doubtful match, kept off campaigns until checked: Sharyland's Palmito-Stewart Road 345-kV line ends at Stewart Road; the only mapped Stewart Road station is OSM 'Stewart Road Substation' (tagged AEP, 138/69 kV) near San Juan, Hidalgo County. The 345-kV yard is assumed to be at or next to it. ERCOT gives no county (the new Arrow station is in Cameron); Stewart Road reverse-geocodes to Hidalgo County.",
+   "source": "https://www.openstreetmap.org/way/512936455"
+  },
+  "Alba Road Switch": {
+   "county": "Dallas",
+   "lat": 32.762,
+   "lon": -96.779,
+   "confidence": "county",
+   "basis": "ERCOT 25RPG004: new Alba Road switch cuts the Watermill-Greene Road 345-kV line in south Dallas County (Watermill OSM 32.559,-96.726); no site published, so the point is Nominatim's representative point for Dallas County.",
+   "source": "https://www.ercot.com/files/docs/2025/04/28/EIR_Scope_Oncor_Southern_DFW_Load_Interconnection_Project_-_RPG_April_2025.pdf"
+  },
+  "White Point": {
+   "county": "San Patricio",
+   "lat": 27.93577,
+   "lon": -97.36089,
+   "confidence": "exact",
+   "basis": "OSM 'Whitepoint Substation' (AEP, 345/138/69 kV) in San Patricio County, the White Point 345-kV substation the STP line connects to.",
+   "source": "https://www.openstreetmap.org/way/174702133"
+  },
+  "Sam Switch": {
+   "county": "Dallas",
+   "lat": 31.8977,
+   "lon": -97.01809,
+   "confidence": "exact",
+   "basis": "OSM 'Sam Switching Station' (NextEra/Lone Star Transmission, 345 kV), Lone Star's Sam Switch. It is in Hill County near Abbott, not Dallas: ERCOT lists Dallas because the other end of the line (DeSoto) is there.",
+   "source": "https://www.openstreetmap.org/way/386799112"
+  },
+  "Fowlerton, Cruce": {
+   "county": "McMullen",
+   "lat": 28.37146,
+   "lon": -98.80078,
+   "confidence": "exact",
+   "basis": "Compound name: the STEC Amphion project hairpins the San Miguel-Fowlerton and San Miguel-Cruce lines. The first station is placed at OSM 'Fowlerton Substation' (STEC, 345/138 kV) in McMullen County; Cruce is about 78 mi to the southeast (see 'Cruce').",
+   "source": "https://www.openstreetmap.org/way/489376594"
+  },
+  "Prong Moss": {
+   "county": "Howard",
+   "lat": 32.173,
+   "lon": -101.423,
+   "confidence": "town",
+   "basis": "Doubtful match, kept off campaigns until checked: ERCOT/Oncor: new Prong Moss switch on the Morgan Creek-Midland East 345-kV corridor, about 7 mi south of Falcon Seaboard (OSM 32.275,-101.423) and about 29 mi SW of Morgan Creek; point is 7 mi due south of Falcon Seaboard, consistent with its loop-in of the Elbow 138-kV line (Elbow OSM 32.169,-101.478). The input lists Prong Moss twice (Howard and Midland); one entry serves both.",
+   "source": "https://www.ercot.com/files/docs/2024/05/10/EIR_Oncor_West%20Texas%20345-kV%20Infrastructure%20Rebuild%20Project%20-%20Status%20Update%20RPG%20May%202024.pdf"
+  },
+  "Woodard": {
+   "county": "Lamar",
+   "lat": 33.6384,
+   "lon": -95.5823,
+   "confidence": "county",
+   "basis": "Bus 11699 'Woodard' sits on the Monticello-Paris 345-kV line in Lamar County (ERCOT 2024-E15 Umbra-Woodard); no site found, so the point is Nominatim's representative point for Lamar County (Paris).",
+   "source": "https://www.ercot.com/files/docs/2025/09/24/EIR-Oncor-Paris-Switch-to-Monticello-Switch-345-kV-Line-Rebuild-Project_SCOPE_September2025_RPG.pdf"
+  },
+  "Walleye Creek": {
+   "county": "Milam",
+   "lat": 30.58279,
+   "lon": -97.09603,
+   "confidence": "town",
+   "basis": "Doubtful match, kept off campaigns until checked: Oncor/City of Taylor: Walleye Creek switch is about 1.7 mi SW of Voss Lake; that offset gives ~30.587,-97.103, and an unnamed, recently mapped OSM substation sits 0.5 mi away at this point, so it is used (probably the switch, which was due May 2026).",
+   "source": "https://www.taylortx.gov/1387/Oncor-Proposed-345kV-East-West-Transmiss"
+  },
+  "Ciruela": {
+   "county": "Cameron",
+   "lat": 26.1291,
+   "lon": -97.4134,
+   "confidence": "county",
+   "basis": "ERCOT 26RPG009: Ciruela (aka Panther) is a planned AEP 345-kV station in Cameron County, about 9 mi from the existing Candela station; no site found, so the point is Nominatim's representative point for Cameron County.",
+   "source": "https://www.ercot.com/files/docs/2026/07/17/15.-EIR_SCOPE_AEPSC-Rio_Grand_Valley_System_Improvement_Project_July_2026_RPG_Final.pdf"
+  },
+  "Lorraine": {
+   "county": "Bell",
+   "lat": 31.0082,
+   "lon": -97.4314,
+   "confidence": "county",
+   "basis": "TPIT 110030 'Establish Lorraine 345 kV Switch' in Bell County; no site published, so the point is Nominatim's representative point for Bell County.",
+   "source": "https://www.ercot.com/gridinfo/planning"
+  },
+  "Janka": {
+   "county": "Hardeman",
+   "lat": 34.2511,
+   "lon": -99.7323,
+   "confidence": "county",
+   "basis": "TPIT 110569: reactive support at the ETT Janka 345-kV station in Hardeman County; not in OSM/HIFLD under this name, so the point is Nominatim's representative point for Hardeman County.",
+   "source": "https://www.ercot.com/gridinfo/planning"
+  },
+  "5211": {
+   "county": "Bexar",
+   "lat": 29.61945,
+   "lon": -98.57184,
+   "confidence": "exact",
+   "basis": "Bus 5211 is the common end of the Hill Country-Bergheim, Hill Country-Marion and Hill Country-Skyline projects, so it is CPS Energy's Hill Country station; placed at OSM 'Hill Country Substation' (345/138 kV), matching HIFLD 'HILL COUNTRY 345'.",
+   "source": "https://www.openstreetmap.org/way/159253739"
+  },
+  "Oncor's Scurry County South": {
+   "county": "Scurry",
+   "lat": 32.59829,
+   "lon": -100.86161,
+   "confidence": "exact",
+   "basis": "OSM 'Scurry County South Substation' (Oncor, 345/138 kV), matching HIFLD SCURRY (345 kV).",
+   "source": "https://www.openstreetmap.org/way/171807050"
+  },
+  "Belfalls": {
+   "county": "Bell",
+   "lat": 31.12964,
+   "lon": -97.26106,
+   "confidence": "county",
+   "basis": "'Belfalls/STR 26/4C' is a line tap structure about 2.6 line-miles from Temple Pecan Creek Switch on the Temple Pecan Creek-Possum Trot line, not a station; the point is OSM 'Temple Pecan Creek Substation', so expect an offset of up to about 3 mi.",
+   "source": "https://www.openstreetmap.org/way/172709713"
+  },
+  "Bonilla": {
+   "county": "Cameron",
+   "lat": 26.1291,
+   "lon": -97.4134,
+   "confidence": "county",
+   "basis": "TPIT 110437: Rio Hondo-Bonilla 345-kV rebuild, both ends in Cameron County; Bonilla is not in OSM/HIFLD and no site was found, so the point is Nominatim's representative point for Cameron County.",
+   "source": "https://www.ercot.com/gridinfo/planning"
+  },
+  "CTT Celtic Green Substation (proposed 765/345 kV)": {
+   "county": "Wheeler",
+   "lat": 35.2195,
+   "lon": -100.2832,
+   "confidence": "approx",
+   "basis": "ERCOT (Jul 2026): Celtic Green cuts the existing Gray-Tesla 345-kV double circuit about 39 mi from Gray; point is 39 mi along the OSM-mapped Gray-Tesla 345-kV line (109.4 mi total, matching ERCOT's 40.2 + 69.2 mi) from OSM Gray Substation.",
+   "source": "https://www.ercot.com/files/docs/2026/07/17/13.-EIR_Scope_Combined-AEPSC-Panhandle-Project-and-CTT-Panhandle-Reliability-Transmission-Plan-Project_RPG-July-2026.pdf"
+  },
+  "9074": {
+   "county": "Caldwell",
+   "lat": 30.00537,
+   "lon": -97.67431,
+   "confidence": "exact",
+   "basis": "Bus 9074 is the common end of the Garfield-Lytton Springs and Lytton Springs-Zorn upgrades (ERCOT 2024-SC27 labels 9074 Lytton Springs); placed at OSM 'Lytton Springs Substation' (345/138 kV), matching HIFLD.",
+   "source": "https://www.openstreetmap.org/way/173981611"
+  },
+  "Webb": {
+   "county": "Dallas",
+   "lat": 32.762,
+   "lon": -96.779,
+   "confidence": "county",
+   "basis": "TPIT 109931: Cedar Hill Switch-Webb 345-kV line upgrade in Dallas County; Webb was not found in OSM/HIFLD, so the point is Nominatim's representative point for Dallas County. (Cedar Hill SW is HIFLD 32.6655,-96.9611.)",
+   "source": "https://www.ercot.com/gridinfo/planning"
+  },
+  "Limmer": {
+   "county": "Williamson",
+   "lat": 30.54531,
+   "lon": -97.52187,
+   "confidence": "town",
+   "basis": "Doubtful match, kept off campaigns until checked: Limmer (LCRA, 345 kV) is co-located with Oncor's Teal 138-kV switch in the east Hutto area, about 3.3 mi west of Muscovy (ERCOT); the only 345/138-kV station there is this unnamed OSM substation, about 3 mi WSW of the Muscovy estimate.",
+   "source": "https://www.openstreetmap.org/way/1441533197"
+  },
+  "Herndon/Gibson": {
+   "county": "Milam",
+   "lat": 30.7627,
+   "lon": -96.9982,
+   "confidence": "county",
+   "basis": "Compound tap name on the Bell County East-TNP One 345-kV line (ERCOT: Bell County East-Gibson about 23.4 mi); neither Herndon nor Gibson was found in OSM/HIFLD, so the point is Nominatim's representative point for Milam County.",
+   "source": "https://www.ercot.com/files/docs/2026/04/09/9.-EIR-Status-Update-Oncor-Combined-Set-1-Set-2-North-Central-South-Central-TX-Reliability-Project_RPG-Apr_2026_Final.pdf"
+  },
+  "Graham Plant Switch": {
+   "county": "Young",
+   "lat": 33.13843,
+   "lon": -98.60955,
+   "confidence": "exact",
+   "basis": "OSM 'Graham Substation' (Oncor, 345 kV) next to the Graham gas plant in Young County.",
+   "source": "https://www.openstreetmap.org/way/171410588"
+  },
+  "Midland County Northwest": {
+   "county": "Midland",
+   "lat": 32.03738,
+   "lon": -102.24626,
+   "confidence": "exact",
+   "basis": "OSM 'Midland County Northwest Substation' (Oncor, 345/138 kV).",
+   "source": "https://www.openstreetmap.org/way/457746624"
+  },
+  "Paris Switch": {
+   "county": "Fannin",
+   "lat": 33.63908,
+   "lon": -95.58098,
+   "confidence": "exact",
+   "basis": "OSM 'Paris Substation' (345/138 kV) in Paris. It is in Lamar County, not Fannin: ERCOT lists Fannin because the Paris-Valley South line runs west into Fannin.",
+   "source": "https://www.openstreetmap.org/way/171704766"
+  },
+  "Valley South 345 kV Switch": {
+   "county": "Fannin",
+   "lat": 33.61372,
+   "lon": -96.37331,
+   "confidence": "exact",
+   "basis": "OSM 'Valley South Substation' (Oncor, 345 kV).",
+   "source": "https://www.openstreetmap.org/way/171694580"
+  }
+ }
+}

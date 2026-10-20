@@ -118,8 +118,11 @@ class Places:
                 self.cards.setdefault((base(e["name"]), st), {**e, "basis": e.get("basis", ""), "from": "Line Watch card"})
         # Hand-researched points for new stations the HIFLD map doesn't have (sources/substation-locations.json).
         loc = os.path.join(HERE, "sources", "substation-locations.json")
-        self.researched = {base(k): v for k, v in (json.load(open(loc))["stations"].items() if os.path.exists(loc) else [])
-                           if v.get("lat") is not None and v.get("confidence") in ("exact", "approx")}
+        self.researched = {}
+        for k, v in (json.load(open(loc))["stations"].items() if os.path.exists(loc) else []):
+            if v.get("lat") is not None and v.get("confidence") in ("exact", "approx"):
+                self.researched[clean(k).upper()] = v   # exact name, so bus numbers like "5400" work too
+                self.researched.setdefault(base(k), v)
         h = json.load(open(os.path.join(HERE, "sources", "hifld-tx-substations.json")))
         self.hifld, self.by_name = {}, {}
         for s in h["substations"]:
@@ -127,6 +130,24 @@ class Places:
                 continue
             self.hifld.setdefault((base(s["name"]), str(s["county"]).upper()), []).append(s)
             self.by_name.setdefault(base(s["name"]), []).append(s)
+        self.boxes = {}
+        for k, rings in json.load(open(os.path.join(WEB, "counties.json"))).items():
+            xs = [x for r in rings for x, _ in r]
+            ys = [y for r in rings for _, y in r]
+            self.boxes[k] = (min(xs), min(ys), max(xs), max(ys))
+        # Named OpenStreetMap substations (sources/osm-tx-substations.json): many stations HIFLD leaves unnamed.
+        osm = os.path.join(HERE, "sources", "osm-tx-substations.json")
+        self.osm = {}
+        for s in (json.load(open(osm))["substations"] if os.path.exists(osm) else []):
+            self.osm.setdefault(base(s["name"]), []).append(s)
+
+    def near_county(self, pt, county, miles=20):
+        """A name-only match must fall within about 20 miles of the county ERCOT gives (when it gives one)."""
+        box = self.boxes.get("TX|" + str(county or "").strip().title())
+        if not box:
+            return True
+        d = miles / 69.0
+        return box[0] - d <= pt["lon"] <= box[2] + d and box[1] - d <= pt["lat"] <= box[3] + d
 
     def find(self, name, county):
         """Try the name as given, then its parts ('Wolf/Moss', 'Bitter Creek and Champion Creek', '7052 Gooseneck')."""
@@ -146,9 +167,9 @@ class Places:
 
     def _find(self, name, county):
         b = base(name)
-        if not b:
+        r = self.researched.get(clean(name).upper()) or (self.researched.get(b) if b else None)
+        if not b and not r:
             return None
-        r = self.researched.get(b)
         if r:
             return {"name": str(name).strip(), "county": r.get("county") or county, "lat": r["lat"], "lon": r["lon"],
                     "confidence": r["confidence"], "basis": r["basis"], "source": r["source"]}
@@ -162,8 +183,23 @@ class Places:
             return {"name": str(name).strip(), "county": county, "lat": s["lat"], "lon": s["lon"], "confidence": "exact",
                     "basis": f"HIFLD substation {s['name']} ({s['county'].title()} County, {s['max_kv']} kV max, {s['status'].lower()})",
                     "source": HIFLD_URL}
+        # OpenStreetMap: prefer transmission-level stations (tagged transmission or 115 kV and up) with that name.
+        def high(s):
+            volts = [int(v) for v in re.findall(r"\d+", s.get("voltage") or "")]
+            return s.get("kind") == "transmission" or any(v >= 115000 for v in volts)
+        cands = self.osm.get(b) or []
+        tx = [s for s in cands if high(s)]
+        pick = tx if tx else cands
+        spread = {(round(s["lat"], 1), round(s["lon"], 1)) for s in pick}
+        if pick and len(spread) == 1 and self.near_county(pick[0], county):
+            s = pick[0]
+            return {"name": str(name).strip(), "county": county, "lat": s["lat"], "lon": s["lon"],
+                    "confidence": "exact" if tx else "approx",
+                    "basis": f"OpenStreetMap substation '{s['name']}'" + (f", {s['voltage']} V" if s.get("voltage") else "")
+                             + (f", {s['operator']}" if s.get("operator") else "") + ("" if tx else "; not tagged as transmission, so check it"),
+                    "source": "https://www.openstreetmap.org/" + s["osm"]}
         # TPIT sometimes gives one county for both ends; a name that appears once in Texas is still a match.
-        hits = self.by_name.get(b) or []
+        hits = [s for s in self.by_name.get(b) or [] if self.near_county(s, county)]
         if len(hits) == 1:
             s = hits[0]
             return {"name": str(name).strip(), "county": s["county"].title(), "lat": s["lat"], "lon": s["lon"], "confidence": "approx",
