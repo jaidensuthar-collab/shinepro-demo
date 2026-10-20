@@ -116,6 +116,10 @@ class Places:
                     continue
                 st, _, cty = (e.get("county") or "|").partition("|")
                 self.cards.setdefault((base(e["name"]), st), {**e, "basis": e.get("basis", ""), "from": "Line Watch card"})
+        # Hand-researched points for new stations the HIFLD map doesn't have (sources/substation-locations.json).
+        loc = os.path.join(HERE, "sources", "substation-locations.json")
+        self.researched = {base(k): v for k, v in (json.load(open(loc))["stations"].items() if os.path.exists(loc) else [])
+                           if v.get("lat") is not None and v.get("confidence") in ("exact", "approx")}
         h = json.load(open(os.path.join(HERE, "sources", "hifld-tx-substations.json")))
         self.hifld, self.by_name = {}, {}
         for s in h["substations"]:
@@ -125,9 +129,29 @@ class Places:
             self.by_name.setdefault(base(s["name"]), []).append(s)
 
     def find(self, name, county):
+        """Try the name as given, then its parts ('Wolf/Moss', 'Bitter Creek and Champion Creek', '7052 Gooseneck')."""
+        hit = self._find(name, county)
+        if hit:
+            return hit
+        clean_name = re.sub(r"^(ONCOR|AEP|CPS|LCRA)'?S\s+|^\d+\s+", "", clean(name), flags=re.I)
+        for part in [clean_name] + re.split(r"\s*(?:/|,|;|\band\b)\s*", clean_name):
+            if part and part != name:
+                hit = self._find(part, county)
+                if hit:
+                    hit["name"] = str(name).strip()
+                    if part != clean_name:
+                        hit["basis"] = f"Located by '{part}', one of the stations named in '{clean(name)}'. " + hit["basis"]
+                    return hit
+        return None
+
+    def _find(self, name, county):
         b = base(name)
         if not b:
             return None
+        r = self.researched.get(b)
+        if r:
+            return {"name": str(name).strip(), "county": r.get("county") or county, "lat": r["lat"], "lon": r["lon"],
+                    "confidence": r["confidence"], "basis": r["basis"], "source": r["source"]}
         c = self.cards.get((b, "TX"))
         if c:
             return {"name": str(name).strip(), "county": county or c["county"].split("|")[1], "lat": c["lat"], "lon": c["lon"],
