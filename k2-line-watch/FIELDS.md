@@ -64,3 +64,26 @@ transformer MVA only), so those stay blank until a source publishes them.
 4. **Informational**: a dedicated-purpose line, or a line that adds no new opportunity.
 
 Lines further along and coming online sooner rank higher (2027-2028 before 2032), but every line is kept.
+
+## Fields added Oct 21, 2026 (developers and checking substations)
+
+K2's focus for the rest of 2026 is developers and partners, and the team asked for a way to check the
+substations and tell what is new. Each line in the Texas lines list now also has:
+
+| Field | What it holds |
+|---|---|
+| `queue_projects`, `queue_mw` | Generation and battery projects already in ERCOT's interconnection queue at the line's end substations, and their total MW (from ERCOT's monthly Generator Interconnection Status report, September 2026) |
+| `queue_developers` | Up to five developers there, biggest first, as filed with ERCOT (often a project company such as "Amerada Solar, LLC", not the parent developer) |
+| `from_status`, `to_status` (`endpoints[].in_place`) | Whether the end substation exists today: on public maps (HIFLD or OpenStreetMap) / new or expanding (per ERCOT) / not on public maps |
+| `endpoints[].check_link` | Satellite view of the substation point, to check it by eye |
+| `first_seen` | Date the line first appeared in the list (the first list is Oct 20, 2026), so new entries stand out |
+
+`web/exports/k2-texas-developers.csv` has one row per queued project at a catalog substation: substation,
+county, location, status, the lines there, ERCOT queue number (INR), project, developer, fuel, MW, expected
+online date, study stage, interconnection agreement signed or not, construction start, and how it connects
+(at the substation or tapping a line to another station). Matching is by station name and county (or within
+15 miles of it), so a project ERCOT lists only by a bus code may be missing.
+
+Not yet: the parent company behind each project company, and a contact person. Those need research beyond
+ERCOT's report (state business filings, developer websites, press releases).
+

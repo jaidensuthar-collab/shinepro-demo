@@ -44,6 +44,16 @@ k2-projects.csv
   Act fast / Late), case numbers, next step and source links.
 k2-line-watch.kml
   Everything above for Google Earth.
+k2-texas-lines.csv / k2-texas-lines.geojson
+  Phase 1: every new or upgraded ERCOT line (138 kV and up) and new 345 kV+ substation, one row
+  each, with lifecycle, in-service date, recommended next step, end substation pins, whether each
+  end substation is on public maps today (from_status / to_status), the developers already queued
+  there (queue_projects, queue_mw, queue_developers) and the date it first appeared (first_seen).
+  The map file draws straight lines between end substations, not routes.
+k2-texas-developers.csv
+  One row per generation or battery project in ERCOT's interconnection queue at a catalog end
+  substation: developer as filed with ERCOT (often a project company), project, fuel, MW, expected
+  online date, study stage, whether the interconnection agreement is signed, and the lines there.
 k2-irp-pilot.csv
   IRP pilot: one row per utility (load growth, data-center load, new generation,
   retirements, transmission, active procurement, plan link). Not map data.

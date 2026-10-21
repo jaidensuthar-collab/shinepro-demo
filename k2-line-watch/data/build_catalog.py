@@ -5,9 +5,11 @@ ERCOT's Transmission Project and Information Tracking report (TPIT), joined to t
 cards. Each line gets the phase 1 fields (FIELDS.md): project type, lifecycle, in-service date,
 purpose, program, route status, located end substations and K2's recommended next step.
 
-    python3 build_catalog.py [projects.json | dir of project JSON] [tpit.xlsx]
+    python3 build_catalog.py [projects.json | dir of project JSON] [tpit.xlsx] [queue.xlsx]
 
 Writes ../web/data/texas-lines.json (read by the page) and ../web/exports/k2-texas-lines.csv / .geojson.
+Developers already queued at each end substation come from ERCOT's monthly Generator Interconnection Status
+report (queue.xlsx) and go to ../web/exports/k2-texas-developers.csv.
 Substation points come from the Line Watch cards first, then the HIFLD substation layer
 (sources/hifld-tx-substations.json), matched by name and county.
 """
@@ -25,6 +27,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 WEB = os.path.join(HERE, "..", "web")
 TPIT_URL = "https://www.ercot.com/gridinfo/planning"
 HIFLD_URL = "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0"
+QUEUE_URL = "https://www.ercot.com/misapp/GetReports.do?reportTypeId=15933"
 TODAY = datetime.date.today()
 
 PROGRAMS = {"25RPG025": "ERCOT 765 kV STEP: Eastern Backbone", "H.B. 5066": "Permian Basin Reliability Plan (HB 5066)"}
@@ -76,6 +79,11 @@ def load_projects(src):
             out.append(d)
         return out
     return json.load(open(src))
+
+
+def queue_label(path):
+    m = re.search(r"(\d{4})-(\d{2})", os.path.basename(path or ""))
+    return datetime.date(int(m[1]), int(m[2]), 1).strftime("%B %Y") if m else ""
 
 
 def read_tpit(path):
@@ -208,6 +216,145 @@ class Places:
         return None
 
 
+OWNER_TAGS = re.compile(r"\b(TNMP|TNP|TN|CNP|CEHE|LCRA|AEN|BEC|STEC)\b")
+FUELS = {"SOL": "solar", "WIN": "wind", "GAS": "gas", "NUC": "nuclear", "HYD": "hydro", "WAT": "hydro", "OIL": "oil"}
+
+
+def poi_names(poi):
+    """ERCOT queue hookup point -> station names, and whether the project taps the line between them.
+    '59903 Bearkat 345kV' -> ['BEARKAT'], False; 'Tap 345kV 1444 Brown - 3422 Killeen' -> ['BROWN', 'KILLEEN'], True."""
+    t = clean(poi)
+    tap = bool(re.search(r"\btap", t, re.I))
+    t = re.sub(r"\(.*?\)", " ", t)
+    t = re.sub(r"(?i)\b(POI[AB]?( is)?:?|tap(ping)?( of| on| into)?|the|from|connecting|existing|bus( no\.?| number)?|psse|position \S+|"
+               r"ckt\.?\s*\d*|circuit\s*#?\d*|d?ckt|double circuit|transmission line|line|owned by.*)\b", " ", t)
+    t = re.sub(r"\b\d+(\.\d+)?\s*-?\s*kv\b", " ", t, flags=re.I)
+    t = re.sub(r"(?i)#?\b\d{2,6}\b|\b(kv|double|single)\b", " ", t)
+    t = re.sub(r"^\W*to\b", " ", t, flags=re.I)
+    names = []
+    for part in re.split(r"\s+(?:-|to|&|and)\s+|,|;|\s-\s|\u2013", t, flags=re.I):
+        part = re.sub(r"_?(POI)?_?\d*$", "", part.strip(), flags=re.I)
+        b = re.sub(r"\s+", " ", OWNER_TAGS.sub(" ", base(part))).strip()
+        if b and b not in names:
+            names.append(b)
+    return names, tap or len(names) > 1
+
+
+def read_queue(path):
+    """Projects in ERCOT's Generator Interconnection Status report (large generators that asked for a full study)."""
+    rows = list(openpyxl.load_workbook(path, read_only=True, data_only=True)["Project Details - Large Gen"].iter_rows(values_only=True))
+    head = next(i for i, r in enumerate(rows) if r and r[0] == "INR")
+    col = {}
+    for i, v in enumerate(rows[head]):
+        col.setdefault(clean(v), i)
+    out = []
+    for r in rows[head + 1:]:
+        if not re.match(r"\d{2}INR\d", str(r[0] or "")):
+            continue
+        g = lambda k: r[col[k]]
+        names, tap = poi_names(g("POI Location"))
+        ia = g("IA Signed")
+        fuel, tech = clean(g("Fuel")), clean(g("Technology"))
+        out.append({"inr": clean(r[0]), "project": clean(g("Project Name")), "developer": clean(g("Interconnecting Entity")),
+                    "fuel": "battery" if tech == "BA" else FUELS.get(fuel, fuel.lower()), "mw": round(num(g("Capacity (MW)")), 1),
+                    "cod": ym(g("Projected COD")), "phase": clean(g("GIM Study Phase")),
+                    "ia_signed": ("signed" if ia.year < 1950 else ym(ia)) if isinstance(ia, (datetime.date, datetime.datetime)) else "",
+                    "construction_start": ym(g("Construction Start")), "county": clean(g("County")).title(),
+                    "poi": clean(g("POI Location")), "names": names, "tap": tap})
+    return out
+
+
+def in_place(e, rec):
+    """Whether an end substation exists today, for K2 to check against what it already knows."""
+    basis = e.get("basis") or ""
+    if re.search(r"\b(HIFLD|OpenStreetMap) (\d+ kV )?substation", basis, re.I) and not re.search(r"not (in|on) (HIFLD|the HIFLD)", basis, re.I):
+        return "on public maps"
+    if re.match(r"new\b", e["name"], re.I) or (rec["project_type"] == "new substation" and NEW_STATION.search(rec["description"])):
+        return "new or expanding (per ERCOT)"
+    return "not on public maps"
+
+
+def attach_queue(lines, places, path):
+    """Join queue projects to catalog end substations by station name and county (or within 15 miles of it)."""
+    idx = {}
+    for x in lines:
+        for e in x["endpoints"]:
+            e["in_place"] = in_place(e, x)
+            if e.get("lat") is not None:
+                e["check_link"] = f"https://www.google.com/maps/@?api=1&map_action=map&center={e['lat']:.5f},{e['lon']:.5f}&zoom=16&basemap=satellite"
+            b = base(re.sub(r"^\d+\s+", "", clean(e["name"])))
+            if b:
+                idx.setdefault(b, []).append((x, e))
+        x["queue"] = {"projects": 0, "mw": 0, "developers": [], "stations": []}
+    if not path or not os.path.exists(path):
+        return []
+    stations = {}
+    for q in read_queue(path):
+        for n in q["names"]:
+            for x, e in idx.get(n, []):
+                c = str(e.get("county") or "").title()
+                if c != q["county"] and not (e.get("lat") is not None and places.near_county(e, q["county"], 15)):
+                    continue
+                st = same_station(stations, n, c, e, places)
+                if not st:
+                    sid = re.sub(r"[^a-z0-9]+", "-", f"{n} {c}".lower()).strip("-")
+                    st = stations[sid] = {"id": sid, "base": n, "name": subname(e["name"]), "county": c, "lat": e.get("lat"), "lon": e.get("lon"),
+                                          "confidence": e.get("confidence", ""), "in_place": e["in_place"], "lines": [], "projects": {}}
+                elif st["lat"] is None and e.get("lat") is not None:
+                    st.update(lat=e["lat"], lon=e["lon"], confidence=e.get("confidence", ""), in_place=e["in_place"])
+                sid = st["id"]
+                if x["id"] not in st["lines"]:
+                    st["lines"].append(x["id"])
+                other = [m for m in q["names"] if m != n]
+                st["projects"][q["inr"]] = {k: q[k] for k in ("inr", "project", "developer", "fuel", "mw", "cod", "phase", "ia_signed", "construction_start", "poi")} | {
+                    "connection": ("taps the line to " + other[0].title()) if q["tap"] and other else "taps a line here" if q["tap"] else "at the substation"}
+                e["station_id"] = sid
+    for st in stations.values():
+        st.pop("base")
+        st["projects"] = sorted(st["projects"].values(), key=lambda p: -p["mw"])
+        st["mw"] = round(sum(max(p["mw"], 0) for p in st["projects"]), 1)
+    by_id = {x["id"]: x for x in lines}
+    for st in stations.values():
+        for lid in st["lines"]:
+            by_id[lid]["queue"]["stations"].append(st["id"])
+    for x in lines:
+        ps = {p["inr"]: p for sid in x["queue"]["stations"] for p in stations[sid]["projects"]}.values()
+        devs = {}
+        for p in ps:
+            devs[p["developer"]] = devs.get(p["developer"], 0) + max(p["mw"], 0)
+        x["queue"] = {"projects": len(ps), "mw": round(sum(max(p["mw"], 0) for p in ps), 1),
+                      "developers": [d for d, _ in sorted(devs.items(), key=lambda kv: -kv[1])][:5], "stations": x["queue"]["stations"]}
+    return sorted(stations.values(), key=lambda s: -s["mw"])
+
+
+def same_station(stations, n, county, e, places):
+    """One station that ERCOT lists under two counties (it sits near a county line) stays one station."""
+    for st in stations.values():
+        if st["base"] != n:
+            continue
+        if st["county"] == county:
+            return st
+        a, b = (st if st["lat"] is not None else None), (e if e.get("lat") is not None else None)
+        if a and b and abs(a["lat"] - b["lat"]) < 0.15 and abs(a["lon"] - b["lon"]) < 0.15:
+            return st
+        if (a and places.near_county(a, county, 10)) or (b and places.near_county(b, st["county"], 10)):
+            return st
+    return None
+
+
+def subname(n):
+    return re.sub(r"\s*\(.*", "", re.sub(r"\s+", " ", str(n or ""))).strip()
+
+
+def first_seen(lines):
+    """Date each line first appeared in the catalog (sources/catalog-first-seen.json), so new entries stand out."""
+    f = os.path.join(HERE, "sources", "catalog-first-seen.json")
+    seen = json.load(open(f)) if os.path.exists(f) else {}
+    for x in lines:
+        x["first_seen"] = seen.setdefault(x["id"], TODAY.isoformat())
+    json.dump(dict(sorted(seen.items())), open(f, "w"), indent=0)
+
+
 def card_index(projects):
     """Line Watch cards by their pair of end substations."""
     idx = {}
@@ -285,7 +432,7 @@ def priority(rec):
     return round(score, 1)
 
 
-def build(projects_src, tpit_path):
+def build(projects_src, tpit_path, queue_path=None):
     projects = [p for p in load_projects(projects_src) if str(p.get("region", "Texas")).startswith("Texas")]
     places, cards = Places(projects), card_index(projects)
     out, used_cards = [], set()
@@ -348,15 +495,31 @@ def build(projects_src, tpit_path):
         out.append(rec)
 
     out.sort(key=lambda x: -x["priority_score"])
+    stations = attach_queue(out, places, queue_path)
+    first_seen(out)
     os.makedirs(os.path.join(WEB, "data"), exist_ok=True)
-    meta = {"built": TODAY.isoformat(), "count": len(out), "sources": {"ERCOT TPIT": TPIT_URL, "HIFLD substations": HIFLD_URL},
+    meta = {"built": TODAY.isoformat(), "count": len(out), "queue_report": queue_label(queue_path),
+            "sources": {"ERCOT TPIT": TPIT_URL, "HIFLD substations": HIFLD_URL, "ERCOT interconnection queue (GIS report)": QUEUE_URL},
             "scope": "ERCOT Texas: new and upgraded lines 138 kV and up, new 345 kV+ substations, lines energized this year, plus Line Watch cards not yet in TPIT"}
-    json.dump({**meta, "lines": out}, open(os.path.join(WEB, "data", "texas-lines.json"), "w"), separators=(",", ":"))
+    json.dump({**meta, "lines": out, "stations": stations}, open(os.path.join(WEB, "data", "texas-lines.json"), "w"), separators=(",", ":"))
+
+    dcols = ["station", "county", "lat", "lon", "station_status", "lines", "line_names", "max_kv", "inr", "project", "developer", "fuel", "mw",
+             "cod", "phase", "ia_signed", "construction_start", "connection", "poi"]
+    names = {x["id"]: x for x in out}
+    with open(os.path.join(WEB, "exports", "k2-texas-developers.csv"), "w", newline="") as f:
+        w = csv.DictWriter(f, dcols, extrasaction="ignore")
+        w.writeheader()
+        for st in stations:
+            ls = sorted((names[i] for i in st["lines"]), key=lambda x: -x["priority_score"])
+            for p in st["projects"]:
+                w.writerow({**p, "station": st["name"], "county": st["county"], "lat": st["lat"], "lon": st["lon"], "station_status": st["in_place"],
+                            "lines": " ".join(st["lines"]), "line_names": "; ".join(x["name"] for x in ls[:3]), "max_kv": max(x["kv"] for x in ls)})
 
     cols = ["id", "name", "kv", "project_type", "upgrade_kind", "lifecycle", "in_service", "in_service_kind", "utility", "from", "to",
             "county_from", "county_to", "miles_new", "miles_upgraded", "purpose", "program", "rpg", "docket", "route_status",
             "recommended_next_step", "recommendation_reason", "tap_note", "priority_score", "from_lat", "from_lon", "from_location",
-            "to_lat", "to_lon", "to_location", "card_id", "ercot_project", "source"]
+            "to_lat", "to_lon", "to_location", "from_status", "to_status", "queue_projects", "queue_mw", "queue_developers",
+            "first_seen", "card_id", "ercot_project", "source"]
     with open(os.path.join(WEB, "exports", "k2-texas-lines.csv"), "w", newline="") as f:
         w = csv.DictWriter(f, cols, extrasaction="ignore")
         w.writeheader()
@@ -364,11 +527,14 @@ def build(projects_src, tpit_path):
             row = dict(x)
             for side, e in zip(("from", "to"), (x["endpoints"] + [{}, {}])[:2]):
                 row[side + "_lat"], row[side + "_lon"], row[side + "_location"] = e.get("lat", ""), e.get("lon", ""), e.get("confidence", "")
+                row[side + "_status"] = e.get("in_place", "")
+            row["queue_projects"], row["queue_mw"], row["queue_developers"] = x["queue"]["projects"], x["queue"]["mw"], "; ".join(x["queue"]["developers"])
             w.writerow(row)
     feats = []
     for x in out:
         pts = [e for e in x["endpoints"] if e.get("lat") is not None]
-        props = {k: x[k] for k in cols if k in x}
+        props = {k: x[k] for k in cols if k in x} | {"queue_projects": x["queue"]["projects"], "queue_mw": x["queue"]["mw"],
+                                                      "queue_developers": "; ".join(x["queue"]["developers"])}
         if len(pts) >= 2:
             geom = {"type": "LineString", "coordinates": [[e["lon"], e["lat"]] for e in pts]}
             props["geometry_note"] = "Straight line between the end substations, not the route"
@@ -384,9 +550,13 @@ def build(projects_src, tpit_path):
 if __name__ == "__main__":
     src = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "projects.json")
     tpit = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, "sources", "ercot-tpit-2026-07.xlsx")
-    lines = build(src, tpit)
+    queue = sys.argv[3] if len(sys.argv) > 3 else os.path.join(HERE, "sources", "ercot-gis-report-2026-09.xlsx")
+    lines = build(src, tpit, queue)
     from collections import Counter
     print(len(lines), "lines")
     print(Counter(x["lifecycle"] for x in lines))
     print(Counter(x["recommended_next_step"] for x in lines))
     print(Counter(x["project_type"] for x in lines), Counter(x["kv"] for x in lines))
+    q = [x for x in lines if x["queue"]["projects"]]
+    print(len(q), "lines with queued projects;", sum(x["queue"]["projects"] > 0 for x in lines if x["recommended_next_step"] != "informational"), "excluding informational")
+    print(Counter(e.get("in_place") for x in lines for e in x["endpoints"]))

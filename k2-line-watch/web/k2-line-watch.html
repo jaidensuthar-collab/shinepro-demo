@@ -161,6 +161,15 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 .rec.sub { background: var(--flag-soft); color: var(--flag) } .rec.line { background: var(--open-soft); color: var(--open) }
 .rec.follow { background: var(--fast-soft); color: var(--fast) } .rec.info { background: var(--late-soft); color: var(--late) }
 .lines-tools select { border: 1px solid var(--rule); background: var(--panel); padding: 5px 8px; border-radius: 4px; max-width: 100% }
+.stag { font: 600 10px var(--body); padding: 0 5px; border-radius: 3px; border: 1px solid var(--rule); color: var(--muted); white-space: nowrap; margin-left: 3px }
+.stag.new { border-color: var(--fast); color: var(--fast) } .stag.fresh { background: var(--open-soft); color: var(--open); border-color: transparent }
+.devrow td { background: var(--bg) } .devlist { width: 100%; font-size: 13px; border-collapse: collapse } .devlist td, .devlist th { padding: 3px 6px; border: 0; vertical-align: top; text-align: left }
+.devlist td.n, .devlist th.n { text-align: right }
+.devst { background: var(--panel); border: 1px solid var(--rule); border-radius: 4px; padding: 10px 12px; margin: 0 0 10px; min-width: 0 }
+.devst h3 { font: 600 16px var(--display); margin: 0 }
+@media (max-width: 640px) { .devlist thead { display: none } .devlist tr { display: block; padding: 6px 0; border-bottom: 1px solid var(--rule) }
+  .devlist td { display: inline; padding: 0 4px 0 0 } .devlist td.n::after { content: " MW" } .devlist td + td::before { content: "· "; color: var(--muted) }
+  .devlist td:first-child::before { content: none } .devlist td br { display: none } .devlist td .pmeta::before { content: " · " } }
 /* Landowners tab */
 .stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border: 1px solid var(--rule); background: var(--panel) }
 .stats > div { padding: 10px 12px; border-right: 1px solid var(--rule); min-width: 0 }
@@ -274,11 +283,20 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
       <select id="lf-life" aria-label="Lifecycle"><option value="">Every stage</option></select>
       <select id="lf-kv" aria-label="Voltage"><option value="">Every voltage</option></select>
       <select id="lf-type" aria-label="Project type"><option value="">Every type</option></select>
+      <select id="lf-dev" aria-label="Developers queued"><option value="">With or without developers</option><option value="yes">Developers queued at its substations</option><option value="no">No developers queued</option></select>
+      <select id="lf-new" aria-label="First seen"><option value="">Any date added</option><option value="new">New since the first list</option></select>
       <input class="search" id="lf-q" type="search" placeholder="Search a line, substation, county, utility or ERCOT number" aria-label="Search lines">
     </div>
     <p class="pmeta" id="linescount"></p>
     <div class="tbl" id="linestable"></div>
     <button class="chip more" id="moreLines" hidden>Show more</button>
+    <section>
+      <h2>Developers at these substations</h2>
+      <p>Generation and battery projects already in ERCOT's interconnection queue at the end substations above, from ERCOT's monthly interconnection status report. These are the developers to approach about partnering. Each project is listed under the company that filed it with ERCOT, often a project company (for example "Amerada Solar, LLC") rather than the parent developer; finding the parent company and a contact is the next research step.</p>
+      <p class="pmeta" id="devstamp"></p>
+      <div id="devtable"></div>
+      <button class="chip more" id="moreDevs" hidden>Show more substations</button>
+    </section>
     <section>
       <h2>How the next step is picked</h2>
       <ul class="pins">
@@ -289,7 +307,8 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
       </ul>
       <p class="pmeta">Sources: ERCOT's Transmission Project and Information Tracking report (TPIT, July 2026 update), the Line Watch project cards, and for locations the HIFLD national substation map, OpenStreetMap (data &copy; OpenStreetMap contributors) and points researched from utility filings and maps (each pin says how it was placed). "About to enter construction" is estimated from an in-service date within 18 months unless a card says the route is approved. Download every field from <b>Data for GIS</b> on the Watch list tab.</p>
     </section>
-    <p><button type="button" class="mapbtn" id="linesdl">Download the Texas lines (.csv)</button> <button type="button" class="mapbtn" id="linesdlg">Map file (.geojson)</button> <span class="pmeta" id="linesdlnote"></span></p>
+    <p><button type="button" class="mapbtn" id="linesdl">Download the Texas lines (.csv)</button> <button type="button" class="mapbtn" id="linesdlg">Map file (.geojson)</button> <button type="button" class="mapbtn" id="devdl">Developers by substation (.csv)</button> <span class="pmeta" id="linesdlnote"></span></p>
+    <p class="pmeta">Checking a substation: each end substation is tagged <b>on maps</b> (found on the HIFLD or OpenStreetMap substation maps, so it exists today), <b>new or expanding</b> (ERCOT's project builds or expands it) or <b>not on maps</b> (not on public maps yet: new, renamed, or placed only from filings). Click a substation to see it from above on satellite view. Lines added after the first list on Oct 20, 2026 are tagged <b>new</b>.</p>
   </div>
 
   <div id="p-land" role="tabpanel" aria-labelledby="t-land" class="panel land" hidden>
@@ -617,15 +636,18 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   const REC = { "substation campaign": ["sub", "Substation campaign"], "line campaign": ["line", "Line campaign"],
                 "follow updates": ["follow", "Follow updates"], "informational": ["info", "Informational"] };
   const LIFE = ["proposed", "planned", "about to enter construction", "in construction", "operating (recently built)"];
-  const LS = { all: [], rec: "", life: "", kv: "", type: "", q: "", shown: 40, built: "" };
+  const LS = { all: [], rec: "", life: "", kv: "", type: "", dev: "", fresh: "", q: "", shown: 40, built: "", stations: {}, queue: "", base: "", open: new Set(), devShown: 15 };
+  const STAG = { "on public maps": ["", "on maps"], "new or expanding (per ERCOT)": ["new", "new or expanding"], "not on public maps": ["", "not on maps"] };
   fetch("data/texas-lines.json").then((r) => r.ok ? r.json() : null).then((d) => {
     if (!d) { $("linesstamp").textContent = "The Texas line list could not load. Reload the page to try again."; return; }
-    LS.all = d.lines || []; LS.built = d.built || "";
+    LS.all = d.lines || []; LS.built = d.built || ""; LS.queue = d.queue_report || "";
+    LS.stations = Object.fromEntries((d.stations || []).map((s) => [s.id, s]));
+    LS.base = LS.all.reduce((m, x) => (x.first_seen && (!m || x.first_seen < m) ? x.first_seen : m), "");
     const opts = (id, vals, label) => { $(id).innerHTML = `<option value="">${label}</option>` + vals.map((v) => `<option value="${esc(v)}">${esc(v)}</option>`).join(""); };
     opts("lf-life", LIFE.filter((l) => LS.all.some((x) => x.lifecycle === l)), "Every stage");
     opts("lf-kv", [...new Set(LS.all.map((x) => x.kv))].sort((a, b) => b - a).map(String), "Every voltage");
     opts("lf-type", [...new Set(LS.all.map((x) => x.project_type))].sort(), "Every type");
-    renderLines(); renderProjects();
+    renderLines(); renderDevs(); renderProjects();
   }).catch(() => { $("linesstamp").textContent = "The Texas line list could not load. Reload the page to try again."; });
   const linesFor = (p) => LS.all.filter((x) => x.card_id === p.id);
   function lineMatch(x) {
@@ -633,29 +655,64 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     if (LS.life && x.lifecycle !== LS.life) return false;
     if (LS.kv && String(x.kv) !== LS.kv) return false;
     if (LS.type && x.project_type !== LS.type) return false;
+    const nq = (x.queue || {}).projects || 0;
+    if (LS.dev && (LS.dev === "yes") !== nq > 0) return false;
+    if (LS.fresh && !isFresh(x)) return false;
     if (!LS.q) return true;
-    const hay = [x.name, x.from, x.to, x.county_from, x.county_to, x.utility, x.ercot_project, x.program, x.docket].join(" ").toLowerCase();
+    const devs = ((x.queue || {}).stations || []).flatMap((id) => ((LS.stations[id] || {}).projects || []).map((p) => p.developer + " " + p.project));
+    const hay = [x.name, x.from, x.to, x.county_from, x.county_to, x.utility, x.ercot_project, x.program, x.docket, ...devs].join(" ").toLowerCase();
     return LS.q.toLowerCase().split(/\s+/).every((t) => hay.includes(t));
+  }
+  const isFresh = (x) => LS.base && x.first_seen && x.first_seen > LS.base;
+  const satLink = (e, label) => e.check_link || e.lat != null
+    ? `<a href="${esc(e.check_link || `https://www.google.com/maps/@?api=1&map_action=map&center=${Number(e.lat).toFixed(5)},${Number(e.lon).toFixed(5)}&zoom=16&basemap=satellite`)}" target="_blank" rel="noopener" title="Satellite view">${label}</a>` : label;
+  const stag = (e) => { const [c, l] = STAG[e.in_place] || ["", ""]; return l ? `<span class="stag ${c}">${l}</span>` : ""; };
+  const mwN = (n) => Math.round(Number(n) || 0).toLocaleString();
+  function devList(projects, showStation) {
+    return `<table class="devlist"><thead><tr>${showStation ? "<th>Substation</th>" : ""}<th>Developer (as filed with ERCOT)</th><th>Project</th><th class="n">MW</th><th>Online</th><th>Study stage</th></tr></thead><tbody>${
+      projects.map((p) => `<tr>${showStation ? `<td>${esc(p._st || "")}</td>` : ""}<td><b>${esc(p.developer)}</b></td><td>${esc(p.project)}<br><span class="pmeta">${esc(p.fuel)} · ${esc(p.inr)} · ${esc(p.connection)}</span></td><td class="n">${p.mw > 0 ? mwN(p.mw) : "<span class=\"pmeta\">0 (shares the site's limit)</span>"}</td><td>${esc(p.cod || "")}</td><td>${p.ia_signed ? "Agreement signed" : "Studying"}<br><span class="pmeta">${esc(p.phase)}</span></td></tr>`).join("")}</tbody></table>`;
   }
   function renderLines() {
     const all = LS.all;
-    $("linesstamp").textContent = `${all.length.toLocaleString()} lines and substations · list built ${LS.built} from ERCOT's July 2026 project report and the Line Watch cards`;
+    $("linesstamp").textContent = `${all.length.toLocaleString()} lines and substations · list built ${LS.built} from ERCOT's July 2026 project report${LS.queue ? ", ERCOT's " + LS.queue + " interconnection queue" : ""} and the Line Watch cards`;
     $("linesrecs").innerHTML = Object.entries(REC).map(([k, [, lbl]]) => `<button type="button" data-rec="${esc(k)}" aria-pressed="${LS.rec === k}"><b>${all.filter((x) => x.recommended_next_step === k).length}</b><span>${esc(lbl)}</span></button>`).join("");
     $("linesrecs").querySelectorAll("[data-rec]").forEach((b) => b.addEventListener("click", () => { LS.rec = LS.rec === b.dataset.rec ? "" : b.dataset.rec; LS.shown = 40; renderLines(); }));
     const list = all.filter(lineMatch);
     $("linescount").textContent = `${list.length.toLocaleString()} shown, highest priority first (bigger lines that come online sooner rank higher).`;
     const where = (x) => [x.county_from, x.county_to].filter((c, i, a) => c && a.indexOf(c) === i).join(" to ");
-    const ends = (x) => (x.endpoints || []).map((e) => e.lat != null ? `<a href="https://www.google.com/maps/search/?api=1&query=${Number(e.lat).toFixed(4)},${Number(e.lon).toFixed(4)}" target="_blank" rel="noopener">${esc(subShort(e.name))}</a>` : esc(subShort(e.name))).join(" to ");
-    $("linestable").innerHTML = `<table><thead><tr><th>Line</th><th class="n">kV</th><th>Type</th><th>Stage</th><th>In service</th><th>Where</th><th>Next step</th></tr></thead><tbody>${
+    const ends = (x) => (x.endpoints || []).map((e) => satLink(e, esc(subShort(e.name))) + stag(e)).join(" to ");
+    const devCell = (x) => { const q = x.queue || {};
+      if (!q.projects) return `<span class="pmeta">None queued</span>`;
+      return `<b>${q.projects}</b> project${q.projects > 1 ? "s" : ""}, ${mwN(q.mw)} MW<br><span class="pmeta">${esc(q.developers.slice(0, 2).join("; "))}</span><br><button type="button" class="linkbtn" data-devs="${esc(x.id)}" aria-expanded="${LS.open.has(x.id)}">${LS.open.has(x.id) ? "Hide" : "Show"} developers</button>`; };
+    const devRow = (x) => { if (!LS.open.has(x.id)) return "";
+      const ps = (x.queue.stations || []).filter((id) => LS.stations[id]).flatMap((id) => LS.stations[id].projects.map((p) => ({ ...p, _st: LS.stations[id].name })));
+      return `<tr class="devrow"><td colspan="8">${devList(ps, true)}</td></tr>`; };
+    $("linestable").innerHTML = `<table><thead><tr><th>Line</th><th class="n">kV</th><th>Type</th><th>Stage</th><th>In service</th><th>Where</th><th>Developers queued</th><th>Next step</th></tr></thead><tbody>${
       list.slice(0, LS.shown).map((x) => { const [cls, lbl] = REC[x.recommended_next_step] || ["info", x.recommended_next_step];
-        return `<tr><td><b>${esc(x.name)}</b><br><span class="pmeta">${ends(x) || "No end substations listed"} · ${esc(x.utility)}${x.ercot_project ? " · ERCOT " + esc(x.ercot_project) : ""}${x.card_id ? ` · <button type="button" class="linkbtn" data-gocard="${esc(x.card_id)}">project card</button>` : ""}</span></td>
+        return `<tr><td><b>${esc(x.name)}</b>${isFresh(x) ? ` <span class="stag fresh">new ${esc(x.first_seen)}</span>` : ""}<br><span class="pmeta">${ends(x) || "No end substations listed"} · ${esc(x.utility)}${x.ercot_project ? " · ERCOT " + esc(x.ercot_project) : ""}${x.card_id ? ` · <button type="button" class="linkbtn" data-gocard="${esc(x.card_id)}">project card</button>` : ""}</span></td>
           <td class="n">${esc(x.kv)}</td><td>${esc(x.project_type)}${x.upgrade_kind ? `<br><span class="pmeta">${esc(x.upgrade_kind)}</span>` : ""}${x.miles_new || x.miles_upgraded ? `<br><span class="pmeta">${x.miles_new ? esc(x.miles_new) + " mi new" : esc(x.miles_upgraded) + " mi upgraded"}</span>` : ""}</td>
           <td>${esc(x.lifecycle)}</td><td class="n">${esc(x.in_service || "not set")}${x.in_service_kind === "actual" ? "<br><span class=\"pmeta\">actual</span>" : ""}</td>
-          <td>${esc(where(x))}</td><td><span class="rec ${cls}">${esc(lbl)}</span><br><span class="pmeta">${esc(x.recommendation_reason)}</span></td></tr>`; }).join("")
-      || `<tr><td colspan="7" class="pmeta">No lines match. Clear a filter.</td></tr>`}</tbody></table>`;
+          <td>${esc(where(x))}</td><td>${devCell(x)}</td><td><span class="rec ${cls}">${esc(lbl)}</span><br><span class="pmeta">${esc(x.recommendation_reason)}</span></td></tr>${devRow(x)}`; }).join("")
+      || `<tr><td colspan="8" class="pmeta">No lines match. Clear a filter.</td></tr>`}</tbody></table>`;
     $("moreLines").hidden = list.length <= LS.shown;
   }
-  [["lf-life", "life"], ["lf-kv", "kv"], ["lf-type", "type"]].forEach(([id, k]) => $(id).addEventListener("change", (e) => { LS[k] = e.target.value; LS.shown = 40; renderLines(); }));
+  function renderDevs() {
+    const st = Object.values(LS.stations).sort((a, b) => b.mw - a.mw);
+    const nproj = new Set(st.flatMap((s) => s.projects.map((p) => p.inr))).size, ndev = new Set(st.flatMap((s) => s.projects.map((p) => p.developer))).size;
+    $("devstamp").textContent = st.length ? `${nproj.toLocaleString()} queued projects from ${ndev.toLocaleString()} developer companies at ${st.length} of the substations · ERCOT ${LS.queue} report · biggest first` : "No queue data in this list yet.";
+    const lineName = (id) => (LS.all.find((x) => x.id === id) || {}).name || id;
+    $("devtable").innerHTML = st.slice(0, LS.devShown).map((s) => `<article class="devst"><h3>${satLink(s, esc(s.name))}${stag(s)}</h3>
+        <p class="pmeta">${esc(s.county)} County · <b>${s.projects.length}</b> queued project${s.projects.length > 1 ? "s" : ""}, ${mwN(s.mw)} MW · Lines here: ${s.lines.slice(0, 3).map((id) => esc(lineName(id))).join("; ")}${s.lines.length > 3 ? ` and ${s.lines.length - 3} more` : ""}</p>
+        ${devList(s.projects.slice(0, 6), false)}${s.projects.length > 6 ? `<p class="pmeta">+${s.projects.length - 6} more in the developers download</p>` : ""}</article>`).join("");
+    $("moreDevs").hidden = st.length <= LS.devShown;
+  }
+  $("moreDevs").addEventListener("click", () => { LS.devShown += 25; renderDevs(); });
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest && e.target.closest("[data-devs]");
+    if (!b) return;
+    const id = b.dataset.devs; LS.open.has(id) ? LS.open.delete(id) : LS.open.add(id); renderLines();
+  });
+  [["lf-life", "life"], ["lf-kv", "kv"], ["lf-type", "type"], ["lf-dev", "dev"], ["lf-new", "fresh"]].forEach(([id, k]) => $(id).addEventListener("change", (e) => { LS[k] = e.target.value; LS.shown = 40; renderLines(); }));
   $("lf-q").addEventListener("input", (e) => { LS.q = e.target.value.trim(); LS.shown = 40; renderLines(); });
   $("moreLines").addEventListener("click", () => { LS.shown += 60; renderLines(); });
   document.addEventListener("click", (e) => {
@@ -676,6 +733,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   }
   $("linesdl").addEventListener("click", () => saveExport("k2-texas-lines.csv", "k2-texas-lines.csv"));
   $("linesdlg").addEventListener("click", () => saveExport("k2-texas-lines.geojson", "k2-texas-lines.geojson"));
+  $("devdl").addEventListener("click", () => saveExport("k2-texas-developers.csv", "k2-texas-developers.csv"));
   function phaseBlock(p) {
     const xs = linesFor(p);
     if (!xs.length) return "";
@@ -1058,7 +1116,7 @@ How to answer: plain English for someone new to the grid; short; lead with the a
   }
 
   // GIS bundle: the page zips the published export files (JSZip) and saves the zip through the downloads capability.
-  const GIS_FILES = ["README.txt", "k2-texas-lines.csv", "k2-texas-lines.geojson", "k2-substations.geojson", "k2-substations.csv", "k2-study-areas.geojson", "k2-straight-lines.geojson",
+  const GIS_FILES = ["README.txt", "k2-texas-lines.csv", "k2-texas-lines.geojson", "k2-texas-developers.csv", "k2-substations.geojson", "k2-substations.csv", "k2-study-areas.geojson", "k2-straight-lines.geojson",
     "k2-projects.csv", "k2-irp-pilot.csv", ["k2-line-watch.kml.xml", "k2-line-watch.kml"]];
   function loadJSZip() {
     if (window.JSZip) return Promise.resolve(window.JSZip);

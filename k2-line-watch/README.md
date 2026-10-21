@@ -81,7 +81,12 @@ It drops:
 
 A scheduled task runs this every day at about 7am and 5pm Central. The same run checks ERCOT's planning
 page for a new Transmission Project and Information Tracking report and, when there is one, rebuilds the
-Texas lines list (`data/build_catalog.py`) and republishes the page.
+Texas lines list (`data/build_catalog.py`) and republishes the page. The list also joins ERCOT's monthly
+interconnection queue (Generator Interconnection Status report, `data/sources/ercot-gis-report-YYYY-MM.xlsx`,
+from https://www.ercot.com/misapp/GetReports.do?reportTypeId=15933) to each end substation, so every line shows
+the developers already queued there; a new month's report is a reason to rebuild too.
+`data/sources/catalog-first-seen.json` keeps the date each line first appeared, so lines added after the
+first list are tagged new.
 
 1. Read the IDs in `'K2 Watch'!L2:L` and `'Monitor Feed'!J2:J` into `seen.txt`, one per line.
 2. Run `python3 monitor.py --seen seen.txt --rows rows.json --json report.json --db-dir db/`.
