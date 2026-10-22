@@ -31,7 +31,12 @@ QUEUE_URL = "https://www.ercot.com/misapp/GetReports.do?reportTypeId=15933"
 TODAY = datetime.date.today()
 
 PROGRAMS = {"25RPG025": "ERCOT 765 kV STEP: Eastern Backbone", "H.B. 5066": "Permian Basin Reliability Plan (HB 5066)"}
-GENERATOR = re.compile(r"GEN[ -]?TIE|\bGEN\b|GENERATION|BESS|SOLAR|WIND|STORAGE|\bESR\b|\d{2}INR\d{3,4}|\bG?INR\b|\bPOI\b|POWER PLANT", re.I)
+GENERATOR = re.compile(r"GEN[ -]?TIE|\bGEN\b|GENERATION|BESS|SOLAR|WIND|STORAGE|\bESR\b|\d{2}INR\d{3,4}|\bG?INR\b|POWER PLANT", re.I)
+# 'POI' alone is weaker: it also names a hookup to another utility or a co-op delivery point inside a grid plan.
+POI = re.compile(r"\bPOI\b", re.I)
+GRID_PLAN = re.compile(r"RELIABILITY PLAN|\d{2}RPG\d{3}|\bPOI\)? WITH\b", re.I)
+# ERCOT's names for stations the Line Watch cards call something else.
+ALIASES = {"MORLEY": "HILLJE", "MORELY": "HILLJE", "CLEARFORK": "MASCHO"}
 BIG_LOAD = re.compile(r"DATA ?CENTER|LARGE LOAD|NEW LOAD|ALPHA LOAD|CUSTOMER|LNG|CRYPTO|MINING|REFINERY|HYDROGEN|\bLOAD\b.{0,25}INTERCONNECT|INTERCONNECT.{0,40}\bLOAD\b", re.I)
 EQUIPMENT = re.compile(r"^MODELS|LOAD RECORD|CAP(ACITOR)? BANK|REACTOR|AUTO ?TRANSFORMER|CONDENSER|DYNAMIC REACTIVE|BREAKER|RELAY|METER|STATCOM|SVC\b", re.I)
 NEW_STATION = re.compile(r"(NEW|CONSTRUCT|ESTABLISH|ADDITION|\bADD\b).{0,60}(STATION|SWITCH|SUBSTATION)|(STATION|SWITCH|SUBSTATION).{0,30}(ADDITION)", re.I)
@@ -86,6 +91,13 @@ def queue_label(path):
     return datetime.date(int(m[1]), int(m[2]), 1).strftime("%B %Y") if m else ""
 
 
+def real_date(v):
+    """A TPIT date cell as a datetime, or None for blanks and ERCOT's placeholder years (9999-01-01, 1900)."""
+    if isinstance(v, datetime.date) and not isinstance(v, datetime.datetime):
+        v = datetime.datetime(v.year, v.month, v.day)
+    return v if isinstance(v, datetime.datetime) and 1950 <= v.year <= 2100 else None
+
+
 def read_tpit(path):
     wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
     rows, seen = [], set()
@@ -110,6 +122,9 @@ def read_tpit(path):
             seen.add(str(r[C["id"]]))
             d = {k: (clean(r[i]) if isinstance(r[i], str) else r[i]) for k, i in C.items()}
             d["tab"] = tab
+            d["isd"], d["actual"] = real_date(d["isd"]), real_date(d["actual"])
+            if d["actual"] and d["actual"].date() > TODAY:
+                d["isd"], d["actual"] = d["isd"] or d["actual"], None
             rows.append(d)
     return rows
 
@@ -174,7 +189,7 @@ class Places:
         return None
 
     def _find(self, name, county):
-        b = base(name)
+        b = alias(base(name))
         r = self.researched.get(clean(name).upper()) or (self.researched.get(b) if b else None)
         if not b and not r:
             return None
@@ -234,7 +249,7 @@ def poi_names(poi):
     names = []
     for part in re.split(r"\s+(?:-|to|&|and)\s+|,|;|\s-\s|\u2013", t, flags=re.I):
         part = re.sub(r"_?(POI)?_?\d*$", "", part.strip(), flags=re.I)
-        b = re.sub(r"\s+", " ", OWNER_TAGS.sub(" ", base(part))).strip()
+        b = alias(re.sub(r"\s+", " ", OWNER_TAGS.sub(" ", base(part))).strip())
         if b and b not in names:
             names.append(b)
     return names, tap or len(names) > 1
@@ -282,7 +297,7 @@ def attach_queue(lines, places, path):
             e["in_place"] = in_place(e, x)
             if e.get("lat") is not None:
                 e["check_link"] = f"https://www.google.com/maps/@?api=1&map_action=map&center={e['lat']:.5f},{e['lon']:.5f}&zoom=16&basemap=satellite"
-            b = base(re.sub(r"^\d+\s+", "", clean(e["name"])))
+            b = alias(base(re.sub(r"^\d+\s+", "", clean(e["name"]))))
             if b:
                 idx.setdefault(b, []).append((x, e))
         x["queue"] = {"projects": 0, "mw": 0, "developers": [], "stations": []}
@@ -355,14 +370,26 @@ def first_seen(lines):
     json.dump(dict(sorted(seen.items())), open(f, "w"), indent=0)
 
 
+def alias(name):
+    return " ".join(ALIASES.get(w, w) for w in name.split())
+
+
 def card_index(projects):
     """Line Watch cards by their pair of end substations."""
     idx = {}
     for p in projects:
-        names = [base(e["name"]) for e in (p.get("geo") or {}).get("endpoints") or []]
+        names = [alias(base(e["name"])) for e in (p.get("geo") or {}).get("endpoints") or []]
         if len(names) == 2:
             idx[frozenset(names)] = p
     return idx
+
+
+def cards_for(r, kv, cards):
+    """Every card whose two end substations are both named in the TPIT row's title or terminals, at the same voltage
+    ('Construct Mascho - Border - Drill Hole 345 kV DCKT Line' covers the Drill Hole to Border card)."""
+    text = " " + alias(re.sub(r"[^A-Z0-9]+", " ", " ".join(str(r[k] or "") for k in ("title", "from", "to")).upper())) + " "
+    return [p for pair, p in cards.items()
+            if int(num(p.get("kv"))) == kv and all(f" {n} " in text for n in pair if n) and all(pair)]
 
 
 def classify(r):
@@ -380,7 +407,8 @@ def classify(r):
         ptype, detail = "new substation", ""
     else:
         return None
-    purpose = "generator hookup" if GENERATOR.search(text) else "large-load hookup" if BIG_LOAD.search(text) else "shared grid"
+    gen = GENERATOR.search(text) or (POI.search(text) and not str(r["rpg"] or "").strip() and not GRID_PLAN.search(text))
+    purpose = "generator hookup" if gen else "large-load hookup" if BIG_LOAD.search(text) else "shared grid"
     return kv, ptype, detail, purpose
 
 
@@ -442,7 +470,10 @@ def build(projects_src, tpit_path, queue_path=None):
             continue
         kv, ptype, detail, purpose = c
         frm, to = str(r["from"] or "").strip(), str(r["to"] or "").strip()
-        card = cards.get(frozenset([base(frm), base(to)])) if frm and to else None
+        matched = cards_for(r, kv, cards)
+        card = (cards.get(frozenset([alias(base(frm)), alias(base(to))])) if frm and to else None) or \
+            min(matched, key=lambda p: p.get("stage", 0), default=None)  # a line spanning two cards is as far along as its slower part
+        matched = list({p["id"]: p for p in ([card] if card else []) + matched}.values())
         life, life_basis = lifecycle(r, card)
         if not life:
             continue
@@ -463,13 +494,12 @@ def build(projects_src, tpit_path, queue_path=None):
                "construction_start": "", "capacity_mw": None, "purpose": purpose,
                "program": PROGRAMS.get(rpg, f"ERCOT RPG {rpg}" if re.match(r"\d{2}RPG\d{3}", rpg) else ""),
                "rpg": rpg, "tier": str(r["tier"] or "").strip(), "ercot_board": ym(r["board"]), "docket": (card or {}).get("docket", ""),
-               "route_status": route, "card_id": (card or {}).get("id", ""), "endpoints": ends,
+               "route_status": route, "card_id": (card or {}).get("id", ""), "card_ids": [p["id"] for p in matched], "endpoints": ends,
                "source": f"ERCOT TPIT ({TPIT_URL}), July 13, 2026 update", "checked": "ERCOT TPIT 2026-07-13"}
         rec["tap_note"] = "Projects connect at the substations" if kv >= 500 else "The line itself can be tapped"
         rec["recommended_next_step"], rec["recommendation_reason"] = recommend(rec)
         rec["priority_score"] = priority(rec)
-        if card:
-            used_cards.add(card["id"])
+        used_cards.update(p["id"] for p in matched)
         out.append(rec)
 
     # Line Watch cards ERCOT's report doesn't list yet (early signals, open houses, news).
@@ -488,7 +518,7 @@ def build(projects_src, tpit_path, queue_path=None):
                "miles_upgraded": 0, "transformer_mva": 0, "in_service": "", "in_service_kind": "", "construction_start": "", "capacity_mw": None,
                "purpose": "shared grid", "program": PROGRAMS.get(str(p.get("rpg", "")).split(" ")[0], p.get("rpg", "")), "rpg": p.get("rpg", ""),
                "tier": "", "ercot_board": "", "docket": p.get("docket", ""), "route_status": STAGE_ROUTE.get(stage, "end substations only"),
-               "card_id": p["id"], "endpoints": ends, "source": "; ".join(l["url"] for l in p.get("links", [])[:2]), "checked": p.get("checked", "")}
+               "card_id": p["id"], "card_ids": [p["id"]], "endpoints": ends, "source": "; ".join(l["url"] for l in p.get("links", [])[:2]), "checked": p.get("checked", "")}
         rec["tap_note"] = "Projects connect at the substations" if rec["kv"] >= 500 else "The line itself can be tapped"
         rec["recommended_next_step"], rec["recommendation_reason"] = recommend(rec)
         rec["priority_score"] = priority(rec)

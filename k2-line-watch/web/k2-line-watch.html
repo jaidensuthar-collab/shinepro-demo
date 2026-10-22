@@ -649,7 +649,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     opts("lf-type", [...new Set(LS.all.map((x) => x.project_type))].sort(), "Every type");
     renderLines(); renderDevs(); renderProjects();
   }).catch(() => { $("linesstamp").textContent = "The Texas line list could not load. Reload the page to try again."; });
-  const linesFor = (p) => LS.all.filter((x) => x.card_id === p.id);
+  const linesFor = (p) => LS.all.filter((x) => (x.card_ids || [x.card_id]).includes(p.id));
   function lineMatch(x) {
     if (LS.rec && x.recommended_next_step !== LS.rec) return false;
     if (LS.life && x.lifecycle !== LS.life) return false;
