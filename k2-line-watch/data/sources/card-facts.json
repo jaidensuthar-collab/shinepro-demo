@@ -1,0 +1,146 @@
+{
+ "checked": "2026-10-22",
+ "note": "Miles and expected in-service dates for Line Watch cards ERCOT's TPIT report does not list yet, each with the source it was read from. Range miles use the low end; miles_text has the range.",
+ "cards": [
+  {
+   "card_id": "bell-east-watermill",
+   "miles": 133.2,
+   "miles_text": "about 133.2 miles (ERCOT estimate, new right of way)",
+   "miles_source": "https://www.ercot.com/files/docs/2025/12/01/14.1-25RPG025-AEP-Texas-CPS-Energy-Oncor-and-CNP-Texas-765-kV-STEP-Eastern-Backbone-Project.pdf",
+   "miles_quote": "Construct a new Bell East to Watermill 765-kV single-circuit transmission line ... which will require a new ROW, approximately 133.2-mile.",
+   "in_service": "2030",
+   "in_service_source": "https://www.ercot.com/files/docs/2025/12/01/14.1-25RPG025-AEP-Texas-CPS-Energy-Oncor-and-CNP-Texas-765-kV-STEP-Eastern-Backbone-Project.pdf",
+   "in_service_quote": "The expected in-service date (ISD) of the project is between 2030 and 2032."
+  },
+  {
+   "card_id": "dinosaur-watermill",
+   "miles": 78.0,
+   "miles_text": "about 78 miles (ERCOT estimate, new right of way)",
+   "miles_source": "https://www.ercot.com/files/docs/2025/12/01/14.1-25RPG025-AEP-Texas-CPS-Energy-Oncor-and-CNP-Texas-765-kV-STEP-Eastern-Backbone-Project.pdf",
+   "miles_quote": "Construct a new Dinosaur to Watermill 765-kV single-circuit transmission line ... which will require a new right of way (ROW), approximately 78.0-mile",
+   "in_service": "2030",
+   "in_service_source": "https://www.ercot.com/files/docs/2025/12/01/14.1-25RPG025-AEP-Texas-CPS-Energy-Oncor-and-CNP-Texas-765-kV-STEP-Eastern-Backbone-Project.pdf",
+   "in_service_quote": "The expected in-service date (ISD) of the project is between 2030 and 2032."
+  },
+  {
+   "card_id": "el-capitan-dry-lake",
+   "miles": 30.9,
+   "miles_text": "about 30.9 miles (approved route; filed routes ranged about 28.1 to 36.1 miles)",
+   "miles_source": "https://interchange.puc.texas.gov/Documents/59353_79_1675910.PDF",
+   "miles_quote": "The route approved in this Order is approximately 30.9 miles in length.",
+   "in_service": "2028-12",
+   "in_service_source": "https://interchange.puc.texas.gov/Documents/59353_79_1675910.PDF",
+   "in_service_quote": "Oncor estimates it will energize the proposed transmission facilities in December 2028."
+  },
+  {
+   "card_id": "bakersfield-white-baker",
+   "miles": 13.3,
+   "miles_text": "about 13.3 miles",
+   "miles_source": "https://interchange.puc.texas.gov/Documents/59908_24_1677782.PDF",
+   "miles_quote": "The total length of the transmission line is 13.3 miles.",
+   "in_service": "2028",
+   "in_service_source": "https://www.lcra.org/energy/electric-transmission/transmission-line-routing/bakersfield-to-white-baker-345-kv-transmission-line-project/",
+   "in_service_quote": "2028 ... Winter-Summer | Construction ... Summer | Project in service"
+  },
+  {
+   "card_id": "consavvy-long-creek",
+   "miles": 152,
+   "miles_text": "about 152 to 153 miles (rebuild along existing line; three build options)",
+   "miles_source": "https://interchange.puc.texas.gov/Documents/60190_13_1685291.PDF",
+   "miles_quote": "The total length of the proposed transmission line is approximately 152 to 153 miles, depending on the route selected.",
+   "in_service": "2028-12",
+   "in_service_source": "https://interchange.puc.texas.gov/Documents/60190_2_1683832.PDF",
+   "in_service_quote": "Route 1: Build-Adjacent ... Energize Facilities - 12/2028 (Route 2: 12/2030; Route 3: 06/2029)"
+  },
+  {
+   "card_id": "oncor-liggett-to-skyview",
+   "miles": 2.6,
+   "miles_text": "about 2.6 miles (ERCOT review of Oncor's proposal; mostly in existing right of way)",
+   "miles_source": "https://www.ercot.com/files/docs/2025/10/24/EIR_Scope_Oncor_Skyview_345138kV_Switch_Project_-_RPG_Oct_2025_Final.pdf",
+   "miles_quote": "Construct a new Liggett Switch to Skyview Switch 345-kV transmission line ... on the upgraded 2.6-mile portion",
+   "in_service": "2027",
+   "in_service_source": "https://www.oncor.com/content/dam/oncorwww/documents/about-us/transmission-system/current-trasmission-line-projects/liggett-to-skyview-345kv/Public%20Meeting%20Material%20Website%20Packet%20Liggett_Skyview%20.pdf",
+   "in_service_quote": "The Project is currently planned for completion in Spring 2027."
+  },
+  {
+   "card_id": "oncor-mascho-to-lamesa",
+   "miles": 73.2,
+   "miles_text": "about 73.2 to 85.8 miles (filed routes)",
+   "miles_source": "https://interchange.puc.texas.gov/Documents/60082_3_1676431.PDF",
+   "miles_quote": "The length of the Proposed Transmission Line Project is approximately 73.2 to 85.8 miles, depending on the route selected",
+   "in_service": "2030-08",
+   "in_service_source": "https://interchange.puc.texas.gov/Documents/60082_3_1676431.PDF",
+   "in_service_quote": "Energize Facilities - 8/2030"
+  },
+  {
+   "card_id": "oncor-ranger-camp-to-midland-east",
+   "miles": 71.9,
+   "miles_text": "about 71.9 miles (second circuit on the existing line)",
+   "miles_source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/ranger-camp-switch-to-midland-east-switch-345kv-transmission-lin.html",
+   "miles_quote": "installation of a second 345 kV circuit along the existing 71.9-mile Ranger Camp Switch \u2013 Midland East Switch 345 kV transmission line",
+   "in_service": "2028",
+   "in_service_source": "https://www.ercot.com/files/docs/2024/06/11/12.2%20Oncor%20West%20Texas%20345-kV%20Infrastructure%20Rebuild%20Regional%20Planning%20Group%20(RPG)%20Project.pdf",
+   "in_service_quote": "West Texas 345-kV Infrastructure Rebuild Project ... with the expected in-service date of summer 2028"
+  },
+  {
+   "card_id": "oncor-redland-to-longleaf",
+   "miles": 1.78,
+   "miles_text": "about 1.78 miles (approved route 1; filed routes 1.63 to 1.78 miles)",
+   "miles_source": "https://interchange.puc.texas.gov/Documents/57553_29_1491110.PDF",
+   "miles_quote": "The route agreed to by the parties is route 1, which is 1.78 miles in length",
+   "in_service": "2026-06",
+   "in_service_source": "https://interchange.puc.texas.gov/Documents/57553_29_1491110.PDF",
+   "in_service_quote": "Oncor estimates it will complete construction of facilities and energize the facilities by June 2026."
+  },
+  {
+   "card_id": "oncor-temple-to-salado",
+   "miles": 15,
+   "miles_text": "about 15 miles (within existing right of way)",
+   "miles_source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/temple-switch---salado-switch-345-138-kv-transmission-line-proje.html",
+   "miles_quote": "The proposed project will be built entirely within existing Oncor ROW and will be approximately 15 miles long.",
+   "in_service": null,
+   "in_service_source": null,
+   "in_service_quote": null
+  },
+  {
+   "card_id": "panhandle-plan",
+   "miles": 406,
+   "miles_text": "about 406 miles of new 765 kV lines (Cross Texas's recommended Option 1, not yet an ERCOT estimate)",
+   "miles_source": "https://www.ercot.com/files/docs/2026/07/20/12.-ERCOT-RPG_CTT-PH-Reliability-Transmission-Plan_Presentation_July_21_2026.pdf",
+   "miles_quote": "CTT recommends Option 1 ... 3 new 765 kV stations + ~406 miles of new 765 kV lines",
+   "in_service": "2031",
+   "in_service_source": "https://www.ercot.com/files/docs/2026/07/20/12.-ERCOT-RPG_CTT-PH-Reliability-Transmission-Plan_Presentation_July_21_2026.pdf",
+   "in_service_quote": "Estimated cost: $4.1 billion \u2022 Target in-service: 2031"
+  },
+  {
+   "card_id": "pine-mccloud",
+   "miles": 28.59,
+   "miles_text": "about 28.6 to 36.2 miles (filed routes)",
+   "miles_source": "https://interchange.puc.texas.gov/Documents/60319_89_1694720.PDF",
+   "miles_quote": "The total length of the proposed transmission line is 28.59 miles to 36.23 miles, depending on the route selected.",
+   "in_service": "2029-05",
+   "in_service_source": "https://www.epelectric.com/company/projects/pine-mccloudcentral",
+   "in_service_quote": "Energize Facilities: Anticipated in May 2029."
+  },
+  {
+   "card_id": "tuskegee-pine",
+   "miles": 12.08,
+   "miles_text": "about 12.1 to 16.1 miles (two new lines; filed routes)",
+   "miles_source": "https://interchange.puc.texas.gov/Documents/60152_7_1680576.PDF",
+   "miles_quote": "The new transmission lines will be approximately 12.08 to 16.08 miles long depending upon route selected",
+   "in_service": "2030-05",
+   "in_service_source": "https://www.epelectric.com/company/projects/tuskegee-pine",
+   "in_service_quote": "Energize Facilities: Anticipated in May 2030."
+  },
+  {
+   "card_id": "white-baker-bottlebrush",
+   "miles": 22.31,
+   "miles_text": "about 22.3 to 30.6 miles (12 filed routes)",
+   "miles_source": "https://interchange.puc.texas.gov/Documents/60382_7_1695242.PDF",
+   "miles_quote": "as well as 22.31 to 30.61 miles of double-circuit 345-kV transmission line connecting the two proposed substations",
+   "in_service": "2028-12",
+   "in_service_source": "https://interchange.puc.texas.gov/Documents/60382_2_1693105.PDF",
+   "in_service_quote": "Energize Facilities 12/2028 12/2028"
+  }
+ ]
+}

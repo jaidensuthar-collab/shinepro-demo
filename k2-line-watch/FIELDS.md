@@ -87,3 +87,22 @@ online date, study stage, interconnection agreement signed or not, construction 
 Not yet: the parent company behind each project company, and a contact person. Those need research beyond
 ERCOT's report (state business filings, developer websites, press releases).
 
+## How the list is cleaned (Oct 22, 2026)
+
+- **Dates**: ERCOT's placeholder year 9999 counts as no date. An "actual" in-service date that is still in the future
+  counts as projected. A planned line whose in-service date has passed, and that ERCOT has not marked in service yet,
+  shows as "in construction" (estimated, with the reason in `lifecycle_basis`) until ERCOT's next report confirms it.
+- **Purpose**: "POI" alone marks a generator hookup only when the project is not part of an ERCOT planning project
+  (RPG number), the Permian Basin Reliability Plan, or a hookup to another utility ("POI with CenterPoint").
+  Capacitor-only records are equipment and are left out; a new line that also adds capacitors stays.
+- **Miles**: a rebuild that reports the same miles as both new and rebuilt reuses the existing corridor, so it is an
+  upgrade with those miles under `miles_upgraded` only.
+- **Station names**: when ERCOT's terminal columns are blank or bus numbers, the names come from the project title or
+  description, or from bus numbers named in ERCOT's interconnection queue. The bus number stays in parentheses:
+  "Helotes (5200)". ERCOT's "Morley"/"Morely" is Hillje and "Clearfork" is Mascho.
+- **Cards**: a Line Watch card merges into the ERCOT line that names both its end substations (also when the card is one
+  segment of a longer ERCOT line); `card_ids` lists every merged card. Miles and in-service dates for cards ERCOT does not
+  list yet come from `data/sources/card-facts.json` (each with its source), the card, or the recommended route filed in
+  the PUC case.
+- **Utilities**: one spelling per utility, ERCOT's codes ("ONCOR", "LCRATSC").
+

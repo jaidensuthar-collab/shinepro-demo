@@ -17,6 +17,7 @@ import csv
 import datetime
 import glob
 import json
+import math
 import os
 import re
 import sys
@@ -35,6 +36,10 @@ GENERATOR = re.compile(r"GEN[ -]?TIE|\bGEN\b|GENERATION|BESS|SOLAR|WIND|STORAGE|
 # 'POI' alone is weaker: it also names a hookup to another utility or a co-op delivery point inside a grid plan.
 POI = re.compile(r"\bPOI\b", re.I)
 GRID_PLAN = re.compile(r"RELIABILITY PLAN|\d{2}RPG\d{3}|\bPOI\)? WITH\b", re.I)
+# Rebuilds that report the same miles as new and rebuilt reuse the existing corridor.
+CAPACITOR = re.compile(r"CAPACITOR", re.I)   # capacitor-only records are equipment; a new line that also adds capacitors stays
+REUSE = re.compile(r"REBUILD|RECONDUCT|UPGRADE|OVERHAUL|CONVER", re.I)
+BOILERPLATE = "This models"   # ERCOT's generic title for load-addition upgrade sets; the description says what it is
 # ERCOT's names for stations the Line Watch cards call something else.
 ALIASES = {"MORLEY": "HILLJE", "MORELY": "HILLJE", "CLEARFORK": "MASCHO"}
 BIG_LOAD = re.compile(r"DATA ?CENTER|LARGE LOAD|NEW LOAD|ALPHA LOAD|CUSTOMER|LNG|CRYPTO|MINING|REFINERY|HYDROGEN|\bLOAD\b.{0,25}INTERCONNECT|INTERCONNECT.{0,40}\bLOAD\b", re.I)
@@ -374,6 +379,123 @@ def alias(name):
     return " ".join(ALIASES.get(w, w) for w in name.split())
 
 
+NAME_STOP = (r"(?:\d|transmission|trans\b|rebuild|dbl|double|2nd|second|line|ckt|circuit|upgrade|overhaul|reconductor|improvement|"
+             r"kv|project|addition|phase|into|in\s+conjunction|part\s+of|for\b|and\s+rebuild|load\s+serving)")
+NAME_LEAD = re.compile(r"^(?:(?:LCRA ?TSC|AEN|RCEC|BEPC|CPS ?E?|STEC|CTT|BRYN|TNMP|ONCOR'?S?|AEP|PL|LCRA)\s+|[,\s]*(?:approximately\s+|~)?\d+(?:\.\d+)?[- ](?:circuit\s+)?miles?\s+(?:of\s+)?|"
+                       r"(?:to\s+)?(?:rebuild|upgrade|construct|install|establish|adds?|loop\s+in|new|the|existing|a|an|second|"
+                       r"double[ -](?:ckt|circuit)(?:\s+lines?)?|2nd\s+circuit|transmission|lines?|from|of|between)[\s,]+)+", re.I)
+NAME = r"[A-Z0-9][A-Za-z0-9.']*(?: [A-Za-z0-9.']+){0,3}?"   # up to four words
+NOT_A_NAME = re.compile(r"\b(with|and|for|the|meet|current|conjunction|switchyard|distribution|expand|convert|build|connect|terminal|"
+                        r"support|tline|facility|load|branch|existing|cutting|tier\d|ad-hoc|tpit|project|reliability|ginr)\b", re.I)
+
+
+def title_ends(text):
+    """Station names in a TPIT title or description, for rows whose terminal columns are blank or bus numbers:
+    'Rebuild Hill Country to Marion Dbl Ckt' -> ['Hill Country', 'Marion']; 'Add Spadefoot 345 kV Switch' -> ['Spadefoot'];
+    'AEN_Holman_Hillje_ckt_3123_reconductor' -> ['Holman', 'Hillje']."""
+    raw = clean(text)
+    m = re.match(r"^(?:[A-Z]+_)?(?:TPIT\d+_)?([A-Za-z]{3,})_([A-Za-z]{3,})_(?:ckt|transmission|improvement|reconductor)", raw, re.I)
+    if m:
+        return [re.sub(r"(?<=[a-z])(?=[A-Z])", " ", g) for g in m.groups()]
+    t = raw.replace("_", " ")
+    head, _, tail = t.rpartition(":")
+    t = re.sub(r"\((?:fka|formerly)[^)]*\)|\b\d+(?:[/-]\d+)?\s*-?\s*kV\b", " ", tail or t, flags=re.I)
+    t = re.sub(r"\s*[-–]\s*(?:part\s+of|upgrade)\b.*$", "", t, flags=re.I)
+    t = NAME_LEAD.sub("", re.sub(r"\s+", " ", t).strip())
+    names = []
+    m = re.search(r"^(" + NAME + r")\s+(?:switch(?:ing\s+station|yard)?|sub(?:station)?|station)\b", t, re.I)
+    if m and not re.search(r"\s(?:to|into)\s", m[1], re.I):
+        names = [m[1]]
+    else:
+        m = (re.search(r"between\s+(" + NAME + r")\s+and\s+(" + NAME + r")(?=\s+" + NAME_STOP + r"|\s*[\(:.,]|$)", t, re.I)
+             or re.search(r"(" + NAME + r")(?:\s+to\s+|\s*[-–]\s*)(" + NAME + r")(?=\s+(?:to\s+)?" + NAME_STOP + r"|\s+to\s|\s*[\(:.,]|\s*[-\u2013]\s|$)", t, re.I))
+        names = list(m.groups()) if m else ([t] if t and len(t.split()) <= 3 and not re.search(r"\d", t) else [])
+    names = [n for n in names if not re.fullmatch(r"(?i)(sub)?station|switch(yard)?|substation", n.strip())]
+    if not names and head and len(head.split()) <= 2 and not re.search(r"\d|project|reliability", head, re.I):
+        names = [head]   # 'Montura: Construct New 345 kV Station'
+    names = [re.sub(r"\s+to$", "", NAME_LEAD.sub("", n).strip()) for n in names]
+    names = [re.sub(r"(?i)\s+load\s+serving$|^\d+\s+(?=[A-Za-z]{3})|^T\d+\s+", "", n.title() if n.islower() else n) for n in names]
+    names = [n for n in names if len(n) >= 3]
+    return [] if any(NOT_A_NAME.search(n) for n in names) else names
+
+
+def terminals(r):
+    """(name, county) for each end: ERCOT's terminal names, with bus numbers and blanks filled from the title or description.
+    A filled-in bus-number end keeps its number in parentheses: 'Helotes (5200)'."""
+    frm, to = str(r["from"] or "").strip(), str(r["to"] or "").strip()
+    is_bus = lambda n: bool(re.fullmatch(r"[\d ,;]+", n))
+    if (frm and not is_bus(frm)) and (to and not is_bus(to)) or (bool(frm) != bool(to) and not is_bus(frm or to)):
+        return [(frm, r["county_from"]), (to, r["county_to"])]   # both named, or a one-station project
+    title = "" if str(r["title"] or "").startswith(BOILERPLATE) else str(r["title"] or "")
+    found = title_ends(title) or title_ends(str(r["desc"] or "").split(". ")[0])
+    known = [n for n in (frm, to) if n and not is_bus(n)]
+    spare = [n for n in found if all(base(n) != base(k) for k in known)]
+    ends = []
+    for n, county in ((frm, r["county_from"]), (to, r["county_to"])):
+        if n and not is_bus(n):
+            ends.append((n, county))
+        elif spare:
+            ends.append((spare.pop(0) + (f" ({n})" if n else ""), county or r["county_from"]))
+        elif n:
+            ends.append((n, county))
+    return ends
+
+
+def line_name(r, frm, to):
+    title = str(r["title"] or "").strip()
+    if title.startswith(BOILERPLATE):
+        if frm and to:
+            return f"{frm} to {to}"
+        first = re.split(r"(?<=[a-z0-9])\.\s", clean(r["desc"]))[0].rstrip(".")
+        return f"{first} (load addition)" if first else (f"{frm} to {to}" if frm and to else "Load addition upgrades")
+    return title or (f"{frm} to {to}" if frm and to else frm)
+
+
+def bus_names(queue_path):
+    """ERCOT bus numbers to station names, from hookup points in the interconnection queue ('5133 Elm Creek 345kV',
+    'Shaula (#5380)'). Used only for ends that are still a bare bus number."""
+    if not queue_path or not os.path.exists(queue_path):
+        return {}
+    seen = {}
+    word = r"([A-Z][A-Za-z.']+(?: [A-Z][A-Za-z.']+){0,2})"
+    for q in read_queue(queue_path):
+        t = re.sub(r"\b\d+(\.\d+)?\s*-?\s*kV\b", " ", q["poi"], flags=re.I)
+        pairs = re.findall(r"(?:#|\b)(\d{3,6})\)?\s+" + word, t) + [(b, n) for n, b in re.findall(word + r"\s*\((?:bus\s*)?#?\s*(\d{3,6})\)", t, re.I)]
+        for b, n in pairs:
+            n = re.sub(r"\s+(Switch|Switching|Substation|Station|Sub|Line|Ckt)$", "", n.strip())
+            if not re.match(r"(?i)(tap|bus|the|to|and|poi)\b", n):
+                seen.setdefault(b, {}).setdefault(n, 0)
+                seen[b][n] += 1
+    return {b: max(c, key=c.get) for b, c in seen.items()}
+
+
+def utility_name(u):
+    """One spelling per utility: TPIT's codes ('ONCOR', 'LCRATSC') for the cards' 'Oncor' and 'LCRA TSC'."""
+    return re.sub(r"\bLCRA TSC\b", "LCRATSC", re.sub(r"\bOncor\b", "ONCOR", str(u or "").strip()))
+
+
+def route_miles(docket):
+    """Length of the utility's recommended route in the filed route links (web/exports/routes/<docket>.geojson)."""
+    f = os.path.join(WEB, "exports", "routes", f"{docket}.geojson")
+    if not docket or not os.path.exists(f):
+        return 0
+    total = 0.0
+    for ft in json.load(open(f))["features"]:
+        if not ft["properties"].get("on_applicant_recommended_route"):
+            continue
+        g = ft["geometry"]
+        for line in ([g["coordinates"]] if g["type"] == "LineString" else g["coordinates"]):
+            for (x1, y1), (x2, y2) in zip(line, line[1:]):
+                total += 69.17 * ((((x2 - x1) * math.cos(math.radians((y1 + y2) / 2))) ** 2 + (y2 - y1) ** 2) ** 0.5)
+    return round(total, 1)
+
+
+def card_facts():
+    """Miles and in-service dates researched for cards ERCOT's report doesn't list (sources/card-facts.json)."""
+    f = os.path.join(HERE, "sources", "card-facts.json")
+    return {c["card_id"]: c for c in json.load(open(f))["cards"]} if os.path.exists(f) else {}
+
+
 def card_index(projects):
     """Line Watch cards by their pair of end substations."""
     idx = {}
@@ -393,12 +515,14 @@ def cards_for(r, kv, cards):
 
 
 def classify(r):
-    text = " ".join(str(r[k] or "") for k in ("title", "desc"))
+    title = "" if str(r["title"] or "").startswith(BOILERPLATE) else str(r["title"] or "")
+    text = title + " " + str(r["desc"] or "")
     kv = int(num(r["kv"]))
-    if kv < 138 or EQUIPMENT.search(text):
-        return None
     new_mi, upg_mi = num(r["new_mi"]), num(r["upg_mi"])
-    if new_mi >= 1:
+    if kv < 138 or EQUIPMENT.search(text) or (CAPACITOR.search(text) and new_mi < 1 and upg_mi < 1):
+        return None
+    same_corridor = new_mi >= 1 and new_mi == upg_mi and bool(REUSE.search(text))
+    if new_mi >= 1 and not same_corridor:
         ptype, detail = "new line", "second circuit" if UPGRADE_KIND[3][1].search(text) else ""
     elif upg_mi >= 1:
         ptype = "upgrade"
@@ -409,7 +533,7 @@ def classify(r):
         return None
     gen = GENERATOR.search(text) or (POI.search(text) and not str(r["rpg"] or "").strip() and not GRID_PLAN.search(text))
     purpose = "generator hookup" if gen else "large-load hookup" if BIG_LOAD.search(text) else "shared grid"
-    return kv, ptype, detail, purpose
+    return kv, ptype, detail, purpose, same_corridor
 
 
 def lifecycle(r, card):
@@ -425,6 +549,8 @@ def lifecycle(r, card):
         return "in construction", "Line Watch card stage"
     if "conceptual" in status:
         return "proposed", "TPIT status (conceptual)"
+    if isd and isd.date() < TODAY.replace(day=1):
+        return "in construction", f"estimated: planned in-service date {ym(isd)} has passed and ERCOT has not marked it in service yet"
     if card and card.get("stage") == 6:
         return "about to enter construction", "route approved (Line Watch card)"
     if isd and (isd.date() if isinstance(isd, datetime.datetime) else isd) <= TODAY + datetime.timedelta(days=548):
@@ -462,13 +588,13 @@ def priority(rec):
 
 def build(projects_src, tpit_path, queue_path=None):
     projects = [p for p in load_projects(projects_src) if str(p.get("region", "Texas")).startswith("Texas")]
-    places, cards = Places(projects), card_index(projects)
+    places, cards, facts, buses = Places(projects), card_index(projects), card_facts(), bus_names(queue_path)
     out, used_cards = [], set()
     for r in read_tpit(tpit_path):
         c = classify(r)
         if not c:
             continue
-        kv, ptype, detail, purpose = c
+        kv, ptype, detail, purpose, same_corridor = c
         frm, to = str(r["from"] or "").strip(), str(r["to"] or "").strip()
         matched = cards_for(r, kv, cards)
         card = (cards.get(frozenset([alias(base(frm)), alias(base(to))])) if frm and to else None) or \
@@ -478,18 +604,27 @@ def build(projects_src, tpit_path, queue_path=None):
         if not life:
             continue
         ends = []
-        for name, county in ((frm, r["county_from"]), (to, r["county_to"])):
-            if not name or (ends and base(name) == base(ends[0]["name"])):
+        for name, county in terminals(r):
+            if re.fullmatch(r"[\d ,;]+", name or ""):   # still bare bus numbers: name them from the queue when it can
+                named = [buses[b] for b in re.findall(r"\d+", name) if b in buses]
+                name = f"{' / '.join(named)} ({name})" if named else name
+            if not name or (ends and (base(name) or clean(name)) == (base(ends[0]["name"]) or clean(ends[0]["name"]))):
                 continue
-            ends.append(places.find(name, county) or {"name": name, "county": county or "", "confidence": "unknown",
-                                                       "basis": "Not on the Line Watch cards or the HIFLD substation map (new or renamed station)"})
+            bus = re.search(r"\((\d+)\)$", name)   # researched points can be keyed by bus number
+            hit = (places.find(bus[1], county) if bus else None) or places.find(name, county)
+            if hit:
+                hit["name"] = name
+            ends.append(hit or {"name": name, "county": county or "", "confidence": "unknown",
+                                "basis": "Not on the Line Watch cards or the HIFLD substation map (new or renamed station)"})
+        if ends:
+            frm, to = ends[0]["name"], ends[-1]["name"] if len(ends) > 1 else ""
         rpg = str(r["rpg"] or "").strip()
         route = "existing corridor" if ptype == "upgrade" else STAGE_ROUTE.get((card or {}).get("stage"), "end substations only")
-        rec = {"id": "tpit-" + str(r["id"]).strip(), "ercot_project": str(r["id"]).strip(), "name": (f"{frm} to {to}" if (not r["title"] or str(r["title"]).startswith("This models")) and frm and to else str(r["title"] or frm).strip()),
+        rec = {"id": "tpit-" + str(r["id"]).strip(), "ercot_project": str(r["id"]).strip(), "name": line_name(r, frm, to),
                "description": re.sub(r"\s+", " ", str(r["desc"] or "")).strip()[:400], "kv": kv, "project_type": ptype, "upgrade_kind": detail,
-               "lifecycle": life, "lifecycle_basis": life_basis, "tpit_status": str(r["status"] or ""), "utility": str(r["owner"] or "").strip(),
+               "lifecycle": life, "lifecycle_basis": life_basis, "tpit_status": str(r["status"] or ""), "utility": utility_name(r["owner"]),
                "from": frm, "to": to, "county_from": str(r["county_from"] or "").strip(), "county_to": str(r["county_to"] or "").strip(),
-               "miles_new": round(num(r["new_mi"]), 1), "miles_upgraded": round(num(r["upg_mi"]), 1), "transformer_mva": int(num(r["mva"])),
+               "miles_new": 0 if same_corridor else round(num(r["new_mi"]), 1), "miles_upgraded": round(num(r["upg_mi"]), 1), "transformer_mva": int(num(r["mva"])),
                "in_service": ym(r["actual"]) or ym(r["isd"]), "in_service_kind": "actual" if r["actual"] else "projected",
                "construction_start": "", "capacity_mw": None, "purpose": purpose,
                "program": PROGRAMS.get(rpg, f"ERCOT RPG {rpg}" if re.match(r"\d{2}RPG\d{3}", rpg) else ""),
@@ -510,15 +645,23 @@ def build(projects_src, tpit_path, queue_path=None):
         for e in ends:
             e["county"] = str(e.get("county") or "").split("|")[-1]
         stage = p.get("stage", 2)
+        fact = facts.get(p["id"], {})
+        miles = num(fact.get("miles")) or num((re.search(r"\d+(?:\.\d+)?", str(p.get("miles") or "")) or [0])[0]) or route_miles(p.get("docket"))
+        said = re.search(r"(?:in[ -]service|complet\w*|energiz\w*|online)\D{0,25}?(20\d\d)", f"{p.get('next_step', '')} {p.get('status', '')}", re.I)
+        isd = fact.get("in_service") or (said[1] if said else "")
         life = {2: "planned", 3: "planned", 4: "planned", 5: "planned", 6: "about to enter construction", 7: "in construction"}.get(stage, "planned")
+        basis = "Line Watch card stage " + str(stage)
+        if isd and life != "in construction" and isd[:7] < TODAY.strftime("%Y-%m"):
+            life, basis = "in construction", f"estimated: planned in-service date {isd} has passed"
         rec = {"id": "card-" + p["id"], "ercot_project": "", "name": p["name"], "description": p.get("status", ""), "kv": int(num(p.get("kv"))) or 345,
-               "project_type": "new line", "upgrade_kind": "", "lifecycle": life, "lifecycle_basis": "Line Watch card stage " + str(stage),
-               "tpit_status": "", "utility": p.get("utility", ""), "from": ends[0]["name"], "to": ends[-1]["name"],
-               "county_from": ends[0]["county"], "county_to": ends[-1]["county"], "miles_new": num(re.sub(r"[^0-9.]", "", p.get("miles", "")) or 0),
-               "miles_upgraded": 0, "transformer_mva": 0, "in_service": "", "in_service_kind": "", "construction_start": "", "capacity_mw": None,
+               "project_type": "new line", "upgrade_kind": "", "lifecycle": life, "lifecycle_basis": basis,
+               "tpit_status": "", "utility": utility_name(p.get("utility")), "from": ends[0]["name"], "to": ends[-1]["name"],
+               "county_from": ends[0]["county"], "county_to": ends[-1]["county"], "miles_new": miles,
+               "miles_upgraded": 0, "transformer_mva": 0, "in_service": isd, "in_service_kind": "projected" if isd else "", "construction_start": "", "capacity_mw": None,
                "purpose": "shared grid", "program": PROGRAMS.get(str(p.get("rpg", "")).split(" ")[0], p.get("rpg", "")), "rpg": p.get("rpg", ""),
                "tier": "", "ercot_board": "", "docket": p.get("docket", ""), "route_status": STAGE_ROUTE.get(stage, "end substations only"),
-               "card_id": p["id"], "card_ids": [p["id"]], "endpoints": ends, "source": "; ".join(l["url"] for l in p.get("links", [])[:2]), "checked": p.get("checked", "")}
+               "card_id": p["id"], "card_ids": [p["id"]], "endpoints": ends, "checked": p.get("checked", ""),
+               "source": "; ".join(dict.fromkeys([l["url"] for l in p.get("links", [])[:2]] + [fact[k] for k in ("miles_source", "in_service_source") if fact.get(k)]))}
         rec["tap_note"] = "Projects connect at the substations" if rec["kv"] >= 500 else "The line itself can be tapped"
         rec["recommended_next_step"], rec["recommendation_reason"] = recommend(rec)
         rec["priority_score"] = priority(rec)
