@@ -143,7 +143,7 @@ class Places:
                 if e.get("lat") is None:
                     continue
                 st, _, cty = (e.get("county") or "|").partition("|")
-                self.cards.setdefault((base(e["name"]), st), {**e, "basis": e.get("basis", ""), "from": "Line Watch card"})
+                self.cards.setdefault((alias(base(e["name"])), st), {**e, "basis": e.get("basis", ""), "from": "Line Watch card"})
         # Hand-researched points for new stations the HIFLD map doesn't have (sources/substation-locations.json).
         loc = os.path.join(HERE, "sources", "substation-locations.json")
         self.researched = {}
@@ -367,16 +367,34 @@ def subname(n):
 
 
 def first_seen(lines):
-    """Date each line first appeared in the catalog (sources/catalog-first-seen.json), so new entries stand out."""
+    """Date each line first appeared in the catalog (sources/catalog-first-seen.json), so new entries stand out.
+    A line ERCOT renumbered (73436 -> 73436B, or the same title and voltage under a new number) keeps its date."""
     f = os.path.join(HERE, "sources", "catalog-first-seen.json")
     seen = json.load(open(f)) if os.path.exists(f) else {}
+    prev_f = os.path.join(WEB, "data", "texas-lines.json")
+    prev = {}
+    for x in (json.load(open(prev_f)).get("lines", []) if os.path.exists(prev_f) else []):
+        if x.get("first_seen"):
+            prev.setdefault((x["name"], x["kv"]), x["first_seen"])
+    root = lambda i: re.sub(r"[A-Z]$", "", i)
+    by_root = {}
+    for i, d in seen.items():
+        by_root[root(i)] = min(d, by_root.get(root(i), d))
     for x in lines:
-        x["first_seen"] = seen.setdefault(x["id"], TODAY.isoformat())
+        if x["id"] not in seen:
+            seen[x["id"]] = by_root.get(root(x["id"])) or prev.get((x["name"], x["kv"])) or TODAY.isoformat()
+        x["first_seen"] = seen[x["id"]]
     json.dump(dict(sorted(seen.items())), open(f, "w"), indent=0)
 
 
+PHRASE_ALIASES = {"BELL COUNTY EAST": "BELL EAST"}
+
+
 def alias(name):
-    return " ".join(ALIASES.get(w, w) for w in name.split())
+    name = " ".join(ALIASES.get(w, w) for w in name.split())
+    for a, b in PHRASE_ALIASES.items():
+        name = re.sub(rf"\b{a}\b", b, name)
+    return name
 
 
 NAME_STOP = (r"(?:\d|transmission|trans\b|rebuild|dbl|double|2nd|second|line|ckt|circuit|upgrade|overhaul|reconductor|improvement|"
@@ -630,7 +648,7 @@ def build(projects_src, tpit_path, queue_path=None):
                "program": PROGRAMS.get(rpg, f"ERCOT RPG {rpg}" if re.match(r"\d{2}RPG\d{3}", rpg) else ""),
                "rpg": rpg, "tier": str(r["tier"] or "").strip(), "ercot_board": ym(r["board"]), "docket": (card or {}).get("docket", ""),
                "route_status": route, "card_id": (card or {}).get("id", ""), "card_ids": [p["id"] for p in matched], "endpoints": ends,
-               "source": f"ERCOT TPIT ({TPIT_URL}), July 13, 2026 update", "checked": "ERCOT TPIT 2026-07-13"}
+               "source": f"ERCOT TPIT ({TPIT_URL}), October 1, 2026 update (posted Oct 23, 2026)", "checked": "ERCOT TPIT 2026-10-01"}
         rec["tap_note"] = "Projects connect at the substations" if kv >= 500 else "The line itself can be tapped"
         rec["recommended_next_step"], rec["recommendation_reason"] = recommend(rec)
         rec["priority_score"] = priority(rec)
@@ -722,7 +740,7 @@ def build(projects_src, tpit_path, queue_path=None):
 
 if __name__ == "__main__":
     src = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "projects.json")
-    tpit = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, "sources", "ercot-tpit-2026-07.xlsx")
+    tpit = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, "sources", "ercot-tpit-2026-10.xlsx")
     queue = sys.argv[3] if len(sys.argv) > 3 else os.path.join(HERE, "sources", "ercot-gis-report-2026-09.xlsx")
     lines = build(src, tpit, queue)
     from collections import Counter
