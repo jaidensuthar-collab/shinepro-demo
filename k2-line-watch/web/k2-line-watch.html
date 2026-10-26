@@ -155,6 +155,12 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 .recs.stages { grid-template-columns: repeat(5, minmax(0, 1fr)) }
 .recs.stages span { display: block }
 .recs.stages em { display: block; font-style: normal; font-size: 11px; color: var(--muted); margin-top: 2px }
+.lhead p { margin: 4px 0 } .lhead .dl { font-size: 14px }
+.morefilters { display: inline-block } .morefilters summary { cursor: pointer; color: var(--muted); font-size: 13px; padding: 5px 0 }
+.morefilters[open] { display: flex; flex-wrap: wrap; gap: 8px; width: 100% } .morefilters[open] summary { width: 100% }
+.legend { margin: 10px 0 }
+.fold { border-top: 1px solid var(--rule); padding: 10px 0 } .fold summary { cursor: pointer; font: 600 15px var(--display) }
+.recs.stages button { padding: 6px 10px } .recs.stages b { font-size: 20px }
 .gisbox { border: 1px solid var(--rule); background: var(--panel); padding: 10px 14px; margin: 10px 0 }
 .gisbox h3 { margin: 0 0 2px; font: 600 15px var(--display) }
 .gisbox p { margin: 4px 0 }
@@ -208,7 +214,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   <header class="top">
     <div>
       <h1><span class="tape" aria-hidden="true"></span>K2 Line Watch</h1>
-      <p class="sub">Every new or upgraded high-voltage line in Texas, from built in the last 3 years to coming online in the next 5: where it runs, who is building it, how far along it is, and whether its substations are new or existing.</p>
+      <p class="sub">New high-voltage lines in Texas: where they run, who builds them, how far along they are, and whether their substations are new.</p>
     </div>
     <div class="stamp" id="stamp">Loading the watch list...</div>
   </header>
@@ -280,50 +286,43 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   </div>
 
   <div id="p-lines" role="tabpanel" aria-labelledby="t-lines" class="panel land">
-    <section>
-      <h2>Texas transmission lines</h2>
-      <p>Every new or upgraded ERCOT line, 138 kV and up, plus new 345 kV and bigger substations: built in the last 3 years, or due in service within the next 5 years (<span id="window">through October 2031</span>). Each row is one line: voltage, who is building it, its stage, when it comes online, the counties at each end, and whether each end substation is new or already there. Routes and parcels come later.</p>
-      <p class="pmeta" id="linesstamp">Loading the Texas lines...</p>
-    </section>
-    <section class="gisbox" aria-labelledby="gish">
-      <h3 id="gish">GIS layer: every line and substation in one file</h3>
-      <p class="pmeta">Lines are drawn straight between their end substations, not along a route. Substations are points with their status (new, existing and expanding, existing, or unconfirmed). Every field is on each feature. WGS84.</p>
-      <p><button type="button" class="mapbtn" id="layergj">GIS layer (.geojson)</button> <button type="button" class="mapbtn" id="layerkml">Google Earth (.kml)</button> <button type="button" class="mapbtn" id="linesdl">Lines table (.csv)</button> <button type="button" class="mapbtn" id="subsdl">Substations table (.csv)</button> <span class="pmeta" id="linesdlnote"></span></p>
+    <section class="lhead">
+      <p>New and upgraded ERCOT lines (138 kV+), built since <span id="cutoff">October 2023</span> or due in service <span id="window">through October 2031</span>. <span class="pmeta" id="linesstamp">Loading...</span></p>
+      <p class="dl"><b>Download:</b> <button type="button" class="linkbtn" id="layergj">GIS layer (.geojson)</button> · <button type="button" class="linkbtn" id="layerkml">Google Earth (.kml)</button> · <button type="button" class="linkbtn" id="linesdl">Lines (.csv)</button> · <button type="button" class="linkbtn" id="subsdl">Substations (.csv)</button> <span class="pmeta" id="linesdlnote"></span></p>
     </section>
     <div class="recs stages" id="linesrecs"></div>
     <div class="tools lines-tools">
       <select id="lf-kv" aria-label="Voltage"><option value="">Every voltage</option></select>
       <select id="lf-sub" aria-label="Substation status"><option value="">Any substations</option><option value="new">A new substation</option><option value="existing, expanding">An existing substation that is expanding</option><option value="existing">Only existing substations</option><option value="unconfirmed">An unconfirmed substation</option></select>
-      <select id="lf-type" aria-label="Project type"><option value="">Every type</option></select>
       <select id="lf-util" aria-label="Builder"><option value="">Every builder</option></select>
-      <select id="lf-rec" aria-label="K2 next step"><option value="">Any K2 next step</option></select>
-      <select id="lf-dev" aria-label="Developers queued"><option value="">With or without developers</option><option value="yes">Developers queued at its substations</option><option value="no">No developers queued</option></select>
-      <select id="lf-new" aria-label="First seen"><option value="">Any date added</option><option value="new">New since the first list</option></select>
       <select id="lf-sort" aria-label="Sort"><option value="">Sort: priority</option><option value="kv">Sort: biggest voltage</option><option value="date">Sort: soonest in service</option><option value="stage">Sort: furthest along</option></select>
-      <input class="search" id="lf-q" type="search" placeholder="Search a line, substation, county, builder or ERCOT number" aria-label="Search lines">
+      <input class="search" id="lf-q" type="search" placeholder="Search a line, substation, county or builder" aria-label="Search lines">
+      <details class="morefilters"><summary>More filters</summary>
+        <select id="lf-type" aria-label="Project type"><option value="">Every type</option></select>
+        <select id="lf-rec" aria-label="K2 next step"><option value="">Any K2 next step</option></select>
+        <select id="lf-dev" aria-label="Developers queued"><option value="">With or without developers</option><option value="yes">Developers queued at its substations</option><option value="no">No developers queued</option></select>
+        <select id="lf-new" aria-label="First seen"><option value="">Any date added</option><option value="new">New since the first list</option></select>
+      </details>
     </div>
     <p class="pmeta" id="linescount"></p>
     <div class="tbl" id="linestable"></div>
     <button class="chip more" id="moreLines" hidden>Show more</button>
-    <section>
-      <h2>Developers at these substations</h2>
-      <p>Generation and battery projects already in ERCOT's interconnection queue at the end substations above, from ERCOT's monthly interconnection status report. These are the developers to approach about partnering. Each project is listed under the company that filed it with ERCOT, often a project company (for example "Amerada Solar, LLC") rather than the parent developer; finding the parent company and a contact is the next research step.</p>
-      <p class="pmeta" id="devstamp"></p>
-      <p><button type="button" class="mapbtn" id="devdl">Developers by substation (.csv)</button></p>
+    <p class="pmeta legend"><span class="stag new">new</span> being built · <span class="stag exp">existing, expanding</span> there today, more coming · <span class="stag">existing</span> there today · <span class="stag unk">unconfirmed</span> not on public maps. <span class="tap yes">tap</span> 345 kV and below · <span class="tap maybe">maybe</span> 500 kV · <span class="tap no">substation only</span> 765 kV. Lines are straight between substations, not routes. Click a substation for satellite view; hover a stage for why.</p>
+    <details class="fold">
+      <summary>Developers queued at these substations <span class="pmeta" id="devstamp"></span></summary>
+      <p class="pmeta">Generation and battery projects in ERCOT's interconnection queue at the end substations, listed under the company that filed them (often a project company, not the parent developer). <button type="button" class="linkbtn" id="devdl">Download (.csv)</button></p>
       <div id="devtable"></div>
       <button class="chip more" id="moreDevs" hidden>Show more substations</button>
-    </section>
-    <section>
-      <h2>How to read it</h2>
+    </details>
+    <details class="fold">
+      <summary>Stages, next steps and sources</summary>
       <ul class="pins">
-        <li><b>Stage.</b> Built: in service in the last 3 years. In construction: being built. Approved: approved and the route is final (or it is an upgrade that stays in its existing corridor), waiting to build. Planned: approved to build, but the route or site is not final. Proposed: someone wants to build it, not approved yet.</li>
-        <li><b>Substations.</b> <span class="stag new">new</span> ERCOT's project builds it. <span class="stag exp">existing, expanding</span> it is there today and a new line, new substation work or a transformer is coming to it. <span class="stag">existing</span> it is there today (on public maps, or an existing line to it is being upgraded). <span class="stag unk">unconfirmed</span> not on public maps by this name: could be new or renamed. Click a substation for the satellite view.</li>
-        <li><b>Tap.</b> <span class="tap yes">tap</span> 345 kV and below: the line itself can be tapped. <span class="tap maybe">maybe</span> 500 kV. <span class="tap no">substation only</span> 765 kV is not tapped; projects connect at the substations.</li>
-        <li><b>Location.</b> Substations found on public maps or in utility filings are placed exactly or within a mile or two. The rest are placed at the center of their county, so every line has a rough location; the layer says which is which (location_quality).</li>
+        <li><b>Built</b> in service in the last 3 years. <b>In construction</b> being built. <b>Approved</b> route final (or an upgrade in its existing corridor), waiting to build. <b>Planned</b> approved, but route or site not final. <b>Proposed</b> not approved yet.</li>
+        <li><span class="rec sub">Substation campaign</span> substations located, planned or further along (always for 765 kV). <span class="rec line">Line campaign</span> route set, 345 kV or below. <span class="rec follow">Follow updates</span> proposed, or substations not located. <span class="rec info">Informational</span> serves one generator or large load.</li>
+        <li>Substations not on public maps by name are placed at their county's center (location_quality = county in the GIS layer).</li>
       </ul>
-      <p class="pmeta">K2 next step: <span class="rec sub">Substation campaign</span> substations located and the line is planned or further along (always for 765 kV). <span class="rec line">Line campaign</span> route set and 345 kV or below. <span class="rec follow">Follow updates</span> still proposed, or substations not located. <span class="rec info">Informational</span> serves one generator or one large load.</p>
-      <p class="pmeta">Sources: ERCOT's Transmission Project and Information Tracking report (TPIT): the October 2026 update, plus the completed-project lists in the October 2024 and October 2025 updates for lines built since <span id="cutoff">October 2023</span>. The Line Watch project cards add lines ERCOT doesn't list yet. Locations come from the HIFLD national substation map, OpenStreetMap (data &copy; OpenStreetMap contributors) and points researched from utility filings. "Approved" for a new line within 18 months of its in-service date is estimated, and a planned line whose in-service date has passed shows as "in construction" until ERCOT's next report confirms it.</p>
-    </section>
+      <p class="pmeta">Sources: ERCOT's Transmission Project and Information Tracking report (October 2026, plus the completed-project lists in the October 2024 and 2025 editions), the Line Watch project cards, the HIFLD substation map, OpenStreetMap (data &copy; OpenStreetMap contributors) and utility filings. "Approved" within 18 months of in-service is estimated; a planned line past its in-service date shows as in construction until ERCOT confirms it.</p>
+    </details>
   </div>
 
   <div id="p-land" role="tabpanel" aria-labelledby="t-land" class="panel land" hidden>
@@ -709,27 +708,27 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   function renderLines() {
     const all = LS.all;
     const nsub = Object.keys(LS.sites).length;
-    $("linesstamp").textContent = `${all.length.toLocaleString()} projects (lines and new substations), ${nsub.toLocaleString()} end substations · built ${LS.built} from ERCOT's project reports${LS.queue ? " and ERCOT's " + LS.queue + " interconnection queue" : ""}`;
-    $("linesrecs").innerHTML = LIFE.map((k) => `<button type="button" data-life="${esc(k)}" aria-pressed="${LS.life === k}"><b>${all.filter((x) => x.lifecycle === k).length}</b><span>${esc(k[0].toUpperCase() + k.slice(1))}</span><em>${esc(LIFE_HELP[k])}</em></button>`).join("");
+    $("linesstamp").textContent = `${all.length.toLocaleString()} lines · ${nsub.toLocaleString()} substations · updated ${LS.built}`;
+    $("linesrecs").innerHTML = LIFE.map((k) => `<button type="button" data-life="${esc(k)}" aria-pressed="${LS.life === k}"><b>${all.filter((x) => x.lifecycle === k).length}</b><span title="${esc(LIFE_HELP[k])}">${esc(k[0].toUpperCase() + k.slice(1))}</span></button>`).join("");
     $("linesrecs").querySelectorAll("[data-life]").forEach((b) => b.addEventListener("click", () => { LS.life = LS.life === b.dataset.life ? "" : b.dataset.life; LS.shown = 40; renderLines(); }));
     const list = all.filter(lineMatch);
     if (SORTS[LS.sort]) list.sort(SORTS[LS.sort]);
-    $("linescount").textContent = `${list.length.toLocaleString()} shown, ${{ kv: "biggest voltage first", date: "soonest in service first", stage: "furthest along first" }[LS.sort] || "highest priority first (bigger lines that come online sooner rank higher)"}.`;
+    $("linescount").textContent = `${list.length.toLocaleString()} shown, ${{ kv: "biggest voltage first", date: "soonest in service first", stage: "furthest along first" }[LS.sort] || "highest priority first"}.`;
     const where = (x) => [x.county_from, x.county_to].filter((c, i, a) => c && a.indexOf(c) === i).join(" to ");
     const ends = (x) => (x.endpoints || []).map((e) => satLink(e, esc(subShort(e.name))) + stag(e)).join(" to ");
     const devCell = (x) => { const q = x.queue || {};
-      if (!q.projects) return `<span class="pmeta">None queued</span>`;
-      return `<b>${q.projects}</b> project${q.projects > 1 ? "s" : ""}, ${mwN(q.mw)} MW<br><span class="pmeta">${esc(q.developers.slice(0, 2).join("; "))}</span><br><button type="button" class="linkbtn" data-devs="${esc(x.id)}" aria-expanded="${LS.open.has(x.id)}">${LS.open.has(x.id) ? "Hide" : "Show"} developers</button>`; };
+      if (!q.projects) return `<span class="pmeta">none</span>`;
+      return `<button type="button" class="linkbtn" data-devs="${esc(x.id)}" aria-expanded="${LS.open.has(x.id)}" title="${esc(q.developers.join("; "))}">${q.projects} projects · ${mwN(q.mw)} MW</button>`; };
     const devRow = (x) => { if (!LS.open.has(x.id)) return "";
       const ps = (x.queue.stations || []).filter((id) => LS.stations[id]).flatMap((id) => LS.stations[id].projects.map((p) => ({ ...p, _st: LS.stations[id].name })));
-      return `<tr class="devrow"><td colspan="8">${devList(ps, true)}</td></tr>`; };
-    $("linestable").innerHTML = `<table><thead><tr><th>Line</th><th class="n">kV</th><th>Type</th><th>Stage</th><th>In service</th><th>Counties</th><th>Developers queued</th><th>K2 next step</th></tr></thead><tbody>${
+      return `<tr class="devrow"><td colspan="6">${devList(ps, true)}</td></tr>`; };
+    const kind = (x) => [x.upgrade_kind || x.project_type, x.miles_new ? x.miles_new + " mi" : x.miles_upgraded ? x.miles_upgraded + " mi" : ""].filter(Boolean).join(", ");
+    $("linestable").innerHTML = `<table><thead><tr><th>Line</th><th class="n">kV</th><th>Stage</th><th>In service</th><th>Developers</th><th>K2 next step</th></tr></thead><tbody>${
       list.slice(0, LS.shown).map((x) => { const [cls, lbl] = REC[x.recommended_next_step] || ["info", x.recommended_next_step];
-        return `<tr><td><b>${esc(x.name)}</b>${isFresh(x) ? ` <span class="stag fresh">new ${esc(x.first_seen)}</span>` : ""}<br><span class="pmeta">${ends(x) || "No end substations listed"}</span><br><span class="pmeta">Builder: <b>${esc(x.utility || "not listed")}</b>${x.ercot_project ? " · ERCOT " + esc(x.ercot_project) : ""}${x.card_id ? ` · <button type="button" class="linkbtn" data-gocard="${esc(x.card_id)}">project card</button>` : ""}</span></td>
-          <td class="n">${esc(x.kv)}${tapTag(x)}</td><td>${esc(x.project_type)}${x.upgrade_kind ? `<br><span class="pmeta">${esc(x.upgrade_kind)}</span>` : ""}${x.miles_new || x.miles_upgraded ? `<br><span class="pmeta">${x.miles_new ? esc(x.miles_new) + " mi new" : esc(x.miles_upgraded) + " mi upgraded"}</span>` : ""}</td>
-          <td><span title="${esc(x.lifecycle_basis)}">${esc(x.lifecycle)}</span></td><td class="n">${esc(x.in_service || "not set")}${x.in_service_kind === "actual" ? "<br><span class=\"pmeta\">actual</span>" : ""}</td>
-          <td>${esc(where(x))}</td><td>${devCell(x)}</td><td><span class="rec ${cls}">${esc(lbl)}</span><br><span class="pmeta">${esc(x.recommendation_reason)}</span></td></tr>${devRow(x)}`; }).join("")
-      || `<tr><td colspan="8" class="pmeta">No lines match. Clear a filter.</td></tr>`}</tbody></table>`;
+        return `<tr><td><b>${esc(x.name)}</b>${isFresh(x) ? ` <span class="stag fresh">new</span>` : ""}<br><span class="pmeta">${ends(x) || "No end substations listed"}</span><br><span class="pmeta">${esc(kind(x))} · ${esc(where(x))} · ${esc(x.utility || "builder not listed")}${x.card_id ? ` · <button type="button" class="linkbtn" data-gocard="${esc(x.card_id)}">card</button>` : ""}</span></td>
+          <td class="n">${esc(x.kv)}${tapTag(x)}</td><td><span title="${esc(x.lifecycle_basis)}">${esc(x.lifecycle)}</span></td><td class="n">${esc(x.in_service || "not set")}</td>
+          <td>${devCell(x)}</td><td><span class="rec ${cls}" title="${esc(x.recommendation_reason)}">${esc(lbl)}</span></td></tr>${devRow(x)}`; }).join("")
+      || `<tr><td colspan="6" class="pmeta">No lines match. Clear a filter.</td></tr>`}</tbody></table>`;
     $("moreLines").hidden = list.length <= LS.shown;
   }
   function renderDevs() {
