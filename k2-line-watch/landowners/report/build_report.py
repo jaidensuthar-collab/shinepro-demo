@@ -464,7 +464,10 @@ def write_db(run_dir, run, baseline, new_land, new_subs, last, v):
         c["source"] = src["label"] if src else ("Regrid nationwide parcels (paid)" if c["status"] == "paid" else "Not set up yet: needs a state parcel layer or the paid provider")
         if src and src.get("note"):
             c["note"] = src["note"]
-    energy = sorted([r for r in run.final if r["category"] == "energy-company"], key=lambda r: -float(r["total_acres"]))
+    # The page is shared, so list only companies here; a person flagged as an
+    # energy owner (e.g. someone with the surname Wind) must never appear by name.
+    energy = sorted([r for r in run.final if r["category"] == "energy-company" and r.get("owner_type") != "Person"],
+                    key=lambda r: -float(r["total_acres"]))
     acres_total = sum(float(r["total_acres"]) for r in run.land)
     lanes = collections.Counter(lane_of(r) for r in run.final)
     phone_note = {"demo": "Phone numbers in this run are made up (demo mode), so the salesperson-call count is only an example. Real numbers need a phone data service.",

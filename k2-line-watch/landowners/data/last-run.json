@@ -1,5 +1,5 @@
 {
- "date": "2026-10-19",
+ "date": "2026-10-26",
  "substations": [
   "tx-bexar-howard",
   "tx-dallas-watermill",
@@ -25,6 +25,8 @@
   "tx-dallas-liggett",
   "tx-gray-ctt-gray",
   "tx-midland-midland-east",
+  "tx-reeves-blue-goose",
+  "tx-reeves-creosote",
   "tx-mitchell-ranger-camp",
   "tx-tarrant-skyview",
   "tx-andrews-mascho",
@@ -45,12 +47,12 @@
   "tx-reeves-dry-lake",
   "tx-reeves-faulkner"
  ],
- "landowners": 1323,
- "acres": 668596,
+ "landowners": 1357,
+ "acres": 693197,
  "lanes": {
-  "sales-call": 662,
-  "mail-first": 661,
-  "skip: public-or-utility": 89,
+  "sales-call": 679,
+  "mail-first": 678,
+  "skip: public-or-utility": 95,
   "skip: energy-company": 7
  }
 }
