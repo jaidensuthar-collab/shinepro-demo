@@ -159,6 +159,9 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 .morefilters { display: inline-block } .morefilters summary { cursor: pointer; color: var(--muted); font-size: 13px; padding: 5px 0 }
 .morefilters[open] { display: flex; flex-wrap: wrap; gap: 8px; width: 100% } .morefilters[open] summary { width: 100% }
 .legend { margin: 10px 0 }
+.viewtog { display: inline-flex; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; margin: 8px 0 0 }
+.viewtog button { border: 0; background: var(--panel); padding: 5px 14px; font-weight: 600; cursor: pointer; color: var(--muted) }
+.viewtog button[aria-pressed="true"] { background: var(--ink); color: var(--bg) }
 .fold { border-top: 1px solid var(--rule); padding: 10px 0 } .fold summary { cursor: pointer; font: 600 15px var(--display) }
 .recs.stages button { padding: 6px 10px } .recs.stages b { font-size: 20px }
 .gisbox { border: 1px solid var(--rule); background: var(--panel); padding: 10px 14px; margin: 10px 0 }
@@ -304,10 +307,11 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
         <select id="lf-new" aria-label="First seen"><option value="">Any date added</option><option value="new">New since the first list</option></select>
       </details>
     </div>
+    <div class="viewtog" role="group" aria-label="Show"><button type="button" data-view="lines" aria-pressed="true">Lines</button><button type="button" data-view="subs" aria-pressed="false">Substations</button></div>
     <p class="pmeta" id="linescount"></p>
     <div class="tbl" id="linestable"></div>
     <button class="chip more" id="moreLines" hidden>Show more</button>
-    <p class="pmeta legend"><span class="stag new">new</span> being built · <span class="stag exp">existing, expanding</span> there today, more coming · <span class="stag">existing</span> there today · <span class="stag unk">unconfirmed</span> not on public maps. <span class="tap yes">tap</span> 345 kV and below · <span class="tap maybe">maybe</span> 500 kV · <span class="tap no">substation only</span> 765 kV. Lines are straight between substations, not routes. Click a substation for satellite view; hover a stage for why.</p>
+    <p class="pmeta legend">Substations: <span class="stag new">not there yet · new</span> a new substation is being built · <span class="stag exp">there now · adding</span> a new line, transformer or expansion is coming · <span class="stag">there now</span> line upgrades or nothing new · <span class="stag unk">not on maps</span> can't confirm it exists. The stage after it (approved, planned...) is how far along that substation work is. <span class="tap yes">tap</span> 345 kV and below · <span class="tap maybe">maybe</span> 500 kV · <span class="tap no">substation only</span> 765 kV. Lines are straight between substations, not routes.</p>
     <details class="fold">
       <summary>Developers queued at these substations <span class="pmeta" id="devstamp"></span></summary>
       <p class="pmeta">Generation and battery projects in ERCOT's interconnection queue at the end substations, listed under the company that filed them (often a project company, not the parent developer). <button type="button" class="linkbtn" id="devdl">Download (.csv)</button></p>
@@ -652,7 +656,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   const LIFE = ["built", "in construction", "approved", "planned", "proposed"];
   const LIFE_HELP = { "built": "In service in the last 3 years", "in construction": "Being built now", "approved": "Route final, waiting to build",
                       "planned": "Approved, route or site not final", "proposed": "Not approved yet" };
-  const LS = { all: [], rec: "", life: "", kv: "", type: "", util: "", sub: "", sort: "", dev: "", fresh: "", q: "", shown: 40, built: "", stations: {}, sites: {}, queue: "", base: "", cutoff: "", open: new Set(), devShown: 15 };
+  const LS = { view: "lines", all: [], rec: "", life: "", kv: "", type: "", util: "", sub: "", sort: "", dev: "", fresh: "", q: "", shown: 40, built: "", stations: {}, sites: {}, queue: "", base: "", cutoff: "", open: new Set(), devShown: 15 };
   const STAG = { "new": ["new", "new"], "existing, expanding": ["exp", "existing, expanding"], "existing": ["", "existing"], "unconfirmed": ["unk", "unconfirmed"] };
   const TAP = { yes: ["yes", "tap"], maybe: ["maybe", "maybe"], no: ["no", "substation only"] };
   const STAGE_ORDER = Object.fromEntries(LIFE.map((l, i) => [l, i]));
@@ -695,7 +699,10 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   const isFresh = (x) => LS.base && x.first_seen && x.first_seen > LS.base && x.lifecycle !== "built";
   const satLink = (e, label) => e.check_link || e.lat != null
     ? `<a href="${esc(e.check_link || `https://www.google.com/maps/@?api=1&map_action=map&center=${Number(e.lat).toFixed(5)},${Number(e.lon).toFixed(5)}&zoom=16&basemap=satellite`)}" target="_blank" rel="noopener" title="Satellite view">${label}</a>` : label;
-  const stag = (e) => { const [c, l] = STAG[e.station_status] || ["", ""]; return l ? `<span class="stag ${c}">${l}</span>` : ""; };
+  const SUBTAG = { "new": ["new", "not there yet · new"], "existing, expanding": ["exp", "there now · adding"], "existing": ["", "there now"], "unconfirmed": ["unk", "not on maps"] };
+  const stag = (e) => { const [c, l] = SUBTAG[e.station_status || e.status] || ["", ""]; if (!l) return "";
+    const st = e.work_stage && (e.station_status || e.status) !== "existing" ? ` · ${e.work_stage}` : "";
+    return `<span class="stag ${c}" title="${esc((e.work || "") + (e.work_stage ? ", " + e.work_stage : "") + (e.work_in_service ? ", in service " + e.work_in_service : ""))}">${l}${st}</span>`; };
   const tapTag = (x) => { const [c, l] = TAP[x.tappable] || ["", ""]; return l ? `<br><span class="tap ${c}" title="${esc(x.tap_note)}">${l}</span>` : ""; };
   const SORTS = { kv: (a, b) => b.kv - a.kv || b.priority_score - a.priority_score,
                   date: (a, b) => ((a.lifecycle === "built") - (b.lifecycle === "built")) || (a.in_service || "9999").localeCompare(b.in_service || "9999"),
@@ -705,30 +712,57 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     return `<table class="devlist"><thead><tr>${showStation ? "<th>Substation</th>" : ""}<th>Developer (as filed with ERCOT)</th><th>Project</th><th class="n">MW</th><th>Online</th><th>Study stage</th></tr></thead><tbody>${
       projects.map((p) => `<tr>${showStation ? `<td>${esc(p._st || "")}</td>` : ""}<td><b>${esc(p.developer)}</b></td><td>${esc(p.project)}<br><span class="pmeta">${esc(p.fuel)} · ${esc(p.inr)} · ${esc(p.connection)}</span></td><td class="n">${p.mw > 0 ? mwN(p.mw) : "<span class=\"pmeta\">0 (shares the site's limit)</span>"}</td><td>${esc(p.cod || "")}</td><td>${p.ia_signed ? "Agreement signed" : "Studying"}<br><span class="pmeta">${esc(p.phase)}</span></td></tr>`).join("")}</tbody></table>`;
   }
+  function subMatch(s) {
+    if (LS.life && s.work_stage !== LS.life) return false;
+    if (LS.kv && String(s.max_kv) !== LS.kv) return false;
+    if (LS.sub && s.status !== LS.sub) return false;
+    if (LS.util && !(s.builders || []).includes(LS.util)) return false;
+    if (LS.dev && (LS.dev === "yes") !== (s.queue_projects > 0)) return false;
+    if (!LS.q) return true;
+    const hay = [s.name, s.county, ...(s.builders || []), ...(s.queue_developers || [])].join(" ").toLowerCase();
+    return LS.q.toLowerCase().split(/\s+/).every((t) => hay.includes(t));
+  }
+  function renderSubs() {
+    const list = Object.values(LS.sites).filter(subMatch);
+    const ord = (s) => s.work_stage ? LIFE.indexOf(s.work_stage) : 9;
+    const sorts = { kv: (a, b) => b.max_kv - a.max_kv, date: (a, b) => (a.work_in_service || "9999").localeCompare(b.work_in_service || "9999"), stage: (a, b) => ord(a) - ord(b) };
+    list.sort(sorts[LS.sort] || ((a, b) => (["new", "existing, expanding", "unconfirmed", "existing"].indexOf(a.status) - ["new", "existing, expanding", "unconfirmed", "existing"].indexOf(b.status)) || b.max_kv - a.max_kv || b.queue_mw - a.queue_mw));
+    $("linescount").textContent = `${list.length.toLocaleString()} substations shown${LS.life ? `, with ${LS.life} work` : ""}.`;
+    const there = { yes: "Yes", no: "No, being built", unknown: "Can't confirm" };
+    $("linestable").innerHTML = `<table><thead><tr><th>Substation</th><th>There now?</th><th>What's happening</th><th>Stage</th><th>In service</th><th class="n">kV</th><th>Developers</th></tr></thead><tbody>${
+      list.slice(0, LS.shown).map((s) => `<tr><td><b>${satLink(s, esc(s.name))}</b><br><span class="pmeta">${esc(s.county ? s.county + " County" : "county not listed")} · ${s.lines.length} line${s.lines.length > 1 ? "s" : ""}${s.confidence === "county" ? " · placed at county center" : ""}</span></td>
+        <td>${esc(there[s.there_now] || "")}</td><td>${esc(s.work)}${s.work_project ? `<br><span class="pmeta">${esc(s.work_project)}</span>` : ""}</td>
+        <td><b>${esc(s.work_stage || "")}</b>${s.status_reason ? `<br><span class="pmeta">${esc(s.status_reason)}</span>` : ""}</td><td class="n">${esc(s.work_in_service || "")}</td><td class="n">${esc(s.max_kv)}</td>
+        <td>${s.queue_projects ? `${s.queue_projects} project${s.queue_projects > 1 ? "s" : ""} · ${mwN(s.queue_mw)} MW<br><span class="pmeta">${esc((s.queue_developers || []).slice(0, 2).join("; "))}</span>` : `<span class="pmeta">none</span>`}</td></tr>`).join("")
+      || `<tr><td colspan="7" class="pmeta">No substations match. Clear a filter.</td></tr>`}</tbody></table>`;
+    $("moreLines").hidden = list.length <= LS.shown;
+  }
   function renderLines() {
     const all = LS.all;
     const nsub = Object.keys(LS.sites).length;
     $("linesstamp").textContent = `${all.length.toLocaleString()} lines · ${nsub.toLocaleString()} substations · updated ${LS.built}`;
     $("linesrecs").innerHTML = LIFE.map((k) => `<button type="button" data-life="${esc(k)}" aria-pressed="${LS.life === k}"><b>${all.filter((x) => x.lifecycle === k).length}</b><span title="${esc(LIFE_HELP[k])}">${esc(k[0].toUpperCase() + k.slice(1))}</span></button>`).join("");
     $("linesrecs").querySelectorAll("[data-life]").forEach((b) => b.addEventListener("click", () => { LS.life = LS.life === b.dataset.life ? "" : b.dataset.life; LS.shown = 40; renderLines(); }));
+    document.querySelectorAll(".viewtog [data-view]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.view === LS.view)));
+    if (LS.view === "subs") return renderSubs();
     const list = all.filter(lineMatch);
     if (SORTS[LS.sort]) list.sort(SORTS[LS.sort]);
     $("linescount").textContent = `${list.length.toLocaleString()} shown, ${{ kv: "biggest voltage first", date: "soonest in service first", stage: "furthest along first" }[LS.sort] || "highest priority first"}.`;
     const where = (x) => [x.county_from, x.county_to].filter((c, i, a) => c && a.indexOf(c) === i).join(" to ");
     const ends = (x) => (x.endpoints || []).map((e) => satLink(e, esc(subShort(e.name))) + stag(e)).join(" to ");
     const devCell = (x) => { const q = x.queue || {};
-      if (!q.projects) return `<span class="pmeta">none</span>`;
-      return `<button type="button" class="linkbtn" data-devs="${esc(x.id)}" aria-expanded="${LS.open.has(x.id)}" title="${esc(q.developers.join("; "))}">${q.projects} projects · ${mwN(q.mw)} MW</button>`; };
+      if (!q.projects) return `<span class="pmeta">None queued</span>`;
+      return `<b>${q.projects}</b> project${q.projects > 1 ? "s" : ""}, ${mwN(q.mw)} MW<br><span class="pmeta">${esc(q.developers.slice(0, 2).join("; "))}</span><br><button type="button" class="linkbtn" data-devs="${esc(x.id)}" aria-expanded="${LS.open.has(x.id)}">${LS.open.has(x.id) ? "Hide" : "Show"} developers</button>`; };
     const devRow = (x) => { if (!LS.open.has(x.id)) return "";
       const ps = (x.queue.stations || []).filter((id) => LS.stations[id]).flatMap((id) => LS.stations[id].projects.map((p) => ({ ...p, _st: LS.stations[id].name })));
-      return `<tr class="devrow"><td colspan="6">${devList(ps, true)}</td></tr>`; };
-    const kind = (x) => [x.upgrade_kind || x.project_type, x.miles_new ? x.miles_new + " mi" : x.miles_upgraded ? x.miles_upgraded + " mi" : ""].filter(Boolean).join(", ");
-    $("linestable").innerHTML = `<table><thead><tr><th>Line</th><th class="n">kV</th><th>Stage</th><th>In service</th><th>Developers</th><th>K2 next step</th></tr></thead><tbody>${
+      return `<tr class="devrow"><td colspan="8">${devList(ps, true)}</td></tr>`; };
+    $("linestable").innerHTML = `<table><thead><tr><th>Line</th><th class="n">kV</th><th>Type</th><th>Stage</th><th>In service</th><th>Counties</th><th>Developers queued</th><th>K2 next step</th></tr></thead><tbody>${
       list.slice(0, LS.shown).map((x) => { const [cls, lbl] = REC[x.recommended_next_step] || ["info", x.recommended_next_step];
-        return `<tr><td><b>${esc(x.name)}</b>${isFresh(x) ? ` <span class="stag fresh">new</span>` : ""}<br><span class="pmeta">${ends(x) || "No end substations listed"}</span><br><span class="pmeta">${esc(kind(x))} · ${esc(where(x))} · ${esc(x.utility || "builder not listed")}${x.card_id ? ` · <button type="button" class="linkbtn" data-gocard="${esc(x.card_id)}">card</button>` : ""}</span></td>
-          <td class="n">${esc(x.kv)}${tapTag(x)}</td><td><span title="${esc(x.lifecycle_basis)}">${esc(x.lifecycle)}</span></td><td class="n">${esc(x.in_service || "not set")}</td>
-          <td>${devCell(x)}</td><td><span class="rec ${cls}" title="${esc(x.recommendation_reason)}">${esc(lbl)}</span></td></tr>${devRow(x)}`; }).join("")
-      || `<tr><td colspan="6" class="pmeta">No lines match. Clear a filter.</td></tr>`}</tbody></table>`;
+        return `<tr><td><b>${esc(x.name)}</b>${isFresh(x) ? ` <span class="stag fresh">new ${esc(x.first_seen)}</span>` : ""}<br><span class="pmeta">${ends(x) || "No end substations listed"}</span><br><span class="pmeta">Builder: <b>${esc(x.utility || "not listed")}</b>${x.ercot_project ? " · ERCOT " + esc(x.ercot_project) : ""}${x.card_id ? ` · <button type="button" class="linkbtn" data-gocard="${esc(x.card_id)}">project card</button>` : ""}</span></td>
+          <td class="n">${esc(x.kv)}${tapTag(x)}</td><td>${esc(x.project_type)}${x.upgrade_kind ? `<br><span class="pmeta">${esc(x.upgrade_kind)}</span>` : ""}${x.miles_new || x.miles_upgraded ? `<br><span class="pmeta">${x.miles_new ? esc(x.miles_new) + " mi new" : esc(x.miles_upgraded) + " mi upgraded"}</span>` : ""}</td>
+          <td><b>${esc(x.lifecycle)}</b><br><span class="pmeta">${esc(x.lifecycle_basis)}</span></td><td class="n">${esc(x.in_service || "not set")}${x.in_service ? `<br><span class="pmeta">${x.in_service_kind === "actual" ? "actual" : "projected"}</span>` : ""}</td>
+          <td>${esc(where(x))}</td><td>${devCell(x)}</td><td><span class="rec ${cls}">${esc(lbl)}</span><br><span class="pmeta">${esc(x.recommendation_reason)}</span></td></tr>${devRow(x)}`; }).join("")
+      || `<tr><td colspan="8" class="pmeta">No lines match. Clear a filter.</td></tr>`}</tbody></table>`;
     $("moreLines").hidden = list.length <= LS.shown;
   }
   function renderDevs() {
@@ -750,6 +784,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   [["lf-kv", "kv"], ["lf-type", "type"], ["lf-util", "util"], ["lf-sub", "sub"], ["lf-rec", "rec"], ["lf-sort", "sort"], ["lf-dev", "dev"], ["lf-new", "fresh"]].forEach(([id, k]) => $(id).addEventListener("change", (e) => { LS[k] = e.target.value; LS.shown = 40; renderLines(); }));
   $("lf-q").addEventListener("input", (e) => { LS.q = e.target.value.trim(); LS.shown = 40; renderLines(); });
   $("moreLines").addEventListener("click", () => { LS.shown += 60; renderLines(); });
+  document.querySelectorAll(".viewtog [data-view]").forEach((b) => b.addEventListener("click", () => { LS.view = b.dataset.view; LS.shown = 40; renderLines(); }));
   document.addEventListener("click", (e) => {
     const b = e.target.closest && e.target.closest("[data-gocard]");
     if (!b) return;

@@ -32,7 +32,10 @@ k2-texas-layer.geojson / k2-texas-layer.kml  (start here)
   substations, NOT routes; a line with only one placeable end is a point at that end.
   feature_type = substation: one per end substation. status is new, existing, expanding
   (there today and a new line, substation work or transformer is coming), existing, or
-  unconfirmed (not on public maps by this name). status_reason says why. location_quality:
+  unconfirmed (not on public maps by this name). status_reason says why. Substation stage:
+  there_now (yes / no / unknown), work (building a new substation / adding to it / upgrading
+  lines to it / no new work), work_stage (built ... proposed), work_in_service, work_project.
+  Line features carry the same per end: from_there_now, from_work, from_work_stage (and to_). location_quality:
   exact / approx (within a mile or two) / county (placed at the county center because the
   substation is not on public maps by name). Developers already queued there are included.
   The KML has the same features in folders by stage and by substation status.

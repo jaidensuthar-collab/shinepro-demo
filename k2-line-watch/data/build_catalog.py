@@ -447,7 +447,7 @@ def station_sites(lines, stations):
             st = next((s for s in sites if same(s, b, county, e)), None)
             if not st:
                 st = {"_b": b, "name": subname(e["name"]) or e["name"], "county": county, "lat": e.get("lat"), "lon": e.get("lon"),
-                      "confidence": e.get("confidence") or "unknown", "basis": e.get("basis", ""), "_ev": set(), "lines": [], "_q": set()}
+                      "confidence": e.get("confidence") or "unknown", "basis": e.get("basis", ""), "_ev": set(), "lines": [], "_q": set(), "_roles": []}
                 sites.append(st)
             elif RANK.get(e.get("confidence"), 4) < RANK.get(st["confidence"], 4):
                 st.update(lat=e.get("lat"), lon=e.get("lon"), confidence=e.get("confidence"), basis=e.get("basis", ""), county=county or st["county"])
@@ -463,13 +463,19 @@ def station_sites(lines, stations):
             if re.match(r"new\b|.*newsub", e["name"], re.I):
                 ev.add("new name")
             named = f" {b} " in title or f" {b} " in desc
+            role = "upgrade" if x["project_type"] == "upgrade" else "other"
+            if x["project_type"] in ("new line", "new substation") or x["transformer_mva"] or x["upgrade_kind"] == "voltage upgrade":
+                role = "add"
             if named and re.search(r"\bEXPAN(D|DS|DING|SION)\b", title + desc):
-                ev.update({"expands", "more coming"})
-            elif re.search(r"\b(NEW|GREENFIELD)\b(?: \w+){0,4} " + re.escape(b) + r"\b", desc) or \
+                ev.update({"expands"} | ({"more coming"} if x["lifecycle"] != "built" else set()))
+                role = "add"
+            elif re.search(r"\b(NEW|GREENFIELD)\b(?: \w+){0,4} " + re.escape(b) + r"\b", desc) or re.match(r"new\b|.*newsub", e["name"], re.I) or \
                     (x["project_type"] == "new substation" and f" {b} " in title and re.search(r"\b(NEW|ESTABLISH)\b", title + desc)):
                 ev.add("new per ERCOT")
-            if x["lifecycle"] != "built" and (x["project_type"] in ("new line", "new substation") or x["transformer_mva"] or x["upgrade_kind"] == "voltage upgrade"):
+                role = "new"
+            if x["lifecycle"] != "built" and role == "add":
                 ev.add("more coming")
+            st["_roles"].append((x, role))
             if e.get("station_id"):
                 st["_q"].add(e["station_id"])
             e["_site"] = st
@@ -478,13 +484,34 @@ def station_sites(lines, stations):
     for st in sites:
         ev = st.pop("_ev")
         existing, new = ev & {"on maps", "existing line", "built line", "expands"}, ev & {"new name", "new per ERCOT"} if "expands" not in ev else set()
-        if new and "on maps" not in ev:
+        roles = st.pop("_roles")
+        pick = lambda r: [x for x, role in roles if role == r]
+        new_built = [x for x in pick("new") if x["lifecycle"] == "built"]
+        new_open = [x for x in pick("new") if x["lifecycle"] != "built"]
+        if new and "on maps" not in ev and new_open:
             status, why = "new", [STATUS_WHY[k] for k in sorted(new)]
-        elif existing:
-            status = "existing, expanding" if "more coming" in ev else "existing"
-            why = [STATUS_WHY[k] for k in sorted(existing)] + ([STATUS_WHY["more coming"]] if "more coming" in ev else [])
+            work = new_open
+        elif existing or (new and new_built):
+            work = [x for x in pick("add") + pick("new") if x["lifecycle"] != "built"]
+            status = "existing, expanding" if work else "existing"
+            why = [STATUS_WHY[k] for k in sorted(existing)] + ([f"built as a new substation, in service {new_built[0]['in_service']}"] if new_built else []) \
+                + ([STATUS_WHY["more coming"]] if work else [])
+            if not work:
+                work = [x for x in pick("upgrade") if x["lifecycle"] != "built"]
         else:
             status, why = "unconfirmed", ["not on public maps by this name, and ERCOT doesn't say it is new; could be new or renamed"]
+            work = [x for x, _ in roles if x["lifecycle"] != "built"]
+        # Substation stage: what is happening at it, how far along, and whether it is there today.
+        best = min(work, key=lambda x: (STAGES.index(x["lifecycle"]), x["in_service"] or "9999"), default=None)
+        if status == "new":
+            there, doing = "no", "building a new substation"
+        elif status == "unconfirmed":
+            adds = [x for x in work if x["project_type"] != "upgrade"]
+            there, doing = "unknown", "new line or substation work planned" if adds else "upgrading lines to it" if work else "no new work"
+        else:
+            there = "yes"
+            doing = ("adding to it (new line, transformer or expansion)" if status == "existing, expanding"
+                     else "upgrading lines to it" if work else "no new work")
         sid = re.sub(r"[^a-z0-9]+", "-", f"{st['name']} {st['county']}".lower()).strip("-") or "station"
         n = 2
         while sid in used:
@@ -497,7 +524,9 @@ def station_sites(lines, stations):
         for p in qs:
             devs[p["developer"]] = devs.get(p["developer"], 0) + max(p["mw"], 0)
         st.pop("_b")
-        st.update(id=sid, status=status, status_reason="; ".join(why), max_kv=max(x["kv"] for x in ls),
+        st.update(id=sid, status=status, status_reason="; ".join(why), there_now=there, work=doing,
+                  work_stage=best["lifecycle"] if best else "", work_in_service=best["in_service"] if best else "",
+                  work_project=best["name"] if best else "", max_kv=max(x["kv"] for x in ls),
                   stages={k: sum(x["lifecycle"] == k for x in ls) for k in STAGES if any(x["lifecycle"] == k for x in ls)},
                   next_in_service=future[0] if future else "", builders=sorted({x["utility"] for x in ls if x["utility"]}),
                   queue_projects=len(qs), queue_mw=round(sum(max(p["mw"], 0) for p in qs), 1),
@@ -508,7 +537,8 @@ def station_sites(lines, stations):
         for e in x["endpoints"]:
             st = e.pop("_site", None)
             if st:
-                e["site_id"], e["station_status"] = st["id"], st["status"]
+                e.update(site_id=st["id"], station_status=st["status"], there_now=st["there_now"], work=st["work"],
+                         work_stage=st["work_stage"], work_in_service=st["work_in_service"])
     return sorted(sites, key=lambda s: (-s["max_kv"], s["name"]))
 
 
@@ -767,10 +797,11 @@ def priority(rec):
 
 
 LINE_COLS = ["id", "name", "kv", "stage", "stage_detail", "in_service", "in_service_kind", "builder", "project_type", "upgrade_kind",
-             "miles_new", "miles_upgraded", "purpose", "tappable", "tap_note", "from", "from_status", "to", "to_status", "county_from", "county_to",
+             "miles_new", "miles_upgraded", "purpose", "tappable", "tap_note", "from", "from_status", "from_there_now", "from_work", "from_work_stage",
+             "to", "to_status", "to_there_now", "to_work", "to_work_stage", "county_from", "county_to",
              "location_quality", "queue_projects", "queue_mw", "queue_developers", "recommended_next_step", "recommendation_reason", "priority_score",
              "program", "rpg", "docket", "route_status", "ercot_project", "card_id", "first_seen", "market", "source"]
-SITE_COLS = ["id", "name", "county", "status", "status_reason", "max_kv", "line_count", "lines", "stages", "next_in_service", "builders",
+SITE_COLS = ["id", "name", "county", "status", "there_now", "work", "work_stage", "work_in_service", "work_project", "status_reason", "max_kv", "line_count", "lines", "stages", "next_in_service", "builders",
              "queue_projects", "queue_mw", "queue_developers", "location_quality", "location_basis", "check_link", "market"]
 STAGE_COLOR = {"built": "ff7f7f7f", "in construction": "ff0000cc", "approved": "ff0080ff", "planned": "ff00b4e6", "proposed": "ffd29a3c"}  # KML aabbggrr
 
@@ -779,13 +810,15 @@ def line_props(x):
     ends = (x["endpoints"] + [{}, {}])[:2]
     worst = max((e.get("confidence") or "unknown" for e in x["endpoints"]), key=lambda c: RANK.get(c, 4), default="unknown")
     return {"feature_type": "line", **{k: x.get(k, "") for k in LINE_COLS if k in x}, "stage": x["lifecycle"], "stage_detail": x["lifecycle_basis"],
-            "builder": x["utility"], "from_status": ends[0].get("station_status", ""), "to_status": ends[1].get("station_status", ""),
+            "builder": x["utility"], **{f"{side}_{k}": e.get(src, "") for side, e in zip(("from", "to"), ends)
+                                         for k, src in (("status", "station_status"), ("there_now", "there_now"), ("work", "work"), ("work_stage", "work_stage"))},
             "location_quality": worst, "queue_projects": x["queue"]["projects"], "queue_mw": x["queue"]["mw"],
             "queue_developers": "; ".join(x["queue"]["developers"])}
 
 
 def site_props(st, names):
-    return {"feature_type": "substation", **{k: st[k] for k in ("id", "name", "county", "status", "status_reason", "max_kv", "next_in_service",
+    return {"feature_type": "substation", **{k: st[k] for k in ("id", "name", "county", "status", "there_now", "work", "work_stage", "work_in_service",
+                                                                "work_project", "status_reason", "max_kv", "next_in_service",
                                                                 "queue_projects", "queue_mw", "check_link") if k in st},
             "line_count": len(st["lines"]), "lines": "; ".join(names[i] for i in st["lines"][:12]) + (f"; +{len(st['lines']) - 12} more" if len(st["lines"]) > 12 else ""),
             "stages": "; ".join(f"{k} {v}" for k, v in st["stages"].items()), "builders": "; ".join(st["builders"]),

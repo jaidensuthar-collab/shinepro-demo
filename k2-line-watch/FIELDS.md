@@ -134,6 +134,11 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
   transformer is coming), existing (on public maps, or an existing line to it is being upgraded, or a line built in
   the last 3 years ends there), unconfirmed (not on public maps by this name and ERCOT doesn't call it new).
   `status_reason` lists the evidence.
+- **Substation stage** (substations table and `endpoints[]`; `from_` / `to_` columns in the line table):
+  `there_now` (yes / no, being built / unknown), `work` (building a new substation / adding to it: a new line,
+  transformer or expansion / upgrading lines to it / no new work), `work_stage` (built, in construction, approved,
+  planned or proposed: the furthest-along project doing that work), `work_in_service` and `work_project`.
+  A substation built new in the last 3 years counts as there now.
 - **Rough location for every line**: a substation that isn't on public maps by name is placed at the center of its
   county (`location_quality` = county), since Richard said a rough location is enough for now.
 - **One GIS layer**: `web/exports/k2-texas-layer.geojson` (and `.kml`) holds every line and every substation with all
