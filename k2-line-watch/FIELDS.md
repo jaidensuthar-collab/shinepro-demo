@@ -112,8 +112,9 @@ ERCOT's report (state business filings, developer websites, press releases).
 Phase 1 is the research layer only: where new lines are going, not routes or parcels. K2's GIS team (Steve) and
 map (John) take the layer in; routes, county records and parcels are phase 2 for lines K2 picks.
 
-- **Time window**: every line built in the last 3 years (since October 2023, because Landgate may not have them yet)
-  through everything in construction, approved, planned or proposed, with no limit on how far out. Lines built
+- **Time window**: "3 down, 5 up": every line built in the last 3 years (since October 2023, because Landgate may not
+  have them yet) through everything in construction, approved, planned or proposed that is due in service within the
+  next 5 years (through October 2031). Lines due later are left out; a line with no date yet stays in. Lines built
   before this year come from the completed-project lists in ERCOT's October 2024 and October 2025 TPIT updates
   (`data/sources/ercot-tpit-2024-10.xlsx`, `ercot-tpit-2025-10.xlsx`).
 - **Stage** (`lifecycle`, `stage` in the exports): Richard's five steps.

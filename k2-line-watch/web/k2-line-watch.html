@@ -208,7 +208,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   <header class="top">
     <div>
       <h1><span class="tape" aria-hidden="true"></span>K2 Line Watch</h1>
-      <p class="sub">Every new or upgraded high-voltage line in Texas, from proposed to built in the last 3 years: where it runs, who is building it, how far along it is, and whether its substations are new or existing.</p>
+      <p class="sub">Every new or upgraded high-voltage line in Texas, from built in the last 3 years to coming online in the next 5: where it runs, who is building it, how far along it is, and whether its substations are new or existing.</p>
     </div>
     <div class="stamp" id="stamp">Loading the watch list...</div>
   </header>
@@ -282,7 +282,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   <div id="p-lines" role="tabpanel" aria-labelledby="t-lines" class="panel land">
     <section>
       <h2>Texas transmission lines</h2>
-      <p>Every new or upgraded ERCOT line, 138 kV and up, plus new 345 kV and bigger substations, from proposed to built in the last 3 years. Each row is one line: voltage, who is building it, its stage, when it comes online, the counties at each end, and whether each end substation is new or already there. Routes and parcels come later.</p>
+      <p>Every new or upgraded ERCOT line, 138 kV and up, plus new 345 kV and bigger substations: built in the last 3 years, or due in service within the next 5 years (<span id="window">through October 2031</span>). Each row is one line: voltage, who is building it, its stage, when it comes online, the counties at each end, and whether each end substation is new or already there. Routes and parcels come later.</p>
       <p class="pmeta" id="linesstamp">Loading the Texas lines...</p>
     </section>
     <section class="gisbox" aria-labelledby="gish">
@@ -378,7 +378,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     <section>
       <h2>What this page is</h2>
       <p>K2 Renew buys land before the grid gets to it. Land near a new high-voltage line, and above all near the substations at each end, becomes worth much more once the line is built. This page is the research layer: where new lines are going, who is building them, how far along they are, and whether their substations are new or existing. K2's GIS team takes the layer into its own map; routes and parcels are the next phase.</p>
-      <p><b>Texas lines</b> is the main list: every new or upgraded ERCOT line from proposed to built in the last 3 years. <b>Early signals</b> tracks lines before ERCOT's report lists them (planning meetings, open houses, route cases, news). A monitor checks the public sources every day at 7am and 5pm Central, and the Texas list is rebuilt when ERCOT posts a new report.</p>
+      <p><b>Texas lines</b> is the main list: every new or upgraded ERCOT line built in the last 3 years or due in service within the next 5. <b>Early signals</b> tracks lines before ERCOT's report lists them (planning meetings, open houses, route cases, news). A monitor checks the public sources every day at 7am and 5pm Central, and the Texas list is rebuilt when ERCOT posts a new report.</p>
     </section>
 
     <section>
@@ -664,6 +664,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     LS.sites = Object.fromEntries((d.sites || []).map((s) => [s.id, s]));
     // queue stations (developers section) take the status of the substation they belong to
     LS.all.forEach((x) => (x.endpoints || []).forEach((e) => { if (e.station_id && LS.stations[e.station_id] && e.station_status) LS.stations[e.station_id].station_status = e.station_status; }));
+    if (d.horizon) $("window").textContent = "through " + new Date(d.horizon + "-15T12:00:00").toLocaleDateString("en-US", { month: "long", year: "numeric" });
     if (LS.cutoff) $("cutoff").textContent = new Date(LS.cutoff + "T12:00:00").toLocaleDateString("en-US", { month: "long", year: "numeric" });
     LS.base = LS.all.reduce((m, x) => (x.first_seen && (!m || x.first_seen < m) ? x.first_seen : m), "");
     const opts = (id, vals, label) => { $(id).innerHTML = `<option value="">${label}</option>` + vals.map((v) => `<option value="${esc(v)}">${esc(v)}</option>`).join(""); };

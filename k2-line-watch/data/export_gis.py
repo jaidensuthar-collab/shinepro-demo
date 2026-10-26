@@ -47,7 +47,7 @@ k2-line-watch.kml
 k2-texas-layer.geojson / k2-texas-layer.kml  (start here)
   One GIS layer with every Texas line and every end substation, all fields on each feature.
   feature_type = line: one per new or upgraded ERCOT line (138 kV and up) or new 345 kV+
-  substation project. stage is one of built (in service in the last 3 years), in construction,
+  substation project, built in the last 3 years or due in service within the next 5. stage is one of built (in service in the last 3 years), in construction,
   approved (route final or existing corridor, waiting to build), planned (approved, route or site
   not final) or proposed (not approved yet); stage_detail says why. builder is the utility.
   tappable: yes (345 kV and below), maybe (500 kV), no (765 kV, substations only).

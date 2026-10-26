@@ -33,6 +33,7 @@ QUEUE_URL = "https://www.ercot.com/misapp/GetReports.do?reportTypeId=15933"
 TODAY = datetime.date.today()
 # Richard (Oct 26 team call): every line built in the last 3 years, plus everything in construction, approved, planned or proposed.
 CUTOFF = TODAY.replace(year=TODAY.year - 3, day=1)
+HORIZON = TODAY.replace(year=TODAY.year + 5).strftime("%Y-%m")   # window: built in the last 3 years to in service within 5 years
 STAGES = ["built", "in construction", "approved", "planned", "proposed"]
 STAGE_HELP = {"built": "In service within the last 3 years",
               "in construction": "Being built now",
@@ -903,6 +904,9 @@ def build(projects_src, tpit_path, queue_path=None):
                "rpg": rpg, "tier": str(r["tier"] or "").strip(), "ercot_board": ym(r["board"]), "docket": (card or {}).get("docket", ""),
                "route_status": route, "card_id": (card or {}).get("id", ""), "card_ids": [p["id"] for p in matched], "endpoints": ends,
                "source": f"ERCOT TPIT ({TPIT_URL}), {r['src']}", "checked": "ERCOT TPIT " + r["src"].split(" (")[0], "market": MARKET}
+        if rec["in_service"] and rec["in_service"][:7] > HORIZON:
+            used_cards.update(p["id"] for p in matched)   # its card is out of the window too
+            continue
         rec["tappable"], rec["tap_note"] = tap(kv)
         rec["recommended_next_step"], rec["recommendation_reason"] = recommend(rec)
         rec["priority_score"] = priority(rec)
@@ -934,6 +938,8 @@ def build(projects_src, tpit_path, queue_path=None):
                "tier": "", "ercot_board": "", "docket": p.get("docket", ""), "route_status": STAGE_ROUTE.get(stage, "end substations only"),
                "card_id": p["id"], "card_ids": [p["id"]], "endpoints": ends, "checked": p.get("checked", ""), "market": MARKET,
                "source": "; ".join(dict.fromkeys([l["url"] for l in p.get("links", [])[:2]] + [fact[k] for k in ("miles_source", "in_service_source") if fact.get(k)]))}
+        if rec["in_service"] and rec["in_service"][:7] > HORIZON:
+            continue
         rec["tappable"], rec["tap_note"] = tap(rec["kv"])
         rec["recommended_next_step"], rec["recommendation_reason"] = recommend(rec)
         rec["priority_score"] = priority(rec)
@@ -946,8 +952,8 @@ def build(projects_src, tpit_path, queue_path=None):
     os.makedirs(os.path.join(WEB, "data"), exist_ok=True)
     meta = {"built": TODAY.isoformat(), "count": len(out), "queue_report": queue_label(queue_path),
             "sources": {"ERCOT TPIT": TPIT_URL, "HIFLD substations": HIFLD_URL, "ERCOT interconnection queue (GIS report)": QUEUE_URL},
-            "scope": f"ERCOT Texas: new and upgraded lines 138 kV and up and new 345 kV+ substations, from proposed to built since {CUTOFF:%B %Y}, plus Line Watch cards not yet in TPIT",
-            "cutoff": CUTOFF.isoformat(), "stages": STAGE_HELP}
+            "scope": f"ERCOT Texas: new and upgraded lines 138 kV and up and new 345 kV+ substations, from proposed to built since {CUTOFF:%B %Y}, in service by {HORIZON}, plus Line Watch cards not yet in TPIT",
+            "cutoff": CUTOFF.isoformat(), "horizon": HORIZON, "stages": STAGE_HELP}
     json.dump({**meta, "lines": out, "stations": stations, "sites": sites}, open(os.path.join(WEB, "data", "texas-lines.json"), "w"), separators=(",", ":"))
 
     dcols = ["station", "county", "lat", "lon", "station_status", "lines", "line_names", "max_kv", "inr", "project", "developer", "fuel", "mw",
