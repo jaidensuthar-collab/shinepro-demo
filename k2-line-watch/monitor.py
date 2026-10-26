@@ -5,8 +5,10 @@ It checks three kinds of public sources, earliest signal first:
 
   Step 2  ERCOT Regional Planning Group (RPG) meeting documents
           (new project submissions, scopes and recommendations; names the end substations)
-  Step 3  Utility project pages (Oncor, AEP Texas, LCRA, CPS Energy)
+  Step 3  Utility project pages (Oncor, AEP Texas, LCRA, CPS Energy, CenterPoint)
           (a new page usually means open houses with preliminary route links are coming)
+  Step 3  Oncor's CCN Public Viewer map: a new study area goes up before the open houses,
+          with the end stations, months before ERCOT's TPIT report lists the line
   Step 3+ Google News: open houses, 765 kV and route news (covers CenterPoint and local press)
   Step 4-5 PUCT Interchange: new electric cases asking to amend a
           Certificate of Convenience and Necessity (CCN) for a transmission line
@@ -66,7 +68,14 @@ UTILITY_PAGES = [
     ("CPS Energy",
      "https://www.cpsenergy.com/en/about-us/new-infrastructure.html",
      "https://www.cpsenergy.com/content/corporate/en/about-us/new-infrastructure/"),
+    ("CenterPoint",
+     "https://www.centerpointenergy.com/en-us/our-services/electric-construction-projects",
+     "https://www.centerpointenergy.com/en-us/our-services/electric-construction-projects/"),
 ]
+ONCOR_CCN = "https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer"
+ONCOR_CCN_MAP = "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems.html"
+# Link text that says nothing about the project; the page's address names it instead.
+GENERIC_LINK = ("learn more", "read more", "view project", "more info", "details")
 # Utility pages that are not transmission lines (CPS lists gas mains, pole swaps and so on).
 UTILITY_SKIP = ("gas main", "pole replacement", "cable replacement", "conversion program", "mall",
                 "community", "streetlight")
@@ -337,6 +346,8 @@ def parse_utility_projects(page_html, page_url, prefix):
         if key in seen:
             continue
         seen.add(key)
+        if text.strip().lower() in GENERIC_LINK:
+            text = rest.replace("-", " ").title()
         projects.append((text, url))
     return projects
 
@@ -365,6 +376,42 @@ def utility_signals():
                 url=url,
             ))
     return signals, errors
+
+
+def oncor_ccn_signals():
+    """One signal per project on Oncor's CCN Public Viewer, keyed by Oncor's project id. A study area appears
+    before the open houses; 'Filed' means the route case is at the PUC."""
+    q = urllib.parse.urlencode({"where": "1=1", "outFields": "*", "returnGeometry": "false", "f": "json"})
+    areas = json.loads(fetch("%s/0/query?%s" % (ONCOR_CCN, q)))
+    ends = json.loads(fetch("%s/3/query?%s" % (ONCOR_CCN, q)))
+    if "error" in areas or "error" in ends:
+        raise RuntimeError("Oncor CCN viewer query failed")
+    kv, stations = {}, {}
+    for f in ends.get("features", []):
+        a = f["attributes"]
+        kv[a["project_id"]] = re.sub(r"\D", "", a.get("project_voltage") or "")
+        stations.setdefault(a["project_id"], []).append(" ".join((a.get("name") or "").split()))
+    signals, done = [], set()
+    for f in areas.get("features", []):
+        a = f["attributes"]
+        pid, status = a["project_id"], a.get("status") or ""
+        if pid in done:
+            continue
+        done.add(pid)
+        name = " ".join((a.get("name") or "").split()) or " - ".join(stations.get(pid, [])) or "project %s" % pid
+        filed = status.lower() == "filed"
+        signals.append(Signal(
+            id="oncorccn:%s%s" % (pid, ":filed" if filed else ""),
+            step="5 route case filed (Oncor CCN viewer)" if filed else "3 Oncor CCN viewer study area (before open houses)",
+            source="Oncor CCN Public Viewer",
+            utility="Oncor",
+            voltage_kv=kv.get(pid, ""),
+            title="%s (%s kV, %s)" % (name, kv.get(pid, "?"), "route filed at the PUC" if filed else "study area / open houses")
+                  + ("; stations: " + ", ".join(dict.fromkeys(stations[pid])) if stations.get(pid) else ""),
+            source_date="",
+            url=ONCOR_CCN_MAP,
+        ))
+    return signals
 
 
 # ---------------------------------------------------------------- watched route cases (steps 5-6)
@@ -537,6 +584,10 @@ def run(args):
         util, util_errors = utility_signals()
         signals += util
         errors += util_errors
+        try:
+            signals += oncor_ccn_signals()
+        except (RuntimeError, ValueError) as err:
+            errors.append("Oncor CCN viewer: %s" % err)
     if "news" in sources:
         try:
             signals += news_signals(args.news_days, today)

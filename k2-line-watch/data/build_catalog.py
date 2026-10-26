@@ -147,6 +147,64 @@ def read_tpit(path):
     return rows
 
 
+ONCOR_CCN_URL = "https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer"
+ONCOR_ALIASES = {"BELL COUNTY": "BELL EAST"}   # the viewer's short names for stations ERCOT names in full
+
+
+def oncor_projects():
+    path = os.path.join(HERE, "sources", "oncor-ccn.json")
+    return json.load(open(path))["projects"] if os.path.exists(path) else []
+
+
+def station_key(name):
+    k = alias(base(name))
+    return ONCOR_ALIASES.get(k, k)
+
+
+def oncor_lines(out, places):
+    """Oncor CCN Public Viewer projects (open houses or filed routes) that ERCOT's report and the cards don't list yet.
+    They are the earliest Oncor signal: a study area goes up before the open houses."""
+    have = [{station_key(e["name"]) for e in x["endpoints"]} for x in out]
+    recs = []
+    for pr in oncor_projects():
+        keys = {station_key(st["name"]) for st in pr["stations"]}
+        if len(keys) < 2 or any(len(keys & h) >= 2 for h in have):
+            continue
+        ends = []
+        for st in pr["stations"]:
+            if any(station_key(e["name"]) == station_key(st["name"]) for e in ends):
+                continue
+            county = next((k.split("|")[1] for k, bx in places.boxes.items() if k.startswith("TX|")
+                           and bx[0] <= st["lon"] <= bx[2] and bx[1] <= st["lat"] <= bx[3] and in_county(places, k, st)), "")
+            ends.append({"name": st["name"], "county": county, "lat": st["lat"], "lon": st["lon"], "confidence": "exact",
+                         "basis": "Oncor CCN Public Viewer station point", "source": ONCOR_CCN_URL})
+        name = pr["name"] or " - ".join(e["name"] for e in ends)
+        filed = pr["status"] == "Filed"
+        rec = {"id": f"oncor-ccn-{pr['project_id']}", "ercot_project": "", "name": name + f" {pr.get('kv') or ''} kV".rstrip(" kV") + (" kV" if pr.get("kv") else ""),
+               "description": f"Oncor CCN Public Viewer project {pr['project_id']}: " + ("route case filed at the PUC" if filed else "study area / open houses, route not filed yet"),
+               "kv": pr.get("kv") or 138, "project_type": "new line", "upgrade_kind": "", "lifecycle": "planned",
+               "lifecycle_basis": "Oncor CCN viewer: " + ("route filed at the PUC, not approved yet" if filed else "open houses / study area, route not filed yet; not in ERCOT's report yet"),
+               "tpit_status": "", "utility": "ONCOR", "from": ends[0]["name"], "to": ends[-1]["name"], "county_from": ends[0]["county"], "county_to": ends[-1]["county"],
+               "miles_new": 0, "miles_upgraded": 0, "transformer_mva": 0, "in_service": "", "in_service_kind": "", "construction_start": "", "capacity_mw": None,
+               "purpose": "generator hookup" if GENERATOR.search(name) else "shared grid", "program": "", "rpg": "", "tier": "", "ercot_board": "", "docket": "",
+               "route_status": "filed routes" if filed else "preliminary routes", "card_id": "", "card_ids": [], "endpoints": ends,
+               "source": "Oncor CCN Public Viewer (" + ONCOR_CCN_URL + ")", "checked": "Oncor CCN viewer " + TODAY.isoformat(), "market": MARKET}
+        rec["tappable"], rec["tap_note"] = tap(rec["kv"])
+        rec["recommended_next_step"], rec["recommendation_reason"] = recommend(rec)
+        rec["priority_score"] = priority(rec)
+        recs.append(rec)
+    return recs
+
+
+def in_county(places, key, pt):
+    ring = max(places.rings[key], key=len)
+    x, y, inside = pt["lon"], pt["lat"], False
+    for (x0, y0), (x1, y1) in zip(ring, ring[1:] + ring[:1]):
+        if (y0 > y) != (y1 > y) and x < (x1 - x0) * (y - y0) / (y1 - y0) + x0:
+            inside = not inside
+    return inside
+
+
 def centroid(ring):
     """Area centroid of one polygon ring of [lon, lat] points."""
     a = cx = cy = 0.0
@@ -207,8 +265,14 @@ class Places:
             ys = [y for r in rings for _, y in r]
             self.boxes[k] = (min(xs), min(ys), max(xs), max(ys))
             self.centers[k] = centroid(max(rings, key=len))
+        self.rings = json.load(open(os.path.join(WEB, "counties.json")))
         # Named OpenStreetMap substations (sources/osm-tx-substations.json): many stations HIFLD leaves unnamed.
         osm = os.path.join(HERE, "sources", "osm-tx-substations.json")
+        # Oncor's CCN Public Viewer (sources/oncor-ccn.json): exact points for Oncor's project stations.
+        self.oncor = {}
+        for pr in oncor_projects():
+            for st in pr["stations"]:
+                self.oncor.setdefault(alias(base(st["name"])), {**st, "project": pr["name"]})
         self.osm = {}
         for s in (json.load(open(osm))["substations"] if os.path.exists(osm) else []):
             self.osm.setdefault(base(s["name"]), []).append(s)
@@ -258,6 +322,10 @@ class Places:
         if c:
             return {"name": str(name).strip(), "county": county or c["county"].split("|")[1], "lat": c["lat"], "lon": c["lon"],
                     "confidence": c.get("confidence", "approx"), "basis": c.get("basis", ""), "source": c.get("source", "")}
+        o = self.oncor.get(b)
+        if o and self.near_county(o, county):
+            return {"name": str(name).strip(), "county": county, "lat": o["lat"], "lon": o["lon"], "confidence": "exact",
+                    "basis": f"Oncor CCN Public Viewer station point ({o['project']} project)", "source": ONCOR_CCN_URL}
         hits = self.hifld.get((b, str(county or "").upper())) or []
         if len(hits) == 1 or (hits and len({(round(x["lat"], 2), round(x["lon"], 2)) for x in hits}) == 1):
             s = hits[0]
@@ -978,6 +1046,7 @@ def build(projects_src, tpit_path, queue_path=None):
         rec["priority_score"] = priority(rec)
         out.append(rec)
 
+    out += oncor_lines(out, places)
     out.sort(key=lambda x: -x["priority_score"])
     stations = attach_queue(out, places, queue_path)
     sites = station_sites(out, stations)

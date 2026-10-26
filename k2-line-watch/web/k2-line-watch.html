@@ -290,7 +290,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 
   <div id="p-lines" role="tabpanel" aria-labelledby="t-lines" class="panel land">
     <section class="lhead">
-      <p>New and upgraded ERCOT lines (138 kV+), built since <span id="cutoff">October 2023</span> or due in service <span id="window">through October 2031</span>. <span class="pmeta" id="linesstamp">Loading...</span></p>
+      <p>New and upgraded ERCOT lines (138 kV+), built since <span id="cutoff">October 2023</span> or due in service <span id="window">through October 2031</span>. <span class="pmeta" id="linesstamp">Loading...</span> <span class="pmeta" id="checkline"></span></p>
       <p class="dl"><b>Download:</b> <button type="button" class="linkbtn" id="layergj">GIS layer (.geojson)</button> · <button type="button" class="linkbtn" id="layerkml">Google Earth (.kml)</button> · <button type="button" class="linkbtn" id="linesdl">Lines (.csv)</button> · <button type="button" class="linkbtn" id="subsdl">Substations (.csv)</button> <span class="pmeta" id="linesdlnote"></span></p>
     </section>
     <div class="recs stages" id="linesrecs"></div>
@@ -319,13 +319,18 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
       <button class="chip more" id="moreDevs" hidden>Show more substations</button>
     </details>
     <details class="fold">
+      <summary>Data checks <span class="pmeta" id="checkstamp"></span></summary>
+      <p class="pmeta">Every time the list is rebuilt, a checker compares it with its sources. Failed checks block an update; "to review" items are worth a look but not errors.</p>
+      <div id="checklist"></div>
+    </details>
+    <details class="fold">
       <summary>Stages, next steps and sources</summary>
       <ul class="pins">
         <li><b>Built</b> in service in the last 3 years. <b>In construction</b> being built. <b>Approved</b> route final (or an upgrade in its existing corridor), waiting to build. <b>Planned</b> approved, but route or site not final. <b>Proposed</b> not approved yet.</li>
         <li><span class="rec sub">Substation campaign</span> substations located, planned or further along (always for 765 kV). <span class="rec line">Line campaign</span> route set, 345 kV or below. <span class="rec follow">Follow updates</span> proposed, or substations not located. <span class="rec info">Informational</span> serves one generator or large load.</li>
         <li>Substations not on public maps by name are placed at their county's center (location_quality = county in the GIS layer).</li>
       </ul>
-      <p class="pmeta">Sources: ERCOT's Transmission Project and Information Tracking report (October 2026, plus the completed-project lists in the October 2024 and 2025 editions), the Line Watch project cards, the HIFLD substation map, OpenStreetMap (data &copy; OpenStreetMap contributors) and utility filings. "Approved" within 18 months of in-service is estimated; a planned line past its in-service date shows as in construction until ERCOT confirms it.</p>
+      <p class="pmeta">Sources: ERCOT's Transmission Project and Information Tracking report (October 2026, plus the completed-project lists in the October 2024 and 2025 editions), Oncor's CCN Public Viewer (Oncor projects at the study-area and open-house stage, before ERCOT's report lists them, with exact station points), the Line Watch project cards, the HIFLD substation map, OpenStreetMap (data &copy; OpenStreetMap contributors) and utility filings. "Approved" within 18 months of in-service is estimated; a planned line past its in-service date shows as in construction until ERCOT confirms it.</p>
     </details>
   </div>
 
@@ -668,6 +673,12 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     // queue stations (developers section) take the status of the substation they belong to
     LS.all.forEach((x) => (x.endpoints || []).forEach((e) => { if (e.station_id && LS.stations[e.station_id] && e.station_status) LS.stations[e.station_id].station_status = e.station_status; }));
     if (d.horizon) $("window").textContent = "through " + new Date(d.horizon + "-15T12:00:00").toLocaleDateString("en-US", { month: "long", year: "numeric" });
+    const C = d.checks;
+    if (C) {
+      $("checkline").textContent = `· data checks: ${C.passed} of ${C.total} passed`;
+      $("checkstamp").textContent = `${C.passed} of ${C.total} passed on ${C.date}${C.review ? ` · ${C.review} to review` : ""}`;
+      $("checklist").innerHTML = `<ul class="pins">${C.checks.map((c) => `<li><b>${c.errors ? "Failed" : "Passed"}</b> ${esc(c.check)} <span class="pmeta">(${c.checked.toLocaleString()} checked${c.review ? `, ${c.review} to review` : ""})</span>${c.examples.length ? `<br><span class="pmeta">e.g. ${esc(c.examples[0])}</span>` : ""}</li>`).join("")}</ul>`;
+    }
     if (LS.cutoff) $("cutoff").textContent = new Date(LS.cutoff + "T12:00:00").toLocaleDateString("en-US", { month: "long", year: "numeric" });
     LS.base = LS.all.reduce((m, x) => (x.first_seen && (!m || x.first_seen < m) ? x.first_seen : m), "");
     const opts = (id, vals, label) => { $(id).innerHTML = `<option value="">${label}</option>` + vals.map((v) => `<option value="${esc(v)}">${esc(v)}</option>`).join(""); };

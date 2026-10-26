@@ -143,4 +143,13 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
   county (`location_quality` = county), since Richard said a rough location is enough for now.
 - **One GIS layer**: `web/exports/k2-texas-layer.geojson` (and `.kml`) holds every line and every substation with all
   fields, as Steve asked. `k2-texas-substations.csv` is one row per substation with coordinates.
+- **Earlier signals: Oncor's CCN Public Viewer** (`data/fetch_oncor_ccn.py` -> `data/sources/oncor-ccn.json`). Oncor posts a
+  study area and its end stations before the open houses, months before ERCOT's TPIT report lists the line. The catalog
+  adds viewer projects it doesn't already have (ids `oncor-ccn-<project id>`, stage planned) and uses the viewer's station
+  points as exact locations. The twice-daily monitor alerts on new viewer projects (`oncorccn:<id>`) and on CenterPoint's
+  project pages too.
+- **Data checks** (`data/check_catalog.py`, run after every build; results in `texas-lines.json` "checks" and on the
+  page): every ERCOT line against its TPIT row (voltage, in-service date, stage), the time window, every substation
+  point inside Texas and its listed county, substation status consistent between lines and substations, downloads
+  matching the page data, and every Oncor viewer project present. A failed check blocks publishing.
 - **Market** (`market`): "ERCOT (Texas)" for now, so lines can be sorted by market once other regions are added.

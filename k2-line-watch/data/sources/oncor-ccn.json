@@ -1,0 +1,458 @@
+{
+ "fetched": "2026-10-26",
+ "source": "https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer",
+ "projects": [
+  {
+   "project_id": 1015,
+   "name": "Dinosaur - Longshore",
+   "status": "Filed",
+   "stations": [
+    {
+     "name": "Longshore",
+     "lat": 32.10078,
+     "lon": -101.46021
+    },
+    {
+     "name": "Dinosaur",
+     "lat": 32.27747,
+     "lon": -97.79531
+    }
+   ],
+   "kv": 765
+  },
+  {
+   "project_id": 1019,
+   "name": "Drill Hole - Longshore",
+   "status": "Filed",
+   "stations": [
+    {
+     "name": "Longshore",
+     "lat": 32.10069,
+     "lon": -101.46366
+    },
+    {
+     "name": "Drill Hole Switch",
+     "lat": 31.94155,
+     "lon": -104.11751
+    }
+   ],
+   "kv": 765
+  },
+  {
+   "project_id": 1021,
+   "name": "Big Hill - Sand Lake",
+   "status": "Filed",
+   "stations": [
+    {
+     "name": "Sand Lake Switch",
+     "lat": 31.51954,
+     "lon": -103.47871
+    },
+    {
+     "name": "Big Hill",
+     "lat": 31.05217,
+     "lon": -100.54765
+    }
+   ],
+   "kv": 765
+  },
+  {
+   "project_id": 1022,
+   "name": "Bell County - Big Hill",
+   "status": "In-Progress",
+   "stations": [
+    {
+     "name": "Bell County",
+     "lat": 31.00526,
+     "lon": -97.25396
+    },
+    {
+     "name": "Big Hill",
+     "lat": 31.05264,
+     "lon": -100.54738
+    }
+   ],
+   "kv": 765
+  },
+  {
+   "project_id": 1029,
+   "name": "El Capitan - Dry Lake",
+   "status": "Filed",
+   "stations": [
+    {
+     "name": "El Capitan",
+     "lat": 31.74762,
+     "lon": -104.29682
+    },
+    {
+     "name": "Dry Lake",
+     "lat": 31.57994,
+     "lon": -103.95052
+    }
+   ],
+   "kv": 345
+  },
+  {
+   "project_id": 1030,
+   "name": "Cattleman Retermination",
+   "status": "In-Progress",
+   "stations": [
+    {
+     "name": "Cattleman",
+     "lat": 32.30774,
+     "lon": -100.93811
+    },
+    {
+     "name": "Morgan Creek",
+     "lat": 32.32997,
+     "lon": -100.91225
+    }
+   ],
+   "kv": 345
+  },
+  {
+   "project_id": 1032,
+   "name": "Dry Lake - Faulkner",
+   "status": "Filed",
+   "stations": [
+    {
+     "name": "Dry Lake",
+     "lat": 31.57958,
+     "lon": -103.95067
+    },
+    {
+     "name": "Faulkner",
+     "lat": 31.2592,
+     "lon": -103.79648
+    }
+   ],
+   "kv": 138
+  },
+  {
+   "project_id": 1035,
+   "name": "Mascho - Lamesa",
+   "status": "Filed",
+   "stations": [
+    {
+     "name": "Lamesa",
+     "lat": 32.71904,
+     "lon": -101.94112
+    },
+    {
+     "name": "Mascho",
+     "lat": 32.16607,
+     "lon": -102.77753
+    }
+   ],
+   "kv": 345
+  },
+  {
+   "project_id": 1036,
+   "name": "Lamesa - Faraday",
+   "status": "Filed",
+   "stations": [
+    {
+     "name": "Faraday",
+     "lat": 32.64746,
+     "lon": -101.39571
+    },
+    {
+     "name": "Lamesa",
+     "lat": 32.71858,
+     "lon": -101.94136
+    }
+   ],
+   "kv": 345
+  },
+  {
+   "project_id": 1038,
+   "name": "Plowboy \u2013 Oak Springs",
+   "status": "Filed",
+   "stations": [
+    {
+     "name": "Plowboy",
+     "lat": 32.44766,
+     "lon": -100.52276
+    },
+    {
+     "name": "Oak Springs",
+     "lat": 32.41462,
+     "lon": -100.52459
+    }
+   ],
+   "kv": 138
+  },
+  {
+   "project_id": 1039,
+   "name": "McGee Switch - Sister Solar",
+   "status": "In-Progress",
+   "stations": [
+    {
+     "name": "McGee Switch",
+     "lat": 31.64865,
+     "lon": -102.69148
+    },
+    {
+     "name": "Sisters Solar",
+     "lat": 31.68476,
+     "lon": -102.69082
+    }
+   ],
+   "kv": 345
+  },
+  {
+   "project_id": 1040,
+   "name": "Porteville - Shifting Sands",
+   "status": "Filed",
+   "stations": [
+    {
+     "name": "Porterville",
+     "lat": 31.93305,
+     "lon": -103.53965
+    },
+    {
+     "name": "Shifting Sands",
+     "lat": 31.90638,
+     "lon": -103.1452
+    }
+   ],
+   "kv": 138
+  },
+  {
+   "project_id": 1041,
+   "name": "Double Creek - Prime",
+   "status": "In-Progress",
+   "stations": [
+    {
+     "name": "Prime",
+     "lat": 30.48689,
+     "lon": -97.6575
+    },
+    {
+     "name": "Double Creek",
+     "lat": 30.49011,
+     "lon": -97.6471
+    }
+   ],
+   "kv": 138
+  },
+  {
+   "project_id": 1042,
+   "name": "Deaf Smith - Theory - Aurelius",
+   "status": "In-Progress",
+   "stations": [
+    {
+     "name": "Theory",
+     "lat": 34.96599,
+     "lon": -102.60214
+    },
+    {
+     "name": "Deaf Smith",
+     "lat": 35.13579,
+     "lon": -102.28219
+    },
+    {
+     "name": "Aurelius",
+     "lat": 34.966,
+     "lon": -102.6036
+    }
+   ],
+   "kv": 345
+  },
+  {
+   "project_id": 1043,
+   "name": "Fryers Creek - Hartrick - Salado",
+   "status": "Filed",
+   "stations": [
+    {
+     "name": "Salado Switch",
+     "lat": 30.97115,
+     "lon": -97.51125
+    },
+    {
+     "name": "Fryers Creek",
+     "lat": 31.03589,
+     "lon": -97.34873
+    },
+    {
+     "name": "Hartrick Switch",
+     "lat": 31.0097,
+     "lon": -97.39785
+    }
+   ],
+   "kv": 138
+  },
+  {
+   "project_id": 1044,
+   "name": "Liggett \u2013 Skyview",
+   "status": "In-Progress",
+   "stations": [
+    {
+     "name": "Liggett",
+     "lat": 32.81556,
+     "lon": -97.02582
+    },
+    {
+     "name": "Skyview",
+     "lat": 32.81798,
+     "lon": -97.06246
+    }
+   ],
+   "kv": 345
+  },
+  {
+   "project_id": 1045,
+   "name": "Ranger Camp - Midland East",
+   "status": "In-Progress",
+   "stations": [
+    {
+     "name": "Midland East",
+     "lat": 32.02094,
+     "lon": -102.05078
+    },
+    {
+     "name": "Ranger Camp",
+     "lat": 32.34693,
+     "lon": -100.91262
+    }
+   ],
+   "kv": 345
+  },
+  {
+   "project_id": 1046,
+   "name": "Longshore - Rockhound SA",
+   "status": "In-Progress",
+   "stations": [
+    {
+     "name": "Longshore",
+     "lat": 32.10131,
+     "lon": -101.45271
+    },
+    {
+     "name": "Rockhound",
+     "lat": 32.07902,
+     "lon": -101.88473
+    }
+   ],
+   "kv": 345
+  },
+  {
+   "project_id": 1047,
+   "name": "Blue Goose - Creosote",
+   "status": "In-Progress",
+   "stations": [
+    {
+     "name": "Creosote",
+     "lat": 31.27425,
+     "lon": -103.1259
+    },
+    {
+     "name": "Blue Goose",
+     "lat": 31.39001,
+     "lon": -103.39437
+    }
+   ],
+   "kv": 345
+  },
+  {
+   "project_id": 1048,
+   "name": "Consavvy - Long Creek",
+   "status": "Filed",
+   "stations": [
+    {
+     "name": "Consavvy",
+     "lat": 31.91437,
+     "lon": -101.99821
+    },
+    {
+     "name": "Long Creek",
+     "lat": 32.6294,
+     "lon": -99.54196
+    },
+    {
+     "name": "Consavvy",
+     "lat": 31.91436,
+     "lon": -101.99822
+    },
+    {
+     "name": "Long Creek",
+     "lat": 32.62945,
+     "lon": -99.54196
+    }
+   ],
+   "kv": 345
+  },
+  {
+   "project_id": 1049,
+   "name": "Temple - Salado",
+   "status": "In-Progress",
+   "stations": [
+    {
+     "name": "Salado Switch",
+     "lat": 30.97243,
+     "lon": -97.51078
+    },
+    {
+     "name": "Temple",
+     "lat": 31.07805,
+     "lon": -97.30548
+    },
+    {
+     "name": "Paramount",
+     "lat": 31.04515,
+     "lon": -97.32616
+    }
+   ],
+   "kv": 345
+  },
+  {
+   "project_id": 1050,
+   "name": "",
+   "status": "In-Progress",
+   "stations": [
+    {
+     "name": "Temple",
+     "lat": 31.07843,
+     "lon": -97.30795
+    }
+   ],
+   "kv": 138
+  },
+  {
+   "project_id": 1053,
+   "name": "Greene - Wilmer",
+   "status": "In-Progress",
+   "stations": [
+    {
+     "name": "Wilmer Switch",
+     "lat": 32.57596,
+     "lon": -96.68601
+    },
+    {
+     "name": "Greene Road Switch",
+     "lat": 32.5992,
+     "lon": -96.72987
+    }
+   ],
+   "kv": 345
+  },
+  {
+   "project_id": 1055,
+   "name": "Sunrise - Wilner",
+   "status": "In-Progress",
+   "stations": [
+    {
+     "name": "Sunrise Switch",
+     "lat": 32.58851,
+     "lon": -96.70379
+    },
+    {
+     "name": "Wilmer Switch",
+     "lat": 32.5781,
+     "lon": -96.68494
+    }
+   ],
+   "kv": 138
+  }
+ ]
+}
