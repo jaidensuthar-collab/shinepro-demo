@@ -106,3 +106,35 @@ ERCOT's report (state business filings, developer websites, press releases).
   the PUC case.
 - **Utilities**: one spelling per utility, ERCOT's codes ("ONCOR", "LCRATSC").
 
+
+## Changes from the Oct 26, 2026 team call (Richard, John, Steve)
+
+Phase 1 is the research layer only: where new lines are going, not routes or parcels. K2's GIS team (Steve) and
+map (John) take the layer in; routes, county records and parcels are phase 2 for lines K2 picks.
+
+- **Time window**: every line built in the last 3 years (since October 2023, because Landgate may not have them yet)
+  through everything in construction, approved, planned or proposed, with no limit on how far out. Lines built
+  before this year come from the completed-project lists in ERCOT's October 2024 and October 2025 TPIT updates
+  (`data/sources/ercot-tpit-2024-10.xlsx`, `ercot-tpit-2025-10.xlsx`).
+- **Stage** (`lifecycle`, `stage` in the exports): Richard's five steps.
+
+| Stage | Meaning | How it is set |
+|---|---|---|
+| built | In service in the last 3 years | ERCOT actual in-service date |
+| in construction | Being built | ERCOT "under construction", a card at land buying, or a planned date that has passed (estimated) |
+| approved | Approved and the route is final, waiting to build | PUC route approval (card), an upgrade in its existing corridor, or planned to be in service within 18 months (estimated) |
+| planned | Approved to build, route or site not final | ERCOT "planned" otherwise |
+| proposed | Someone wants to build it, not approved yet | ERCOT "conceptual", or a card still in ERCOT review |
+
+- **Builder**: `utility` (`builder` in the exports), the transmission owner ERCOT lists.
+- **Tap rule** (`tappable`, `tap_note`): yes for 345 kV and below, maybe for 500 kV, no for 765 kV (substations only).
+- **Substation status** (`endpoints[].station_status`, `from_status` / `to_status`, and the substations table):
+  new (ERCOT's project builds it), existing, expanding (there today and a new line, new substation work or a
+  transformer is coming), existing (on public maps, or an existing line to it is being upgraded, or a line built in
+  the last 3 years ends there), unconfirmed (not on public maps by this name and ERCOT doesn't call it new).
+  `status_reason` lists the evidence.
+- **Rough location for every line**: a substation that isn't on public maps by name is placed at the center of its
+  county (`location_quality` = county), since Richard said a rough location is enough for now.
+- **One GIS layer**: `web/exports/k2-texas-layer.geojson` (and `.kml`) holds every line and every substation with all
+  fields, as Steve asked. `k2-texas-substations.csv` is one row per substation with coordinates.
+- **Market** (`market`): "ERCOT (Texas)" for now, so lines can be sorted by market once other regions are added.

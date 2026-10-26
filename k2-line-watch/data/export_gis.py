@@ -44,12 +44,25 @@ k2-projects.csv
   Act fast / Late), case numbers, next step and source links.
 k2-line-watch.kml
   Everything above for Google Earth.
-k2-texas-lines.csv / k2-texas-lines.geojson
-  Phase 1: every new or upgraded ERCOT line (138 kV and up) and new 345 kV+ substation, one row
-  each, with lifecycle, in-service date, recommended next step, end substation pins, whether each
-  end substation is on public maps today (from_status / to_status), the developers already queued
-  there (queue_projects, queue_mw, queue_developers) and the date it first appeared (first_seen).
-  The map file draws straight lines between end substations, not routes.
+k2-texas-layer.geojson / k2-texas-layer.kml  (start here)
+  One GIS layer with every Texas line and every end substation, all fields on each feature.
+  feature_type = line: one per new or upgraded ERCOT line (138 kV and up) or new 345 kV+
+  substation project. stage is one of built (in service in the last 3 years), in construction,
+  approved (route final or existing corridor, waiting to build), planned (approved, route or site
+  not final) or proposed (not approved yet); stage_detail says why. builder is the utility.
+  tappable: yes (345 kV and below), maybe (500 kV), no (765 kV, substations only).
+  from_status / to_status and location_quality per end. Lines are straight between the end
+  substations, NOT routes; a line with only one placeable end is a point at that end.
+  feature_type = substation: one per end substation. status is new, existing, expanding
+  (there today and a new line, substation work or transformer is coming), existing, or
+  unconfirmed (not on public maps by this name). status_reason says why. location_quality:
+  exact / approx (within a mile or two) / county (placed at the county center because the
+  substation is not on public maps by name). Developers already queued there are included.
+  The KML has the same features in folders by stage and by substation status.
+k2-texas-lines.csv / k2-texas-substations.csv
+  The same two tables without geometry (substations keep lat/lon).
+k2-texas-lines.geojson
+  The line features only.
 k2-texas-developers.csv
   One row per generation or battery project in ERCOT's interconnection queue at a catalog end
   substation: developer as filed with ERCOT (often a project company), project, fuel, MW, expected

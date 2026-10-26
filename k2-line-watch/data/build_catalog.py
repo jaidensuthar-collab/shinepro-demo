@@ -20,6 +20,7 @@ import json
 import math
 import os
 import re
+import shutil
 import sys
 
 import openpyxl
@@ -30,6 +31,17 @@ TPIT_URL = "https://www.ercot.com/gridinfo/planning"
 HIFLD_URL = "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0"
 QUEUE_URL = "https://www.ercot.com/misapp/GetReports.do?reportTypeId=15933"
 TODAY = datetime.date.today()
+# Richard (Oct 26 team call): every line built in the last 3 years, plus everything in construction, approved, planned or proposed.
+CUTOFF = TODAY.replace(year=TODAY.year - 3, day=1)
+STAGES = ["built", "in construction", "approved", "planned", "proposed"]
+STAGE_HELP = {"built": "In service within the last 3 years",
+              "in construction": "Being built now",
+              "approved": "Approved and the route is final (or it stays in its existing corridor); waiting to build",
+              "planned": "Approved to build, but the route or site is not final",
+              "proposed": "Someone wants to build it; not approved yet"}
+# Older TPIT editions: their Completed tabs cover lines energized before this year's report starts.
+HISTORY = [("ercot-tpit-2025-10.xlsx", "October 1, 2025"), ("ercot-tpit-2024-10.xlsx", "October 1, 2024")]
+MARKET = "ERCOT (Texas)"
 
 PROGRAMS = {"25RPG025": "ERCOT 765 kV STEP: Eastern Backbone", "H.B. 5066": "Permian Basin Reliability Plan (HB 5066)"}
 GENERATOR = re.compile(r"GEN[ -]?TIE|\bGEN\b|GENERATION|BESS|SOLAR|WIND|STORAGE|\bESR\b|\d{2}INR\d{3,4}|\bG?INR\b|POWER PLANT", re.I)
@@ -134,6 +146,36 @@ def read_tpit(path):
     return rows
 
 
+def centroid(ring):
+    """Area centroid of one polygon ring of [lon, lat] points."""
+    a = cx = cy = 0.0
+    for (x0, y0), (x1, y1) in zip(ring, ring[1:] + ring[:1]):
+        f = x0 * y1 - x1 * y0
+        a, cx, cy = a + f, cx + (x0 + x1) * f, cy + (y0 + y1) * f
+    if abs(a) < 1e-12:
+        return sum(x for x, _ in ring) / len(ring), sum(y for _, y in ring) / len(ring)
+    return cx / (3 * a), cy / (3 * a)
+
+
+def history_rows(skip):
+    """Lines energized since CUTOFF that this year's report no longer lists, from older TPIT editions (newest first)."""
+    out = []
+    for fname, label in HISTORY:
+        path = os.path.join(HERE, "sources", fname)
+        if not os.path.exists(path):
+            continue
+        m = re.search(r"(\d{4})-(\d{2})", fname)
+        asof = datetime.date(int(m[1]), int(m[2]), 1)
+        for r in read_tpit(path):
+            rid, when = str(r["id"]), r["actual"] or r["isd"]
+            if rid in skip or r["tab"] != "Completed" or not when or not CUTOFF <= when.date() <= asof:
+                continue
+            skip.add(rid)
+            r["src"] = label + " update (completed projects)"
+            out.append(r)
+    return out
+
+
 class Places:
     """Substation points: Line Watch card pins first, then HIFLD by name + county."""
     def __init__(self, projects):
@@ -158,16 +200,26 @@ class Places:
                 continue
             self.hifld.setdefault((base(s["name"]), str(s["county"]).upper()), []).append(s)
             self.by_name.setdefault(base(s["name"]), []).append(s)
-        self.boxes = {}
+        self.boxes, self.centers = {}, {}
         for k, rings in json.load(open(os.path.join(WEB, "counties.json"))).items():
             xs = [x for r in rings for x, _ in r]
             ys = [y for r in rings for _, y in r]
             self.boxes[k] = (min(xs), min(ys), max(xs), max(ys))
+            self.centers[k] = centroid(max(rings, key=len))
         # Named OpenStreetMap substations (sources/osm-tx-substations.json): many stations HIFLD leaves unnamed.
         osm = os.path.join(HERE, "sources", "osm-tx-substations.json")
         self.osm = {}
         for s in (json.load(open(osm))["substations"] if os.path.exists(osm) else []):
             self.osm.setdefault(base(s["name"]), []).append(s)
+
+    def county_point(self, name, county):
+        """A substation that isn't on public maps by name: place it at its county's center, so every line has a rough location."""
+        c = self.centers.get("TX|" + str(county or "").strip().title())
+        if not c:
+            return {"name": name, "county": county or "", "confidence": "unknown", "basis": "Not on public maps by this name, and ERCOT gives no county"}
+        return {"name": name, "county": county, "lat": round(c[1], 4), "lon": round(c[0], 4), "confidence": "county",
+                "basis": f"Center of {str(county).strip().title()} County: ERCOT gives the county, but this substation is not on public maps by this name",
+                "source": TPIT_URL}
 
     def near_county(self, pt, county, miles=20):
         """A name-only match must fall within about 20 miles of the county ERCOT gives (when it gives one)."""
@@ -287,10 +339,9 @@ def read_queue(path):
 def in_place(e, rec):
     """Whether an end substation exists today, for K2 to check against what it already knows."""
     basis = e.get("basis") or ""
-    if re.search(r"\b(HIFLD|OpenStreetMap) (\d+ kV )?substation", basis, re.I) and not re.search(r"not (in|on) (HIFLD|the HIFLD)", basis, re.I):
+    if e.get("confidence") in ("exact", "approx") and re.search(r"\b(HIFLD|OpenStreetMap) (\d+ kV )?substation", basis, re.I) \
+            and not re.search(r"not (in|on) (HIFLD|the HIFLD)", basis, re.I):
         return "on public maps"
-    if re.match(r"new\b", e["name"], re.I) or (rec["project_type"] == "new substation" and NEW_STATION.search(rec["description"])):
-        return "new or expanding (per ERCOT)"
     return "not on public maps"
 
 
@@ -360,6 +411,104 @@ def same_station(stations, n, county, e, places):
         if (a and places.near_county(a, county, 10)) or (b and places.near_county(b, st["county"], 10)):
             return st
     return None
+
+
+RANK = {"exact": 0, "approx": 1, "town": 2, "county": 3, "unknown": 4}
+STATUS_WHY = {"on maps": "on public maps (HIFLD or OpenStreetMap)", "existing line": "an existing line is being upgraded to it",
+              "built line": "a line built in the last 3 years ends here", "new name": "ERCOT calls it new",
+              "new per ERCOT": "ERCOT's project describes it as new", "expands": "ERCOT's project expands it", "more coming": "a new line, new substation work or transformer is planned here"}
+
+
+def station_sites(lines, stations):
+    """One record per end substation across every line: where it is, whether it exists today (existing, existing and
+    expanding, new, or unconfirmed) and what is coming to it. Richard asked for existing vs new on the Oct 26 call."""
+    sites, qst = [], {s["id"]: s for s in stations}
+
+    def same(st, b, county, e):
+        if st["_b"] != b:
+            return False
+        if st["county"] and county:
+            if st["county"] == county:
+                return True
+        good = ("exact", "approx")
+        if st["lat"] is not None and e.get("lat") is not None and st["confidence"] in good and e.get("confidence") in good:
+            return abs(st["lat"] - e["lat"]) < 0.15 and abs(st["lon"] - e["lon"]) < 0.15
+        return not (st["county"] and county)
+
+    for x in lines:
+        desc = " " + re.sub(r"[^A-Z0-9 ]+", " ", (x.get("description") or "").upper()) + " "
+        title = " " + re.sub(r"[^A-Z0-9 ]+", " ", x["name"].upper()) + " "
+        for e in x["endpoints"]:
+            b = alias(base(re.sub(r"^\d+\s+", "", clean(e["name"])))) or clean(e["name"]).upper()
+            if not b:
+                continue
+            county = str(e.get("county") or "").title()
+            st = next((s for s in sites if same(s, b, county, e)), None)
+            if not st:
+                st = {"_b": b, "name": subname(e["name"]) or e["name"], "county": county, "lat": e.get("lat"), "lon": e.get("lon"),
+                      "confidence": e.get("confidence") or "unknown", "basis": e.get("basis", ""), "_ev": set(), "lines": [], "_q": set()}
+                sites.append(st)
+            elif RANK.get(e.get("confidence"), 4) < RANK.get(st["confidence"], 4):
+                st.update(lat=e.get("lat"), lon=e.get("lon"), confidence=e.get("confidence"), basis=e.get("basis", ""), county=county or st["county"])
+            if x["id"] not in st["lines"]:
+                st["lines"].append(x["id"])
+            ev = st["_ev"]
+            if e.get("in_place") == "on public maps":
+                ev.add("on maps")
+            if x["project_type"] == "upgrade":
+                ev.add("existing line")
+            if x["lifecycle"] == "built":
+                ev.add("built line")
+            if re.match(r"new\b|.*newsub", e["name"], re.I):
+                ev.add("new name")
+            named = f" {b} " in title or f" {b} " in desc
+            if named and re.search(r"\bEXPAN(D|DS|DING|SION)\b", title + desc):
+                ev.update({"expands", "more coming"})
+            elif re.search(r"\b(NEW|GREENFIELD)\b(?: \w+){0,4} " + re.escape(b) + r"\b", desc) or \
+                    (x["project_type"] == "new substation" and f" {b} " in title and re.search(r"\b(NEW|ESTABLISH)\b", title + desc)):
+                ev.add("new per ERCOT")
+            if x["lifecycle"] != "built" and (x["project_type"] in ("new line", "new substation") or x["transformer_mva"] or x["upgrade_kind"] == "voltage upgrade"):
+                ev.add("more coming")
+            if e.get("station_id"):
+                st["_q"].add(e["station_id"])
+            e["_site"] = st
+
+    by_id, used = {x["id"]: x for x in lines}, set()
+    for st in sites:
+        ev = st.pop("_ev")
+        existing, new = ev & {"on maps", "existing line", "built line", "expands"}, ev & {"new name", "new per ERCOT"} if "expands" not in ev else set()
+        if new and "on maps" not in ev:
+            status, why = "new", [STATUS_WHY[k] for k in sorted(new)]
+        elif existing:
+            status = "existing, expanding" if "more coming" in ev else "existing"
+            why = [STATUS_WHY[k] for k in sorted(existing)] + ([STATUS_WHY["more coming"]] if "more coming" in ev else [])
+        else:
+            status, why = "unconfirmed", ["not on public maps by this name, and ERCOT doesn't say it is new; could be new or renamed"]
+        sid = re.sub(r"[^a-z0-9]+", "-", f"{st['name']} {st['county']}".lower()).strip("-") or "station"
+        n = 2
+        while sid in used:
+            sid, n = re.sub(r"-\d+$", "", sid) + f"-{n}", n + 1
+        used.add(sid)
+        ls = [by_id[i] for i in st["lines"]]
+        future = sorted(x["in_service"] for x in ls if x["lifecycle"] != "built" and x["in_service"])
+        qs = {p["inr"]: p for q in st.pop("_q") for p in qst.get(q, {}).get("projects", [])}.values()
+        devs = {}
+        for p in qs:
+            devs[p["developer"]] = devs.get(p["developer"], 0) + max(p["mw"], 0)
+        st.pop("_b")
+        st.update(id=sid, status=status, status_reason="; ".join(why), max_kv=max(x["kv"] for x in ls),
+                  stages={k: sum(x["lifecycle"] == k for x in ls) for k in STAGES if any(x["lifecycle"] == k for x in ls)},
+                  next_in_service=future[0] if future else "", builders=sorted({x["utility"] for x in ls if x["utility"]}),
+                  queue_projects=len(qs), queue_mw=round(sum(max(p["mw"], 0) for p in qs), 1),
+                  queue_developers=[d for d, _ in sorted(devs.items(), key=lambda kv: -kv[1])][:5])
+        if st["lat"] is not None:
+            st["check_link"] = f"https://www.google.com/maps/@?api=1&map_action=map&center={st['lat']:.5f},{st['lon']:.5f}&zoom=16&basemap=satellite"
+    for x in lines:
+        for e in x["endpoints"]:
+            st = e.pop("_site", None)
+            if st:
+                e["site_id"], e["station_status"] = st["id"], st["status"]
+    return sorted(sites, key=lambda s: (-s["max_kv"], s["name"]))
 
 
 def subname(n):
@@ -554,26 +703,38 @@ def classify(r):
     return kv, ptype, detail, purpose, same_corridor
 
 
-def lifecycle(r, card):
+def lifecycle(r, card, route):
+    """Richard's five stages: built (last 3 years), in construction, approved, planned, proposed."""
     status = str(r["status"] or "").lower()
     actual = r["actual"] if isinstance(r["actual"], (datetime.date, datetime.datetime)) else None
     isd = r["isd"] if isinstance(r["isd"], (datetime.date, datetime.datetime)) else None
     if r["tab"] == "Completed" or status == "in-service" or actual:
         when = actual or isd
-        return ("operating (recently built)", "TPIT actual in-service date") if when and when.year >= TODAY.year else (None, "")
+        return ("built", f"ERCOT: in service {ym(when)}") if when and when.date() >= CUTOFF else (None, "")
     if "construction" in status:
-        return "in construction", "TPIT status"
+        return "in construction", "ERCOT: under construction"
     if card and card.get("stage", 0) >= 7:
-        return "in construction", "Line Watch card stage"
+        return "in construction", "Line Watch card: land buying or construction"
     if "conceptual" in status:
-        return "proposed", "TPIT status (conceptual)"
+        return "proposed", "ERCOT: conceptual, not approved yet"
     if isd and isd.date() < TODAY.replace(day=1):
         return "in construction", f"estimated: planned in-service date {ym(isd)} has passed and ERCOT has not marked it in service yet"
     if card and card.get("stage") == 6:
-        return "about to enter construction", "route approved (Line Watch card)"
+        return "approved", "PUC approved the route (Line Watch card)"
+    if route == "existing corridor":
+        return "approved", "ERCOT: planned; an upgrade in its existing corridor, so there is no new route to approve"
     if isd and (isd.date() if isinstance(isd, datetime.datetime) else isd) <= TODAY + datetime.timedelta(days=548):
-        return "about to enter construction", "estimated: planned to be in service within 18 months"
-    return "planned", "TPIT status"
+        return "approved", "estimated: planned to be in service within 18 months, so its route and site should be settled"
+    return "planned", "ERCOT: planned; the route or site is not final yet"
+
+
+def tap(kv):
+    """K2 can tap 345 kV and below, maybe 500 kV, never 765 kV (Oct 26 team call)."""
+    if kv >= 765:
+        return "no", "Substation only: 765 kV lines are not tapped"
+    if kv >= 500:
+        return "maybe", "Maybe: a 500 kV tap is possible but not typical, so start at the substations"
+    return "yes", "The line itself can be tapped (345 kV and below)"
 
 
 def recommend(rec):
@@ -582,7 +743,7 @@ def recommend(rec):
         return "informational", f"Serves one {'generator' if rec['purpose'] == 'generator hookup' else 'large load'}: no new shared capacity."
     if rec["lifecycle"] == "proposed":
         return "follow updates", "Still proposed: watch for ERCOT endorsement and end substations."
-    route_set = rec["route_status"] in ("existing corridor", "approved route") or rec["lifecycle"] in ("in construction", "operating (recently built)")
+    route_set = rec["route_status"] in ("existing corridor", "approved route") or rec["lifecycle"] in ("in construction", "built")
     if rec["kv"] < 500 and route_set and rec["project_type"] != "new substation":
         return "line campaign", ("Upgrade of an existing line: the corridor is known" if rec["route_status"] == "existing corridor"
                                  else "Route is set") + f" and a {rec['kv']} kV line can be tapped along the way."
@@ -597,18 +758,112 @@ def priority(rec):
     kv = {765: 40, 500: 35, 345: 25}.get(rec["kv"], 10)
     typ = {"new line": 15, "new substation": 12, "upgrade": 5}[rec["project_type"]]
     y = int(rec["in_service"][:4]) if rec["in_service"] else 2035
-    when = 10 if rec["lifecycle"].startswith("operating") else 20 if y <= TODAY.year + 1 else 15 if y == TODAY.year + 2 else 10 if y <= TODAY.year + 4 else 5
+    when = 10 if rec["lifecycle"] == "built" else 20 if y <= TODAY.year + 1 else 15 if y == TODAY.year + 2 else 10 if y <= TODAY.year + 4 else 5
     score = kv + typ + when + min(rec["miles_new"], 100) / 10
     if rec["recommended_next_step"] == "informational":
         score -= 30
     return round(score, 1)
 
 
+LINE_COLS = ["id", "name", "kv", "stage", "stage_detail", "in_service", "in_service_kind", "builder", "project_type", "upgrade_kind",
+             "miles_new", "miles_upgraded", "purpose", "tappable", "tap_note", "from", "from_status", "to", "to_status", "county_from", "county_to",
+             "location_quality", "queue_projects", "queue_mw", "queue_developers", "recommended_next_step", "recommendation_reason", "priority_score",
+             "program", "rpg", "docket", "route_status", "ercot_project", "card_id", "first_seen", "market", "source"]
+SITE_COLS = ["id", "name", "county", "status", "status_reason", "max_kv", "line_count", "lines", "stages", "next_in_service", "builders",
+             "queue_projects", "queue_mw", "queue_developers", "location_quality", "location_basis", "check_link", "market"]
+STAGE_COLOR = {"built": "ff7f7f7f", "in construction": "ff0000cc", "approved": "ff0080ff", "planned": "ff00b4e6", "proposed": "ffd29a3c"}  # KML aabbggrr
+
+
+def line_props(x):
+    ends = (x["endpoints"] + [{}, {}])[:2]
+    worst = max((e.get("confidence") or "unknown" for e in x["endpoints"]), key=lambda c: RANK.get(c, 4), default="unknown")
+    return {"feature_type": "line", **{k: x.get(k, "") for k in LINE_COLS if k in x}, "stage": x["lifecycle"], "stage_detail": x["lifecycle_basis"],
+            "builder": x["utility"], "from_status": ends[0].get("station_status", ""), "to_status": ends[1].get("station_status", ""),
+            "location_quality": worst, "queue_projects": x["queue"]["projects"], "queue_mw": x["queue"]["mw"],
+            "queue_developers": "; ".join(x["queue"]["developers"])}
+
+
+def site_props(st, names):
+    return {"feature_type": "substation", **{k: st[k] for k in ("id", "name", "county", "status", "status_reason", "max_kv", "next_in_service",
+                                                                "queue_projects", "queue_mw", "check_link") if k in st},
+            "line_count": len(st["lines"]), "lines": "; ".join(names[i] for i in st["lines"][:12]) + (f"; +{len(st['lines']) - 12} more" if len(st["lines"]) > 12 else ""),
+            "stages": "; ".join(f"{k} {v}" for k, v in st["stages"].items()), "builders": "; ".join(st["builders"]),
+            "queue_developers": "; ".join(st["queue_developers"]), "location_quality": st["confidence"], "location_basis": st["basis"], "market": MARKET}
+
+
+def write_exports(out, sites):
+    """Line table, substation table, and one combined GIS layer (lines + substations) as GeoJSON and KML.
+    Steve asked for one file with everything, which is easier to split than to piece back together."""
+    ex = os.path.join(WEB, "exports")
+    names = {x["id"]: x["name"] for x in out}
+    with open(os.path.join(ex, "k2-texas-lines.csv"), "w", newline="") as f:
+        w = csv.DictWriter(f, LINE_COLS, extrasaction="ignore")
+        w.writeheader()
+        for x in out:
+            w.writerow(line_props(x))
+    with open(os.path.join(ex, "k2-texas-substations.csv"), "w", newline="") as f:
+        w = csv.DictWriter(f, ["id", "name", "county", "lat", "lon"] + SITE_COLS[3:], extrasaction="ignore")
+        w.writeheader()
+        for st in sites:
+            w.writerow({**site_props(st, names), "lat": st["lat"] if st["lat"] is not None else "", "lon": st["lon"] if st["lon"] is not None else ""})
+    line_feats, site_feats = [], []
+    for x in out:
+        pts = [e for e in x["endpoints"] if e.get("lat") is not None]
+        if not pts:
+            continue
+        props = line_props(x)
+        if len(pts) >= 2:
+            geom = {"type": "LineString", "coordinates": [[e["lon"], e["lat"]] for e in pts]}
+            props["geometry_note"] = "Straight line between the end substations, not the route"
+        else:
+            geom = {"type": "Point", "coordinates": [pts[0]["lon"], pts[0]["lat"]]}
+            props["geometry_note"] = "Only one end substation can be placed; point at that end"
+        line_feats.append({"type": "Feature", "properties": props, "geometry": geom})
+    for st in sites:
+        if st["lat"] is not None:
+            site_feats.append({"type": "Feature", "properties": site_props(st, names), "geometry": {"type": "Point", "coordinates": [st["lon"], st["lat"]]}})
+    json.dump({"type": "FeatureCollection", "features": line_feats}, open(os.path.join(ex, "k2-texas-lines.geojson"), "w"))
+    json.dump({"type": "FeatureCollection", "name": "K2 Line Watch Texas", "features": line_feats + site_feats},
+              open(os.path.join(ex, "k2-texas-layer.geojson"), "w"))
+    write_kml(os.path.join(ex, "k2-texas-layer.kml"), line_feats, site_feats)
+    shutil.copyfile(os.path.join(ex, "k2-texas-layer.kml"), os.path.join(ex, "k2-texas-layer.kml.xml"))   # the page serves .kml as .xml
+
+
+def write_kml(path, line_feats, site_feats):
+    from xml.sax.saxutils import escape
+    def placemark(f, style):
+        p, g = f["properties"], f["geometry"]
+        data = "".join(f'<Data name="{escape(str(k))}"><value>{escape(str(v))}</value></Data>' for k, v in p.items() if v not in ("", None))
+        if g["type"] == "LineString":
+            shape = "<LineString><tessellate>1</tessellate><coordinates>" + " ".join(f"{a},{b},0" for a, b in g["coordinates"]) + "</coordinates></LineString>"
+        else:
+            shape = f"<Point><coordinates>{g['coordinates'][0]},{g['coordinates'][1]},0</coordinates></Point>"
+        return f"<Placemark><name>{escape(p['name'])}</name><styleUrl>#{style}</styleUrl><ExtendedData>{data}</ExtendedData>{shape}</Placemark>"
+    styles = "".join(f'<Style id="{k.replace(" ", "-")}"><LineStyle><color>{c}</color><width>3</width></LineStyle><IconStyle><color>{c}</color></IconStyle></Style>'
+                     for k, c in STAGE_COLOR.items())
+    styles += "".join(f'<Style id="sub-{k.replace(", ", "-")}"><IconStyle><color>{c}</color><scale>0.8</scale></IconStyle></Style>'
+                      for k, c in {"new": "ff00b4e6", "existing, expanding": "ff0080ff", "existing": "ff7f7f7f", "unconfirmed": "ffd29a3c"}.items())
+    folders = []
+    for stage in STAGES:
+        fs = [f for f in line_feats if f["properties"]["stage"] == stage]
+        folders.append(f"<Folder><name>Lines: {stage} ({len(fs)})</name>" + "".join(placemark(f, stage.replace(" ", "-")) for f in fs) + "</Folder>")
+    for status in ("new", "existing, expanding", "existing", "unconfirmed"):
+        fs = [f for f in site_feats if f["properties"]["status"] == status]
+        folders.append(f"<Folder><name>Substations: {status} ({len(fs)})</name>" + "".join(placemark(f, "sub-" + status.replace(", ", "-")) for f in fs) + "</Folder>")
+    with open(path, "w") as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>K2 Line Watch: Texas</name>'
+                "<description>Straight lines between end substations, not routes.</description>" + styles + "".join(folders) + "</Document></kml>")
+
+
 def build(projects_src, tpit_path, queue_path=None):
     projects = [p for p in load_projects(projects_src) if str(p.get("region", "Texas")).startswith("Texas")]
     places, cards, facts, buses = Places(projects), card_index(projects), card_facts(), bus_names(queue_path)
     out, used_cards = [], set()
-    for r in read_tpit(tpit_path):
+    rows = read_tpit(tpit_path)
+    for r in rows:
+        r["src"] = "October 1, 2026 update (posted Oct 23, 2026)"
+    rows += history_rows({str(r["id"]) for r in rows})
+    for r in rows:
         c = classify(r)
         if not c:
             continue
@@ -618,7 +873,8 @@ def build(projects_src, tpit_path, queue_path=None):
         card = (cards.get(frozenset([alias(base(frm)), alias(base(to))])) if frm and to else None) or \
             min(matched, key=lambda p: p.get("stage", 0), default=None)  # a line spanning two cards is as far along as its slower part
         matched = list({p["id"]: p for p in ([card] if card else []) + matched}.values())
-        life, life_basis = lifecycle(r, card)
+        route = "existing corridor" if ptype == "upgrade" else STAGE_ROUTE.get((card or {}).get("stage"), "end substations only")
+        life, life_basis = lifecycle(r, card, route)
         if not life:
             continue
         ends = []
@@ -632,12 +888,10 @@ def build(projects_src, tpit_path, queue_path=None):
             hit = (places.find(bus[1], county) if bus else None) or places.find(name, county)
             if hit:
                 hit["name"] = name
-            ends.append(hit or {"name": name, "county": county or "", "confidence": "unknown",
-                                "basis": "Not on the Line Watch cards or the HIFLD substation map (new or renamed station)"})
+            ends.append(hit or places.county_point(name, county))
         if ends:
             frm, to = ends[0]["name"], ends[-1]["name"] if len(ends) > 1 else ""
         rpg = str(r["rpg"] or "").strip()
-        route = "existing corridor" if ptype == "upgrade" else STAGE_ROUTE.get((card or {}).get("stage"), "end substations only")
         rec = {"id": "tpit-" + str(r["id"]).strip(), "ercot_project": str(r["id"]).strip(), "name": line_name(r, frm, to),
                "description": re.sub(r"\s+", " ", str(r["desc"] or "")).strip()[:400], "kv": kv, "project_type": ptype, "upgrade_kind": detail,
                "lifecycle": life, "lifecycle_basis": life_basis, "tpit_status": str(r["status"] or ""), "utility": utility_name(r["owner"]),
@@ -648,8 +902,8 @@ def build(projects_src, tpit_path, queue_path=None):
                "program": PROGRAMS.get(rpg, f"ERCOT RPG {rpg}" if re.match(r"\d{2}RPG\d{3}", rpg) else ""),
                "rpg": rpg, "tier": str(r["tier"] or "").strip(), "ercot_board": ym(r["board"]), "docket": (card or {}).get("docket", ""),
                "route_status": route, "card_id": (card or {}).get("id", ""), "card_ids": [p["id"] for p in matched], "endpoints": ends,
-               "source": f"ERCOT TPIT ({TPIT_URL}), October 1, 2026 update (posted Oct 23, 2026)", "checked": "ERCOT TPIT 2026-10-01"}
-        rec["tap_note"] = "Projects connect at the substations" if kv >= 500 else "The line itself can be tapped"
+               "source": f"ERCOT TPIT ({TPIT_URL}), {r['src']}", "checked": "ERCOT TPIT " + r["src"].split(" (")[0], "market": MARKET}
+        rec["tappable"], rec["tap_note"] = tap(kv)
         rec["recommended_next_step"], rec["recommendation_reason"] = recommend(rec)
         rec["priority_score"] = priority(rec)
         used_cards.update(p["id"] for p in matched)
@@ -667,7 +921,7 @@ def build(projects_src, tpit_path, queue_path=None):
         miles = num(fact.get("miles")) or num((re.search(r"\d+(?:\.\d+)?", str(p.get("miles") or "")) or [0])[0]) or route_miles(p.get("docket"))
         said = re.search(r"(?:in[ -]service|complet\w*|energiz\w*|online)\D{0,25}?(20\d\d)", f"{p.get('next_step', '')} {p.get('status', '')}", re.I)
         isd = fact.get("in_service") or (said[1] if said else "")
-        life = {2: "planned", 3: "planned", 4: "planned", 5: "planned", 6: "about to enter construction", 7: "in construction"}.get(stage, "planned")
+        life = {2: "proposed", 3: "planned", 4: "planned", 5: "planned", 6: "approved", 7: "in construction"}.get(stage, "planned")
         basis = "Line Watch card stage " + str(stage)
         if isd and life != "in construction" and isd[:7] < TODAY.strftime("%Y-%m"):
             life, basis = "in construction", f"estimated: planned in-service date {isd} has passed"
@@ -678,21 +932,23 @@ def build(projects_src, tpit_path, queue_path=None):
                "miles_upgraded": 0, "transformer_mva": 0, "in_service": isd, "in_service_kind": "projected" if isd else "", "construction_start": "", "capacity_mw": None,
                "purpose": "shared grid", "program": PROGRAMS.get(str(p.get("rpg", "")).split(" ")[0], p.get("rpg", "")), "rpg": p.get("rpg", ""),
                "tier": "", "ercot_board": "", "docket": p.get("docket", ""), "route_status": STAGE_ROUTE.get(stage, "end substations only"),
-               "card_id": p["id"], "card_ids": [p["id"]], "endpoints": ends, "checked": p.get("checked", ""),
+               "card_id": p["id"], "card_ids": [p["id"]], "endpoints": ends, "checked": p.get("checked", ""), "market": MARKET,
                "source": "; ".join(dict.fromkeys([l["url"] for l in p.get("links", [])[:2]] + [fact[k] for k in ("miles_source", "in_service_source") if fact.get(k)]))}
-        rec["tap_note"] = "Projects connect at the substations" if rec["kv"] >= 500 else "The line itself can be tapped"
+        rec["tappable"], rec["tap_note"] = tap(rec["kv"])
         rec["recommended_next_step"], rec["recommendation_reason"] = recommend(rec)
         rec["priority_score"] = priority(rec)
         out.append(rec)
 
     out.sort(key=lambda x: -x["priority_score"])
     stations = attach_queue(out, places, queue_path)
+    sites = station_sites(out, stations)
     first_seen(out)
     os.makedirs(os.path.join(WEB, "data"), exist_ok=True)
     meta = {"built": TODAY.isoformat(), "count": len(out), "queue_report": queue_label(queue_path),
             "sources": {"ERCOT TPIT": TPIT_URL, "HIFLD substations": HIFLD_URL, "ERCOT interconnection queue (GIS report)": QUEUE_URL},
-            "scope": "ERCOT Texas: new and upgraded lines 138 kV and up, new 345 kV+ substations, lines energized this year, plus Line Watch cards not yet in TPIT"}
-    json.dump({**meta, "lines": out, "stations": stations}, open(os.path.join(WEB, "data", "texas-lines.json"), "w"), separators=(",", ":"))
+            "scope": f"ERCOT Texas: new and upgraded lines 138 kV and up and new 345 kV+ substations, from proposed to built since {CUTOFF:%B %Y}, plus Line Watch cards not yet in TPIT",
+            "cutoff": CUTOFF.isoformat(), "stages": STAGE_HELP}
+    json.dump({**meta, "lines": out, "stations": stations, "sites": sites}, open(os.path.join(WEB, "data", "texas-lines.json"), "w"), separators=(",", ":"))
 
     dcols = ["station", "county", "lat", "lon", "station_status", "lines", "line_names", "max_kv", "inr", "project", "developer", "fuel", "mw",
              "cod", "phase", "ia_signed", "construction_start", "connection", "poi"]
@@ -706,35 +962,7 @@ def build(projects_src, tpit_path, queue_path=None):
                 w.writerow({**p, "station": st["name"], "county": st["county"], "lat": st["lat"], "lon": st["lon"], "station_status": st["in_place"],
                             "lines": " ".join(st["lines"]), "line_names": "; ".join(x["name"] for x in ls[:3]), "max_kv": max(x["kv"] for x in ls)})
 
-    cols = ["id", "name", "kv", "project_type", "upgrade_kind", "lifecycle", "in_service", "in_service_kind", "utility", "from", "to",
-            "county_from", "county_to", "miles_new", "miles_upgraded", "purpose", "program", "rpg", "docket", "route_status",
-            "recommended_next_step", "recommendation_reason", "tap_note", "priority_score", "from_lat", "from_lon", "from_location",
-            "to_lat", "to_lon", "to_location", "from_status", "to_status", "queue_projects", "queue_mw", "queue_developers",
-            "first_seen", "card_id", "ercot_project", "source"]
-    with open(os.path.join(WEB, "exports", "k2-texas-lines.csv"), "w", newline="") as f:
-        w = csv.DictWriter(f, cols, extrasaction="ignore")
-        w.writeheader()
-        for x in out:
-            row = dict(x)
-            for side, e in zip(("from", "to"), (x["endpoints"] + [{}, {}])[:2]):
-                row[side + "_lat"], row[side + "_lon"], row[side + "_location"] = e.get("lat", ""), e.get("lon", ""), e.get("confidence", "")
-                row[side + "_status"] = e.get("in_place", "")
-            row["queue_projects"], row["queue_mw"], row["queue_developers"] = x["queue"]["projects"], x["queue"]["mw"], "; ".join(x["queue"]["developers"])
-            w.writerow(row)
-    feats = []
-    for x in out:
-        pts = [e for e in x["endpoints"] if e.get("lat") is not None]
-        props = {k: x[k] for k in cols if k in x} | {"queue_projects": x["queue"]["projects"], "queue_mw": x["queue"]["mw"],
-                                                      "queue_developers": "; ".join(x["queue"]["developers"])}
-        if len(pts) >= 2:
-            geom = {"type": "LineString", "coordinates": [[e["lon"], e["lat"]] for e in pts]}
-            props["geometry_note"] = "Straight line between the end substations, not the route"
-        elif pts:
-            geom = {"type": "Point", "coordinates": [pts[0]["lon"], pts[0]["lat"]]}
-        else:
-            continue
-        feats.append({"type": "Feature", "properties": props, "geometry": geom})
-    json.dump({"type": "FeatureCollection", "features": feats}, open(os.path.join(WEB, "exports", "k2-texas-lines.geojson"), "w"))
+    write_exports(out, sites)
     return out
 
 
@@ -751,3 +979,5 @@ if __name__ == "__main__":
     q = [x for x in lines if x["queue"]["projects"]]
     print(len(q), "lines with queued projects;", sum(x["queue"]["projects"] > 0 for x in lines if x["recommended_next_step"] != "informational"), "excluding informational")
     print(Counter(e.get("in_place") for x in lines for e in x["endpoints"]))
+    sites = json.load(open(os.path.join(WEB, "data", "texas-lines.json")))["sites"]
+    print(len(sites), "substations", Counter(s["status"] for s in sites), Counter(s["confidence"] for s in sites))

@@ -152,17 +152,25 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 @media (max-width: 560px) { .tabs button { padding: 8px 8px; font-size: 14px; white-space: nowrap } }
 /* Texas lines tab (phase 1 catalog) */
 .recs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px }
+.recs.stages { grid-template-columns: repeat(5, minmax(0, 1fr)) }
+.recs.stages span { display: block }
+.recs.stages em { display: block; font-style: normal; font-size: 11px; color: var(--muted); margin-top: 2px }
+.gisbox { border: 1px solid var(--rule); background: var(--panel); padding: 10px 14px; margin: 10px 0 }
+.gisbox h3 { margin: 0 0 2px; font: 600 15px var(--display) }
+.gisbox p { margin: 4px 0 }
+.tap { font: 600 10px var(--body); padding: 0 5px; border-radius: 3px; white-space: nowrap; display: inline-block; margin-top: 2px }
+.tap.yes { background: var(--open-soft); color: var(--open) } .tap.maybe { background: var(--fast-soft); color: var(--fast) } .tap.no { background: var(--late-soft); color: var(--late) }
 .recs button { text-align: left; border: 1px solid var(--rule); background: var(--panel); padding: 10px 12px; cursor: pointer; min-width: 0 }
 .recs button[aria-pressed="true"] { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink) }
 .recs b { display: block; font-family: var(--display); font-size: 26px; line-height: 1.1 }
 .recs span { font-size: 12px; color: var(--muted) }
-@media (max-width: 760px) { .recs { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
+@media (max-width: 760px) { .recs, .recs.stages { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
 .rec { font: 600 11px var(--body); padding: 2px 8px; border-radius: 3px; white-space: nowrap; display: inline-block }
 .rec.sub { background: var(--flag-soft); color: var(--flag) } .rec.line { background: var(--open-soft); color: var(--open) }
 .rec.follow { background: var(--fast-soft); color: var(--fast) } .rec.info { background: var(--late-soft); color: var(--late) }
 .lines-tools select { border: 1px solid var(--rule); background: var(--panel); padding: 5px 8px; border-radius: 4px; max-width: 100% }
 .stag { font: 600 10px var(--body); padding: 0 5px; border-radius: 3px; border: 1px solid var(--rule); color: var(--muted); white-space: nowrap; margin-left: 3px }
-.stag.new { border-color: var(--fast); color: var(--fast) } .stag.fresh { background: var(--open-soft); color: var(--open); border-color: transparent }
+.stag.new { border-color: var(--fast); color: var(--fast) } .stag.exp { border-color: var(--open); color: var(--open) } .stag.unk { border-style: dashed } .stag.fresh { background: var(--open-soft); color: var(--open); border-color: transparent }
 .devrow td { background: var(--bg) } .devlist { width: 100%; font-size: 13px; border-collapse: collapse } .devlist td, .devlist th { padding: 3px 6px; border: 0; vertical-align: top; text-align: left }
 .devlist td.n, .devlist th.n { text-align: right }
 .devst { background: var(--panel); border: 1px solid var(--rule); border-radius: 4px; padding: 10px 12px; margin: 0 0 10px; min-width: 0 }
@@ -200,20 +208,19 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   <header class="top">
     <div>
       <h1><span class="tape" aria-hidden="true"></span>K2 Line Watch</h1>
-      <p class="sub">New high-voltage lines, starting with Texas, earliest signal first, and the landowners near their end substations. Each project says where it stands, why K2 cares and what to do next.</p>
+      <p class="sub">Every new or upgraded high-voltage line in Texas, from proposed to built in the last 3 years: where it runs, who is building it, how far along it is, and whether its substations are new or existing.</p>
     </div>
     <div class="stamp" id="stamp">Loading the watch list...</div>
   </header>
 
   <nav class="tabs" role="tablist" aria-label="Page sections">
-    <button type="button" role="tab" id="t-watch" aria-controls="p-watch" aria-selected="true">Watch list</button>
-    <button type="button" role="tab" id="t-lines" aria-controls="p-lines" aria-selected="false" tabindex="-1">Texas lines</button>
-    <button type="button" role="tab" id="t-land" aria-controls="p-land" aria-selected="false" tabindex="-1">Landowners</button>
+    <button type="button" role="tab" id="t-lines" aria-controls="p-lines" aria-selected="true">Texas lines</button>
+    <button type="button" role="tab" id="t-watch" aria-controls="p-watch" aria-selected="false" tabindex="-1">Early signals</button>
     <button type="button" role="tab" id="t-irp" aria-controls="p-irp" aria-selected="false" tabindex="-1">Utility plans (IRPs)</button>
     <button type="button" role="tab" id="t-help" aria-controls="p-help" aria-selected="false" tabindex="-1">How to use</button>
   </nav>
 
-  <div id="p-watch" role="tabpanel" aria-labelledby="t-watch" class="panel">
+  <div id="p-watch" role="tabpanel" aria-labelledby="t-watch" class="panel" hidden>
   <nav class="ladder" id="ladder" aria-label="Projects by stage"></nav>
 
   <div class="main">
@@ -240,7 +247,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
         <div class="suggest" id="suggest">
           <button type="button">Which lines are still early enough for K2 to get ahead?</button>
           <button type="button">What's the newest route case and what should we do about it?</button>
-          <button type="button">Which substations have the most landowners near them?</button>
+          <button type="button">Which new 345 kV lines are approved and come online by 2028?</button>
           <button type="button">What new 765 kV lines are planned outside Texas?</button>
           <button type="button">Which counties come up most often?</button>
         </div>
@@ -261,7 +268,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 
   <section class="research" aria-labelledby="gh">
     <h2 id="gh">Data for GIS</h2>
-    <p class="sub">Every project as GIS files: end substation pins (with how exact each one is), study-area counties, straight lines between substations (not routes), a project table and a Google Earth file. WGS84 longitude/latitude.</p>
+    <p class="sub">Everything as GIS files in one zip: the Texas layer (every line and substation), the early-signal projects with their study-area counties and filed route options, tables and Google Earth files. WGS84 longitude/latitude. The Texas layer on its own is at the top of the Texas lines tab.</p>
     <p><button type="button" class="mapbtn" id="gisbtn">Download GIS files (.zip)</button> <span class="pmeta" id="gisnote"></span></p>
   </section>
 
@@ -272,20 +279,28 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   </section>
   </div>
 
-  <div id="p-lines" role="tabpanel" aria-labelledby="t-lines" class="panel land" hidden>
+  <div id="p-lines" role="tabpanel" aria-labelledby="t-lines" class="panel land">
     <section>
-      <h2>Every new or upgraded line in Texas</h2>
-      <p>Phase 1: every new or upgraded ERCOT transmission line (138 kV and up) and new 345 kV and bigger substations, from proposed to built this year, with its stage, in-service date and a recommended next step. Bigger lines that come online sooner rank higher.</p>
+      <h2>Texas transmission lines</h2>
+      <p>Every new or upgraded ERCOT line, 138 kV and up, plus new 345 kV and bigger substations, from proposed to built in the last 3 years. Each row is one line: voltage, who is building it, its stage, when it comes online, the counties at each end, and whether each end substation is new or already there. Routes and parcels come later.</p>
       <p class="pmeta" id="linesstamp">Loading the Texas lines...</p>
     </section>
-    <div class="recs" id="linesrecs"></div>
+    <section class="gisbox" aria-labelledby="gish">
+      <h3 id="gish">GIS layer: every line and substation in one file</h3>
+      <p class="pmeta">Lines are drawn straight between their end substations, not along a route. Substations are points with their status (new, existing and expanding, existing, or unconfirmed). Every field is on each feature. WGS84.</p>
+      <p><button type="button" class="mapbtn" id="layergj">GIS layer (.geojson)</button> <button type="button" class="mapbtn" id="layerkml">Google Earth (.kml)</button> <button type="button" class="mapbtn" id="linesdl">Lines table (.csv)</button> <button type="button" class="mapbtn" id="subsdl">Substations table (.csv)</button> <span class="pmeta" id="linesdlnote"></span></p>
+    </section>
+    <div class="recs stages" id="linesrecs"></div>
     <div class="tools lines-tools">
-      <select id="lf-life" aria-label="Lifecycle"><option value="">Every stage</option></select>
       <select id="lf-kv" aria-label="Voltage"><option value="">Every voltage</option></select>
+      <select id="lf-sub" aria-label="Substation status"><option value="">Any substations</option><option value="new">A new substation</option><option value="existing, expanding">An existing substation that is expanding</option><option value="existing">Only existing substations</option><option value="unconfirmed">An unconfirmed substation</option></select>
       <select id="lf-type" aria-label="Project type"><option value="">Every type</option></select>
+      <select id="lf-util" aria-label="Builder"><option value="">Every builder</option></select>
+      <select id="lf-rec" aria-label="K2 next step"><option value="">Any K2 next step</option></select>
       <select id="lf-dev" aria-label="Developers queued"><option value="">With or without developers</option><option value="yes">Developers queued at its substations</option><option value="no">No developers queued</option></select>
       <select id="lf-new" aria-label="First seen"><option value="">Any date added</option><option value="new">New since the first list</option></select>
-      <input class="search" id="lf-q" type="search" placeholder="Search a line, substation, county, utility or ERCOT number" aria-label="Search lines">
+      <select id="lf-sort" aria-label="Sort"><option value="">Sort: priority</option><option value="kv">Sort: biggest voltage</option><option value="date">Sort: soonest in service</option><option value="stage">Sort: furthest along</option></select>
+      <input class="search" id="lf-q" type="search" placeholder="Search a line, substation, county, builder or ERCOT number" aria-label="Search lines">
     </div>
     <p class="pmeta" id="linescount"></p>
     <div class="tbl" id="linestable"></div>
@@ -294,21 +309,21 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
       <h2>Developers at these substations</h2>
       <p>Generation and battery projects already in ERCOT's interconnection queue at the end substations above, from ERCOT's monthly interconnection status report. These are the developers to approach about partnering. Each project is listed under the company that filed it with ERCOT, often a project company (for example "Amerada Solar, LLC") rather than the parent developer; finding the parent company and a contact is the next research step.</p>
       <p class="pmeta" id="devstamp"></p>
+      <p><button type="button" class="mapbtn" id="devdl">Developers by substation (.csv)</button></p>
       <div id="devtable"></div>
       <button class="chip more" id="moreDevs" hidden>Show more substations</button>
     </section>
     <section>
-      <h2>How the next step is picked</h2>
+      <h2>How to read it</h2>
       <ul class="pins">
-        <li><span class="rec sub">Substation campaign</span> The end substations are located and the line is planned or further along. Always the choice for 765 kV, which is not tapped: projects connect at the substations.</li>
-        <li><span class="rec line">Line campaign</span> The route is set (an upgrade of an existing line, an approved route, or a line being built) and the line is 345 kV or below, so it can be tapped.</li>
-        <li><span class="rec follow">Follow updates</span> Still proposed, or the end substations are not located yet.</li>
-        <li><span class="rec info">Informational</span> Serves one generator or one large load, so it adds no new shared capacity.</li>
+        <li><b>Stage.</b> Built: in service in the last 3 years. In construction: being built. Approved: approved and the route is final (or it is an upgrade that stays in its existing corridor), waiting to build. Planned: approved to build, but the route or site is not final. Proposed: someone wants to build it, not approved yet.</li>
+        <li><b>Substations.</b> <span class="stag new">new</span> ERCOT's project builds it. <span class="stag exp">existing, expanding</span> it is there today and a new line, new substation work or a transformer is coming to it. <span class="stag">existing</span> it is there today (on public maps, or an existing line to it is being upgraded). <span class="stag unk">unconfirmed</span> not on public maps by this name: could be new or renamed. Click a substation for the satellite view.</li>
+        <li><b>Tap.</b> <span class="tap yes">tap</span> 345 kV and below: the line itself can be tapped. <span class="tap maybe">maybe</span> 500 kV. <span class="tap no">substation only</span> 765 kV is not tapped; projects connect at the substations.</li>
+        <li><b>Location.</b> Substations found on public maps or in utility filings are placed exactly or within a mile or two. The rest are placed at the center of their county, so every line has a rough location; the layer says which is which (location_quality).</li>
       </ul>
-      <p class="pmeta">Sources: ERCOT's Transmission Project and Information Tracking report (TPIT, October 2026 update), the Line Watch project cards, and for locations the HIFLD national substation map, OpenStreetMap (data &copy; OpenStreetMap contributors) and points researched from utility filings and maps (each pin says how it was placed). "About to enter construction" is estimated from an in-service date within 18 months unless a card says the route is approved, and a planned line whose in-service date has passed shows as "in construction" until ERCOT's next report confirms it. Download every field from <b>Data for GIS</b> on the Watch list tab.</p>
+      <p class="pmeta">K2 next step: <span class="rec sub">Substation campaign</span> substations located and the line is planned or further along (always for 765 kV). <span class="rec line">Line campaign</span> route set and 345 kV or below. <span class="rec follow">Follow updates</span> still proposed, or substations not located. <span class="rec info">Informational</span> serves one generator or one large load.</p>
+      <p class="pmeta">Sources: ERCOT's Transmission Project and Information Tracking report (TPIT): the October 2026 update, plus the completed-project lists in the October 2024 and October 2025 updates for lines built since <span id="cutoff">October 2023</span>. The Line Watch project cards add lines ERCOT doesn't list yet. Locations come from the HIFLD national substation map, OpenStreetMap (data &copy; OpenStreetMap contributors) and points researched from utility filings. "Approved" for a new line within 18 months of its in-service date is estimated, and a planned line whose in-service date has passed shows as "in construction" until ERCOT's next report confirms it.</p>
     </section>
-    <p><button type="button" class="mapbtn" id="linesdl">Download the Texas lines (.csv)</button> <button type="button" class="mapbtn" id="linesdlg">Map file (.geojson)</button> <button type="button" class="mapbtn" id="devdl">Developers by substation (.csv)</button> <span class="pmeta" id="linesdlnote"></span></p>
-    <p class="pmeta">Checking a substation: each end substation is tagged <b>on maps</b> (found on the HIFLD or OpenStreetMap substation maps, so it exists today), <b>new or expanding</b> (ERCOT's project builds or expands it) or <b>not on maps</b> (not on public maps yet: new, renamed, or placed only from filings). Click a substation to see it from above on satellite view. Lines added after the first list on Oct 20, 2026 are tagged <b>new</b>.</p>
   </div>
 
   <div id="p-land" role="tabpanel" aria-labelledby="t-land" class="panel land" hidden>
@@ -362,8 +377,8 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   <div id="p-help" role="tabpanel" aria-labelledby="t-help" class="panel help" hidden>
     <section>
       <h2>What this page is</h2>
-      <p>K2 Renew buys land before the grid gets to it. Land near a new high-voltage line, and above all near the substations at each end, becomes worth much more once the line is built. This page lists the new lines that matter across the US, shows how far along each one is, says what K2 should do now, and lists the landowners near each line's end substations.</p>
-      <p>A line monitor checks the public sources every day at 7am and 5pm Central and adds anything new; the Texas lines list is checked for a new ERCOT report at the same times. The same items also go to the <b>K2 Watch</b> tab of the K2 Transmission Intel Plan sheet. Every Monday the landowner search reruns on every end substation, so new lines bring new landowners automatically.</p>
+      <p>K2 Renew buys land before the grid gets to it. Land near a new high-voltage line, and above all near the substations at each end, becomes worth much more once the line is built. This page is the research layer: where new lines are going, who is building them, how far along they are, and whether their substations are new or existing. K2's GIS team takes the layer into its own map; routes and parcels are the next phase.</p>
+      <p><b>Texas lines</b> is the main list: every new or upgraded ERCOT line from proposed to built in the last 3 years. <b>Early signals</b> tracks lines before ERCOT's report lists them (planning meetings, open houses, route cases, news). A monitor checks the public sources every day at 7am and 5pm Central, and the Texas list is rebuilt when ERCOT posts a new report.</p>
     </section>
 
     <section>
@@ -396,13 +411,13 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     </section>
 
     <section>
-      <h2>Landowners</h2>
-      <p>The <b>Landowners</b> tab shows the weekly landowner search: for each end substation, the owners of 20 or more acres within 2 miles, their lead score and their next step. Each project card also says how many landowners are near its substations.</p>
-      <ul>
-        <li><b>Where owner data comes from:</b> Texas's free statewide parcel layer (county appraisal district records). Other states are ready to switch on with free state parcel layers or a paid nationwide parcel data service; until then their substations show "not searched".</li>
-        <li><b>Privacy:</b> this page shows owners only as type and initials with a city. The full list with names, mailing addresses and parcel IDs goes to Jaiden as a private file.</li>
-        <li><b>Next step:</b> letter first for everyone without a clean phone number; a salesperson call for clean numbers; Wendy only for owners who opted in, because AI calls need prior consent.</li>
-      </ul>
+      <h2>The Texas lines tab</h2>
+      <ol>
+        <li>Click a stage (built, in construction, approved, planned, proposed) to see only those lines. Click it again to see all.</li>
+        <li>Narrow by voltage, substation status (new, existing and expanding), builder or K2 next step, and sort by voltage, in-service date or stage.</li>
+        <li>Click a substation name for the satellite view. Hover a stage to see why the line has it.</li>
+        <li>Download the GIS layer at the top: one file with every line and substation and every field, ready for ArcGIS, QGIS or Google Earth.</li>
+      </ol>
     </section>
 
     <section>
@@ -635,16 +650,25 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   // ---------- Texas lines (phase 1 catalog, data/texas-lines.json) ----------
   const REC = { "substation campaign": ["sub", "Substation campaign"], "line campaign": ["line", "Line campaign"],
                 "follow updates": ["follow", "Follow updates"], "informational": ["info", "Informational"] };
-  const LIFE = ["proposed", "planned", "about to enter construction", "in construction", "operating (recently built)"];
-  const LS = { all: [], rec: "", life: "", kv: "", type: "", dev: "", fresh: "", q: "", shown: 40, built: "", stations: {}, queue: "", base: "", open: new Set(), devShown: 15 };
-  const STAG = { "on public maps": ["", "on maps"], "new or expanding (per ERCOT)": ["new", "new or expanding"], "not on public maps": ["", "not on maps"] };
+  const LIFE = ["built", "in construction", "approved", "planned", "proposed"];
+  const LIFE_HELP = { "built": "In service in the last 3 years", "in construction": "Being built now", "approved": "Route final, waiting to build",
+                      "planned": "Approved, route or site not final", "proposed": "Not approved yet" };
+  const LS = { all: [], rec: "", life: "", kv: "", type: "", util: "", sub: "", sort: "", dev: "", fresh: "", q: "", shown: 40, built: "", stations: {}, sites: {}, queue: "", base: "", cutoff: "", open: new Set(), devShown: 15 };
+  const STAG = { "new": ["new", "new"], "existing, expanding": ["exp", "existing, expanding"], "existing": ["", "existing"], "unconfirmed": ["unk", "unconfirmed"] };
+  const TAP = { yes: ["yes", "tap"], maybe: ["maybe", "maybe"], no: ["no", "substation only"] };
+  const STAGE_ORDER = Object.fromEntries(LIFE.map((l, i) => [l, i]));
   fetch("data/texas-lines.json").then((r) => r.ok ? r.json() : null).then((d) => {
     if (!d) { $("linesstamp").textContent = "The Texas line list could not load. Reload the page to try again."; return; }
-    LS.all = d.lines || []; LS.built = d.built || ""; LS.queue = d.queue_report || "";
+    LS.all = d.lines || []; LS.built = d.built || ""; LS.queue = d.queue_report || ""; LS.cutoff = d.cutoff || "";
     LS.stations = Object.fromEntries((d.stations || []).map((s) => [s.id, s]));
+    LS.sites = Object.fromEntries((d.sites || []).map((s) => [s.id, s]));
+    // queue stations (developers section) take the status of the substation they belong to
+    LS.all.forEach((x) => (x.endpoints || []).forEach((e) => { if (e.station_id && LS.stations[e.station_id] && e.station_status) LS.stations[e.station_id].station_status = e.station_status; }));
+    if (LS.cutoff) $("cutoff").textContent = new Date(LS.cutoff + "T12:00:00").toLocaleDateString("en-US", { month: "long", year: "numeric" });
     LS.base = LS.all.reduce((m, x) => (x.first_seen && (!m || x.first_seen < m) ? x.first_seen : m), "");
     const opts = (id, vals, label) => { $(id).innerHTML = `<option value="">${label}</option>` + vals.map((v) => `<option value="${esc(v)}">${esc(v)}</option>`).join(""); };
-    opts("lf-life", LIFE.filter((l) => LS.all.some((x) => x.lifecycle === l)), "Every stage");
+    opts("lf-util", [...new Set(LS.all.map((x) => x.utility).filter(Boolean))].sort(), "Every builder");
+    $("lf-rec").innerHTML = `<option value="">Any K2 next step</option>` + Object.entries(REC).map(([k, [, l]]) => `<option value="${esc(k)}">${esc(l)}</option>`).join("");
     opts("lf-kv", [...new Set(LS.all.map((x) => x.kv))].sort((a, b) => b - a).map(String), "Every voltage");
     opts("lf-type", [...new Set(LS.all.map((x) => x.project_type))].sort(), "Every type");
     renderLines(); renderDevs(); renderProjects();
@@ -655,6 +679,11 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     if (LS.life && x.lifecycle !== LS.life) return false;
     if (LS.kv && String(x.kv) !== LS.kv) return false;
     if (LS.type && x.project_type !== LS.type) return false;
+    if (LS.util && x.utility !== LS.util) return false;
+    if (LS.sub) {
+      const st = (x.endpoints || []).map((e) => e.station_status);
+      if (LS.sub === "existing" ? !(st.length && st.every((v) => v === "existing")) : !st.includes(LS.sub)) return false;
+    }
     const nq = (x.queue || {}).projects || 0;
     if (LS.dev && (LS.dev === "yes") !== nq > 0) return false;
     if (LS.fresh && !isFresh(x)) return false;
@@ -663,10 +692,14 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     const hay = [x.name, x.from, x.to, x.county_from, x.county_to, x.utility, x.ercot_project, x.program, x.docket, ...devs].join(" ").toLowerCase();
     return LS.q.toLowerCase().split(/\s+/).every((t) => hay.includes(t));
   }
-  const isFresh = (x) => LS.base && x.first_seen && x.first_seen > LS.base;
+  const isFresh = (x) => LS.base && x.first_seen && x.first_seen > LS.base && x.lifecycle !== "built";
   const satLink = (e, label) => e.check_link || e.lat != null
     ? `<a href="${esc(e.check_link || `https://www.google.com/maps/@?api=1&map_action=map&center=${Number(e.lat).toFixed(5)},${Number(e.lon).toFixed(5)}&zoom=16&basemap=satellite`)}" target="_blank" rel="noopener" title="Satellite view">${label}</a>` : label;
-  const stag = (e) => { const [c, l] = STAG[e.in_place] || ["", ""]; return l ? `<span class="stag ${c}">${l}</span>` : ""; };
+  const stag = (e) => { const [c, l] = STAG[e.station_status] || ["", ""]; return l ? `<span class="stag ${c}">${l}</span>` : ""; };
+  const tapTag = (x) => { const [c, l] = TAP[x.tappable] || ["", ""]; return l ? `<br><span class="tap ${c}" title="${esc(x.tap_note)}">${l}</span>` : ""; };
+  const SORTS = { kv: (a, b) => b.kv - a.kv || b.priority_score - a.priority_score,
+                  date: (a, b) => ((a.lifecycle === "built") - (b.lifecycle === "built")) || (a.in_service || "9999").localeCompare(b.in_service || "9999"),
+                  stage: (a, b) => STAGE_ORDER[a.lifecycle] - STAGE_ORDER[b.lifecycle] || b.priority_score - a.priority_score };
   const mwN = (n) => Math.round(Number(n) || 0).toLocaleString();
   function devList(projects, showStation) {
     return `<table class="devlist"><thead><tr>${showStation ? "<th>Substation</th>" : ""}<th>Developer (as filed with ERCOT)</th><th>Project</th><th class="n">MW</th><th>Online</th><th>Study stage</th></tr></thead><tbody>${
@@ -674,11 +707,13 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   }
   function renderLines() {
     const all = LS.all;
-    $("linesstamp").textContent = `${all.length.toLocaleString()} lines and substations · list built ${LS.built} from ERCOT's October 2026 project report${LS.queue ? ", ERCOT's " + LS.queue + " interconnection queue" : ""} and the Line Watch cards`;
-    $("linesrecs").innerHTML = Object.entries(REC).map(([k, [, lbl]]) => `<button type="button" data-rec="${esc(k)}" aria-pressed="${LS.rec === k}"><b>${all.filter((x) => x.recommended_next_step === k).length}</b><span>${esc(lbl)}</span></button>`).join("");
-    $("linesrecs").querySelectorAll("[data-rec]").forEach((b) => b.addEventListener("click", () => { LS.rec = LS.rec === b.dataset.rec ? "" : b.dataset.rec; LS.shown = 40; renderLines(); }));
+    const nsub = Object.keys(LS.sites).length;
+    $("linesstamp").textContent = `${all.length.toLocaleString()} projects (lines and new substations), ${nsub.toLocaleString()} end substations · built ${LS.built} from ERCOT's project reports${LS.queue ? " and ERCOT's " + LS.queue + " interconnection queue" : ""}`;
+    $("linesrecs").innerHTML = LIFE.map((k) => `<button type="button" data-life="${esc(k)}" aria-pressed="${LS.life === k}"><b>${all.filter((x) => x.lifecycle === k).length}</b><span>${esc(k[0].toUpperCase() + k.slice(1))}</span><em>${esc(LIFE_HELP[k])}</em></button>`).join("");
+    $("linesrecs").querySelectorAll("[data-life]").forEach((b) => b.addEventListener("click", () => { LS.life = LS.life === b.dataset.life ? "" : b.dataset.life; LS.shown = 40; renderLines(); }));
     const list = all.filter(lineMatch);
-    $("linescount").textContent = `${list.length.toLocaleString()} shown, highest priority first (bigger lines that come online sooner rank higher).`;
+    if (SORTS[LS.sort]) list.sort(SORTS[LS.sort]);
+    $("linescount").textContent = `${list.length.toLocaleString()} shown, ${{ kv: "biggest voltage first", date: "soonest in service first", stage: "furthest along first" }[LS.sort] || "highest priority first (bigger lines that come online sooner rank higher)"}.`;
     const where = (x) => [x.county_from, x.county_to].filter((c, i, a) => c && a.indexOf(c) === i).join(" to ");
     const ends = (x) => (x.endpoints || []).map((e) => satLink(e, esc(subShort(e.name))) + stag(e)).join(" to ");
     const devCell = (x) => { const q = x.queue || {};
@@ -687,11 +722,11 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     const devRow = (x) => { if (!LS.open.has(x.id)) return "";
       const ps = (x.queue.stations || []).filter((id) => LS.stations[id]).flatMap((id) => LS.stations[id].projects.map((p) => ({ ...p, _st: LS.stations[id].name })));
       return `<tr class="devrow"><td colspan="8">${devList(ps, true)}</td></tr>`; };
-    $("linestable").innerHTML = `<table><thead><tr><th>Line</th><th class="n">kV</th><th>Type</th><th>Stage</th><th>In service</th><th>Where</th><th>Developers queued</th><th>Next step</th></tr></thead><tbody>${
+    $("linestable").innerHTML = `<table><thead><tr><th>Line</th><th class="n">kV</th><th>Type</th><th>Stage</th><th>In service</th><th>Counties</th><th>Developers queued</th><th>K2 next step</th></tr></thead><tbody>${
       list.slice(0, LS.shown).map((x) => { const [cls, lbl] = REC[x.recommended_next_step] || ["info", x.recommended_next_step];
-        return `<tr><td><b>${esc(x.name)}</b>${isFresh(x) ? ` <span class="stag fresh">new ${esc(x.first_seen)}</span>` : ""}<br><span class="pmeta">${ends(x) || "No end substations listed"} · ${esc(x.utility)}${x.ercot_project ? " · ERCOT " + esc(x.ercot_project) : ""}${x.card_id ? ` · <button type="button" class="linkbtn" data-gocard="${esc(x.card_id)}">project card</button>` : ""}</span></td>
-          <td class="n">${esc(x.kv)}</td><td>${esc(x.project_type)}${x.upgrade_kind ? `<br><span class="pmeta">${esc(x.upgrade_kind)}</span>` : ""}${x.miles_new || x.miles_upgraded ? `<br><span class="pmeta">${x.miles_new ? esc(x.miles_new) + " mi new" : esc(x.miles_upgraded) + " mi upgraded"}</span>` : ""}</td>
-          <td>${esc(x.lifecycle)}</td><td class="n">${esc(x.in_service || "not set")}${x.in_service_kind === "actual" ? "<br><span class=\"pmeta\">actual</span>" : ""}</td>
+        return `<tr><td><b>${esc(x.name)}</b>${isFresh(x) ? ` <span class="stag fresh">new ${esc(x.first_seen)}</span>` : ""}<br><span class="pmeta">${ends(x) || "No end substations listed"}</span><br><span class="pmeta">Builder: <b>${esc(x.utility || "not listed")}</b>${x.ercot_project ? " · ERCOT " + esc(x.ercot_project) : ""}${x.card_id ? ` · <button type="button" class="linkbtn" data-gocard="${esc(x.card_id)}">project card</button>` : ""}</span></td>
+          <td class="n">${esc(x.kv)}${tapTag(x)}</td><td>${esc(x.project_type)}${x.upgrade_kind ? `<br><span class="pmeta">${esc(x.upgrade_kind)}</span>` : ""}${x.miles_new || x.miles_upgraded ? `<br><span class="pmeta">${x.miles_new ? esc(x.miles_new) + " mi new" : esc(x.miles_upgraded) + " mi upgraded"}</span>` : ""}</td>
+          <td><span title="${esc(x.lifecycle_basis)}">${esc(x.lifecycle)}</span></td><td class="n">${esc(x.in_service || "not set")}${x.in_service_kind === "actual" ? "<br><span class=\"pmeta\">actual</span>" : ""}</td>
           <td>${esc(where(x))}</td><td>${devCell(x)}</td><td><span class="rec ${cls}">${esc(lbl)}</span><br><span class="pmeta">${esc(x.recommendation_reason)}</span></td></tr>${devRow(x)}`; }).join("")
       || `<tr><td colspan="8" class="pmeta">No lines match. Clear a filter.</td></tr>`}</tbody></table>`;
     $("moreLines").hidden = list.length <= LS.shown;
@@ -712,7 +747,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     if (!b) return;
     const id = b.dataset.devs; LS.open.has(id) ? LS.open.delete(id) : LS.open.add(id); renderLines();
   });
-  [["lf-life", "life"], ["lf-kv", "kv"], ["lf-type", "type"], ["lf-dev", "dev"], ["lf-new", "fresh"]].forEach(([id, k]) => $(id).addEventListener("change", (e) => { LS[k] = e.target.value; LS.shown = 40; renderLines(); }));
+  [["lf-kv", "kv"], ["lf-type", "type"], ["lf-util", "util"], ["lf-sub", "sub"], ["lf-rec", "rec"], ["lf-sort", "sort"], ["lf-dev", "dev"], ["lf-new", "fresh"]].forEach(([id, k]) => $(id).addEventListener("change", (e) => { LS[k] = e.target.value; LS.shown = 40; renderLines(); }));
   $("lf-q").addEventListener("input", (e) => { LS.q = e.target.value.trim(); LS.shown = 40; renderLines(); });
   $("moreLines").addEventListener("click", () => { LS.shown += 60; renderLines(); });
   document.addEventListener("click", (e) => {
@@ -731,8 +766,10 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
       note.textContent = ""; await dl.save({ filename: name, data: await r.blob() });
     } catch (e) { note.textContent = e && e.code === "declined" ? "" : "Couldn't prepare the download. Try again from claude.ai."; }
   }
+  $("layergj").addEventListener("click", () => saveExport("k2-texas-layer.geojson", "k2-texas-layer.geojson"));
+  $("layerkml").addEventListener("click", () => saveExport("k2-texas-layer.kml.xml", "k2-texas-layer.kml"));
   $("linesdl").addEventListener("click", () => saveExport("k2-texas-lines.csv", "k2-texas-lines.csv"));
-  $("linesdlg").addEventListener("click", () => saveExport("k2-texas-lines.geojson", "k2-texas-lines.geojson"));
+  $("subsdl").addEventListener("click", () => saveExport("k2-texas-substations.csv", "k2-texas-substations.csv"));
   $("devdl").addEventListener("click", () => saveExport("k2-texas-developers.csv", "k2-texas-developers.csv"));
   function phaseBlock(p) {
     const xs = linesFor(p);
@@ -748,6 +785,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   const SRC = { free: ["open", "Free state data"], paid: ["fast", "Paid data service"], none: ["late", "Needs a data source"], failed: ["late", "Lookup failed"] };
 
   function landBlock(p) {
+    return "";   // landowners are on hold: K2 wants the lines first (Oct 26 team call)
     const subs = state.landSubs.filter((s) => (s.project_ids || []).includes(p.id));
     if (!subs.length) return "";
     const rows = subs.map((s) => s.status === "searched"
@@ -1116,7 +1154,7 @@ How to answer: plain English for someone new to the grid; short; lead with the a
   }
 
   // GIS bundle: the page zips the published export files (JSZip) and saves the zip through the downloads capability.
-  const GIS_FILES = ["README.txt", "k2-texas-lines.csv", "k2-texas-lines.geojson", "k2-texas-developers.csv", "k2-substations.geojson", "k2-substations.csv", "k2-study-areas.geojson", "k2-straight-lines.geojson",
+  const GIS_FILES = ["README.txt", "k2-texas-layer.geojson", ["k2-texas-layer.kml.xml", "k2-texas-layer.kml"], "k2-texas-substations.csv", "k2-texas-lines.csv", "k2-texas-lines.geojson", "k2-texas-developers.csv", "k2-substations.geojson", "k2-substations.csv", "k2-study-areas.geojson", "k2-straight-lines.geojson",
     "k2-projects.csv", "k2-irp-pilot.csv", ["k2-line-watch.kml.xml", "k2-line-watch.kml"]];
   function loadJSZip() {
     if (window.JSZip) return Promise.resolve(window.JSZip);
@@ -1147,7 +1185,7 @@ How to answer: plain English for someone new to the grid; short; lead with the a
     } finally { btn.disabled = false; }
   });
 
-  const TABS = [["t-watch", "p-watch"], ["t-lines", "p-lines"], ["t-land", "p-land"], ["t-irp", "p-irp"], ["t-help", "p-help"]];
+  const TABS = [["t-lines", "p-lines"], ["t-watch", "p-watch"], ["t-irp", "p-irp"], ["t-help", "p-help"]];
   function showTab(id) {
     for (const [t, panel] of TABS) {
       const on = t === id;
