@@ -387,7 +387,7 @@ def first_seen(lines):
     json.dump(dict(sorted(seen.items())), open(f, "w"), indent=0)
 
 
-PHRASE_ALIASES = {"BELL COUNTY EAST": "BELL EAST"}
+PHRASE_ALIASES = {"BELL COUNTY EAST": "BELL EAST", "GREENE ROAD": "GREENE"}
 
 
 def alias(name):

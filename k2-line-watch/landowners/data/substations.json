@@ -1,6 +1,6 @@
 {
  "source": "K2 Line Watch project cards",
- "count": 51,
+ "count": 55,
  "substations": [
   {
    "name": "Rocky Point Substation (proposed)",
@@ -405,6 +405,29 @@
    "id": "tx-culberson-el-capitan"
   },
   {
+   "name": "Greene Road Switch",
+   "state": "TX",
+   "county": "Dallas",
+   "lat": 32.5992,
+   "lon": -96.72987,
+   "confidence": "exact",
+   "basis": "Oncor CCN Public Viewer endpoint for the Greene-Wilmer 345 kV project; Oncor's page puts it 0.51 mi NE of Cornell Rd and Greene Rd.",
+   "source": "https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer/3",
+   "projects": [
+    {
+     "id": "oncor-greene-road-to-wilmer",
+     "name": "Greene Road Switch to Wilmer",
+     "kv": "345",
+     "stage": 3,
+     "stage_label": "Open houses / project page",
+     "importance": "Low",
+     "window": "Open now",
+     "region": "Texas (ERCOT)"
+    }
+   ],
+   "id": "tx-dallas-greene-road"
+  },
+  {
    "name": "Liggett Switch",
    "state": "TX",
    "county": "Dallas",
@@ -469,6 +492,29 @@
     }
    ],
    "id": "tx-dallas-watermill"
+  },
+  {
+   "name": "Wilmer Switch",
+   "state": "TX",
+   "county": "Dallas",
+   "lat": 32.58199,
+   "lon": -96.68599,
+   "confidence": "exact",
+   "basis": "HIFLD substation WILMER (Dallas County, in service); Oncor's page puts it 0.25 mi NE of Mason Rd and Van Rd.",
+   "source": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0",
+   "projects": [
+    {
+     "id": "oncor-greene-road-to-wilmer",
+     "name": "Greene Road Switch to Wilmer",
+     "kv": "345",
+     "stage": 3,
+     "stage_label": "Open houses / project page",
+     "importance": "Low",
+     "window": "Open now",
+     "region": "Texas (ERCOT)"
+    }
+   ],
+   "id": "tx-dallas-wilmer"
   },
   {
    "name": "Lamesa Switch",
@@ -1036,6 +1082,52 @@
     }
    ],
    "id": "tx-pecos-white-baker"
+  },
+  {
+   "name": "Blue Goose",
+   "state": "TX",
+   "county": "Reeves",
+   "lat": 31.39001,
+   "lon": -103.39437,
+   "confidence": "exact",
+   "basis": "Oncor CCN Public Viewer endpoint 'Blue Goose' (project 1047, 345 kV, route in progress).",
+   "source": "https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer/3",
+   "projects": [
+    {
+     "id": "oncor-blue-goose-to-creosote",
+     "name": "Blue Goose to Creosote",
+     "kv": "345",
+     "stage": 3,
+     "stage_label": "Open houses / project page",
+     "importance": "Medium",
+     "window": "Open now",
+     "region": "Texas (ERCOT)"
+    }
+   ],
+   "id": "tx-reeves-blue-goose"
+  },
+  {
+   "name": "Creosote",
+   "state": "TX",
+   "county": "Reeves",
+   "lat": 31.27425,
+   "lon": -103.1259,
+   "confidence": "exact",
+   "basis": "Oncor CCN Public Viewer endpoint 'Creosote' (project 1047, 345 kV, route in progress).",
+   "source": "https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer/3",
+   "projects": [
+    {
+     "id": "oncor-blue-goose-to-creosote",
+     "name": "Blue Goose to Creosote",
+     "kv": "345",
+     "stage": 3,
+     "stage_label": "Open houses / project page",
+     "importance": "Medium",
+     "window": "Open now",
+     "region": "Texas (ERCOT)"
+    }
+   ],
+   "id": "tx-reeves-creosote"
   },
   {
    "name": "Dry Lake Switch",
