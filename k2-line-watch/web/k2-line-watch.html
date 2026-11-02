@@ -291,7 +291,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   <div id="p-lines" role="tabpanel" aria-labelledby="t-lines" class="panel land">
     <section class="lhead">
       <p>New and upgraded ERCOT lines (138 kV+), built since <span id="cutoff">October 2023</span> or due in service <span id="window">through October 2031</span>. <span class="pmeta" id="linesstamp">Loading...</span> <span class="pmeta" id="checkline"></span></p>
-      <p class="dl"><b>Download:</b> <button type="button" class="linkbtn" id="layergj">GIS layer (.geojson)</button> · <button type="button" class="linkbtn" id="layerkml">Google Earth (.kml)</button> · <button type="button" class="linkbtn" id="linesdl">Lines (.csv)</button> · <button type="button" class="linkbtn" id="subsdl">Substations (.csv)</button> <span class="pmeta" id="linesdlnote"></span></p>
+      <p class="dl"><b>Download:</b> <button type="button" class="linkbtn" id="layergj">GIS layer (.geojson, zipped)</button> · <button type="button" class="linkbtn" id="layerkml">Google Earth (.kml, zipped)</button> · <button type="button" class="linkbtn" id="linesdl">Lines (.csv)</button> · <button type="button" class="linkbtn" id="subsdl">Substations (.csv)</button> <span class="pmeta" id="linesdlnote"></span></p>
     </section>
     <div class="recs stages" id="linesrecs"></div>
     <div class="tools lines-tools">
@@ -803,17 +803,27 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     state.open.add(b.dataset.gocard); renderLadder(); renderProjects();
     const el = document.querySelector(`article.proj[data-id="${CSS.escape(b.dataset.gocard)}"]`); if (el) el.scrollIntoView({ block: "start" });
   });
-  async function saveExport(file, name) {
+  // The downloads capability only saves allowlisted types (csv, json, zip, ...), not .geojson or .kml,
+  // so those are zipped with their real extension inside; GIS tools and Google Earth open them from the zip.
+  async function saveExport(file, name, zipName) {
     const note = $("linesdlnote");
     const dl = await claude.use("downloads");
     if (!dl) { note.textContent = "Downloads aren't available in this view. Open the page on claude.ai."; return; }
+    note.textContent = "Preparing the file...";
     try {
       const r = await fetch("exports/" + file); if (!r.ok) throw new Error("missing");
-      note.textContent = ""; await dl.save({ filename: name, data: await r.blob() });
-    } catch (e) { note.textContent = e && e.code === "declined" ? "" : "Couldn't prepare the download. Try again from claude.ai."; }
+      let data = await r.blob(), filename = name;
+      if (zipName) { const JSZip = await loadJSZip(), zip = new JSZip(); zip.file(name, data);
+        data = await zip.generateAsync({ type: "blob", compression: "DEFLATE" }); filename = zipName; }
+      note.textContent = ""; await dl.save({ filename, data });
+    } catch (e) {
+      const code = e && e.code;
+      note.textContent = code === "declined" ? "" : code === "rate_limited" ? "A save is already open. Try again in a moment."
+        : "Couldn't prepare the download" + (code ? " (" + code + ")" : "") + ". Try again from claude.ai in a desktop browser.";
+    }
   }
-  $("layergj").addEventListener("click", () => saveExport("k2-texas-layer.geojson", "k2-texas-layer.geojson"));
-  $("layerkml").addEventListener("click", () => saveExport("k2-texas-layer.kml.xml", "k2-texas-layer.kml"));
+  $("layergj").addEventListener("click", () => saveExport("k2-texas-layer.geojson", "k2-texas-layer.geojson", "k2-texas-layer-geojson.zip"));
+  $("layerkml").addEventListener("click", () => saveExport("k2-texas-layer.kml.xml", "k2-texas-layer.kml", "k2-texas-layer-kml.zip"));
   $("linesdl").addEventListener("click", () => saveExport("k2-texas-lines.csv", "k2-texas-lines.csv"));
   $("subsdl").addEventListener("click", () => saveExport("k2-texas-substations.csv", "k2-texas-substations.csv"));
   $("devdl").addEventListener("click", () => saveExport("k2-texas-developers.csv", "k2-texas-developers.csv"));
