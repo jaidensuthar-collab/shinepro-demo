@@ -1,5 +1,5 @@
 {
- "fetched": "2026-10-26",
+ "fetched": "2026-11-05",
  "source": "https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer",
  "projects": [
   {
@@ -432,6 +432,24 @@
      "name": "Greene Road Switch",
      "lat": 32.5992,
      "lon": -96.72987
+    }
+   ],
+   "kv": 345
+  },
+  {
+   "project_id": 1054,
+   "name": "Muscovy - Voss Lake",
+   "status": "In-Progress",
+   "stations": [
+    {
+     "name": "Muscovy Switch",
+     "lat": 30.56035,
+     "lon": -97.47545
+    },
+    {
+     "name": "Voss Lake Switch",
+     "lat": 30.60504,
+     "lon": -97.083
     }
    ],
    "kv": 345
