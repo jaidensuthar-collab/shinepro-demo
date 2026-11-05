@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-04 23:23 CT",
+  "generated": "2026-11-04 23:50 CT",
   "meta": {
     "last_checked": "2026-11-04 5pm CT",
     "last_run_found": 187,
@@ -817,7 +817,7 @@
         },
         {
           "label": "CenterPoint open-house boards",
-          "url": "https://www.centerpointenergy.com/en-us/Documents/Hillje-Blu-Lacy/Hillje-Blu-Lacy-Transmission-Improvement-Project-Open-House-Board.pdf"
+          "url": "https://assets.centerpointenergy.com/api/public/content/hillje-blu-lacy-transmission-improvement-project-open-house-board.pdf?v=310e0feb"
         },
         {
           "label": "ERCOT Board item 14.1",
@@ -3461,8 +3461,8 @@
           "where": "Section I.A (p.1); Appendix B technical conference minutes"
         },
         {
-          "claim": "Draft 2026 IRP (Feb 2026)",
-          "url": "https://www.oge.com/documents/d/portal/draft-og-e-2026-integrated-resource-plan",
+          "claim": "2026 IRP (the Feb 2026 draft is no longer online; final plan linked)",
+          "url": "https://www.oge.com/documents/d/portal/oge-2026-irp-final",
           "where": "cover"
         },
         {
@@ -3840,8 +3840,8 @@
         },
         {
           "claim": "Alphabet data center in Michigan City",
-          "url": "https://www.in.gov/iurc/files/ord_46393_072726_.pdf",
-          "where": "IURC Order, Cause 46393, 2026-07-27"
+          "url": "https://iurc.portal.in.gov/docketed-case-details/?casenumber=46393",
+          "where": "IURC Order, Cause 46393, 2026-07-27 (on the case page)"
         },
         {
           "claim": "Hobart and Schahfer data-center sites; ERAS GIAs",
@@ -4858,7 +4858,7 @@
         },
         {
           "claim": "Sales growth 3-3.5%/yr; Karn 3&4 ~1.2 GW 2030; MCV 1.2 GW; CCS and Jackson 2040; 15.8 GW clean / 4.1 GW battery",
-          "url": "https://s26.q4cdn.com/888045447/files/doc_presentations/2026/09/September-2026-Presentation.pdf",
+          "url": "https://s26.q4cdn.com/888045447/files/doc_presentations/2026/09/September-2026-Presentationv2.pdf",
           "where": "CMS Sept 2026 investor presentation slides 6-8"
         },
         {

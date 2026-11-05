@@ -1,7 +1,7 @@
 K2 Line Watch GIS export
 All files are WGS84 longitude/latitude (EPSG:4326).
 
-37 projects, 80 end substation pins.
+39 projects, 84 end substation pins.
 
 k2-substations.geojson / k2-substations.csv
   End substation pins. location_quality says how exact each pin is:

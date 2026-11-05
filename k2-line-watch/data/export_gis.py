@@ -86,7 +86,14 @@ Live version: https://claude.ai/artifact/FCARNQ1KQBr5r5DX9V6XfG
 
 
 def load():
-    projects = json.load(open(os.path.join(HERE, "projects.json"), encoding="utf-8"))
+    # The current project cards live in ../state/projects/ (one JSON per card, same as the page database);
+    # projects.json is the original curated list and is only used when that folder is missing.
+    state_dir = os.path.join(HERE, "..", "state", "projects")
+    files = sorted(f for f in os.listdir(state_dir) if f.endswith(".json")) if os.path.isdir(state_dir) else []
+    if files:
+        projects = [json.load(open(os.path.join(state_dir, f), encoding="utf-8")) for f in files]
+    else:
+        projects = json.load(open(os.path.join(HERE, "projects.json"), encoding="utf-8"))
     counties = json.load(open(os.path.join(HERE, "..", "web", "counties.json"), encoding="utf-8"))
     return projects, counties
 

@@ -40,7 +40,7 @@ P = [
       miles="about 155", endpoints="Hillje substation (Wharton County) to Blu Lacy substation (near Nueces County)",
       counties="Wharton, Nueces and counties between (study area)", rpg="25RPG025 (Eastern Backbone)",
       links=[("AEP Texas project page", "https://aeptransmission.com/texas/hillje-blulacy/"),
-             ("CenterPoint open-house boards", "https://www.centerpointenergy.com/en-us/Documents/Hillje-Blu-Lacy/Hillje-Blu-Lacy-Transmission-Improvement-Project-Open-House-Board.pdf"),
+             ("CenterPoint open-house boards", "https://assets.centerpointenergy.com/api/public/content/hillje-blu-lacy-transmission-improvement-project-open-house-board.pdf?v=310e0feb"),
              ("ERCOT Board item 14.1", ERCOT_EB)], checked="checked 2026-10-09"),
     p("blu-lacy-howard", "Blu Lacy to Howard", "765", "AEP Texas and CPS Energy", 3,
       "Open houses planned for August 25 to 27, 2026 are being rescheduled. No route has been chosen.",
