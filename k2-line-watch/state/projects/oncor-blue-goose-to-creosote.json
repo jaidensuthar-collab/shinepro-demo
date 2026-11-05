@@ -1,0 +1,56 @@
+{
+  "checked": "checked 2026-10-26",
+  "counties": "Reeves (ERCOT also lists Ward and Pecos)",
+  "docket": "",
+  "endpoints": "Blue Goose (Reeves County) to Creosote (Reeves County)",
+  "geo": {
+    "counties": [
+      "TX|Reeves",
+      "TX|Ward",
+      "TX|Pecos"
+    ],
+    "counties_basis": "Both end substations from Oncor's CCN Public Viewer fall in Reeves County; ERCOT's TPIT also names Ward and Pecos counties for this line.",
+    "endpoints": [
+      {
+        "basis": "Oncor CCN Public Viewer endpoint 'Blue Goose' (project 1047, 345 kV, route in progress).",
+        "confidence": "exact",
+        "county": "TX|Reeves",
+        "lat": 31.39001,
+        "lon": -103.39437,
+        "name": "Blue Goose",
+        "source": "https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer/3"
+      },
+      {
+        "basis": "Oncor CCN Public Viewer endpoint 'Creosote' (project 1047, 345 kV, route in progress).",
+        "confidence": "exact",
+        "county": "TX|Reeves",
+        "lat": 31.27425,
+        "lon": -103.1259,
+        "name": "Creosote",
+        "source": "https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer/3"
+      }
+    ]
+  },
+  "id": "oncor-blue-goose-to-creosote",
+  "importance": "Medium",
+  "k2_action": "Download the constraints map from Oncor's page to see which land the route links cross.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/blue-goose---creosote-345-kv-transmission-line-project.html"
+    }
+  ],
+  "miles": "46",
+  "name": "Blue Goose to Creosote",
+  "next_step": "Oncor expects to file the route case in December 2026.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "status": "Oncor project page is live. One public meeting was held Sept 15, 2026 in Pecos; the constraints map with alternative route links is posted. No route case yet.",
+  "updated": "2026-10-26",
+  "utility": "Oncor",
+  "why_k2": "A new 46-mile 345 kV double-circuit line in the Delaware Basin. ERCOT lists it as planned for November 2029.",
+  "window": "Open now"
+}

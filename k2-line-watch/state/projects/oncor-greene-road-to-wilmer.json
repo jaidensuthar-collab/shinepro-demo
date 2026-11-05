@@ -1,0 +1,54 @@
+{
+  "checked": "checked 2026-10-26",
+  "counties": "Dallas",
+  "docket": "",
+  "endpoints": "Greene Road Switch (Dallas County) to Wilmer Switch (Dallas County)",
+  "geo": {
+    "counties": [
+      "TX|Dallas"
+    ],
+    "counties_basis": "Oncor project page: the whole line is in Dallas County.",
+    "endpoints": [
+      {
+        "basis": "Oncor CCN Public Viewer endpoint for the Greene-Wilmer 345 kV project; Oncor's page puts it 0.51 mi NE of Cornell Rd and Greene Rd.",
+        "confidence": "exact",
+        "county": "TX|Dallas",
+        "lat": 32.5992,
+        "lon": -96.72987,
+        "name": "Greene Road Switch",
+        "source": "https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer/3"
+      },
+      {
+        "basis": "HIFLD substation WILMER (Dallas County, in service); Oncor's page puts it 0.25 mi NE of Mason Rd and Van Rd.",
+        "confidence": "exact",
+        "county": "TX|Dallas",
+        "lat": 32.58199,
+        "lon": -96.68599,
+        "name": "Wilmer Switch",
+        "source": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0"
+      }
+    ]
+  },
+  "id": "oncor-greene-road-to-wilmer",
+  "importance": "Low",
+  "k2_action": "Note the new Greene Road Switch; little open land along this route.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/greene-road-switch-wilmer-switch-345-kv.html"
+    }
+  ],
+  "miles": "3",
+  "name": "Greene Road Switch to Wilmer",
+  "next_step": "Oncor expects to file the route case in April 2027, with a PUC decision by October 2027.",
+  "region": "Texas (ERCOT)",
+  "rpg": "25RPG042",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "status": "Oncor project page is live. One public meeting was held Oct 22, 2026 in Lancaster; notice, constraints and interactive route maps are posted. No route case yet.",
+  "updated": "2026-10-26",
+  "utility": "Oncor",
+  "why_k2": "A short (about 3 mile) new 345 kV line inside Dallas County near Lancaster. The land is mostly built up, so the new Greene Road Switch matters more than the route.",
+  "window": "Open now"
+}

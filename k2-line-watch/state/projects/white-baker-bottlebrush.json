@@ -1,0 +1,54 @@
+{
+  "checked": "checked 2026-10-12",
+  "counties": "Pecos",
+  "docket": "60382",
+  "endpoints": "White Baker Substation (Pecos County) to Bottlebrush Station (Pecos County)",
+  "geo": {
+    "counties": [
+      "TX|Pecos"
+    ],
+    "counties_basis": "TNMP project page (both endpoints and line in Pecos County); CCN study area not checked",
+    "endpoints": [
+      {
+        "basis": "HIFLD substation layer point named WHITE BAKER (138 kV, Pecos Co.); matches '25-30 miles east of Fort Stockton on I-10' (computed 27 mi E). The 345 kV yard is being added at this existing station.",
+        "confidence": "exact",
+        "county": "TX|Pecos",
+        "lat": 30.886,
+        "lon": -102.4231,
+        "name": "White Baker Substation (TNMP; new 345 kV yard at existing 138 kV station)",
+        "source": "https://www.lcra.org/energy/electric-transmission/transmission-line-routing/bakersfield-to-white-baker-345-kv-transmission-line-project/"
+      },
+      {
+        "basis": "ERCOT/PUC Permian plan exhibit says the new Bottlebrush 345/138 kV substation is 'near the existing Century 138-kV station'; placed at HIFLD 'OXY CENTURY' point, which is ~2 mi NE of US 285 and ~25 mi SE of Fort Stockton, consistent with TNMP's 'about one mile northeast of US 285'. Exact site not published; expect error of a few miles.",
+        "confidence": "approx",
+        "county": "TX|Pecos",
+        "lat": 30.607,
+        "lon": -102.582,
+        "name": "Bottlebrush Station (TNMP, proposed)",
+        "source": "https://interchange.puc.texas.gov/Documents/57441_31_1469330.PDF"
+      }
+    ]
+  },
+  "id": "white-baker-bottlebrush",
+  "importance": "High",
+  "k2_action": "Open Docket 60382, get the route map and end substations, map parcels around Bottlebrush.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "PUCT Docket 60382",
+      "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=60382&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+    }
+  ],
+  "miles": "",
+  "name": "White Baker to Bottlebrush",
+  "next_step": "Application with route options and landowner list; PUC decision in about 6 months.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 5,
+  "stage_label": "Route case at PUC",
+  "status": "TNMP filed its route application (CCN) for the White Baker to Bottlebrush 345 kV line on October 14, 2026 (Docket 60382, filing 2). The application normally includes the route options and the landowner list.",
+  "updated": "2026-10-15",
+  "utility": "TNMP",
+  "why_k2": "Brand new case in Pecos County, the busiest Permian queue county. Bottlebrush also connects to Solstice (765 kV hub).",
+  "window": "Act fast"
+}

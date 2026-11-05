@@ -1,0 +1,57 @@
+{
+  "checked": "needs checking",
+  "counties": "Midland, Martin, Howard, Mitchell",
+  "docket": "",
+  "endpoints": "Ranger Camp Switch (Mitchell County) to Midland East Switch (Midland County)",
+  "geo": {
+    "counties": [
+      "TX|Midland",
+      "TX|Martin",
+      "TX|Howard",
+      "TX|Mitchell"
+    ],
+    "counties_basis": "study area per Oncor project location maps and notice-newspaper counties (Midland, Martin, Howard, Mitchell)",
+    "endpoints": [
+      {
+        "basis": "Same site as in the Ranger Camp-Tonkawa project: 0.7 mi WSW of S FM 1229 & SH 163, read from a georeferenced Oncor notice map; the RC-ME inset map agrees. GIS check Oct 19, 2026: an unnamed, in-service 345 kV substation in the HIFLD layer is 0.18 mi from this point, so this is likely the switch. Still approximate until named.",
+        "confidence": "approx",
+        "county": "TX|Mitchell",
+        "lat": 32.332,
+        "lon": -100.918,
+        "name": "Ranger Camp Switch",
+        "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/ranger-camp-switch-to-midland-east-switch-345kv-transmission-lin.html"
+      },
+      {
+        "basis": "Oncor location-map inset shows it on Golf Course Rd just east of Fairgrounds Rd (OSM junction 32.0211,-102.0542) in NE Midland; ERCOT map georeference gives the same point.",
+        "confidence": "exact",
+        "county": "TX|Midland",
+        "lat": 32.022,
+        "lon": -102.051,
+        "name": "Midland East Switch",
+        "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/ranger-camp-switch-to-midland-east-switch-345kv-transmission-lin.html"
+      }
+    ]
+  },
+  "id": "oncor-ranger-camp-to-midland-east",
+  "importance": "Medium",
+  "k2_action": "Review the page and update this record.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/ranger-camp-switch-to-midland-east-switch-345kv-transmission-lin.html"
+    }
+  ],
+  "miles": "",
+  "name": "Ranger Camp to Midland East",
+  "next_step": "Open the page for open-house dates, route case number and in-service date.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 5,
+  "stage_label": "Route case at PUC",
+  "status": "Oncor filed the route case at the Texas PUC (Docket 60453, found Oct 29, 2026). Route options and the landowner list are now public; a decision usually takes about 6 months. Counties: Howard, Martin, Midland, Mitchell.",
+  "updated": "2026-10-29",
+  "utility": "Oncor",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "window": "Act fast"
+}

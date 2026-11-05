@@ -1,0 +1,57 @@
+{
+  "checked": "needs checking",
+  "counties": "Loving, Andrews",
+  "docket": "58126",
+  "endpoints": "Border Switch (Loving County) to Clearfork Switch (Andrews County)",
+  "geo": {
+    "counties": [
+      "TX|Andrews",
+      "TX|Ector",
+      "TX|Loving",
+      "TX|Winkler"
+    ],
+    "counties_basis": "study area per CCN application (Docket 58126 case style)",
+    "endpoints": [
+      {
+        "basis": "Oncor: 7 mi SE of RM 652 & CR 300 (OSM junction 31.972,-103.745, offset 7 mi SE) and ~6 mi south of the NM line; the two descriptions agree within ~1 mi.",
+        "confidence": "approx",
+        "county": "TX|Loving",
+        "lat": 31.9,
+        "lon": -103.66,
+        "name": "Border Switch",
+        "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/border-switch-clearfork-switch-345-kv-transmission-line-project.html"
+      },
+      {
+        "basis": "Oncor: 2 mi SW of SH 115 & FM 181; junction taken from OSM (~32.182,-102.749) and offset 2 mi SW.",
+        "confidence": "approx",
+        "county": "TX|Andrews",
+        "lat": 32.161,
+        "lon": -102.773,
+        "name": "Clearfork Switch",
+        "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/border-switch-clearfork-switch-345-kv-transmission-line-project.html"
+      }
+    ]
+  },
+  "id": "border-clearfork",
+  "importance": "Medium",
+  "k2_action": "Confirm the approved route; check for new substations along it.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/border-switch-clearfork-switch-345-kv-transmission-line-project.html"
+    }
+  ],
+  "miles": "",
+  "name": "Border to Clearfork",
+  "next_step": "Right-of-way buying and construction.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 6,
+  "stage_label": "Route approved",
+  "status": "Route case filed May 29, 2025 (Docket 58126), Loving to Andrews counties, 58 to 77 miles; completion planned 2028. Decision status needs checking.",
+  "updated": "2026-10-12",
+  "utility": "Oncor",
+  "why_k2": "Delaware Basin capacity; likely approved, so late.",
+  "window": "Late"
+}

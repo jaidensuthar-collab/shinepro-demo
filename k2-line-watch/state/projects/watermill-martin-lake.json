@@ -1,0 +1,55 @@
+{
+  "checked": "checked 2026-10-09",
+  "counties": "Dallas, Rusk",
+  "docket": "",
+  "endpoints": "Watermill (Dallas County) to Martin Lake (Rusk County)",
+  "geo": {
+    "counties": [
+      "TX|Dallas",
+      "TX|Rusk"
+    ],
+    "counties_basis": "endpoint counties only",
+    "endpoints": [
+      {
+        "basis": "GIS check Oct 19, 2026: matched by name to 'WATERMILL' in the HIFLD Electric Substations layer (345 kV, in service); the earlier estimate was 0.21 mi away. Earlier note: PUC Docket 57918 order says Watermill switch is about 3.5 mi west of the IH-45 / Malloy Bridge Rd intersection. The point is that intersection (OSM 32.5612, -96.6643) moved 3.5 mi west. It lands on Watermill Rd, which fits.",
+        "confidence": "exact",
+        "county": "TX|Dallas",
+        "lat": 32.55854,
+        "lon": -96.72618,
+        "name": "Watermill Switch (Oncor)",
+        "source": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0"
+      },
+      {
+        "basis": "GIS check Oct 19, 2026: matched by name to 'MARTIN LAKES' in the HIFLD Electric Substations layer (345 kV, in service); the earlier estimate was 0.07 mi away. Earlier note: Centroid of the Martin Lake Power Plant in OpenStreetMap (Nominatim), near Tatum. ERCOT plans the new 765 kV switchyard at the existing Martin Lake 345 kV substation at the plant, so the yard itself may sit 1-2 mi from this point.",
+        "confidence": "exact",
+        "county": "TX|Rusk",
+        "lat": 32.25747,
+        "lon": -94.57488,
+        "name": "Martin Lake (Oncor 765 kV switchyard at existing Martin Lake 345 kV substation)",
+        "source": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0"
+      }
+    ]
+  },
+  "id": "watermill-martin-lake",
+  "importance": "High",
+  "k2_action": "Map parcels within about 2 miles of both end substations and find the owners. Watch for open-house notices.",
+  "kv": "765",
+  "links": [
+    {
+      "label": "ERCOT Board item 14.1",
+      "url": "https://www.ercot.com/files/docs/2025/12/01/14.1-25RPG025-AEP-Texas-CPS-Energy-Oncor-and-CNP-Texas-765-kV-STEP-Eastern-Backbone-Project.pdf"
+    }
+  ],
+  "miles": "about 152",
+  "name": "Watermill to Martin Lake",
+  "next_step": "Open houses, then a route filing. In service 2030 to 2032.",
+  "region": "Texas (ERCOT)",
+  "rpg": "25RPG025",
+  "stage": 2,
+  "stage_label": "ERCOT review",
+  "status": "Endorsed by the ERCOT Board in December 2025. No open houses found yet.",
+  "updated": "2026-10-19",
+  "utility": "Eastern Backbone utilities (AEP Texas, CPS, Oncor, CenterPoint)",
+  "why_k2": "Part of ERCOT's 765 kV Eastern Backbone, endorsed by the ERCOT Board in December 2025. The end substations are public but no route options are yet, which is K2's best window: land near both end substations is safe whichever route wins.",
+  "window": "Open now"
+}

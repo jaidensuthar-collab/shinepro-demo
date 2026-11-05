@@ -1,0 +1,58 @@
+{
+  "checked": "needs checking",
+  "counties": "Culberson",
+  "docket": "57828",
+  "endpoints": "Drill Hole Switch (Culberson County) to El Capitan Switch (Culberson County)",
+  "geo": {
+    "counties": [
+      "TX|Culberson"
+    ],
+    "counties_basis": "study area per CCN application (PUCT Docket 57828 case style: Culberson County)",
+    "endpoints": [
+      {
+        "basis": "Placed from CCN notices ('~6 mi west of US 285, ~8 mi north of RM 652, near Culberson/Reeves line'); matches an unnamed OSM 138 kV station.",
+        "confidence": "approx",
+        "county": "TX|Culberson",
+        "lat": 31.9514,
+        "lon": -104.1007,
+        "name": "Drill Hole Switch",
+        "source": "https://s3.amazonaws.com/hnp-web/adv/Legals/51148849.pdf"
+      },
+      {
+        "basis": "Planned switch; offset 5.6 mi NW from the OSM Seven L Rd x Rustler Springs Rd junction (31.7008,-104.2209) per Oncor; also ~17-18 mi SW of Drill Hole as Oncor states.",
+        "confidence": "approx",
+        "county": "TX|Culberson",
+        "lat": 31.758,
+        "lon": -104.288,
+        "name": "El Capitan Switch",
+        "source": "https://www.oncor.com/content/dam/oncorwww/documents/about-us/transmission-system/current-trasmission-line-projects/el-capitan-to-dry-lake-345kv-transmission-line-project/EC_DL_PPM_Packet.pdf"
+      }
+    ]
+  },
+  "id": "oncor-drill-hole-to-el-capitan",
+  "importance": "Medium",
+  "k2_action": "Pull the route map and landowner list from the docket; focus on parcels near the end substations.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/Drill_Hole_Switch_to_El_Capitan_Switch_345_kV_Transmission_Line_Project.html"
+    },
+    {
+      "label": "PUCT Docket 57828",
+      "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=57828&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+    }
+  ],
+  "miles": "",
+  "name": "Drill Hole to El Capitan",
+  "next_step": "PUC decision on the route (usually about 6 months after filing).",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 5,
+  "stage_label": "Route case at PUC",
+  "status": "Route case filed in 2025 (Docket 57828); the judges' proposal for decision came in August 2025, so the route has probably been decided. Confirm in the docket. Culberson County.",
+  "updated": "2026-10-13",
+  "utility": "Oncor",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "window": "Act fast"
+}

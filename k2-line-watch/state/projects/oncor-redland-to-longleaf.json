@@ -1,0 +1,58 @@
+{
+  "checked": "checked 2026-10-13",
+  "counties": "Angelina",
+  "docket": "57553",
+  "endpoints": "Redland Switch (Angelina County) to Longleaf POI (Angelina County)",
+  "geo": {
+    "counties": [
+      "TX|Angelina"
+    ],
+    "counties_basis": "study area per CCN application (PUCT Docket 57553 case style: Angelina County)",
+    "endpoints": [
+      {
+        "basis": "ERCOT calls the Redland 345 kV site 'Herty North (Redland)'; OSM 'Herty North Switching Station' (Oncor) lies 2.7 mi east of US 59 and ~3.8 mi NE of Lufkin, matching Oncor.",
+        "confidence": "exact",
+        "county": "TX|Angelina",
+        "lat": 31.4197,
+        "lon": -94.6788,
+        "name": "Redland Switch",
+        "source": "https://www.openstreetmap.org/way/631186749"
+      },
+      {
+        "basis": "Offset ~1 mi ESE of Redland Switch per Oncor (line length 1.63-1.78 mi); Longleaf Power Station not in OSM.",
+        "confidence": "approx",
+        "county": "TX|Angelina",
+        "lat": 31.414,
+        "lon": -94.663,
+        "name": "Longleaf POI",
+        "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/REDLAND_LONGLEAF_345_kV_TRANSMISSION_LINE_PROJECT.html"
+      }
+    ]
+  },
+  "id": "oncor-redland-to-longleaf",
+  "importance": "Medium",
+  "k2_action": "Pull the approved route map from the docket and look at land near the end substations.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/REDLAND_LONGLEAF_345_kV_TRANSMISSION_LINE_PROJECT.html"
+    },
+    {
+      "label": "PUCT Docket 57553",
+      "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=57553&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+    }
+  ],
+  "miles": "",
+  "name": "Redland to Longleaf",
+  "next_step": "Oncor buys easements along the approved route, then builds.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 6,
+  "stage_label": "Route approved",
+  "status": "Route case decided (Docket 57553; Oncor has sent landowners notice of the final order). Angelina County. Longleaf is the hookup point for a new power plant, so this is mostly a plant connection.",
+  "updated": "2026-10-13",
+  "utility": "Oncor",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "window": "Late"
+}

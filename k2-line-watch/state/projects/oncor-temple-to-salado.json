@@ -1,0 +1,54 @@
+{
+  "checked": "checked 2026-10-13",
+  "counties": "Bell",
+  "docket": "",
+  "endpoints": "Temple Switch (Bell County) to Salado Switch (Bell County)",
+  "geo": {
+    "counties": [
+      "TX|Bell"
+    ],
+    "counties_basis": "study area per Oncor project page (rebuild within existing ROW, entirely in Bell County; CCN not yet filed)",
+    "endpoints": [
+      {
+        "basis": "OSM 'Temple Switching Station' (Oncor, 345/138/69 kV), consistent with Oncor's '0.75 mi SE of Loop 363 & SH 53'.",
+        "confidence": "exact",
+        "county": "TX|Bell",
+        "lat": 31.0792,
+        "lon": -97.3079,
+        "name": "Temple Switch",
+        "source": "https://www.openstreetmap.org/way/172709714"
+      },
+      {
+        "basis": "OSM 'Salado Switching Station' (Oncor, 345 kV), consistent with Oncor's '1.2 mi NE of IH 35 & FM 2484'.",
+        "confidence": "exact",
+        "county": "TX|Bell",
+        "lat": 30.9722,
+        "lon": -97.5108,
+        "name": "Salado Switch",
+        "source": "https://www.openstreetmap.org/way/174019698"
+      }
+    ]
+  },
+  "id": "oncor-temple-to-salado",
+  "importance": "Medium",
+  "k2_action": "Review the page and update this record.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/temple-switch---salado-switch-345-138-kv-transmission-line-proje.html"
+    }
+  ],
+  "miles": "",
+  "name": "Temple to Salado",
+  "next_step": "Oncor expects to file the route case in December 2026.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "status": "Oncor project page is live; no route case yet. Bell County.",
+  "updated": "2026-10-13",
+  "utility": "Oncor",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "window": "Open now"
+}

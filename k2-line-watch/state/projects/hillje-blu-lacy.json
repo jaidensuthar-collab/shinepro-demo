@@ -1,0 +1,70 @@
+{
+  "checked": "checked 2026-10-09",
+  "counties": "Wharton, Nueces and counties between (study area)",
+  "docket": "",
+  "endpoints": "Hillje substation (Wharton County) to Blu Lacy substation (near Nueces County)",
+  "geo": {
+    "counties": [
+      "TX|Wharton",
+      "TX|Jackson",
+      "TX|Victoria",
+      "TX|Calhoun",
+      "TX|Goliad",
+      "TX|Refugio",
+      "TX|Bee",
+      "TX|San Patricio",
+      "TX|Nueces"
+    ],
+    "counties_basis": "counties crossed by the preliminary route links on the AEP/CenterPoint open-house map (georeferenced and intersected with Census county boundaries); no official county list has been published",
+    "endpoints": [
+      {
+        "basis": "GIS check Oct 19, 2026: matched by name to 'HILLJE' in the HIFLD Electric Substations layer (345 kV, in service); the earlier estimate was 0.0 mi away. Earlier note: Existing Hillje 345 kV substation at 10973 CR 403 (29.029634, -96.235950) per CenterPoint's Docket 51568 notice. The new 765 kV substation is planned next to it, and the route links on the Hillje-Blu Lacy map end within about 1 mile of this point.",
+        "confidence": "exact",
+        "county": "TX|Wharton",
+        "lat": 29.02954,
+        "lon": -96.23605,
+        "name": "Hillje Substation (CenterPoint; new 765 kV yard at existing 345 kV site)",
+        "source": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0"
+      },
+      {
+        "basis": "Read from where the route links meet on two AEP route maps (Hillje-Blu Lacy and Blu Lacy-Howard), each georeferenced to known towns; both put it about 2 mi west of US 77 between Driscoll and Bishop. Uncertainty about 2-3 mi.",
+        "confidence": "approx",
+        "county": "TX|Nueces",
+        "lat": 27.65,
+        "lon": -97.82,
+        "name": "Blu Lacy Substation (AEP Texas, proposed)",
+        "source": "https://www.aeptransmission.com/texas/hillje-blulacy/docs/AEP_H-BL_Map.pdf"
+      }
+    ]
+  },
+  "id": "hillje-blu-lacy",
+  "importance": "High",
+  "k2_action": "Get the open-house route-link map (AEP virtual open house), mark shared segments, map parcels near Hillje and Blu Lacy.",
+  "kv": "765",
+  "links": [
+    {
+      "label": "AEP Texas project page",
+      "url": "https://aeptransmission.com/texas/hillje-blulacy/"
+    },
+    {
+      "label": "CenterPoint open-house boards",
+      "url": "https://www.centerpointenergy.com/en-us/Documents/Hillje-Blu-Lacy/Hillje-Blu-Lacy-Transmission-Improvement-Project-Open-House-Board.pdf"
+    },
+    {
+      "label": "ERCOT Board item 14.1",
+      "url": "https://www.ercot.com/files/docs/2025/12/01/14.1-25RPG025-AEP-Texas-CPS-Energy-Oncor-and-CNP-Texas-765-kV-STEP-Eastern-Backbone-Project.pdf"
+    }
+  ],
+  "miles": "about 155",
+  "name": "Hillje to Blu Lacy",
+  "next_step": "Route filing (CCN) expected early 2027; PUC decision expected fall 2027.",
+  "region": "Texas (ERCOT)",
+  "rpg": "25RPG025 (Eastern Backbone)",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "status": "Open houses ran late July to August 1, 2026 in Wharton, Victoria, El Campo and nearby towns. Comments closed August 26. No route has been chosen.",
+  "updated": "2026-10-19",
+  "utility": "CenterPoint and AEP Texas",
+  "why_k2": "First Eastern Backbone segment to show draft route links. The open-house map shows every segment the line could use; stretches most options share are the next-safest land after the end substations.",
+  "window": "Open now"
+}

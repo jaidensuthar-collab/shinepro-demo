@@ -1,0 +1,58 @@
+{
+  "checked": "needs checking",
+  "counties": "Caldwell, Gonzales, Lavaca, Colorado, Wharton",
+  "docket": "",
+  "endpoints": "Euclid Substation (Caldwell County) to Hillje Substation (Wharton County)",
+  "geo": {
+    "counties": [
+      "TX|Caldwell",
+      "TX|Gonzales",
+      "TX|Lavaca",
+      "TX|Colorado",
+      "TX|Wharton"
+    ],
+    "counties_basis": "project county list in ERCOT's 26RPG001 scope and EIR documents (2025 RTP)",
+    "endpoints": [
+      {
+        "basis": "Point read off the low-resolution ERCOT/LCRA 26RPG001 project map (georeferenced to other STEP substations; uncertainty about 5 mi). The county is from ERCOT's project county list (Caldwell, Colorado, Gonzales, Lavaca, Wharton). Euclid sits on the John Dumas-Hornsby 345 kV line about 2 mi from Misty substation; no exact site has been published.",
+        "confidence": "county",
+        "county": "TX|Caldwell",
+        "lat": 29.945,
+        "lon": -97.781,
+        "name": "Euclid Substation (LCRA TSC; new 765 kV yard next to existing Euclid 345 kV station)",
+        "source": "https://www.ercot.com/files/docs/2026/03/16/13.-26RPG001-LCRA-TSC-and-CEHE-Euclid-765-kV-Substation-and-Transmission-Line-Addition-Project_final.pdf"
+      },
+      {
+        "basis": "GIS check Oct 19, 2026: matched by name to 'HILLJE' in the HIFLD Electric Substations layer (345 kV, in service); the earlier estimate was 0.0 mi away. Earlier note: Existing Hillje 345 kV substation at 10973 CR 403 (29.029634, -96.235950) per CenterPoint's Docket 51568 notice. The new 765 kV substation is planned next to it, and the route links on the Hillje-Blu Lacy map end within about 1 mile of this point.",
+        "confidence": "exact",
+        "county": "TX|Wharton",
+        "lat": 29.02954,
+        "lon": -96.23605,
+        "name": "Hillje Substation (CenterPoint; new 765 kV yard at existing 345 kV site)",
+        "source": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0"
+      }
+    ]
+  },
+  "id": "euclid-765",
+  "importance": "High",
+  "k2_action": "Find the Euclid substation location in the ERCOT documents and map nearby parcels.",
+  "kv": "765",
+  "links": [
+    {
+      "label": "ERCOT RPG April 2026 status update",
+      "url": "https://www.ercot.com/files/docs/2026/04/10/EIR-Euclid-765-kV-Substation-and-Transmission-Line-Addition-Status-Update-RPG-April_2026.pdf"
+    }
+  ],
+  "miles": "",
+  "name": "Euclid 765 kV substation and line",
+  "next_step": "Route filings and open houses to come; details to confirm.",
+  "region": "Texas (ERCOT)",
+  "rpg": "26RPG001",
+  "stage": 2,
+  "stage_label": "ERCOT review",
+  "status": "Tier 1 project endorsed by the ERCOT Board on June 1, 2026. ERCOT documents give a 2031 in-service target for a Euclid to Hillje segment.",
+  "updated": "2026-10-19",
+  "utility": "LCRA TSC and CenterPoint",
+  "why_k2": "A brand-new 765 kV hub plus line, endorsed but early. Endpoint land is the play.",
+  "window": "Open now"
+}

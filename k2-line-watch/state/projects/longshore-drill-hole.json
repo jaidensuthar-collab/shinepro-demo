@@ -1,0 +1,67 @@
+{
+  "checked": "checked 2026-10-13",
+  "counties": "Andrews, Culberson, Ector, Glasscock, Howard, Loving, Martin, Midland, Reeves, Winkler",
+  "docket": "59029",
+  "endpoints": "Longshore Switch (Howard County) to Drill Hole Switch (Culberson County)",
+  "geo": {
+    "counties": [
+      "TX|Andrews",
+      "TX|Culberson",
+      "TX|Ector",
+      "TX|Glasscock",
+      "TX|Howard",
+      "TX|Loving",
+      "TX|Martin",
+      "TX|Midland",
+      "TX|Reeves",
+      "TX|Winkler"
+    ],
+    "counties_basis": "study area per CCN application / PUC order (Docket 59029)",
+    "endpoints": [
+      {
+        "basis": "Unnamed HIFLD 345 kV substation point that is the only 345 kV site matching '4.5 miles west of Forsan' (computed 5.0 mi W); OSM reverse-geocode places it on Longshore Road.",
+        "confidence": "exact",
+        "county": "TX|Howard",
+        "lat": 32.1003,
+        "lon": -101.4523,
+        "name": "Longshore Switch (Oncor)",
+        "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/dinosaur-to-longshore-765-kv-transmission-line-project.html"
+      },
+      {
+        "basis": "PUC order: 'in Culberson County near the Culberson and Reeves county line approximately six miles west of US 285 and approximately eight miles north of RM 652'; offsets computed from OSM geometry of US 285 and RM 652. Another Oncor page says 4 mi west of US 285, so expect error of up to ~3 mi.",
+        "confidence": "approx",
+        "county": "TX|Culberson",
+        "lat": 31.94,
+        "lon": -104.08,
+        "name": "Drill Hole Switch (Oncor)",
+        "source": "https://interchange.puc.texas.gov/Documents/59029_503_1678287.PDF"
+      }
+    ]
+  },
+  "id": "longshore-drill-hole",
+  "importance": "High",
+  "k2_action": "Confirm status; map parcels near Drill Hole.",
+  "kv": "765",
+  "links": [
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/longshore-switch---drill-hole-switch-765-kv-transmission-line-pr.html"
+    },
+    {
+      "label": "PUCT Docket 59029",
+      "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=59029&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+    }
+  ],
+  "miles": "",
+  "name": "Longshore to Drill Hole",
+  "next_step": "Oncor buys easements along the approved route, then builds.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 6,
+  "stage_label": "Route approved",
+  "status": "The PUC unanimously approved the route on August 28, 2026 (Docket 59029). About 160 miles; Oncor expects to finish in 2029.",
+  "updated": "2026-10-13",
+  "utility": "Oncor",
+  "why_k2": "Drill Hole becomes a 765 kV hub in the Delaware Basin.",
+  "window": "Late"
+}

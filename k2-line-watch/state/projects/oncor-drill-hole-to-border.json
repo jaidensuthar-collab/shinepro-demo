@@ -1,0 +1,60 @@
+{
+  "checked": "needs checking",
+  "counties": "Culberson, Reeves, Loving",
+  "docket": "58050",
+  "endpoints": "Drill Hole Switch (Culberson County) to Border Switch (Loving County)",
+  "geo": {
+    "counties": [
+      "TX|Culberson",
+      "TX|Reeves",
+      "TX|Loving"
+    ],
+    "counties_basis": "study area per CCN application (PUCT Docket 58050 case style)",
+    "endpoints": [
+      {
+        "basis": "Placed from CCN notices ('~6 mi west of US 285, ~8 mi north of RM 652, near Culberson/Reeves line, end of CR 454'); an unnamed OSM 138 kV station sits at that point and is used as the coordinate.",
+        "confidence": "approx",
+        "county": "TX|Culberson",
+        "lat": 31.9514,
+        "lon": -104.1007,
+        "name": "Drill Hole Switch",
+        "source": "https://s3.amazonaws.com/hnp-web/adv/Legals/51148849.pdf"
+      },
+      {
+        "basis": "Planned switch; ~6 mi south of TX-NM line and ~9 mi north of Quarry Field Switch per Oncor; consistent with '7 mi SE of RM 652 & CR 300'.",
+        "confidence": "approx",
+        "county": "TX|Loving",
+        "lat": 31.913,
+        "lon": -103.64,
+        "name": "Border Switch",
+        "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/drill-hole-switch-border-switch-345-kv-transmission-line-proje.html"
+      }
+    ]
+  },
+  "id": "oncor-drill-hole-to-border",
+  "importance": "Medium",
+  "k2_action": "Pull the route map and landowner list from the docket; focus on parcels near the end substations.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/drill-hole-switch-border-switch-345-kv-transmission-line-proje.html"
+    },
+    {
+      "label": "PUCT Docket 58050",
+      "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=58050&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+    }
+  ],
+  "miles": "",
+  "name": "Drill Hole to Border",
+  "next_step": "PUC decision on the route (usually about 6 months after filing).",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 5,
+  "stage_label": "Route case at PUC",
+  "status": "Route case filed in 2025 (Docket 58050), so the route has probably been decided. Confirm in the docket. Culberson, Reeves and Loving counties.",
+  "updated": "2026-10-13",
+  "utility": "Oncor",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "window": "Act fast"
+}

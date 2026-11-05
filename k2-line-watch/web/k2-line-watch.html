@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>K2 Line Watch</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Narrow:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -469,6 +470,11 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   const WEB = "Parallel Search";
   const state = { region: "", land: null, landSubs: [], lq: "", irps: [], isort: "growth", iopen: new Set(), projects: [], signals: [], research: [], meta: null, win: "all", stage: null, q: "", open: new Set(), sigShown: 25 };
   const $ = (id) => document.getElementById(id);
+  // Outside Claude (any static web host) there is no window.claude: every capability is null and the page
+  // reads data/line-watch-state.json (written by "python3 lw.py export-page") instead of the live database.
+  const inClaude = () => !!(window.claude && typeof window.claude.use === "function");
+  const useCap = (name) => (inClaude() ? window.claude.use(name) : Promise.resolve(null));
+  const directDownload = (href, name) => { const a = document.createElement("a"); a.href = href; a.download = name || ""; document.body.appendChild(a); a.click(); a.remove(); };
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const winCls = (w) => (w === "Open now" ? "open" : w === "Act fast" ? "fast" : "late");
 
@@ -807,7 +813,9 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   // so those are zipped with their real extension inside; GIS tools and Google Earth open them from the zip.
   async function saveExport(file, name, zipName) {
     const note = $("linesdlnote");
-    const dl = await claude.use("downloads");
+    const dl = await useCap("downloads");
+    // Outside Claude the files are plain links on the same site (.geojson and .kml need no zip there).
+    if (!dl && !inClaude()) { note.textContent = ""; directDownload("exports/" + file, name); return; }
     if (!dl) { note.textContent = "Downloads aren't available in this view. Open the page on claude.ai."; return; }
     note.textContent = "Preparing the file...";
     try {
@@ -1017,9 +1025,22 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 
   // ---------- data ----------
   let db = null;
+  async function loadStatic() {
+    try {
+      const r = await fetch("data/line-watch-state.json", { cache: "no-store" });
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      const s = await r.json();
+      state.projects = s.projects || []; state.signals = s.signals || []; state.irps = s.irps || []; state.meta = s.meta || null;
+      fillRegions(); renderLadder(); renderProjects(); renderSignals(); renderIrps(); renderLand(); renderStamp();
+      $("stamp").insertAdjacentHTML("beforeend", "<br>Read-only copy" + (s.generated ? ", updated " + esc(s.generated) : ""));
+    } catch (e) { $("stamp").textContent = "The watch list could not load (data/line-watch-state.json)."; }
+  }
   (async () => {
-    db = await claude.use("db");
-    if (!db) { $("stamp").textContent = "Sign in to Claude to load the watch list."; return; }
+    db = await useCap("db");
+    if (!db) {
+      if (inClaude()) { $("stamp").textContent = "Sign in to Claude to load the watch list."; return; }
+      return loadStatic();
+    }
     const fail = () => { $("stamp").textContent = "The watch list could not load. Reload the page to try again."; };
     db.collection("projects").onSnapshot((snap) => { state.projects = snap.docs.map((d) => ({ id: d.id, ...d.data() })); fillRegions(); renderLadder(); renderProjects(); renderStamp(); }, fail);
     db.collection("signals").onSnapshot((snap) => { state.signals = snap.docs.map((d) => ({ id: d.id, ...d.data() })); renderSignals(); renderStamp(); }, fail);
@@ -1131,7 +1152,7 @@ How to answer: plain English for someone new to the grid; short; lead with the a
   }
 
   async function setupWeb() {
-    mcp = await claude.use("mcp");
+    mcp = await useCap("mcp");
     if (!mcp) return showWeb(false, "unavailable");
     try {
       const listed = await mcp.listTools(WEB);
@@ -1149,7 +1170,7 @@ How to answer: plain English for someone new to the grid; short; lead with the a
       }
       webTools = tools;
       if (!tools.length) return showWeb(false, "not_connected");
-      const perms = await claude.use("permissions");
+      const perms = await useCap("permissions");
       const st = perms ? await perms.state("mcp:" + WEB) : "prompt";
       if (st === "denied") return showWeb(false, "denied");
       showWeb(true, st === "granted" ? "ready" : "needs_ok");
@@ -1157,7 +1178,7 @@ How to answer: plain English for someone new to the grid; short; lead with the a
   }
 
   async function allowWeb() {
-    const perms = await claude.use("permissions");
+    const perms = await useCap("permissions");
     if (!perms) return showWeb(false, "unavailable");
     const st = await perms.request(["mcp:" + WEB]);
     if (st["mcp:" + WEB] === "granted") setupWeb();
@@ -1219,7 +1240,8 @@ How to answer: plain English for someone new to the grid; short; lead with the a
   }
   $("gisbtn").addEventListener("click", async () => {
     const note = $("gisnote"), btn = $("gisbtn");
-    const dl = await claude.use("downloads");
+    const dl = await useCap("downloads");
+    if (!dl && !inClaude()) { note.textContent = ""; directDownload("exports/k2-gis-export.zip", "k2-gis-export.zip"); return; }
     if (!dl) { note.textContent = "Downloads aren't available in this view. Open the page on claude.ai."; return; }
     btn.disabled = true; note.textContent = "Preparing the files...";
     try {
@@ -1263,7 +1285,7 @@ How to answer: plain English for someone new to the grid; short; lead with the a
   $("suggest").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => ask(b.textContent)));
 
   (async () => {
-    sample = await claude.use("sample");
+    sample = await useCap("sample");
     if (!sample) { $("askbtn").disabled = true; $("webstate").textContent = "The assistant needs the page open on claude.ai while signed in."; return; }
     setupWeb();
   })();

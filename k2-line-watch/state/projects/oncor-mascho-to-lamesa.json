@@ -1,0 +1,61 @@
+{
+  "checked": "checked 2026-10-13",
+  "counties": "Andrews, Dawson, Gaines, Martin",
+  "docket": "60082",
+  "endpoints": "Mascho Switch (Andrews County) to Lamesa Switch (Dawson County)",
+  "geo": {
+    "counties": [
+      "TX|Andrews",
+      "TX|Dawson",
+      "TX|Gaines",
+      "TX|Martin"
+    ],
+    "counties_basis": "study area per CCN application (PUCT Docket 60082 case style)",
+    "endpoints": [
+      {
+        "basis": "Clearfork 345 kV switch is documented as adjacent to Andrews County South Switch; OSM 'Andrews County South Switching Station' (Sharyland/Oncor) sits ~2 mi SW of the OSM SH 115 x FM 181 junction (32.1820,-102.7488), matching the notice.",
+        "confidence": "exact",
+        "county": "TX|Andrews",
+        "lat": 32.165,
+        "lon": -102.7775,
+        "name": "Mascho Switch (formerly Clearfork Switch)",
+        "source": "https://www.openstreetmap.org/way/459062050"
+      },
+      {
+        "basis": "OSM Oncor 'Lamesa Substation' 1.2 mi NW of the SH 349 x US 87 junction, matching the notice.",
+        "confidence": "exact",
+        "county": "TX|Dawson",
+        "lat": 32.7193,
+        "lon": -101.9384,
+        "name": "Lamesa Switch",
+        "source": "https://www.openstreetmap.org/way/300613691"
+      }
+    ]
+  },
+  "id": "oncor-mascho-to-lamesa",
+  "importance": "Medium",
+  "k2_action": "Pull the route map and landowner list from the docket; focus on parcels near the end substations.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/mascho-switch-to-lamesa-switch-345kv-transmission-line-project.html"
+    },
+    {
+      "label": "PUCT Docket 60082",
+      "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=60082&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+    }
+  ],
+  "miles": "",
+  "name": "Mascho to Lamesa",
+  "next_step": "PUC decision on the route (usually about 6 months after filing).",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 5,
+  "stage_label": "Route case at PUC",
+  "status": "Oncor filed the route case on August 21, 2026 (Docket 60082). Andrews, Dawson, Gaines and Martin counties.",
+  "updated": "2026-10-13",
+  "utility": "Oncor",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "window": "Act fast"
+}

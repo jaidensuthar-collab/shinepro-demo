@@ -1,0 +1,58 @@
+{
+  "checked": "checked 2026-10-13",
+  "counties": "Pecos",
+  "docket": "59908",
+  "endpoints": "Bakersfield Substation (Pecos County) to White Baker Substation (Pecos County)",
+  "geo": {
+    "counties": [
+      "TX|Pecos"
+    ],
+    "counties_basis": "CCN application (Docket 59908): line is in Pecos County",
+    "endpoints": [
+      {
+        "basis": "HIFLD substation layer point named BAKERSFIELD (345 kV, Pecos Co.); matches LCRA 'about 11 miles southwest of McCamey' (computed 11.4 mi SSW).",
+        "confidence": "exact",
+        "county": "TX|Pecos",
+        "lat": 30.9763,
+        "lon": -102.2891,
+        "name": "Bakersfield Substation (LCRA TSC)",
+        "source": "https://www.lcra.org/energy/electric-transmission/transmission-line-routing/bakersfield-to-white-baker-345-kv-transmission-line-project/"
+      },
+      {
+        "basis": "HIFLD substation layer point named WHITE BAKER (138 kV, Pecos Co.); matches '25-30 miles east of Fort Stockton on I-10' (computed 27 mi E). The 345 kV yard is being added at this existing station.",
+        "confidence": "exact",
+        "county": "TX|Pecos",
+        "lat": 30.886,
+        "lon": -102.4231,
+        "name": "White Baker Substation (TNMP; new 345 kV yard at existing 138 kV station)",
+        "source": "https://www.lcra.org/energy/electric-transmission/transmission-line-routing/bakersfield-to-white-baker-345-kv-transmission-line-project/"
+      }
+    ]
+  },
+  "id": "bakersfield-white-baker",
+  "importance": "High",
+  "k2_action": "Pull the route map and landowner list from Docket 59908; focus on parcels near White Baker.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "LCRA project page",
+      "url": "https://www.lcra.org/energy/electric-transmission/transmission-line-routing/bakersfield-to-white-baker-345-kv-transmission-line-project/"
+    },
+    {
+      "label": "PUCT Docket 59908",
+      "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=59908&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+    }
+  ],
+  "miles": "",
+  "name": "Bakersfield to White Baker",
+  "next_step": "PUC decision expected about 6 months after filing.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 5,
+  "stage_label": "Route case at PUC",
+  "status": "LCRA TSC filed the route case on June 23, 2026 (Docket 59908). The line is in Pecos County.",
+  "updated": "2026-10-13",
+  "utility": "LCRA TSC",
+  "why_k2": "Feeds White Baker, the start of TNMP's new White Baker to Bottlebrush case.",
+  "window": "Act fast"
+}

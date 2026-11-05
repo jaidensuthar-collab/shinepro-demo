@@ -1,0 +1,58 @@
+{
+  "checked": "checked 2026-10-13",
+  "counties": "Reeves",
+  "docket": "59487",
+  "endpoints": "Dry Lake Switch (Reeves County) to Faulkner Substation (Reeves County)",
+  "geo": {
+    "counties": [
+      "TX|Reeves"
+    ],
+    "counties_basis": "study area per CCN application (PUCT Docket 59487 case style: Reeves County)",
+    "endpoints": [
+      {
+        "basis": "Planned switch; placed 5.4 mi WNW along FM 2119 from its OSM junction with CR 232 (31.5637,-103.8659), south side of FM 2119, per Oncor.",
+        "confidence": "approx",
+        "county": "TX|Reeves",
+        "lat": 31.583,
+        "lon": -103.955,
+        "name": "Dry Lake Switch",
+        "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/dry-lake-to-faulkner-345kv-transmission-line-project.html"
+      },
+      {
+        "basis": "Existing OSM TNMP 'Faulkner Substation' (138 kV) sits ~3.3 mi south of IH 20 at Toyah, matching the description of the proposed 345 kV Faulkner Substation, which is presumably at or beside it.",
+        "confidence": "approx",
+        "county": "TX|Reeves",
+        "lat": 31.2612,
+        "lon": -103.7934,
+        "name": "Faulkner Substation",
+        "source": "https://www.openstreetmap.org/way/501745940"
+      }
+    ]
+  },
+  "id": "oncor-dry-lake-to-faulkner",
+  "importance": "Medium",
+  "k2_action": "Pull the approved route map from the docket and look at land near the end substations.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/dry-lake-to-faulkner-345kv-transmission-line-project.html"
+    },
+    {
+      "label": "PUCT Docket 59487",
+      "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=59487&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+    }
+  ],
+  "miles": "",
+  "name": "Dry Lake to Faulkner",
+  "next_step": "Oncor buys easements along the approved route, then builds.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 6,
+  "stage_label": "Route approved",
+  "status": "Route case with Texas-New Mexico Power (Docket 59487). The docket shows a PUC order (about September 2026) and Oncor's map service marks Route 75, the recommended route, as approved. Reeves County.",
+  "updated": "2026-10-13",
+  "utility": "Oncor",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "window": "Late"
+}

@@ -1,0 +1,55 @@
+{
+  "checked": "needs checking",
+  "counties": "Mitchell, Scurry",
+  "docket": "58848",
+  "endpoints": "Ranger Camp Switch (Mitchell County) to Tonkawa Switch (Scurry County)",
+  "geo": {
+    "counties": [
+      "TX|Mitchell",
+      "TX|Scurry"
+    ],
+    "counties_basis": "study area per Oncor project page and notice map (Mitchell and Scurry counties)",
+    "endpoints": [
+      {
+        "basis": "Oncor: 0.7 mi WSW of S FM 1229 & SH 163 near Colorado City; position read from the Oncor notice map, georeferenced to OSM Dunn/Buford/Colorado City/Loraine (residuals <0.25 mi). GIS check Oct 19, 2026: an unnamed, in-service 345 kV substation in the HIFLD layer is 0.18 mi from this point, so this is likely the switch. Still approximate until named.",
+        "confidence": "approx",
+        "county": "TX|Mitchell",
+        "lat": 32.332,
+        "lon": -100.918,
+        "name": "Ranger Camp Switch",
+        "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/ranger-camp-to-tonkawa-345-kV-transmission-line-project.html"
+      },
+      {
+        "basis": "GIS check Oct 19, 2026: matched by name to 'TONKAWA' in the HIFLD Electric Substations layer (345 kV, in service); the earlier estimate was 0.86 mi away. Earlier note: Read from the Oncor notice map (just north of the Mitchell/Scurry line, west of the Fisher County line near US 84), georeferenced to OSM town points.",
+        "confidence": "exact",
+        "county": "TX|Scurry",
+        "lat": 32.53073,
+        "lon": -100.6842,
+        "name": "Tonkawa Switch",
+        "source": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0"
+      }
+    ]
+  },
+  "id": "ranger-camp-tonkawa",
+  "importance": "Medium",
+  "k2_action": "Low priority.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/ranger-camp-to-tonkawa-345-kV-transmission-line-project.html"
+    }
+  ],
+  "miles": "",
+  "name": "Ranger Camp to Tonkawa",
+  "next_step": "Right-of-way buying and construction.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 6,
+  "stage_label": "Route approved",
+  "status": "Notice of approval signed February 19, 2026 (Docket 58848).",
+  "updated": "2026-10-19",
+  "utility": "Oncor",
+  "why_k2": "Approved; late for the line itself.",
+  "window": "Late"
+}

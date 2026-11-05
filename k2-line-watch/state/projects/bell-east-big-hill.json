@@ -1,0 +1,76 @@
+{
+  "checked": "checked 2026-10-12",
+  "counties": "Study area: Bell, Burnet, Concho, Coryell, Lampasas, Llano, Mason, McCulloch, Menard, Milam, San Saba, Schleicher, Tom Green, Williamson",
+  "docket": "59475",
+  "endpoints": "Big Hill (Schleicher County) to Bell County East (Bell County)",
+  "geo": {
+    "counties": [
+      "TX|Bell",
+      "TX|Burnet",
+      "TX|Concho",
+      "TX|Coryell",
+      "TX|Lampasas",
+      "TX|Llano",
+      "TX|Mason",
+      "TX|McCulloch",
+      "TX|Menard",
+      "TX|Milam",
+      "TX|Mills",
+      "TX|San Saba",
+      "TX|Schleicher",
+      "TX|Tom Green",
+      "TX|Williamson"
+    ],
+    "counties_basis": "study area per CCN application (Docket 59475 case style); the notice says route links are only in Bell, Burnet, Concho, Lampasas, Mason, McCulloch, Menard, San Saba, Schleicher, Tom Green and Williamson",
+    "endpoints": [
+      {
+        "basis": "CCN notice: Link A0 starts at the 765 kV switchyard 'approximately 2,960 feet southeast from the intersection of Stallion Rd and Shaw Ln'; intersection located in OSM (Nominatim road segments meet at 31.0119,-97.2595; OSM names it Shaw Road) and offset 0.56 mi SE. Near Heidenheimer, SE of Temple.",
+        "confidence": "approx",
+        "county": "TX|Bell",
+        "lat": 31.0062,
+        "lon": -97.2528,
+        "name": "Bell County East Switch (Oncor)",
+        "source": "https://texasscorecard.com/wp-content/uploads/2026/05/Bell-East-Application-Notice.pdf"
+      },
+      {
+        "basis": "HIFLD substation layer point named BIG HILL (345 kV, Schleicher Co.); matches utility description '13 miles northeast of Eldorado' (computed 13.3 mi NNE). New 765 kV yard will be adjacent.",
+        "confidence": "exact",
+        "county": "TX|Schleicher",
+        "lat": 31.0472,
+        "lon": -100.5431,
+        "name": "Big Hill Substation (LCRA TSC; new 765 kV yard adjacent to existing 345 kV)",
+        "source": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0"
+      }
+    ]
+  },
+  "id": "bell-east-big-hill",
+  "importance": "High",
+  "k2_action": "Pull the landowner list and route map from Docket 59475; focus on parcels near both end substations. With the case delayed and possibly denied, weigh land near Big Hill (which other 765 kV lines also use) over land along the middle of the route.",
+  "kv": "765",
+  "links": [
+    {
+      "label": "LCRA project page",
+      "url": "https://www.lcra.org/energy/electric-transmission/transmission-line-routing/bell-county-east-to-big-hill-765-kv-transmission-project/"
+    },
+    {
+      "label": "PUCT Docket 59475",
+      "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=59475&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+    },
+    {
+      "label": "DailyTrib: decision delayed by remand (Sept. 25, 2026)",
+      "url": "https://www.dailytrib.com/2026/09/25/transmission-line-decision-delayed/"
+    }
+  ],
+  "miles": "214 to 244 (endpoints 199 miles apart)",
+  "name": "Bell County East to Big Hill",
+  "next_step": "Waiting on the judges' supplemental recommendation, then a PUC vote. The PUC can still approve it. Energize target was end of 2030.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 5,
+  "stage_label": "Route case at PUC",
+  "status": "Route case filed March 26, 2026 with 122 route options. In August the state judges (SOAH) recommended denying it: need not shown, and about 1,400 landowners may not have been properly notified. On Sept. 11 the PUC sent it back to the judges for a supplemental recommendation on two points, so the decision is delayed and no route is chosen yet.",
+  "updated": "2026-10-12",
+  "utility": "LCRA TSC and Oncor",
+  "why_k2": "Route options and the landowner list are public. The end substations (Big Hill, Schleicher County; Bell County East, Bell County) are fixed.",
+  "window": "Act fast"
+}

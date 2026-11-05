@@ -1,0 +1,76 @@
+{
+  "checked": "checked 2026-10-13",
+  "counties": "Bexar, Atascosa, Uvalde, Val Verde, Pecos and counties between",
+  "docket": "59336",
+  "endpoints": "Howard (Bexar County) to Solstice (Pecos County)",
+  "geo": {
+    "counties": [
+      "TX|Atascosa",
+      "TX|Bandera",
+      "TX|Bexar",
+      "TX|Crockett",
+      "TX|Edwards",
+      "TX|Kerr",
+      "TX|Kimble",
+      "TX|Kinney",
+      "TX|Medina",
+      "TX|Pecos",
+      "TX|Real",
+      "TX|Sutton",
+      "TX|Terrell",
+      "TX|Uvalde",
+      "TX|Val Verde"
+    ],
+    "counties_basis": "study area per CCN application Environmental Assessment (Docket 59336); Kimble is in the study area but has no proposed routes",
+    "endpoints": [
+      {
+        "basis": "HIFLD substation layer point named HOWARD (Bexar Co.); CCN letter puts the existing Howard 345 kV station about 2 mi north of the SH 1604 / SH 16 intersection (this point is ~3 mi north of it). The 765 kV yard will be in the vicinity.",
+        "confidence": "exact",
+        "county": "TX|Bexar",
+        "lat": 29.2806,
+        "lon": -98.5723,
+        "name": "Howard (Howard Road) Station (CPS Energy)",
+        "source": "https://www.cpsenergy.com/content/dam/corporate/en/Documents/Infrastructure/howard-solstice/howard-solstice-transmission-project/part-2-update-files/Utilities-Letter-and-List-ada-31726.pdf"
+      },
+      {
+        "basis": "HIFLD substation layer point named SOLSTICE (345 kV, Pecos Co.); matches '28 miles west of Fort Stockton along I-10' (computed 28.4 mi W).",
+        "confidence": "exact",
+        "county": "TX|Pecos",
+        "lat": 30.9484,
+        "lon": -103.3628,
+        "name": "Solstice Substation (AEP Texas)",
+        "source": "https://www.cpsenergy.com/content/dam/corporate/en/Documents/Infrastructure/howard-solstice/howard-solstice-transmission-project/part-2-update-files/Utilities-Letter-and-List-ada-31726.pdf"
+      }
+    ]
+  },
+  "id": "howard-solstice",
+  "importance": "High",
+  "k2_action": "Look at land near the two hubs, not along the route.",
+  "kv": "765",
+  "links": [
+    {
+      "label": "AEP Texas project page",
+      "url": "https://aeptransmission.com/texas/howard-solstice/"
+    },
+    {
+      "label": "CPS Energy project page",
+      "url": "https://www.cpsenergy.com/content/corporate/en/about-us/new-infrastructure/howard-solstice-transmission.html"
+    },
+    {
+      "label": "PUCT Docket 59336",
+      "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=59336&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+    }
+  ],
+  "miles": "about 370",
+  "name": "Howard to Solstice",
+  "next_step": "AEP Texas and CPS Energy buy easements along the approved route, then build.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 6,
+  "stage_label": "Route approved",
+  "status": "Route case at the PUC (Docket 59336). Final order on September 18, 2026 approved Route 4-Mod 1.",
+  "updated": "2026-10-13",
+  "utility": "AEP Texas and CPS Energy",
+  "why_k2": "The route is fixed, so land along it is already priced in. Solstice (Pecos County) and Howard (Bexar County) become 765 kV hubs that new lines and projects will connect to.",
+  "window": "Late"
+}

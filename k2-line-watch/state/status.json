@@ -1,0 +1,9 @@
+{
+  "last_checked": "2026-11-04 5pm CT",
+  "last_run_found": 187,
+  "last_run_new_for_k2": 1,
+  "kept": 112,
+  "dropped_not_k2": 646,
+  "projects": 39,
+  "note": "Snapshot taken Nov 4, 2026 from the Claude-hosted page (meta/status v45). Signals before this date live in the 'K2 Watch' Google Sheet; download that tab as CSV and run 'python3 lw.py import-sheet <file>' to copy them here."
+}

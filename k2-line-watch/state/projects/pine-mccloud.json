@@ -1,0 +1,54 @@
+{
+  "checked": "checked 2026-10-12",
+  "counties": "El Paso",
+  "docket": "60319",
+  "endpoints": "Pine Substation (El Paso County) to McCloud Central Substation (El Paso County)",
+  "geo": {
+    "counties": [
+      "TX|El Paso"
+    ],
+    "counties_basis": "study area per EPE project site and notice map (entirely El Paso County)",
+    "endpoints": [
+      {
+        "basis": "Project site says Pine is at the intersection of La Pine Ave and Appleton St (south of US 62/180); intersection geocoded from OSM street geometry.",
+        "confidence": "exact",
+        "county": "TX|El Paso",
+        "lat": 31.8123,
+        "lon": -106.0812,
+        "name": "Pine Substation",
+        "source": "https://pine-mccloudcentral.com/"
+      },
+      {
+        "basis": "Project site says west of US 54 just south of the NM state line; notice map shows it about 0.8 mi west of US 54 at the state line, offset from the OSM US 54 crossing (~-106.333).",
+        "confidence": "approx",
+        "county": "TX|El Paso",
+        "lat": 31.995,
+        "lon": -106.347,
+        "name": "McCloud Central Substation",
+        "source": "https://www.epelectric.com/el-paso-electric/uploads/PDFs/pine-mccloud-central_noticemap.pdf"
+      }
+    ]
+  },
+  "id": "pine-mccloud",
+  "importance": "Medium",
+  "k2_action": "Lower priority unless K2 works El Paso; check route map.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "PUCT Docket 60319",
+      "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=60319&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+    }
+  ],
+  "miles": "",
+  "name": "Pine to McCloud",
+  "next_step": "PUC decision in about 6 months.",
+  "region": "Texas (Western grid, El Paso)",
+  "rpg": "",
+  "stage": 5,
+  "stage_label": "Route case at PUC",
+  "status": "Route case opened September 2026 (Docket 60319); the full application with routes was filed October 9, 2026.",
+  "updated": "2026-10-12",
+  "utility": "El Paso Electric",
+  "why_k2": "New 345 kV line in El Paso County, outside ERCOT (El Paso Electric is in the Western grid).",
+  "window": "Act fast"
+}

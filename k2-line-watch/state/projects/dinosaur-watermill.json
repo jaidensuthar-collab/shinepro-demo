@@ -1,0 +1,55 @@
+{
+  "checked": "checked 2026-10-09",
+  "counties": "Somervell, Dallas",
+  "docket": "",
+  "endpoints": "Dinosaur substation to Watermill substation (Dallas County)",
+  "geo": {
+    "counties": [
+      "TX|Somervell",
+      "TX|Dallas"
+    ],
+    "counties_basis": "endpoint counties only",
+    "endpoints": [
+      {
+        "basis": "Oncor says it is about 3 mi north of the City of Glen Rose. The point is Glen Rose (OSM 32.2341, -97.7550) moved 3 mi north.",
+        "confidence": "approx",
+        "county": "TX|Somervell",
+        "lat": 32.2776,
+        "lon": -97.755,
+        "name": "Dinosaur Switch (Oncor, proposed; ERCOT 'New Substation 2')",
+        "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/dinosaur-to-longshore-765-kv-transmission-line-project.html"
+      },
+      {
+        "basis": "GIS check Oct 19, 2026: matched by name to 'WATERMILL' in the HIFLD Electric Substations layer (345 kV, in service); the earlier estimate was 0.21 mi away. Earlier note: PUC Docket 57918 order says Watermill switch is about 3.5 mi west of the IH-45 / Malloy Bridge Rd intersection. The point is that intersection (OSM 32.5612, -96.6643) moved 3.5 mi west. It lands on Watermill Rd, which fits.",
+        "confidence": "exact",
+        "county": "TX|Dallas",
+        "lat": 32.55854,
+        "lon": -96.72618,
+        "name": "Watermill Switch (Oncor)",
+        "source": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0"
+      }
+    ]
+  },
+  "id": "dinosaur-watermill",
+  "importance": "High",
+  "k2_action": "Map parcels within about 2 miles of both end substations and find the owners. Watch for open-house notices.",
+  "kv": "765",
+  "links": [
+    {
+      "label": "ERCOT Board item 14.1",
+      "url": "https://www.ercot.com/files/docs/2025/12/01/14.1-25RPG025-AEP-Texas-CPS-Energy-Oncor-and-CNP-Texas-765-kV-STEP-Eastern-Backbone-Project.pdf"
+    }
+  ],
+  "miles": "about 78",
+  "name": "Dinosaur to Watermill",
+  "next_step": "Open houses, then a route filing. In service 2030 to 2032.",
+  "region": "Texas (ERCOT)",
+  "rpg": "25RPG025",
+  "stage": 2,
+  "stage_label": "ERCOT review",
+  "status": "Endorsed by the ERCOT Board in December 2025 as part of the Eastern Backbone. No open houses found yet.",
+  "updated": "2026-10-19",
+  "utility": "Eastern Backbone utilities (AEP Texas, CPS, Oncor, CenterPoint)",
+  "why_k2": "Part of ERCOT's 765 kV Eastern Backbone, endorsed by the ERCOT Board in December 2025. The end substations are public but no route options are yet, which is K2's best window: land near both end substations is safe whichever route wins.",
+  "window": "Open now"
+}

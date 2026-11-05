@@ -1,0 +1,86 @@
+{
+  "checked": "needs checking",
+  "counties": "Gray, Wheeler, Hall, Childress, Howard",
+  "docket": "",
+  "endpoints": "",
+  "geo": {
+    "counties": [
+      "TX|Gray",
+      "TX|Wheeler",
+      "TX|Hall",
+      "TX|Childress",
+      "TX|Howard"
+    ],
+    "counties_basis": "endpoint counties only",
+    "endpoints": [
+      {
+        "basis": "GIS check Oct 19, 2026: matched by name to 'GRAY' in the HIFLD Electric Substations layer (345 kV, in service); the earlier estimate was 1.68 mi away. Earlier note: PUC Docket 37956 says Gray Substation is about 2 mi west-southwest of Lefors. The point is Lefors (OSM 35.4385, -100.8040) moved 2 mi WSW.",
+        "confidence": "exact",
+        "county": "TX|Gray",
+        "lat": 35.40751,
+        "lon": -100.81984,
+        "name": "CTT Gray Substation (existing 345 kV; new 765 kV)",
+        "source": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0"
+      },
+      {
+        "basis": "ERCOT says it will cut into the Gray-Tesla 345 kV line about 39 mi from Gray. The point is set about 38 mi ESE of Gray, the direction shown on CTT's Option 1 map. Expect 10+ mi error; Wheeler County is likely but not confirmed (Collingsworth or Donley are possible).",
+        "confidence": "county",
+        "county": "TX|Wheeler",
+        "lat": 35.2723,
+        "lon": -100.1895,
+        "name": "CTT Celtic Green Substation (proposed 765/345 kV)",
+        "source": "https://www.ercot.com/files/docs/2026/07/17/13.-EIR_Scope_Combined-AEPSC-Panhandle-Project-and-CTT-Panhandle-Reliability-Transmission-Plan-Project_RPG-July-2026.pdf"
+      },
+      {
+        "basis": "Placed at the town of Turkey: CTT labels this load site 'Cross/Turkey', and the georeferenced Option 1 map puts Cross near Turkey (about 10 mi uncertainty). Cross is on CTT's Silverton-Tesla 345 kV line, so Briscoe or Motley County cannot be ruled out.",
+        "confidence": "town",
+        "county": "TX|Hall",
+        "lat": 34.3939,
+        "lon": -100.8941,
+        "name": "CTT Cross Substation (existing 345 kV; new 765 kV)",
+        "source": "https://www.ercot.com/files/docs/2026/07/20/12.-ERCOT-RPG_CTT-PH-Reliability-Transmission-Plan_Presentation_July_21_2026.pdf"
+      },
+      {
+        "basis": "GIS check Oct 19, 2026: matched by name to 'TESLA' in the HIFLD Electric Substations layer (345 kV, in service); the earlier estimate was 2.59 mi away. Earlier note: PUC Docket 37956 says Tesla is about 6 mi southeast of Childress. The point is Childress (OSM 34.4258, -100.2054) moved 6 mi southeast.",
+        "confidence": "exact",
+        "county": "TX|Childress",
+        "lat": 34.37378,
+        "lon": -100.08701,
+        "name": "ETT Tesla Substation (existing 345 kV)",
+        "source": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0"
+      },
+      {
+        "basis": "Oncor says it is about 4.5 mi west of the City of Forsan. The point is Forsan (OSM 32.1098, -101.3662) moved 4.5 mi west.",
+        "confidence": "approx",
+        "county": "TX|Howard",
+        "lat": 32.1098,
+        "lon": -101.4432,
+        "name": "Longshore Switch (Oncor, existing)",
+        "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/dinosaur-to-longshore-765-kv-transmission-line-project.html"
+      }
+    ],
+    "segments": []
+  },
+  "id": "panhandle-plan",
+  "importance": "Medium",
+  "k2_action": "Read the July 2026 presentation for line voltages and substations.",
+  "kv": "",
+  "links": [
+    {
+      "label": "Cross Texas presentation (July 2026)",
+      "url": "https://www.ercot.com/files/docs/2026/07/20/12.-ERCOT-RPG_CTT-PH-Reliability-Transmission-Plan_Presentation_July_21_2026.pdf"
+    }
+  ],
+  "miles": "",
+  "name": "Panhandle Reliability Transmission Plan",
+  "next_step": "ERCOT recommendation, then route filings.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 2,
+  "stage_label": "ERCOT review",
+  "status": "Presented to ERCOT's planning group in July 2026; ERCOT is reviewing a combined AEP and Cross Texas Panhandle project.",
+  "updated": "2026-10-19",
+  "utility": "Cross Texas and AEP",
+  "why_k2": "Regional build-out in the Panhandle, a strong wind and solar area.",
+  "window": "Open now"
+}

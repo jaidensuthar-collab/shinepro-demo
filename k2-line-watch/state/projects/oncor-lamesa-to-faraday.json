@@ -1,0 +1,59 @@
+{
+  "checked": "checked 2026-10-13",
+  "counties": "Borden, Dawson",
+  "docket": "60083",
+  "endpoints": "Lamesa Switch (Dawson County) to Faraday Switch (Borden County)",
+  "geo": {
+    "counties": [
+      "TX|Borden",
+      "TX|Dawson"
+    ],
+    "counties_basis": "study area per CCN application (PUCT Docket 60083 case style: Borden and Dawson Counties)",
+    "endpoints": [
+      {
+        "basis": "OSM Oncor 'Lamesa Substation' (138/69 kV) sits 1.2 mi NW of the OSM SH 349 x US 87 junction (32.7073,-101.9270), matching Oncor's description.",
+        "confidence": "exact",
+        "county": "TX|Dawson",
+        "lat": 32.7193,
+        "lon": -101.9384,
+        "name": "Lamesa Switch",
+        "source": "https://www.openstreetmap.org/way/300613691"
+      },
+      {
+        "basis": "OSM 'Faraday Substation' (WETT, 345 kV) ~8.8 mi south of Gail, matching Oncor/WETT description.",
+        "confidence": "exact",
+        "county": "TX|Borden",
+        "lat": 32.6481,
+        "lon": -101.396,
+        "name": "Faraday Switch",
+        "source": "https://www.openstreetmap.org/way/453376973"
+      }
+    ]
+  },
+  "id": "oncor-lamesa-to-faraday",
+  "importance": "Medium",
+  "k2_action": "Pull the route map and landowner list from the docket; focus on parcels near the end substations.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/lamesa---faraday-345kv.html"
+    },
+    {
+      "label": "PUCT Docket 60083",
+      "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=60083&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+    }
+  ],
+  "miles": "",
+  "name": "Lamesa to Faraday",
+  "next_step": "PUC decision on the route (usually about 6 months after filing).",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 5,
+  "stage_label": "Route case at PUC",
+  "status": "Oncor and Wind Energy Transmission Texas filed the route case in August 2026 (Docket 60083). Borden and Dawson counties.",
+  "updated": "2026-10-13",
+  "utility": "Oncor",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "window": "Act fast"
+}

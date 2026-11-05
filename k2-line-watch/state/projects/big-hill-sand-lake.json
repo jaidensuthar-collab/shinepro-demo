@@ -1,0 +1,73 @@
+{
+  "checked": "checked 2026-10-13",
+  "counties": "Crane, Crockett, Ector, Irion, Pecos, Reagan, Reeves, Schleicher, Tom Green, Upton, Ward, Winkler",
+  "docket": "59182",
+  "endpoints": "Big Hill (Schleicher County) to Sand Lake (Ward County)",
+  "geo": {
+    "counties": [
+      "TX|Crane",
+      "TX|Crockett",
+      "TX|Ector",
+      "TX|Irion",
+      "TX|Pecos",
+      "TX|Reagan",
+      "TX|Reeves",
+      "TX|Schleicher",
+      "TX|Tom Green",
+      "TX|Upton",
+      "TX|Ward",
+      "TX|Winkler"
+    ],
+    "counties_basis": "study area per LCRA project page; the CCN case style (Docket 59182) lists route counties Crane, Crockett, Irion, Pecos, Reagan, Reeves, Schleicher, Tom Green, Upton and Ward",
+    "endpoints": [
+      {
+        "basis": "HIFLD substation layer point named BIG HILL (345 kV, Schleicher Co.); matches utility description '13 miles northeast of Eldorado' (computed 13.3 mi NNE). New 765 kV yard will be adjacent.",
+        "confidence": "exact",
+        "county": "TX|Schleicher",
+        "lat": 31.0472,
+        "lon": -100.5431,
+        "name": "Big Hill Substation (LCRA TSC; new 765 kV yard adjacent to existing 345 kV)",
+        "source": "https://services5.arcgis.com/HDRa0B57OVrv2E1q/ArcGIS/rest/services/Electric_Substations/FeatureServer/0"
+      },
+      {
+        "basis": "PUC order (Docket 57633) and Oncor: 'in Ward County, approximately six miles northeast of Pecos', on the NW side of an FM road; computed 6 mi NE offset from Pecos city center (31.4254,-103.4953).",
+        "confidence": "approx",
+        "county": "TX|Ward",
+        "lat": 31.487,
+        "lon": -103.423,
+        "name": "Sand Lake Switch (Oncor)",
+        "source": "https://interchange.puc.texas.gov/Documents/57633_48_1526524.PDF"
+      }
+    ]
+  },
+  "id": "big-hill-sand-lake",
+  "importance": "High",
+  "k2_action": "Pull the route map and landowner list from Docket 59182; focus on parcels near both end substations.",
+  "kv": "765",
+  "links": [
+    {
+      "label": "LCRA project page",
+      "url": "https://www.lcra.org/energy/electric-transmission/transmission-line-routing/big-hill-to-sand-lake-765-kv-transmission-project/"
+    },
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/big-hill-switch-to-sand-lake-switch-765-kv-transmission-line-project.html"
+    },
+    {
+      "label": "PUCT Docket 59182",
+      "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=59182&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+    }
+  ],
+  "miles": "",
+  "name": "Big Hill to Sand Lake",
+  "next_step": "PUC vote on the route. Target in service winter 2030.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 5,
+  "stage_label": "Route case at PUC",
+  "status": "Route case filed January 15, 2026 with 106 route options. The judges' proposal for decision came in June 2026; as of September no final order had been signed.",
+  "updated": "2026-10-13",
+  "utility": "LCRA TSC and Oncor",
+  "why_k2": "Route options and the landowner list are public. Ends at Sand Lake (Ward County, about 6 miles northeast of Pecos) and Big Hill (Schleicher County).",
+  "window": "Act fast"
+}

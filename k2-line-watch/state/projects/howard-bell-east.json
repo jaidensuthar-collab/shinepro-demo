@@ -1,0 +1,55 @@
+{
+  "checked": "checked 2026-10-09",
+  "counties": "Bexar, Bell",
+  "docket": "",
+  "endpoints": "Howard (Bexar County) to Bell County East (Bell County)",
+  "geo": {
+    "counties": [
+      "TX|Bexar",
+      "TX|Bell"
+    ],
+    "counties_basis": "endpoint counties only",
+    "endpoints": [
+      {
+        "basis": "PUC Docket 59336 order says the existing Howard 345 kV station is about 2 mi north of the SH 1604 / SH 16 intersection (2024 Docket 57115 notice says about 3 mi northeast). Point is placed between the two readings, using that intersection geocoded from OpenStreetMap (29.2335, -98.5843).",
+        "confidence": "approx",
+        "county": "TX|Bexar",
+        "lat": 29.263,
+        "lon": -98.567,
+        "name": "Howard (Howard Road) Substation (CPS Energy)",
+        "source": "https://interchange.puc.texas.gov/Documents/59336_95_1597112.PDF"
+      },
+      {
+        "basis": "Oncor says it is 5.5 mi southeast of the City of Temple. The point is Temple (OSM 31.0984, -97.3430) moved 5.5 mi southeast.",
+        "confidence": "approx",
+        "county": "TX|Bell",
+        "lat": 31.042,
+        "lon": -97.2772,
+        "name": "Bell County East Switch (Oncor)",
+        "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/bell-county-east---big-hill-765-kv-transmission-line-project.html"
+      }
+    ]
+  },
+  "id": "howard-bell-east",
+  "importance": "High",
+  "k2_action": "Map parcels within about 2 miles of both end substations and find the owners. Watch for open-house notices.",
+  "kv": "765",
+  "links": [
+    {
+      "label": "ERCOT Board item 14.1",
+      "url": "https://www.ercot.com/files/docs/2025/12/01/14.1-25RPG025-AEP-Texas-CPS-Energy-Oncor-and-CNP-Texas-765-kV-STEP-Eastern-Backbone-Project.pdf"
+    }
+  ],
+  "miles": "about 170",
+  "name": "Howard to Bell County East",
+  "next_step": "Open houses, then a route filing. In service 2030 to 2032.",
+  "region": "Texas (ERCOT)",
+  "rpg": "25RPG025",
+  "stage": 2,
+  "stage_label": "ERCOT review",
+  "status": "Endorsed by the ERCOT Board in December 2025. No open houses found yet.",
+  "updated": "2026-10-12",
+  "utility": "Eastern Backbone utilities (AEP Texas, CPS, Oncor, CenterPoint)",
+  "why_k2": "Part of ERCOT's 765 kV Eastern Backbone, endorsed by the ERCOT Board in December 2025. The end substations are public but no route options are yet, which is K2's best window: land near both end substations is safe whichever route wins.",
+  "window": "Open now"
+}

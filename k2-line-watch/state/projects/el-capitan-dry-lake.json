@@ -1,0 +1,55 @@
+{
+  "checked": "needs checking",
+  "counties": "Culberson, Reeves",
+  "docket": "59353",
+  "endpoints": "El Capitan Switch (Culberson County) to Dry Lake Switch (Reeves County)",
+  "geo": {
+    "counties": [
+      "TX|Culberson",
+      "TX|Reeves"
+    ],
+    "counties_basis": "study area per Oncor project page (Culberson and Reeves counties)",
+    "endpoints": [
+      {
+        "basis": "Oncor: 5.6 mi NW of Seven L Rd & Rustler Springs Rd; OSM junction (31.7008,-104.2209) offset 5.6 mi NW.",
+        "confidence": "approx",
+        "county": "TX|Culberson",
+        "lat": 31.758,
+        "lon": -104.288,
+        "name": "El Capitan Switch",
+        "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/el-capitan-to-dry-lake-345kv-transmission-line-project.html"
+      },
+      {
+        "basis": "Oncor: south side of FM 2119, 5.4 mi NW of CR 232; OSM FM 2119/CR 232 junction (31.5637,-103.8659), then 5.4 mi along FM 2119 (which runs WNW).",
+        "confidence": "approx",
+        "county": "TX|Reeves",
+        "lat": 31.582,
+        "lon": -103.955,
+        "name": "Dry Lake Switch",
+        "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/el-capitan-to-dry-lake-345kv-transmission-line-project.html"
+      }
+    ]
+  },
+  "id": "el-capitan-dry-lake",
+  "importance": "Medium",
+  "k2_action": "Low priority for new land; note the substations.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/el-capitan-to-dry-lake-345kv-transmission-line-project.html"
+    }
+  ],
+  "miles": "about 25",
+  "name": "El Capitan to Dry Lake",
+  "next_step": "Right-of-way buying next.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 6,
+  "stage_label": "Route approved",
+  "status": "Route case filed February 26, 2026 (Docket 59353); Oncor's page says the PUC approved it August 20, 2026.",
+  "updated": "2026-10-12",
+  "utility": "Oncor",
+  "why_k2": "Approved, so the route is fixed; utility land agents are likely active.",
+  "window": "Late"
+}

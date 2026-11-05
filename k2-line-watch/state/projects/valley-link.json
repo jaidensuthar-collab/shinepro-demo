@@ -1,0 +1,125 @@
+{
+  "checked": "needs checking",
+  "counties": "Campbell, Appomattox, Buckingham, Fluvanna, Goochland, Louisa, Orange, Spotsylvania, Culpeper, Frederick, Clarke, Loudoun, Putnam, Kanawha, Jackson, Roane, Calhoun, Gilmer, Braxton, Lewis, Doddridge, Harrison, Upshur, Barbour, Randolph, Tucker, Preston, Grant, Hardy, Hampshire, Berkeley, Jefferson, Garrett, Frederick",
+  "docket": "",
+  "endpoints": "Two lines: Joshua Falls (Campbell County, VA) to Yeat (Culpeper County, VA), and Amos (Putnam County, WV) to Welton Spring (Hardy County, WV) to Rocky Point (Frederick County, MD)",
+  "geo": {
+    "counties": [
+      "VA|Campbell",
+      "VA|Appomattox",
+      "VA|Buckingham",
+      "VA|Fluvanna",
+      "VA|Goochland",
+      "VA|Louisa",
+      "VA|Orange",
+      "VA|Spotsylvania",
+      "VA|Culpeper",
+      "VA|Frederick",
+      "VA|Clarke",
+      "VA|Loudoun",
+      "WV|Putnam",
+      "WV|Kanawha",
+      "WV|Jackson",
+      "WV|Roane",
+      "WV|Calhoun",
+      "WV|Gilmer",
+      "WV|Braxton",
+      "WV|Lewis",
+      "WV|Doddridge",
+      "WV|Harrison",
+      "WV|Upshur",
+      "WV|Barbour",
+      "WV|Randolph",
+      "WV|Tucker",
+      "WV|Preston",
+      "WV|Grant",
+      "WV|Hardy",
+      "WV|Hampshire",
+      "WV|Berkeley",
+      "WV|Jefferson",
+      "MD|Garrett",
+      "MD|Frederick"
+    ],
+    "counties_basis": "Joshua Falls-Yeat: up to 9 Virginia counties per Valley Link / news (preliminary routes). Valley North: counties with Valley Link open houses or named in its June 2026 announcement (study segments, no route chosen).",
+    "endpoints": [
+      {
+        "basis": "HIFLD substation layer point named JOSHUA FALLS (765 kV, Campbell Co.) for the existing station; Appalachian Power plans to relocate it about 2 miles southeast, and the new site is not geocoded.",
+        "confidence": "exact",
+        "county": "VA|Campbell",
+        "lat": 37.4254,
+        "lon": -79.0362,
+        "name": "Joshua Falls Substation (Appalachian Power; to be relocated ~2 mi SE)",
+        "source": "https://www.aeptransmission.com/virginia/JoshuaFallsStation"
+      },
+      {
+        "basis": "Culpeper County resolution places it in the Richardsville area of SE Culpeper County; point is the Richardsville hamlet (Nominatim).",
+        "confidence": "town",
+        "county": "VA|Culpeper",
+        "lat": 38.4001,
+        "lon": -77.7289,
+        "name": "Yeat Substation (proposed, Dominion/Valley Link)",
+        "source": "https://web.culpepercounty.gov/community/page/immediate-press-release-4172026"
+      },
+      {
+        "basis": "HIFLD substation layer point named JOHN AMOS (765 kV, Putnam Co.).",
+        "confidence": "exact",
+        "county": "WV|Putnam",
+        "lat": 38.4737,
+        "lon": -81.8294,
+        "name": "Amos Substation (John E. Amos plant, AEP)",
+        "source": "https://vltransmission.com/wp-content/uploads/2026/06/ValleyNorth_AnnouncementPackage_WV-1.pdf"
+      },
+      {
+        "basis": "PJM: 'northwestern Hardy County'; opposition group says the purchased site is on US 220 south of Reynolds Gap Rd. Placed on the US 220 corridor south of Moorefield toward the Grant County line; the exact site is unknown, so allow ~5 mi of error.",
+        "confidence": "town",
+        "county": "WV|Hardy",
+        "lat": 39.03,
+        "lon": -79.03,
+        "name": "Welton Spring(s) Substation (proposed)",
+        "source": "https://stopmarlvirginia.com/welton-springs-substation"
+      },
+      {
+        "basis": "Described as about 2 mi south of the Doubs substation (HIFLD 39.2964,-77.5148) on Potomac Edison land behind the Rocky Point Creamery (OSM 39.2744,-77.5155), near Point of Rocks.",
+        "confidence": "approx",
+        "county": "MD|Frederick",
+        "lat": 39.268,
+        "lon": -77.515,
+        "name": "Rocky Point Substation (proposed)",
+        "source": "https://stopmarlvirginia.com/rocky-point-substation"
+      }
+    ],
+    "segments": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3,
+        4
+      ]
+    ]
+  },
+  "id": "valley-link",
+  "importance": "Medium",
+  "k2_action": "Watch the West Virginia segment only; skip Northern Virginia.",
+  "kv": "765",
+  "links": [
+    {
+      "label": "News (Lynchburg News and Advance)",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOQjJmelJWallUT1ZBczEza1ZDSENCLWJwWVN2MGVYdmVlX21oeWw5a0NRcEhoRW4zTzBwZmJsOElLS2RxOHFrbk9ZemhsN3lLbzVJdWFTekE1ZGpkbEJyc0JOdmZWWUhOZFdLYTN2UlBHaTdwM05qTGFrUGdScXdDSjNhYkRybHRJXzNDVjBWLTlBNDVJQmI4YmF5NmYybXY1aVNRVWZJMA?oc=5"
+    }
+  ],
+  "miles": "",
+  "name": "Valley Link",
+  "next_step": "State route approvals in Virginia and neighboring states.",
+  "region": "Other US (PJM: Virginia area)",
+  "rpg": "",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "status": "Billion-dollar 765 kV line in the PJM region. Valley Link holds 12 drop-in open houses in November 2026 showing potential routes for the first time. West Virginia dates: Nov 4 Fisher and Hambleton (Tucker County HS), Nov 5 Charleston (Sissonville MS), Nov 12 Buckhannon (Brushy Fork), Nov 17 Spencer and Capon Bridge, plus others; Virginia and Maryland: Nov 5 Winchester, Nov 12 Lovettsville, Nov 19 Brunswick, MD (WV Public Broadcasting and Third News, Oct 13-14). Preferred and alternate routes are due in early/mid 2027. Campbell County, VA and Loudoun County, VA have passed resolutions opposing it.",
+  "updated": "2026-10-16",
+  "utility": "Valley Link Transmission (PJM)",
+  "why_k2": "Mixed fit with K2's plan: the West Virginia part (Amos to Welton Spring) is in a priority market, but the northern end runs toward Northern Virginia, the one market the plan avoids. Kept for awareness.",
+  "window": "Open now"
+}

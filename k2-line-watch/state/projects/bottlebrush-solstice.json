@@ -1,0 +1,54 @@
+{
+  "checked": "needs checking",
+  "counties": "Pecos",
+  "docket": "",
+  "endpoints": "Bottlebrush Station (Pecos County) to Solstice Substation (Pecos County)",
+  "geo": {
+    "counties": [
+      "TX|Pecos"
+    ],
+    "counties_basis": "AEP Texas/TNMP project pages: about 60-mile line between two substations in Pecos County (concept map shows links only in Pecos County); endpoint counties only otherwise",
+    "endpoints": [
+      {
+        "basis": "ERCOT/PUC Permian plan exhibit says the new Bottlebrush 345/138 kV substation is 'near the existing Century 138-kV station'; placed at HIFLD 'OXY CENTURY' point, which is ~2 mi NE of US 285 and ~25 mi SE of Fort Stockton, consistent with TNMP's 'about one mile northeast of US 285'. Exact site not published; expect error of a few miles.",
+        "confidence": "approx",
+        "county": "TX|Pecos",
+        "lat": 30.607,
+        "lon": -102.582,
+        "name": "Bottlebrush Station (TNMP, proposed)",
+        "source": "https://interchange.puc.texas.gov/Documents/57441_31_1469330.PDF"
+      },
+      {
+        "basis": "HIFLD substation layer point named SOLSTICE (345 kV, Pecos Co.); matches '28 miles west of Fort Stockton along I-10' (computed 28.4 mi W).",
+        "confidence": "exact",
+        "county": "TX|Pecos",
+        "lat": 30.9484,
+        "lon": -103.3628,
+        "name": "Solstice Substation (AEP Texas)",
+        "source": "https://www.cpsenergy.com/content/dam/corporate/en/Documents/Infrastructure/howard-solstice/howard-solstice-transmission-project/part-2-update-files/Utilities-Letter-and-List-ada-31726.pdf"
+      }
+    ]
+  },
+  "id": "bottlebrush-solstice",
+  "importance": "High",
+  "k2_action": "Read the project page; note end substations.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "AEP Texas project page",
+      "url": "https://aeptransmission.com/texas/bottlebrush-solstice/"
+    }
+  ],
+  "miles": "",
+  "name": "Bottlebrush to Solstice",
+  "next_step": "Check the page for open houses and filing date.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "status": "AEP Texas project page is live. Stage and dates need checking.",
+  "updated": "2026-10-12",
+  "utility": "AEP Texas",
+  "why_k2": "Links Bottlebrush to the Solstice 765 kV hub in Pecos County.",
+  "window": "Open now"
+}

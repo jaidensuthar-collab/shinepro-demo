@@ -1,0 +1,55 @@
+{
+  "checked": "needs checking",
+  "counties": "Midland, Martin",
+  "docket": "58519",
+  "endpoints": "Rockhound Switch (Midland County) to Connell Switch (Martin County)",
+  "geo": {
+    "counties": [
+      "TX|Midland",
+      "TX|Martin"
+    ],
+    "counties_basis": "study area per CCN application (Docket 58519: Midland and Martin counties)",
+    "endpoints": [
+      {
+        "basis": "Placed from Oncor's Ranger Camp-Midland East location map (diamond ~1.2 mi W, 1.5 mi S of Dix), consistent with '10 mi east of Midland, 0.7-1 mi south of IH 20' and just south of the Martin County line.",
+        "confidence": "approx",
+        "county": "TX|Midland",
+        "lat": 32.078,
+        "lon": -101.886,
+        "name": "Rockhound Switch",
+        "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/ranger-camp-switch-to-midland-east-switch-345kv-transmission-lin.html"
+      },
+      {
+        "basis": "Final order: 4 mi NE of the City of Midland and ~1 mi west of FM 1212 in Martin County; ERCOT map puts Glass Ranch (1 mi east of Connell) by FM 1212 near 32.19N; placed 1 mi west of OSM FM 1212 at that latitude.",
+        "confidence": "approx",
+        "county": "TX|Martin",
+        "lat": 32.192,
+        "lon": -102.025,
+        "name": "Connell Switch",
+        "source": "https://interchange.puc.texas.gov/Documents/58519_98_1600939.PDF"
+      }
+    ]
+  },
+  "id": "rockhound-connell",
+  "importance": "Medium",
+  "k2_action": "Low priority.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/rockhound-switch---connell-switch-345-kv-transmission-line-proje.html"
+    }
+  ],
+  "miles": "",
+  "name": "Rockhound to Connell",
+  "next_step": "Right-of-way buying and construction.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 6,
+  "stage_label": "Route approved",
+  "status": "Route case filed September 2025 (Docket 58519); notice of approval signed March 12, 2026.",
+  "updated": "2026-10-12",
+  "utility": "Oncor",
+  "why_k2": "Approved; late for the line itself.",
+  "window": "Late"
+}

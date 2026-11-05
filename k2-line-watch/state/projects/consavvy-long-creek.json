@@ -1,0 +1,65 @@
+{
+  "checked": "checked 2026-10-12",
+  "counties": "Glasscock, Howard, Jones, Midland, Mitchell, Nolan, Shackelford, Taylor",
+  "docket": "60190",
+  "endpoints": "Consavvy Switch (Midland County) to Long Creek Switch (Shackelford County)",
+  "geo": {
+    "counties": [
+      "TX|Glasscock",
+      "TX|Howard",
+      "TX|Jones",
+      "TX|Midland",
+      "TX|Mitchell",
+      "TX|Nolan",
+      "TX|Shackelford",
+      "TX|Taylor"
+    ],
+    "counties_basis": "study area per CCN application (Docket 60190 case style and Oncor notice maps)",
+    "endpoints": [
+      {
+        "basis": "Placed from Oncor notice map Fig. 1 (switch just east of S CR 1160 at E CR 160), georeferenced to OSM FM 1213/FM 1379/CR 160; agrees within ~1.3 mi with Oncor text '5.0 mi SE of IH 20 & SH 158'.",
+        "confidence": "approx",
+        "county": "TX|Midland",
+        "lat": 31.914,
+        "lon": -101.993,
+        "name": "Consavvy Switch",
+        "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/Consavvy-to-Long-Creek-Switch-345kV.html"
+      },
+      {
+        "basis": "Placed from Oncor notice map Fig. 12, georeferenced to the Jones/Shackelford county line and the OSM FM 604/SH 351 junction (Oncor text: 5.4 mi NE of that junction). GIS check Oct 19, 2026: an unnamed, in-service 345 kV substation in the HIFLD layer is 0.09 mi from this point, so this is likely the switch. Still approximate until named.",
+        "confidence": "approx",
+        "county": "TX|Shackelford",
+        "lat": 32.63,
+        "lon": -99.54,
+        "name": "Long Creek Switch",
+        "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/Consavvy-to-Long-Creek-Switch-345kV.html"
+      }
+    ]
+  },
+  "id": "consavvy-long-creek",
+  "importance": "High",
+  "k2_action": "Get the route map from Docket 60190; map parcels near both end switches.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "PUCT Docket 60190",
+      "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=60190&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+    },
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/Consavvy-to-Long-Creek-Switch-345kV.html"
+    }
+  ],
+  "miles": "",
+  "name": "Consavvy to Long Creek",
+  "next_step": "PUC decision in about 6 months from filing.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 5,
+  "stage_label": "Route case at PUC",
+  "status": "Route case filed late August or early September 2026 (Docket 60190).",
+  "updated": "2026-10-19",
+  "utility": "Oncor",
+  "why_k2": "Crosses eight West-Central Texas counties; route options and landowners are public now.",
+  "window": "Act fast"
+}

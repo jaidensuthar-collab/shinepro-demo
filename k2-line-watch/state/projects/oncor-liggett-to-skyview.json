@@ -1,0 +1,55 @@
+{
+  "checked": "needs checking",
+  "counties": "Dallas, Tarrant",
+  "docket": "",
+  "endpoints": "Liggett Switch (Dallas County) to Skyview Switch (Tarrant County)",
+  "geo": {
+    "counties": [
+      "TX|Dallas",
+      "TX|Tarrant"
+    ],
+    "counties_basis": "study area per Oncor project page (Dallas and Tarrant counties)",
+    "endpoints": [
+      {
+        "basis": "Oncor: south of and adjacent to W Rock Island Rd, 1/4 mi east of Roy Orr Blvd; OSM junction (32.8161,-97.0304) offset 1/4 mi east.",
+        "confidence": "exact",
+        "county": "TX|Dallas",
+        "lat": 32.815,
+        "lon": -97.026,
+        "name": "Liggett Switch",
+        "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/liggett-switch-to-skyview-switch-345-kv-transmission-line-projec.html"
+      },
+      {
+        "basis": "Oncor: 1/4 mi SW of Trinity Blvd & SH 360 in Fort Worth; junction found by OSM reverse geocoding (~32.822,-97.062), then offset 1/4 mi SW.",
+        "confidence": "approx",
+        "county": "TX|Tarrant",
+        "lat": 32.8195,
+        "lon": -97.065,
+        "name": "Skyview Switch",
+        "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/liggett-switch-to-skyview-switch-345-kv-transmission-line-projec.html"
+      }
+    ]
+  },
+  "id": "oncor-liggett-to-skyview",
+  "importance": "Medium",
+  "k2_action": "Review the page and update this record.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/liggett-switch-to-skyview-switch-345-kv-transmission-line-projec.html"
+    }
+  ],
+  "miles": "",
+  "name": "Liggett to Skyview",
+  "next_step": "Open the page for open-house dates, route case number and in-service date.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "status": "Oncor project page is live. Stage and dates not yet reviewed.",
+  "updated": "2026-10-12",
+  "utility": "Oncor",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "window": "Open now"
+}

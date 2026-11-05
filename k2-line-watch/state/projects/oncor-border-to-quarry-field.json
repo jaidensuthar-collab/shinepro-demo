@@ -1,0 +1,58 @@
+{
+  "checked": "checked 2026-10-13",
+  "counties": "Loving",
+  "docket": "57837",
+  "endpoints": "Border Switch (Loving County) to Quarry Field Switch (Loving County)",
+  "geo": {
+    "counties": [
+      "TX|Loving"
+    ],
+    "counties_basis": "study area per CCN application (PUCT Docket 57837 case style: Loving County)",
+    "endpoints": [
+      {
+        "basis": "Planned switch not in OSM; placed ~6 mi south of the TX-NM line (32.000) and ~9 mi north of Quarry Field per Oncor; consistent with '7 mi SE of RM 652 & CR 300' (OSM RM 652 passes ~31.985,-103.73).",
+        "confidence": "approx",
+        "county": "TX|Loving",
+        "lat": 31.913,
+        "lon": -103.64,
+        "name": "Border Switch",
+        "source": "https://www.oncor.com/content/dam/oncorwww/documents/about-us/transmission-system/current-trasmission-line-projects/border-switch-to-clearfork-switch/Border-Clearfork%20QA%20Handout%20(Jan%2015-2025).docx_safe.pdf"
+      },
+      {
+        "basis": "OSM 'Quarry Field Switching Station' (Oncor, 345/138 kV).",
+        "confidence": "exact",
+        "county": "TX|Loving",
+        "lat": 31.7831,
+        "lon": -103.6381,
+        "name": "Quarry Field Switch",
+        "source": "https://www.openstreetmap.org/way/1006404970"
+      }
+    ]
+  },
+  "id": "oncor-border-to-quarry-field",
+  "importance": "Medium",
+  "k2_action": "Pull the approved route map from the docket and look at land near the end substations.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/border-switch---quarry-field-switch-345-kv-transmission-line-pro.html"
+    },
+    {
+      "label": "PUCT Docket 57837",
+      "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=57837&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+    }
+  ],
+  "miles": "",
+  "name": "Border to Quarry Field",
+  "next_step": "Oncor buys easements along the approved route, then builds.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 6,
+  "stage_label": "Route approved",
+  "status": "Route approved by the PUC on July 11, 2025 (Docket 57837). Loving County.",
+  "updated": "2026-10-13",
+  "utility": "Oncor",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "window": "Late"
+}

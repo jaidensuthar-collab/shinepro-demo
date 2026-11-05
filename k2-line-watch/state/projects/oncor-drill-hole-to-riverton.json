@@ -1,0 +1,60 @@
+{
+  "checked": "needs checking",
+  "counties": "Culberson, Loving, Reeves",
+  "docket": "58007",
+  "endpoints": "Drill Hole Switch (Culberson County) to Riverton Switch (Reeves County)",
+  "geo": {
+    "counties": [
+      "TX|Culberson",
+      "TX|Loving",
+      "TX|Reeves"
+    ],
+    "counties_basis": "study area per CCN application (PUCT Docket 58007 case style)",
+    "endpoints": [
+      {
+        "basis": "Placed from CCN notices ('~6 mi west of US 285, ~8 mi north of RM 652, near Culberson/Reeves line'); matches an unnamed OSM 138 kV station.",
+        "confidence": "approx",
+        "county": "TX|Culberson",
+        "lat": 31.9514,
+        "lon": -104.1007,
+        "name": "Drill Hole Switch",
+        "source": "https://s3.amazonaws.com/hnp-web/adv/Legals/51148849.pdf"
+      },
+      {
+        "basis": "OSM 'Riverton Switching Station' (Oncor, 345/138 kV), ~2 mi east of US 285 as Oncor describes.",
+        "confidence": "exact",
+        "county": "TX|Reeves",
+        "lat": 31.8067,
+        "lon": -103.8612,
+        "name": "Riverton Switch",
+        "source": "https://www.openstreetmap.org/way/1006279947"
+      }
+    ]
+  },
+  "id": "oncor-drill-hole-to-riverton",
+  "importance": "Medium",
+  "k2_action": "Pull the route map and landowner list from the docket; focus on parcels near the end substations.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/drill-hole-switch---riverton-switch-345-kv-transmission-line-pro.html"
+    },
+    {
+      "label": "PUCT Docket 58007",
+      "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=58007&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+    }
+  ],
+  "miles": "",
+  "name": "Drill Hole to Riverton",
+  "next_step": "PUC decision on the route (usually about 6 months after filing).",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 5,
+  "stage_label": "Route case at PUC",
+  "status": "Route case filed in 2025 (Docket 58007), so the route has probably been decided. Confirm in the docket. Culberson, Loving and Reeves counties.",
+  "updated": "2026-10-13",
+  "utility": "Oncor",
+  "why_k2": "A new 345 kV line on Oncor's current-projects list.",
+  "window": "Act fast"
+}

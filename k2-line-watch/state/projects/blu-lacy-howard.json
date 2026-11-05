@@ -1,0 +1,72 @@
+{
+  "checked": "checked 2026-10-09",
+  "counties": "Nueces area to Bexar (study area not yet published)",
+  "docket": "",
+  "endpoints": "Blu Lacy substation (near Nueces County) to Howard substation (Bexar County)",
+  "geo": {
+    "counties": [
+      "TX|Bexar",
+      "TX|Wilson",
+      "TX|Atascosa",
+      "TX|Karnes",
+      "TX|Live Oak",
+      "TX|McMullen",
+      "TX|Bee",
+      "TX|San Patricio",
+      "TX|Duval",
+      "TX|Jim Wells",
+      "TX|Nueces"
+    ],
+    "counties_basis": "counties crossed by the preliminary route links on the AEP Blu Lacy-Howard fact-sheet map (7/21/2026, georeferenced and intersected with Census county boundaries); no official county list has been published",
+    "endpoints": [
+      {
+        "basis": "Read from where the route links meet on two AEP route maps (Hillje-Blu Lacy and Blu Lacy-Howard), each georeferenced to known towns; both put it about 2 mi west of US 77 between Driscoll and Bishop. Uncertainty about 2-3 mi.",
+        "confidence": "approx",
+        "county": "TX|Nueces",
+        "lat": 27.65,
+        "lon": -97.82,
+        "name": "Blu Lacy Substation (AEP Texas, proposed)",
+        "source": "https://www.aeptransmission.com/texas/hillje-blulacy/docs/AEP_H-BL_Map.pdf"
+      },
+      {
+        "basis": "PUC Docket 59336 order says the existing Howard 345 kV station is about 2 mi north of the SH 1604 / SH 16 intersection (2024 Docket 57115 notice says about 3 mi northeast). Point is placed between the two readings, using that intersection geocoded from OpenStreetMap (29.2335, -98.5843).",
+        "confidence": "approx",
+        "county": "TX|Bexar",
+        "lat": 29.263,
+        "lon": -98.567,
+        "name": "Howard (Howard Road) Substation (CPS Energy)",
+        "source": "https://interchange.puc.texas.gov/Documents/59336_95_1597112.PDF"
+      }
+    ]
+  },
+  "id": "blu-lacy-howard",
+  "importance": "High",
+  "k2_action": "Watch AEP and CPS pages for the new open-house dates. Map parcels near Howard (Bexar) and Blu Lacy now.",
+  "kv": "765",
+  "links": [
+    {
+      "label": "AEP Texas project page",
+      "url": "https://aeptransmission.com/texas/blulacy-howard/"
+    },
+    {
+      "label": "CPS Energy project page",
+      "url": "https://www.cpsenergy.com/content/corporate/en/about-us/new-infrastructure/blulacy-howard.html"
+    },
+    {
+      "label": "ERCOT Board item 14.1",
+      "url": "https://www.ercot.com/files/docs/2025/12/01/14.1-25RPG025-AEP-Texas-CPS-Energy-Oncor-and-CNP-Texas-765-kV-STEP-Eastern-Backbone-Project.pdf"
+    }
+  ],
+  "miles": "about 150",
+  "name": "Blu Lacy to Howard",
+  "next_step": "New open-house dates, then route filing (CCN) early 2027; PUC decision expected fall 2027.",
+  "region": "Texas (ERCOT)",
+  "rpg": "25RPG025 (Eastern Backbone)",
+  "stage": 3,
+  "stage_label": "Open houses / project page",
+  "status": "Open houses planned for August 25 to 27, 2026 are being rescheduled. No route has been chosen.",
+  "updated": "2026-10-12",
+  "utility": "AEP Texas and CPS Energy",
+  "why_k2": "Open houses have not happened yet, so almost nobody has seen draft routes. End substations are known.",
+  "window": "Open now"
+}

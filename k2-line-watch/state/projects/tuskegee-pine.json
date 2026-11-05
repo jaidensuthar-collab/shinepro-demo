@@ -1,0 +1,54 @@
+{
+  "checked": "checked 2026-10-12",
+  "counties": "El Paso",
+  "docket": "60152",
+  "endpoints": "Tuskegee Substation (El Paso County) to Pine Substation (El Paso County)",
+  "geo": {
+    "counties": [
+      "TX|El Paso"
+    ],
+    "counties_basis": "study area per EPE project site and constraints map (eastern El Paso County)",
+    "endpoints": [
+      {
+        "basis": "Project site says east of Horizon City on Tuskegee Blvd between Indian Trail Dr and Little Lake Rd; OSM Tuskegee Ave/Indian Trail Dr junction (31.654,-106.063) plus constraints-map position just west of it.",
+        "confidence": "approx",
+        "county": "TX|El Paso",
+        "lat": 31.655,
+        "lon": -106.067,
+        "name": "Tuskegee Substation",
+        "source": "https://tuskegee-pine.com/"
+      },
+      {
+        "basis": "Project site says intersection of La Pine Ave and Appleton St; intersection geocoded from OSM street geometry.",
+        "confidence": "exact",
+        "county": "TX|El Paso",
+        "lat": 31.8123,
+        "lon": -106.0812,
+        "name": "Pine Substation",
+        "source": "https://tuskegee-pine.com/"
+      }
+    ]
+  },
+  "id": "tuskegee-pine",
+  "importance": "Medium",
+  "k2_action": "Lower priority unless K2 works El Paso.",
+  "kv": "345",
+  "links": [
+    {
+      "label": "PUCT Docket 60152",
+      "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=60152&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+    }
+  ],
+  "miles": "",
+  "name": "Tuskegee to Pine",
+  "next_step": "PUC decision in about 6 months.",
+  "region": "Texas (Western grid, El Paso)",
+  "rpg": "",
+  "stage": 5,
+  "stage_label": "Route case at PUC",
+  "status": "Route case filed August 2026 (Docket 60152). An intervenor asked for a route-adequacy hearing.",
+  "updated": "2026-10-12",
+  "utility": "El Paso Electric",
+  "why_k2": "New 345 kV lines in El Paso County (Western grid).",
+  "window": "Act fast"
+}

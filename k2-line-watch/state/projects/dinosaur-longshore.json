@@ -1,0 +1,79 @@
+{
+  "checked": "checked 2026-10-13",
+  "counties": "Borden, Bosque, Brown, Callahan, Coke, Coleman, Comanche, Eastland, Erath, Glasscock, Hamilton, Hood, Howard, Jones, Mitchell, Nolan, Runnels, Shackelford, Somervell, Stephens, Sterling, Taylor",
+  "docket": "59315",
+  "endpoints": "Dinosaur Switch (Somervell County) to Longshore Switch (Howard County)",
+  "geo": {
+    "counties": [
+      "TX|Borden",
+      "TX|Bosque",
+      "TX|Brown",
+      "TX|Callahan",
+      "TX|Coke",
+      "TX|Coleman",
+      "TX|Comanche",
+      "TX|Eastland",
+      "TX|Erath",
+      "TX|Glasscock",
+      "TX|Hamilton",
+      "TX|Hood",
+      "TX|Howard",
+      "TX|Jones",
+      "TX|Mitchell",
+      "TX|Nolan",
+      "TX|Runnels",
+      "TX|Shackelford",
+      "TX|Somervell",
+      "TX|Stephens",
+      "TX|Sterling",
+      "TX|Taylor"
+    ],
+    "counties_basis": "study area / route counties per CCN application case style (Docket 59315)",
+    "endpoints": [
+      {
+        "basis": "Two published descriptions agree: '3 miles north of Glen Rose' (offset from Glen Rose, 32.234,-97.755) and 'about 2 miles southeast of the existing Comanche Peak Switch' (HIFLD 32.298,-97.790).",
+        "confidence": "approx",
+        "county": "TX|Somervell",
+        "lat": 32.278,
+        "lon": -97.762,
+        "name": "Dinosaur Switch (Oncor, proposed)",
+        "source": "https://interchange.puc.texas.gov/Documents/59315_5651_1648107.PDF"
+      },
+      {
+        "basis": "Unnamed HIFLD 345 kV substation point that is the only 345 kV site matching '4.5 miles west of Forsan' (computed 5.0 mi W); OSM reverse-geocode places it on Longshore Road.",
+        "confidence": "exact",
+        "county": "TX|Howard",
+        "lat": 32.1003,
+        "lon": -101.4523,
+        "name": "Longshore Switch (Oncor)",
+        "source": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/dinosaur-to-longshore-765-kv-transmission-line-project.html"
+      }
+    ]
+  },
+  "id": "dinosaur-longshore",
+  "importance": "High",
+  "k2_action": "Confirm status; focus on the new substations.",
+  "kv": "765",
+  "links": [
+    {
+      "label": "Oncor project page",
+      "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/dinosaur-to-longshore-765-kv-transmission-line-project.html"
+    },
+    {
+      "label": "PUCT Docket 59315",
+      "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=59315&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
+    }
+  ],
+  "miles": "",
+  "name": "Dinosaur to Longshore",
+  "next_step": "Oncor buys easements along the approved route, then builds.",
+  "region": "Texas (ERCOT)",
+  "rpg": "",
+  "stage": 6,
+  "stage_label": "Route approved",
+  "status": "The PUC unanimously approved the route on August 28, 2026 (Docket 59315). Oncor expects to finish in 2028.",
+  "updated": "2026-10-13",
+  "utility": "Oncor",
+  "why_k2": "Large new 765 kV corridor; route likely fixed, so K2 is late on the line itself but early on new substations along it.",
+  "window": "Late"
+}

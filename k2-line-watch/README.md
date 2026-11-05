@@ -77,6 +77,14 @@ It drops:
   into `data/irps.json`, which is loaded into the page database's `irps` collection.
 * **Monitor Feed tab**: the old raw log from before the filter. Kept as an archive.
 
+## Run it with any agent (Hermes, Claude Code, OpenClaw) or none
+
+Every job is one command in `lw.py` (`watch`, `texas`, `export-page`, `status`, `import-sheet`) that keeps
+its memory in `state/` and needs no AI model. The skills in `skills/` (open SKILL.md format) tell an agent
+how to run each job and what to do with the result, and `AGENTS.md` holds the job list and the hard rules.
+`HERMES.md` is a step-by-step move to Hermes Agent with OpenRouter and Composio. Outside Claude the page
+reads `web/data/line-watch-state.json` (from `lw.py export-page`), so `web/` can be served as a plain website.
+
 ## How a scheduled run works
 
 A scheduled task runs this every day at about 7am and 5pm Central. The same run checks ERCOT's planning
