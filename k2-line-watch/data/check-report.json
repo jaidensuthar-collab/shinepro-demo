@@ -137,13 +137,13 @@
  },
  {
   "check": "Time window (2023-11 built to 2031-11 due) and stage names",
-  "checked": 905,
+  "checked": 1003,
   "errors": [],
   "warnings": []
  },
  {
-  "check": "Substation points are in Texas and in the county ERCOT lists",
-  "checked": 1011,
+  "check": "Substation points are in their state and in the county the source lists",
+  "checked": 1094,
   "errors": [],
   "warnings": [
    "substation AJ Swope: point is 11 miles outside Deaf Smith County, the county ERCOT lists",
@@ -154,6 +154,7 @@
    "substation Cottonwood: point is 10 miles outside Motley County, the county ERCOT lists",
    "substation Creosote: point is 10 miles outside Ward County, the county ERCOT lists",
    "substation Faulkner: point is 36 miles outside Pecos County, the county ERCOT lists",
+   "substation Ft Smith: placed in AR, outside the regions this list covers (the line crosses the state line)",
    "substation Gibbons Creek: point is 33 miles outside Harris County, the county ERCOT lists",
    "substation Gibbons Creek/Zenith: point is 9 miles outside Waller County, the county ERCOT lists",
    "substation Navarro: point is 16 miles outside Hill County, the county ERCOT lists",
@@ -163,6 +164,7 @@
    "substation Riverton: point is 18 miles outside Ward County, the county ERCOT lists",
    "substation Roanoke Switch: point is 13 miles outside Tarrant County, the county ERCOT lists",
    "substation Rockhound: point is 11 miles outside Martin County, the county ERCOT lists",
+   "substation Vado: placed in NM, outside the regions this list covers (the line crosses the state line)",
    "substation White River: point is 17 miles outside Motley County, the county ERCOT lists",
    "substation Zenith/Mission: point is 9 miles outside Waller County, the county ERCOT lists",
    "substation Big Creek: point is 10 miles outside Brazoria County, the county ERCOT lists",
@@ -200,18 +202,18 @@
    "substation Triangle: point is 4 miles outside Midland County, the county ERCOT lists",
    "substation Vealmoor: point is 6 miles outside Howard County, the county ERCOT lists",
    "substation Yucca Drive: point is 10 miles outside Ector County, the county ERCOT lists",
-   "23 lines have no placeable substation (ERCOT gives no county): tpit-92274, tpit-110819, tpit-78361B, tpit-110391, tpit-110487, tpit-112229, tpit-89955, tpit-89957"
+   "33 lines have no placeable substation (no county given, and not on public maps by name): tpit-92274, tpit-110819, tpit-78361B, spp-171375, tpit-110391, tpit-110487, tpit-112229, tpit-89955"
   ]
  },
  {
   "check": "Substation status agrees between lines and substations",
-  "checked": 1035,
+  "checked": 1152,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Downloads match the page (CSV, GeoJSON, KML)",
-  "checked": 3833,
+  "checked": 4219,
   "errors": [],
   "warnings": []
  },
@@ -220,5 +222,34 @@
   "checked": 24,
   "errors": [],
   "warnings": []
+ },
+ {
+  "check": "SPP lines match SPP's project list (voltage, in-service date, stage)",
+  "checked": 88,
+  "errors": [],
+  "warnings": [
+   "spp-143182 Chisholm - Woodward - Border 345 kV Ckt 1: stage 'in construction' is estimated (estimated: planned in-service date 2025-12 has passed and SPP has not marked it complete)",
+   "spp-112458 Sooner - Wekiwa 345 kV New Line: stage 'in construction' is estimated (estimated: planned in-service date 2025-11 has passed and SPP has not marked it complete)",
+   "spp-157879 Anadarko - Gracemont 138 kV Ckt 3 New Line: stage 'approved' is estimated (estimated: SPP notice to construct issued (Delay - Mitigation) and due within 18 months, so its route and site should be settled)",
+   "spp-157897 Anadarko - Gracemont 138kV Ckt 2 New Line: stage 'approved' is estimated (estimated: SPP notice to construct issued (Delay - Mitigation) and due within 18 months, so its route and site should be settled)",
+   "spp-72019 Calumet - Concho 138 kV Ckt 1 Voltage Conversion: stage 'in construction' is estimated (estimated: planned in-service date 2025-12 has passed and SPP has not marked it complete)",
+   "spp-72020 Calumet - Cana 138 kV Ckt 1 Voltage Conversion: stage 'in construction' is estimated (estimated: planned in-service date 2026-06 has passed and SPP has not marked it complete)",
+   "spp-112435 East Kingfisher - Kingfisher 138 kV Rebuild: stage 'in construction' is estimated (estimated: planned in-service date 2026-05 has passed and SPP has not marked it complete)",
+   "spp-157475 Pine & Peoria Tap - 46th Street Tap 138 kV Ckt 1 Rebuild: stage 'in construction' is estimated (estimated: planned in-service date 2026-05 has passed and SPP has not marked it complete)",
+   "spp-143434 Lawton Eastside - Terry Road 345kV New Interconnection Substation (DISIS-2017-002): stage 'approved' is estimated (estimated: SPP notice to construct issued (On Schedule < 4) and due within 18 months, so its route and site should be settled)",
+   "spp-143404 TUCO - Oklaunion 345kV GEN-2017-151 Interconnection (Non-Shared NU): stage 'in construction' is estimated (estimated: planned in-service date 2026-08 has passed and SPP has not marked it complete)",
+   "spp-133021 GRDA1 - CLARMR5 161 kV GEN-2017-061 Interconnection (Non-Shared NU): stage 'in construction' is estimated (estimated: planned in-service date 2025-06 has passed and SPP has not marked it complete)",
+   "spp-143395 Deaf Smith - Plant X 230kV GEN-2017-146 Interconnection (TOIF): stage 'in construction' is estimated (estimated: planned in-service date 2026-08 has passed and SPP has not marked it complete)",
+   "substation East Watermill (TX): marked new, but OpenStreetMap Watermill Substation is 0.21 miles away on a public map; it may be built already or sit beside an existing station",
+   "substation Chalybe (TX): marked new, but OpenStreetMap Union Carbide Substation is 0.0 miles away on a public map; it may be built already or sit beside an existing station",
+   "substation Dunham (TX): marked new, but OpenStreetMap Oncor Dunham Substation is 0.0 miles away on a public map; it may be built already or sit beside an existing station",
+   "substation Jordan/King (TX): marked new, but OpenStreetMap King Substation is 0.0 miles away on a public map; it may be built already or sit beside an existing station",
+   "substation Lamesa (TX): marked new, but HIFLD unnamed substation is 0.0 miles away on a public map; it may be built already or sit beside an existing station",
+   "substation Pin Oak 345 kV Switch (TX): marked new, but OpenStreetMap Big Brown Station is 0.0 miles away on a public map; it may be built already or sit beside an existing station",
+   "substation Redland Switch (TX): marked new, but HIFLD unnamed substation is 0.02 miles away on a public map; it may be built already or sit beside an existing station",
+   "substation Spruce (TX): marked new, but OpenStreetMap J. K. Spruce Switchyard is 0.03 miles away on a public map; it may be built already or sit beside an existing station",
+   "substation WAParish/Whaley (TX): marked new, but HIFLD PARISH is 0.03 miles away on a public map; it may be built already or sit beside an existing station",
+   "substation Welsh HVDC (TX): marked new, but HIFLD unnamed substation is 0.02 miles away on a public map; it may be built already or sit beside an existing station"
+  ]
  }
 ]

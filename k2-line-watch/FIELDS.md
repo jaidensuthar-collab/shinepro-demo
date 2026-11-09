@@ -141,8 +141,21 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
   A substation built new in the last 3 years counts as there now.
 - **Rough location for every line**: a substation that isn't on public maps by name is placed at the center of its
   county (`location_quality` = county), since Richard said a rough location is enough for now.
-- **One GIS layer**: `web/exports/k2-texas-layer.geojson` (and `.kml`) holds every line and every substation with all
-  fields, as Steve asked. `k2-texas-substations.csv` is one row per substation with coordinates.
+- **One GIS layer**: `web/exports/k2-all-layer.geojson` (and `.kml`) holds every line and every substation in every
+  region with all fields, as Steve asked. Per region: `k2-texas-layer`, `k2-ercot-texas-layer`, `k2-spp-texas-layer`,
+  `k2-el-paso-layer`, `k2-oklahoma-layer` (each with `-lines.csv` and `-substations.csv`). `market` (ERCOT, SPP, WECC)
+  and `state` (TX, OK) are on every feature.
+- **Outside ERCOT (Nov 9, 2026)**: SPP's 2026 STEP project list (`data/build_spp.py` reads
+  `data/sources/spp-step-2026.xlsx`: the Texas Panhandle, South Plains, Northeast Texas and Oklahoma; ids `spp-<upgrade id>`)
+  and El Paso Electric's 2027-2036 System Expansion Plan (`data/build_epe.py`, curated in `data/sources/epe-plan-2026.json`;
+  ids `epe-...`). SPP stages: complete / in service = built; identified = proposed; notice to construct issued = planned,
+  or approved for an upgrade or a line due within 18 months; past its date and not complete = in construction. SPP gives no
+  county, so its substations are placed by name on HIFLD / OpenStreetMap (Texas, Oklahoma and neighbors, via
+  `data/fetch_substations.py`), else at the town they are named for (`location_quality` = town, Census places). MISO's
+  East Texas list (Entergy Texas) is not in yet: MISO's site refuses automated downloads.
+- **New vs already on the map** (`on_public_map`, `nearest_mapped`, `nearest_mapped_miles` per substation): any substation,
+  by any name, on HIFLD or OpenStreetMap within half a mile counts as already mapped, the way John compared the layer with
+  K2's map. "can't tell" when the point is only a town or county center.
 - **Earlier signals: Oncor's CCN Public Viewer** (`data/fetch_oncor_ccn.py` -> `data/sources/oncor-ccn.json`). Oncor posts a
   study area and its end stations before the open houses, months before ERCOT's TPIT report lists the line. The catalog
   adds viewer projects it doesn't already have (ids `oncor-ccn-<project id>`, stage planned) and uses the viewer's station

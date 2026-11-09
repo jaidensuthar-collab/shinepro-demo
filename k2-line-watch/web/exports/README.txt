@@ -21,9 +21,13 @@ k2-projects.csv
   Act fast / Late), case numbers, next step and source links.
 k2-line-watch.kml
   Everything above for Google Earth.
-k2-texas-layer.geojson / k2-texas-layer.kml  (start here)
-  One GIS layer with every Texas line and every end substation, all fields on each feature.
-  feature_type = line: one per new or upgraded ERCOT line (138 kV and up) or new 345 kV+
+k2-all-layer.geojson / k2-all-layer.kml  (start here)
+  One GIS layer with every line and every end substation in every region (Texas ERCOT, Texas SPP,
+  Texas El Paso, Oklahoma SPP), all fields on each feature. market (ERCOT, SPP or WECC for El Paso
+  Electric) and state (TX, OK, or both for a line that crosses the state line) say where each feature is.
+  Per region, the same layer split: k2-texas-layer (all of Texas), k2-ercot-texas-layer,
+  k2-spp-texas-layer (Panhandle, South Plains, Northeast Texas), k2-el-paso-layer and k2-oklahoma-layer.
+  feature_type = line: one per new or upgraded line (138 kV and up) or new 345 kV+
   substation project, built in the last 3 years or due in service within the next 5. stage is one of built (in service in the last 3 years), in construction,
   approved (route final or existing corridor, waiting to build), planned (approved, route or site
   not final) or proposed (not approved yet); stage_detail says why. builder is the utility.
@@ -35,13 +39,17 @@ k2-texas-layer.geojson / k2-texas-layer.kml  (start here)
   unconfirmed (not on public maps by this name). status_reason says why. Substation stage:
   there_now (yes / no / unknown), work (building a new substation / adding to it / upgrading
   lines to it / no new work), work_stage (built ... proposed), work_in_service, work_project.
+  on_public_map: yes if any substation (any name) on HIFLD or OpenStreetMap is within half a
+  mile, no if none is, can't tell if the point is only a town or county center.
+  nearest_mapped / nearest_mapped_miles name the closest mapped substation.
   Line features carry the same per end: from_there_now, from_work, from_work_stage (and to_). location_quality:
-  exact / approx (within a mile or two) / county (placed at the county center because the
-  substation is not on public maps by name). Developers already queued there are included.
+  exact / approx (within a mile or two) / town (SPP only: the town the substation is named for) /
+  county (placed at the county center because the substation is not on public maps by name).
+  ERCOT developers already queued there are included.
   The KML has the same features in folders by stage and by substation status.
-k2-texas-lines.csv / k2-texas-substations.csv
+k2-all-lines.csv / k2-all-substations.csv (and k2-<region>-lines.csv / -substations.csv)
   The same two tables without geometry (substations keep lat/lon).
-k2-texas-lines.geojson
+k2-all-lines.geojson / k2-texas-lines.geojson
   The line features only.
 k2-texas-developers.csv
   One row per generation or battery project in ERCOT's interconnection queue at a catalog end

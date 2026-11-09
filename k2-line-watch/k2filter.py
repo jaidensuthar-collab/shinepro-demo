@@ -118,6 +118,14 @@ def explain(sig):
                             "on land near the end substations." if decision else
                             "Open the filing and compare the route map with the one on the card.")
         out["importance"] = "High" if decision else out["importance"]
+    elif step == "2" and sig.get("source", "").startswith("SPP"):  # SPP planning document
+        out["project"] = ""
+        out["what_happened"] = "SPP posted a planning document: %s." % _short(title, 120)
+        out["why_k2"] = ("SPP's yearly project list (STEP) and ITP report are where new lines in the Texas Panhandle, "
+                         "South Plains, Northeast Texas and Oklahoma first appear, with end substations and in-service dates.")
+        out["next_step"] = ("If it is a new STEP project list, download it to data/sources and rebuild the Line Watch list "
+                            "(data/build_spp.py reads it); otherwise skim it for new 345 kV and 765 kV lines.")
+        out["importance"] = "High" if re.search(r"STEP|Project List", title, re.I) else "Medium"
     elif step == "2":  # ERCOT planning
         if any(word in low for word in RPG_NOISE):
             return None

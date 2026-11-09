@@ -221,6 +221,27 @@ def find_tpit_link():
     return links[-1] if links else None
 
 
+SPP_PLANNING = "https://www.spp.org/engineering/transmission-planning/"
+
+
+def spp_step_check():
+    """(new?, message): is there a newer SPP STEP zip than the one data/build_spp.py was built from?"""
+    with open(os.path.join(DATA, "build_spp.py"), encoding="utf-8") as fh:
+        have = re.search(r'STEP_DOC = "(\d+)"', fh.read()).group(1)
+    req = urllib.request.Request(SPP_PLANNING, headers={"User-Agent": "K2-Line-Watch/1.0"})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        html = r.read().decode("utf-8", "replace")
+    steps = re.findall(r'href="(/documents/(\d+)/(20\d\d)[^"]*\(STEP\)[^"]*\.zip)"', html, re.I)
+    if not steps:
+        return False, "SPP STEP: no STEP zip found on SPP's planning page; check " + SPP_PLANNING
+    href, doc, year = max(steps, key=lambda t: (t[2], int(t[1])))
+    if doc == have:
+        return False, f"SPP STEP: no new edition (latest {year}, document {doc})"
+    return True, (f"SPP STEP: NEW {year} edition (document {doc}) at https://www.spp.org{href}. Download it, save "
+                  f"Appendix 1 as data/sources/spp-step-{year}.xlsx, point STEP_FILE, STEP_LABEL and STEP_DOC in "
+                  f"data/build_spp.py at it, then rebuild.")
+
+
 def lines_diff(before, after):
     la = {x["id"]: x for x in (before or {}).get("lines", [])}
     lb = {x["id"]: x for x in (after or {}).get("lines", [])}
@@ -268,7 +289,13 @@ def cmd_texas(args):
     except Exception as e:  # network trouble is a report line, not a crash
         out.append(f"ERCOT TPIT: could not check the planning page ({e}); try again at the next run "
                    f"or open {ERCOT_PLANNING} and compare the TPIT file name with data/sources/")
-    if tpit_new:
+    try:
+        spp_new, msg = spp_step_check()
+        out.append(msg)
+    except Exception as e:  # network trouble is a report line, not a crash
+        spp_new = False
+        out.append(f"SPP STEP: could not check SPP's planning page ({e}); try again at the next run")
+    if tpit_new or spp_new:
         print("\n".join(out))
         return 3
 

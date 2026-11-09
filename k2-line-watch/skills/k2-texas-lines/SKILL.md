@@ -20,6 +20,9 @@ posted (usually monthly).
    * `0`: done. Either nothing changed (no rebuild) or the list was rebuilt and every data check passed.
    * `1`: a data check failed or the build broke. Do not publish. If the cause is clearly a bug in
      `data/build_catalog.py`, fix it and rerun; otherwise report the failing check and stop.
+   * `3` with "SPP STEP: NEW": SPP posted a new STEP project list. Download the zip it names, save Appendix 1
+     as `data/sources/spp-step-<year>.xlsx`, update `STEP_FILE`, `STEP_LABEL` and `STEP_DOC` in
+     `data/build_spp.py`, then run `python3 lw.py texas --force`.
    * `3`: a new TPIT edition was downloaded to `data/sources/`. Point `data/build_catalog.py` (default
      TPIT path near the end of the file and the "October 1, 2026 update" source text) and
      `data/check_catalog.py` (the edition list near the top) at the new file and month, keep the older
@@ -38,4 +41,9 @@ posted (usually monthly).
   in-service month passes); say when a change is an estimate.
 
 ## Verification
-`python3 data/check_catalog.py` ends with "6 of 6 checks passed" (or more checks, all passed).
+`python3 data/check_catalog.py` ends with "7 of 7 checks passed" (or more checks, all passed).
+
+## Other regions
+SPP lines (Texas Panhandle, South Plains, Northeast Texas, Oklahoma) come from `data/build_spp.py`; El Paso
+Electric's from `data/build_epe.py` (a hand-kept list from EPE's yearly System Expansion Plan PDF: check it when EPE
+posts a new plan each summer). Substation points for a new state: `python3 data/fetch_substations.py <ST>`.

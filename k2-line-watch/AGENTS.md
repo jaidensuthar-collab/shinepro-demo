@@ -16,9 +16,9 @@ The commands never call an AI model, so the cheapest model (or none) is enough f
 
 | Job | Command | Skill | When | Model | Needs app access |
 | --- | --- | --- | --- | --- | --- |
-| Signal watcher: new PUCT cases and filings, ERCOT planning documents, utility project pages, Oncor's CCN map, news | `python3 lw.py watch` | `k2-line-watch-check` | 7am and 5pm Central | none (script only) or a cheap one | no |
+| Signal watcher: new PUCT cases and filings, ERCOT and SPP planning documents, utility project pages (incl. AEP Oklahoma), Oncor's CCN map, news | `python3 lw.py watch` | `k2-line-watch-check` | 7am and 5pm Central | none (script only) or a cheap one | no |
 | Sync: copy new signals to the K2 Watch Google Sheet and the page | (part of the check skill) | `k2-line-watch-check` | after each watch run | cheap | Google Sheets; Claude page database if on Claude |
-| Texas lines list: ERCOT TPIT + Oncor CCN viewer + project cards, 905 lines in five stages | `python3 lw.py texas` | `k2-texas-lines` | weekly (Mon), and when a source changes | mid; strong if a new TPIT needs code edits | no (publishing yes) |
+| Lines list: ERCOT TPIT + Oncor CCN viewer + project cards, SPP STEP (Texas Panhandle, NE Texas, Oklahoma), El Paso Electric plan; 1,003 lines in five stages | `python3 lw.py texas` | `k2-texas-lines` | weekly (Mon), and when a source changes | mid; strong if a new TPIT needs code edits | no (publishing yes) |
 | Inbox watcher: replies from K2, draft answers | (no command) | `k2-inbox-watch` | hourly, 4am to midnight Central | cheap | Gmail (read + drafts only) |
 | Page export: the page as a static website | `python3 lw.py export-page` | (any) | after a watch or texas run | none | a static host to publish |
 | Status | `python3 lw.py status` | (any) | when asked | none | no |

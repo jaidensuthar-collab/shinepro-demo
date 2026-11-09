@@ -5,7 +5,10 @@ It checks three kinds of public sources, earliest signal first:
 
   Step 2  ERCOT Regional Planning Group (RPG) meeting documents
           (new project submissions, scopes and recommendations; names the end substations)
+  Step 2  SPP planning documents (Texas Panhandle, South Plains, Northeast Texas, Oklahoma):
+          a new STEP project list or ITP report adds or moves SPP lines
   Step 3  Utility project pages (Oncor, AEP Texas, LCRA, CPS Energy, CenterPoint)
+          and AEP's Oklahoma page (PSO)
           (a new page usually means open houses with preliminary route links are coming)
   Step 3  Oncor's CCN Public Viewer map: a new study area goes up before the open houses,
           with the end stations, months before ERCOT's TPIT report lists the line
@@ -71,7 +74,13 @@ UTILITY_PAGES = [
     ("CenterPoint",
      "https://www.centerpointenergy.com/en-us/our-services/electric-construction-projects",
      "https://www.centerpointenergy.com/en-us/our-services/electric-construction-projects/"),
+    ("AEP Oklahoma (PSO)",
+     "https://aeptransmission.com/oklahoma/",
+     "https://aeptransmission.com/oklahoma/"),
 ]
+# SPP's transmission planning page: the yearly STEP project list and ITP reports (Line Watch's SPP source).
+SPP_PLANNING = "https://www.spp.org/engineering/transmission-planning/"
+SPP_DOC_KEEP = re.compile(r"STEP|Transmission Expansion Plan|ITP (Assessment )?Report|Project List|20[- ]Year Assessment Report", re.I)
 ONCOR_CCN = "https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer"
 ONCOR_CCN_MAP = "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems.html"
 # Link text that says nothing about the project; the page's address names it instead.
@@ -88,6 +97,9 @@ NEWS_QUERIES = [
     '"345-kV" Texas',
     'CenterPoint transmission line',
     'ERCOT transmission project',
+    '"transmission line" Oklahoma',
+    '"345-kV" Oklahoma OR Panhandle',
+    'SPP transmission line Texas Panhandle',
 ]
 NEWS_KEEP = ("kv", "transmission line", "power line", "open house", "substation", "ccn", "ercot",
              "transmission project")
@@ -352,6 +364,30 @@ def parse_utility_projects(page_html, page_url, prefix):
     return projects
 
 
+def spp_signals(today):
+    """One signal per SPP planning document posted this year or last (STEP project list, ITP report)."""
+    page = fetch(SPP_PLANNING)
+    signals, done = [], set()
+    for href, text in re.findall(r'<a[^>]*href="(/documents/\d+/[^"]+)"[^>]*>([^<]*)', page, re.I):
+        doc = re.search(r"/documents/(\d+)/", href, re.I).group(1)
+        title = clean(text) or urllib.parse.unquote(href.rsplit("/", 1)[-1])
+        years = [int(y) for y in re.findall(r"\b(20\d\d)\b", title + " " + href)]
+        if doc in done or not SPP_DOC_KEEP.search(title + " " + href) or not years or max(years) < today.year - 1:
+            continue
+        done.add(doc)
+        signals.append(Signal(
+            id="spp:%s" % doc,
+            step="2 SPP planning document",
+            source="SPP transmission planning",
+            utility="SPP",
+            voltage_kv="",
+            title=title,
+            source_date="",
+            url=urllib.parse.urljoin("https://www.spp.org/", urllib.parse.quote(href, safe="/%&()")),
+        ))
+    return signals
+
+
 def utility_signals():
     signals, errors = [], []
     for utility, page, prefix in UTILITY_PAGES:
@@ -569,7 +605,7 @@ def run(args):
             pass
 
     signals, errors = [], []
-    sources = {"puct", "rpg", "util", "news", "dockets"} if args.only == "all" else {args.only}
+    sources = {"puct", "rpg", "spp", "util", "news", "dockets"} if args.only == "all" else {args.only}
     if "puct" in sources:
         try:
             signals += puct_signals(args.puct_days, today)
@@ -580,6 +616,11 @@ def run(args):
             signals += rpg_signals(today, seed=args.rpg_seed)
         except RuntimeError as err:
             errors.append("ERCOT RPG: %s" % err)
+    if "spp" in sources:
+        try:
+            signals += spp_signals(today)
+        except RuntimeError as err:
+            errors.append("SPP planning: %s" % err)
     if "util" in sources:
         util, util_errors = utility_signals()
         signals += util
@@ -690,7 +731,7 @@ def main(argv=None):
     p.add_argument("--all", action="store_true", help="keep signals the K2 filter would drop")
     p.add_argument("--db-dir", help="write new K2 signals as K2 Line Watch database files (one JSON each + writes.json)")
     p.add_argument("--baseline", action="store_true", help="mark everything as 'Known at start' (first run)")
-    p.add_argument("--only", choices=["all", "puct", "rpg", "util", "news", "dockets"], default="all")
+    p.add_argument("--only", choices=["all", "puct", "rpg", "spp", "util", "news", "dockets"], default="all")
     p.add_argument("--news-days", type=int, default=3, help="how many days of news to scan")
     p.add_argument("--watch-days", type=int, default=4,
                    help="how many days of filings to scan inside watched route cases")

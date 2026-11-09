@@ -423,7 +423,7 @@ def attach_queue(lines, places, path):
             if e.get("lat") is not None:
                 e["check_link"] = f"https://www.google.com/maps/@?api=1&map_action=map&center={e['lat']:.5f},{e['lon']:.5f}&zoom=16&basemap=satellite"
             b = alias(base(re.sub(r"^\d+\s+", "", clean(e["name"]))))
-            if b:
+            if b and x.get("market", MARKET) == MARKET:   # ERCOT's queue only joins ERCOT lines
                 idx.setdefault(b, []).append((x, e))
         x["queue"] = {"projects": 0, "mw": 0, "developers": [], "stations": []}
     if not path or not os.path.exists(path):
@@ -485,7 +485,7 @@ def same_station(stations, n, county, e, places):
 RANK = {"exact": 0, "approx": 1, "town": 2, "county": 3, "unknown": 4}
 STATUS_WHY = {"on maps": "on public maps (HIFLD or OpenStreetMap)", "existing line": "an existing line is being upgraded to it",
               "built line": "a line built in the last 3 years ends here", "new name": "ERCOT calls it new",
-              "new per ERCOT": "ERCOT's project describes it as new", "expands": "ERCOT's project expands it", "more coming": "a new line, new substation work or transformer is planned here"}
+              "new per ERCOT": "the ERCOT or SPP project describes it as new", "expands": "ERCOT's project expands it", "more coming": "a new line, new substation work or transformer is planned here"}
 
 
 def station_sites(lines, stations):
@@ -494,7 +494,7 @@ def station_sites(lines, stations):
     sites, qst = [], {s["id"]: s for s in stations}
 
     def same(st, b, county, e):
-        if st["_b"] != b:
+        if st["_b"] != b or st["state"] != (e.get("state") or "TX"):
             return False
         if st["county"] and county:
             if st["county"] == county:
@@ -514,13 +514,14 @@ def station_sites(lines, stations):
             county = str(e.get("county") or "").title()
             st = next((s for s in sites if same(s, b, county, e)), None)
             if not st:
-                st = {"_b": b, "name": subname(e["name"]) or e["name"], "county": county, "lat": e.get("lat"), "lon": e.get("lon"),
+                st = {"_b": b, "name": subname(e["name"]) or e["name"], "state": e.get("state") or "TX", "_m": set(), "county": county, "lat": e.get("lat"), "lon": e.get("lon"),
                       "confidence": e.get("confidence") or "unknown", "basis": e.get("basis", ""), "_ev": set(), "lines": [], "_q": set(), "_roles": []}
                 sites.append(st)
             elif RANK.get(e.get("confidence"), 4) < RANK.get(st["confidence"], 4):
                 st.update(lat=e.get("lat"), lon=e.get("lon"), confidence=e.get("confidence"), basis=e.get("basis", ""), county=county or st["county"])
             if x["id"] not in st["lines"]:
                 st["lines"].append(x["id"])
+            st["_m"].add(x.get("market", MARKET))
             ev = st["_ev"]
             if e.get("in_place") == "on public maps":
                 ev.add("on maps")
@@ -538,7 +539,7 @@ def station_sites(lines, stations):
                 ev.update({"expands"} | ({"more coming"} if x["lifecycle"] != "built" else set()))
                 role = "add"
             elif re.search(r"\b(NEW|GREENFIELD)\b(?: \w+){0,4} " + re.escape(b) + r"\b", desc) or re.match(r"new\b|.*newsub", e["name"], re.I) or \
-                    (x["project_type"] == "new substation" and f" {b} " in title and re.search(r"\b(NEW|ESTABLISH)\b", title + desc)):
+                    (x["project_type"] == "new substation" and f" {b} " in title and re.search(r"\b(NEW|ESTABLISH|BUILD)\b", title + desc)):
                 ev.add("new per ERCOT")
                 role = "new"
             if x["lifecycle"] != "built" and role == "add":
@@ -580,7 +581,7 @@ def station_sites(lines, stations):
             there = "yes"
             doing = ("adding to it (new line, transformer or expansion)" if status == "existing, expanding"
                      else "upgrading lines to it" if work else "no new work")
-        sid = re.sub(r"[^a-z0-9]+", "-", f"{st['name']} {st['county']}".lower()).strip("-") or "station"
+        sid = re.sub(r"[^a-z0-9]+", "-", f"{st['name']} {st['county']}".lower() + ("" if st["state"] == "TX" else f" {st['state'].lower()}")).strip("-") or "station"
         n = 2
         while sid in used:
             sid, n = re.sub(r"-\d+$", "", sid) + f"-{n}", n + 1
@@ -592,6 +593,7 @@ def station_sites(lines, stations):
         for p in qs:
             devs[p["developer"]] = devs.get(p["developer"], 0) + max(p["mw"], 0)
         st.pop("_b")
+        st["market"] = " / ".join(sorted(st.pop("_m")))
         st.update(id=sid, status=status, status_reason="; ".join(why), there_now=there, work=doing,
                   work_stage=best["lifecycle"] if best else "", work_in_service=best["in_service"] if best else "",
                   work_project=best["name"] if best else "", max_kv=max(x["kv"] for x in ls),
@@ -868,9 +870,10 @@ LINE_COLS = ["id", "name", "kv", "stage", "stage_detail", "in_service", "in_serv
              "miles_new", "miles_upgraded", "purpose", "tappable", "tap_note", "from", "from_status", "from_there_now", "from_work", "from_work_stage",
              "to", "to_status", "to_there_now", "to_work", "to_work_stage", "county_from", "county_to",
              "location_quality", "queue_projects", "queue_mw", "queue_developers", "recommended_next_step", "recommendation_reason", "priority_score",
-             "program", "rpg", "docket", "route_status", "ercot_project", "card_id", "first_seen", "market", "source"]
+             "program", "rpg", "docket", "route_status", "ercot_project", "spp_project", "spp_status", "card_id", "first_seen", "market", "state", "source"]
 SITE_COLS = ["id", "name", "county", "status", "there_now", "work", "work_stage", "work_in_service", "work_project", "status_reason", "max_kv", "line_count", "lines", "stages", "next_in_service", "builders",
-             "queue_projects", "queue_mw", "queue_developers", "location_quality", "location_basis", "check_link", "market"]
+             "queue_projects", "queue_mw", "queue_developers", "location_quality", "location_basis", "check_link", "on_public_map", "nearest_mapped",
+             "nearest_mapped_miles", "market", "state"]
 STAGE_COLOR = {"built": "ff7f7f7f", "in construction": "ff0000cc", "approved": "ff0080ff", "planned": "ff00b4e6", "proposed": "ffd29a3c"}  # KML aabbggrr
 
 
@@ -887,28 +890,29 @@ def line_props(x):
 def site_props(st, names):
     return {"feature_type": "substation", **{k: st[k] for k in ("id", "name", "county", "status", "there_now", "work", "work_stage", "work_in_service",
                                                                 "work_project", "status_reason", "max_kv", "next_in_service",
-                                                                "queue_projects", "queue_mw", "check_link") if k in st},
+                                                                "queue_projects", "queue_mw", "check_link", "on_public_map", "nearest_mapped",
+                                                                "nearest_mapped_miles", "market", "state") if k in st},
             "line_count": len(st["lines"]), "lines": "; ".join(names[i] for i in st["lines"][:12]) + (f"; +{len(st['lines']) - 12} more" if len(st["lines"]) > 12 else ""),
             "stages": "; ".join(f"{k} {v}" for k, v in st["stages"].items()), "builders": "; ".join(st["builders"]),
-            "queue_developers": "; ".join(st["queue_developers"]), "location_quality": st["confidence"], "location_basis": st["basis"], "market": MARKET}
+            "queue_developers": "; ".join(st["queue_developers"]), "location_quality": st["confidence"], "location_basis": st["basis"]}
+
+
+REGIONS = {   # file key -> (title, test on a line or substation record)
+    "texas": ("Texas (ERCOT, SPP, El Paso)", lambda r: "TX" in r.get("state", "TX")),
+    "ercot-texas": ("Texas, ERCOT", lambda r: r.get("market", MARKET) == MARKET),
+    "spp-texas": ("Texas, SPP (Panhandle, South Plains, Northeast Texas)", lambda r: "SPP" in r.get("market", "") and "TX" in r.get("state", "")),
+    "el-paso": ("Texas, El Paso (El Paso Electric, western grid)", lambda r: "WECC" in r.get("market", "")),
+    "oklahoma": ("Oklahoma (SPP)", lambda r: "OK" in r.get("state", "")),
+}
 
 
 def write_exports(out, sites):
-    """Line table, substation table, and one combined GIS layer (lines + substations) as GeoJSON and KML.
-    Steve asked for one file with everything, which is easier to split than to piece back together."""
+    """Line table, substation table, and one GIS layer (lines + substations) as GeoJSON and KML: one for all regions
+    (k2-all-*) and one per region (k2-texas-*, k2-oklahoma-*, ...). Steve asked for one file with everything, which is
+    easier to split than to piece back together; the per-region files are that split, done."""
     ex = os.path.join(WEB, "exports")
     names = {x["id"]: x["name"] for x in out}
-    with open(os.path.join(ex, "k2-texas-lines.csv"), "w", newline="") as f:
-        w = csv.DictWriter(f, LINE_COLS, extrasaction="ignore")
-        w.writeheader()
-        for x in out:
-            w.writerow(line_props(x))
-    with open(os.path.join(ex, "k2-texas-substations.csv"), "w", newline="") as f:
-        w = csv.DictWriter(f, ["id", "name", "county", "lat", "lon"] + SITE_COLS[3:], extrasaction="ignore")
-        w.writeheader()
-        for st in sites:
-            w.writerow({**site_props(st, names), "lat": st["lat"] if st["lat"] is not None else "", "lon": st["lon"] if st["lon"] is not None else ""})
-    line_feats, site_feats = [], []
+    line_feats, site_feats = {}, {}
     for x in out:
         pts = [e for e in x["endpoints"] if e.get("lat") is not None]
         if not pts:
@@ -920,18 +924,65 @@ def write_exports(out, sites):
         else:
             geom = {"type": "Point", "coordinates": [pts[0]["lon"], pts[0]["lat"]]}
             props["geometry_note"] = "Only one end substation can be placed; point at that end"
-        line_feats.append({"type": "Feature", "properties": props, "geometry": geom})
+        line_feats[x["id"]] = {"type": "Feature", "properties": props, "geometry": geom}
     for st in sites:
         if st["lat"] is not None:
-            site_feats.append({"type": "Feature", "properties": site_props(st, names), "geometry": {"type": "Point", "coordinates": [st["lon"], st["lat"]]}})
-    json.dump({"type": "FeatureCollection", "features": line_feats}, open(os.path.join(ex, "k2-texas-lines.geojson"), "w"))
-    json.dump({"type": "FeatureCollection", "name": "K2 Line Watch Texas", "features": line_feats + site_feats},
-              open(os.path.join(ex, "k2-texas-layer.geojson"), "w"))
-    write_kml(os.path.join(ex, "k2-texas-layer.kml"), line_feats, site_feats)
-    shutil.copyfile(os.path.join(ex, "k2-texas-layer.kml"), os.path.join(ex, "k2-texas-layer.kml.xml"))   # the page serves .kml as .xml
+            site_feats[st["id"]] = {"type": "Feature", "properties": site_props(st, names), "geometry": {"type": "Point", "coordinates": [st["lon"], st["lat"]]}}
+    for key, (title, test) in [("all", ("All regions", lambda r: True))] + list(REGIONS.items()):
+        ls, ss = [x for x in out if test(x)], [st for st in sites if test(st)]
+        with open(os.path.join(ex, f"k2-{key}-lines.csv"), "w", newline="") as f:
+            w = csv.DictWriter(f, LINE_COLS, extrasaction="ignore")
+            w.writeheader()
+            for x in ls:
+                w.writerow(line_props(x))
+        with open(os.path.join(ex, f"k2-{key}-substations.csv"), "w", newline="") as f:
+            w = csv.DictWriter(f, ["id", "name", "county", "lat", "lon"] + SITE_COLS[3:], extrasaction="ignore")
+            w.writeheader()
+            for st in ss:
+                w.writerow({**site_props(st, names), "lat": st["lat"] if st["lat"] is not None else "", "lon": st["lon"] if st["lon"] is not None else ""})
+        lf = [line_feats[x["id"]] for x in ls if x["id"] in line_feats]
+        sf = [site_feats[st["id"]] for st in ss if st["id"] in site_feats]
+        json.dump({"type": "FeatureCollection", "name": f"K2 Line Watch: {title}", "features": lf + sf},
+                  open(os.path.join(ex, f"k2-{key}-layer.geojson"), "w"))
+        write_kml(os.path.join(ex, f"k2-{key}-layer.kml.xml"), lf, sf, title)   # the page serves .kml as .xml
+        if key in ("all", "texas"):   # the two whole layers also as plain .kml and line-only GeoJSON; regions stay lean
+            json.dump({"type": "FeatureCollection", "features": lf}, open(os.path.join(ex, f"k2-{key}-lines.geojson"), "w"))
+            shutil.copyfile(os.path.join(ex, f"k2-{key}-layer.kml.xml"), os.path.join(ex, f"k2-{key}-layer.kml"))
 
 
-def write_kml(path, line_feats, site_feats):
+MAP_RADIUS = 0.5   # miles: HIFLD and OpenStreetMap points for one substation can sit a few hundred yards apart
+
+
+def map_check(sites):
+    """New vs already on the map, the way John checked the GIS layer against K2's map: is any substation (any name)
+    on HIFLD or OpenStreetMap within half a mile of this one? Only for points placed at the substation itself."""
+    grid = {}
+    for f in sorted(os.listdir(os.path.join(HERE, "sources"))):
+        m = re.match(r"(hifld|osm)-([a-z]{2})-substations\.json$", f)
+        if not m:
+            continue
+        for s in json.load(open(os.path.join(HERE, "sources", f)))["substations"]:
+            label = ("HIFLD " if m[1] == "hifld" else "OpenStreetMap ") + ("unnamed substation" if re.match(r"(UNKNOWN|TAP)\d+$", s["name"]) else s["name"])
+            grid.setdefault((round(s["lat"] * 10), round(s["lon"] * 10)), []).append((s["lat"], s["lon"], label))
+    for st in sites:
+        if st["lat"] is None or st["confidence"] not in ("exact", "approx"):
+            st.update(on_public_map="can't tell", nearest_mapped="", nearest_mapped_miles="")
+            continue
+        gy, gx = round(st["lat"] * 10), round(st["lon"] * 10)
+        best = None
+        for dy in (-1, 0, 1):
+            for dx in (-1, 0, 1):
+                for lat, lon, label in grid.get((gy + dy, gx + dx), []):
+                    d = 69.0 * math.hypot(lat - st["lat"], (lon - st["lon"]) * math.cos(math.radians(lat)))
+                    if best is None or d < best[0]:
+                        best = (d, label)
+        if best and best[0] <= MAP_RADIUS:
+            st.update(on_public_map="yes", nearest_mapped=best[1], nearest_mapped_miles=round(best[0], 2))
+        else:
+            st.update(on_public_map="no", nearest_mapped=best[1] if best else "", nearest_mapped_miles=round(best[0], 2) if best else "")
+
+
+def write_kml(path, line_feats, site_feats, title="Texas"):
     from xml.sax.saxutils import escape
     def placemark(f, style):
         p, g = f["properties"], f["geometry"]
@@ -953,7 +1004,7 @@ def write_kml(path, line_feats, site_feats):
         fs = [f for f in site_feats if f["properties"]["status"] == status]
         folders.append(f"<Folder><name>Substations: {status} ({len(fs)})</name>" + "".join(placemark(f, "sub-" + status.replace(", ", "-")) for f in fs) + "</Folder>")
     with open(path, "w") as f:
-        f.write('<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>K2 Line Watch: Texas</name>'
+        f.write('<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>K2 Line Watch: ' + escape(title) + '</name>'
                 "<description>Straight lines between end substations, not routes.</description>" + styles + "".join(folders) + "</Document></kml>")
 
 
@@ -1047,14 +1098,29 @@ def build(projects_src, tpit_path, queue_path=None):
         out.append(rec)
 
     out += oncor_lines(out, places)
+    for x in out:
+        x.setdefault("state", "TX")
+        for e in x["endpoints"]:
+            e.setdefault("state", "TX")
+    # Outside ERCOT: SPP's project list covers the Texas Panhandle, South Plains and Northeast Texas, and Oklahoma.
+    from build_spp import spp_lines, STEP_URL
+    out += spp_lines()
+    # Far West Texas: El Paso Electric, on the western (WECC) grid.
+    from build_epe import epe_lines, EPE_FILE
+    out += epe_lines()
     out.sort(key=lambda x: -x["priority_score"])
     stations = attach_queue(out, places, queue_path)
     sites = station_sites(out, stations)
+    map_check(sites)
     first_seen(out)
     os.makedirs(os.path.join(WEB, "data"), exist_ok=True)
     meta = {"built": TODAY.isoformat(), "count": len(out), "queue_report": queue_label(queue_path),
-            "sources": {"ERCOT TPIT": TPIT_URL, "HIFLD substations": HIFLD_URL, "ERCOT interconnection queue (GIS report)": QUEUE_URL},
-            "scope": f"ERCOT Texas: new and upgraded lines 138 kV and up and new 345 kV+ substations, from proposed to built since {CUTOFF:%B %Y}, in service by {HORIZON}, plus Line Watch cards not yet in TPIT",
+            "sources": {"ERCOT TPIT": TPIT_URL, "SPP STEP project list": STEP_URL,
+                        "El Paso Electric System Expansion Plan": json.load(open(EPE_FILE))["source"], "HIFLD substations": HIFLD_URL,
+                        "OpenStreetMap substations": "https://www.openstreetmap.org/", "ERCOT interconnection queue (GIS report)": QUEUE_URL},
+            "scope": f"Texas (ERCOT, SPP and El Paso Electric) and Oklahoma (SPP): new and upgraded lines 138 kV and up and new 345 kV+ substations, from proposed to built since {CUTOFF:%B %Y}, in service by {HORIZON}, plus Line Watch cards not yet in ERCOT's report",
+            "regions": {k: {"title": t, "lines": sum(1 for x in out if f(x))} for k, (t, f) in REGIONS.items()},
+            "map_radius_miles": MAP_RADIUS,
             "cutoff": CUTOFF.isoformat(), "horizon": HORIZON, "stages": STAGE_HELP}
     json.dump({**meta, "lines": out, "stations": stations, "sites": sites}, open(os.path.join(WEB, "data", "texas-lines.json"), "w"), separators=(",", ":"))
 

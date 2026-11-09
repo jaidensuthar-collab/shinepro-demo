@@ -12,6 +12,9 @@ What it checks (errors fail the run, warnings are listed for a person to look at
   4. Substation status agrees between the lines and the substation table (there now, work, stage).
   5. The downloads agree with the page data: line and substation counts, every field present, the KML opens.
   6. Every project on Oncor's CCN Public Viewer is in the list.
+  7. Every SPP line matches its rows in SPP's STEP project list: voltage, in-service date, and a stage that agrees
+     with SPP's status. Substations SPP's project calls new but with a mapped substation within half a mile are
+     listed for a person to look at.
 The summary is written into web/data/texas-lines.json ("checks") so the page shows when it was last checked.
 """
 import csv
@@ -23,9 +26,13 @@ import sys
 import xml.etree.ElementTree as ET
 
 import build_catalog as B
+import build_spp as SPP
 
 WEB = B.WEB
 TX_BOX = (-106.7, 25.8, -93.5, 36.6)
+BOXES = {**SPP.STATE_BOX, "AR": (-94.7, 33.0, -89.6, 36.5), "KS": (-102.1, 36.9, -94.6, 40.0), "MO": (-95.8, 35.9, -89.1, 40.6),
+         "NM": (-109.1, 31.3, -103.0, 37.0)}
+ALL_BOX = (-109.1, 25.8, -89.1, 40.6)
 
 
 def miles(a, b):
@@ -102,10 +109,13 @@ def check_locations(lines, sites, places, r):
             continue
         n += 1
         pt = {"lon": st["lon"], "lat": st["lat"]}
-        if not (TX_BOX[0] <= st["lon"] <= TX_BOX[2] and TX_BOX[1] <= st["lat"] <= TX_BOX[3]):
-            errs.append(f"substation {st['name']}: point {st['lat']}, {st['lon']} is outside Texas")
+        box = BOXES.get(st.get("state", "TX"), TX_BOX)
+        if not (box[0] <= st["lon"] <= box[2] and box[1] <= st["lat"] <= box[3]):
+            errs.append(f"substation {st['name']}: point {st['lat']}, {st['lon']} is outside {st.get('state', 'TX')}")
             continue
-        key = "TX|" + (st["county"] or "")
+        if st.get("state", "TX") != "TX" and st.get("state") not in ("OK",):
+            warns.append(f"substation {st['name']}: placed in {st['state']}, outside the regions this list covers (the line crosses the state line)")
+        key = f"{st.get('state', 'TX')}|" + (st["county"] or "")
         if st["confidence"] not in ("exact", "approx") or key not in places.rings:
             continue
         if B.in_county(places, key, pt):
@@ -115,8 +125,8 @@ def check_locations(lines, sites, places, r):
         (errs if d > 40 else warns if d > 3 else []).append(msg)
     unplaced = [x["id"] for x in lines if not any(e.get("lat") is not None for e in x["endpoints"])]
     if unplaced:
-        warns.append(f"{len(unplaced)} lines have no placeable substation (ERCOT gives no county): " + ", ".join(unplaced[:8]))
-    r.add("Substation points are in Texas and in the county ERCOT lists", errs, warns, n)
+        warns.append(f"{len(unplaced)} lines have no placeable substation (no county given, and not on public maps by name): " + ", ".join(unplaced[:8]))
+    r.add("Substation points are in their state and in the county the source lists", errs, warns, n)
 
 
 def check_substations(lines, sites, r):
@@ -140,16 +150,16 @@ def check_substations(lines, sites, r):
 
 def check_exports(lines, sites, r):
     ex, errs = os.path.join(WEB, "exports"), []
-    rows = list(csv.DictReader(open(os.path.join(ex, "k2-texas-lines.csv"))))
+    rows = list(csv.DictReader(open(os.path.join(ex, "k2-all-lines.csv"))))
     if len(rows) != len(lines):
         errs.append(f"lines CSV has {len(rows)} rows, page data has {len(lines)} lines")
     missing = [c for c in B.LINE_COLS if rows and c not in rows[0]]
     if missing:
         errs.append("lines CSV is missing columns: " + ", ".join(missing))
-    srows = list(csv.DictReader(open(os.path.join(ex, "k2-texas-substations.csv"))))
+    srows = list(csv.DictReader(open(os.path.join(ex, "k2-all-substations.csv"))))
     if len(srows) != len(sites):
         errs.append(f"substations CSV has {len(srows)} rows, page data has {len(sites)} substations")
-    layer = json.load(open(os.path.join(ex, "k2-texas-layer.geojson")))["features"]
+    layer = json.load(open(os.path.join(ex, "k2-all-layer.geojson")))["features"]
     placed = sum(1 for x in lines if any(e.get("lat") is not None for e in x["endpoints"]))
     nl = sum(f["properties"]["feature_type"] == "line" for f in layer)
     ns = sum(f["properties"]["feature_type"] == "substation" for f in layer)
@@ -160,12 +170,19 @@ def check_exports(lines, sites, r):
     for f in layer:
         c = f["geometry"]["coordinates"]
         pts = c if f["geometry"]["type"] == "LineString" else [c]
-        if any(not (TX_BOX[0] <= lon <= TX_BOX[2] and TX_BOX[1] <= lat <= TX_BOX[3]) for lon, lat in pts):
-            errs.append(f"GIS feature {f['properties']['id']} has a point outside Texas")
-    try:
-        ET.parse(os.path.join(ex, "k2-texas-layer.kml"))
-    except ET.ParseError as err:
-        errs.append(f"KML does not open: {err}")
+        if any(not (ALL_BOX[0] <= lon <= ALL_BOX[2] and ALL_BOX[1] <= lat <= ALL_BOX[3]) for lon, lat in pts):
+            errs.append(f"GIS feature {f['properties']['id']} has a point outside Texas, Oklahoma and their neighbors")
+    for key, (title, test) in B.REGIONS.items():
+        want = sum(1 for x in lines if test(x) and any(e.get("lat") is not None for e in x["endpoints"])) + \
+            sum(1 for s in sites if test(s) and s["lat"] is not None)
+        got = len(json.load(open(os.path.join(ex, f"k2-{key}-layer.geojson")))["features"])
+        if got != want:
+            errs.append(f"{title} layer has {got} features, expected {want}")
+    for key in ["all"] + list(B.REGIONS):
+        try:
+            ET.parse(os.path.join(ex, f"k2-{key}-layer.kml.xml"))
+        except ET.ParseError as err:
+            errs.append(f"k2-{key}-layer.kml does not open: {err}")
     r.add("Downloads match the page (CSV, GeoJSON, KML)", errs, checked=len(rows) + len(srows) + len(layer))
 
 
@@ -182,6 +199,38 @@ def check_oncor(lines, r):
     r.add("Every project on Oncor's CCN Public Viewer is in the list", errs, checked=n)
 
 
+def check_spp(lines, sites, r):
+    rows = {str(d.get("Upgrade ID")): d for d in SPP.read_step()}
+    errs, warns, n = [], [], 0
+    expect = {"built": SPP.BUILT, "proposed": SPP.EARLY}
+    for x in lines:
+        if not x["id"].startswith("spp-"):
+            continue
+        n += 1
+        got = [rows.get(u) for u in x["spp_upgrades"]]
+        if not all(got):
+            errs.append(f"{x['id']} {x['name']}: upgrade {', '.join(u for u, g in zip(x['spp_upgrades'], got) if not g)} not in SPP's list")
+            continue
+        if x["kv"] not in {SPP.kv_of(d) for d in got}:
+            errs.append(f"{x['id']} {x['name']}: {x['kv']} kV here, {sorted({SPP.kv_of(d) for d in got})} kV in SPP's list")
+        dates = {B.ym(d.get("Project Owner Indicated In-Service Date")) for d in got} - {""}
+        if (x["in_service"] or "") != max(dates, default=""):
+            errs.append(f"{x['id']} {x['name']}: in service {x['in_service'] or 'blank'} here, {max(dates, default='blank')} in SPP's list")
+        statuses = {SPP.norm(d.get("Project Status")).lower() for d in got}
+        want = expect.get(x["lifecycle"])
+        if want and not statuses & want:
+            errs.append(f"{x['id']} {x['name']}: stage '{x['lifecycle']}' but SPP says {', '.join(sorted(statuses))}")
+        if x["lifecycle"] not in ("built", "proposed") and statuses <= (SPP.BUILT | SPP.EARLY):
+            errs.append(f"{x['id']} {x['name']}: stage '{x['lifecycle']}' but SPP says {', '.join(sorted(statuses))}")
+        if x["lifecycle_basis"].startswith("estimated"):
+            warns.append(f"{x['id']} {x['name']}: stage '{x['lifecycle']}' is estimated ({x['lifecycle_basis']})")
+    for st in sites:
+        if st["status"] == "new" and st.get("on_public_map") == "yes":
+            warns.append(f"substation {st['name']} ({st.get('state', 'TX')}): marked new, but {st['nearest_mapped']} is "
+                         f"{st['nearest_mapped_miles']} miles away on a public map; it may be built already or sit beside an existing station")
+    r.add("SPP lines match SPP's project list (voltage, in-service date, stage)", errs, warns, n)
+
+
 def main():
     path = os.path.join(WEB, "data", "texas-lines.json")
     d = json.load(open(path))
@@ -194,6 +243,7 @@ def main():
     check_substations(lines, sites, r)
     check_exports(lines, sites, r)
     check_oncor(lines, r)
+    check_spp(lines, sites, r)
     failed = [c for c in r.checks if c["errors"]]
     nwarn = sum(len(c["warnings"]) for c in r.checks)
     for c in r.checks:

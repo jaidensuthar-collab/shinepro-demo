@@ -1,0 +1,132 @@
+{
+ "source": "https://www.epelectric.com/el-paso-electric/uploads/2026_epe_system_expansion_plan_2027-2036.pdf",
+ "title": "El Paso Electric System Expansion Plan 2027-2036 (2026 plan), Table 4 and Section 7",
+ "note": "345 kV lines and new 345 kV substations with at least one end in Texas (El Paso County), due by the 5-year horizon. New Mexico-only work (Afton North, Vado, Lava, Airport, Mirage) and 115 kV work are left out. Dockets and dates from EPE's project pages where filed.",
+ "projects": [
+  {
+   "name": "Caliente - Pine 345 kV Line (New)",
+   "project_type": "new line",
+   "ends": [
+    "Caliente",
+    "Pine"
+   ],
+   "kv": 345,
+   "in_service": "2029-05",
+   "docket": "60016",
+   "page": "https://www.epelectric.com/company/projects/pine-caliente",
+   "county": "El Paso"
+  },
+  {
+   "name": "McCloud Central - Pine 345 kV Line (New)",
+   "project_type": "new line",
+   "ends": [
+    "McCloud Central",
+    "Pine"
+   ],
+   "kv": 345,
+   "in_service": "2029-05",
+   "docket": "60319",
+   "page": "https://www.epelectric.com/company/projects/pine-mccloudcentral",
+   "county": "El Paso"
+  },
+  {
+   "name": "McCloud West - Vado 345 kV Line (New)",
+   "project_type": "new line",
+   "ends": [
+    "McCloud West",
+    "Vado"
+   ],
+   "kv": 345,
+   "in_service": "2030-05",
+   "docket": "",
+   "page": "",
+   "county": "El Paso"
+  },
+  {
+   "name": "Tornillo - Tuskegee 345 kV Line (New)",
+   "project_type": "new line",
+   "ends": [
+    "Tornillo",
+    "Tuskegee"
+   ],
+   "kv": 345,
+   "in_service": "2030-05",
+   "docket": "",
+   "page": "",
+   "county": "El Paso"
+  },
+  {
+   "name": "Tuskegee - Pine 345 kV Circuit 1 (New)",
+   "project_type": "new line",
+   "ends": [
+    "Tuskegee",
+    "Pine"
+   ],
+   "kv": 345,
+   "in_service": "2030-05",
+   "docket": "",
+   "page": "",
+   "county": "El Paso"
+  },
+  {
+   "name": "McCloud Central 345 kV Substation (New)",
+   "project_type": "new substation",
+   "ends": [
+    "McCloud Central"
+   ],
+   "kv": 345,
+   "in_service": "2028-01",
+   "docket": "",
+   "page": "",
+   "county": "El Paso"
+  },
+  {
+   "name": "McCloud West 345 kV Substation (New)",
+   "project_type": "new substation",
+   "ends": [
+    "McCloud West"
+   ],
+   "kv": 345,
+   "in_service": "2028-01",
+   "docket": "",
+   "page": "",
+   "county": "El Paso"
+  },
+  {
+   "name": "Pine 345/115 kV Substation (New)",
+   "project_type": "new substation",
+   "ends": [
+    "Pine"
+   ],
+   "kv": 345,
+   "in_service": "2029-05",
+   "docket": "",
+   "page": "",
+   "county": "El Paso"
+  },
+  {
+   "name": "Tornillo 345/115/69 kV Switching Station (New)",
+   "project_type": "new substation",
+   "ends": [
+    "Tornillo"
+   ],
+   "kv": 345,
+   "in_service": "2029-05",
+   "docket": "",
+   "page": "",
+   "county": "El Paso"
+  },
+  {
+   "name": "Tuskegee 345/115 kV Substation (New)",
+   "project_type": "new substation",
+   "ends": [
+    "Tuskegee"
+   ],
+   "kv": 345,
+   "in_service": "2030-05",
+   "docket": "",
+   "page": "",
+   "county": "El Paso"
+  }
+ ]
+}
