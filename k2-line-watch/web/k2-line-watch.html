@@ -212,6 +212,56 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 .landrow { display: grid; gap: 4px }
 .linkbtn { background: none; border: 0; padding: 0; color: var(--flag); font-weight: 600; cursor: pointer; text-decoration: underline; text-underline-offset: 2px }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important } }
+
+/* How K2 works: the operating diagram (six stages left to right), live numbers from this page's data on each card. */
+:root { --t3: #6b4fa3; --t3-soft: #ece6f6 }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --t3: #b9a2ea; --t3-soft: #2c2540 } }
+:root[data-theme="dark"] { --t3: #b9a2ea; --t3-soft: #2c2540 }
+.tabs { overflow-x: auto; scrollbar-width: none } .tabs button { white-space: nowrap }
+.hw-intro { max-width: 860px } .hw-intro h2 { font-family: var(--display); font-size: 24px; margin: 0 0 6px } .hw-intro p { margin: 0; color: var(--muted) } .hw-intro b { color: var(--ink) }
+.hw-controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+.hw-controls .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block }
+.hw-controls .chip { display: inline-flex; gap: 7px; align-items: center }
+.hw-controls .chip[aria-pressed="false"] { opacity: .45; background: var(--panel); color: var(--ink); border-color: var(--rule) }
+.hw-controls .chip.st[aria-pressed="true"] { background: var(--panel); color: var(--ink); border-color: var(--ink) }
+.hw-sep { width: 1px; height: 22px; background: var(--rule); margin: 0 4px }
+.d-today { background: var(--open) } .d-building { background: var(--fast) } .d-future { background: var(--t3) }
+.hw-flowbox { overflow-x: auto; padding-bottom: 4px }
+.hw-flow { display: grid; grid-template-columns: repeat(6, minmax(170px, 1fr)); min-width: 1080px }
+.hw-stage { display: flex; flex-direction: column; gap: 8px; padding-right: 24px; position: relative }
+.hw-stage:not(:last-child)::after { content: ""; position: absolute; right: 9px; top: 28px; width: 9px; height: 9px; border-top: 2px solid var(--muted); border-right: 2px solid var(--muted); transform: rotate(45deg) }
+.hw-head { border-bottom: 2px solid var(--ink); padding-bottom: 5px; min-height: 58px }
+.hw-head .n { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; color: var(--muted) }
+.hw-head h3 { font-family: var(--display); font-size: 17px; line-height: 1.15; margin: 2px 0 0; font-weight: 700; text-transform: uppercase; letter-spacing: .02em }
+.hw-node { all: unset; box-sizing: border-box; cursor: pointer; display: grid; gap: 3px; background: var(--panel); border: 1px solid var(--rule); border-left: 4px solid var(--c); border-radius: 6px; padding: 8px 9px }
+.hw-node.today { --c: var(--open) } .hw-node.building { --c: var(--fast) } .hw-node.future { --c: var(--t3) }
+.hw-node .k { font-family: var(--mono); font-size: 10.5px; color: var(--muted); display: flex; justify-content: space-between; gap: 6px }
+.hw-node .k i { font-style: normal; color: var(--c) }
+.hw-node .t { font-weight: 600; font-size: 14px; line-height: 1.25 }
+.hw-node .w { font-family: var(--mono); font-size: 11px; color: var(--muted) }
+.hw-node .live { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--ink); border-top: 1px dashed var(--rule); padding-top: 4px; margin-top: 2px }
+.hw-node:hover { border-color: var(--c) }
+.hw-node:focus-visible { outline: 2px solid var(--flag); outline-offset: 2px }
+.hw-node.sel { background: var(--flag-soft); border-color: var(--flag); border-left-color: var(--c) }
+.hw-node.linked { box-shadow: 0 0 0 2px var(--flag) inset }
+.hw-node.dim { opacity: .25 }
+.hw-node[hidden] { display: none }
+.hw-detail { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 16px 18px; display: grid; gap: 14px 28px; grid-template-columns: minmax(0, 1fr) }
+@media (min-width: 860px) { .hw-detail { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) } }
+.hw-detail h3 { font-family: var(--display); font-size: 26px; line-height: 1.1; margin: 4px 0 2px }
+.hw-detail ul { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 5px }
+.hw-pill { display: inline-block; font: 600 12px var(--body); padding: 2px 9px; border-radius: 999px }
+.hw-pill.today { background: var(--open-soft); color: var(--open) } .hw-pill.building { background: var(--fast-soft); color: var(--fast) } .hw-pill.future { background: var(--t3-soft); color: var(--t3) }
+.hw-stat { border-left: 3px solid var(--ink); padding-left: 12px; display: grid; gap: 2px; align-content: start }
+.hw-stat b { font-family: var(--display); font-size: 34px; line-height: 1; font-variant-numeric: tabular-nums }
+.hw-stat span { color: var(--muted); font-size: 14px }
+.hw-side { display: grid; gap: 12px; align-content: start }
+.hw-side .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 4px }
+.hw-links { display: flex; flex-wrap: wrap; gap: 6px }
+.hw-links button { font: 600 13px var(--body); background: var(--late-soft); border: 0; border-radius: 6px; padding: 4px 9px; cursor: pointer }
+.hw-go { font: 600 14px var(--body); background: var(--ink); color: var(--bg); border: 0; border-radius: 6px; padding: 8px 12px; cursor: pointer; justify-self: start }
+@media (max-width: 760px) { .hw-flow { grid-template-columns: 1fr; min-width: 0 } .hw-stage { padding: 0 0 22px } .hw-stage:not(:last-child)::after { right: auto; left: 50%; top: auto; bottom: 6px; transform: rotate(135deg) } .hw-head { min-height: 0 } }
+@media (prefers-reduced-motion: no-preference) { .hw-node { transition: opacity .15s, border-color .15s, background .15s } }
 </style>
 
 <div class="wrap">
@@ -224,12 +274,30 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   </header>
 
   <nav class="tabs" role="tablist" aria-label="Page sections">
-    <button type="button" role="tab" id="t-lines" aria-controls="p-lines" aria-selected="true">Lines (TX, OK)</button>
+    <button type="button" role="tab" id="t-flow" aria-controls="p-flow" aria-selected="true">How K2 works</button>
+    <button type="button" role="tab" id="t-lines" aria-controls="p-lines" aria-selected="false" tabindex="-1">Lines (TX, OK)</button>
     <button type="button" role="tab" id="t-watch" aria-controls="p-watch" aria-selected="false" tabindex="-1">Early signals</button>
     <button type="button" role="tab" id="t-irp" aria-controls="p-irp" aria-selected="false" tabindex="-1">Utility plans (IRPs)</button>
     <button type="button" role="tab" id="t-help" aria-controls="p-help" aria-selected="false" tabindex="-1">How to use</button>
   </nav>
 
+
+  <div id="p-flow" role="tabpanel" aria-labelledby="t-flow" class="panel">
+    <section class="hw-intro">
+      <h2>How K2 Renew works</h2>
+      <p>K2 Renew finds land that is about to become valuable because new grid capacity is coming, locks it up with options and leases, and brings it to <b>solar, battery storage and data center developers</b>. <b>Tier 3</b> is the plan to spot that capacity first and reach out to utilities automatically; <b>Line Watch is its first working piece</b>. The numbers on each step are live from this page. Click a step to see it, then jump to it.</p>
+    </section>
+    <div class="hw-controls" role="group" aria-label="Show steps">
+      <button type="button" class="chip st" data-hwst="today" aria-pressed="true"><i class="dot d-today"></i>Works today <span id="hwc-today"></span></button>
+      <button type="button" class="chip st" data-hwst="building" aria-pressed="true"><i class="dot d-building"></i>Being built (Line Watch) <span id="hwc-building"></span></button>
+      <button type="button" class="chip st" data-hwst="future" aria-pressed="true"><i class="dot d-future"></i>Tier 3 plan <span id="hwc-future"></span></button>
+      <span class="hw-sep" aria-hidden="true"></span>
+      <button type="button" class="chip" data-hwview="today" aria-pressed="false">Today's business</button>
+      <button type="button" class="chip" data-hwview="tier3" aria-pressed="true">With Tier 3</button>
+    </div>
+    <div class="hw-flowbox"><div class="hw-flow" id="hwflow"></div></div>
+    <section class="hw-detail" id="hwdetail" aria-live="polite"></section>
+  </div>
   <div id="p-watch" role="tabpanel" aria-labelledby="t-watch" class="panel" hidden>
   <nav class="ladder" id="ladder" aria-label="Projects by stage"></nav>
 
@@ -289,7 +357,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   </section>
   </div>
 
-  <div id="p-lines" role="tabpanel" aria-labelledby="t-lines" class="panel land">
+  <div id="p-lines" role="tabpanel" aria-labelledby="t-lines" class="panel land" hidden>
     <section class="lhead">
       <p>New and upgraded lines (138 kV+) in Texas (ERCOT, SPP and El Paso Electric) and Oklahoma (SPP), built since <span id="cutoff">October 2023</span> or due in service <span id="window">through October 2031</span>. <span class="pmeta" id="linesstamp">Loading...</span> <span class="pmeta" id="checkline"></span></p>
       <p class="dl"><b>Download:</b> <button type="button" class="linkbtn" id="layergj">GIS layer (.geojson, zipped)</button> · <button type="button" class="linkbtn" id="layerkml">Google Earth (.kml, zipped)</button> · <button type="button" class="linkbtn" id="linesdl">Lines (.csv)</button> · <button type="button" class="linkbtn" id="subsdl">Substations (.csv)</button> <span class="pmeta" id="linesdlnote"></span> <span class="pmeta" id="dlscope">All regions in one file; pick a region below for just that region.</span></p>
@@ -676,6 +744,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   const STAGE_ORDER = Object.fromEntries(LIFE.map((l, i) => [l, i]));
   fetch("data/texas-lines.json").then((r) => r.ok ? r.json() : null).then((d) => {
     if (!d) { $("linesstamp").textContent = "The Texas line list could not load. Reload the page to try again."; return; }
+    LS.checks = d.checks || null; LS.regions = d.regions || {};
     LS.all = d.lines || []; LS.built = d.built || ""; LS.queue = d.queue_report || ""; LS.cutoff = d.cutoff || "";
     LS.stations = Object.fromEntries((d.stations || []).map((s) => [s.id, s]));
     LS.sites = Object.fromEntries((d.sites || []).map((s) => [s.id, s]));
@@ -698,7 +767,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     $("lf-rec").innerHTML = `<option value="">Any K2 next step</option>` + Object.entries(REC).map(([k, [, l]]) => `<option value="${esc(k)}">${esc(l)}</option>`).join("");
     opts("lf-kv", [...new Set(LS.all.map((x) => x.kv))].sort((a, b) => b - a).map(String), "Every voltage");
     opts("lf-type", [...new Set(LS.all.map((x) => x.project_type))].sort(), "Every type");
-    renderLines(); renderDevs(); renderProjects();
+    renderLines(); renderDevs(); renderProjects(); renderFlow();
   }).catch(() => { $("linesstamp").textContent = "The Texas line list could not load. Reload the page to try again."; });
   const linesFor = (p) => LS.all.filter((x) => (x.card_ids || [x.card_id]).includes(p.id));
   // Regions match build_catalog.REGIONS: a line from Oklahoma into Texas is in both.
@@ -939,6 +1008,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
              add: num(L.end_peak_mw) !== null && num(L.base_peak_mw) !== null ? num(L.end_peak_mw) - num(L.base_peak_mw) : null };
   }
   function renderIrps() {
+    renderFlow();
     if (!state.irps.length) return;
     const k = state.isort;
     // Grid-operator context records (ERCOT) sit on top and are not ranked against utilities.
@@ -1009,6 +1079,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   }
 
   function renderStamp() {
+    renderFlow();
     const m = state.meta;
     const n = state.projects.length, s = state.signals.length;
     const lo = state.land && state.land.totals ? ` · ${Number(state.land.totals.landowners || 0).toLocaleString()} landowners` : "";
@@ -1283,7 +1354,125 @@ How to answer: plain English for someone new to the grid; short; lead with the a
     } finally { btn.disabled = false; }
   });
 
-  const TABS = [["t-lines", "p-lines"], ["t-watch", "p-watch"], ["t-irp", "p-irp"], ["t-help", "p-help"]];
+
+  // ---------- How K2 works (operating diagram; card data from the Claude Design "How K2 Renew Works" board) ----------
+  const HW_STAGES = ["Spot where power is coming", "Score and decide", "Check and map it", "Lock up the land", "Match a partner", "Value is created"];
+  const HW_LABEL = { today: "Works today", building: "Being built (Line Watch)", future: "Tier 3 plan" };
+  const HW = [
+    { id: "irp", s: 0, st: "building", t: "Utility plans (IRPs)", who: "Utilities; Line Watch; Tier 3 planning agent", next: ["catalog", "score"], src: "Richard's email Oct 13; Oct 24 call; Tier3 plan",
+      d: ["The earliest public sign: a utility's 5 to 15 year plan.", "IRPs show which utilities expect the most load growth, new generation and new transmission.", "Next the project is announced, then work happens behind the scenes, then the exact route comes out."] },
+    { id: "filings", s: 0, st: "building", t: "Grid planner and regulator filings", who: "ERCOT, SPP, PUCT, FERC; Line Watch", next: ["catalog"], src: "Oct 24 and Oct 26 calls; Tier3 plan",
+      d: ["ERCOT planning group submissions and its monthly project report (TPIT); SPP's yearly project list (STEP) for the Panhandle, Northeast Texas and Oklahoma.", "PUC route cases: a preferred route plus alternates; about 6 months to decide.", "In MISO you can file to interconnect once a line is approved, before it is built.", "Tier 3 adds FERC filings, ISO and RTO plans, state CPCNs and DOE grants nationwide."] },
+    { id: "news", s: 0, st: "building", t: "News, grants and open houses", who: "DOE, utilities, local press", next: ["catalog"], src: "First call with Richard; Richard's email Oct 28",
+      d: ["Utility open houses show draft route maps 4 to 9 months before a route is filed.", "DOE's $1B upgrade grant: about 1,600 miles of reconductoring, about 23 GW opened up.", "Stories like NextEra's 500 kV MARL line: about $65M to landowners on a $1.17B build."] },
+    { id: "loads", s: 0, st: "future", t: "Load, queue and market signals", who: "Tier 3 market intelligence agents", next: ["score"], src: "Tier3 plan",
+      d: ["Interconnection queues and large new loads over 5 MW by state.", "Utility RFPs, transformer orders and backlogs.", "Developer and hyperscaler SEC filings; county hearings, zoning agendas and moratoriums."] },
+    { id: "utility", s: 0, st: "future", t: "Ask utilities and co-ops", who: "Tier 3 origination agents; Richard approves", next: ["score", "decide"], src: "First call with Richard; John's email Oct 14; Oct 30 call; Tier3 plan",
+      d: ["Ask: “Where on your grid is the best place for a 15 MW project?” Utilities often name a substation to use or avoid.", "Target list: top co-ops and utilities plus municipal utilities.", "Short, personal emails that never quote MW targets or economics; an agent reads and summarizes replies."] },
+    { id: "county", s: 0, st: "future", t: "County records", who: "Tier 3 land control agents", next: ["decide", "devs"], src: "Oct 24 call; Tier3 plan",
+      d: ["Memorandums of easement, lease, option and purchase filed with the county.", "A utility buying land usually means a future substation: the earliest hint of the exact route.", "Every county posts records differently, which is the hard part."] },
+    { id: "devs", s: 0, st: "building", t: "Who is building here", who: "Line Watch; Tier 3 land control", next: ["partner"], src: "John's emails Oct 21; Oct 24 call; Tier3 plan",
+      d: ["Developers already queued at each end substation, from ERCOT's interconnection queue.", "Trace project companies to the parent developer, then find a contact.", "K2's focus for the rest of the year: developers and partners."] },
+    { id: "catalog", s: 1, st: "building", t: "Catalog every new line", who: "Line Watch (Jaiden)", next: ["tap", "decide"], src: "Oct 26 team call; Richard's email Oct 25",
+      d: ["Covers lines built in the last 3 years through everything planned or proposed, in five stages: built, in construction, approved, planned, proposed.", "Fields: voltage, stage, in-service date, builder, end substations (existing, expanding or new), coordinates, county, developers queued.", "It looks 3 years back because Landgate misses about half of last year's lines.", "Texas (ERCOT, SPP and El Paso) and Oklahoma so far; market by market from here."] },
+    { id: "score", s: 1, st: "future", t: "Score each market", who: "Tier 3 leadership agents", next: ["decide"], src: "Tier3 plan",
+      d: ["Market readiness score from 0 to 100: power within 24 months 25%, gas 15%, tax 15%, permitting 15%, land 10%, competition 10%, fiber 5%, stakeholders 5%.", "70 and up: active outreach. 50 to 69: research. Below 50: monitor."] },
+    { id: "tap", s: 1, st: "today", t: "Tap rule: line or substation?", who: "Richard's rule", next: ["decide"], src: "Oct 24 and Oct 26 calls",
+      d: ["765 kV: substations only. 500 kV: maybe. 345 kV and below: line taps work.", "No blind tap within about 5 to 10 miles of a substation.", "Best land touches the substation; up to 5 to 10 miles out depending on project size."] },
+    { id: "decide", s: 1, st: "building", t: "Recommend a next step", who: "Line Watch, then Steve", next: ["check"], src: "Oct 24 call",
+      d: ["Exact substation known: substation campaign. Route set on a 345 kV or smaller line: line campaign.", "Proposed or no coordinates: follow updates. Serves one generator or load: informational.", "Sooner in service ranks higher, but everything is tracked."] },
+    { id: "check", s: 2, st: "building", t: "Check it before anyone acts", who: "Steve's GIS team; Tier 3 quality review", next: ["gis"], src: "Oct 16 call; John's emails Oct 21, Nov 2, Nov 9; Tier3 plan",
+      d: ["Every rebuild of the list is checked against its sources (ERCOT, SPP, Oncor) before it is published.", "Every placed substation is checked against HIFLD and OpenStreetMap: anything within half a mile counts as already on the map, the way John compared the layer with K2's map.", "Tier 3 plan: findings scored on 7 criteria, 7.5 average to pass."] },
+    { id: "gis", s: 2, st: "today", t: "GIS team maps it", who: "Steve and the GIS team", next: ["parcels", "map"], src: "First call with Richard; Oct 26 call; Tier3 plan",
+      d: ["Items go into the GIS request queue to be mapped into K2's master database.", "Line Watch hands over one layer with every line and substation, or one file per region."] },
+    { id: "parcels", s: 2, st: "today", t: "Parcels and buildable acres", who: "GIS team", next: ["campaign"], src: "Oct 24 call",
+      d: ["Find parcels near the target and screen out slope and wetlands.", "Example: a 1,200 acre parcel may have 700 buildable acres.", "On proposed lines, start with large landowners."] },
+    { id: "map", s: 2, st: "today", t: "Team map", who: "John (Mapbox)", next: ["campaign"], src: "Oct 26 call; John's email Nov 9",
+      d: ["Layers for existing lines, proposed routes and planned lines, used with landowners and partners.", "John compared Line Watch's layer with K2's map to show what exists and what would be new."] },
+    { id: "campaign", s: 3, st: "today", t: "Land campaign", who: "Sales team", next: ["wendy", "sign"], src: "Oct 16 and Oct 24 calls",
+      d: ["Letters by mail, then call lists from K2's skip trace services.", "Salespeople call landowners. Deals take about 3 years to come together."] },
+    { id: "wendy", s: 3, st: "future", t: "AI first-pass calls (Wendy)", who: "Wendy, n8n", next: ["sign"], src: "Oct 16 call; John's emails Oct 19 and 21",
+      d: ["Runs many calls at once, scores each one and books warm leads for salespeople.", "Calls cost money, so the list has to be good first. On hold while the focus is developers."] },
+    { id: "sign", s: 3, st: "today", t: "Sign option, lease or easement", who: "Richard, sales", next: ["partner"], src: "Oct 24 call; John's email Oct 14",
+      d: ["Purchase options near current value plus a premium, over several years.", "File a memorandum with the county so K2 is first in line legally.", "Risks: getting in too early, or owners asking too much too fast."] },
+    { id: "partner", s: 4, st: "today", t: "Show land to development partners", who: "Richard", next: ["project"], src: "First call with Richard; Oct 30 call",
+      d: ["Solar, battery storage and data center developers. Mostly batteries and solar today; data centers are the goal.", "Land next to new capacity gets better uptake than land at a full substation."] },
+    { id: "brand", s: 4, st: "building", t: "Marketing and thought leadership", who: "Richard; Tier 3 content agents", next: ["partner", "utility"], src: "John's email Oct 14; Richard's email Oct 28; Tier3 plan",
+      d: ["Market-specific sites for data center and solar land; Richard's LinkedIn pieces on transmission land economics.", "Tier 3 plan: 2 to 3 posts a week, conferences and quarterly reports."] },
+    { id: "project", s: 4, st: "today", t: "Partner picks a site", who: "Partners, K2", next: ["value"], src: "First call with Richard",
+      d: ["The partner signs a project on the land, then files to interconnect, gets permits and builds."] },
+    { id: "value", s: 5, st: "today", t: "Land value multiplies", who: "Landowner, K2, partner", next: ["irp"], src: "Oct 24 call",
+      d: ["Oklahoma example: farmland around $1,200 an acre; the owner next to the substation got a $60,000 purchase option.", "If the data center goes ahead, about $16,000 an acre. “Land around substations is the new gold.”"] },
+  ];
+  const HWB = Object.fromEntries(HW.map((n) => [n.id, n]));
+  const HWS = { sel: "catalog", shown: { today: true, building: true, future: true }, tier3: true };
+  const nfmt = (v) => Number(v || 0).toLocaleString();
+  const sigCount = (re) => state.signals.filter((g) => re.test(String(g.signal_id || g.id || "").replace("_", ":"))).length;
+  // Live numbers: [card line, big number, label under it, button text, action]
+  function hwLive(id) {
+    const L = LS.all, sites = Object.values(LS.sites), st = Object.values(LS.stations);
+    const goLines = (o = {}) => () => {
+      showTab("t-lines");
+      Object.assign(LS, { view: o.view || "lines", rec: o.rec || "", map: o.map || "", region: "", life: "", kv: "", type: "", util: "", sub: "", dev: "", fresh: "", q: "", shown: 40 });
+      [["lf-rec", "rec"], ["lf-map", "map"], ["lf-region", "region"], ["lf-kv", "kv"], ["lf-type", "type"], ["lf-util", "util"], ["lf-sub", "sub"], ["lf-dev", "dev"], ["lf-new", "fresh"]].forEach(([el, k]) => { if ($(el)) $(el).value = LS[k]; });
+      $("lf-q").value = ""; renderLines();
+      if (o.fold) { const f = $(o.fold).closest("details"); f.open = true; f.scrollIntoView({ block: "start" }); } else $("p-lines").scrollIntoView({ block: "start" });
+    };
+    const goTab = (t) => () => { showTab(t); $(t).scrollIntoView({ block: "start" }); };
+    if (!L.length && ["catalog", "tap", "decide", "check", "gis", "map", "devs"].includes(id)) return ["loading...", "", "", "", null];
+    switch (id) {
+      case "irp": return state.irps.length ? [`${nfmt(state.irps.length)} utility plans read`, nfmt(state.irps.length), "utility plans read so far (IRP pilot)", "Open utility plans", goTab("t-irp")] : ["", "", "", "Open utility plans", goTab("t-irp")];
+      case "filings": if (!state.signals.length) return ["", "", "", "Open early signals", goTab("t-watch")]; { const n = sigCount(/^(puct|rpg|spp|oncorccn):/); return [`${nfmt(n)} filings and planning documents caught`, nfmt(n), "PUC cases, ERCOT and SPP planning documents and Oncor study areas caught by the twice-daily check", "Open early signals", goTab("t-watch")]; }
+      case "news": if (!state.signals.length) return ["", "", "", "Open early signals", goTab("t-watch")]; { const n = sigCount(/^(news|util):/); return [`${nfmt(n)} news items and project pages`, nfmt(n), "news stories and utility project pages (open houses) caught", "Open early signals", goTab("t-watch")]; }
+      case "devs": { const np = new Set(st.flatMap((s) => s.projects.map((p) => p.inr))).size; return [`${nfmt(np)} queued projects at ${nfmt(st.length)} substations`, nfmt(np), `generation and battery projects queued at ${nfmt(st.length)} end substations (ERCOT queue)`, "See the developers", goLines({ fold: "devtable" })]; }
+      case "catalog": { const r = LS.regions || {}; const parts = [["ercot-texas", "ERCOT Texas"], ["spp-texas", "SPP Texas"], ["el-paso", "El Paso"], ["oklahoma", "Oklahoma"]].filter(([k]) => r[k]).map(([k, l]) => `${nfmt(r[k].lines)} ${l}`);
+        return [`${nfmt(L.length)} lines, ${nfmt(sites.length)} substations`, nfmt(L.length), `lines and new substations: ${parts.join(" · ")}. Updated ${LS.built}.`, "Open the lines list", goLines()]; }
+      case "tap": { const c = (v) => L.filter((x) => x.tappable === v).length; return [`${nfmt(c("yes"))} tappable · ${nfmt(c("no"))} substation only`, nfmt(c("yes")), `lines K2 can tap (345 kV and below); ${nfmt(c("maybe"))} maybe (500 kV); ${nfmt(c("no"))} substation only (765 kV)`, "Open the lines list", goLines({ })]; }
+      case "decide": { const c = (v) => L.filter((x) => x.recommended_next_step === v).length; return [`${nfmt(c("substation campaign"))} substation · ${nfmt(c("line campaign"))} line campaigns`, nfmt(c("substation campaign") + c("line campaign")), `ready for a campaign: ${nfmt(c("substation campaign"))} substation, ${nfmt(c("line campaign"))} line; ${nfmt(c("follow updates"))} to follow; ${nfmt(c("informational"))} informational`, "See substation campaigns", goLines({ rec: "substation campaign" })]; }
+      case "check": { const C = LS.checks; return C ? [`${C.passed} of ${C.total} checks passed`, `${C.passed}/${C.total}`, `data checks passed on ${C.date}; ${nfmt(C.review)} items listed for a person to look at`, "See the data checks", goLines({ fold: "checklist" })] : ["", "", "", "", null]; }
+      case "gis": { const placed = L.filter((x) => (x.endpoints || []).some((e) => e.lat != null)).length, ps = sites.filter((s) => s.lat != null).length; return [`1 layer: ${nfmt(placed)} lines, ${nfmt(ps)} substations`, nfmt(placed + ps), `features in the GIS layer (${nfmt(placed)} lines, ${nfmt(ps)} substations), all regions or one file per region`, "Go to the downloads", goLines()]; }
+      case "map": { const no = sites.filter((s) => s.on_public_map === "no").length, yes = sites.filter((s) => s.on_public_map === "yes").length; return [`${nfmt(no)} substations not on any public map`, nfmt(no), `placed substations with nothing on HIFLD or OpenStreetMap within half a mile (${nfmt(yes)} already mapped)`, "See substations new to the map", goLines({ view: "subs", map: "no" })]; }
+      default: return ["", "", "", "", null];
+    }
+  }
+  function renderFlow() {
+    if (!$("hwflow")) return;
+    const box = $("hwflow");
+    if (!box.childElementCount) {
+      box.innerHTML = HW_STAGES.map((t, i) => `<section class="hw-stage"><div class="hw-head"><div class="n">STAGE 0${i + 1}</div><h3>${esc(t)}</h3></div>${
+        HW.filter((n) => n.s === i).map((n) => { const k = `${i + 1}.${HW.filter((m) => m.s === i).indexOf(n) + 1}`; n.k = k;
+          return `<button type="button" class="hw-node ${n.st}" id="hw-${n.id}" data-hw="${n.id}"><span class="k">${k}<i>${esc(HW_LABEL[n.st].split(" (")[0])}</i></span><span class="t">${esc(n.t)}</span><span class="w">${esc(n.who)}</span><span class="live" hidden></span></button>`; }).join("")}</section>`).join("");
+      box.querySelectorAll("[data-hw]").forEach((b) => b.addEventListener("click", () => { HWS.sel = b.dataset.hw; renderFlow();
+        if (window.innerWidth < 860) $("hwdetail").scrollIntoView({ block: "start" }); }));
+    }
+    for (const k of ["today", "building", "future"]) $("hwc-" + k).textContent = HW.filter((n) => n.st === k).length;
+    const sel = HWB[HWS.sel], into = HW.filter((x) => x.next.includes(sel.id)).map((x) => x.id);
+    for (const n of HW) {
+      const el = $("hw-" + n.id), live = el.querySelector(".live"), [line] = hwLive(n.id);
+      live.textContent = line; live.hidden = !line;
+      el.hidden = !HWS.tier3 && n.st === "future";
+      el.classList.toggle("sel", n.id === sel.id);
+      el.classList.toggle("linked", n.id !== sel.id && (sel.next.includes(n.id) || into.includes(n.id)));
+      el.classList.toggle("dim", !HWS.shown[n.st]);
+      el.setAttribute("aria-pressed", String(n.id === sel.id));
+    }
+    const [, big, lbl, goText, go] = hwLive(sel.id);
+    const links = (ids) => ids.map((i) => `<button type="button" data-hwgo="${i}">${esc(HWB[i].t)}</button>`).join("");
+    $("hwdetail").innerHTML = `<div><span class="hw-pill ${sel.st}">${esc(HW_LABEL[sel.st])}</span>
+        <h3>${esc(sel.k || "")} ${esc(sel.t)}</h3><div class="pmeta mono">${esc(sel.who)}</div>
+        <ul>${sel.d.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
+        <p class="pmeta">Source: ${esc(sel.src)}</p></div>
+      <div class="hw-side">${big ? `<div class="hw-stat"><b>${esc(big)}</b><span>${esc(lbl)}</span></div>` : `<p class="pmeta">${sel.st === "future" ? "Part of the Tier 3 plan: not built yet, so there is nothing to count." : "Done by K2's team today, outside Line Watch."}</p>`}
+        ${go ? `<button type="button" class="hw-go" id="hwgo">${esc(goText)}</button>` : ""}
+        <div><p class="lbl">Leads to</p><div class="hw-links">${links(sel.next)}</div></div>
+        ${into.length ? `<div><p class="lbl">Comes from</p><div class="hw-links">${links(into)}</div></div>` : ""}</div>`;
+    if (go) $("hwgo").addEventListener("click", go);
+    $("hwdetail").querySelectorAll("[data-hwgo]").forEach((b) => b.addEventListener("click", () => { HWS.sel = b.dataset.hwgo; if (!HWS.tier3 && HWB[HWS.sel].st === "future") HWS.tier3 = true, syncHwView(); renderFlow(); $("hw-" + HWS.sel).scrollIntoView({ block: "nearest", inline: "nearest" }); }));
+  }
+  function syncHwView() { document.querySelectorAll("[data-hwview]").forEach((b) => b.setAttribute("aria-pressed", String((b.dataset.hwview === "tier3") === HWS.tier3))); }
+  document.querySelectorAll("[data-hwst]").forEach((b) => b.addEventListener("click", () => { const k = b.dataset.hwst; HWS.shown[k] = !HWS.shown[k]; b.setAttribute("aria-pressed", String(HWS.shown[k])); renderFlow(); }));
+  document.querySelectorAll("[data-hwview]").forEach((b) => b.addEventListener("click", () => { HWS.tier3 = b.dataset.hwview === "tier3"; if (!HWS.tier3 && HWB[HWS.sel].st === "future") HWS.sel = "catalog"; syncHwView(); renderFlow(); }));
+  const TABS = [["t-flow", "p-flow"], ["t-lines", "p-lines"], ["t-watch", "p-watch"], ["t-irp", "p-irp"], ["t-help", "p-help"]];
   function showTab(id) {
     for (const [t, panel] of TABS) {
       const on = t === id;
