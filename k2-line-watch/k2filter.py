@@ -126,6 +126,7 @@ def explain(sig):
         out["next_step"] = ("If it is a new STEP project list, download it to data/sources and rebuild the Line Watch list "
                             "(data/build_spp.py reads it); otherwise skim it for new 345 kV and 765 kV lines.")
         out["importance"] = "High" if re.search(r"STEP|Project List", title, re.I) else "Medium"
+        out["stage"] = "SPP planning: in SPP's yearly plan. Usually 1 to 3 years before a line is built."
     elif step == "2":  # ERCOT planning
         if any(word in low for word in RPG_NOISE):
             return None
