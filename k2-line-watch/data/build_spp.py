@@ -104,7 +104,7 @@ def classify(d):
         kind = next((k for k, rx in B.UPGRADE_KIND if rx.search(text)), "upgrade")
         return kv, "upgrade", kind, ends, 0.0, upg_mi or miles, gen
     if kv >= 345 and m(r"(NEW|BUILD|INSTALL|CONSTRUCT|ESTABLISH)\b.{0,40}(SUBSTATION|SWITCHING STATION|SWITCHYARD)") and \
-            not m(r"EXPAN|TERMINAL"):
+            not re.search(r"EXPAN|TERMINAL", name, re.I):   # the name, not the description: a new station's description often adds "terminal equipment"
         site = re.sub(r"(?i)^new\s+\d{3}(/\d{3})?\s*kV\s+substation\s+at\s+", "", name)
         site = re.sub(r"(?i)\s+\d{3}(/\d{3})?\s*kV.*$", "", site).strip()
         return kv, "new substation", "", [site], 0.0, 0.0, gen
@@ -309,6 +309,66 @@ def spp_lines(researched=None):
         rec["tappable"], rec["tap_note"] = B.tap(g["kv"])
         rec["recommended_next_step"], rec["recommendation_reason"] = B.recommend(rec)
         rec["recommendation_reason"] = rec["recommendation_reason"].replace("ERCOT endorsement", "an SPP notice to construct")
+        rec["priority_score"] = B.priority(rec)
+        out.append(rec)
+    return out
+
+
+ITP_FILE = os.path.join(B.HERE, "sources", "spp-itp-2026.json")
+
+
+def itp_lines():
+    """SPP's 2026 ITP 765 kV Southern Stage lines (sources/spp-itp-2026.json, kept by hand from SPP's draft report).
+    Not in the STEP list yet: they get a notice to construct only if SPP's board approves them (vote Nov 17, 2026).
+    Until then they are proposed; once approved, set "approved": true and they become planned."""
+    if not os.path.exists(ITP_FILE):
+        return []
+    src, places = json.load(open(ITP_FILE)), SppPlaces()
+    out = []
+    for p in src["projects"]:
+        where = src.get("station_states", {})
+        ends = [(places.find(n, p["kv"], where.get(n, list(HOME))) if n not in p["new_stations"] else None) or
+                {"name": n, "county": "", "state": (where.get(n) or [""])[0], "confidence": "unknown",
+                 "basis": ("New substation; SPP has not published its location" if n in p["new_stations"]
+                           else "Not on public maps by this name (SPP gives no county)")}
+                for n in p["ends"]]
+        for i, e in enumerate(ends):
+            near = next((o for o in ends if o is not e and o.get("lat") is not None), None)
+            if e.get("lat") is None and near and e["name"] not in p["new_stations"]:
+                ends[i] = places.find(e["name"], p["kv"], where.get(e["name"], list(HOME)), near) or e
+        for i, e in enumerate(ends):   # named for a town (Viola, Kansas): place it at the town
+            if e.get("lat") is None and e["name"] not in p["new_stations"]:
+                ends[i] = places.town(e["name"], where.get(e["name"], list(HOME))) or e
+        for e in ends:
+            if e.get("lat") is not None and not e.get("county"):
+                e["county"] = places.county_at(e)
+        placed = [e for e in ends if e.get("lat") is not None]
+        in_home = sorted({e["state"] for e in ends if e.get("state") in HOME}, key=list(HOME).index)   # placed or hinted
+        if not in_home:
+            continue
+        if src.get("approved") and p["ntc_recommended"]:
+            life, basis = "planned", "SPP board approved the 2026 ITP; notice to construct issued, route not set"
+        elif p["ntc_recommended"]:
+            life, basis = "proposed", f"SPP 2026 ITP: recommended for construction; SPP board vote {src['board_vote']}"
+        else:
+            life, basis = "proposed", "SPP 2026 ITP: deferred, not recommended for construction this cycle"
+        new = [n for n in p["new_stations"]]
+        desc = ("Part of SPP's 765 kV overlay in the 2026 Integrated Transmission Plan. " +
+                (f"Includes a new {', '.join(new)} 765 kV substation. " if new else "") + src["status"])
+        slug = re.sub(r"[^a-z0-9]+", "-", " ".join(p["ends"]).lower()).strip("-")
+        rec = {"id": "sppitp26-" + slug, "ercot_project": "", "spp_project": "", "spp_status": "2026 ITP (" + ("recommended" if p["ntc_recommended"] else "deferred") + ")",
+               "name": p["name"], "description": desc, "kv": p["kv"], "project_type": "new line", "upgrade_kind": "",
+               "lifecycle": life, "lifecycle_basis": basis, "tpit_status": "", "utility": "not assigned yet",
+               "from": ends[0]["name"], "to": ends[-1]["name"], "county_from": ends[0].get("county", ""), "county_to": ends[-1].get("county", ""),
+               "miles_new": p["miles"], "miles_upgraded": 0, "transformer_mva": 0, "in_service": "", "in_service_kind": "",
+               "construction_start": "", "capacity_mw": None, "purpose": "shared grid", "program": "SPP 2026 ITP (765 kV overlay)",
+               "rpg": "", "tier": "", "ercot_board": "", "docket": "", "route_status": "end substations only", "card_id": "", "card_ids": [],
+               "endpoints": ends, "market": "SPP",
+               "state": ", ".join(in_home),
+               "source": src["source"], "checked": "SPP 2026 ITP draft report (Sept 24, 2026)"}
+        rec["tappable"], rec["tap_note"] = B.tap(p["kv"])
+        rec["recommended_next_step"], rec["recommendation_reason"] = B.recommend(rec)
+        rec["recommendation_reason"] = rec["recommendation_reason"].replace("ERCOT endorsement", "SPP's board vote")
         rec["priority_score"] = B.priority(rec)
         out.append(rec)
     return out

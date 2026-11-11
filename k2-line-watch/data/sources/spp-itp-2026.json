@@ -1,0 +1,131 @@
+{
+ "source": "https://www.rtoinsider.com/wp-content/uploads/2026/10/2026-ITP-Study-Draft.pdf",
+ "title": "SPP 2026 Integrated Transmission Planning and CPP Transition Assessment Report, draft v0.1 (Sept 24, 2026), Table 3.1 Southern Stage 765 kV Lines",
+ "status": "Endorsed by SPP's Markets and Operations Policy Committee Oct 14, 2026 ($23.7B portfolio, per RTO Insider Oct 19, 2026); SPP Board final approval vote Nov 17, 2026.",
+ "board_vote": "2026-11-17",
+ "approved": false,
+ "note": "Southern Stage lines only (they touch Texas or Oklahoma). The Northern Stage (North and South Dakota, Nebraska, Kansas) is not recommended for construction this cycle and is outside Line Watch's regions. The draft gives no in-service dates; the 2025 ITP 765 kV lines were set for 2032. Southern Paradise is a new substation, tentatively named, north of Kansas City. Station states come from SPP's descriptions (Guava: east Tulsa; Southern Paradise: north Kansas City; Sailor: southwest Kansas City).",
+ "projects": [
+  {
+   "name": "Potter County - Woodward 765 kV New Line",
+   "ends": [
+    "Potter County",
+    "Woodward"
+   ],
+   "kv": 765,
+   "miles": 205.4,
+   "ntc_recommended": true,
+   "new_stations": []
+  },
+  {
+   "name": "Guava - Viola 765 kV New Line",
+   "ends": [
+    "Guava",
+    "Viola"
+   ],
+   "kv": 765,
+   "miles": 179.4,
+   "ntc_recommended": true,
+   "new_stations": []
+  },
+  {
+   "name": "Viola - Woodward 765 kV New Line",
+   "ends": [
+    "Viola",
+    "Woodward"
+   ],
+   "kv": 765,
+   "miles": 152.1,
+   "ntc_recommended": true,
+   "new_stations": []
+  },
+  {
+   "name": "Crawfish Draw - Lawton Eastside - Seminole 765 kV New Line",
+   "ends": [
+    "Crawfish Draw",
+    "Lawton Eastside",
+    "Seminole"
+   ],
+   "kv": 765,
+   "miles": 367.5,
+   "ntc_recommended": true,
+   "new_stations": []
+  },
+  {
+   "name": "Lawton Eastside - Matthewson - Woodward 765 kV New Line",
+   "ends": [
+    "Lawton Eastside",
+    "Matthewson",
+    "Woodward"
+   ],
+   "kv": 765,
+   "miles": 216.1,
+   "ntc_recommended": true,
+   "new_stations": []
+  },
+  {
+   "name": "Guava - Southern Paradise - Sailor - Viola 765 kV New Line (with 345 kV ties to Iatan, Mullen Creek, Nashua and Sibley)",
+   "ends": [
+    "Guava",
+    "Southern Paradise",
+    "Sailor",
+    "Viola"
+   ],
+   "kv": 765,
+   "miles": 389.4,
+   "ntc_recommended": true,
+   "new_stations": [
+    "Southern Paradise"
+   ]
+  },
+  {
+   "name": "Holcomb - Potter County 765 kV New Line",
+   "ends": [
+    "Holcomb",
+    "Potter County"
+   ],
+   "kv": 765,
+   "miles": 245.7,
+   "ntc_recommended": false,
+   "new_stations": []
+  }
+ ],
+ "station_states": {
+  "Potter County": [
+   "TX"
+  ],
+  "Woodward": [
+   "OK"
+  ],
+  "Guava": [
+   "OK"
+  ],
+  "Viola": [
+   "KS"
+  ],
+  "Crawfish Draw": [
+   "TX",
+   "NM"
+  ],
+  "Lawton Eastside": [
+   "OK"
+  ],
+  "Seminole": [
+   "OK"
+  ],
+  "Matthewson": [
+   "OK"
+  ],
+  "Southern Paradise": [
+   "MO",
+   "KS"
+  ],
+  "Sailor": [
+   "KS",
+   "MO"
+  ],
+  "Holcomb": [
+   "KS"
+  ]
+ }
+}

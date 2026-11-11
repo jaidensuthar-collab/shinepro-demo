@@ -153,6 +153,11 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
   county, so its substations are placed by name on HIFLD / OpenStreetMap (Texas, Oklahoma and neighbors, via
   `data/fetch_substations.py`), else at the town they are named for (`location_quality` = town, Census places). MISO's
   East Texas list (Entergy Texas) is not in yet: MISO's site refuses automated downloads.
+- **SPP 2026 ITP 765 kV lines (Nov 11, 2026)**: `data/sources/spp-itp-2026.json`, kept by hand from SPP's draft 2026 ITP
+  report (Table 3.1, Southern Stage): six lines recommended for construction plus Holcomb - Potter County (deferred),
+  ids `sppitp26-...`, stage proposed until SPP's board votes (Nov 17, 2026). When the board approves, set `"approved": true`
+  in that file and rebuild: the recommended lines become planned. The Northern Stage (Dakotas, Nebraska, Kansas) is
+  outside Line Watch's regions.
 - **New vs already on the map** (`on_public_map`, `nearest_mapped`, `nearest_mapped_miles` per substation): any substation,
   by any name, on HIFLD or OpenStreetMap within half a mile counts as already mapped, the way John compared the layer with
   K2's map. "can't tell" when the point is only a town or county center.

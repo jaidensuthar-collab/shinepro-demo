@@ -1103,8 +1103,9 @@ def build(projects_src, tpit_path, queue_path=None):
         for e in x["endpoints"]:
             e.setdefault("state", "TX")
     # Outside ERCOT: SPP's project list covers the Texas Panhandle, South Plains and Northeast Texas, and Oklahoma.
-    from build_spp import spp_lines, STEP_URL
+    from build_spp import spp_lines, itp_lines, STEP_URL
     out += spp_lines()
+    out += itp_lines()   # SPP's 2026 ITP 765 kV lines, before the board's construction approval
     # Far West Texas: El Paso Electric, on the western (WECC) grid.
     from build_epe import epe_lines, EPE_FILE
     out += epe_lines()

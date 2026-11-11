@@ -137,15 +137,17 @@
  },
  {
   "check": "Time window (2023-11 built to 2031-11 due) and stage names",
-  "checked": 1003,
+  "checked": 1013,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Substation points are in their state and in the county the source lists",
-  "checked": 1094,
+  "checked": 1097,
   "errors": [],
   "warnings": [
+   "substation Holcomb: placed in KS, outside the regions this list covers (the line crosses the state line)",
+   "substation Viola: placed in KS, outside the regions this list covers (the line crosses the state line)",
    "substation AJ Swope: point is 11 miles outside Deaf Smith County, the county ERCOT lists",
    "substation Blue Goose: point is 23 miles outside Pecos County, the county ERCOT lists",
    "substation Cedar Bayou: point is 5 miles outside Chambers County, the county ERCOT lists",
@@ -202,18 +204,18 @@
    "substation Triangle: point is 4 miles outside Midland County, the county ERCOT lists",
    "substation Vealmoor: point is 6 miles outside Howard County, the county ERCOT lists",
    "substation Yucca Drive: point is 10 miles outside Ector County, the county ERCOT lists",
-   "33 lines have no placeable substation (no county given, and not on public maps by name): tpit-92274, tpit-110819, tpit-78361B, spp-171375, tpit-110391, tpit-110487, tpit-112229, tpit-89955"
+   "35 lines have no placeable substation (no county given, and not on public maps by name): tpit-92274, tpit-110819, tpit-78361B, spp-171375, tpit-110391, tpit-110487, tpit-112229, tpit-89955"
   ]
  },
  {
   "check": "Substation status agrees between lines and substations",
-  "checked": 1152,
+  "checked": 1161,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Downloads match the page (CSV, GeoJSON, KML)",
-  "checked": 4219,
+  "checked": 4249,
   "errors": [],
   "warnings": []
  },
@@ -225,7 +227,7 @@
  },
  {
   "check": "SPP lines match SPP's project list (voltage, in-service date, stage)",
-  "checked": 88,
+  "checked": 91,
   "errors": [],
   "warnings": [
    "spp-143182 Chisholm - Woodward - Border 345 kV Ckt 1: stage 'in construction' is estimated (estimated: planned in-service date 2025-12 has passed and SPP has not marked it complete)",
@@ -237,6 +239,7 @@
    "spp-112435 East Kingfisher - Kingfisher 138 kV Rebuild: stage 'in construction' is estimated (estimated: planned in-service date 2026-05 has passed and SPP has not marked it complete)",
    "spp-157475 Pine & Peoria Tap - 46th Street Tap 138 kV Ckt 1 Rebuild: stage 'in construction' is estimated (estimated: planned in-service date 2026-05 has passed and SPP has not marked it complete)",
    "spp-143434 Lawton Eastside - Terry Road 345kV New Interconnection Substation (DISIS-2017-002): stage 'approved' is estimated (estimated: SPP notice to construct issued (On Schedule < 4) and due within 18 months, so its route and site should be settled)",
+   "spp-133042 Hugo - Sunnyside 345 kV GEN-2017-075 Interconnection (TOIF) (OKGE): stage 'in construction' is estimated (estimated: planned in-service date 2026-05 has passed and SPP has not marked it complete)",
    "spp-143404 TUCO - Oklaunion 345kV GEN-2017-151 Interconnection (Non-Shared NU): stage 'in construction' is estimated (estimated: planned in-service date 2026-08 has passed and SPP has not marked it complete)",
    "spp-133021 GRDA1 - CLARMR5 161 kV GEN-2017-061 Interconnection (Non-Shared NU): stage 'in construction' is estimated (estimated: planned in-service date 2025-06 has passed and SPP has not marked it complete)",
    "spp-143395 Deaf Smith - Plant X 230kV GEN-2017-146 Interconnection (TOIF): stage 'in construction' is estimated (estimated: planned in-service date 2026-08 has passed and SPP has not marked it complete)",
