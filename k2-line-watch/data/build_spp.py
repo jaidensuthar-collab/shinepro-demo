@@ -25,7 +25,9 @@ STEP_URL = "https://www.spp.org/engineering/transmission-planning/"
 STEP_FILE = os.path.join(B.HERE, "sources", "spp-step-2026.xlsx")
 STEP_LABEL = "2026 STEP project list (Appendix 1, posted Oct 2026)"
 STEP_DOC = "76727"   # SPP document id of the STEP zip this list was built from (lw.py texas watches for a newer one)
-STATE_NAME = {"TX": "Texas", "OK": "Oklahoma", "AR": "Arkansas", "KS": "Kansas", "MO": "Missouri", "NM": "New Mexico"}
+STATE_NAME = {"TX": "Texas", "OK": "Oklahoma", "AR": "Arkansas", "KS": "Kansas", "MO": "Missouri", "NM": "New Mexico", "LA": "Louisiana",
+              "ND": "North Dakota", "SD": "South Dakota", "MN": "Minnesota", "WI": "Wisconsin", "IA": "Iowa", "IL": "Illinois",
+              "IN": "Indiana", "MI": "Michigan", "KY": "Kentucky"}
 HOME = ("TX", "OK")              # the states this list covers
 NEIGHBORS = ("AR", "KS", "MO", "NM")   # where a line leaving Oklahoma or the Panhandle can end
 STATE_BOX = {"TX": (-106.7, 25.8, -93.5, 36.6), "OK": (-103.1, 33.6, -94.4, 37.1)}
@@ -134,10 +136,11 @@ def stage(d, ptype):
 class SppPlaces:
     """HIFLD and OpenStreetMap substations in Texas and Oklahoma, by name. SPP gives no county, so a name must be
     unique (one place) among transmission-level substations, or the nearest one to the line's other end."""
-    def __init__(self, researched=None):
+    def __init__(self, researched=None, states=None):
         self.pts = {}
         self.researched = researched or {}
-        for st in HOME + NEIGHBORS:
+        self.states = tuple(states or HOME + NEIGHBORS)   # MISO uses this finder too, with its own states
+        for st in self.states:
             f = os.path.join(B.HERE, "sources", f"hifld-{st.lower()}-substations.json")
             for s in json.load(open(f))["substations"] if os.path.exists(f) else []:
                 if re.match(r"(UNKNOWN|TAP)\d+$", s["name"]):
@@ -166,7 +169,7 @@ class SppPlaces:
         if not hasattr(self, "rings"):
             self.rings = json.load(open(os.path.join(B.WEB, "counties.json")))
             self.boxes = {k: (min(x for r in v for x, _ in r), min(y for r in v for _, y in r), max(x for r in v for x, _ in r),
-                              max(y for r in v for _, y in r)) for k, v in self.rings.items() if k[:2] in HOME + NEIGHBORS}
+                              max(y for r in v for _, y in r)) for k, v in self.rings.items() if k[:2] in self.states}
         for k, (x0, y0, x1, y1) in self.boxes.items():
             if k[:2] == pt.get("state") and x0 <= pt["lon"] <= x1 and y0 <= pt["lat"] <= y1 and B.in_county(self, k, pt):
                 return k.split("|")[1]

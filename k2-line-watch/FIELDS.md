@@ -143,16 +143,28 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
   county (`location_quality` = county), since Richard said a rough location is enough for now.
 - **One GIS layer**: `web/exports/k2-all-layer.geojson` (and `.kml`) holds every line and every substation in every
   region with all fields, as Steve asked. Per region: `k2-texas-layer`, `k2-ercot-texas-layer`, `k2-spp-texas-layer`,
-  `k2-el-paso-layer`, `k2-oklahoma-layer` (each with `-lines.csv` and `-substations.csv`). `market` (ERCOT, SPP, WECC)
-  and `state` (TX, OK) are on every feature.
+  `k2-el-paso-layer`, `k2-oklahoma-layer`, `k2-miso-texas-layer`, `k2-miso-layer` (each with `-lines.csv` and
+  `-substations.csv`). `market` (ERCOT, SPP, WECC, MISO) and `state` are on every feature.
 - **Outside ERCOT (Nov 9, 2026)**: SPP's 2026 STEP project list (`data/build_spp.py` reads
   `data/sources/spp-step-2026.xlsx`: the Texas Panhandle, South Plains, Northeast Texas and Oklahoma; ids `spp-<upgrade id>`)
   and El Paso Electric's 2027-2036 System Expansion Plan (`data/build_epe.py`, curated in `data/sources/epe-plan-2026.json`;
   ids `epe-...`). SPP stages: complete / in service = built; identified = proposed; notice to construct issued = planned,
   or approved for an upgrade or a line due within 18 months; past its date and not complete = in construction. SPP gives no
   county, so its substations are placed by name on HIFLD / OpenStreetMap (Texas, Oklahoma and neighbors, via
-  `data/fetch_substations.py`), else at the town they are named for (`location_quality` = town, Census places). MISO's
-  East Texas list (Entergy Texas) is not in yet: MISO's site refuses automated downloads.
+  `data/fetch_substations.py`), else at the town they are named for (`location_quality` = town, Census places).
+- **MISO (Nov 12, 2026)** (`data/build_miso.py`, market `MISO`). MISO's own site refuses automated downloads, so both
+  lists are kept by hand from public copies:
+  - Entergy Texas (MISO's part of Texas, Southeast Texas), `data/sources/miso-etr-2026.json`, ids `etr-...`: Entergy's
+    monthly construction report to the PUC (June 2025, the last on the public Interchange; later reports go to the PUC's
+    Compliance Reporting Portal) plus its project pages (SETEX, Cypress - Legend, Southline - Jacinto, War Eagle,
+    Sabine Pass). Stages: energized = built; past the planned finish by 6+ months with no energized date = built
+    (estimated); construction started = in construction; PUC route approved = approved; route case pending = proposed.
+  - MISO's LRTP Tranche 1, `data/sources/miso-lrtp-2026.json`, ids `miso-lrtp-<1-18>`: the 18 345 kV backbone projects
+    (North Dakota to Michigan) from MISO's dashboard (June 30, 2026). MISO approved them all in 2022, so planned;
+    in construction where MISO's construction column says so. Tranche 2.1 (2032-2034) is listed in the file but past
+    the 5-year window. MISO's local project list (MTEP Appendix A) is on MISO's site only and not included.
+  Stations are placed by name on HIFLD / OpenStreetMap in the state given (and the county, when the source gives one),
+  new stations beside the station the source names (`approx`) or at the county center.
 - **SPP 2026 ITP 765 kV lines (Nov 11, 2026)**: `data/sources/spp-itp-2026.json`, kept by hand from SPP's draft 2026 ITP
   report (Table 3.1, Southern Stage): six lines recommended for construction plus Holcomb - Potter County (deferred),
   ids `sppitp26-...`, stage proposed until SPP's board votes (Nov 17, 2026). When the board approves, set `"approved": true`

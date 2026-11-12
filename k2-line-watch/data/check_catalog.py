@@ -8,13 +8,15 @@ What it checks (errors fail the run, warnings are listed for a person to look at
   2. The time window: built lines have an actual in-service date in the last 3 years; nothing else is due after the
      5-year horizon.
   3. Locations: every point is in Texas, and every exact or approximate substation point is in (or next to) the
-     county ERCOT lists for it.
+     county the source lists for it.
   4. Substation status agrees between the lines and the substation table (there now, work, stage).
   5. The downloads agree with the page data: line and substation counts, every field present, the KML opens.
   6. Every project on Oncor's CCN Public Viewer is in the list.
   7. Every SPP line matches its rows in SPP's STEP project list: voltage, in-service date, and a stage that agrees
      with SPP's status. Substations SPP's project calls new but with a mapped substation within 0.2 mi are
      listed for a person to look at.
+  8. Every MISO line matches its source (Entergy Texas's PUC report and project pages, MISO's Tranche 1 dashboard):
+     every in-window project is in the list once, with its voltage, in-service date and stage.
 The summary is written into web/data/texas-lines.json ("checks") so the page shows when it was last checked.
 """
 import csv
@@ -27,12 +29,27 @@ import xml.etree.ElementTree as ET
 
 import build_catalog as B
 import build_spp as SPP
+import build_miso as MISO
 
 WEB = B.WEB
 TX_BOX = (-106.7, 25.8, -93.5, 36.6)
 BOXES = {**SPP.STATE_BOX, "AR": (-94.7, 33.0, -89.6, 36.5), "KS": (-102.1, 36.9, -94.6, 40.0), "MO": (-95.8, 35.9, -89.1, 40.6),
          "NM": (-109.1, 31.3, -103.0, 37.0)}
-ALL_BOX = (-109.1, 25.8, -89.1, 40.6)
+def _state_boxes():
+    """Bounding box of each state's counties (web/counties.json), for states the hand-set boxes above don't cover."""
+    rings = json.load(open(os.path.join(WEB, "counties.json")))
+    out = {}
+    for k, v in rings.items():
+        xs, ys = [x for r in v for x, _ in r], [y for r in v for _, y in r]
+        b = out.get(k[:2])
+        out[k[:2]] = (min(xs), min(ys), max(xs), max(ys)) if not b else (min(b[0], min(xs)), min(b[1], min(ys)), max(b[2], max(xs)), max(b[3], max(ys)))
+    return out
+
+
+for _st, _b in _state_boxes().items():
+    if _st in ("ND", "SD", "MN", "WI", "IA", "IL", "IN", "MI", "LA"):
+        BOXES.setdefault(_st, tuple(round(v + d, 2) for v, d in zip(_b, (-0.1, -0.1, 0.1, 0.1))))
+ALL_BOX = (min(b[0] for b in BOXES.values()), min(b[1] for b in BOXES.values()), max(b[2] for b in BOXES.values()), max(b[3] for b in BOXES.values()))
 
 
 def miles(a, b):
@@ -113,7 +130,7 @@ def check_locations(lines, sites, places, r):
         if not (box[0] <= st["lon"] <= box[2] and box[1] <= st["lat"] <= box[3]):
             errs.append(f"substation {st['name']}: point {st['lat']}, {st['lon']} is outside {st.get('state', 'TX')}")
             continue
-        if st.get("state", "TX") != "TX" and st.get("state") not in ("OK",):
+        if st.get("state", "TX") != "TX" and st.get("state") not in ("OK",) + MISO.MISO_STATES:
             warns.append(f"substation {st['name']}: placed in {st['state']}, outside the regions this list covers (the line crosses the state line)")
         key = f"{st.get('state', 'TX')}|" + (st["county"] or "")
         if st["confidence"] not in ("exact", "approx") or key not in places.rings:
@@ -171,7 +188,7 @@ def check_exports(lines, sites, r):
         c = f["geometry"]["coordinates"]
         pts = c if f["geometry"]["type"] == "LineString" else [c]
         if any(not (ALL_BOX[0] <= lon <= ALL_BOX[2] and ALL_BOX[1] <= lat <= ALL_BOX[3]) for lon, lat in pts):
-            errs.append(f"GIS feature {f['properties']['id']} has a point outside Texas, Oklahoma and their neighbors")
+            errs.append(f"GIS feature {f['properties']['id']} has a point outside the states Line Watch covers")
     for key, (title, test) in B.REGIONS.items():
         want = sum(1 for x in lines if test(x) and any(e.get("lat") is not None for e in x["endpoints"])) + \
             sum(1 for s in sites if test(s) and s["lat"] is not None)
@@ -213,6 +230,48 @@ def check_oncor(lines, r):
         if not any(len(keys & h) >= 2 for h in have):
             errs.append(f"Oncor CCN project {pr['project_id']} {pr['name']} is not in the list")
     r.add("Every project on Oncor's CCN Public Viewer is in the list", errs, checked=n)
+
+
+def check_miso(lines, r):
+    """MISO lines against their sources: every in-window project is in the list once, with its voltage, in-service
+    date and the stage rule (Entergy: status and dates; Tranche 1: MISO's construction column)."""
+    errs, warns = [], []
+    got = {x["id"]: x for x in lines if x.get("market") == "MISO"}
+    etr, lrtp = json.load(open(MISO.ETR_FILE)), json.load(open(MISO.LRTP_FILE))
+    want = 0
+    for p in etr["projects"]:
+        if p["in_service"] and (p["in_service"] > B.HORIZON or p["in_service"] < B.CUTOFF.strftime("%Y-%m")):
+            continue
+        want += 1
+        x = got.get("etr-" + p["key"])
+        if not x:
+            errs.append(f"Entergy Texas project {p['name']} is missing")
+            continue
+        if x["kv"] != p["kv"] or x["in_service"] != p["in_service"]:
+            errs.append(f"{x['id']}: {x['kv']} kV / {x['in_service']} but the source says {p['kv']} kV / {p['in_service']}")
+        if p["status"] == "built" and x["lifecycle"] != "built":
+            errs.append(f"{x['id']}: energized per Entergy, but stage is {x['lifecycle']}")
+        if x["lifecycle_basis"].startswith("estimated"):
+            warns.append(f"{x['id']} {x['name']}: stage '{x['lifecycle']}' is estimated ({x['lifecycle_basis'][:120]})")
+    for p in lrtp["projects"]:
+        if p["in_service"] > B.HORIZON:
+            continue
+        want += 1
+        x = got.get(f"miso-lrtp-{p['id']}")
+        if not x:
+            errs.append(f"MISO Tranche 1 project {p['id']} {p['name']} is missing")
+            continue
+        if x["kv"] != 345 or x["in_service"] != p["in_service"]:
+            errs.append(f"{x['id']}: {x['kv']} kV / {x['in_service']} but MISO says 345 kV / {p['in_service']}")
+        if (x["lifecycle"] == "in construction") != bool(p["construction"]):
+            errs.append(f"{x['id']}: stage {x['lifecycle']} but MISO's construction column says '{p['construction']}'")
+    for x in got.values():
+        for e in x["endpoints"]:
+            if e.get("lat") is None:
+                warns.append(f"{x['id']} {x['name']}: {e['name']} has no public location yet")
+    if len(got) != want:
+        errs.append(f"{len(got)} MISO lines in the list, {want} in the sources' window")
+    r.add("MISO lines match their sources (Entergy Texas report, MISO Tranche 1 dashboard)", errs, warns, checked=len(got))
 
 
 def check_spp(lines, sites, r):
@@ -260,6 +319,7 @@ def main():
     check_exports(lines, sites, r)
     check_oncor(lines, r)
     check_spp(lines, sites, r)
+    check_miso(lines, r)
     failed = [c for c in r.checks if c["errors"]]
     nwarn = sum(len(c["warnings"]) for c in r.checks)
     for c in r.checks:

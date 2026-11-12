@@ -137,13 +137,13 @@
  },
  {
   "check": "Time window (2023-11 built to 2031-11 due) and stage names",
-  "checked": 1013,
+  "checked": 1044,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Substation points are in their state and in the county the source lists",
-  "checked": 1097,
+  "checked": 1156,
   "errors": [],
   "warnings": [
    "substation Holcomb: placed in KS, outside the regions this list covers (the line crosses the state line)",
@@ -209,13 +209,13 @@
  },
  {
   "check": "Substation status agrees between lines and substations",
-  "checked": 1161,
+  "checked": 1224,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Downloads match the page (CSV, GeoJSON, KML, new-only layers)",
-  "checked": 4249,
+  "checked": 4433,
   "errors": [],
   "warnings": []
  },
@@ -253,6 +253,24 @@
    "substation Spruce (TX): marked new, but OpenStreetMap J. K. Spruce Switchyard is 0.03 miles away on a public map; it may be built already or sit beside an existing station",
    "substation WAParish/Whaley (TX): marked new, but HIFLD PARISH is 0.03 miles away on a public map; it may be built already or sit beside an existing station",
    "substation Welsh HVDC (TX): marked new, but HIFLD unnamed substation is 0.02 miles away on a public map; it may be built already or sit beside an existing station"
+  ]
+ },
+ {
+  "check": "MISO lines match their sources (Entergy Texas report, MISO Tranche 1 dashboard)",
+  "checked": 31,
+  "errors": [],
+  "warnings": [
+   "etr-texas-sub Texas 138 kV substation and line to L-487: stage 'in construction' is estimated (estimated: Entergy's report: construction Jun 2025 to Jul 2026 (no energized date reported yet))",
+   "etr-sandling-sub Sandling 230 kV substation (cut-in of L-829 and L-830): stage 'built' is estimated (estimated: Entergy's planned finish (2026-01) is more than 6 months past. Entergy's report: construction Jun 2024 to Jan)",
+   "etr-rhodair Rhodair 230 kV substation and two lines from Garden: stage 'built' is estimated (estimated: Entergy's planned finish (2025-06) is more than 6 months past. Entergy's report: construction Jul 2024 to Jun)",
+   "etr-brad-park Brad Park 230 kV switching station (cut-in of Rhodair - Garden 230 kV): stage 'built' is estimated (estimated: Entergy's planned finish (2025-08) is more than 6 months past. Entergy's report: construction Aug 2024 to Aug)",
+   "etr-castle Castle 230 kV substation and line from L-136: stage 'built' is estimated (estimated: Entergy's planned finish (2024-10) is more than 6 months past. Entergy's report: construction Oct 2023 to Oct)",
+   "etr-millbend Millbend 138 kV substation and line from L-92 or L-586: stage 'built' is estimated (estimated: Entergy's planned finish (2024-03) is more than 6 months past. Entergy's report: construction Apr 2023 to Mar)",
+   "miso-lrtp-10 Denny - Zachary - Thomas Hill - Maywood 345 kV: Zachary has no public location yet",
+   "miso-lrtp-5 Tremval - Eau Claire - Jump River 345 kV: Jump River has no public location yet",
+   "miso-lrtp-15 Sidney - Paxton East - Gilman South - Morrison Ditch 345 kV: Morrison Ditch has no public location yet",
+   "miso-lrtp-16 Morrison Ditch - Reynolds - Burr Oak - Leesburg - Hiple 345 kV: Morrison Ditch has no public location yet",
+   "miso-lrtp-17 Hiple - Duck Lake 345 kV: Duck Lake has no public location yet"
   ]
  }
 ]

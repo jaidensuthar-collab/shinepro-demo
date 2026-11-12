@@ -898,11 +898,13 @@ def site_props(st, names):
 
 
 REGIONS = {   # file key -> (title, test on a line or substation record)
-    "texas": ("Texas (ERCOT, SPP, El Paso)", lambda r: "TX" in r.get("state", "TX")),
+    "texas": ("Texas (ERCOT, SPP, MISO, El Paso)", lambda r: "TX" in r.get("state", "TX")),
     "ercot-texas": ("Texas, ERCOT", lambda r: r.get("market", MARKET) == MARKET),
     "spp-texas": ("Texas, SPP (Panhandle, South Plains, Northeast Texas)", lambda r: "SPP" in r.get("market", "") and "TX" in r.get("state", "")),
     "el-paso": ("Texas, El Paso (El Paso Electric, western grid)", lambda r: "WECC" in r.get("market", "")),
     "oklahoma": ("Oklahoma (SPP)", lambda r: "OK" in r.get("state", "")),
+    "miso-texas": ("Texas, MISO (Entergy Texas, Southeast Texas)", lambda r: r.get("market") == "MISO" and "TX" in r.get("state", "")),
+    "miso": ("MISO (Entergy Texas and the 345 kV Tranche 1 backbone, ND to MI)", lambda r: r.get("market") == "MISO"),
 }
 
 
@@ -1132,6 +1134,9 @@ def build(projects_src, tpit_path, queue_path=None):
     # Far West Texas: El Paso Electric, on the western (WECC) grid.
     from build_epe import epe_lines, EPE_FILE
     out += epe_lines()
+    # MISO: Entergy Texas (Southeast Texas) and MISO's LRTP Tranche 1 345 kV backbone (North Dakota to Michigan).
+    from build_miso import miso_lines, ETR_FILE, LRTP_FILE
+    out += miso_lines()
     out.sort(key=lambda x: -x["priority_score"])
     stations = attach_queue(out, places, queue_path)
     sites = station_sites(out, stations)
@@ -1140,9 +1145,11 @@ def build(projects_src, tpit_path, queue_path=None):
     os.makedirs(os.path.join(WEB, "data"), exist_ok=True)
     meta = {"built": TODAY.isoformat(), "count": len(out), "queue_report": queue_label(queue_path),
             "sources": {"ERCOT TPIT": TPIT_URL, "SPP STEP project list": STEP_URL,
-                        "El Paso Electric System Expansion Plan": json.load(open(EPE_FILE))["source"], "HIFLD substations": HIFLD_URL,
+                        "El Paso Electric System Expansion Plan": json.load(open(EPE_FILE))["source"],
+                        "Entergy Texas (MISO)": json.load(open(ETR_FILE))["source"], "MISO LRTP Tranche 1": json.load(open(LRTP_FILE))["source"],
+                        "HIFLD substations": HIFLD_URL,
                         "OpenStreetMap substations": "https://www.openstreetmap.org/", "ERCOT interconnection queue (GIS report)": QUEUE_URL},
-            "scope": f"Texas (ERCOT, SPP and El Paso Electric) and Oklahoma (SPP): new and upgraded lines 138 kV and up and new 345 kV+ substations, from proposed to built since {CUTOFF:%B %Y}, in service by {HORIZON}, plus Line Watch cards not yet in ERCOT's report",
+            "scope": f"Texas (ERCOT, SPP, MISO and El Paso Electric), Oklahoma (SPP) and MISO's 345 kV Tranche 1 backbone (North Dakota to Michigan): new and upgraded lines 138 kV and up and new 345 kV+ substations, from proposed to built since {CUTOFF:%B %Y}, in service by {HORIZON}, plus Line Watch cards not yet in ERCOT's report",
             "regions": {k: {"title": t, "lines": sum(1 for x in out if f(x))} for k, (t, f) in REGIONS.items()},
             "map_radius_miles": MAP_RADIUS,
             "cutoff": CUTOFF.isoformat(), "horizon": HORIZON, "stages": STAGE_HELP}

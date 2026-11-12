@@ -29,10 +29,12 @@ k2-all-new-only.geojson / .kml.xml  (and k2-<region>-new-only per region)
   complete dataset; this is a filter of it.
 k2-all-layer.geojson / k2-all-layer.kml  (start here)
   One GIS layer with every line and every end substation in every region (Texas ERCOT, Texas SPP,
-  Texas El Paso, Oklahoma SPP), all fields on each feature. market (ERCOT, SPP or WECC for El Paso
-  Electric) and state (TX, OK, or both for a line that crosses the state line) say where each feature is.
+  Texas El Paso, Texas MISO, Oklahoma SPP, MISO's 345 kV backbone), all fields on each feature. market (ERCOT,
+  SPP, MISO, or WECC for El Paso Electric) and state (TX, OK, ..., or several for a line that crosses a
+  state line) say where each feature is.
   Per region, the same layer split: k2-texas-layer (all of Texas), k2-ercot-texas-layer,
-  k2-spp-texas-layer (Panhandle, South Plains, Northeast Texas), k2-el-paso-layer and k2-oklahoma-layer.
+  k2-spp-texas-layer (Panhandle, South Plains, Northeast Texas), k2-el-paso-layer, k2-oklahoma-layer,
+  k2-miso-texas-layer (Entergy Texas) and k2-miso-layer (all MISO lines).
   feature_type = line: one per new or upgraded line (138 kV and up) or new 345 kV+
   substation project, built in the last 3 years or due in service within the next 5. stage is one of built (in service in the last 3 years), in construction,
   approved (route final or existing corridor, waiting to build), planned (approved, route or site
