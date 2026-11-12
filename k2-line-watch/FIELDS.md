@@ -162,7 +162,7 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
   - MISO's LRTP Tranche 1, `data/sources/miso-lrtp-2026.json`, ids `miso-lrtp-<1-18>`: the 18 345 kV backbone projects
     (North Dakota to Michigan) from MISO's dashboard (June 30, 2026). MISO approved them all in 2022, so planned;
     in construction where MISO's construction column says so. Tranche 2.1 (2032-2034) is listed in the file but past
-    the 5-year window. MISO's local project list (MTEP Appendix A) is on MISO's site only and not included.
+    the 5-year window (window confirmed Nov 12, 2026: built in the last 3 years to due within 5). MISO's local project list (MTEP Appendix A) is on MISO's site only and not included.
   Stations are placed by name on HIFLD / OpenStreetMap in the state given (and the county, when the source gives one),
   new stations beside the station the source names (`approx`) or at the county center.
 - **SPP 2026 ITP 765 kV lines (Nov 11, 2026)**: `data/sources/spp-itp-2026.json`, kept by hand from SPP's draft 2026 ITP
