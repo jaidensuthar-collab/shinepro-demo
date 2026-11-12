@@ -360,7 +360,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   <div id="p-lines" role="tabpanel" aria-labelledby="t-lines" class="panel land" hidden>
     <section class="lhead">
       <p>New and upgraded lines (138 kV+) in Texas (ERCOT, SPP and El Paso Electric) and Oklahoma (SPP), built since <span id="cutoff">October 2023</span> or due in service <span id="window">through October 2031</span>. <span class="pmeta" id="linesstamp">Loading...</span> <span class="pmeta" id="checkline"></span></p>
-      <p class="dl"><b>Download:</b> <button type="button" class="linkbtn" id="layergj">GIS layer (.geojson, zipped)</button> · <button type="button" class="linkbtn" id="layerkml">Google Earth (.kml, zipped)</button> · <button type="button" class="linkbtn" id="linesdl">Lines (.csv)</button> · <button type="button" class="linkbtn" id="subsdl">Substations (.csv)</button> <span class="pmeta" id="linesdlnote"></span> <span class="pmeta" id="dlscope">All regions in one file; pick a region below for just that region.</span></p>
+      <p class="dl"><b>Download:</b> <button type="button" class="linkbtn" id="layergj">GIS layer (.geojson, zipped)</button> · <button type="button" class="linkbtn" id="layerkml">Google Earth (.kml, zipped)</button> · <b>New only:</b> <button type="button" class="linkbtn" id="newgj" title="Lines not yet built, substations not on HIFLD or OpenStreetMap, and mapped substations being expanded">GIS layer (.geojson, zipped)</button> · <button type="button" class="linkbtn" id="newkml">Google Earth (.kml, zipped)</button> · <button type="button" class="linkbtn" id="linesdl">Lines (.csv)</button> · <button type="button" class="linkbtn" id="subsdl">Substations (.csv)</button> <span class="pmeta" id="linesdlnote"></span> <span class="pmeta" id="dlscope">All regions in one file; pick a region below for just that region.</span></p>
     </section>
     <div class="recs stages" id="linesrecs"></div>
     <div class="tools lines-tools">
@@ -382,7 +382,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     <p class="pmeta" id="linescount"></p>
     <div class="tbl" id="linestable"></div>
     <button class="chip more" id="moreLines" hidden>Show more</button>
-    <p class="pmeta legend">Substations: <span class="stag new">not there yet · new</span> a new substation is being built · <span class="stag exp">there now · adding</span> a new line, transformer or expansion is coming · <span class="stag">there now</span> line upgrades or nothing new · <span class="stag unk">not on maps</span> can't confirm it exists. <b>On a public map</b> checks every placed substation against HIFLD and OpenStreetMap: any substation, by any name, within half a mile counts as already on the map. The stage after it (approved, planned...) is how far along that substation work is. <span class="tap yes">tap</span> 345 kV and below · <span class="tap maybe">maybe</span> 500 kV · <span class="tap no">substation only</span> 765 kV. Lines are straight between substations, not routes.</p>
+    <p class="pmeta legend">Substations: <span class="stag new">not there yet · new</span> a new substation is being built · <span class="stag exp">there now · adding</span> a new line, transformer or expansion is coming · <span class="stag">there now</span> line upgrades or nothing new · <span class="stag unk">not on maps</span> can't confirm it exists. <b>On a public map</b> checks every placed substation against HIFLD and OpenStreetMap: any substation, by any name, within 0.2 mi counts as already on the map. The stage after it (approved, planned...) is how far along that substation work is. <span class="tap yes">tap</span> 345 kV and below · <span class="tap maybe">maybe</span> 500 kV · <span class="tap no">substation only</span> 765 kV. Lines are straight between substations, not routes.</p>
     <details class="fold">
       <summary>Developers queued at these substations <span class="pmeta" id="devstamp"></span></summary>
       <p class="pmeta">ERCOT lines only for now. Generation and battery projects in ERCOT's interconnection queue at the end substations, listed under the company that filed them (often a project company, not the parent developer). <button type="button" class="linkbtn" id="devdl">Download (.csv)</button></p>
@@ -920,6 +920,8 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   const rk = () => (LS.region && LS.regions[LS.region] ? LS.region : "all");
   $("layergj").addEventListener("click", () => saveExport(`k2-${rk()}-layer.geojson`, `k2-${rk()}-layer.geojson`, `k2-${rk()}-layer-geojson.zip`));
   $("layerkml").addEventListener("click", () => saveExport(`k2-${rk()}-layer.kml.xml`, `k2-${rk()}-layer.kml`, `k2-${rk()}-layer-kml.zip`));
+  $("newgj").addEventListener("click", () => saveExport(`k2-${rk()}-new-only.geojson`, `k2-${rk()}-new-only.geojson`, `k2-${rk()}-new-only-geojson.zip`));
+  $("newkml").addEventListener("click", () => saveExport(`k2-${rk()}-new-only.kml.xml`, `k2-${rk()}-new-only.kml`, `k2-${rk()}-new-only-kml.zip`));
   $("linesdl").addEventListener("click", () => saveExport(`k2-${rk()}-lines.csv`, `k2-${rk()}-lines.csv`));
   $("subsdl").addEventListener("click", () => saveExport(`k2-${rk()}-substations.csv`, `k2-${rk()}-substations.csv`));
   $("devdl").addEventListener("click", () => saveExport("k2-texas-developers.csv", "k2-texas-developers.csv"));
@@ -1322,7 +1324,7 @@ How to answer: plain English for someone new to the grid; short; lead with the a
 
   // GIS bundle: the page zips the published export files (JSZip) and saves the zip through the downloads capability.
   const GIS_FILES = ["README.txt", "k2-all-layer.geojson", ["k2-all-layer.kml.xml", "k2-all-layer.kml"], "k2-all-substations.csv", "k2-all-lines.csv", "k2-all-lines.geojson",
-    "k2-texas-layer.geojson", "k2-ercot-texas-layer.geojson", "k2-spp-texas-layer.geojson", "k2-el-paso-layer.geojson", "k2-oklahoma-layer.geojson", "k2-texas-developers.csv", "k2-substations.geojson", "k2-substations.csv", "k2-study-areas.geojson", "k2-straight-lines.geojson",
+    "k2-texas-layer.geojson", "k2-ercot-texas-layer.geojson", "k2-spp-texas-layer.geojson", "k2-el-paso-layer.geojson", "k2-oklahoma-layer.geojson", "k2-all-new-only.geojson", "k2-texas-developers.csv", "k2-substations.geojson", "k2-substations.csv", "k2-study-areas.geojson", "k2-straight-lines.geojson",
     "k2-projects.csv", "k2-irp-pilot.csv", ["k2-line-watch.kml.xml", "k2-line-watch.kml"]];
   function loadJSZip() {
     if (window.JSZip) return Promise.resolve(window.JSZip);
@@ -1382,7 +1384,7 @@ How to answer: plain English for someone new to the grid; short; lead with the a
     { id: "decide", s: 1, st: "building", t: "Recommend a next step", who: "Line Watch, then Steve", next: ["check"], src: "Oct 24 call",
       d: ["Exact substation known: substation campaign. Route set on a 345 kV or smaller line: line campaign.", "Proposed or no coordinates: follow updates. Serves one generator or load: informational.", "Sooner in service ranks higher, but everything is tracked."] },
     { id: "check", s: 2, st: "building", t: "Check it before anyone acts", who: "Steve's GIS team; Tier 3 quality review", next: ["gis"], src: "Oct 16 call; John's emails Oct 21, Nov 2, Nov 9; Tier3 plan",
-      d: ["Every rebuild of the list is checked against its sources (ERCOT, SPP, Oncor) before it is published.", "Every placed substation is checked against HIFLD and OpenStreetMap: anything within half a mile counts as already on the map, the way John compared the layer with K2's map.", "Tier 3 plan: findings scored on 7 criteria, 7.5 average to pass."] },
+      d: ["Every rebuild of the list is checked against its sources (ERCOT, SPP, Oncor) before it is published.", "Every placed substation is checked against HIFLD and OpenStreetMap: anything within 0.2 mi counts as already on the map, the way John compared the layer with K2's map.", "Tier 3 plan: findings scored on 7 criteria, 7.5 average to pass."] },
     { id: "gis", s: 2, st: "today", t: "GIS team maps it", who: "Steve and the GIS team", next: ["parcels", "map"], src: "First call with Richard; Oct 26 call; Tier3 plan",
       d: ["Items go into the GIS request queue to be mapped into K2's master database.", "Line Watch hands over one layer with every line and substation, or one file per region."] },
     { id: "parcels", s: 2, st: "today", t: "Parcels and buildable acres", who: "GIS team", next: ["campaign"], src: "Oct 24 call",
@@ -1431,7 +1433,7 @@ How to answer: plain English for someone new to the grid; short; lead with the a
       case "decide": { const c = (v) => L.filter((x) => x.recommended_next_step === v).length; return [`${nfmt(c("substation campaign"))} substation · ${nfmt(c("line campaign"))} line campaigns`, nfmt(c("substation campaign") + c("line campaign")), `ready for a campaign: ${nfmt(c("substation campaign"))} substation, ${nfmt(c("line campaign"))} line; ${nfmt(c("follow updates"))} to follow; ${nfmt(c("informational"))} informational`, "See substation campaigns", goLines({ rec: "substation campaign" })]; }
       case "check": { const C = LS.checks; return C ? [`${C.passed} of ${C.total} checks passed`, `${C.passed}/${C.total}`, `data checks passed on ${C.date}; ${nfmt(C.review)} items listed for a person to look at`, "See the data checks", goLines({ fold: "checklist" })] : ["", "", "", "", null]; }
       case "gis": { const placed = L.filter((x) => (x.endpoints || []).some((e) => e.lat != null)).length, ps = sites.filter((s) => s.lat != null).length; return [`1 layer: ${nfmt(placed)} lines, ${nfmt(ps)} substations`, nfmt(placed + ps), `features in the GIS layer (${nfmt(placed)} lines, ${nfmt(ps)} substations), all regions or one file per region`, "Go to the downloads", goLines()]; }
-      case "map": { const no = sites.filter((s) => s.on_public_map === "no").length, yes = sites.filter((s) => s.on_public_map === "yes").length; return [`${nfmt(no)} substations not on any public map`, nfmt(no), `placed substations with nothing on HIFLD or OpenStreetMap within half a mile (${nfmt(yes)} already mapped)`, "See substations new to the map", goLines({ view: "subs", map: "no" })]; }
+      case "map": { const no = sites.filter((s) => s.on_public_map === "no").length, yes = sites.filter((s) => s.on_public_map === "yes").length; return [`${nfmt(no)} substations not on any public map`, nfmt(no), `placed substations with nothing on HIFLD or OpenStreetMap within 0.2 mi (${nfmt(yes)} already mapped)`, "See substations new to the map", goLines({ view: "subs", map: "no" })]; }
       default: return ["", "", "", "", null];
     }
   }

@@ -21,6 +21,12 @@ k2-projects.csv
   Act fast / Late), case numbers, next step and source links.
 k2-line-watch.kml
   Everything above for Google Earth.
+k2-all-new-only.geojson / .kml.xml  (and k2-<region>-new-only per region)
+  The same layer with what is already there taken out: lines not yet built (every stage but
+  built), substations not on HIFLD or OpenStreetMap within 0.2 mi, mapped substations being
+  expanded (more power coming), and substations the source calls new whose location is too
+  rough to check. new_only_reason says why each substation is in. The full layer below is the
+  complete dataset; this is a filter of it.
 k2-all-layer.geojson / k2-all-layer.kml  (start here)
   One GIS layer with every line and every end substation in every region (Texas ERCOT, Texas SPP,
   Texas El Paso, Oklahoma SPP), all fields on each feature. market (ERCOT, SPP or WECC for El Paso
@@ -39,8 +45,8 @@ k2-all-layer.geojson / k2-all-layer.kml  (start here)
   unconfirmed (not on public maps by this name). status_reason says why. Substation stage:
   there_now (yes / no / unknown), work (building a new substation / adding to it / upgrading
   lines to it / no new work), work_stage (built ... proposed), work_in_service, work_project.
-  on_public_map: yes if any substation (any name) on HIFLD or OpenStreetMap is within half a
-  mile, no if none is, can't tell if the point is only a town or county center.
+  on_public_map: yes if any substation (any name) on HIFLD or OpenStreetMap is within 0.2 mi,
+  no if none is, can't tell if the point is only a town or county center.
   nearest_mapped / nearest_mapped_miles name the closest mapped substation.
   Line features carry the same per end: from_there_now, from_work, from_work_stage (and to_). location_quality:
   exact / approx (within a mile or two) / town (SPP only: the town the substation is named for) /

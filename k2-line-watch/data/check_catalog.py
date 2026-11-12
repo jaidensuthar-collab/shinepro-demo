@@ -13,7 +13,7 @@ What it checks (errors fail the run, warnings are listed for a person to look at
   5. The downloads agree with the page data: line and substation counts, every field present, the KML opens.
   6. Every project on Oncor's CCN Public Viewer is in the list.
   7. Every SPP line matches its rows in SPP's STEP project list: voltage, in-service date, and a stage that agrees
-     with SPP's status. Substations SPP's project calls new but with a mapped substation within half a mile are
+     with SPP's status. Substations SPP's project calls new but with a mapped substation within 0.2 mi are
      listed for a person to look at.
 The summary is written into web/data/texas-lines.json ("checks") so the page shows when it was last checked.
 """
@@ -183,7 +183,23 @@ def check_exports(lines, sites, r):
             ET.parse(os.path.join(ex, f"k2-{key}-layer.kml.xml"))
         except ET.ParseError as err:
             errs.append(f"k2-{key}-layer.kml does not open: {err}")
-    r.add("Downloads match the page (CSV, GeoJSON, KML)", errs, checked=len(rows) + len(srows) + len(layer))
+    for key, (title, test) in [("all", ("All regions", lambda x: True))] + list(B.REGIONS.items()):
+        new = json.load(open(os.path.join(ex, f"k2-{key}-new-only.geojson")))["features"]
+        want = sum(1 for x in lines if test(x) and x["lifecycle"] != "built" and any(e.get("lat") is not None for e in x["endpoints"])) + \
+            sum(1 for s in sites if test(s) and s["lat"] is not None and B.new_only_reason(s))
+        if len(new) != want:
+            errs.append(f"{title} new-only layer has {len(new)} features, expected {want}")
+        for f in new:
+            p = f["properties"]
+            if p["feature_type"] == "line" and p["stage"] == "built":
+                errs.append(f"new-only layer {key} has built line {p['id']}")
+            if p["feature_type"] == "substation" and (not p.get("new_only_reason") or (p.get("on_public_map") == "yes" and p["status"] != "existing, expanding")):
+                errs.append(f"new-only layer {key} has substation {p['id']} that is already on the map and not changing")
+        try:
+            ET.parse(os.path.join(ex, f"k2-{key}-new-only.kml.xml"))
+        except ET.ParseError as err:
+            errs.append(f"k2-{key}-new-only.kml does not open: {err}")
+    r.add("Downloads match the page (CSV, GeoJSON, KML, new-only layers)", errs, checked=len(rows) + len(srows) + len(layer))
 
 
 def check_oncor(lines, r):

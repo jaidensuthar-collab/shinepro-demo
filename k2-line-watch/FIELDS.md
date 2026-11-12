@@ -159,8 +159,13 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
   in that file and rebuild: the recommended lines become planned. The Northern Stage (Dakotas, Nebraska, Kansas) is
   outside Line Watch's regions.
 - **New vs already on the map** (`on_public_map`, `nearest_mapped`, `nearest_mapped_miles` per substation): any substation,
-  by any name, on HIFLD or OpenStreetMap within half a mile counts as already mapped, the way John compared the layer with
-  K2's map. "can't tell" when the point is only a town or county center.
+  by any name, on HIFLD or OpenStreetMap within 0.2 mi counts as already mapped, the way John compared the layer with
+  K2's map (the two maps put one substation up to about 0.2 mi apart, under different names, so match by distance,
+  not name). "can't tell" when the point is only a town or county center.
+- **New-only layers** (`exports/k2-<region>-new-only.geojson` and `.kml.xml`, John's ask Nov 12): what is not already
+  there. Lines not yet built (every stage but built), substations not on HIFLD or OpenStreetMap, mapped substations being
+  expanded (more power coming), and substations the source calls new whose location is too rough to check. Each
+  substation carries `new_only_reason`. The full layers stay the complete dataset; new-only is a filter of them.
 - **Earlier signals: Oncor's CCN Public Viewer** (`data/fetch_oncor_ccn.py` -> `data/sources/oncor-ccn.json`). Oncor posts a
   study area and its end stations before the open houses, months before ERCOT's TPIT report lists the line. The catalog
   adds viewer projects it doesn't already have (ids `oncor-ccn-<project id>`, stage planned) and uses the viewer's station

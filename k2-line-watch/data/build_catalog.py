@@ -945,17 +945,40 @@ def write_exports(out, sites):
         json.dump({"type": "FeatureCollection", "name": f"K2 Line Watch: {title}", "features": lf + sf},
                   open(os.path.join(ex, f"k2-{key}-layer.geojson"), "w"))
         write_kml(os.path.join(ex, f"k2-{key}-layer.kml.xml"), lf, sf, title)   # the page serves .kml as .xml
+        # New only: what is not already there. Lines not yet built, and substations not on HIFLD or OpenStreetMap, plus
+        # mapped ones being expanded (more power coming to a place K2 already knows). John's ask on Nov 12.
+        nl = [line_feats[x["id"]] for x in ls if x["id"] in line_feats and x["lifecycle"] != "built"]
+        ns = []
+        for st in ss:
+            why = new_only_reason(st)
+            if why and st["id"] in site_feats:
+                f = site_feats[st["id"]]
+                ns.append({**f, "properties": {**f["properties"], "new_only_reason": why}})
+        json.dump({"type": "FeatureCollection", "name": f"K2 Line Watch: {title}, new only", "features": nl + ns},
+                  open(os.path.join(ex, f"k2-{key}-new-only.geojson"), "w"))
+        write_kml(os.path.join(ex, f"k2-{key}-new-only.kml.xml"), nl, ns, f"{title}, new only")
         if key in ("all", "texas"):   # the two whole layers also as plain .kml and line-only GeoJSON; regions stay lean
             json.dump({"type": "FeatureCollection", "features": lf}, open(os.path.join(ex, f"k2-{key}-lines.geojson"), "w"))
             shutil.copyfile(os.path.join(ex, f"k2-{key}-layer.kml.xml"), os.path.join(ex, f"k2-{key}-layer.kml"))
 
 
-MAP_RADIUS = 0.5   # miles: HIFLD and OpenStreetMap points for one substation can sit a few hundred yards apart
+def new_only_reason(st):
+    """Why a substation belongs in the new-only layer, or "" when it is already there and nothing is changing."""
+    if st.get("on_public_map") == "no":
+        return f"not on HIFLD or OpenStreetMap within {MAP_RADIUS} mi"
+    if st["status"] == "existing, expanding":
+        return "on the public maps, but being expanded (new line, transformer or yard)"
+    if st["status"] == "new" and st.get("on_public_map") == "can't tell":
+        return "source lists it as a new substation; location too rough to check the maps"
+    return ""
+
+
+MAP_RADIUS = 0.2   # miles: HIFLD and OpenStreetMap points for one substation sit up to about 0.2 mi apart (John's check, Nov 12)
 
 
 def map_check(sites):
     """New vs already on the map, the way John checked the GIS layer against K2's map: is any substation (any name)
-    on HIFLD or OpenStreetMap within half a mile of this one? Only for points placed at the substation itself."""
+    on HIFLD or OpenStreetMap within MAP_RADIUS (0.2 mi) of this one? Only for points placed at the substation itself."""
     grid = {}
     for f in sorted(os.listdir(os.path.join(HERE, "sources"))):
         m = re.match(r"(hifld|osm)-([a-z]{2})-substations\.json$", f)
