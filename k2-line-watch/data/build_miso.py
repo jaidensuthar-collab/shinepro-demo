@@ -27,6 +27,8 @@ NOT_A_PLACE = re.compile(r"BLANKET|THROUGHOUT|VARIOUS|^\d+ LINES$", re.I)
 LOOKUPS = os.path.join(B.HERE, "sources", "osm-miso-lookups.json")
 RESEARCH_FILE = os.path.join(B.HERE, "sources", "miso-research-2026.json")
 STAGES = ("built", "in construction", "approved", "planned", "proposed")
+# Researched items left out on review: a DC line upgrade (no AC tap possible) and a relocation done only for a Tranche 1 line.
+DROP = {"square-butte-arrowhead-hvdc-900mw", "wabasha-relocation-161"}
 
 
 class MisoPlaces(SppPlaces):
@@ -255,7 +257,7 @@ def mtep_lines(places=None, skip_pairs=()):
     return out
 
 
-def research_lines(places=None, have=()):
+def research_lines(places=None, have=(), have_mtep=()):
     """MISO projects found in utility pages, state commission dockets and transmission owners' plans
     (sources/miso-research-2026.json): projects approved before MTEP25 that are still being built, and ones not in
     MISO's list yet. Each carries its own stage and source; projects already in the list (same end substations) are skipped."""
@@ -268,7 +270,7 @@ def research_lines(places=None, have=()):
         if p["kv"] < 138 or (isd and (isd > B.HORIZON or isd < B.CUTOFF.strftime("%Y-%m"))) or p["stage"] not in STAGES:
             continue
         key = frozenset(B.base(e["name"]) for e in p["ends"])
-        if key in seen:
+        if key in seen or (p.get("mtep_id") and str(p["mtep_id"]) in have_mtep) or p["key"] in DROP:
             continue
         seen.add(key)
         ends = []
@@ -303,7 +305,8 @@ def miso_lines():
     pairs = {frozenset(B.base(e["name"]) for e in x["endpoints"]) for x in etr}
     known = etr + lrtp_lines(places) + mtep_lines(places, pairs)
     have = {frozenset(B.base(e["name"]) for e in x["endpoints"]) for x in known}
-    return known + research_lines(places, have)
+    have_mtep = {re.sub(r"\D", "", x["program"]) for x in known if x["id"].startswith("mtep25-")}
+    return known + research_lines(places, have, have_mtep)
 
 
 if __name__ == "__main__":
