@@ -1,7 +1,7 @@
 {
- "source": "Line Watch research, Nov 13, 2026: utility project pages, state commission dockets (LPSC, APSC, MPSC, PSCW, MN PUC, IUC, ND PSC, SD PUC, ICC, MoPSC, IURC), transmission owners' published plans (ATC 10-Year Assessment, Entergy quarterly status reports on OASIS, Minnesota Biennial Report, Ameren Missouri IRP). Each project lists its own sources.",
+ "source": "Line Watch research, Nov 13, 2026 (two passes): utility project pages, state commission dockets (LPSC, APSC, MPSC, PSCW, MN PUC, IUC, ND PSC, SD PUC, ICC, MoPSC, IURC), transmission owners' published plans (ATC 10-Year Assessment, Entergy quarterly status reports on OASIS, Minnesota Biennial Report, Ameren Missouri IRP). Each project lists its own sources.",
  "checked": "2026-11-13",
- "note": "Kept by hand from four research passes (MISO South; Wisconsin and Michigan; Minnesota, Dakotas, Iowa; Illinois, Missouri, Indiana, Kentucky). misoenergy.org was not used.",
+ "note": "Kept by hand from two research passes (first: by region; second: a sweep of each state's regulator cases, utility plans and posted status reports, plus FERC filings, seams projects and data-center hookups). misoenergy.org was not used.",
  "projects": [
   {
    "key": "ell-smalling-500-230-sub",
@@ -2440,9 +2440,9 @@
    ],
    "miles_new": 0,
    "miles_upgraded": 0,
-   "in_service": "",
+   "in_service": "2024-02",
    "stage": "built",
-   "stage_basis": "ATC 2023 list moved ISD from Dec-23 to Feb-24; ATC Table PR-1 (Oct 2024) lists it completed. Exact energization month not published.",
+   "stage_basis": "ATC's Oct 2023 list still showed it unbuilt with est. ISD Feb-24; ATC Table PR-1 (as of Oct 15, 2024) lists it completed, so in service between mid-Oct 2023 and mid-Oct 2024 (planned month inside the window). Exact month not published. (month is the utility's planned date; its completed-projects table confirms completion inside the window)",
    "docket": "",
    "mtep_id": "21814",
    "sources": [
@@ -2474,9 +2474,9 @@
    ],
    "miles_new": 0,
    "miles_upgraded": 0,
-   "in_service": "",
+   "in_service": "2023-11",
    "stage": "built",
-   "stage_basis": "ATC 2023 list showed ISD Nov-23; ATC Table PR-1 (Oct 2024) lists it completed since the 2023 report (on or after mid-Oct 2023; exact month not published).",
+   "stage_basis": "ATC's Oct 2023 list still showed it unbuilt with est. ISD Nov-23; ATC Table PR-1 (as of Oct 15, 2024) lists it completed, so in service between mid-Oct 2023 and mid-Oct 2024 (planned month inside the window). Exact month not published. (month is the utility's planned date; its completed-projects table confirms completion inside the window)",
    "docket": "",
    "mtep_id": "22225",
    "sources": [
@@ -2508,9 +2508,9 @@
    ],
    "miles_new": 0,
    "miles_upgraded": 0,
-   "in_service": "",
+   "in_service": "2023-12",
    "stage": "built",
-   "stage_basis": "ATC 2023 list showed ISD Dec-23; ATC Table PR-1 (Oct 2024) lists it completed. Exact month not published.",
+   "stage_basis": "ATC's Oct 2023 list still showed it unbuilt with est. ISD Dec-23; ATC Table PR-1 (as of Oct 15, 2024) lists it completed, so in service between mid-Oct 2023 and mid-Oct 2024 (planned month inside the window). Exact month not published. (month is the utility's planned date; its completed-projects table confirms completion inside the window)",
    "docket": "",
    "mtep_id": "14964",
    "sources": [
@@ -2576,9 +2576,9 @@
    ],
    "miles_new": 0,
    "miles_upgraded": 0,
-   "in_service": "",
+   "in_service": "2024-11",
    "stage": "built",
-   "stage_basis": "ATC 2024 list planned ISD Nov-24; ATC Table PR-1 (Oct 2025) lists it completed. Exact month not published.",
+   "stage_basis": "ATC 2024 list est. ISD Nov-24; ATC Table PR-1 (as of Oct 15, 2025) lists it completed since the Oct 2024 report, so in service between Oct 2024 and Oct 2025. Exact month not published. (month is the utility's planned date; its completed-projects table confirms completion inside the window)",
    "docket": "",
    "mtep_id": "15925",
    "sources": [
@@ -2610,9 +2610,9 @@
    ],
    "miles_new": 0,
    "miles_upgraded": 0,
-   "in_service": "",
+   "in_service": "2024-10",
    "stage": "built",
-   "stage_basis": "ATC 2024 list planned ISD Oct-24; ATC Table PR-1 (Oct 2025) lists it completed. Exact month not published.",
+   "stage_basis": "ATC 2024 list est. ISD Oct-24; ATC Table PR-1 (as of Oct 15, 2025) lists it completed since the Oct 2024 report, so in service between Oct 2024 and Oct 2025. Exact month not published. (month is the utility's planned date; its completed-projects table confirms completion inside the window)",
    "docket": "",
    "mtep_id": "12185",
    "sources": [
@@ -2644,9 +2644,9 @@
    ],
    "miles_new": 0,
    "miles_upgraded": 0,
-   "in_service": "",
+   "in_service": "2025-05",
    "stage": "built",
-   "stage_basis": "ATC 2024 list planned ISD May-25; ATC Table PR-1 (Oct 2025) lists it completed. Exact month not published.",
+   "stage_basis": "ATC 2024 list est. ISD May-25; ATC Table PR-1 (as of Oct 15, 2025) lists it completed since the Oct 2024 report, so in service between Oct 2024 and Oct 2025. Exact month not published. (month is the utility's planned date; its completed-projects table confirms completion inside the window)",
    "docket": "",
    "mtep_id": "21899",
    "sources": [
@@ -3628,13 +3628,14 @@
    ],
    "miles_new": 0,
    "miles_upgraded": 0,
-   "in_service": "",
+   "in_service": "2025-02",
    "stage": "built",
-   "stage_basis": "ATC Table PR-1 (Oct 2025) lists it completed since the 2024 report; exact month not published.",
+   "stage_basis": "ATC 2024 list est. ISD Feb-25; ATC Table PR-1 (as of Oct 15, 2025) lists it completed since the Oct 2024 report, so in service between Oct 2024 and Oct 2025. Exact month not published. (month is the utility's planned date; its completed-projects table confirms completion inside the window)",
    "docket": "",
    "mtep_id": "",
    "sources": [
-    "http://www.atc10yearplan.com/wp-content/uploads/2025/11/Table-PR-1-Completed-Since-Last-Report-TYA-2025.pdf"
+    "http://www.atc10yearplan.com/wp-content/uploads/2025/11/Table-PR-1-Completed-Since-Last-Report-TYA-2025.pdf",
+    "http://www.atc10yearplan.com/wp-content/uploads/2024/10/TYA-2024-Network-Project-List.pdf"
    ],
    "region_file": "wi-mi"
   },
@@ -3661,13 +3662,14 @@
    ],
    "miles_new": 0,
    "miles_upgraded": 0,
-   "in_service": "",
+   "in_service": "2025-03",
    "stage": "built",
-   "stage_basis": "ATC Table PR-1 (Oct 2025) lists it completed since the 2024 report; exact month not published.",
+   "stage_basis": "ATC 2024 list est. ISD Mar-25; ATC Table PR-1 (as of Oct 15, 2025) lists it completed since the Oct 2024 report, so in service between Oct 2024 and Oct 2025. Exact month not published. (month is the utility's planned date; its completed-projects table confirms completion inside the window)",
    "docket": "",
    "mtep_id": "",
    "sources": [
-    "http://www.atc10yearplan.com/wp-content/uploads/2025/11/Table-PR-1-Completed-Since-Last-Report-TYA-2025.pdf"
+    "http://www.atc10yearplan.com/wp-content/uploads/2025/11/Table-PR-1-Completed-Since-Last-Report-TYA-2025.pdf",
+    "http://www.atc10yearplan.com/wp-content/uploads/2024/10/TYA-2024-Network-Project-List.pdf"
    ],
    "region_file": "wi-mi"
   },
@@ -3859,9 +3861,9 @@
    ],
    "miles_new": 2.4,
    "miles_upgraded": 6.3,
-   "in_service": "",
+   "in_service": "2024-03",
    "stage": "built",
-   "stage_basis": "ITC: construction began Q2 2022 and was completed Q1 2024 (6.3 mi rebuilt to double circuit, 2.4 mi new on Mio-Airport). Long Rapids itself is a 138 kV substation.",
+   "stage_basis": "ITC project page: construction began Q2 2022 and was completed in Q1 2024 (rebuild of ~6.3 mi Airport-Alpena (Long Rapids) to double circuit and 2.4 mi of new line on Mio-Airport). Month not published, but Q1 2024 is inside the window. (month is the utility's planned date; its completed-projects table confirms completion inside the window)",
    "docket": "",
    "mtep_id": "",
    "sources": [
@@ -6454,6 +6456,4021 @@
     "https://www.theposeycountynews.com/post/firefly-festival-planned-for-this-weekend-in-new-harmony"
    ],
    "region_file": "central"
+  },
+  {
+   "key": "ell-j1583-evergreen-donaldsonville-230-sw",
+   "name": "J1583 230 kV switching station on Evergreen - Donaldsonville 230 kV",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "LA",
+   "utility": "Entergy Louisiana",
+   "ends": [
+    {
+     "name": "J1583 cut-in switching station (Evergreen - Donaldsonville 230 kV)",
+     "state": "LA",
+     "county": "Iberville",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-06",
+   "stage": "planned",
+   "stage_basis": "Entergy status report (Oct 1, 2026) item 23-ELS-009 'J1583 Interconnection on Evergreen to Donaldsonville 230 kV', A in MTEP23, 4-Detailed Engineering, projected ISD 6/1/2027; parish from MISO queue listing (175 MW solar POI).",
+   "docket": "",
+   "mtep_id": "24861",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2026_Final.pdf",
+    "https://www.interconnection.fyi/project/miso-j1583"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "ell-j1564-bogalusa-talisheek-230-sw",
+   "name": "J1564 230 kV switching station on Bogalusa - Talisheek 230 kV",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "LA",
+   "utility": "Entergy Louisiana",
+   "ends": [
+    {
+     "name": "J1564 cut-in switching station (Bogalusa - Talisheek 230 kV)",
+     "state": "LA",
+     "county": "Washington",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-01",
+   "stage": "planned",
+   "stage_basis": "Entergy status report (Oct 1, 2026) item 23-ELS-010 'J1564 interconnection on Bogalusa - Talisheek 230kV', A in MTEP23, 4-Detailed Engineering, projected ISD 1/15/2028; parish from MISO queue listing.",
+   "docket": "",
+   "mtep_id": "25101",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2026_Final.pdf",
+    "https://www.interconnection.fyi/project/miso-j1564"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "ell-j1542-vacherie-chackbay-230-sw",
+   "name": "J1542 230 kV switching station on Vacherie - Chackbay 230 kV",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "LA",
+   "utility": "Entergy Louisiana",
+   "ends": [
+    {
+     "name": "J1542 cut-in switching station (Vacherie - Chackbay 230 kV)",
+     "state": "LA",
+     "county": "St. James",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-06",
+   "stage": "planned",
+   "stage_basis": "Entergy status report (Oct 1, 2026) item 23-ELS-011, A in MTEP23, 3-Project Definition ('Kickoff in January 2027'), projected ISD 6/1/2029 (GIA COD 12/31/2029); queue lists POI as Thibodaux - Vacherie 230 kV in St. James Parish.",
+   "docket": "",
+   "mtep_id": "25122",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2026_Final.pdf",
+    "https://www.interconnection.fyi/project/miso-j1542"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "ell-j1576-adams-creek-angie-230-sw",
+   "name": "J1576 230 kV switching station on Adams Creek - Angie 230 kV",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "LA",
+   "utility": "Entergy Louisiana",
+   "ends": [
+    {
+     "name": "J1576 cut-in switching station (Adams Creek - Angie 230 kV)",
+     "state": "LA",
+     "county": "Washington",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-03",
+   "stage": "planned",
+   "stage_basis": "Entergy status report (Oct 1, 2026) item 24-ELS-009, A in MTEP24, 3-Project Definition ('Detailed design ongoing'), projected ISD 3/30/2028; parish from MISO queue listing (200 MW solar).",
+   "docket": "",
+   "mtep_id": "50065",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2026_Final.pdf",
+    "https://www.interconnection.fyi/project/miso-j1576"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "jdec-230-loop-lines",
+   "name": "JDEC 230 kV Loop: Holly Beach - Crown, Holly Beach - Fulton - Sturlese - Hackett - Manchester - Chalkley 230 kV",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "LA",
+   "utility": "Jefferson Davis Electric Cooperative",
+   "ends": [
+    {
+     "name": "Holly Beach 230 kV switching station",
+     "state": "LA",
+     "county": "Cameron",
+     "new": true
+    },
+    {
+     "name": "Crown",
+     "state": "LA",
+     "county": "Calcasieu",
+     "new": true
+    },
+    {
+     "name": "Fulton",
+     "state": "LA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Sturlese",
+     "state": "LA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Hackett",
+     "state": "LA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Manchester",
+     "state": "LA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Chalkley",
+     "state": "LA",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 77.15,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "in construction",
+   "stage_basis": "JDEC LPSC application (transmission determination / transfer to MISO) says it has begun constructing ~77.15 miles of new 230 kV lines and seven 230 kV substations replacing its hurricane-destroyed system, completion expected in 2026 (no month given); JDEC reported on construction at the LPSC Sept 16, 2026 B&E. Only Crown station is already listed.",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=zCSQ7zzgF7E%3D",
+    "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=uPIRRCWmEGI%3D",
+    "https://lpsc.louisiana.gov/docs/minutes/September_16_2026_Min.pdf",
+    "https://www.lpsc.louisiana.gov/docs/news/JDEC-January-BE-Presentation-1-18-23.pdf"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "jdec-230-loop-substations",
+   "name": "JDEC 230 kV Loop substations (Holly Beach switching, Fulton, Sturlese, Hackett, Manchester)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "LA",
+   "utility": "Jefferson Davis Electric Cooperative",
+   "ends": [
+    {
+     "name": "Holly Beach 230 kV switching station",
+     "state": "LA",
+     "county": "Cameron",
+     "new": true
+    },
+    {
+     "name": "Fulton 230/13.2 kV",
+     "state": "LA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Sturlese 230/13.2 kV",
+     "state": "LA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Hackett 230 kV",
+     "state": "LA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Manchester 230/13.2 kV",
+     "state": "LA",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "in construction",
+   "stage_basis": "Listed as 230 kV substations of the JDEC Loop in JDEC's LPSC application; construction under way with completion expected in 2026 (Crown, already listed, and Chalkley bulk substation not repeated here).",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=zCSQ7zzgF7E%3D"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "cleco-north-slidell-talisheek-230-relocation",
+   "name": "North Slidell - Talisheek 230 kV relocation (Slidell Airport Line Move)",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "LA",
+   "utility": "Cleco Power",
+   "ends": [
+    {
+     "name": "North Slidell",
+     "state": "LA",
+     "county": "St. Tammany",
+     "new": false
+    },
+    {
+     "name": "Talisheek",
+     "state": "LA",
+     "county": "St. Tammany",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-07",
+   "stage": "planned",
+   "stage_basis": "Cleco 2026 Transmission Siting Report (LPSC X-34970, dated 1/28/2026): Slidell airport expansion requires moving the North Slidell - Talisheek 230 kV line ROW, MTEP21 project, status ROW acquisition, ISD 7/15/28, $9.8M (relocation/rebuild of a segment; length not stated).",
+   "docket": "X-34970",
+   "mtep_id": "21207",
+   "sources": [
+    "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=TCkJkJwIIL4%3D"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "eal-flat-fork-230-sw",
+   "name": "Flat Fork 230 kV switching station (J907/J1434, Brinkley East - Aubrey 230 kV)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "AR",
+   "utility": "Entergy Arkansas",
+   "ends": [
+    {
+     "name": "Flat Fork",
+     "state": "AR",
+     "county": "Monroe",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2024-06",
+   "stage": "built",
+   "stage_basis": "Entergy status report Q2 2024: 20-EAL-030 'Construct Flat Fork 230 kV Switching Substation' 6/7-Operate/Close Out, actual ISD 6/4/2024; county from MISO queue entry J907 (POI Brinkley East - Aubrey 230 kV).",
+   "docket": "",
+   "mtep_id": "19068",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_April_May_June_2024_Final.pdf",
+    "https://www.interconnection.fyi/project/miso-j907"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "eml-cotton-blossom-230-sw",
+   "name": "Cotton Blossom 230 kV switching station (J830, Canton South - Hoy Road 230 kV)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "MS",
+   "utility": "Entergy Mississippi",
+   "ends": [
+    {
+     "name": "Cotton Blossom",
+     "state": "MS",
+     "county": "Madison",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2024-07",
+   "stage": "built",
+   "stage_basis": "Entergy status reports: 20-EML-014 'Cotton Blossom 230 kV: Construct switching station (J830)' under construction with 6/1/24-7/31/2024 ISD in Q1/Q2 2024, moved to 6/7-Operate/Close Out in the Q3 2024 report (current ISD 7/31/2024; no actual date printed); county from queue entry J830.",
+   "docket": "",
+   "mtep_id": "19286",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2024_Final.pdf",
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_Jan_Feb_March_2024_Final.pdf",
+    "https://www.interconnection.fyi/project/miso-j830"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "coopenergy-east-dixie-161",
+   "name": "East Dixie 161 kV delivery point and 161 kV lines (Hattiesburg)",
+   "kv": 161,
+   "project_type": "new line",
+   "state": "MS",
+   "utility": "Cooperative Energy",
+   "ends": [
+    {
+     "name": "East Dixie",
+     "state": "MS",
+     "county": "Forrest",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-09",
+   "stage": "planned",
+   "stage_basis": "Cooperative Energy 2024 annual report lists 'East Dixie 161kV (new)' board-approved delivery point replacing Hattiesburg Industrial and South Hattiesburg 115 kV, target Sept 2025; MPSC CPCN petition 2023-UA-147 (filed 11/14/2023) covers new transmission lines and switching station in Forrest County. Line lengths and completion not confirmed.",
+   "docket": "2023-UA-147",
+   "mtep_id": "",
+   "sources": [
+    "http://cooperativeenergy.com/wp-content/uploads/2025/06/307-Cooperative-Energy-2024-Annual-Report-Digital-1.pdf",
+    "https://www.psc.ms.gov/sites/default/files/2024-01/2-2024-UTILITY-DOCKET-v2.pdf"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "etr-jacinto-lone-star-230",
+   "name": "Jacinto - Lone Star 230 kV (Lone Star Interconnection Project)",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "TX",
+   "utility": "Entergy Texas",
+   "ends": [
+    {
+     "name": "Jacinto",
+     "state": "TX",
+     "county": "Liberty",
+     "new": false
+    },
+    {
+     "name": "Lone Star",
+     "state": "TX",
+     "county": "San Jacinto",
+     "new": true
+    }
+   ],
+   "miles_new": 6.95,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "PUCT Docket 59430 filed 3/4/2026 for a new 4.81-6.95 mile single-circuit 230 kV line from Jacinto to a planned Lone Star substation interconnecting the 453 MW Lone Star Power Station (plant expected mid-2028); PUCT Notice of Approval issued 6/16/2026. miles_new is the upper end of the filed range; final route length not checked.",
+   "docket": "PUCT 59430",
+   "mtep_id": "",
+   "sources": [
+    "https://interchange.puc.texas.gov/Documents/59430_2_1596063.PDF",
+    "https://interchange.puc.texas.gov/Search/Filings?ControlNumber=59430",
+    "https://interchange.puc.texas.gov/Documents/59430_3_1596065.PDF"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "etr-j1671-rocky-creek-veteran-230-sw",
+   "name": "J1671 230 kV interconnection station on Rocky Creek - Veteran 230 kV",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "TX",
+   "utility": "Entergy Texas",
+   "ends": [
+    {
+     "name": "J1671 cut-in station (Rocky Creek - Veteran 230 kV)",
+     "state": "TX",
+     "county": "Walker",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-12",
+   "stage": "in construction",
+   "stage_basis": "Entergy status report (Oct 1, 2026) 23-ETI-014: 5-Construction, 'Construction work started on 08/24/2026', projected ISD 12/31/2026; county from MISO queue (POI listed as Rocky Creek - Lewis Creek 230 kV).",
+   "docket": "",
+   "mtep_id": "24839",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2026_Final.pdf",
+    "https://www.interconnection.fyi/project/miso-j1671"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "etr-j2165-jacinto-batiste-creek-230-sw",
+   "name": "J2165 230 kV interconnection on Jacinto - Batiste Creek 230 kV",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "TX",
+   "utility": "Entergy Texas",
+   "ends": [
+    {
+     "name": "J2165 cut-in station (Jacinto - SHECO Batiste Creek 230 kV)",
+     "state": "TX",
+     "county": "Liberty",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-10",
+   "stage": "proposed",
+   "stage_basis": "Entergy status report (Oct 1, 2026) 26-ETI-022 'J2165 GIA on Jacinto to Batiste Creek 230 kV', Target Appendix A in MTEP26, 3-Project Definition, projected ISD 10/1/2027; county from MISO queue.",
+   "docket": "",
+   "mtep_id": "51156",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2026_Final.pdf",
+    "https://www.interconnection.fyi/project/miso-j2165"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "etr-j2075-batiste-creek-china-230-sw",
+   "name": "J2075 230 kV interconnection on Batiste Creek - China 230 kV",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "TX",
+   "utility": "Entergy Texas",
+   "ends": [
+    {
+     "name": "J2075 cut-in station (SHECO Batiste Creek - China 230 kV)",
+     "state": "TX",
+     "county": "Liberty",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-05",
+   "stage": "proposed",
+   "stage_basis": "Entergy status report (Oct 1, 2026) 26-ETI-023, Target Appendix A in MTEP26, 3-Project Definition, projected ISD 5/30/2028; county from MISO queue.",
+   "docket": "",
+   "mtep_id": "51169",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2026_Final.pdf",
+    "https://www.interconnection.fyi/project/miso-j2075"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "etr-plantersville-230-brazos",
+   "name": "Plantersville 230 kV station (Brazos)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "TX",
+   "utility": "Entergy Texas",
+   "ends": [
+    {
+     "name": "Plantersville",
+     "state": "TX",
+     "county": "Grimes",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-05",
+   "stage": "planned",
+   "stage_basis": "Entergy status report (Oct 1, 2026) 26-ETI-026 'Plantersville 230 kV Brazos station', customer driven, A in MTEP26, 3-Project Definition, current projected ISD 5/15/2027 (original 12/1/2027). County is where Plantersville lies; exact site not given.",
+   "docket": "",
+   "mtep_id": "51329",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2026_Final.pdf"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "etr-legend-sandling-230-rebuild",
+   "name": "Legend - Sandling 230 kV lines rebuild",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "TX",
+   "utility": "Entergy Texas",
+   "ends": [
+    {
+     "name": "Legend",
+     "state": "TX",
+     "county": "Jefferson",
+     "new": false
+    },
+    {
+     "name": "Sandling",
+     "state": "TX",
+     "county": "Jefferson",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-11",
+   "stage": "proposed",
+   "stage_basis": "Entergy status report (Oct 1, 2026) 26-ETI-012 'Legend to Sandling 230 kV Lines Rebuild', Target Appendix A in MTEP26, projected ISD 11/30/2029. Same end substations as already-listed etr-legend-sandling (the new circuit, 23-ETI-017) but a separate rebuild project; drop if the catalog keys strictly on ends.",
+   "docket": "",
+   "mtep_id": "50961",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2026_Final.pdf"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "etr-raywood-pintail-138-rebuild",
+   "name": "Raywood - Pintail 138 kV rebuild",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "TX",
+   "utility": "Entergy Texas",
+   "ends": [
+    {
+     "name": "Raywood",
+     "state": "TX",
+     "county": "Liberty",
+     "new": false
+    },
+    {
+     "name": "Pintail",
+     "state": "TX",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-12",
+   "stage": "proposed",
+   "stage_basis": "Entergy status report (Oct 1, 2026) 26-ETI-020 'Raywood to Pintail 138 kV Rebuild', Target Appendix A in MTEP26, 1-Business Case Justification, ISD 12/1/2030.",
+   "docket": "",
+   "mtep_id": "50967",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2026_Final.pdf"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "jnec-kirbyville-fawil-138",
+   "name": "Kirbyville - Fawil 138 kV (JNEC, new line)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "TX",
+   "utility": "Jasper-Newton Electric Cooperative",
+   "ends": [
+    {
+     "name": "Kirbyville",
+     "state": "TX",
+     "county": "Jasper",
+     "new": false
+    },
+    {
+     "name": "Fawil",
+     "state": "TX",
+     "county": "Newton",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-12",
+   "stage": "proposed",
+   "stage_basis": "Entergy status report (Oct 1, 2026) 26-ETI-019 'JNEC Kirbyville to Fawil New 138 kV line', Potential Future Project, 1-Business Case Justification, date 12/1/2030 tracked from MISO portal (need-by Summer 2035).",
+   "docket": "",
+   "mtep_id": "50793",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2026_Final.pdf"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "sheco-nss-deer-138",
+   "name": "New Switching Station (Indian area) - Deer 138 kV (SHECO)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "TX",
+   "utility": "Sam Houston Electric Cooperative",
+   "ends": [
+    {
+     "name": "New SHECO switching station (option C, near Hwy 190/FM 1276)",
+     "state": "TX",
+     "county": "Polk",
+     "new": true
+    },
+    {
+     "name": "Deer",
+     "state": "TX",
+     "county": "Tyler",
+     "new": false
+    }
+   ],
+   "miles_new": 24.6,
+   "miles_upgraded": 0,
+   "in_service": "2027-03",
+   "stage": "approved",
+   "stage_basis": "PUCT Docket 53602 order (8/24/2023) approved route 18 for the New Switching Station-to-Deer 138 kV line plus a new 4-breaker ring switching station (alternative routes 18.3-24.6 mi; route 18 length not checked, upper bound used); Entergy status report (Oct 1, 2026) 21-ETI-017 'Deer to Indian 138 kV line' says SHECO is still scoping the L426 cut-in, projected ISD 3/5/2027.",
+   "docket": "PUCT 53602",
+   "mtep_id": "19665",
+   "sources": [
+    "https://interchange.puc.texas.gov/Documents/53602_95_1324607.PDF",
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2026_Final.pdf"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "sheco-oakhurst-138",
+   "name": "Oakhurst 138 kV line (to Point Blank/Staley or Entergy Goree - Rivtrin / Rivtrin - Gulf Trinity) (SHECO)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "TX",
+   "utility": "Sam Houston Electric Cooperative",
+   "ends": [
+    {
+     "name": "Oakhurst (new)",
+     "state": "TX",
+     "county": "San Jacinto",
+     "new": true
+    },
+    {
+     "name": "Point Blank or Staley substation, or Entergy Goree-Rivtrin / Rivtrin-Gulf Trinity 138 kV line (route-dependent)",
+     "state": "TX",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 9,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "PUCT Docket 59126 filed 3/12/2026: new ~9-mile single-circuit 138 kV line and new Oakhurst substation in San Jacinto and Walker counties to serve ONEOK load growth; case abated for settlement talks as of SOAH Order 8 (10/23/2026). No in-service date found.",
+   "docket": "PUCT 59126",
+   "mtep_id": "",
+   "sources": [
+    "https://interchange.puc.texas.gov/Documents/59126_10_1609895.PDF",
+    "https://interchange.puc.texas.gov/Documents/59126_6_1603298.PDF",
+    "https://interchange.puc.texas.gov/Documents/59126_54_1695959.PDF"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "sheco-plum-grove-230-sub",
+   "name": "Plum Grove 230 kV station (ETEC/SHECO)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "TX",
+   "utility": "Sam Houston Electric Cooperative / East Texas Electric Cooperative",
+   "ends": [
+    {
+     "name": "Plum Grove",
+     "state": "TX",
+     "county": "Liberty",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2023-11",
+   "stage": "built",
+   "stage_basis": "Entergy status report Q4 2023: 19-ETI-012 'Plum Grove 230 kV: New ETEC/SHECO station', 6/7-Operate/Close Out, in service 11/29/2023 (ISD per MISO portal).",
+   "docket": "",
+   "mtep_id": "15734",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_Oct_Nov_Dec_2023_Final.pdf"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "etr-tarkington-new-long-john-138-rebuild",
+   "name": "Tarkington - New Long John 138 kV rebuild",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "TX",
+   "utility": "Entergy Texas",
+   "ends": [
+    {
+     "name": "Tarkington",
+     "state": "TX",
+     "county": "Liberty",
+     "new": false
+    },
+    {
+     "name": "New Long John",
+     "state": "TX",
+     "county": "Liberty",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2024-12",
+   "stage": "built",
+   "stage_basis": "Entergy status report Q4 2024: 20-ETI-001 'Tarkington to New Long John 138 kV: Rebuild line', In Service, actual ISD 12/30/2024.",
+   "docket": "",
+   "mtep_id": "18262",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_October_November_December_2024.pdf"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "etr-new-long-john-dayton-138-rebuild",
+   "name": "New Long John - Dayton 138 kV rebuild",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "TX",
+   "utility": "Entergy Texas",
+   "ends": [
+    {
+     "name": "New Long John",
+     "state": "TX",
+     "county": "Liberty",
+     "new": false
+    },
+    {
+     "name": "Dayton",
+     "state": "TX",
+     "county": "Liberty",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-06",
+   "stage": "built",
+   "stage_basis": "Entergy status report Q2 2026: 20-ETI-002 'New Long John to Dayton 138 kV: Rebuild Line', In Service, actual ISD 6/12/2026.",
+   "docket": "",
+   "mtep_id": "18266",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_April_May_June_2026_Final.pdf"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "etr-deer-doucette-138-upgrade",
+   "name": "Deer - Doucette 138 kV line and station equipment upgrade",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "TX",
+   "utility": "Entergy Texas",
+   "ends": [
+    {
+     "name": "Deer",
+     "state": "TX",
+     "county": "Tyler",
+     "new": false
+    },
+    {
+     "name": "Doucette",
+     "state": "TX",
+     "county": "Tyler",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-01",
+   "stage": "built",
+   "stage_basis": "Entergy status report Q1 2026: 22-ETI-005 'Deer to Doucette 138 kV: Upgrade Station Equipment and Line', In Service, actual ISD 1/9/2026.",
+   "docket": "",
+   "mtep_id": "21844",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_January_February_March_2026_Final.pdf"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "etr-kolbs-port-acres-230-upgrade",
+   "name": "Kolbs - Port Acres 230 kV line upgrade",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "TX",
+   "utility": "Entergy Texas",
+   "ends": [
+    {
+     "name": "Kolbs",
+     "state": "TX",
+     "county": "Jefferson",
+     "new": false
+    },
+    {
+     "name": "Port Acres",
+     "state": "TX",
+     "county": "Jefferson",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-07",
+   "stage": "built",
+   "stage_basis": "Entergy status report Q3 2025: 23-ETI-016 'Kolbs to Port Acres 230 kV line upgrade', In Service, actual ISD 7/14/2025.",
+   "docket": "",
+   "mtep_id": "24959",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2025_Final.pdf"
+   ],
+   "region_file": "pass2-south"
+  },
+  {
+   "key": "wi-superior-345-swst",
+   "name": "Superior 345 kV switching station (J732 Nemadji Trail Energy Center interconnection)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "WI",
+   "utility": "American Transmission Co.",
+   "ends": [
+    {
+     "name": "Superior Substation (345 kV switching station)",
+     "state": "WI",
+     "county": "Douglas",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-12",
+   "stage": "approved",
+   "stage_basis": "PSCW granted a Certificate of Authority (137-CE-204, Town of Parkland) per the PSC's Sept 2025 WEPA report; ATC's 2024 model table lists a 'Superior 345-kV Switching Station' and the 2026 10-Year Assessment list gives J732 Superior SS an est. ISD of Dec-29 (562 MW gas, 345 kV).",
+   "docket": "PSCW 137-CE-204",
+   "mtep_id": "19729",
+   "sources": [
+    "https://docs.legis.wisconsin.gov/misc/mandatedreports/2025/public_service_commission/wisconsin_environmental_policy_act_received_9_12_2025.pdf",
+    "http://www.atc10yearplan.com/2024/files/2024/10/2024TYA_Table-PF2.pdf",
+    "http://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf",
+    "https://www.atc10yearplan.com/projects/generation-interconnections/",
+    "https://www.superiortelegram.com/news/local/substation-in-parkland-would-connect-nemadji-energy-center-to-grid"
+   ],
+   "region_file": "pass2-wi-mi"
+  },
+  {
+   "key": "wi-blitz-345-swst",
+   "name": "Blitz 345 kV switching station (J1377 Rock County Solar interconnection)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "WI",
+   "utility": "American Transmission Co.",
+   "ends": [
+    {
+     "name": "Blitz Substation (345 kV switching station)",
+     "state": "WI",
+     "county": "Rock",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-03",
+   "stage": "approved",
+   "stage_basis": "PSCW granted approval to construct the Blitz Substation in the Town of Fulton, Rock County (137-CE-207) per the PSC's Sept 2025 WEPA report; ATC's 2024 model table names it 'Blitz 345-kV Switching Station'; 2026 10-Year Assessment list gives est. ISD Mar-30. Which 345 kV line it taps is not stated.",
+   "docket": "PSCW 137-CE-207",
+   "mtep_id": "24799",
+   "sources": [
+    "https://docs.legis.wisconsin.gov/misc/mandatedreports/2025/public_service_commission/wisconsin_environmental_policy_act_received_9_12_2025.pdf",
+    "http://www.atc10yearplan.com/2024/files/2024/10/2024TYA_Table-PF2.pdf",
+    "http://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf",
+    "https://www.atc10yearplan.com/projects/generation-interconnections/"
+   ],
+   "region_file": "pass2-wi-mi"
+  },
+  {
+   "key": "wi-e0012-kenosha-345-poi",
+   "name": "E0012 345 kV interconnection station (tap of Paris - Lakeview 345 kV double circuit, Kenosha County gas plant)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "WI",
+   "utility": "American Transmission Co.",
+   "ends": [
+    {
+     "name": "E0012 interconnection substation (unnamed)",
+     "state": "WI",
+     "county": "Kenosha",
+     "new": true
+    },
+    {
+     "name": "Paris - Lakeview 345 kV double circuit",
+     "state": "WI",
+     "county": "Kenosha",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-12",
+   "stage": "proposed",
+   "stage_basis": "ATC 2026 list: 'E0012 SS Network Upgrades and Interconnection Facilities', Proposed, A in MTEP26, $70.5M, est. ISD Dec-29; MISO's ERAS request list (seen only as a search excerpt) gives E0012 as a 1,186 MW Invenergy gas plant in Kenosha County with POI 'Paris-Lakeview 345kV double circuit'. That this is a new station is inferred from the line-tap POI, not stated outright.",
+   "docket": "",
+   "mtep_id": "51144",
+   "sources": [
+    "http://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf",
+    "https://www.atc10yearplan.com/projects/generation-interconnections/",
+    "https://cdn.misoenergy.org/ERAS%20Interconnection%20Requests718481.pdf"
+   ],
+   "region_file": "pass2-wi-mi"
+  },
+  {
+   "key": "wi-uplands-wind-east-345-gentie",
+   "name": "Uplands Wind East - Edmund 345 kV generator tie (~18 mi)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "WI",
+   "utility": "Uplands Wind LLC",
+   "ends": [
+    {
+     "name": "Uplands Wind East project substation",
+     "state": "WI",
+     "county": "Iowa",
+     "new": true
+    },
+    {
+     "name": "Edmund 345 kV switchyard (on Cardinal - Hickory Creek)",
+     "state": "WI",
+     "county": "Iowa",
+     "new": true
+    }
+   ],
+   "miles_new": 18,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "Pending CPCN 9840-CE-100 (332 MW wind, 'approximately 18 miles of 345 kV Generation Tie Line' in Iowa and Lafayette counties); engineering plan (Mar 2026) says the gen-tie ends at a new switchyard on the Cardinal-Hickory Creek 345 kV line. No decision or in-service date found.",
+   "docket": "PSCW 9840-CE-100",
+   "mtep_id": "",
+   "sources": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=582961",
+    "https://apps.psc.wi.gov/ERF/ERFsearch/content/searchResult.aspx?CASE=CE&END=none&KEY=none&NON=N&SEQ=100&SERVICE=none&START=none&TYPE=none&UTIL=9840"
+   ],
+   "region_file": "pass2-wi-mi"
+  },
+  {
+   "key": "wi-high-noon-345-gentie",
+   "name": "High Noon Solar - ATC interconnection switchyard 345 kV generator tie (1.9 mi)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "WI",
+   "utility": "High Noon Solar Energy LLC (Invenergy)",
+   "ends": [
+    {
+     "name": "High Noon Solar collector substation",
+     "state": "WI",
+     "county": "Columbia",
+     "new": true
+    },
+    {
+     "name": "ATC 345 kV interconnection switchyard (new, within project area)",
+     "state": "WI",
+     "county": "Columbia",
+     "new": true
+    }
+   ],
+   "miles_new": 1.9,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "PSCW final decision July 10, 2023 (9814-CE-100) approved a 1.9-mile 345 kV gen-tie to a new ATC-owned 345 kV interconnection switchyard; PSC case page gave completion by December 2025. Actual energization not confirmed. (The switchyard is likely the already-listed North Arlington station, but no source found ties them by name.)",
+   "docket": "PSCW 9814-CE-100",
+   "mtep_id": "",
+   "sources": [
+    "https://docs.legis.wisconsin.gov/misc/mandatedreports/2023/public_service_commission/2023_environmental_policy_act_report_s_1_11_2_j_received_8_29_2023.pdf",
+    "https://www.co.columbia.wi.us/columbiacounty/Portals/3/Joint%20Committee/Joint%20Committee%20-%20High%20Noon%20Solar%20Project%20PSC%20Final%20Decision%207-10-2023.pdf?ver=2023-08-10-141127-347",
+    "https://psc.wi.gov/Pages/CommissionActions/CasePages/HighNoonSolarProject.aspx/1000"
+   ],
+   "region_file": "pass2-wi-mi"
+  },
+  {
+   "key": "wi-emerald-bluffs-345-gentie",
+   "name": "Emerald Bluffs Solar 345 kV generator tie (1.14 mi)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "WI",
+   "utility": "Emerald Bluffs Solar Park",
+   "ends": [
+    {
+     "name": "Emerald Bluffs Solar project substation",
+     "state": "WI",
+     "county": "Juneau",
+     "new": true
+    },
+    {
+     "name": "345 kV point of interconnection (not named in source)",
+     "state": "WI",
+     "county": "Juneau",
+     "new": false
+    }
+   ],
+   "miles_new": 1.14,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "PSCW final decision in 9830-CE-100 (filed to ERF Mar 5, 2026) for a 225 MW solar facility and 1.14 miles of 345 kV tie line in the Towns of Lemonweir and Seven Mile Creek. In-service date not found; ATC's queue lists a 225 MW Juneau County solar (J1502) at the new Emerson Rd 345 kV station (ISD Jun-28), which may be this project (inference).",
+   "docket": "PSCW 9830-CE-100",
+   "mtep_id": "",
+   "sources": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=582011",
+    "https://docs.legis.wisconsin.gov/misc/mandatedreports/2025/public_service_commission/wisconsin_environmental_policy_act_received_9_12_2025.pdf",
+    "https://www.atc10yearplan.com/projects/generation-interconnections/"
+   ],
+   "region_file": "pass2-wi-mi"
+  },
+  {
+   "key": "wi-maple-grove-161-gentie",
+   "name": "Maple Grove Solar - Barron 161 kV generator tie (1.8 mi)",
+   "kv": 161,
+   "project_type": "new line",
+   "state": "WI",
+   "utility": "Maple Grove Solar I/II LLC (ibV Energy Partners)",
+   "ends": [
+    {
+     "name": "Maple Grove Solar 161 kV project substation",
+     "state": "WI",
+     "county": "Barron",
+     "new": true
+    },
+    {
+     "name": "Barron 161 kV (Dairyland)",
+     "state": "WI",
+     "county": "Barron",
+     "new": false
+    }
+   ],
+   "miles_new": 1.8,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "PSCW granted the CPCN (5-CE-154) for a 228 MW solar facility with a 1.8-mile 161 kV gen-tie in the Towns of Barron and Maple Grove (WEPA report Sept 2025); PSC case page says it connects to the existing Dairyland Barron Substation. In-service date not found.",
+   "docket": "PSCW 5-CE-154",
+   "mtep_id": "",
+   "sources": [
+    "https://docs.legis.wisconsin.gov/misc/mandatedreports/2025/public_service_commission/wisconsin_environmental_policy_act_received_9_12_2025.pdf",
+    "https://psc.wi.gov/Pages/CommissionActions/CasePages/MapleGroveSolarProject.aspx",
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=491010"
+   ],
+   "region_file": "pass2-wi-mi"
+  },
+  {
+   "key": "wi-porchlight-138-gentie",
+   "name": "Porchlight Solar 138 kV generator tie (2.5 mi)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "WI",
+   "utility": "Porchlight Solar",
+   "ends": [
+    {
+     "name": "Porchlight Solar project substation",
+     "state": "WI",
+     "county": "Portage",
+     "new": true
+    },
+    {
+     "name": "138 kV point of interconnection (not named in source)",
+     "state": "WI",
+     "county": "Portage",
+     "new": false
+    }
+   ],
+   "miles_new": 2.5,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "PSCW final decision Jan 9, 2026 (9829-CE-100) for a 163.8 MW solar facility with a 2.5-mile 138 kV gen-tie in the Towns of Buena Vista and Pine Grove (cited in the 9830-CE-100 decision; scope from the Sept 2025 WEPA report). In-service date not found.",
+   "docket": "PSCW 9829-CE-100",
+   "mtep_id": "",
+   "sources": [
+    "https://docs.legis.wisconsin.gov/misc/mandatedreports/2025/public_service_commission/wisconsin_environmental_policy_act_received_9_12_2025.pdf",
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=582011"
+   ],
+   "region_file": "pass2-wi-mi"
+  },
+  {
+   "key": "wi-akron-solar-138-gentie",
+   "name": "Akron Solar 138 kV generator tie (~1.8 mi)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "WI",
+   "utility": "Akron Solar LLC (NextEra)",
+   "ends": [
+    {
+     "name": "Akron Solar 138 kV project substation",
+     "state": "WI",
+     "county": "Adams",
+     "new": true
+    },
+    {
+     "name": "138 kV point of interconnection (not named in source)",
+     "state": "WI",
+     "county": "Wood",
+     "new": false
+    }
+   ],
+   "miles_new": 1.8,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "PSCW case page for 9832-CE-100 (Towns of Rome, Adams Co., and Saratoga, Wood Co.) describes an ~1.8-mile 138 kV gen-tie and says the project is expected in service by Q3 2029, with post-decision construction reports in the docket. No month given.",
+   "docket": "PSCW 9832-CE-100",
+   "mtep_id": "",
+   "sources": [
+    "https://psc.wi.gov/Pages/CommissionActions/CasePages/AkronSolar.aspx",
+    "https://docs.legis.wisconsin.gov/misc/mandatedreports/2025/public_service_commission/wisconsin_environmental_policy_act_received_9_12_2025.pdf"
+   ],
+   "region_file": "pass2-wi-mi"
+  },
+  {
+   "key": "wi-dawn-harvest-138-gentie",
+   "name": "Dawn Harvest Solar 138 kV generator tie (~1.1 mi) to new interconnection switchyard",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "WI",
+   "utility": "Dawn Harvest Solar Energy LLC",
+   "ends": [
+    {
+     "name": "Dawn Harvest Solar 138 kV project substation",
+     "state": "WI",
+     "county": "Rock",
+     "new": true
+    },
+    {
+     "name": "New 138 kV interconnection switching station",
+     "state": "WI",
+     "county": "Rock",
+     "new": true
+    }
+   ],
+   "miles_new": 1.1,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "PSCW final decision May 19, 2025 (9809-CE-100) approved a 138 kV gen-tie (~1.1 mi per the PSC scoping letter, ~1 mi per the case page) and interconnection switchyard in the Towns of La Prairie and Harmony; construction was planned from April 2025 with completion by end of 2026. Energization not confirmed.",
+   "docket": "PSCW 9809-CE-100",
+   "mtep_id": "",
+   "sources": [
+    "https://psc.wi.gov/Pages/CommissionActions/CasePages/DawnHarvestSolar.aspx",
+    "https://cdn.townweb.com/laprairiewi.gov/wp-content/uploads/2024/06/Application-Info-for-Dawn-Harvest-with-the-PSC.pdf",
+    "https://docs.legis.wisconsin.gov/misc/mandatedreports/2025/public_service_commission/wisconsin_environmental_policy_act_received_9_12_2025.pdf"
+   ],
+   "region_file": "pass2-wi-mi"
+  },
+  {
+   "key": "wi-nspw-wheaton-161",
+   "name": "Wheaton-area new substation and 161 kV line (NSPW aging-infrastructure replacement)",
+   "kv": 161,
+   "project_type": "new line",
+   "state": "WI",
+   "utility": "Xcel Energy (Northern States Power-Wisconsin)",
+   "ends": [
+    {
+     "name": "New substation (Town of Wheaton)",
+     "state": "WI",
+     "county": "Chippewa",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "PSC's Sept 2025 WEPA report: NSPW filed an application for a new substation and 161 kV transmission line to replace aging infrastructure in the Town of Wheaton, Chippewa County (4220-CE-188), requiring an EA. Line length, end points, decision and in-service date not found (PSC docket pages are blocked to automated access).",
+   "docket": "PSCW 4220-CE-188",
+   "mtep_id": "",
+   "sources": [
+    "https://docs.legis.wisconsin.gov/misc/mandatedreports/2025/public_service_commission/wisconsin_environmental_policy_act_received_9_12_2025.pdf"
+   ],
+   "region_file": "pass2-wi-mi"
+  },
+  {
+   "key": "mi-silver-river-north-lake-138",
+   "name": "Silver River - North Lake 138 kV (NLKG31) rebuild",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "MI",
+   "utility": "American Transmission Co.",
+   "ends": [
+    {
+     "name": "Silver River",
+     "state": "MI",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "North Lake",
+     "state": "MI",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-12",
+   "stage": "proposed",
+   "stage_basis": "ATC 2026 10-Year Assessment list: Provisional, B in MTEP25, est. ISD Dec-29, $165M ('Updated ISD and cost'; the July 2026 interim list had Dec-32).",
+   "docket": "",
+   "mtep_id": "50129",
+   "sources": [
+    "http://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf",
+    "http://www.atc10yearplan.com/wp-content/uploads/2026/11/Table-PR-23-Changed-Since-Last-Report-TYA-2026.pdf"
+   ],
+   "region_file": "pass2-wi-mi"
+  },
+  {
+   "key": "mi-sphinx-gaines-plaster-creek-138",
+   "name": "Gaines - Plaster Creek 138 kV rebuild (2.5 mi double circuit) for new Sphinx 138 kV station (230 MW load)",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "MI",
+   "utility": "Michigan Electric Transmission Co. (ITC)",
+   "ends": [
+    {
+     "name": "Gaines",
+     "state": "MI",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Plaster Creek",
+     "state": "MI",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 2.5,
+   "in_service": "2027-09",
+   "stage": "planned",
+   "stage_basis": "MISO EPR presented at PAC July 17, 2024 (seen as a search excerpt): project 50151, new 4-row breaker-and-a-half Sphinx 138 kV station for 230 MW new load, rebuild 2.5 mi of Gaines-Plaster Creek to double circuit 1431 ACSS with OPGW, expected ISD 09/01/2027, recommended for MTEP24 Appendix A. (Sphinx itself is 138 kV, below the substation threshold.)",
+   "docket": "",
+   "mtep_id": "50151",
+   "sources": [
+    "https://cdn.misoenergy.org/20240717%20PAC%20Item%2004a%20Expedited%20Projects%20Reviews638456.pdf"
+   ],
+   "region_file": "pass2-wi-mi"
+  },
+  {
+   "key": "mi-delorean-beveridge-goss-138",
+   "name": "Beveridge - Goss 138 kV loop-in to new DeLorean station (~2 mi double circuit, 175 MW Consumers Energy load)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "MI",
+   "utility": "Michigan Electric Transmission Co. (ITC)",
+   "ends": [
+    {
+     "name": "DeLorean 138 kV station",
+     "state": "MI",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Beveridge - Goss 138 kV line",
+     "state": "MI",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 2,
+   "miles_upgraded": 0,
+   "in_service": "2027-10",
+   "stage": "in construction",
+   "stage_basis": "MISO EPR (MTSTF Oct 2, 2024; seen as a search excerpt): project 50214, new 10-breaker 138 kV station looped into Beveridge-Goss with ~2 miles of new double-circuit line, expected ISD 10/31/2027; MISO said METC had to start construction in Nov 2024 and recommended Appendix A (reported in MTEP25).",
+   "docket": "",
+   "mtep_id": "50214",
+   "sources": [
+    "https://cdn.misoenergy.org/20241002%20MTSTF%20Item%2002%20METC%20EPR%20Delorean650601.pdf",
+    "https://cdn.misoenergy.org/20241016%20PAC%20Item%2004a%20EPR%20Requests652684.pdf"
+   ],
+   "region_file": "pass2-wi-mi"
+  },
+  {
+   "key": "mi-iosco-long-rapids-138",
+   "name": "Iosco - Long Rapids 138 kV rebuild (to future double-circuit 230 kV construction)",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "MI",
+   "utility": "Michigan Electric Transmission Co. (ITC)",
+   "ends": [
+    {
+     "name": "Iosco",
+     "state": "MI",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Long Rapids",
+     "state": "MI",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-05",
+   "stage": "planned",
+   "stage_basis": "MISO EPR results (EPR-TSTF Oct 6, 2026) and EPR statistics (Nov 3, 2026), seen as search excerpts: project 51422, rebuild Iosco-Long Rapids 138 kV to future double-circuit 230 kV construction, min. 480 MVA summer emergency, expected ISD 5/28/2029, status 'Approved'. Length not stated.",
+   "docket": "",
+   "mtep_id": "51422",
+   "sources": [
+    "https://cdn.misoenergy.org/20261006%20EPR-TSTF%20Item%2002%20EPR%20Results%20and%20MISO%20Recommendation785867.pdf",
+    "https://cdn.misoenergy.org/20261103%20EPR-TSTF%20Item%2003%20MISO%20EPR%20Statistics_UPDATED792865.pdf"
+   ],
+   "region_file": "pass2-wi-mi"
+  },
+  {
+   "key": "mi-hagensville-jct-interconnection-138",
+   "name": "Hagensville Junction interconnection to Rockport - Port Calcite 138 kV line",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "MI",
+   "utility": "Wolverine Power Supply Cooperative / METC",
+   "ends": [
+    {
+     "name": "Hagensville Junction",
+     "state": "MI",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Rockport - Port Calcite 138 kV line (METC)",
+     "state": "MI",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-12",
+   "stage": "planned",
+   "stage_basis": "MISO ESPM June 6, 2024 WPSC deck (search excerpt): interconnect Wolverine's Hagensville Junction with METC's Rockport-Port Calcite line for voltage support, $17.6M, expected ISD 12/31/2028, recommended Appendix A; MTEP25 report lists 50317 'New Hagensville Junction Interconnection (METC)' ISD 12/31/2028. Length not stated.",
+   "docket": "",
+   "mtep_id": "50317",
+   "sources": [
+    "https://cdn.misoenergy.org/20240606%20ESPM%20Item%2003d%20Review%20of%20Projects%20WPSC633096.pdf",
+    "https://cdn.misoenergy.org/MTEP25%20Report731648.pdf"
+   ],
+   "region_file": "pass2-wi-mi"
+  },
+  {
+   "key": "mi-batavia-dorrance-138",
+   "name": "Batavia - Dorrance #1 and #2 138 kV rebuild",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "MI",
+   "utility": "Michigan Electric Transmission Co. (ITC)",
+   "ends": [
+    {
+     "name": "Batavia",
+     "state": "MI",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Dorrance",
+     "state": "MI",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-12",
+   "stage": "planned",
+   "stage_basis": "MTEP25 report (search excerpt): 50251 'Rebuild Batavia - Dorrance #1 & #2 138 kV lines', Age and Condition, ISD 12/31/2029, $10.6M, in the MTEP25 Appendix A tables.",
+   "docket": "",
+   "mtep_id": "50251",
+   "sources": [
+    "https://cdn.misoenergy.org/MTEP25%20Report731648.pdf"
+   ],
+   "region_file": "pass2-wi-mi"
+  },
+  {
+   "key": "mi-gaines-caledonia-138-sag",
+   "name": "Gaines - Caledonia Jct. 138 kV sag remediation (Thompson Road - Gaines circuit)",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "MI",
+   "utility": "Michigan Electric Transmission Co. (ITC)",
+   "ends": [
+    {
+     "name": "Gaines",
+     "state": "MI",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Caledonia Junction",
+     "state": "MI",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-06",
+   "stage": "planned",
+   "stage_basis": "MISO MTEP24 METC project deck (Feb 2024, search excerpt): remediate sag on 795 ACSS up to 153 MVA on the Gaines-Caledonia J. section, $0.5M, expected ISD 6/1/2028, target Appendix A. Project number not legible in the excerpt.",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://cdn.misoenergy.org/20240207%20ESPM1%20Item%2003e%20MTEP24%20METC631685.pdf"
+   ],
+   "region_file": "pass2-wi-mi"
+  },
+  {
+   "key": "mi-lark-washtenaw-138-sag",
+   "name": "Lark - Washtenaw Jct. 138 kV sag upgrade",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "MI",
+   "utility": "ITCTransmission",
+   "ends": [
+    {
+     "name": "Lark",
+     "state": "MI",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Washtenaw Junction",
+     "state": "MI",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-12",
+   "stage": "proposed",
+   "stage_basis": "MISO ESPM2 ITCT deck (June 2, 2026; search excerpt): 51167 'Upgrade Sag on Lark-Washtenaw Jct. 138 kV' to min. 196 MVA, ISD 12/01/2027, $2.8M, target Appendix A in MTEP26 (Board vote Dec 2026).",
+   "docket": "",
+   "mtep_id": "51167",
+   "sources": [
+    "https://cdn.misoenergy.org/20260602%20ESPM%20Item%2004b%20Review%20of%20Proposed%20Reliability%20Projects%20ITCT_UPDATED760657.pdf",
+    "https://cdn.misoenergy.org/20260210%20ESPM%20Item%2004b%20Review%20of%20Recommended%20Reliability%20Projects%20ITC740500.pdf"
+   ],
+   "region_file": "pass2-wi-mi"
+  },
+  {
+   "key": "mi-brownstown-wayne2-345-sag",
+   "name": "Brownstown - Wayne #2 345 kV sag remediation and station equipment upgrade",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "MI",
+   "utility": "ITCTransmission",
+   "ends": [
+    {
+     "name": "Brownstown",
+     "state": "MI",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Wayne",
+     "state": "MI",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-12",
+   "stage": "proposed",
+   "stage_basis": "MISO ESPM ITCT decks (Feb and June 2026; search excerpts): 15873 'Upgrade Brownstown - Wayne #2 345 kV Station Equipment & Sag Remediation', ISD 12/31/2030, cost $9.7M, BRP targeting MTEP26 Appendix A. Mostly terminal equipment; sag remediation raises the line rating.",
+   "docket": "",
+   "mtep_id": "15873",
+   "sources": [
+    "https://cdn.misoenergy.org/20260602%20ESPM%20Item%2004b%20Review%20of%20Proposed%20Reliability%20Projects%20ITCT_UPDATED760657.pdf"
+   ],
+   "region_file": "pass2-wi-mi"
+  },
+  {
+   "key": "lyon-county-gen-garvin-345",
+   "name": "Lyon County Generating Station - Garvin 345 kV gen-ties (two short lines)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "MN",
+   "utility": "Xcel Energy (NSP)",
+   "ends": [
+    {
+     "name": "Lyon County Generating Station switchyard (new 420 MW gas peaker)",
+     "state": "MN",
+     "county": "Lyon",
+     "new": true
+    },
+    {
+     "name": "Garvin Substation (new, MNEC terminus)",
+     "state": "MN",
+     "county": "Lyon",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "in construction",
+   "stage_basis": "PUC agenda of Apr 30, 2026 took up granting the CN, site, route (TL-25-161) and pipeline permits; Xcel says it broke ground on the generating station and MNEC on Aug 3, 2026, with both expected complete in 2028. The application describes 'two short transmission line connections' and its Appendix F covers 345-kV lines; length not stated.",
+   "docket": "MN PUC E002/CN-25-145; E002/TL-25-161",
+   "mtep_id": "",
+   "sources": [
+    "https://puc.eip.mn.gov/web/project/16322",
+    "https://apps.commerce.state.mn.us/web/project/16322",
+    "https://puc.eip.mn.gov/node/11561",
+    "https://www.stoel.com/insights/reports/energy-regulatory-updates/april-29-2026",
+    "https://newsroom.xcelenergy.com/news/xcel-energy-kicks-off-construction-on-key-southwest-minnesota-energy-projects"
+   ],
+   "region_file": "pass2-upper-midwest"
+  },
+  {
+   "key": "mnec-sunflower-345-sub",
+   "name": "Sunflower 345 kV voltage-support substation (Minnesota Energy Connection)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "MN",
+   "utility": "Xcel Energy (NSP)",
+   "ends": [
+    {
+     "name": "Sunflower Substation (new MNEC voltage-support substation)",
+     "state": "MN",
+     "county": "Meeker",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-10",
+   "stage": "approved",
+   "stage_basis": "PUC order of June 10, 2025 granted the MNEC CN and route permit, which include 'a new voltage-support substation'; Xcel's June 2026 update names it Sunflower Substation (Meeker County); MN biennial report gives MNEC in service by Oct 2028. Already-listed MNEC line has only Garvin and Sherco ends.",
+   "docket": "MN PUC E-002/CN-22-131; E-002/TL-22-132",
+   "mtep_id": "25282",
+   "sources": [
+    "https://www.mnenergyconnection.com/wp-content/uploads/2025/06/MNEC-Order-Issuing-CN-and-Route-Permit.pdf",
+    "http://renvillecountymn.iqm2.com/Citizens/FileOpen.aspx?ID=16998&Type=4",
+    "https://www.minnelectrans.com/documents/2025_Biennial_Report/html/Ch_6_Needs-6.5.htm"
+   ],
+   "region_file": "pass2-upper-midwest"
+  },
+  {
+   "key": "mnec-intermediate-345-sub",
+   "name": "MNEC Intermediate 345 kV substation (about 20 miles north of Garvin)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "MN",
+   "utility": "Xcel Energy (NSP)",
+   "ends": [
+    {
+     "name": "MNEC Intermediate Substation (new, ~20 mi north of Garvin; final name/county not found)",
+     "state": "MN",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-10",
+   "stage": "approved",
+   "stage_basis": "PUC order of June 10, 2025 (CN + route permit) includes 'a new intermediate substation' about 20 miles north of the Garvin terminal substation; MNEC due in service Oct 2028 per MN biennial report.",
+   "docket": "MN PUC E-002/CN-22-131; E-002/TL-22-132",
+   "mtep_id": "25282",
+   "sources": [
+    "https://www.mnenergyconnection.com/wp-content/uploads/2025/06/MNEC-Order-Issuing-CN-and-Route-Permit.pdf",
+    "https://puc.eip.mn.gov/web/project/15000"
+   ],
+   "region_file": "pass2-upper-midwest"
+  },
+  {
+   "key": "three-waters-lakefield-345",
+   "name": "Three Waters Wind - Lakefield 345 kV gen-tie and Lakefield 345 kV bus expansion",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "MN",
+   "utility": "Great River Energy",
+   "ends": [
+    {
+     "name": "Lakefield substation 345 kV gen-tie bus (GRE)",
+     "state": "MN",
+     "county": "Jackson",
+     "new": false
+    },
+    {
+     "name": "Three Waters Wind 161/345 kV step-up substation (new)",
+     "state": "MN",
+     "county": "Jackson",
+     "new": true
+    }
+   ],
+   "miles_new": 0.3,
+   "miles_upgraded": 0,
+   "in_service": "2026-11",
+   "stage": "planned",
+   "stage_basis": "MN 2025 biennial report 2023-SW-N12 (Lakefield Area Projects): expand the 345 kV gen-tie bus at Lakefield for the 340 MW Three Waters Wind farm, new 345 kV breakers and about 1,500 ft of 345 kV line to the 161/345 kV step-up substation; in service by Nov 2026. County inferred from Lakefield; source does not state county.",
+   "docket": "MPUC tracking 2023-SW-N12",
+   "mtep_id": "",
+   "sources": [
+    "https://www.minnelectrans.com/documents/2025_Biennial_Report/html/Ch_6_Needs-6.7.htm"
+   ],
+   "region_file": "pass2-upper-midwest"
+  },
+  {
+   "key": "medford-161-tap",
+   "name": "West Owatonna - South Faribault 161 kV tap to Medford substation",
+   "kv": 161,
+   "project_type": "new line",
+   "state": "MN",
+   "utility": "Great River Energy (substation: Steele-Waseca Electric Cooperative)",
+   "ends": [
+    {
+     "name": "Tap point on SMMPA West Owatonna - South Faribault 161 kV line",
+     "state": "MN",
+     "county": "Steele",
+     "new": false
+    },
+    {
+     "name": "Medford distribution substation (new, SWEC)",
+     "state": "MN",
+     "county": "Steele",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "MN 2025 biennial report 2025-SE-N9 (Medford Area Projects): construct a 161 kV tap line from SMMPA's West Owatonna-South Faribault 161 kV line to the new Medford substation, planned in service by summer 2026; length not stated; county inferred from Medford (Steele County).",
+   "docket": "MPUC tracking 2025-SE-N9",
+   "mtep_id": "",
+   "sources": [
+    "https://www.minnelectrans.com/documents/2025_Biennial_Report/html/Ch_6_Needs-6.8.htm"
+   ],
+   "region_file": "pass2-upper-midwest"
+  },
+  {
+   "key": "erie-230-115-sub",
+   "name": "Erie 230/115 kV substation (tap of Audubon - Hubbard 230 kV)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "MN",
+   "utility": "Otter Tail Power (with GRE Erie-Frazee 115 kV)",
+   "ends": [
+    {
+     "name": "Erie (Erie Jct.) 230/115 kV Substation (new), on Audubon - Hubbard 230 kV",
+     "state": "MN",
+     "county": "Becker",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2024-04",
+   "stage": "built",
+   "stage_basis": "SD PUC staff memo (EL24-034): Otter Tail built the new Erie 230/115 kV substation and GRE expanded Frazee and built 9 mi of 115 kV; 'placed in service in April 2024'. MN biennial report lists Erie-Frazee (ET-2/TL-20-423) completed 2024 and describes Erie Jct. as tapping Audubon-Hubbard 230 kV. County inferred from Detroit Lakes area.",
+   "docket": "MN PUC ET-2/TL-20-423 (Erie-Frazee 115 kV)",
+   "mtep_id": "",
+   "sources": [
+    "https://puc.sd.gov/commission/dockets/electric/2024/EL24-034/StaffMemo.pdf",
+    "https://www.minnelectrans.com/documents/2025_Biennial_Report/html/Ch_6_Needs-6.3.htm"
+   ],
+   "region_file": "pass2-upper-midwest"
+  },
+  {
+   "key": "jtiq-lyon-county-lakefield-345",
+   "name": "Lyon County - Lakefield Junction 345 kV (MISO-SPP JTIQ)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "MN",
+   "utility": "Xcel Energy and ITC Midwest",
+   "ends": [
+    {
+     "name": "Lyon County 345 kV Substation",
+     "state": "MN",
+     "county": "Lyon",
+     "new": false
+    },
+    {
+     "name": "Lakefield Junction 345 kV Substation",
+     "state": "MN",
+     "county": "Jackson",
+     "new": false
+    }
+   ],
+   "miles_new": 80,
+   "miles_upgraded": 0,
+   "in_service": "2031-06",
+   "stage": "planned",
+   "stage_basis": "JTIQ project approved by MISO (MTEP24) and SPP boards Dec 2024; 80-mile new 345 kV line per SPP's FERC JTIQ filing; MN 2025 biennial report 2025-SW-N2 gives in service by June 2031. BORDERLINE: MISO's May 2026 JTIQ status table (seen only as a search excerpt) shows 2032, and NDTA 2026 says MN applications expected 2027.",
+   "docket": "MPUC tracking 2025-SW-N2",
+   "mtep_id": "",
+   "sources": [
+    "https://www.minnelectrans.com/documents/2025_Biennial_Report/html/Ch_6_Needs-6.7.htm",
+    "https://www.spp.org/documents/72223/20240816_revisions%20to%20spp-miso%20joa%20to%20implement%20jtiq_er24-2798-000.pdf",
+    "https://ndlegis.gov/sites/default/files/statutorily-mandated-reports/2026-ndta-annual-report.pdf"
+   ],
+   "region_file": "pass2-upper-midwest"
+  },
+  {
+   "key": "jtiq-raun-s3452-345",
+   "name": "Raun - S3452 345/161 kV double circuit (MISO-SPP JTIQ)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "IA",
+   "utility": "MidAmerican Energy (Iowa end) / Omaha Public Power District (Nebraska, SPP)",
+   "ends": [
+    {
+     "name": "Raun Substation (MidAmerican)",
+     "state": "IA",
+     "county": "Woodbury",
+     "new": false
+    },
+    {
+     "name": "S3452 345 kV Substation (new, expansion of OPPD S1252 north of Omaha)",
+     "state": "NE",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "JTIQ project approved by MISO (MTEP24) and SPP boards Dec 2024: new 345/161 kV double circuit from Raun replacing Raun-Tekamah-S1226 161 kV; the MISO/MTEP24 table gives in service 2031 (MEC-OPPD). SPP NTC 220873 covers about 72 mi of 345 kV from S3452 to the OPPD/MEC demarcation; the length of MidAmerican's Iowa part is not stated. Raun county is not stated in sources (Raun is near Sioux City); no Iowa franchise docket found.",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://spp.org/documents/73601/oppd%20jtiq%20ntc%20220873.pdf",
+    "https://www.spp.org/documents/72223/20240816_revisions%20to%20spp-miso%20joa%20to%20implement%20jtiq_er24-2798-000.pdf",
+    "https://cdn.misoenergy.org/20241212%20Board%20of%20Directors%20Item%2009a%20MTEP%20Executive%20Summary%20Appdendix%20A%20Appendix%20F665158.pdf"
+   ],
+   "region_file": "pass2-upper-midwest"
+  },
+  {
+   "key": "longspur-tri-county-230",
+   "name": "Longspur Wind - Tri-County 230 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "ND",
+   "utility": "Minnesota Power (ALLETE)",
+   "ends": [
+    {
+     "name": "Longspur Wind project substation (new)",
+     "state": "ND",
+     "county": "Morton",
+     "new": true
+    },
+    {
+     "name": "Tri-County 230 kV Substation (Minnesota Power)",
+     "state": "ND",
+     "county": "Mercer",
+     "new": false
+    }
+   ],
+   "miles_new": 2.5,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "ND PSC PU-25-305: corridor certificate and route permit order served Aug 2026, and a notice of intent to commence construction was filed; the Oct 2026 construction report says the line itself has not started (wind farm under construction). Interconnection is MISO J2097/J2157 at Tri-County.",
+   "docket": "ND PSC PU-25-305 (wind PU-25-304)",
+   "mtep_id": "",
+   "sources": [
+    "https://www.psc.nd.gov/webdocs/case/25-0305/006-010.pdf",
+    "https://www.psc.nd.gov/webdocs/case/25-0305/028-030.pdf",
+    "https://www.psc.nd.gov/webdocs/case/25-0304/074-010.pdf",
+    "https://apps.psc.nd.gov/cases/pscasedetail?getId=25&getId2=305"
+   ],
+   "region_file": "pass2-upper-midwest"
+  },
+  {
+   "key": "wishek-nw-230-sub",
+   "name": "Wishek NW 230/115/41.6 kV transmission substation (rebuild on new site)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "ND",
+   "utility": "Montana-Dakota Utilities",
+   "ends": [
+    {
+     "name": "Wishek NW Transmission Substation (new, replaces Wishek; 2x230 kV lines rerouted)",
+     "state": "ND",
+     "county": "McIntosh",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-10",
+   "stage": "built",
+   "stage_basis": "MDU's SD rider filing says the new Wishek NW Transmission Substation was built just north of the old one, with eight line reroutes under 0.5 mi each (two 230 kV); NDTA 2026 report says the Wishek Substation was completed in October [2025]. It serves the Badger Wind interconnection (COD Jan 21, 2026). It is a replacement on a new site, so drop it if rebuilds don't count as new.",
+   "docket": "SD PUC EL25-039 (rider); ND PSC PU-24-264 ten-year plan",
+   "mtep_id": "",
+   "sources": [
+    "https://puc.sd.gov/commission/dockets/electric/2025/el25-039/LTR103125.pdf",
+    "https://puc.sd.gov/commission/dockets/electric/2025/EL25-039/StaffMemo.pdf",
+    "https://ndlegis.gov/sites/default/files/statutorily-mandated-reports/2026-ndta-annual-report.pdf",
+    "https://www.psc.nd.gov/webdocs/case/26-0224/001-020.pdf"
+   ],
+   "region_file": "pass2-upper-midwest"
+  },
+  {
+   "key": "midamerican-council-bluffs-161",
+   "name": "Council Bluffs 161 kV transmission line (MidAmerican reliability/resiliency project)",
+   "kv": 161,
+   "project_type": "new line",
+   "state": "IA",
+   "utility": "MidAmerican Energy",
+   "ends": [
+    {
+     "name": "Not stated in source (Council Bluffs)",
+     "state": "IA",
+     "county": "Pottawattamie",
+     "new": false
+    },
+    {
+     "name": "Not stated in source (Council Bluffs)",
+     "state": "IA",
+     "county": "Pottawattamie",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "Council Bluffs Resolution 24-354 (Dec 2024) says the IUC found on Sept 10, 2024 that MidAmerican's 161 kV line in Council Bluffs is necessary for public use, and lets it use eminent domain; ends and length not stated. Probably the 'power-line upgrade and new circuits along an existing corridor' the council approved Jan 2025. Low confidence: drop if ends can't be found.",
+   "docket": "IUC E-docket not identified (possibly E-22550, Pottawattamie)",
+   "mtep_id": "",
+   "sources": [
+    "https://councilbluffs.novusagenda.com/AgendaPublic/AttachmentViewer.ashx?AttachmentID=17701&ItemID=7518",
+    "https://citizenportal.ai/articles/6299381/iowa/pottawattamie-county/council-bluffs/council-approves-midamerican-request-to-acquire-easements-by-eminent-domain-after-public-objections"
+   ],
+   "region_file": "pass2-upper-midwest"
+  },
+  {
+   "key": "p2c-mo-lutesville-stfrancois-345-rebuild",
+   "name": "Lutesville - St. Francois 345 kV rebuild",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "MO",
+   "utility": "Ameren Missouri",
+   "ends": [
+    {
+     "name": "Lutesville",
+     "state": "MO",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "St. Francois",
+     "state": "MO",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 63,
+   "in_service": "2024-12",
+   "stage": "built",
+   "stage_basis": "Ameren Missouri's July 2025 Attachment O deck lists 'Lutesville-St Francois Rebuild' ($55M) as completed in 2024; the 2023 IRP describes it as a rebuild of 63 miles of 345 kV wood H-frame circuit with expected ISD 12/01/2024 (month is that planned ISD; Ameren gives only the year).",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/Ameren_Missouri_Transmission_Rate_Stakeholder_Meeting_7_24_25.pdf",
+    "https://www.ameren.com/-/media/files/our-company/irp/2023/ch7-appendixa.ashx"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-mo-page-sioux-138-river-crossing-rebuild",
+   "name": "Page - Sioux 138 kV Missouri River crossing rebuild",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "MO",
+   "utility": "Ameren Missouri",
+   "ends": [
+    {
+     "name": "Page (relocated to Bugle)",
+     "state": "MO",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Sioux",
+     "state": "MO",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2024-12",
+   "stage": "built",
+   "stage_basis": "Ameren Missouri's July 2025 Attachment O deck lists 'Page-Sioux River Crossing Rebuild' ($18M) as completed in 2024; the 2023 IRP describes it as rebuilding the existing Missouri River crossing (structures 112-117) with expected ISD 12/02/2024 (month is that planned ISD).",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/Ameren_Missouri_Transmission_Rate_Stakeholder_Meeting_7_24_25.pdf",
+    "https://www.ameren.com/-/media/files/our-company/irp/2023/ch7-appendixa.ashx"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-mo-burns-345-sub",
+   "name": "Burns 345 kV switchyard (J1145 Show Me State Solar, cut-in of Montgomery - McCredie 345 kV)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "MO",
+   "utility": "Ameren Missouri",
+   "ends": [
+    {
+     "name": "Burns",
+     "state": "MO",
+     "county": "Callaway",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2024-12",
+   "stage": "built",
+   "stage_basis": "MoPSC granted the CCN on 2023-06-28 (EA-2023-0226); Ameren Missouri's July 2025 Attachment O deck lists 'Burns Substation' ($14M) as completed in 2024 and it is in the in-service Attachment GG list (month not stated; -12 is a year-end placeholder).",
+   "docket": "EA-2023-0226",
+   "mtep_id": "21125",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/Ameren_Missouri_Transmission_Rate_Stakeholder_Meeting_7_24_25.pdf",
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/Ameren_Missouri_Transmission_Rate_Stakeholder_Meeting_8_18_26.pdf",
+    "https://efis.psc.mo.gov/Document/Display/31532",
+    "https://psc.mo.gov/Electric/PSC_Issues_Decision_in_Ameren_Missouri_CCN_Case--pr-23-199",
+    "https://www.ameren.com/-/media/files/our-company/irp/2023/ch7-appendixa.ashx"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-mo-fabius-345-sub",
+   "name": "Fabius 345 kV switchyard (J1025 Northeast Missouri Wind, cut-in of Maywood - Zachary 345 kV)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "MO",
+   "utility": "Ameren Transmission Co. of Illinois (ATXI)",
+   "ends": [
+    {
+     "name": "Fabius",
+     "state": "MO",
+     "county": "Knox",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-10",
+   "stage": "built",
+   "stage_basis": "MoPSC granted ATXI the CCN on 2024-04-10 (EA-2024-0147); MISO's Oct 2025 regional cost-sharing presentation lists 'Northeast Missouri Wind J1025 - Fabius 345 kV Sub' as In-Service and ATXI's 2026/2027 projections carry it in Attachment GG (month is the upper bound from that presentation).",
+   "docket": "EA-2024-0147",
+   "mtep_id": "23470",
+   "sources": [
+    "https://efis.psc.mo.gov/Document/Display/779439",
+    "https://psc.mo.gov/Electric/Ameren_Transmission_Granted_CCN_For_Switchyard_In_Knox_County--pr-24-119",
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/ATXI_Rate_Stakeholder_Meeting_09_29_25.pdf",
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/ATXI_Rate_Stakeholder_Meeting_10_13_26.pdf",
+    "https://cdn.misoenergy.org/20241025%20Formula%20Rate%20Protocols-Annual%20Regional%20Cost%20Sharing%20Meeting%20Presentation724487.pdf",
+    "https://www.ameren.com/-/media/files/our-company/irp/2023/ch7-appendixa.ashx"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-mo-newmadrid-mpl-161-comstock",
+   "name": "SWPA New Madrid - MPL (New Madrid) 161 kV (Comstock project)",
+   "kv": 161,
+   "project_type": "new line",
+   "state": "MO",
+   "utility": "ATXI / Sikeston BMU / MJMEUC",
+   "ends": [
+    {
+     "name": "SWPA New Madrid",
+     "state": "MO",
+     "county": "New Madrid",
+     "new": false
+    },
+    {
+     "name": "MPL substation (outside New Madrid)",
+     "state": "MO",
+     "county": "New Madrid",
+     "new": false
+    }
+   ],
+   "miles_new": 1.2,
+   "miles_upgraded": 0,
+   "in_service": "2024-12",
+   "stage": "built",
+   "stage_basis": "ATXI's application in EA-2022-0099 includes a new ~1.2-mile single-circuit 161 kV line from SWPA's New Madrid substation to the MPL substation plus the 161 kV Comstock substation at Sikeston; ATXI's July 2025 true-up deck lists 'Comstock' as completed in 2024 (month not stated).",
+   "docket": "EA-2022-0099",
+   "mtep_id": "",
+   "sources": [
+    "https://efis.psc.mo.gov/Document/Display/31067",
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/ATXI_Rate_Stakeholder_Meeting_7_29_25.pdf",
+    "https://www.ameren.com/-/media/files/our-company/irp/2023/ch7-appendixa.ashx"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-mo-zachary-adair-161-2nd",
+   "name": "Zachary - Adair 161 kV second circuit (J1025/J1182 MPFCA)",
+   "kv": 161,
+   "project_type": "new line",
+   "state": "MO",
+   "utility": "Ameren Missouri / ATXI",
+   "ends": [
+    {
+     "name": "Zachary",
+     "state": "MO",
+     "county": "Adair",
+     "new": false
+    },
+    {
+     "name": "Adair",
+     "state": "MO",
+     "county": "Adair",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-12",
+   "stage": "approved",
+   "stage_basis": "Ameren's 2023 IRP lists the Zachary generation-interconnection facilities (2nd 345/161 kV transformer, a 2nd Zachary - Adair 161 kV line and re-route of Appanoose - Adair 161 kV) with expected ISD 12/01/2025; the transformer is shown in service in ATXI's Attachment GG, but completion of the line is not confirmed.",
+   "docket": "",
+   "mtep_id": "23430",
+   "sources": [
+    "https://www.ameren.com/-/media/files/our-company/irp/2023/ch7-appendixa.ashx",
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/ATXI_Rate_Stakeholder_Meeting_10_13_26.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-mo-stoddard-essex-161-rebuild",
+   "name": "Stoddard - Essex 161 kV rebuild",
+   "kv": 161,
+   "project_type": "upgrade",
+   "state": "MO",
+   "utility": "Ameren Missouri",
+   "ends": [
+    {
+     "name": "Stoddard",
+     "state": "MO",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Essex",
+     "state": "MO",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 5.4,
+   "in_service": "2025-06",
+   "stage": "approved",
+   "stage_basis": "Ameren's 2023 IRP lists rebuilding the 5.4-mile Stoddard-Essex-3 161 kV line (2,000 A) with expected ISD 06/01/2025; it is no longer listed as pending in the 2026 IRP, but no completion date was found.",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://www.ameren.com/-/media/files/our-company/irp/2023/ch7-appendixa.ashx",
+    "https://www.ameren.com/-/media/files/our-company/irp/2026/ch7-a.ashx"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-mo-troy-pike-161-rebuild",
+   "name": "Troy - Pike 161 kV rebuild (Pike to Auburn tap)",
+   "kv": 161,
+   "project_type": "upgrade",
+   "state": "MO",
+   "utility": "Ameren Missouri",
+   "ends": [
+    {
+     "name": "Troy",
+     "state": "MO",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Pike",
+     "state": "MO",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2024-06",
+   "stage": "approved",
+   "stage_basis": "Ameren's 2023 IRP lists rebuilding the TROY-PIKE-1 161 kV line from Pike to the Auburn tap (with dual OPGW, toward the new Harley substation) with expected ISD 06/01/2024; completion not confirmed.",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://www.ameren.com/-/media/files/our-company/irp/2023/ch7-appendixa.ashx"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-mo-sioux-meppen-hull-138-rebuild",
+   "name": "Sioux - Meppen North - Hull 138 kV rebuild",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "IL",
+   "utility": "Ameren Illinois / Ameren Missouri",
+   "ends": [
+    {
+     "name": "Sioux",
+     "state": "MO",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Meppen North",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Hull",
+     "state": "IL",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-12",
+   "stage": "in construction",
+   "stage_basis": "Ameren Illinois' Oct 2025 projection deck lists 'Sioux-Meppen North-Hull Rebuild' ($68.7M) among projects projected to be placed in service in 2026; Ameren's 2023 IRP describes rebuilding Sioux-Meppen North-4 from Str. 180 and the entire Meppen North-Hull-1494 138 kV line (100+ year-old lattice towers). Stage inferred from 2026 in-service projection.",
+   "docket": "",
+   "mtep_id": "22801",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/AIC_Rate_Stakeholder_Meeting_10_1_25.pdf",
+    "https://www.ameren.com/-/media/files/our-company/irp/2023/ch7-appendixa.ashx",
+    "https://cdn.misoenergy.org/20230202%20CSPM1%20Item%2004b%20Proposed%20Projects%20for%20MOIL627715.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-coffeen-roxford-345-rebuild",
+   "name": "Coffeen North - Roxford 345 kV rebuild/reconductor",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "Coffeen North",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Roxford",
+     "state": "IL",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 51,
+   "in_service": "2027-12",
+   "stage": "planned",
+   "stage_basis": "MISO MTEP23 lists P22813 to reconductor the 51-mile Coffeen North - Roxford 345 kV line to 3,000 A (Rush Island reinforcement, EPR); Ameren Illinois' Oct 2026 projection deck lists 'Coffeen North-Roxford Rebuild' ($174.0M) as projected to be placed in service in 2027.",
+   "docket": "",
+   "mtep_id": "22813",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/AIC_Rate_Stakeholder_Meeting_10_13_26.pdf",
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/AIC_Rate_Stakeholder_Meeting_10_1_24.pdf",
+    "https://cdn.misoenergy.org/20230606%20CSPM2%20Item%2003c%20Proposed%20Projects%20for%20MOIL629115.pdf",
+    "https://cdn.misoenergy.org/20230202%20CSPM1%20Item%2004b%20Proposed%20Projects%20for%20MOIL627715.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-mtvernonwest-westfrankforteast-345-rebuild",
+   "name": "Mount Vernon West - West Frankfort East 345 kV rebuild",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "Mount Vernon West",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "West Frankfort East",
+     "state": "IL",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 36,
+   "in_service": "2025-06",
+   "stage": "approved",
+   "stage_basis": "MISO MTEP23 describes rebuilding the 36-mile Mount Vernon West - West Frankfort East-4561 345 kV line (woodpecker-damaged structures), ISD 6/1/2025; Ameren Illinois' Oct 2024 deck projected it in service in 2025 ($47.5M). Completion not confirmed.",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/AIC_Rate_Stakeholder_Meeting_10_1_24.pdf",
+    "https://cdn.misoenergy.org/20230202%20CSPM1%20Item%2004b%20Proposed%20Projects%20for%20MOIL627715.pdf",
+    "https://cdn.misoenergy.org/20230905%20CSPM3%20Item%2003c%20MOIL%20Review%20of%20Project%20Selections%20final630072.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-prest-steeleville-138-rebuild",
+   "name": "Prest - Steeleville 138 kV rebuild (line 1476)",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "Prest",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Steeleville",
+     "state": "IL",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-12",
+   "stage": "in construction",
+   "stage_basis": "Ameren Illinois projected 'Prest-Steeleville Line Rebuild' in service in 2025 (Oct 2024 deck, $46.9M) and again 'Prest-Steeleville-1476-Rebuild' in 2026 (Oct 2025 deck, $33.2M); the line is 138 kV per MTEP data quoted in a Big Rivers KY PSC filing. Stage inferred from the in-service projection.",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/AIC_Rate_Stakeholder_Meeting_10_1_24.pdf",
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/AIC_Rate_Stakeholder_Meeting_10_1_25.pdf",
+    "https://psc.ky.gov/pscecf/2020-00064/tyson.kamuf%40bigrivers.com/04242020102723/BR_Rsp_to_AGs_Supplemental_Data_Requests_-_Part_1_of_2.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-eastquincy-hamilton-138-rebuild",
+   "name": "East Quincy - Hamilton 138 kV rebuild (line 4)",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "East Quincy",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Hamilton",
+     "state": "IL",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 30.5,
+   "in_service": "2024-12",
+   "stage": "approved",
+   "stage_basis": "MISO MTEP23 lists rebuilding the 30.5-mile East Quincy-Hamilton-4 138 kV line with T2 conductor, ISD 12/31/2024; Ameren Illinois' Oct 2024 deck projected 'East Quincy-Hamilton-4 Rebuild' ($30.5M) in service in 2025. Completion not confirmed.",
+   "docket": "",
+   "mtep_id": "23151",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/AIC_Rate_Stakeholder_Meeting_10_1_24.pdf",
+    "https://cdn.misoenergy.org/20230202%20CSPM1%20Item%2004b%20Proposed%20Projects%20for%20MOIL627715.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-hull-herleman-138-rebuild",
+   "name": "Hull - Herleman rebuild program (138 kV)",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "Hull",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Herleman",
+     "state": "IL",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-12",
+   "stage": "planned",
+   "stage_basis": "Ameren Illinois listed 'Hull-Herleman Rebuild' among projects projected in service in 2025, 2026 and again 2027 (Oct 2024/2025/2026 decks); voltage taken as 138 kV because MTEP23 describes Hull and Herleman as 138 kV stations (Meppen North-Hull-1494, Herleman-South Quincy-1450).",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/AIC_Rate_Stakeholder_Meeting_10_13_26.pdf",
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/AIC_Rate_Stakeholder_Meeting_10_1_25.pdf",
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/AIC_Rate_Stakeholder_Meeting_10_1_24.pdf",
+    "https://cdn.misoenergy.org/20230202%20CSPM1%20Item%2004b%20Proposed%20Projects%20for%20MOIL627715.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-hutsonville-heath-138-rebuild",
+   "name": "Hutsonville - Heath 138 kV rebuild (line 1311)",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "Hutsonville",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Heath",
+     "state": "IL",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-06",
+   "stage": "approved",
+   "stage_basis": "MISO MTEP23 lists rebuilding the Hutsonville-Heath-1311 138 kV line from Hutsonville to Str. 95 (2,000 A, OPGW), ISD 6/1/2025; Ameren Illinois' Oct 2024 deck projected 'Hutsonville-Heith' ($12.8M) in service in 2025. Completion not confirmed.",
+   "docket": "",
+   "mtep_id": "22848",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/AIC_Rate_Stakeholder_Meeting_10_1_24.pdf",
+    "https://cdn.misoenergy.org/20230606%20CSPM2%20Item%2003c%20Proposed%20Projects%20for%20MOIL629115.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-havana-puro-138-rebuild",
+   "name": "Havana - Puro 138 kV rebuild / Havana 138 kV line upgrade",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "Havana",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Puro",
+     "state": "IL",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-12",
+   "stage": "planned",
+   "stage_basis": "Ameren Illinois projected 'Havana-Puro 138 kV Rebuild' ($13.6M) in service in 2026 (Oct 2025 deck) and 'Havana 138 kV Line Upgrade' ($23.2M) in 2027 (Oct 2026 deck); a MISO DPP study quoted in an IURC filing lists 'JH1453 - Havana 138 kV - Rebuild to 1600A' as a generator network upgrade.",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/AIC_Rate_Stakeholder_Meeting_10_1_25.pdf",
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/AIC_Rate_Stakeholder_Meeting_10_13_26.pdf",
+    "https://iurc.portal.in.gov/_entity/sharepointdocumentlocation/52a6aa0f-a730-ee11-bdf4-001dd80abde3/bb9c6bba-fd52-45ad-8e64-a444aef13c39?file=45474_Cavalry%20Energy%20Center%2C%20LLC_Second%20Quarter%202023%20Report_08012023.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-beehive-dupoferry-138",
+   "name": "Beehive - Dupo Ferry 138 kV (Rush Island reinforcement)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "Beehive",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Dupo Ferry",
+     "state": "IL",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2024-06",
+   "stage": "planned",
+   "stage_basis": "MISO MTEP23 (EPR) lists P23632: install a new Beehive to Dupo Ferry 138 kV line with a new Dupo Ferry ring bus, needed for the Rush Island retirement, ISD 6/1/2024; no completion evidence found.",
+   "docket": "",
+   "mtep_id": "23632",
+   "sources": [
+    "https://cdn.misoenergy.org/20230606%20CSPM2%20Item%2003c%20Proposed%20Projects%20for%20MOIL629115.pdf",
+    "https://cdn.misoenergy.org/Recommended%20MTEP23%20Chapter%204%20-%20Reliability%20Studies630590.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-coffeen-pana-345-rebuild",
+   "name": "Coffeen North - Pana 345 kV rebuild (line 4516)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "Coffeen North",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Pana",
+     "state": "IL",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-06",
+   "stage": "approved",
+   "stage_basis": "MISO MTEP23 lists P23067 to rebuild the Coffeen North-Pana-4516 345 kV line (3,000 A, two OPGW), ISD 6/1/2025; completion not confirmed.",
+   "docket": "",
+   "mtep_id": "23067",
+   "sources": [
+    "https://cdn.misoenergy.org/20230202%20CSPM1%20Item%2004b%20Proposed%20Projects%20for%20MOIL627715.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-coffeen-ramseyeast-345-rebuild",
+   "name": "Coffeen North - Ramsey East 345 kV rebuild (line 4557)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "Coffeen North",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Ramsey East",
+     "state": "IL",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2024-12",
+   "stage": "approved",
+   "stage_basis": "MISO MTEP23 lists P23068 to rebuild the Coffeen North-Ramsey East-4557 345 kV line (3,000 A), ISD 12/31/2024 as listed; completion not confirmed.",
+   "docket": "",
+   "mtep_id": "23068",
+   "sources": [
+    "https://cdn.misoenergy.org/20230202%20CSPM1%20Item%2004b%20Proposed%20Projects%20for%20MOIL627715.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-clinton-oreana-goosecreek-345-rebuild",
+   "name": "Clinton - Oreana and Clinton - Goose Creek 345 kV double-circuit tower rebuild",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "Clinton",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Oreana",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Goose Creek",
+     "state": "IL",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2024-06",
+   "stage": "approved",
+   "stage_basis": "MISO MTEP23 lists rebuilding the existing double-circuit towers on the Clinton-Oreana 345 kV and Clinton-Goose Creek 345 kV lines (deteriorated condition), ISD 6/1/2024; completion not confirmed.",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://cdn.misoenergy.org/20230606%20CSPM2%20Item%2003c%20Proposed%20Projects%20for%20MOIL629115.pdf",
+    "https://cdn.misoenergy.org/Recommended%20MTEP23%20Chapter%204%20-%20Reliability%20Studies630590.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-vermilion-tilton-138-rebuild",
+   "name": "Vermilion - Tilton Energy Center 138 kV rebuild (line 1572)",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "Vermilion",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Tilton Energy Center",
+     "state": "IL",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 11.4,
+   "in_service": "2024-06",
+   "stage": "approved",
+   "stage_basis": "MISO MTEP23 lists rebuilding the 11.4-mile Vermillion-Tilton Energy Center-1572 138 kV line with T2 conductor (history of galloping), ISD 6/1/2024; completion not confirmed.",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://cdn.misoenergy.org/20230606%20CSPM2%20Item%2003c%20Proposed%20Projects%20for%20MOIL629115.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-mogul-345-sub",
+   "name": "Mogul 345 kV ring bus (J1464 Double Black Diamond Solar)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IL",
+   "utility": "ATXI",
+   "ends": [
+    {
+     "name": "Mogul",
+     "state": "IL",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2024-12",
+   "stage": "built",
+   "stage_basis": "ATXI's July 2025 true-up deck lists 'Mogul Ring Bus' ($12.0M) as completed in 2024; it is in ATXI's in-service Attachment GG (MTEP 22325). Month not stated.",
+   "docket": "",
+   "mtep_id": "22325",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/ATXI_Rate_Stakeholder_Meeting_7_29_25.pdf",
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/ATXI_Rate_Stakeholder_Meeting_09_29_25.pdf",
+    "https://cdn.misoenergy.org/20241025%20Formula%20Rate%20Protocols-Annual%20Regional%20Cost%20Sharing%20Meeting%20Presentation724487.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-bison-345-sub",
+   "name": "Bison 345 kV ring bus (J1289 Lotus Wind, on Turner - Austin 345 kV)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IL",
+   "utility": "ATXI",
+   "ends": [
+    {
+     "name": "Bison",
+     "state": "IL",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2024-12",
+   "stage": "built",
+   "stage_basis": "ATXI's July 2025 true-up deck lists 'Bison Ring Bus' ($10.9M) as completed in 2024; MTEP23 describes a 200 MW wind project interconnecting on the Turner - Austin 345 kV line (ISD 11/1/2024). Month not stated.",
+   "docket": "",
+   "mtep_id": "23983",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/ATXI_Rate_Stakeholder_Meeting_7_29_25.pdf",
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/ATXI_Rate_Stakeholder_Meeting_09_29_25.pdf",
+    "https://cdn.misoenergy.org/20230606%20CSPM2%20Item%2003c%20Proposed%20Projects%20for%20MOIL629115.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-zeke-345-sub",
+   "name": "Zeke 345 kV switching station (J1263 County Run Solar, on Casey West - Kansas 345 kV)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "Zeke",
+     "state": "IL",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-10",
+   "stage": "built",
+   "stage_basis": "Ameren Illinois projected 'Zeke Substation' ($15.0M) in service in 2025 (Oct 2024 deck) and MISO's Oct 2025 regional cost-sharing presentation shows 'County Run J1263 - 345 kV Zeke Substation' as In Service (month is that upper bound).",
+   "docket": "",
+   "mtep_id": "24840",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/AIC_Rate_Stakeholder_Meeting_10_1_24.pdf",
+    "https://cdn.misoenergy.org/20241025%20Formula%20Rate%20Protocols-Annual%20Regional%20Cost%20Sharing%20Meeting%20Presentation724487.pdf",
+    "https://cdn.misoenergy.org/Recommended%20MTEP23%20Chapter%204%20-%20Reliability%20Studies630590.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-quotient-345-sub",
+   "name": "Quotient 345 kV switching station (J1241 Casey Fork Solar, on Xenia - Mt Vernon West 345 kV)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "Quotient",
+     "state": "IL",
+     "county": "Jefferson",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-10",
+   "stage": "built",
+   "stage_basis": "Ameren Illinois projected 'Quotient Substation for Casey Solar' ($16.6M) in service in 2025 and MISO's Oct 2025 regional cost-sharing presentation shows the Quotient substation In Service (month is that upper bound); Casey Fork Solar (Jefferson County, 150 MW) reached operation in 2026.",
+   "docket": "",
+   "mtep_id": "24718",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/AIC_Rate_Stakeholder_Meeting_10_1_24.pdf",
+    "https://cdn.misoenergy.org/20241025%20Formula%20Rate%20Protocols-Annual%20Regional%20Cost%20Sharing%20Meeting%20Presentation724487.pdf",
+    "https://cdn.misoenergy.org/Recommended%20MTEP23%20Chapter%204%20-%20Reliability%20Studies630590.pdf",
+    "http://cleanview.co/power-projects/operating/solar-farms/illinois/69578/casey-fork-solar-llc"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-fauna-345-sub",
+   "name": "Fauna 345 kV substation (J1679 Flora Solar, on Xenia - Mt Vernon West 345 kV line 4591)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "Fauna",
+     "state": "IL",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-12",
+   "stage": "planned",
+   "stage_basis": "MTEP23 lists P24695 'New Fauna 345 kV Sub for Flora Solar (J1679)' with ISD 12/1/2025 and it appears in Ameren Illinois' 2025 Attachment GG projection; Flora Solar (Clay County) is still listed as planned and no completion evidence was found.",
+   "docket": "",
+   "mtep_id": "24695",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/AIC_Rate_Stakeholder_Meeting_10_1_24.pdf",
+    "https://cdn.misoenergy.org/Recommended%20MTEP23%20Chapter%204%20-%20Reliability%20Studies630590.pdf",
+    "https://iurc.portal.in.gov/_entity/sharepointdocumentlocation/52a6aa0f-a730-ee11-bdf4-001dd80abde3/bb9c6bba-fd52-45ad-8e64-a444aef13c39?file=45474_Cavalry%20Energy%20Center%2C%20LLC_Second%20Quarter%202023%20Report_08012023.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-wayward-345-sub",
+   "name": "Wayward 345 kV ring bus (J2128 Coles Wind)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "Wayward",
+     "state": "IL",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "Ameren Illinois' Oct 2024 projection deck carries 'Coles Wind J2128 - 345kV Wayward Ring Bus' (MTEP 25121) in Attachment GG; no in-service date published.",
+   "docket": "",
+   "mtep_id": "25121",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/AIC_Rate_Stakeholder_Meeting_10_1_24.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-goldenrod-345-sub",
+   "name": "Goldenrod 345 kV substation",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "Goldenrod",
+     "state": "IL",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-12",
+   "stage": "planned",
+   "stage_basis": "Ameren Illinois' Oct 2026 projection deck lists 'Goldenrod 345 kV Substation' ($17.7M) among projects projected to be placed in service in 2027; location not stated.",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/AIC_Rate_Stakeholder_Meeting_10_13_26.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-truett-345-sub",
+   "name": "Truett 345 kV breaker-and-a-half substation",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "Truett",
+     "state": "IL",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-12",
+   "stage": "planned",
+   "stage_basis": "Ameren Illinois' Oct 2026 projection deck lists 'Truett 345 kV BAAH' ($17.7M) among projects projected to be placed in service in 2027; location not stated.",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/AIC_Rate_Stakeholder_Meeting_10_13_26.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-supernova-345-sub",
+   "name": "Supernova 345 kV ring bus",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "Supernova",
+     "state": "IL",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-12",
+   "stage": "planned",
+   "stage_basis": "Ameren Illinois' Oct 2026 projection deck lists 'Supernova 345 kV Ring Bus' ($17.7M) among projects projected to be placed in service in 2027; location not stated.",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/AIC_Rate_Stakeholder_Meeting_10_13_26.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-il-wells-345-sub",
+   "name": "Wells 345 kV ring bus",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IL",
+   "utility": "ATXI",
+   "ends": [
+    {
+     "name": "Wells",
+     "state": "IL",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-12",
+   "stage": "planned",
+   "stage_basis": "ATXI's Oct 2026 projection deck lists 'Wells 345 kV Ring Bus' ($15M) among projects projected to be placed in service in 2027; location not stated.",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/ATXI_Rate_Stakeholder_Meeting_10_13_26.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-in-nipsco-odyssey-345-sub",
+   "name": "Odyssey 345 kV greenfield substation (Schahfer CCGT / Harmony interconnection)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IN",
+   "utility": "NIPSCO",
+   "ends": [
+    {
+     "name": "Odyssey (NIPSCO)",
+     "state": "IN",
+     "county": "Jasper",
+     "new": true
+    },
+    {
+     "name": "R.M. Schahfer",
+     "state": "IN",
+     "county": "Jasper",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-10",
+   "stage": "planned",
+   "stage_basis": "NIPSCO's Oct 9, 2026 compliance filing in IURC Cause 46322 includes the NIPSCO-GenCo GIA: a new 345 kV greenfield Odyssey substation cutting in Schahfer-Hinshaw, Schahfer-Savannah and the two Schahfer-Viewpoint 345 kV circuits, six 345 kV lines to the Harmony CCGT switchyard, in-service/backfeed date 10/25/2028.",
+   "docket": "46322",
+   "mtep_id": "",
+   "sources": [
+    "https://iurc.portal.in.gov/_entity/sharepointdocumentlocation/2499ba18-06c7-f111-aaad-001dd80f06e9/bb9c6bba-fd52-45ad-8e64-a444aef13c39?file=46322_NIPSCO_GenCo_Compliance%20Filing-Transmission%20Studies_10092026%20%281%29.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-in-wvtc-leap-345-138-network",
+   "name": "LEAP District 345/138 kV network (new 345/138 kV substation, ~10 mi double-circuit 345 kV, ~25 mi 138 kV)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "IN",
+   "utility": "Wabash Valley Power Alliance / Wabash Valley Transmission Co.",
+   "ends": [
+    {
+     "name": "LEAP 345/138 kV substation",
+     "state": "IN",
+     "county": "Boone",
+     "new": true
+    }
+   ],
+   "miles_new": 10,
+   "miles_upgraded": 0,
+   "in_service": "2027-12",
+   "stage": "planned",
+   "stage_basis": "MISO EPR (P50208, Oct 2024) describes a new 345/138 kV substation, two 138 kV stations, ~10 miles of double-circuit 345 kV and ~25 miles of 138 kV for a 600 MW data center in the LEAP District (ISD 12/31/2026); the IURC's Sept 2026 order in Cause 46387 granted WVTC utility status for two LEAP projects plus Elderberry-Stillwell (34 mi new 138 kV, 66 mi new 345 kV in total), first in service around end of 2027. May overlap the already-listed LEAP North 138 kV entry.",
+   "docket": "46387",
+   "mtep_id": "50208",
+   "sources": [
+    "https://www.in.gov/iurc/files/ord_46387_093026.pdf",
+    "https://cdn.misoenergy.org/20241007%20CTSTF%20Item%2002%20WVPA%20Presentation651755.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-in-hoosier-scotland-345-sub",
+   "name": "Scotland 345/69 kV substation (ring bus on Petersburg - West Bloomington 345 kV)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IN",
+   "utility": "Hoosier Energy",
+   "ends": [
+    {
+     "name": "Scotland",
+     "state": "IN",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-12",
+   "stage": "planned",
+   "stage_basis": "MISO's Aug 2025 pre-EPR results list 'New [HE] Scotland 345/69 kV Substation': a new 345 kV ring bus with 345/69 kV transformation on the IPL Petersburg - West Bloomington 345 kV line for 20 MW load growth, ISD 12/1/2029, cost $38M.",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://cdn.misoenergy.org/20250805%20EPR-TSTF%20Item02abc%20Pre-EPR%20Cycle%20Process%20EPR%20Results711718.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-in-duke-pondcreek-345-sub",
+   "name": "Pond Creek 345/138 kV substation",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IN",
+   "utility": "Duke Energy Indiana",
+   "ends": [
+    {
+     "name": "Pond Creek",
+     "state": "IN",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-06",
+   "stage": "planned",
+   "stage_basis": "MISO's Aug 2025 EPR results list MTEP project 50722 'New Pond Creek 345 : 138 kV Substation' ($40M, ISD 6/1/2029) among the LEAP Phase 2 related projects.",
+   "docket": "",
+   "mtep_id": "50722",
+   "sources": [
+    "https://cdn.misoenergy.org/20250805%20EPR-TSTF%20Item02abc%20Pre-EPR%20Cycle%20Process%20EPR%20Results711718.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-in-aes-southwest-lillysouth-138-rebuild",
+   "name": "Southwest - Lilly South 138 kV rebuild (circuit 132-10)",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "IN",
+   "utility": "AES Indiana",
+   "ends": [
+    {
+     "name": "Southwest",
+     "state": "IN",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Lilly South",
+     "state": "IN",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "MISO's MTEP25 Central SPM (June 2025) lists the AES Indiana (IPL) Baseline Reliability Project 'Rebuild Southwest-Lilly South 132-10 138 kV Line' with preliminary recommendation to move to Appendix A; ISD not shown in the excerpt.",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://cdn.misoenergy.org/20250602%20CSPM%20Item%2004b%20Review%20of%20Proposed%20Reliability%20Projects%20INKY700737.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-in-aes-lillysouth-center-138-rebuild",
+   "name": "Lilly South - Center 138 kV rebuild (circuit 132-61)",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "IN",
+   "utility": "AES Indiana",
+   "ends": [
+    {
+     "name": "Lilly South",
+     "state": "IN",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Center",
+     "state": "IN",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "MISO's MTEP25 Central SPM (June 2025) lists the AES Indiana (IPL) Baseline Reliability Project 'Rebuild Lilly South-Center 132-61 138 kV Line' (overload 124% in 2026 P6); ISD not shown in the excerpt.",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://cdn.misoenergy.org/20250602%20CSPM%20Item%2004b%20Review%20of%20Proposed%20Reliability%20Projects%20INKY700737.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "p2c-ky-mccracken-joppa-161",
+   "name": "McCracken - Joppa 161 kV",
+   "kv": 161,
+   "project_type": "new line",
+   "state": "KY",
+   "utility": "Big Rivers Electric Corp.",
+   "ends": [
+    {
+     "name": "McCracken County",
+     "state": "KY",
+     "county": "McCracken",
+     "new": false
+    },
+    {
+     "name": "Joppa",
+     "state": "IL",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "Big Rivers' 2025 annual report to the KY PSC lists 'McCracken - Joppa 161kV' in construction work in progress ($135,880 at 12/31/2025); no CPCN case, route or in-service date found.",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://psc.ky.gov/UFR_PDF/%5CElectric%5C2025%5C900_Big_Rivers_Electric_Corporation.pdf"
+   ],
+   "region_file": "pass2-central"
+  },
+  {
+   "key": "jtiq-raun-s3452-345-2",
+   "name": "Raun - S3452 345/161 kV double circuit (JTIQ, MISO-SPP seam)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "IA",
+   "utility": "MidAmerican Energy (MISO/Iowa side); Omaha Public Power District (SPP/Nebraska side)",
+   "ends": [
+    {
+     "name": "Raun",
+     "state": "IA",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "S3452 (new OPPD 345 kV substation north of Omaha)",
+     "state": "NE",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "JTIQ Portfolio #1 project approved by the SPP board (2024-12-09) and MISO board in MTEP24 (2024-12-12); SPP NTC-220873 covers ~72 mi of new 345 kV from S3452 to the OPPD/MEC demarcation plus rebuild of the 39-mi Raun-Tekamah 161 kV; MISO's June 2026 JTIQ status table lists the Iowa (MISO) portion at estimated ISD 2031 with state regulatory status pending. MISO-side mileage not stated, so miles_new left 0. Window: borderline (ISD year 2031, month not given).",
+   "docket": "",
+   "mtep_id": "",
+   "sources": [
+    "https://spp.org/documents/73601/oppd%20jtiq%20ntc%20220873.pdf",
+    "https://spp.org/documents/72223/20240816_revisions%20to%20spp-miso%20joa%20to%20implement%20jtiq_er24-2798-000.pdf",
+    "https://www.renewableenergyworld.com/power-grid/transmission/midwest-grid-operators-have-a-1-7b-plan-to-fix-the-interconnection-backlog",
+    "https://cdn.misoenergy.org/20260616%20System%20Planning%20Committee%20of%20the%20BOD%20Item%2005%20Reliability%20Imperative_Transmission%20Evolution763301.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "ell-wfc-boeuf-500",
+   "name": "West Fork Creek - Boeuf (St. Landry) 500 kV (Meta Project Evest)",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "LA",
+   "utility": "Entergy Louisiana",
+   "ends": [
+    {
+     "name": "West Fork Creek",
+     "state": "LA",
+     "county": "Richland",
+     "new": true
+    },
+    {
+     "name": "Boeuf (St. Landry) 500 kV switching station",
+     "state": "LA",
+     "county": "Avoyelles",
+     "new": true
+    }
+   ],
+   "miles_new": 144,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "Filed for certification in LPSC Docket U-37882 (March 2026); hearing Oct 7-9 2026, Commission vote set for Dec 16 2026. Entergy's project page: new single-circuit 500 kV, ~144 mi through Avoyelles, Evangeline, Rapides, La Salle, Caldwell and Richland parishes (testimony said ~153 mi to a St. Landry switching station cut into Babel-Webre). Entergy materials reported by CityBusiness: construction from 2028, in service late 2031 - window borderline. MISO EPR project 51263 approved.",
+   "docket": "LPSC U-37882",
+   "mtep_id": "51263",
+   "sources": [
+    "https://www.entergylouisiana.com/transmission?s",
+    "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=xTkee5EeDHA%3D",
+    "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=AUl4qI5mSHA%3D",
+    "https://neworleanscitybusiness.com/blog/2026/10/05/entergy-transmission-line-meta-data-center",
+    "https://www.kalb.com/2026/10/03/louisiana-landowners-oppose-transmission-line-meant-support-metas-data-center-entergy-attempts-quell-concerns",
+    "https://www.sec.gov/Archives/edgar/data/65984/000006598426000222/etr-20260331.htm"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "ell-boeuf-st-landry-500-sw",
+   "name": "Boeuf (St. Landry) 500 kV switching station (cut-in of Babel - Webre 500 kV)",
+   "kv": 500,
+   "project_type": "new substation",
+   "state": "LA",
+   "utility": "Entergy Louisiana",
+   "ends": [
+    {
+     "name": "Boeuf (St. Landry) 500 kV switching station",
+     "state": "LA",
+     "county": "Avoyelles",
+     "new": true,
+     "location_basis": "Parish per Entergy Louisiana project page (March 2026 testimony placed it in St. Landry Parish north of Lafayette); no point given"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "Part of the ELL-funded transmission in LPSC Docket U-37882 (pending, vote Dec 16 2026); testimony: new 500 kV switching station intersecting the to-be-built Babel-Webre 500 kV line. Same in-service timing as the West Fork Creek line (late 2031 per Entergy materials).",
+   "docket": "LPSC U-37882",
+   "mtep_id": "51263",
+   "sources": [
+    "https://www.entergylouisiana.com/transmission?s",
+    "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=AUl4qI5mSHA%3D",
+    "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=kt5JixLAYFY%3D"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "mdu-apld-bis01-345-sw",
+   "name": "APLD BIS-01 / Hannover data center 345 kV switchyard (on Coyote - Center 345 kV)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "ND",
+   "utility": "Montana-Dakota Utilities",
+   "ends": [
+    {
+     "name": "APLD BIS-01 (Hannover) 345 kV switchyard",
+     "state": "ND",
+     "county": "Oliver",
+     "new": true,
+     "location_basis": "ND PSC filing: Section 24, T142N R85W, Oliver County, west of Center; township/range only, no point taken"
+    }
+   ],
+   "miles_new": 0.2,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "MDU temporary-authority filings (ND PSC PU-26-236 / PU-26-219, contested by Roughrider Electric): ~1,000 ft of 345 kV from MDU's existing 345 kV line to a new 345 kV switchyard on the Applied Digital site. MISO EPR 51293 (Hannover Data Center Load Addition, 430 MW) describes a new substation on the Coyote-Center 345 kV line; EPR approved 2026.",
+   "docket": "ND PSC PU-26-236; PU-26-219",
+   "mtep_id": "51293",
+   "sources": [
+    "https://www.psc.nd.gov/webdocs/case/26-0219/016-050.pdf",
+    "https://cdn.misoenergy.org/20260707%20EPR-TSTF%20Item%2002%20EPR%20Results%20and%20MISO%20Recommendation766826.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "mdu-nelson-lake-apld-345",
+   "name": "Nelson Lake - APLD BIS-01 (Hannover) 345 kV (~15 mi)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "ND",
+   "utility": "Montana-Dakota Utilities",
+   "ends": [
+    {
+     "name": "Nelson Lake",
+     "state": "ND",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "APLD BIS-01 (Hannover) 345 kV switchyard",
+     "state": "ND",
+     "county": "Oliver",
+     "new": true
+    }
+   ],
+   "miles_new": 15,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "MDU comments in ND PSC PU-26-236: 'anticipates ... approximately 15 miles of 345 kV transmission line from an additional breaker bay within Minnesota Power Nelson Lake Substation to the 345 kV switch-yard' for redundancy; MISO EPR 51293 also lists a new line to Nelson Lake 'when it's complete'.",
+   "docket": "ND PSC PU-26-236",
+   "mtep_id": "51293",
+   "sources": [
+    "https://www.psc.nd.gov/webdocs/case/26-0219/016-050.pdf",
+    "https://cdn.misoenergy.org/20260707%20EPR-TSTF%20Item%2002%20EPR%20Results%20and%20MISO%20Recommendation766826.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "amil-truett-345-lines",
+   "name": "Coffeen / Moro / Stallings - Truett 345 kV (three new lines, Truett Phase 2)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "Coffeen",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Moro",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Stallings",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Truett",
+     "state": "IL",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-12",
+   "stage": "planned",
+   "stage_basis": "MISO EPR 51179 approved: 'construct three new 345 kV lines from Coffeen, Moro, Truett, and Stallings 345 kV substations' for a further 500 MW at Truett; ISD 12/1/2030, $87.3M. Mileage not stated. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "51179",
+   "sources": [
+    "https://cdn.misoenergy.org/20260505%20EPR-TSTF%20Item%2002%20Expedited%20Project%20Review%20Results%20and%20Recommendation755476.pdf",
+    "https://cdn.misoenergy.org/20260602%20CSPM%20Item%2004b%20Review%20of%20Proposed%20Reliability%20Projects%20IL_UPDATED760754.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "amil-mogul-ph3-345-sub",
+   "name": "New 345 kV substation splitting Pana - Austin and Kincaid - Austin 345 kV (RECC data center near Virden, Mogul Phase 3)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "New substation (Mogul Phase 3, name not given)",
+     "state": "IL",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-12",
+   "stage": "planned",
+   "stage_basis": "MISO EPR 51303 approved (April 2026 cycle): 'construct a new 345 kV substation splitting Pana-Austin and Kincaid-Austin 345 kV lines to serve the full load at 1000 MW'; MTEP26 Illinois table ISD 12/01/2028. Sangamon County board minutes (Mar 2026) place the RECC data center on Thayer Road next to Double Black Diamond solar and the 345 kV corridor. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "51303",
+   "sources": [
+    "https://cdn.misoenergy.org/20260707%20EPR-TSTF%20Item%2002%20EPR%20Results%20and%20MISO%20Recommendation766826.pdf",
+    "https://cdn.misoenergy.org/MTEP26%20Report%20-%20Draft784746.zip",
+    "https://sangamondepartments.blob.core.windows.net/dnnfiles/Clerk/County-Board/Minutes/2026%20Minutes/March%2023%202026%20Minutes.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "amil-mogul-ph3-345-lines",
+   "name": "Turner and Lanesville - new Mogul Phase 3 substation 345 kV (two new lines)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "IL",
+   "utility": "Ameren Illinois",
+   "ends": [
+    {
+     "name": "Turner",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Lanesville",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "New substation (Mogul Phase 3)",
+     "state": "IL",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-12",
+   "stage": "planned",
+   "stage_basis": "Same MISO EPR 51303: 'Construct two (2) new 345 kV lines from Turner and Lanesville 345 kV substations'; mileage not stated. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "51303",
+   "sources": [
+    "https://cdn.misoenergy.org/20260707%20EPR-TSTF%20Item%2002%20EPR%20Results%20and%20MISO%20Recommendation766826.pdf",
+    "https://cdn.misoenergy.org/MTEP26%20Report%20-%20Draft784746.zip"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "he-hackman-345-sub",
+   "name": "Hackman 345 kV station (on Prescott - Gwynneville 345 kV, east of Shelbyville; data center)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IN",
+   "utility": "Hoosier Energy",
+   "ends": [
+    {
+     "name": "Hackman",
+     "state": "IN",
+     "county": "",
+     "new": true,
+     "location_basis": "EPR: east of Shelbyville; no point"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-06",
+   "stage": "planned",
+   "stage_basis": "MISO EPR 51307 (April 2026 cycle) results Oct 2026: new 345 kV BAAH station for a 300 MW load, $35.0M, expected ISD 06/01/2028, target MTEP27 Appendix A. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "51307",
+   "sources": [
+    "https://cdn.misoenergy.org/20261006%20EPR-TSTF%20Item%2002%20EPR%20Results%20and%20MISO%20Recommendation785867.pdf",
+    "https://cdn.misoenergy.org/20261103%20EPR-TSTF%20Item%2003%20MISO%20EPR%20Statistics_UPDATED792865.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "he-rush-county-345-sub",
+   "name": "Rush County 345 kV station (at Milroy; on Hanna - Tanners Creek 345 kV)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IN",
+   "utility": "Hoosier Energy",
+   "ends": [
+    {
+     "name": "Rush County (expanded Milroy station)",
+     "state": "IN",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "MISO EPR 51308 (Hackman Phase 2, 600 MW): expand Milroy 69 kV station with a new 345 kV BAAH station 'Rush County' on the Hanna-Tanners Creek 345 kV line; ISD not in the excerpt seen. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "51308",
+   "sources": [
+    "https://cdn.misoenergy.org/20261006%20EPR-TSTF%20Item%2002%20EPR%20Results%20and%20MISO%20Recommendation785867.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "he-rush-county-hackman-345",
+   "name": "Rush County - Hackman 345 kV double circuit (14 mi)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "IN",
+   "utility": "Hoosier Energy",
+   "ends": [
+    {
+     "name": "Rush County",
+     "state": "IN",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Hackman",
+     "state": "IN",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 14,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "MISO EPR 51308: 'Construct a new 14 mile 345 kV double circuit from Rush County to the Hackman station east of Shelbyville'; ISD not in excerpt. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "51308",
+   "sources": [
+    "https://cdn.misoenergy.org/20261006%20EPR-TSTF%20Item%2002%20EPR%20Results%20and%20MISO%20Recommendation785867.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "he-prairie-creek-345-sub",
+   "name": "Prairie Creek 345 kV station (on Dresser - Fairbanks 345 kV, ~1 mi north of Fairbanks; data center)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IN",
+   "utility": "Hoosier Energy",
+   "ends": [
+    {
+     "name": "Prairie Creek",
+     "state": "IN",
+     "county": "Sullivan",
+     "new": true,
+     "location_basis": "EPR: about one mile north of Fairbanks, Indiana; county from Sullivan County sources naming Fairbanks Township"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-10",
+   "stage": "proposed",
+   "stage_basis": "MISO EPR 51425 (Prairie Creek station and load Phase 1, 300 MW, ISD 10/1/2028) under study as of Nov 2026; station itself broken out as MTEP27 BRP 51704 (7-position BAAH). Citizens Action Coalition reports a ~938 MW data center planned near Fairbanks. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "51704",
+   "sources": [
+    "https://cdn.misoenergy.org/20261006%20EPR-TSTF%20Item%2002%20EPR%20Results%20and%20MISO%20Recommendation785867.pdf",
+    "https://cdn.misoenergy.org/20261103%20EPR-TSTF%20Item%2003%20MISO%20EPR%20Statistics_UPDATED792865.pdf",
+    "https://www.citact.org/news/citizen-power-november-2026"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "he-gill-prairie-creek-345",
+   "name": "Gill - Prairie Creek 345 kV (13 mi)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "IN",
+   "utility": "Hoosier Energy",
+   "ends": [
+    {
+     "name": "Gill (expanded Merom 345 kV station)",
+     "state": "IN",
+     "county": "Sullivan",
+     "new": false
+    },
+    {
+     "name": "Prairie Creek",
+     "state": "IN",
+     "county": "Sullivan",
+     "new": true
+    }
+   ],
+   "miles_new": 13,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "MISO MTEP27 BRP 51705 (corrective action for Hackman EPRs): add a BAAH position at Gill and build a new 13-mile Gill-Prairie Creek 345 kV line; ISD not in excerpt. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "51705",
+   "sources": [
+    "https://cdn.misoenergy.org/20261006%20EPR-TSTF%20Item%2002%20EPR%20Results%20and%20MISO%20Recommendation785867.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "he-gill-sullivan-345-rebuild",
+   "name": "Gill - Sullivan 345 kV rebuild to double circuit with Riverview loop-in",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "IN",
+   "utility": "Hoosier Energy",
+   "ends": [
+    {
+     "name": "Gill",
+     "state": "IN",
+     "county": "Sullivan",
+     "new": false
+    },
+    {
+     "name": "Sullivan (AEP)",
+     "state": "IN",
+     "county": "Sullivan",
+     "new": false
+    },
+    {
+     "name": "Riverview",
+     "state": "IN",
+     "county": "Sullivan",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 13.6,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "MISO MTEP26 BRP 51237 (CAP for an EPR): rebuild the 13.6-mi single-circuit Gill-Sullivan 345 kV to double circuit and loop in Riverview; listed as EPR mitigation in the May and Oct 2026 EPR results. Sullivan is an AEP/PJM station - MISO-side facility is the Hoosier line. ISD not in excerpt. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "51237",
+   "sources": [
+    "https://cdn.misoenergy.org/20260505%20EPR-TSTF%20Item%2002%20Expedited%20Project%20Review%20Results%20and%20Recommendation755476.pdf",
+    "https://cdn.misoenergy.org/20261006%20EPR-TSTF%20Item%2002%20EPR%20Results%20and%20MISO%20Recommendation785867.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "he-riverview-345-sub",
+   "name": "Riverview 345 kV station (south of Sullivan 345 kV; networks Gill - Sullivan and Snyder - Sullivan)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IN",
+   "utility": "Hoosier Energy",
+   "ends": [
+    {
+     "name": "Riverview",
+     "state": "IN",
+     "county": "Sullivan",
+     "new": true,
+     "location_basis": "EPR: a little over a mile south of the existing Sullivan Co 345 kV station"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "MISO MTEP27 BRP 51702: new five-position BAAH 345 kV station networking the planned Gill-Sullivan and Ameren Snyder-AEP Sullivan 345 kV lines; ISD not in excerpt. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "51702",
+   "sources": [
+    "https://cdn.misoenergy.org/20261006%20EPR-TSTF%20Item%2002%20EPR%20Results%20and%20MISO%20Recommendation785867.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "he-crossroads-345-sub",
+   "name": "Crossroads 345 kV transmission station (300 MW load)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IN",
+   "utility": "Hoosier Energy",
+   "ends": [
+    {
+     "name": "Crossroads",
+     "state": "IN",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-10",
+   "stage": "planned",
+   "stage_basis": "MISO EPR 51145 (Dec 2025 cycle) results May 2026: new transmission station to connect a 300 MW load, $86M, expected ISD 10/1/2027, target MTEP26 Appendix A. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "51145",
+   "sources": [
+    "https://cdn.misoenergy.org/20260505%20EPR-TSTF%20Item%2002%20Expedited%20Project%20Review%20Results%20and%20Recommendation755476.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "he-morgan-county-345-sub",
+   "name": "Morgan County 345/69 kV station (on Thompson - Petersburg 345 kV)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IN",
+   "utility": "Hoosier Energy",
+   "ends": [
+    {
+     "name": "Morgan County (HE)",
+     "state": "IN",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "MISO EPR 51088 (Oct 2025 cycle) approved: new 345 kV ring bus on Thompson-Petersburg between Thompson and Antioch with 69 kV low side; ISD not in excerpt. Distinct from IPL's Antioch station already listed. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "51088",
+   "sources": [
+    "https://cdn.misoenergy.org/20260106%20EPR-TSTF%20Item%2002%20EPR%20Results%20and%20MISO%20Recommendation734123.pdf",
+    "https://cdn.misoenergy.org/20261006%20EPR-TSTF%20Item%2003%20MISO%20EPR%20Statistics785900.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "he-speed-northside-138",
+   "name": "Speed - Northside 138 kV line and distribution station",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "IN",
+   "utility": "Hoosier Energy",
+   "ends": [
+    {
+     "name": "Speed",
+     "state": "IN",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Northside",
+     "state": "IN",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "MISO EPR 51090 (Oct 2025 cycle, 15 MW) shown as Approved in MISO EPR statistics (Oct 2026); length and ISD not in excerpt. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "51090",
+   "sources": [
+    "https://cdn.misoenergy.org/20261006%20EPR-TSTF%20Item%2003%20MISO%20EPR%20Statistics785900.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "dei-noblesville-durbin-230",
+   "name": "Noblesville - Durbin 230 kV rebuild",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "IN",
+   "utility": "Duke Energy Indiana",
+   "ends": [
+    {
+     "name": "Noblesville",
+     "state": "IN",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Durbin",
+     "state": "IN",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "MISO MTEP27 BRP 51351, a corrective action plan for the Hackman EPRs (51307/51308) in the Oct 2026 EPR results; mileage and ISD not in excerpt. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "51351",
+   "sources": [
+    "https://cdn.misoenergy.org/20261006%20EPR-TSTF%20Item%2002%20EPR%20Results%20and%20MISO%20Recommendation785867.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "mec-rebel-west-345-sub",
+   "name": "Rebel West 345 kV substation (600 MW large load)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IA",
+   "utility": "MidAmerican Energy",
+   "ends": [
+    {
+     "name": "Rebel West",
+     "state": "IA",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-12",
+   "stage": "proposed",
+   "stage_basis": "MISO EPR 51430 (Aug 2026 cycle) under study: Rebel West 345 kV substation and associated upgrades, 600 MW, expected ISD 12/31/2027. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "51430",
+   "sources": [
+    "https://cdn.misoenergy.org/20261103%20EPR-TSTF%20Item%2003%20MISO%20EPR%20Statistics_UPDATED792865.pdf",
+    "https://cdn.misoenergy.org/20260908%20EPR-TSTF%20Item%2003%20MISO%20EPR%20Statistics%20Update779535.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "mec-rebel-east-westwood-345-subs",
+   "name": "Rebel East and Westwood 345 kV substations (700 MW large load)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IA",
+   "utility": "MidAmerican Energy",
+   "ends": [
+    {
+     "name": "Rebel East",
+     "state": "IA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Westwood",
+     "state": "IA",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-12",
+   "stage": "proposed",
+   "stage_basis": "MISO EPR 51431 (Aug 2026 cycle) under study: Rebel East and Westwood 345 kV substations and associated upgrades, 700 MW, expected ISD 12/31/2030. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "51431",
+   "sources": [
+    "https://cdn.misoenergy.org/20261103%20EPR-TSTF%20Item%2003%20MISO%20EPR%20Statistics_UPDATED792865.pdf",
+    "https://cdn.misoenergy.org/20260908%20EPR-TSTF%20Item%2003%20MISO%20EPR%20Statistics%20Update779535.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "mec-east-kanesville-161",
+   "name": "East Kanesville 161 kV substation and 161 kV lines (200 MW load)",
+   "kv": 161,
+   "project_type": "new line",
+   "state": "IA",
+   "utility": "MidAmerican Energy",
+   "ends": [
+    {
+     "name": "East Kanesville",
+     "state": "IA",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "MISO EPR 50721 (Aug 2025 cycle, 200 MW) Approved per MISO EPR statistics; line lengths and ISD not in excerpt. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "50721",
+   "sources": [
+    "https://cdn.misoenergy.org/20261006%20EPR-TSTF%20Item%2003%20MISO%20EPR%20Statistics785900.pdf",
+    "https://cdn.misoenergy.org/20260908%20EPR-TSTF%20Item%2003%20MISO%20EPR%20Statistics%20Update779535.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "mec-van-meter-161",
+   "name": "Van Meter 161 kV substation and associated 161 kV lines (300 MW large load)",
+   "kv": 161,
+   "project_type": "new line",
+   "state": "IA",
+   "utility": "MidAmerican Energy",
+   "ends": [
+    {
+     "name": "Van Meter",
+     "state": "IA",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-02",
+   "stage": "planned",
+   "stage_basis": "MISO EPR 51216 (Feb 2026 cycle) approved: 'Construct new Van Meter 161 kV Substation and 161 kV lines', $42.5M, expected ISD 02/01/2029; lengths not stated. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "51216",
+   "sources": [
+    "https://cdn.misoenergy.org/20260407%20EPR-TSTF%20Item%2002%20Expedited%20Project%20Review%20Results%20and%20Recommendation_updated749105.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "mec-hazleton-arnold-345-uprate",
+   "name": "Hazleton - Arnold 345 kV uprate (structure replacements on MidAmerican section; Big Cedar load)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "IA",
+   "utility": "MidAmerican Energy",
+   "ends": [
+    {
+     "name": "Hazleton",
+     "state": "IA",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Arnold",
+     "state": "IA",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "MISO project 51416 in the Sept 2026 EPR results: structure replacements on MidAmerican's section of Hazleton-Arnold 345 kV to raise the rating, mitigating overloads from the Big Cedar 370 MW load addition (51259); miles and ISD not in excerpt. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "51416",
+   "sources": [
+    "https://cdn.misoenergy.org/20260908%20EPR-TSTF%20Item%2002%20EPR%20Results%20and%20MISO%20Recommendation779534.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "mec-raun-remsen-345-uprate",
+   "name": "Raun - Remsen 345 kV structure replacement (rating increase)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "IA",
+   "utility": "MidAmerican Energy",
+   "ends": [
+    {
+     "name": "Raun",
+     "state": "IA",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Remsen",
+     "state": "IA",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "MTEP24 Appendix A project 50075 (Other - Local Needs, $0.7M): replace some structures on Raun-Remsen 345 kV to increase its rating, expected ISD 6/1/2025; no completion evidence found, so not marked built. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "50075",
+   "sources": [
+    "https://cdn.misoenergy.org/20241212%20Board%20of%20Directors%20Item%2009a%20MTEP%20Executive%20Summary%20Appdendix%20A%20Appendix%20F665158.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "itct-project-benton-345-subs",
+   "name": "Project Benton: two new 345 kV stations (cut-ins of Majestic - Milan and Majestic - Lemoyne 345 kV)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "MI",
+   "utility": "ITC Transmission (for DTE customer load)",
+   "ends": [
+    {
+     "name": "Project Benton station 1",
+     "state": "MI",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Project Benton station 2",
+     "state": "MI",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "MISO EPR 51134 (Dec 2025 cycle) results Apr 2026: ITCT to build two new 6-row 345 kV stations, both Majestic-Milan and Majestic-Lemoyne cut into both; target MTEP26 Appendix A; ISD TBD in the excerpt. (MISO-hosted EPR/MTEP document; text seen only as a search-index excerpt, page not fetched per the no-misoenergy.org rule)",
+   "docket": "",
+   "mtep_id": "51134",
+   "sources": [
+    "https://cdn.misoenergy.org/20260407%20EPR-TSTF%20Item%2002%20Expedited%20Project%20Review%20Results%20and%20Recommendation_updated749105.pdf"
+   ],
+   "region_file": "pass2-cross"
+  },
+  {
+   "key": "wi-edmund-345-swst",
+   "name": "Edmund 345 kV switching station (cut-in of Cardinal - Hickory Creek 345 kV, J1773 interconnection)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "WI",
+   "utility": "American Transmission Co.",
+   "ends": [
+    {
+     "name": "Edmund Substation (345 kV switchyard)",
+     "state": "WI",
+     "county": "Iowa",
+     "new": true
+    },
+    {
+     "name": "Cardinal - Hickory Creek 345 kV line",
+     "state": "WI",
+     "county": "Iowa",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-05",
+   "stage": "proposed",
+   "stage_basis": "ATC applied for a Certificate of Authority for the Edmund Substation, Town of Linden, Iowa County (137-CE-219; PSC notice of investigation approved Jan 29, 2026); Uplands Wind's engineering plan says the new switchyard will be built on the existing Cardinal-Hickory Creek 345 kV line; ATC 2026 list gives J1773 Edmund Swt St est. ISD May-29. No final decision found.",
+   "docket": "PSCW 137-CE-219",
+   "mtep_id": "50111",
+   "sources": [
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=576464",
+    "https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=582961",
+    "http://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf",
+    "https://www.atc10yearplan.com/projects/generation-interconnections/"
+   ],
+   "region_file": "pass2-wi-mi"
   }
+ ],
+ "swept": [
+  "Entergy Long Term Transmission Plan Project Status Report, report date Oct 1 2026 (Q3 2026), all 299 project rows read line by line: https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2026_Final.pdf",
+  "Entergy status reports Q4 2023 through Q2 2026 (10 reports) screened for projects closed out / in service since 2023-11; index: http://www.oasis.oati.com/EES/EESdocs/Construction_Plan.htm ; Q1 2024: https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_Jan_Feb_March_2024_Final.pdf",
+  "PUCT Interchange docket list for Entergy Texas, Inc. (all CCN transmission dockets 2021-2026: 52241, 52304, 56551, 57648, 58005, 58136, 58662, 59292, 59430, 60130): https://interchange.puc.texas.gov/search/dockets?UtilityName=ENTERGY%20TEXAS&UtilityType=E",
+  "PUCT Interchange docket lists for Sam Houston Electric Cooperative (53602, 59126), East Texas Electric Cooperative and Jasper-Newton Electric Cooperative (no transmission CCNs found): https://interchange.puc.texas.gov/search/dockets?UtilityName=SAM%20HOUSTON&UtilityType=E",
+  "PUCT monthly transmission construction progress report, Entergy Texas July 2025 (Project 57477 item 207; later reports moved to the PUCT Compliance Reporting Portal and were not swept): https://interchange.puc.texas.gov/Documents/57477_207_1520283.PDF",
+  "LPSC 2024 Transmission Siting Order (R-36199) certification dockets U-37467 West Bank 500, U-37527 East Bank Geismar, U-37563 Adams Creek-Robert, U-37812 Babel-Webre, plus U-37425 (Laidley), U-37882 (Evest), Cleco U-38035 (Applied Digital): https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=rf41Puk4laQ%3D ; https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/DocketDetails?docketId=32728",
+  "LPSC X-34970 Cleco Power 2026 Transmission Siting Report (R-26018): https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=TCkJkJwIIL4%3D",
+  "LPSC JDEC application for transmission determination / transfer of 230 kV Loop to MISO: https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=zCSQ7zzgF7E%3D",
+  "Entergy Louisiana, Entergy New Orleans and Lafayette Utilities System project pages: https://www.entergylouisiana.com/transmission ; https://www.entergyneworleans.com/transmission ; https://lus.org/projects",
+  "APSC docket search: style of every '-U' docket 2021-2026 listed in the APSC online services selector (174 dockets) screened for transmission CECPN/CCN cases (26-041-U, 25-054-U, 23-036-U, 26-002-U, 24-031-U, 23-086-U, 24-006-U found): https://apps.apsc.arkansas.gov/olsv2/docket_search.asp",
+  "MPSC monthly Utility Docket / Consent Docket PDFs 2023-2026 screened for electric transmission CPCNs (Entergy Mississippi 2024-UA-101; Cooperative Energy 2023-UA-3, -10, -20, -61, -131, -147, 2024-UA-01, -43, 2025-UA-46, -66, -67, -81, 2026-UA-51): https://www.psc.ms.gov/sites/default/files/2026-09/10-2026-UTILITY-DOCKET.pdf ; https://www.psc.ms.gov/sites/default/files/2024-01/2-2024-UTILITY-DOCKET-v2.pdf ; https://www.psc.ms.gov/sites/default/files/2023-06/7-2023-UTILITY-DOCKET.pdf",
+  "Cooperative Energy 2024 and 2025 annual reports: http://cooperativeenergy.com/wp-content/uploads/2025/06/307-Cooperative-Energy-2024-Annual-Report-Digital-1.pdf ; https://cooperativeenergy.com/wp-content/uploads/2026/06/2025-Annual-Report.pdf",
+  "MISO queue entries (interconnection.fyi) for GI cut-in POIs J1583, J1564, J1542, J1576, J1671, J1760, J2165, J2075, J907, J830, J1795: https://www.interconnection.fyi/",
+  "News 2024-2026 on large loads: Hut 8 River Bend (West Feliciana), AVAIO Project Leo (Wrightsville AR), Entergy Q3 2026 earnings, AWS Mississippi, Meta Evest: https://www.wafb.com/2026/10/05/first-look-west-felicianas-data-center ; https://www.arkansasonline.com/news/2026/jul/23/entergy-opens-dialogue-with-landowners/ ; https://www.megaproject.com/news/utility/entergy-sees-progress-on-arkansas-data-center-deal-strong-q3-sales",
+  "ATC 2026 10-Year Assessment network project list (every row; all 138/345 kV and new-substation rows checked) - http://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf",
+  "ATC 2026 Table PR-1 completed since last report - http://www.atc10yearplan.com/wp-content/uploads/2026/11/Table-PR-1-Completed-Since-Last-Report-TYA-2026.pdf",
+  "ATC 2026 Table PR-23 cancellations/changes/new - http://www.atc10yearplan.com/wp-content/uploads/2026/11/Table-PR-23-Changed-Since-Last-Report-TYA-2026.pdf",
+  "ATC 2025 PR-1, PR-23 and network list; 2024 network list and PR-1; 2023 list (for completion dates) - http://www.atc10yearplan.com/wp-content/uploads/2025/11/Table-PR-1-Completed-Since-Last-Report-TYA-2025.pdf ; http://www.atc10yearplan.com/wp-content/uploads/2025/11/TYA-2025-Network-Project-List.pdf ; http://www.atc10yearplan.com/wp-content/uploads/2024/10/TYA-2024-Network-Project-List.pdf ; http://www.atc10yearplan.com/2024/files/2024/10/Table-PR-1-Completed-Since-Last-Report-TYA-2024.pdf ; http://www.atc10yearplan.com/2023/files/2023/10/2023-TYA-Project-List-as-of-10152023.pdf",
+  "ATC 2025 10-Year Assessment summary and preliminary solutions decks - http://www.atc10yearplan.com/wp-content/uploads/2025/11/2025-10-Year-Assessment-Summary.pdf ; http://www.atc10yearplan.com/wp-content/uploads/2025/05/2025-TYA-Preliminary-Solutions-Final.pdf",
+  "ATC 2026 major projects update and 2024 model table PF-2 - https://www.atc10yearplan.com/summary-report/plans-and-proposals/ ; http://www.atc10yearplan.com/2024/files/2024/10/2024TYA_Table-PF2.pdf",
+  "ATC generation interconnection tables (in-service, active, withdrawn, in-construction queue with kV) - https://www.atc10yearplan.com/projects/generation-interconnections/",
+  "ATC project pages (Stevens Point-Appleton, North Central WI, Northern Adams, Ozaukee, Dodge, Mill Road-Granville, Western Feed) - https://www.atcllc.com/our-projects/",
+  "PSCW WEPA reports to the Legislature listing every EA/EIS docket (FY2023 and FY2025; FY2024 and FY2026 reports could not be retrieved) - https://docs.legis.wisconsin.gov/misc/mandatedreports/2025/public_service_commission/wisconsin_environmental_policy_act_received_9_12_2025.pdf ; https://docs.legis.wisconsin.gov/misc/mandatedreports/2023/public_service_commission/2023_environmental_policy_act_report_s_1_11_2_j_received_8_29_2023.pdf",
+  "PSCW case pages, ERF documents and open-meeting minutes found via search (psc.wi.gov / apps.psc.wi.gov block automated fetches with Cloudflare, so not fetched directly) - https://apps.psc.wi.gov/ERF/ERFview/viewdoc.aspx?docid=576464",
+  "DATCP agricultural impact statements, electric projects list - https://datcp.wi.gov/Pages/Programs_Services/AISElectricProjects.aspx",
+  "Michigan PSC Act 30 cases U-21471/U-21472 (LRTP T1) and U-22269 (LRTP T2.1 Oneida-Sabine Lake); ITC LRTP T2.1 Copperton reports - https://www.michigan.gov/mpsc/commission/news-releases/2025/07/10/mpsc-approves-two-new-transmission-lines-to-be-built-by-michigan-electric-transmission-co ; https://www.mifuturegrid.com/copperton-projects",
+  "ITC Holdings project list, all pages and every Michigan project page - https://www.itc-holdings.com/projects/",
+  "MISO EPR, ESPM and MTEP25 report material for METC/ITCT/WPSC, seen only as search-engine excerpts (misoenergy.org not fetched)",
+  "Dairyland Power project pages (Alma-Blair LRTP T1, Wabasha and Beaver Creek are MN/IA) - https://dairylandpower.com",
+  "Xcel Energy Wisconsin (WWTC = LRTP T1; Cylon and Emerald substations below 230 kV; Wheaton 161 kV case) - https://xcelenergytransmission.com",
+  "News 2024-2026 on WI/MI data centers (Port Washington, Mount Pleasant, Beaver Dam, Saline Twp, Van Buren Twp/Project Cannoli, Lyon Twp, Gaines Twp, Frenchtown) and UP utilities (Cloverland, UMERC, UPPCO, Wolverine)",
+  "Minnesota 2025 Biennial Transmission Projects Report, Ch. 6 needs tables for all six zones (6.3 Northwest, 6.4 Northeast, 6.5 West Central, 6.6 Twin Cities, 6.7 Southwest, 6.8 Southeast): every MPUC tracking number read, plus each zone's completed/withdrawn table - https://www.minnelectrans.com/documents/2025_Biennial_Report/html/Ch_6_Needs-6.3.htm, https://www.minnelectrans.com/documents/2025_Biennial_Report/html/Ch_6_Needs-6.4.htm, https://www.minnelectrans.com/documents/2025_Biennial_Report/html/Ch_6_Needs-6.5.htm, https://www.minnelectrans.com/documents/2025_Biennial_Report/html/Ch_6_Needs-6.6.htm, https://www.minnelectrans.com/documents/2025_Biennial_Report/html/Ch_6_Needs-6.7.htm, https://www.minnelectrans.com/documents/2025_Biennial_Report/html/Ch_6_Needs-6.8.htm",
+  "Minnesota PUC Energy Infrastructure Permitting, full Transmission Lines project list (37 dockets, all items per page) - http://puc.eip.mn.gov/projects?combine=&field_project_location_value=&field_project_type_target_id_entityreference_filter=5047&items_per_page=All&order=field_description&sort=asc",
+  "Minnesota PUC EIP Transmission Lines landing page (proposed lines in permitting, Tranche 1/2.1 pages) - https://puc.eip.mn.gov/ (Transmission Lines page)",
+  "North Dakota PSC public case search: all Electric 'Siting Application' cases filed 2021-01-01 to 2026-11-13 (46 cases) - https://apps.psc.nd.gov/cases/pscasesearch",
+  "North Dakota PSC Siting Spreadsheet (historical, through early 2022) - https://www.psc.nd.gov/sites/www/files/documents/jurisdiction/siting/Siting-Spreadsheet.pdf",
+  "North Dakota Transmission Authority 2026 annual report (utility-by-utility project lists: OTP, MDU, Xcel, GRE, MRES, Minnesota Power, Minnkota, Rainbow) - https://ndlegis.gov/sites/default/files/statutorily-mandated-reports/2026-ndta-annual-report.pdf",
+  "North Dakota Transmission Authority 2025 and 2023 annual reports - https://ndlegis.gov/sites/default/files/statutorily-mandated-reports/2025-ndta-annual-report.pdf ; https://ndlegis.gov/sites/default/files/statutorily-mandated-reports/2023-ndta-annual-report.pdf",
+  "South Dakota PUC electric docket lists 2021, 2022, 2023, 2024, 2025, 2026 (every EL docket title screened for facility/siting permits) - https://puc.sd.gov/Dockets/Electric/2021/default.aspx ... https://puc.sd.gov/Dockets/Electric/2026/default.aspx",
+  "South Dakota 2026 biennial ten-year plans: Otter Tail, Xcel (NSP), Montana-Dakota - https://puc.sd.gov/commission/commissionaction/10yearplan/OTP2026.pdf ; https://puc.sd.gov/commission/commissionaction/10yearplan/mdu2026.pdf ; Xcel 2026 SD ten-year plan (same folder)",
+  "Iowa Utilities Commission FY2025 performance report, 'Major Dockets' list of 16 electric franchise E-dockets (E-22534 to E-22567) - https://publications.iowa.gov/56812/1/Iowa-Utilities-Commission-FY2025-Performance-Report.pdf",
+  "Iowa Utilities Commission press releases / hearing notices for E-22544, E-22534, E-22559, E-22560 - https://iuc.iowa.gov/press-release/2025-12-01/iuc-issues-decision-itc-midwest-electric-transmission-line-docket",
+  "ITC Midwest project sites for IA franchise cases (Beverly-Hills, Beverly-Sub 92, Morgan Valley-Twinkle, Deeds-Ipava, Deeds-Skunk River, Dixon REC-Walcott North) - https://www.beverly-hillsproject.com/ ; https://www.beverly-sub92.com/ ; https://www.morganvalley-twinkle.com/ ; https://www.deeds-ipava.com/ ; https://www.dixon-walcott.com/",
+  "MISO-SPP JTIQ portfolio documents as published by SPP/others (SPP NTC 220873; SPP FERC JTIQ filing ER24-2798) - https://spp.org/documents/73601/oppd%20jtiq%20ntc%20220873.pdf ; https://www.spp.org/documents/72223/20240816_revisions%20to%20spp-miso%20joa%20to%20implement%20jtiq_er24-2798-000.pdf",
+  "Minnesota Power 2025 IRP Appendix F (transmission planning) - https://minnesotapower.blob.core.windows.net/content/Content/Documents/Environment/IRP/2025/AppendixF-TransmissionPlanning_PUBLIC.pdf",
+  "Otter Tail Power 2025 forecast Attachment O project list (OASIS) - https://www.oasis.oati.com/woa/docs/OTP/OTPdocs/2025_FLTY_Attachment_O_Customer_Meeting_Presentation_OTP.pdf",
+  "News/data-center scan 2024-2026: Google Pine Island (Skyway), Xcel Lyon County Generating Station, Applied Digital/Harwood (Minnkota Agassiz), MDU Ellendale data centers, Rainbow Energy Park, Council Bluffs (Edged, MidAmerican 161 kV), Cedar Rapids-Iowa City corridor",
+  "ICC entity case list, Ameren Illinois (all dockets; filtered 8-406/8-406.1/8-503/8-509, 2021-2026): https://www.icc.illinois.gov/emdb/ucdb/entity/U3390/case-list",
+  "ICC ATXI dockets via web search (23-0299, 24-0088, 25-0886, 25-0995, 26-0081): https://icc.illinois.gov/docket/P2026-0081",
+  "ICC open-meeting agendas / weekly docket 2024-2026 (8-406 items): https://icc.illinois.gov/attachments/print/agendareport?agid=22163",
+  "Ameren transmission project pages (Illinois Valley, Lakeland Area, Mt. Vernon, Sursee-Aviston, Central Illinois Grid Transformation, Eastern MO Grid): https://www.ameren.com/reliability/transmission",
+  "Missouri PSC EFIS case search, all Electric 'Application for Certificate' (EA) cases 2021-2026 (63 cases; Ameren/ATXI transmission dockets read): https://efis.psc.mo.gov/Case/Search",
+  "Ameren Missouri IRP Chapter 7 Appendix A, 2023 and 2026 (MTEP project tables): https://www.ameren.com/-/media/files/our-company/irp/2023/ch7-appendixa.ashx ; https://www.ameren.com/-/media/files/our-company/irp/2026/ch7-a.ashx",
+  "Ameren OASIS (AMRN) Attachment O stakeholder decks: Ameren Missouri 2025/2026 historical, ATXI 2024 true-up + 2026/2027 projections, Ameren Illinois 2025/2026/2027 projections: https://www.oasis.oati.com/woa/docs/AMRN/AMRNdocs/",
+  "IURC: Cause 46322 (NIPSCO GenCo data center) compliance filings Jul/Oct 2026; Cause 46394 (AES Indiana Monrovia) order; Cause 46387 (WVTC) order; Cause 45647 (Duke TDSIC) order; Cause 45847 (CEI South Posey Solar) progress report: https://iurc.portal.in.gov/",
+  "Duke Energy Indiana transmission project pages (West Terre Haute, Vigo County Industrial Park): https://www.duke-energy.com/our-company/grid-infrastructure/indiana/west-terre-haute",
+  "AES Indiana Morgan County Transmission Line Upgrade and Winding Ridge pages: https://www.aesindiana.com/sites/aesvault.com/files/2026-09/Morgan-County-Fact-Sheet-AES-Indiana-September-09-2026.pdf",
+  "Kentucky PSC: Big Rivers CPCN cases 2021-00275 and 2022-00012 (with post-case filings), Big Rivers 2023 and 2026 IRPs (Case 2023-00310, 2026-00268), Big Rivers 2024/2025 annual reports, Case 2026-00115 (TeraWulf): https://psc.ky.gov/Case/ViewCaseFilings/2022-00012",
+  "MISO material seen only via search-engine excerpts (not fetched): MTEP23 MO/IL project reviews, MTEP25 IN/KY SPM decks, EPR results, regional cost-sharing presentation (cdn.misoenergy.org)",
+  "News 2024-2026: Ameren mediaroom, Morgan County Correspondent, DCD, WSBT, Blockspace, KRCG",
+  "MISO-SPP JTIQ Portfolio #1 (5 projects): SPP/MISO FERC JOA filing ER24-2798 https://spp.org/documents/72223/20240816_revisions%20to%20spp-miso%20joa%20to%20implement%20jtiq_er24-2798-000.pdf ; SPP NTC-220873 https://spp.org/documents/73601/oppd%20jtiq%20ntc%20220873.pdf ; SD PUC EL26-028 https://puc.sd.gov/commission/dockets/electric/2026/EL26-028/Application.pdf ; project FAQ https://bigstonesouthtohankinsontobison.com/library-faq . Result: Raun-S3452 reported; Bison-Hankinson-Big Stone South (ISD 2033-2034) and Lyon County-Lakefield Jct (ISD 2032) outside window; Auburn-Hoyt and Sibley are SPP.",
+  "MISO-PJM IPSAC / CSP and ITCS materials (PJM-hosted) https://www.pjm.com/-/media/DotCom/committees-groups/stakeholder-meetings/ipsac/2026/20260313/20260313-miso-pjm-ipsac-presentation.pdf and https://www.pjm.com/-/media/DotCom/committees-groups/stakeholder-meetings/ipsac/2025/20251205/20251205-item-03---interregional-transfer-capability-study-update.pdf . Result: only TMEP is Powerton-Towerline 138 kV wavetrap (in service 2024-09, terminal equipment only, skipped); no TMEP/IMEP studies 2023-2025; ITCS has conceptual ideas only.",
+  "MISO-SPP IPSAC 2026 Annual Issues Review (seen via search excerpt): issues only, no new projects.",
+  "MISO competitive projects / Selected Developer Agreements: Hartburg-Sabine Jct 500 kV (cancelled Aug 2022, Texas ROFR); Duff-Coleman (in service 2020, outside window); DZTM, Hiple (LRTP T1, already listed); RIKY, WISE, BECI, WIIL, STIW, MARS, EASL (all LRTP Tranche 2.1, skipped). Sources: https://www.utilitydive.com/news/miso-selects-aep-berkshire-jv-to-build-12b-765-kv-transmission-project/809086/ ; https://www.amereninvestors.com/investors/financial-releases/financial-releases-details/2026/MISO-selects-consortium-of-Ameren-GridLiance-Dairyland-to-deliver-foundational-energy-grid-project-in-Iowa/default.aspx ; https://www.wisbusiness.com/wp-content/uploads/2026/05/20260527-5281_MISO-Answer-to-Complaint-EL26-58.pdf",
+  "FERC incentive / agreement searches 2024-2026 (FERC EL26-70 large-load show-cause https://www.ferc.gov/sites/default/files/2026-06/EL26-70-000.pdf ; ETCC answer ER26-1538; Empire District SPP incentives). Result: no MISO non-LRTP line-specific incentive or SDA found beyond the competitive projects above; FERC eLibrary not searched directly.",
+  "Data-center / large-load hookups 2024-2026 (news + utility pages): Meta Hyperion/Evest (LPSC U-37425/U-37882), Google West Memphis (Entergy Arkansas), AWS Canton/Ridgeland/Vicksburg/Clinton (Entergy Mississippi), Oracle/OpenAI Saline Twp and Google Van Buren Twp (DTE/ITC), Vantage/OpenAI Port Washington and Microsoft Mount Pleasant and Meta Beaver Dam (ATC), Google Pine Island (Xcel Skyway, MN PUC TL-26-135), Applied Digital Harwood and Ellendale/Center (Minnkota, MDU), QTS/Google Cedar Rapids (ITC Big Cedar), NIPSCO Hobart/Schahfer (IURC 46322), Hoosier Energy Sullivan County data centers, Digital Realty Project Bison Kokomo (Duke IN). Sources include https://www.itc-holdings.com/projects/project-cannoli/ , https://www.atcllc.com/project/ozaukee-county-distribution-interconnection , https://xcelenergytransmission.com/projects/skyway/ , https://www.kait8.com/2026/10/19/entergy-arkansas-announces-plans-strengthen-power-grid/ , https://measuredai.substack.com/p/amazon-mississippi-data-centers , https://www.psc.nd.gov/webdocs/case/26-0022/001-020.pdf , https://www.citact.org/news/citizen-power-november-2026",
+  "MISO Expedited Project Review (EPR) statistics and results decks, Mar 2025 - Nov 2026 (MISO-hosted; read only as search-index excerpts, never fetched). Used to identify large-load substations/lines not in already-listed.txt; items without a stated facility scope (Prairie Link 345 kV load addition $387.5M, Project Pawnee, Sheridan North 800 MW (AECC), Project Bison 1,500 MW (DEI), Gallagher 230 kV load, Schahfer 345 kV load, Carbide Tap-Viele 161 kV rebuild location) were NOT reported.",
+  "Entergy Louisiana select transmission projects page https://www.entergylouisiana.com/transmission ; Entergy Texas projects https://www.entergy.com/transmission/projects/tx ; Entergy OASIS long-term plan status reports (Q4 2025, Q3 2026) https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2026_Final.pdf ; Entergy 10-Q Q1 2026 (sec.gov). Most items already listed.",
+  "ITC project list https://www.itc-holdings.com/projects/ and MiFutureGrid (Copperton projects, Oneida-Sabine Lake = LRTP Tranche 2.1, skipped; Nelson Road-Oneida, Helix-Hiple, Cannoli, Big Cedar already listed).",
+  "Minnesota PUC eDockets project pages: Skyway TL-26-135, Mankato-Mississippi River TL-23-157, Alexandria-Big Oaks TL-23-159, Iron Range-St. Louis County-Arrowhead, Bison-Alexandria 2nd circuit, MN Energy Connection (all listed or LRTP).",
+  "Trade press: Utility Dive, DatacenterDynamics, Construction Review Online, WPR, KALB, New Orleans CityBusiness, Mississippi Today/Free Press, Circle of Blue, Beaumont Business Journal (2024-2026) - checked for named 138 kV+ lines / 230 kV+ substations.",
+  "Public datasets: (1) Our Grid Future Planned Transmission Projects National Database (Horizon Energy Systems, Oct 2026; >=230 kV new/upgrade/rebuild/reconductor, tagged by RTO incl. MISO) https://ourgridfuture.org/ - download sits behind a contact-information form, NOT downloaded; (2) ACEG/Grid Strategies High-Capacity Transmission Permitting Tracker (~200 large lines, built on Our Grid Future) https://cleanenergygrid.org/transmission-permitting-tracker - large lines only, adds nothing below LRTP scale; (3) LBNL harmonized FERC Form 1 + HIFLD line dataset 1994-2024 https://catalog.data.gov/dataset/a-harmonized-geospatial-dataset-of-u-s-transmission-lines-linking-ferc-form-1-an-1994-2024 - existing lines only; (4) HIFLD Electric Power Transmission Lines https://catalog.data.gov/dataset/electric-power-transmission-lines - last updated 2022-10, public dataset discontinued Sept 2025 per RMI https://rmi.org/resources/the-national-transmission-data-weve-never-had-and-why-we-desperately-need-it ; (5) GridCensus (derived from HIFLD June 2026) - existing assets only; (6) EIA publishes no planned-transmission line dataset. None added projects."
  ]
 }

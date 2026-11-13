@@ -26,6 +26,7 @@ MTEP_URL = "https://www.misoenergy.org/planning/transmission-planning/mtep/"
 NOT_A_PLACE = re.compile(r"BLANKET|THROUGHOUT|VARIOUS|^\d+ LINES$", re.I)
 LOOKUPS = os.path.join(B.HERE, "sources", "osm-miso-lookups.json")
 RESEARCH_FILE = os.path.join(B.HERE, "sources", "miso-research-2026.json")
+CORRECTIONS_FILE = os.path.join(B.HERE, "sources", "miso-corrections-2026.json")
 STAGES = ("built", "in construction", "approved", "planned", "proposed")
 # Researched items left out on review: a DC line upgrade (no AC tap possible) and a relocation done only for a Tranche 1 line.
 DROP = {"square-butte-arrowhead-hvdc-900mw", "wabasha-relocation-161"}
@@ -271,7 +272,7 @@ def research_lines(places=None, have=(), have_mtep=()):
             continue
         if p["stage"] == "built" and not isd:
             continue   # built, but no date to show it is within the last 3 years
-        key = frozenset(B.base(e["name"]) for e in p["ends"])
+        key = frozenset((B.base(e["name"]), e["state"]) for e in p["ends"])
         if key in seen or (p.get("mtep_id") and str(p["mtep_id"]) in have_mtep) or p["key"] in DROP:
             continue
         seen.add(key)
@@ -306,9 +307,10 @@ def miso_lines():
     etr = etr_lines(places)
     pairs = {frozenset(B.base(e["name"]) for e in x["endpoints"]) for x in etr}
     known = etr + lrtp_lines(places) + mtep_lines(places, pairs)
-    have = {frozenset(B.base(e["name"]) for e in x["endpoints"]) for x in known}
+    have = {frozenset((B.base(e["name"]), e.get("state", "")) for e in x["endpoints"]) for x in known}
     have_mtep = {re.sub(r"\D", "", x["program"]) for x in known if x["id"].startswith("mtep25-")}
-    return known + research_lines(places, have, have_mtep)
+    drop = json.load(open(CORRECTIONS_FILE))["drop"] if os.path.exists(CORRECTIONS_FILE) else {}
+    return [x for x in known + research_lines(places, have, have_mtep) if x["id"] not in drop]   # withdrawn or cancelled since the list was made
 
 
 if __name__ == "__main__":

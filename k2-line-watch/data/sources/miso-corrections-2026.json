@@ -1,0 +1,7 @@
+{
+  "note": "Changes to MISO rows from newer sources (each with its source). Applied by build_miso after all MISO lists are read.",
+  "drop": {
+    "mtep25-50237": "ATC withdrew BOC Gasses Tap - Town Line Rd 138 kV (X-111) rebuild: ATC 2026 10-Year Assessment project list (Apr 15, 2026), http://www.atc10yearplan.com/wp-content/uploads/2026/04/TYA-2026-Q1-of-2026-Updated-Project-List-04152026_FINAL-1.pdf",
+    "mtep25-51479": "ATC withdrew the North Appleton - Werner West 345 kV (NAPL31) rerate; the corridor is rebuilt under LRTP Tranche 2.1 project 27 (2032): ATC 2026 10-Year Assessment project list (Oct 1, 2026), http://www.atc10yearplan.com/wp-content/uploads/2026/10/TYA-2026-Q2-of-2026-Updated-Project-List-10012026_INTERIM.pdf"
+  }
+}

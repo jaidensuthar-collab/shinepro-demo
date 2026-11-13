@@ -233,6 +233,9 @@ def check_oncor(lines, r):
     r.add("Every project on Oncor's CCN Public Viewer is in the list", errs, checked=n)
 
 
+MISO_DROP = json.load(open(MISO.CORRECTIONS_FILE))["drop"] if os.path.exists(MISO.CORRECTIONS_FILE) else {}
+
+
 def check_miso(lines, r):
     """MISO lines against their sources: every in-window project is in the list once, with its voltage, in-service
     date and the stage rule (Entergy: status and dates; Tranche 1: MISO's construction column)."""
@@ -270,6 +273,8 @@ def check_miso(lines, r):
         if str(f["State"] or "").strip()[:2] not in MISO.MISO_STATES or not (f["From Sub"] or f["To Sub"]):
             continue
         x = got.get(f"mtep25-{f['Facility ID']}")
+        if not x and f"mtep25-{f['Facility ID']}" in MISO_DROP:
+            continue   # withdrawn or cancelled since MTEP25 (sources/miso-corrections-2026.json)
         if not x:
             names = {B.base(n) for n in (str(f["From Sub"] or "").strip(), str(f["To Sub"] or "").strip()) if n}
             if not any(names <= {B.base(e["name"]) for e in y["endpoints"]} for y in got.values() if y["id"].startswith("etr-")):
