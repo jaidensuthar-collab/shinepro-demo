@@ -3,6 +3,8 @@
 Sources, both kept by hand (MISO's own site refuses automated downloads):
   sources/miso-etr-2026.json   Entergy Texas, from its monthly construction report to the Texas PUC and its project pages
   sources/miso-lrtp-2026.json  MISO's 18 Tranche 1 345 kV projects, from MISO's public dashboard (June 30, 2026)
+  sources/miso-mtep25-appendix-a.xlsx  MISO's MTEP25 Appendix A (new local projects the board approved in Dec 2025),
+                               downloaded by Jaiden from MISO's site: lines 138 kV+ and new 345 kV+ substations
 Stations are placed from HIFLD and OpenStreetMap by name in the state given, checked against the county when one is
 given; new stations go next to the station the source names ("near") or to the county center.
 """
@@ -18,7 +20,9 @@ from build_spp import SppPlaces, STATE_NAME, miles
 ETR_FILE = os.path.join(B.HERE, "sources", "miso-etr-2026.json")
 LRTP_FILE = os.path.join(B.HERE, "sources", "miso-lrtp-2026.json")
 MARKET_MISO = "MISO"
-MISO_STATES = ("TX", "ND", "SD", "MN", "WI", "IA", "MO", "IL", "IN", "MI")
+MISO_STATES = ("TX", "ND", "SD", "MN", "WI", "IA", "MO", "IL", "IN", "MI", "LA", "MS", "AR", "KY")
+MTEP_FILE = os.path.join(B.HERE, "sources", "miso-mtep25-appendix-a.xlsx")
+MTEP_URL = "https://www.misoenergy.org/planning/transmission-planning/mtep/"
 
 
 class MisoPlaces(SppPlaces):
@@ -67,6 +71,8 @@ class MisoPlaces(SppPlaces):
             if n:
                 hit = {**n, "name": s["name"], "confidence": "approx",
                        "basis": f"New substation built beside {s['near']} ({s.get('note') or 'per the source'}); placed at {s['near']}: {n['basis']}"}
+        if not hit and not counties and not s.get("new"):
+            hit = self.town(s["name"], [st])   # named for its town ('Ottumwa', 'Lake Charles'), where Census places cover the state
         if not hit and counties:
             why = (f"new substation ({s['note']}), not on public maps yet" if s.get("note") else
                    "new substation, not on public maps yet" if s.get("new") else "not on public maps by this name")
@@ -157,9 +163,89 @@ def lrtp_lines(places=None):
     return out
 
 
+def mtep_rows():
+    """MTEP25 facilities Line Watch keeps: new and upgraded lines 138 kV+ and new 345 kV+ substations, in the window."""
+    import openpyxl
+    if not os.path.exists(MTEP_FILE):
+        return []
+    rows = list(openpyxl.load_workbook(MTEP_FILE, read_only=True, data_only=True)["MTEP25 Facilities"].iter_rows(values_only=True))
+    head = [str(h) for h in rows[0]]
+    out = []
+    for r in rows[2:]:
+        r = {k: (v.strip() if isinstance(v, str) else v) for k, v in zip(head, r)}
+        if not r.get("Facility ID"):
+            continue
+        kv = int(B.num(r["Max kV"]))
+        isd = r["Expected ISD"].strftime("%Y-%m") if isinstance(r["Expected ISD"], datetime.datetime) else str(r["Expected ISD"] or "")[:7]
+        desc = re.sub(r"\s+", " ", str(r["Description"] or "")).strip()
+        ftype = r["Facility Type"]
+        if kv < 138 or not isd or isd > B.HORIZON or isd < B.CUTOFF.strftime("%Y-%m"):
+            continue
+        if ftype == "Line New":
+            ptype = "new line"
+        elif ftype == "Line Upgrade":
+            ptype = "upgrade"
+        elif ftype == "Substation" and kv >= 345 and B.NEW_STATION.search(desc):
+            ptype = "new substation"
+        else:
+            continue
+        out.append({**r, "kv": kv, "isd": isd, "desc": desc, "ptype": ptype})
+    return out
+
+
+def mtep_lines(places=None, skip_pairs=()):
+    """MISO's MTEP25 local projects (Appendix A, approved Dec 2025). Plan status: M4 in service = built; M3 under
+    construction; otherwise approved for an upgrade on an existing line or a project due within 18 months, else planned."""
+    places = places or MisoPlaces()
+    out, today = [], B.TODAY.strftime("%Y-%m")
+    soon = (B.TODAY + datetime.timedelta(days=548)).strftime("%Y-%m")
+    for r in mtep_rows():
+        st = str(r["State"] or "").strip()[:2]
+        names = [n for n in (str(r["From Sub"] or "").strip(), str(r["To Sub"] or "").strip()) if n]
+        if not names or st not in MISO_STATES:
+            continue
+        if any(frozenset(B.base(n) for n in names) <= ends for ends in skip_pairs):
+            continue   # already in the list from Entergy's own report
+        ends = []
+        for n in names:
+            near = next((e for e in ends if e.get("lat") is not None), None)
+            ends.append(places.place({"name": n}, r["kv"], st, MTEP_URL, near))
+        if ends[0].get("lat") is None and len(ends) > 1 and ends[1].get("lat") is not None:
+            ends[0] = places.place({"name": names[0]}, r["kv"], st, MTEP_URL, ends[1])
+        status = str(r["Plan Status"] or "")
+        detail = next((k for k, rx in B.UPGRADE_KIND if rx.search(r["desc"])), "upgrade") if r["ptype"] == "upgrade" else ""
+        if status.startswith("M4"):
+            life, basis = "built", "MISO: project in service (MTEP25 status)"
+        elif status.startswith("M3"):
+            life, basis = "in construction", "MISO: under construction (MTEP25 status)"
+        elif r["isd"] < today:
+            life, basis = "in construction", f"estimated: planned in-service date {r['isd']} has passed and MISO's list does not show it in service"
+        elif r["ptype"] == "upgrade":
+            life, basis = "approved", "MISO-approved (MTEP25 Appendix A); work on an existing line"
+        elif r["isd"] <= soon:
+            life, basis = "approved", "estimated: MISO-approved (MTEP25 Appendix A) and due within 18 months, so its route and site should be settled"
+        else:
+            life, basis = "planned", "MISO-approved (MTEP25 Appendix A, Dec 2025); route or site not confirmed here"
+        gen = str(r.get("Submitting Comp.") or "")
+        purpose = "generator hookup" if B.GENERATOR.search(r["desc"]) else "large-load hookup" if B.BIG_LOAD.search(r["desc"]) else "shared grid"
+        rec = {"id": f"mtep25-{r['Facility ID']}", "ercot_project": "", "name": (" - ".join(names) + f" {r['kv']} kV" + (f" ckt {r['Ckt']}" if r.get("Ckt") else "")) if r["ptype"] != "new substation" else f"{names[0]} {r['kv']} kV substation",
+               "description": r["desc"][:400], "kv": r["kv"], "project_type": r["ptype"], "upgrade_kind": detail, "lifecycle": life,
+               "lifecycle_basis": basis, "tpit_status": "", "utility": gen.title(), "from": ends[0]["name"], "to": ends[-1]["name"] if len(ends) > 1 else "",
+               "county_from": ends[0].get("county", ""), "county_to": ends[-1].get("county", "") if len(ends) > 1 else "",
+               "miles_new": round(B.num(r["Miles New"]), 1), "miles_upgraded": round(B.num(r["Miles Upgrade"]), 1), "transformer_mva": 0,
+               "in_service": r["isd"], "in_service_kind": "actual" if life == "built" else "projected", "construction_start": "", "capacity_mw": None,
+               "purpose": purpose, "program": f"MISO MTEP25 project {r['PrjID']}", "rpg": "", "tier": "", "ercot_board": "", "docket": "",
+               "route_status": "existing corridor" if r["ptype"] == "upgrade" else "end substations only", "card_id": "", "card_ids": [],
+               "endpoints": ends, "market": MARKET_MISO, "state": st, "source": MTEP_URL, "checked": "MISO MTEP25 Appendix A (data as of Oct 2025)"}
+        out.append(finish(rec, r["kv"], "MISO approval"))
+    return out
+
+
 def miso_lines():
     places = MisoPlaces()
-    return etr_lines(places) + lrtp_lines(places)
+    etr = etr_lines(places)
+    pairs = {frozenset(B.base(e["name"]) for e in x["endpoints"]) for x in etr}
+    return etr + lrtp_lines(places) + mtep_lines(places, pairs)
 
 
 if __name__ == "__main__":

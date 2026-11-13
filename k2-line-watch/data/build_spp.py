@@ -27,7 +27,7 @@ STEP_LABEL = "2026 STEP project list (Appendix 1, posted Oct 2026)"
 STEP_DOC = "76727"   # SPP document id of the STEP zip this list was built from (lw.py texas watches for a newer one)
 STATE_NAME = {"TX": "Texas", "OK": "Oklahoma", "AR": "Arkansas", "KS": "Kansas", "MO": "Missouri", "NM": "New Mexico", "LA": "Louisiana",
               "ND": "North Dakota", "SD": "South Dakota", "MN": "Minnesota", "WI": "Wisconsin", "IA": "Iowa", "IL": "Illinois",
-              "IN": "Indiana", "MI": "Michigan", "KY": "Kentucky"}
+              "IN": "Indiana", "MI": "Michigan", "KY": "Kentucky", "MS": "Mississippi"}
 HOME = ("TX", "OK")              # the states this list covers
 NEIGHBORS = ("AR", "KS", "MO", "NM")   # where a line leaving Oklahoma or the Panhandle can end
 STATE_BOX = {"TX": (-106.7, 25.8, -93.5, 36.6), "OK": (-103.1, 33.6, -94.4, 37.1)}

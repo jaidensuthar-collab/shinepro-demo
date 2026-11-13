@@ -162,7 +162,13 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
   - MISO's LRTP Tranche 1, `data/sources/miso-lrtp-2026.json`, ids `miso-lrtp-<1-18>`: the 18 345 kV backbone projects
     (North Dakota to Michigan) from MISO's dashboard (June 30, 2026). MISO approved them all in 2022, so planned;
     in construction where MISO's construction column says so. Tranche 2.1 (2032-2034) is listed in the file but past
-    the 5-year window (window confirmed Nov 12, 2026: built in the last 3 years to due within 5). MISO's local project list (MTEP Appendix A) is on MISO's site only and not included.
+    the 5-year window (window confirmed Nov 12, 2026: built in the last 3 years to due within 5).
+  - MISO's MTEP25 Appendix A (Nov 13, 2026), `data/sources/miso-mtep25-appendix-a.xlsx` (Jaiden downloaded it from
+    MISO's site), ids `mtep25-<facility id>`: the new local projects MISO's board approved in Dec 2025 (data as of
+    Oct 2025), new and upgraded lines 138 kV+ and new 345 kV+ substations in the window. Stages: M4 in service = built;
+    M3 = in construction; past its date = in construction (estimated); upgrade of an existing line or due within 18
+    months = approved; otherwise planned. Rows that repeat an Entergy Texas project are skipped. Earlier MTEP cycles
+    still being built (MTEP21-24) are in MISO's Appendix A status report, not in this file.
   Stations are placed by name on HIFLD / OpenStreetMap in the state given (and the county, when the source gives one),
   new stations beside the station the source names (`approx`) or at the county center.
 - **SPP 2026 ITP 765 kV lines (Nov 11, 2026)**: `data/sources/spp-itp-2026.json`, kept by hand from SPP's draft 2026 ITP

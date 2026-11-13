@@ -15,7 +15,8 @@ What it checks (errors fail the run, warnings are listed for a person to look at
   7. Every SPP line matches its rows in SPP's STEP project list: voltage, in-service date, and a stage that agrees
      with SPP's status. Substations SPP's project calls new but with a mapped substation within 0.2 mi are
      listed for a person to look at.
-  8. Every MISO line matches its source (Entergy Texas's PUC report and project pages, MISO's Tranche 1 dashboard):
+  8. Every MISO line matches its source (Entergy Texas's PUC report and project pages, MISO's MTEP25 Appendix A,
+     MISO's Tranche 1 dashboard):
      every in-window project is in the list once, with its voltage, in-service date and stage.
 The summary is written into web/data/texas-lines.json ("checks") so the page shows when it was last checked.
 """
@@ -47,7 +48,7 @@ def _state_boxes():
 
 
 for _st, _b in _state_boxes().items():
-    if _st in ("ND", "SD", "MN", "WI", "IA", "IL", "IN", "MI", "LA"):
+    if _st in ("ND", "SD", "MN", "WI", "IA", "IL", "IN", "MI", "LA", "MS", "KY"):
         BOXES.setdefault(_st, tuple(round(v + d, 2) for v, d in zip(_b, (-0.1, -0.1, 0.1, 0.1))))
 ALL_BOX = (min(b[0] for b in BOXES.values()), min(b[1] for b in BOXES.values()), max(b[2] for b in BOXES.values()), max(b[3] for b in BOXES.values()))
 
@@ -265,13 +266,27 @@ def check_miso(lines, r):
             errs.append(f"{x['id']}: {x['kv']} kV / {x['in_service']} but MISO says 345 kV / {p['in_service']}")
         if (x["lifecycle"] == "in construction") != bool(p["construction"]):
             errs.append(f"{x['id']}: stage {x['lifecycle']} but MISO's construction column says '{p['construction']}'")
+    for f in MISO.mtep_rows():
+        if str(f["State"] or "").strip()[:2] not in MISO.MISO_STATES or not (f["From Sub"] or f["To Sub"]):
+            continue
+        x = got.get(f"mtep25-{f['Facility ID']}")
+        if not x:
+            names = {B.base(n) for n in (str(f["From Sub"] or "").strip(), str(f["To Sub"] or "").strip()) if n}
+            if not any(names <= {B.base(e["name"]) for e in y["endpoints"]} for y in got.values() if y["id"].startswith("etr-")):
+                errs.append(f"MTEP25 facility {f['Facility ID']} ({f['From Sub']} - {f['To Sub']}) is missing")
+            continue
+        want += 1
+        if x["kv"] != f["kv"] or x["in_service"] != f["isd"]:
+            errs.append(f"{x['id']}: {x['kv']} kV / {x['in_service']} but MTEP25 says {f['kv']} kV / {f['isd']}")
+        if str(f["Plan Status"]).startswith("M4") != (x["lifecycle"] == "built"):
+            errs.append(f"{x['id']}: stage {x['lifecycle']} but MISO's status is {f['Plan Status']}")
     for x in got.values():
         for e in x["endpoints"]:
             if e.get("lat") is None:
                 warns.append(f"{x['id']} {x['name']}: {e['name']} has no public location yet")
     if len(got) != want:
         errs.append(f"{len(got)} MISO lines in the list, {want} in the sources' window")
-    r.add("MISO lines match their sources (Entergy Texas report, MISO Tranche 1 dashboard)", errs, warns, checked=len(got))
+    r.add("MISO lines match their sources (Entergy Texas report, MISO MTEP25 Appendix A, Tranche 1 dashboard)", errs, warns, checked=len(got))
 
 
 def check_spp(lines, sites, r):
