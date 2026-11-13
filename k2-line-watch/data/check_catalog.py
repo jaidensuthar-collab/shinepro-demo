@@ -281,12 +281,19 @@ def check_miso(lines, r):
         if str(f["Plan Status"]).startswith("M4") != (x["lifecycle"] == "built"):
             errs.append(f"{x['id']}: stage {x['lifecycle']} but MISO's status is {f['Plan Status']}")
     for x in got.values():
+        if x["id"].startswith("misor-"):
+            want += 1
+            if not x["source"] or not x["lifecycle_basis"]:
+                errs.append(f"{x['id']}: a researched project needs a source and a reason for its stage")
+            if x["lifecycle"] == "built" and not x["in_service"]:
+                warns.append(f"{x['id']} {x['name']}: built, but the source gives no in-service month")
+    for x in got.values():
         for e in x["endpoints"]:
             if e.get("lat") is None:
                 warns.append(f"{x['id']} {x['name']}: {e['name']} has no public location yet")
     if len(got) != want:
         errs.append(f"{len(got)} MISO lines in the list, {want} in the sources' window")
-    r.add("MISO lines match their sources (Entergy Texas report, MISO MTEP25 Appendix A, Tranche 1 dashboard)", errs, warns, checked=len(got))
+    r.add("MISO lines match their sources (Entergy Texas report, MISO MTEP25 Appendix A, Tranche 1 dashboard, researched utility and state filings)", errs, warns, checked=len(got))
 
 
 def check_spp(lines, sites, r):

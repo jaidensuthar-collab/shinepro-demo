@@ -269,6 +269,8 @@ def research_lines(places=None, have=(), have_mtep=()):
         isd = p.get("in_service") or ""
         if p["kv"] < 138 or (isd and (isd > B.HORIZON or isd < B.CUTOFF.strftime("%Y-%m"))) or p["stage"] not in STAGES:
             continue
+        if p["stage"] == "built" and not isd:
+            continue   # built, but no date to show it is within the last 3 years
         key = frozenset(B.base(e["name"]) for e in p["ends"])
         if key in seen or (p.get("mtep_id") and str(p["mtep_id"]) in have_mtep) or p["key"] in DROP:
             continue

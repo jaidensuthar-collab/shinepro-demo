@@ -169,6 +169,14 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
     M3 = in construction; past its date = in construction (estimated); upgrade of an existing line or due within 18
     months = approved; otherwise planned. Rows that repeat an Entergy Texas project are skipped. Earlier MTEP cycles
     still being built (MTEP21-24) are in MISO's Appendix A status report, not in this file.
+  - Researched MISO projects (Nov 13, 2026), `data/sources/miso-research-2026.json`, ids `misor-<key>`: about 200
+    projects from utility project pages, state commission dockets and transmission owners' published plans (ATC's
+    10-Year Assessment, Entergy's quarterly status reports, the Minnesota Biennial Report, Ameren Missouri's IRP), in
+    four passes: MISO South (LA, AR, MS); Wisconsin and Michigan; Minnesota, Dakotas, Iowa; Illinois, Missouri,
+    Indiana, Kentucky. This covers earlier MTEP cycles still being built, data-center and generator hookups, and
+    projects not in MISO's list yet. Each project keeps its own stage, reason and sources. Skipped: projects already
+    listed (same end substations or MTEP id), built projects with no in-service date, and two left out on review
+    (a DC line upgrade, a Tranche 1 relocation). misoenergy.org was not used.
   Stations are placed by name on HIFLD / OpenStreetMap in the state given (and the county, when the source gives one),
   new stations beside the station the source names (`approx`) or at the county center.
 - **SPP 2026 ITP 765 kV lines (Nov 11, 2026)**: `data/sources/spp-itp-2026.json`, kept by hand from SPP's draft 2026 ITP
