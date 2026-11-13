@@ -25,7 +25,11 @@ PJM_RESEARCH = os.path.join(B.HERE, "sources", "pjm-research-2026.json")
 MARKET_PJM = "PJM"
 PJM_STATES = ("PA", "OH", "VA", "WV", "MD", "NJ", "DE", "DC", "NC", "KY", "IL", "IN", "MI", "TN")
 
-LINE_EQUIP = re.compile(r"^(Transmission Line|Conductor|Transmission Structures|Tie-in|Line and Terminal Equipment)", re.I)
+LINE_EQUIP = re.compile(r"^(Transmission Line|Conductor|Transmission Structures|Tie-in|Line and Terminal Equipment|Cable)", re.I)
+# PJM's equipment field is sometimes the station work ('Circuit Breaker', 'Substation') when the description is a line:
+# 'two new 2.5 mile 138 kV lines from Tollway substation to the customer site'.
+LINE_SAID = re.compile(r"\b(new|rebuild|reconductor|construct|build)\b.{0,60}?\d+(?:\.\d+)?\s*-?\s*mi(?:le)?s?\b.{0,60}?\b(line|lines|circuit|circuits|cable)\b|"
+                       r"\b\d+(?:\.\d+)?\s*-?\s*mi(?:le)?s?\b.{0,40}?\b(new|rebuild|reconductor)\b.{0,40}?\b(line|lines|circuit)\b", re.I)
 SUB_EQUIP = re.compile(r"^(Substation|Switching station|Ring Bus|Switching|Station Equipment|Tie-in)", re.I)
 LINE_WORK = re.compile(r"\b(construct|build|new\b.{0,40}\bline|rebuild|re-?conductor|uprate|convert|conversion|loop|cut[- ]?in|"
                        r"extend|extension|relocat|double[- ]circuit|second circuit|upgrade\b.{0,30}\bline|replace\b.{0,25}conductor|"
@@ -33,8 +37,8 @@ LINE_WORK = re.compile(r"\b(construct|build|new\b.{0,40}\bline|rebuild|re-?condu
 NOT_LINE = re.compile(r"^\s*(install|replace|upgrade)\b.{0,40}\b(fiber|opgw|relay|breaker|switch|wave trap|meter|ct|scada|"
                       r"communication|protection|terminal equipment|disconnect)", re.I)
 NEW_SUB = re.compile(r"\b(new|construct|build|establish|create)\b.{0,50}\b(substation|switching station|switchyard|station|"
-                     r"sub\b|ring bus)|\binterconnect the new substation", re.I)
-NEW_LINE = re.compile(r"\b(construct|build|new|install)\b.{0,60}\b(line|circuit|lead|loop|extension|tap)\b|\bloop\b.{0,40}\binto\b|"
+                     r"sub\b|ring bus)|\binterconnect the new substation|\bnew\b(?:\s+\S+){0,4}\s+(?:230|345|500|765)\s*kV\s+(?:GIS\s+)?bus\b", re.I)
+NEW_LINE = re.compile(r"\b(construct|build|new|install)\b.{0,60}\b(lines?|circuits?|leads?|loop|extension|tap)\b|\bloop\b.{0,40}\binto\b|"
                       r"\bcut[- ]?(in|and loop)|\bextend\b", re.I)
 SPLIT = re.compile(r"\s*[-–—]+\s*|\s*,\s*|\s*/\s*|\s+to\s+|\s+and\s+|\s*&\s*")
 ALT = [(re.compile(r"\bMt\.?\s", re.I), "Mount "), (re.compile(r"\bSt\.?\s", re.I), "Saint "), (re.compile(r"\b(Switch|Sw|Rd|Road)\b\.?", re.I), "")]
@@ -47,8 +51,16 @@ def date_of(s):
         return None
 
 
+FIBER = re.compile(r"fiber|opgw|\bADLT\b|dielectric|exit transition", re.I)
+
+
 def line_kv(r):
-    """The line's own voltage: the description's kV values when it gives any, else PJM's voltage field."""
+    """The line's own voltage: the kV written next to 'line' when there is one ('a new 7.5 mile 69 kV line'), else
+    the description's kV values, else PJM's voltage field."""
+    near = [int(n) for n in re.findall(r"(\d{2,3})\s*-?\s*kV\s+(?:\S+\s+){0,3}?(?:line|lines|circuit|circuits|cable|UG)\b", r["Description"], re.I)]
+    if near:   # the line most of the description is about; a passing mention of a nearby line does not count
+        c = Counter(near)
+        return max(c, key=lambda k: (c[k], k))
     said = [int(n) for n in re.findall(r"(\d{2,3})\s*-?\s*kV", r["Description"], re.I)]
     field = [int(n) for n in re.findall(r"\d+", r["Voltage"] or "")]
     return max(said or field or [0])
@@ -75,7 +87,8 @@ def pjm_rows():
             continue
         desc = re.sub(r"\s+", " ", r["Description"]).strip()
         eq = r["Equipment"]
-        if LINE_EQUIP.match(eq) and LINE_WORK.search(desc) and not NOT_LINE.search(desc):
+        fiber_only = FIBER.search(desc) and not re.search(r"\b(rebuild|reconductor|construct)\b", desc, re.I)
+        if ((LINE_EQUIP.match(eq) and LINE_WORK.search(desc)) or LINE_SAID.search(desc)) and not NOT_LINE.search(desc) and not fiber_only:
             kv = line_kv(r)
             ptype = "new line" if NEW_LINE.search(desc) and not re.search(r"\b(rebuild|reconductor|uprate)\b", desc, re.I) else "upgrade"
         elif SUB_EQUIP.match(eq) and NEW_SUB.search(desc):
