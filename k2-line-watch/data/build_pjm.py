@@ -28,8 +28,11 @@ PJM_STATES = ("PA", "OH", "VA", "WV", "MD", "NJ", "DE", "DC", "NC", "KY", "IL", 
 LINE_EQUIP = re.compile(r"^(Transmission Line|Conductor|Transmission Structures|Tie-in|Line and Terminal Equipment|Cable)", re.I)
 # PJM's equipment field is sometimes the station work ('Circuit Breaker', 'Substation') when the description is a line:
 # 'two new 2.5 mile 138 kV lines from Tollway substation to the customer site'.
-LINE_SAID = re.compile(r"\b(new|rebuild|reconductor|construct|build)\b.{0,60}?\d+(?:\.\d+)?\s*-?\s*mi(?:le)?s?\b.{0,60}?\b(line|lines|circuit|circuits|cable)\b|"
-                       r"\b\d+(?:\.\d+)?\s*-?\s*mi(?:le)?s?\b.{0,40}?\b(new|rebuild|reconductor)\b.{0,40}?\b(line|lines|circuit)\b", re.I)
+LINE_SAID = re.compile(r"\b(new|rebuild\w*|reconduct\w*|construct\w*|build\w*|extension|extend\w*)\b.{0,60}?\d+(?:\.\d+)?\s*-?\s*mi(?:le)?s?\b.{0,60}?\b(line|lines|circuit|circuits|cable)\b|"
+                       r"\b\d+(?:\.\d+)?\s*-?\s*mi(?:le)?s?\b.{0,40}?\b(new|rebuild\w*|reconduct\w*)\b.{0,40}?\b(line|lines|circuit)\b", re.I)
+# Without a length, only trust line wording on rows whose equipment is a line or not given.
+LINE_SAID_KV = re.compile(r"\b(rebuild\w*|reconduct\w*|construct\w*|build)\b.{0,80}?\b\d{3}\s*kV\b.{0,30}?\b(line|lines|circuit|circuits)\b", re.I)
+OLD_SUB = re.compile(r"^\s*(rebuild|replace|upgrade|expand|convert|reconfigure|retire)\b.{0,60}\bexisting\b", re.I)
 SUB_EQUIP = re.compile(r"^(Substation|Switching station|Ring Bus|Switching|Station Equipment|Tie-in)", re.I)
 LINE_WORK = re.compile(r"\b(construct|build|new\b.{0,40}\bline|rebuild|re-?conductor|uprate|convert|conversion|loop|cut[- ]?in|"
                        r"extend|extension|relocat|double[- ]circuit|second circuit|upgrade\b.{0,30}\bline|replace\b.{0,25}conductor|"
@@ -37,7 +40,9 @@ LINE_WORK = re.compile(r"\b(construct|build|new\b.{0,40}\bline|rebuild|re-?condu
 NOT_LINE = re.compile(r"^\s*(install|replace|upgrade)\b.{0,40}\b(fiber|opgw|relay|breaker|switch|wave trap|meter|ct|scada|"
                       r"communication|protection|terminal equipment|disconnect)", re.I)
 NEW_SUB = re.compile(r"\b(new|construct|build|establish|create)\b.{0,50}\b(substation|switching station|switchyard|station|"
-                     r"sub\b|ring bus)|\binterconnect the new substation|\bnew\b(?:\s+\S+){0,4}\s+(?:230|345|500|765)\s*kV\s+(?:GIS\s+)?bus\b", re.I)
+                     r"sub\b|ring bus)|\binterconnect the new substation|\bnew\b(?:\s+\S+){0,4}\s+(?:230|345|500|765)\s*kV\s+(?:GIS\s+)?bus\b|"
+                     r"\bsubstation work at new\b", re.I)
+LINE_REWORK = re.compile(r"\b\d{3}\s*kV\b.{0,40}?\b(line|lines|circuits?)\b.{0,15}?\b(reconduct\w*|rebuild\w*|uprate\w*)", re.I)
 NEW_LINE = re.compile(r"\b(construct|build|new|install)\b.{0,60}\b(lines?|circuits?|leads?|loop|extension|tap)\b|\bloop\b.{0,40}\binto\b|"
                       r"\bcut[- ]?(in|and loop)|\bextend\b", re.I)
 SPLIT = re.compile(r"\s*[-–—]+\s*|\s*,\s*|\s*/\s*|\s+to\s+|\s+and\s+|\s*&\s*")
@@ -87,12 +92,22 @@ def pjm_rows():
             continue
         desc = re.sub(r"\s+", " ", r["Description"]).strip()
         eq = r["Equipment"]
+        blank = not eq.strip()   # newer rows often carry no equipment type: read the description
         fiber_only = FIBER.search(desc) and not re.search(r"\b(rebuild|reconductor|construct)\b", desc, re.I)
-        if ((LINE_EQUIP.match(eq) and LINE_WORK.search(desc)) or LINE_SAID.search(desc)) and not NOT_LINE.search(desc) and not fiber_only:
+        lineish = LINE_EQUIP.match(eq) or blank
+        strong_new = re.search(r"\b(build|construct)\w*\s+an?\s+new\b.{0,60}\b(substation|station|switchyard|switching station)\b", desc, re.I)
+        new_sub = (SUB_EQUIP.match(eq) or blank) and NEW_SUB.search(desc) and (strong_new or not OLD_SUB.search(desc))
+        if new_sub and not LINE_SAID.search(desc):   # a new station without a line length is the station, not a line
+            kv = max([int(n) for n in re.findall(r"\d+", r["Voltage"] or "")] + [int(n) for n in re.findall(r"(\d{3})\s*(?:/\s*\d{3}\s*)?-?\s*kV", desc, re.I)] or [0])
+            ptype = "new substation"
+            if kv < 230:
+                continue
+        elif ((lineish and (LINE_WORK.search(desc) or LINE_SAID_KV.search(desc) or LINE_REWORK.search(desc))) or LINE_SAID.search(desc)) \
+                and not NOT_LINE.search(desc) and not fiber_only:
             kv = line_kv(r)
             ptype = "new line" if NEW_LINE.search(desc) and not re.search(r"\b(rebuild|reconductor|uprate)\b", desc, re.I) else "upgrade"
-        elif SUB_EQUIP.match(eq) and NEW_SUB.search(desc):
-            kv = max([int(n) for n in re.findall(r"\d+", r["Voltage"] or "")] or [0])
+        elif (SUB_EQUIP.match(eq) or blank) and NEW_SUB.search(desc) and not OLD_SUB.search(desc):
+            kv = max([int(n) for n in re.findall(r"\d+", r["Voltage"] or "")] + [int(n) for n in re.findall(r"(\d{3})\s*(?:/\s*\d{3}\s*)?-?\s*kV", desc, re.I)] or [0])
             ptype = "new substation"
             if kv < 230:
                 continue
