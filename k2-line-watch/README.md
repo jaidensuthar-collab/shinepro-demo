@@ -130,3 +130,11 @@ These can't be automated from here because they need an account in your name.
 
 CenterPoint has no single project-list page (the news search covers it), utilities outside
 Texas (the news search and the webpage assistant cover them), county commissioners court agendas for data-center deals, and county easement records.
+
+
+## Publishing the page (size limit)
+
+One Artifact publish carries at most 64 MB. With all regions the files total about 90 MB, so publish in two
+calls to the same url: first the page, data/texas-lines.json, exports/README.txt, exports/k2-texas-developers.csv,
+the k2-all-* files and the small regions (spp-texas, el-paso, oklahoma, miso-texas); then the k2-texas-*,
+k2-ercot-texas-*, k2-miso-* and k2-pjm-* files. Files left out of a publish are kept.
