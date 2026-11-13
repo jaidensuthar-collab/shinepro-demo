@@ -137,13 +137,13 @@
  },
  {
   "check": "Time window (2023-11 built to 2031-11 due) and stage names",
-  "checked": 1515,
+  "checked": 1545,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Substation points are in their state and in the county the source lists",
-  "checked": 1552,
+  "checked": 1579,
   "errors": [],
   "warnings": [
    "substation Holcomb: placed in KS, outside the regions this list covers (the line crosses the state line)",
@@ -203,18 +203,18 @@
    "substation Triangle: point is 4 miles outside Midland County, the county ERCOT lists",
    "substation Vealmoor: point is 6 miles outside Howard County, the county ERCOT lists",
    "substation Yucca Drive: point is 10 miles outside Ector County, the county ERCOT lists",
-   "157 lines have no placeable substation (no county given, and not on public maps by name): misor-eal-wheatley-500-sw, misor-eal-steel-grove-500-sub, tpit-92274, mtep25-51295, misor-eal-campbell-500-sw, misor-eal-nash-corner-500-sw, mtep25-50372, tpit-110819"
+   "159 lines have no placeable substation (no county given, and not on public maps by name): misor-eal-wheatley-500-sw, misor-eal-steel-grove-500-sub, tpit-92274, mtep25-51295, misor-eal-campbell-500-sw, misor-eal-nash-corner-500-sw, mtep25-50372, tpit-110819"
   ]
  },
  {
   "check": "Substation status agrees between lines and substations",
-  "checked": 1855,
+  "checked": 1892,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Downloads match the page (CSV, GeoJSON, KML, new-only layers)",
-  "checked": 6280,
+  "checked": 6402,
   "errors": [],
   "warnings": []
  },
@@ -256,7 +256,7 @@
  },
  {
   "check": "MISO lines match their sources (Entergy Texas report, MISO MTEP25 Appendix A, Tranche 1 dashboard, researched utility and state filings)",
-  "checked": 502,
+  "checked": 532,
   "errors": [],
   "warnings": [
    "etr-texas-sub Texas 138 kV substation and line to L-487: stage 'in construction' is estimated (estimated: Entergy's report: construction Jun 2025 to Jul 2026 (no energized date reported yet))",
@@ -296,12 +296,15 @@
    "misor-he-crossroads-345-sub Crossroads 345 kV transmission station (300 MW load): Crossroads has no public location yet",
    "misor-mo-scarlet-yoshi-345 Scarlet - Project Yoshi 345 kV: Scarlet has no public location yet",
    "misor-mo-scarlet-yoshi-345 Scarlet - Project Yoshi 345 kV: Project Yoshi has no public location yet",
+   "misor-p3-in-westwood-mechanicsburg-hortonville-345 Westwood - Mechanicsburg (LEAP) - Hortonville 345 kV double circuit (~55 mi): Westwood has no public location yet",
    "mtep25-51220 Elderberry - Stillwell 345 kV: Elderberry has no public location yet",
    "mtep25-51220 Elderberry - Stillwell 345 kV: Stillwell has no public location yet",
    "mtep25-51265 Sub 91 - Quad Cities 345 kV ckt 1: Quad Cities has no public location yet",
    "mtep25-51346 Clinton - Lacygne 345 kV: Lacygne has no public location yet",
    "misor-amil-mogul-ph3-345-lines Turner and Lanesville - new Mogul Phase 3 substation 345 kV (two new lines): Turner has no public location yet",
    "misor-amil-mogul-ph3-345-lines Turner and Lanesville - new Mogul Phase 3 substation 345 kV (two new lines): New substation (Mogul Phase 3) has no public location yet",
+   "misor-p3-in-wvtc-kinnard-345-lines Kinnard - Fayette, Kinnard - Wolf Creek and Kinnard - Bartlett #1/#2 345 kV (Central Indiana Grid Expansion Phase 2): Fayette (Duke) has no public location yet",
+   "misor-p3-in-wvtc-kinnard-345-lines Kinnard - Fayette, Kinnard - Wolf Creek and Kinnard - Bartlett #1/#2 345 kV (Central Indiana Grid Expansion Phase 2): Wolf Creek (Duke) has no public location yet",
    "misor-mo-elkhorn-345-sub Project Elkhorn 345 kV substation (1,000 MW load) and 3.25 mi 345 kV cut-in from Lumberjack: Project Elkhorn has no public location yet",
    "mtep25-50812 Emerson Rd 345 kV substation: Emerson Rd has no public location yet",
    "mtep25-50815 Emerson Rd 345 kV substation: Emerson Rd has no public location yet",
@@ -356,6 +359,8 @@
    "misor-jtiq-raun-s3452-345 Raun - S3452 345/161 kV double circuit (MISO-SPP JTIQ): S3452 345 kV Substation (new, expansion of OPPD S1252 north of Omaha) has no public location yet",
    "misor-p2c-il-beehive-dupoferry-138 Beehive - Dupo Ferry 138 kV (Rush Island reinforcement): Beehive has no public location yet",
    "misor-p2c-il-beehive-dupoferry-138 Beehive - Dupo Ferry 138 kV (Rush Island reinforcement): Dupo Ferry has no public location yet",
+   "misor-p3-il-ppi-babylon-steamboat-138 Babylon - Steamboat 138 kV (new PPI Babylon 138/69 kV substation to new Ameren Steamboat ring bus): Babylon has no public location yet",
+   "misor-p3-il-ppi-babylon-steamboat-138 Babylon - Steamboat 138 kV (new PPI Babylon 138/69 kV substation to new Ameren Steamboat ring bus): Steamboat (Ameren ring bus on Castro Jct - Monmouth Blvd W 138 kV, at PPI Ellisville tap) has no public location yet",
    "misor-ell-sunrise-230-sub Sunrise 230 kV new substation: Sunrise has no public location yet",
    "misor-ell-crown-230-sub Crown 230 kV station (Jeff Davis Electric Co-op): Crown has no public location yet",
    "misor-ell-midbend-230-sub Midbend 230 kV station: Midbend has no public location yet",
@@ -390,6 +395,7 @@
    "misor-jdec-230-loop-lines JDEC 230 kV Loop: Holly Beach - Crown, Holly Beach - Fulton - Sturlese - Hackett - Manchester - Chalkley 230 kV: Hackett has no public location yet",
    "misor-jdec-230-loop-lines JDEC 230 kV Loop: Holly Beach - Crown, Holly Beach - Fulton - Sturlese - Hackett - Manchester - Chalkley 230 kV: Manchester has no public location yet",
    "misor-jdec-230-loop-lines JDEC 230 kV Loop: Holly Beach - Crown, Holly Beach - Fulton - Sturlese - Hackett - Manchester - Chalkley 230 kV: Chalkley has no public location yet",
+   "misor-p3-il-ppi-riverside-jerseyville-138 Riverside (PPI) - Jerseyville (Ameren) 138 kV (24 mi): Riverside (PPI) has no public location yet",
    "misor-ell-cargas-500-sw Car Gas Road (Cargas) 500 kV switching station: Car Gas Road (Cargas) has no public location yet",
    "mtep25-51259 Bryan - Runny 138 kV: Runny has no public location yet",
    "mtep25-50406 Oneida - Tallman 138 kV: Tallman has no public location yet",
@@ -460,6 +466,7 @@
    "misor-p2c-il-vermilion-tilton-138-rebuild Vermilion - Tilton Energy Center 138 kV rebuild (line 1572): Vermilion has no public location yet",
    "misor-p2c-il-vermilion-tilton-138-rebuild Vermilion - Tilton Energy Center 138 kV rebuild (line 1572): Tilton Energy Center has no public location yet",
    "misor-mec-raun-remsen-345-uprate Raun - Remsen 345 kV structure replacement (rating increase): Remsen has no public location yet",
+   "misor-p3-il-ppi-hopewell-138 Ameren tie - Hopewell 138 kV and Hopewell 138/69 kV substation (north of Carrollton): Ameren tie point has no public location yet",
    "misor-ell-riverplex-500-230-sub RiverPlex 500-230 kV station (incl. Mulberry Road 230 kV), near Donaldsonville: RiverPlex has no public location yet",
    "misor-eal-jenkins-500-230-sub Jenkins 500/230 kV new substation: Jenkins has no public location yet",
    "misor-eml-oak-bend-230-sub Oak Bend 230 kV new substation (Project XP): Oak Bend has no public location yet",
@@ -467,6 +474,7 @@
    "misor-eml-cockrum-230-sub Cockrum 230 kV new substation: Cockrum has no public location yet",
    "misor-eml-panther-burn-230-sw Panther Burn 230 kV switching station (Gerald Andrus - Tinnin cut-in, J1458): Panther Burn has no public location yet",
    "misor-eml-j866-230-sw J866 interconnection 230 kV switching substation: J866 230 kV switching substation has no public location yet",
+   "misor-p3-ar-aecc-sheridan-north-500 Sheridan North 500 kV transmission substation and tie to Entergy Sheridan 500 kV switching station (800 MW load): Sheridan North (AECC) has no public location yet",
    "misor-in-aes-northwest-maloney-138 Maloney 138 kV lines (AES Indiana Northwest Expansion): Maloney has no public location yet",
    "misor-sheco-oakhurst-138 Oakhurst 138 kV line (to Point Blank/Staley or Entergy Goree - Rivtrin / Rivtrin - Gulf Trinity) (SHECO): Point Blank or Staley substation, or Entergy Goree-Rivtrin / Rivtrin-Gulf Trinity 138 kV line (route-dependent) has no public location yet",
    "mtep25-50643 Ralston - Camby 138 kV: Ralston has no public location yet",
@@ -485,6 +493,10 @@
    "misor-mi-gaines-caledonia-138-sag Gaines - Caledonia Jct. 138 kV sag remediation (Thompson Road - Gaines circuit): Caledonia Junction has no public location yet",
    "misor-he-speed-northside-138 Speed - Northside 138 kV line and distribution station: Northside has no public location yet",
    "misor-mec-east-kanesville-161 East Kanesville 161 kV substation and 161 kV lines (200 MW load): East Kanesville has no public location yet",
+   "misor-mi-metc-blackstone-leoni-1-2-138 Blackstone - Leoni #1 and #2 138 kV rebuild (~4.2 mi double circuit): Leoni has no public location yet",
+   "misor-mi-metc-j1379-switching-north-belding-138 J1379 138 kV switching station (Eureka - Vestaburg cut-in) - North Belding new 138 kV line, with Eureka - North Belding and Deja - Eureka rebuilds: North Belding has no public location yet",
+   "misor-p3-in-ipl-ralston-reynolds-138 Ralston - Reynolds 138 kV second line and new Reynolds 138 kV delivery point (loop of Camby - Mooresville 132-84): Ralston has no public location yet",
+   "misor-p3-in-ipl-ralston-reynolds-138 Ralston - Reynolds 138 kV second line and new Reynolds 138 kV delivery point (loop of Camby - Mooresville 132-84): Reynolds (IPL) has no public location yet",
    "misor-eal-zeuber-500-230-sub Zeuber 500/230 kV new substation: Zeuber has no public location yet",
    "misor-mo-hayford-345-sub Hayford 345 kV substation (on Sioux - Belleau 345 kV): Hayford has no public location yet",
    "misor-jdec-230-loop-substations JDEC 230 kV Loop substations (Holly Beach switching, Fulton, Sturlese, Hackett, Manchester): Fulton 230/13.2 kV has no public location yet",
@@ -545,6 +557,8 @@
    "misor-p2c-in-aes-southwest-lillysouth-138-rebuild Southwest - Lilly South 138 kV rebuild (circuit 132-10): Lilly South has no public location yet",
    "misor-p2c-in-aes-lillysouth-center-138-rebuild Lilly South - Center 138 kV rebuild (circuit 132-61): Lilly South has no public location yet",
    "misor-dei-noblesville-durbin-230 Noblesville - Durbin 230 kV rebuild: Durbin has no public location yet",
+   "misor-mi-metc-iosco-karn-138-relocation Iosco - Karn 138 kV relocation (East Tawas - Quarry and Quarry - Karn 138 kV strung on Twining - Whittemore / Shale - Twining structures): Quarry has no public location yet",
+   "misor-mi-metc-deja-vestaburg-138 Deja Jct. - Vestaburg 138 kV rebuild (4.3 mi section of Eureka - Vestaburg): Deja Junction has no public location yet",
    "mtep25-50801 Welsh Prairie 345 kV substation: Welsh Prairie has no public location yet",
    "misor-mec-rebel-east-westwood-345-subs Rebel East and Westwood 345 kV substations (700 MW large load): Rebel East has no public location yet",
    "misor-mec-rebel-east-westwood-345-subs Rebel East and Westwood 345 kV substations (700 MW large load): Westwood has no public location yet",
