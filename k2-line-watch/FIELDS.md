@@ -184,6 +184,19 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
     lists, mostly ITC/METC in Michigan; MISO's Appendix A spreadsheets for those years would close it.
   - Corrections (`data/sources/miso-corrections-2026.json`): rows withdrawn or cancelled since MISO's list, each
     with the source that says so.
+- **PJM (Nov 13, 2026)** (`data/fetch_pjm.py` -> `data/sources/pjm-upgrades.json`, `data/build_pjm.py`, market `PJM`,
+  ids `pjm-<upgrade id>`): every upgrade in PJM's Project Construction data (the XML behind
+  pjm.com/planning/m/project-construction: baseline, supplemental and generator-interconnection network upgrades)
+  that is a new or upgraded line at 138 kV+ (by the line's own voltage in the description, else PJM's voltage field)
+  or a new substation / switching station at 230 kV+. Equipment-only work (breakers, relays, fiber, terminal
+  equipment) is left out, as are cancelled, withdrawn and on-hold upgrades. Stages: IS = built; UC = in
+  construction; EP = approved for an upgrade or anything due within 18 months, else planned; PL = planned for a
+  baseline project, proposed for a supplemental one (the utility's own plan, reviewed but not board-approved);
+  Active (generator upgrade not yet under agreement) = proposed; past its date and not in service = in construction
+  (estimated). PJM gives a state and a location name but no county: ends are placed by name on HIFLD /
+  OpenStreetMap, else at the town they are named for (Census places now cover every MISO and PJM state).
+  Researched projects PJM's list does not carry (generator ties, merchant lines, announced data-center hookups,
+  state siting cases) are in `data/sources/pjm-research-2026.json`, ids `pjmr-<key>`.
   Stations are placed by name on HIFLD / OpenStreetMap in the state given (and the county, when the source gives one),
   new stations beside the station the source names (`approx`) or at the county center.
 - **SPP 2026 ITP 765 kV lines (Nov 11, 2026)**: `data/sources/spp-itp-2026.json`, kept by hand from SPP's draft 2026 ITP
