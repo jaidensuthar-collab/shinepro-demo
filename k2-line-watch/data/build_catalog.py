@@ -905,6 +905,7 @@ REGIONS = {   # file key -> (title, test on a line or substation record)
     "oklahoma": ("Oklahoma (SPP)", lambda r: "OK" in r.get("state", "")),
     "miso-texas": ("Texas, MISO (Entergy Texas, Southeast Texas)", lambda r: r.get("market") == "MISO" and "TX" in r.get("state", "")),
     "miso": ("MISO (all 15 states: Entergy Texas, local projects, data-center hookups, Tranche 1 backbone)", lambda r: r.get("market") == "MISO"),
+    "pjm": ("PJM (13 states and DC: Illinois to New Jersey, Virginia and the Carolinas)", lambda r: r.get("market") == "PJM"),
 }
 
 
@@ -1137,6 +1138,9 @@ def build(projects_src, tpit_path, queue_path=None):
     # MISO: Entergy Texas (Southeast Texas) and MISO's LRTP Tranche 1 345 kV backbone (North Dakota to Michigan).
     from build_miso import miso_lines, ETR_FILE, LRTP_FILE, MTEP_URL, RESEARCH_FILE
     out += miso_lines()
+    # PJM: every upgrade in PJM's Project Construction data (baseline, supplemental, generator-interconnection).
+    from build_pjm import pjm_lines, PJM_FILE, PAGE_URL as PJM_URL
+    out += pjm_lines()
     out.sort(key=lambda x: -x["priority_score"])
     stations = attach_queue(out, places, queue_path)
     sites = station_sites(out, stations)
@@ -1149,9 +1153,10 @@ def build(projects_src, tpit_path, queue_path=None):
                         "Entergy Texas (MISO)": json.load(open(ETR_FILE))["source"], "MISO LRTP Tranche 1": json.load(open(LRTP_FILE))["source"],
                         "MISO MTEP25 Appendix A": "MISO MTEP25 Appendix A, new local projects approved Dec 2025 (data as of Oct 2025), " + MTEP_URL,
                         "MISO researched projects": json.load(open(RESEARCH_FILE))["source"],
+                        "PJM Project Construction data": f"{PJM_URL} (fetched {json.load(open(PJM_FILE))['fetched']})",
                         "HIFLD substations": HIFLD_URL,
                         "OpenStreetMap substations": "https://www.openstreetmap.org/", "ERCOT interconnection queue (GIS report)": QUEUE_URL},
-            "scope": f"Texas (ERCOT, SPP, MISO and El Paso Electric), Oklahoma (SPP) and MISO (MTEP25 local projects across its 15 states and the 345 kV Tranche 1 backbone): new and upgraded lines 138 kV and up and new 345 kV+ substations, from proposed to built since {CUTOFF:%B %Y}, in service by {HORIZON}, plus Line Watch cards not yet in ERCOT's report",
+            "scope": f"Texas (ERCOT, SPP, MISO and El Paso Electric), Oklahoma (SPP), MISO and PJM: new and upgraded lines 138 kV and up and new 345 kV+ substations, from proposed to built since {CUTOFF:%B %Y}, in service by {HORIZON}, plus Line Watch cards not yet in ERCOT's report",
             "regions": {k: {"title": t, "lines": sum(1 for x in out if f(x))} for k, (t, f) in REGIONS.items()},
             "map_radius_miles": MAP_RADIUS,
             "cutoff": CUTOFF.isoformat(), "horizon": HORIZON, "stages": STAGE_HELP}

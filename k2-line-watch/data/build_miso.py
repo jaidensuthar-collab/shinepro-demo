@@ -33,8 +33,9 @@ DROP = {"square-butte-arrowhead-hvdc-900mw", "wabasha-relocation-161"}
 
 
 class MisoPlaces(SppPlaces):
-    def __init__(self):
-        super().__init__(states=MISO_STATES)
+    """Name-based substation finder for the MISO and PJM states (HIFLD + OpenStreetMap + per-name lookups)."""
+    def __init__(self, states=MISO_STATES):
+        super().__init__(states=states)
         # Substations looked up one name at a time on OpenStreetMap (data/fetch_osm_names.py), for states whose
         # whole-state OpenStreetMap download times out.
         for s in (json.load(open(LOOKUPS))["substations"] if os.path.exists(LOOKUPS) else []):
@@ -46,7 +47,7 @@ class MisoPlaces(SppPlaces):
         self.rings = json.load(open(os.path.join(B.WEB, "counties.json")))
         self.ckeys = {k.upper(): k for k in self.rings}
         self.boxes = {k: (min(x for r in v for x, _ in r), min(y for r in v for _, y in r), max(x for r in v for x, _ in r),
-                          max(y for r in v for _, y in r)) for k, v in self.rings.items() if k[:2] in MISO_STATES}
+                          max(y for r in v for _, y in r)) for k, v in self.rings.items() if k[:2] in self.states}
 
     def county_key(self, st, county):
         return self.ckeys.get(f"{st}|{county}".upper())
@@ -258,13 +259,14 @@ def mtep_lines(places=None, skip_pairs=()):
     return out
 
 
-def research_lines(places=None, have=(), have_mtep=()):
+def research_lines(places=None, have=(), have_mtep=(), path=None, prefix="misor-", market=MARKET_MISO):
     """MISO projects found in utility pages, state commission dockets and transmission owners' plans
     (sources/miso-research-2026.json): projects approved before MTEP25 that are still being built, and ones not in
     MISO's list yet. Each carries its own stage and source; projects already in the list (same end substations) are skipped."""
-    if not os.path.exists(RESEARCH_FILE):
+    path = path or RESEARCH_FILE
+    if not os.path.exists(path):
         return []
-    src, places = json.load(open(RESEARCH_FILE)), places or MisoPlaces()
+    src, places = json.load(open(path)), places or MisoPlaces()
     out, seen = [], set(have)
     for p in src["projects"]:
         isd = p.get("in_service") or ""
@@ -273,7 +275,7 @@ def research_lines(places=None, have=(), have_mtep=()):
         if p["stage"] == "built" and not isd:
             continue   # built, but no date to show it is within the last 3 years
         key = frozenset((B.base(e["name"]), e["state"]) for e in p["ends"])
-        if key in seen or (p.get("mtep_id") and str(p["mtep_id"]) in have_mtep) or p["key"] in DROP:
+        if key in seen or any(p.get(k) and str(p[k]) in have_mtep for k in ("mtep_id", "pjm_id")) or p["key"] in DROP:
             continue
         seen.add(key)
         ends = []
@@ -286,17 +288,17 @@ def research_lines(places=None, have=(), have_mtep=()):
                 ends.append(places.place({"name": e["name"], "county": e.get("county", ""), "new": e.get("new", False)}, p["kv"], e["state"], p["sources"][0], near))
         new = [e["name"] for e in p["ends"] if e.get("new")]
         states = sorted({e["state"] for e in p["ends"]} | {p["state"]})
-        rec = {"id": "misor-" + p["key"], "ercot_project": "", "name": p["name"], "description": (f"New substation{'s' if len(new) > 1 else ''}: {', '.join(new)}. " if new else "") + p["stage_basis"],
+        rec = {"id": prefix + p["key"], "ercot_project": "", "name": p["name"], "description": (f"New substation{'s' if len(new) > 1 else ''}: {', '.join(new)}. " if new else "") + p["stage_basis"],
                "kv": p["kv"], "project_type": p["project_type"], "upgrade_kind": "", "lifecycle": p["stage"], "lifecycle_basis": p["stage_basis"],
                "tpit_status": "", "utility": p["utility"], "from": ends[0]["name"], "to": ends[-1]["name"] if len(ends) > 1 else "",
                "county_from": ends[0].get("county", ""), "county_to": ends[-1].get("county", "") if len(ends) > 1 else "",
                "miles_new": p.get("miles_new") or 0, "miles_upgraded": p.get("miles_upgraded") or 0, "transformer_mva": 0, "in_service": isd,
                "in_service_kind": ("actual" if p["stage"] == "built" else "projected") if isd else "", "construction_start": "", "capacity_mw": None,
                "purpose": "large-load hookup" if B.BIG_LOAD.search(p["name"] + " " + p["stage_basis"]) else "shared grid",
-               "program": "MISO (" + (f"MTEP project {p['mtep_id']}" if p.get("mtep_id") else "utility and state filings") + ")",
+               "program": f"{market} (" + (f"MTEP project {p['mtep_id']}" if p.get("mtep_id") else f"PJM upgrade {p['pjm_id']}" if p.get("pjm_id") else "utility and state filings") + ")",
                "rpg": "", "tier": "", "ercot_board": "", "docket": p.get("docket", ""),
                "route_status": "existing corridor" if p["project_type"] == "upgrade" else "route final" if p["stage"] in ("approved", "in construction", "built") else "end substations only",
-               "card_id": "", "card_ids": [], "endpoints": ends, "market": MARKET_MISO, "state": ", ".join(states),
+               "card_id": "", "card_ids": [], "endpoints": ends, "market": market, "state": ", ".join(states),
                "source": "; ".join(p["sources"][:3]), "checked": f"Line Watch research, {src.get('checked', '')}"}
         out.append(finish(rec, p["kv"], "the regulator's decision"))
     return out

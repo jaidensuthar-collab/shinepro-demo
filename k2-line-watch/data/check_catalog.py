@@ -15,6 +15,8 @@ What it checks (errors fail the run, warnings are listed for a person to look at
   7. Every SPP line matches its rows in SPP's STEP project list: voltage, in-service date, and a stage that agrees
      with SPP's status. Substations SPP's project calls new but with a mapped substation within 0.2 mi are
      listed for a person to look at.
+  9. Every PJM upgrade Line Watch keeps (lines 138 kV+, new substations 230 kV+) is in the list with PJM's
+     voltage, in-service date and status.
   8. Every MISO line matches its source (Entergy Texas's PUC report and project pages, MISO's MTEP25 Appendix A,
      MISO's Tranche 1 dashboard):
      every in-window project is in the list once, with its voltage, in-service date and stage.
@@ -31,6 +33,7 @@ import xml.etree.ElementTree as ET
 import build_catalog as B
 import build_spp as SPP
 import build_miso as MISO
+import build_pjm as PJM
 
 WEB = B.WEB
 TX_BOX = (-106.7, 25.8, -93.5, 36.6)
@@ -48,7 +51,7 @@ def _state_boxes():
 
 
 for _st, _b in _state_boxes().items():
-    if _st in ("ND", "SD", "MN", "WI", "IA", "IL", "IN", "MI", "LA", "MS", "KY"):
+    if _st in ("ND", "SD", "MN", "WI", "IA", "IL", "IN", "MI", "LA", "MS", "KY") + PJM.PJM_STATES:
         BOXES.setdefault(_st, tuple(round(v + d, 2) for v, d in zip(_b, (-0.1, -0.1, 0.1, 0.1))))
 ALL_BOX = (min(b[0] for b in BOXES.values()), min(b[1] for b in BOXES.values()), max(b[2] for b in BOXES.values()), max(b[3] for b in BOXES.values()))
 
@@ -131,7 +134,7 @@ def check_locations(lines, sites, places, r):
         if not (box[0] <= st["lon"] <= box[2] and box[1] <= st["lat"] <= box[3]):
             errs.append(f"substation {st['name']}: point {st['lat']}, {st['lon']} is outside {st.get('state', 'TX')}")
             continue
-        if st.get("state", "TX") != "TX" and st.get("state") not in ("OK",) + MISO.MISO_STATES:
+        if st.get("state", "TX") != "TX" and st.get("state") not in ("OK",) + MISO.MISO_STATES + PJM.PJM_STATES:
             warns.append(f"substation {st['name']}: placed in {st['state']}, outside the regions this list covers (the line crosses the state line)")
         key = f"{st.get('state', 'TX')}|" + (st["county"] or "")
         if st["confidence"] not in ("exact", "approx") or key not in places.rings:
@@ -301,6 +304,32 @@ def check_miso(lines, r):
     r.add("MISO lines match their sources (Entergy Texas report, MISO MTEP25 Appendix A, Tranche 1 dashboard, researched utility and state filings)", errs, warns, checked=len(got))
 
 
+def check_pjm(lines, r):
+    """PJM lines against PJM's Project Construction data: every kept upgrade is in the list once, with its voltage,
+    in-service date and the stage PJM's status gives."""
+    errs, warns = [], []
+    got = {x["id"]: x for x in lines if x.get("market") == "PJM" and x["id"].startswith("pjm-")}
+    for x in lines:
+        if x["id"].startswith("pjmr-") and (not x["source"] or not x["lifecycle_basis"]):
+            errs.append(f"{x['id']}: a researched project needs a source and a reason for its stage")
+    want = PJM.pjm_rows()
+    for w in want:
+        x = got.get("pjm-" + w["UpgradeId"])
+        if not x:
+            errs.append(f"PJM upgrade {w['UpgradeId']} ({w['Location']}) is missing")
+            continue
+        if x["kv"] != w["kv"] or x["in_service"] != w["isd"] or x["lifecycle"] != w["life"]:
+            errs.append(f"{x['id']}: {x['kv']} kV / {x['in_service']} / {x['lifecycle']} but PJM gives {w['kv']} kV / {w['isd']} / {w['life']}")
+        if w["basis"].startswith("estimated"):
+            warns.append(f"{x['id']} {x['name']}: stage '{x['lifecycle']}' is estimated ({w['basis']})")
+    if len(got) != len(want):
+        errs.append(f"{len(got)} PJM lines in the list, {len(want)} kept from PJM's data")
+    unplaced = sum(1 for x in got.values() if not any(e.get("lat") is not None for e in x["endpoints"]))
+    if unplaced:
+        warns.append(f"{unplaced} PJM lines have no end substation on public maps yet (they are in the tables, not on the map)")
+    r.add("PJM lines match PJM's project data (voltage, in-service date, stage)", errs, warns, checked=len(got))
+
+
 def check_spp(lines, sites, r):
     rows = {str(d.get("Upgrade ID")): d for d in SPP.read_step()}
     errs, warns, n = [], [], 0
@@ -347,6 +376,7 @@ def main():
     check_oncor(lines, r)
     check_spp(lines, sites, r)
     check_miso(lines, r)
+    check_pjm(lines, r)
     failed = [c for c in r.checks if c["errors"]]
     nwarn = sum(len(c["warnings"]) for c in r.checks)
     for c in r.checks:
