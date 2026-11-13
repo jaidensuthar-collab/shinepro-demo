@@ -58,7 +58,8 @@ if __name__ == "__main__":
             continue
         have["substations"] += hits
         have["asked"].append([name, st])
-        print(name, st, len(hits))
+        json.dump(have, open(OUT, "w"), separators=(",", ":"))   # save as it goes, so a stopped run keeps its answers
+        print(name, st, len(hits), flush=True)
         time.sleep(1)
     have["source"] = f"OpenStreetMap power=substation, looked up by name (via an Overpass mirror), {datetime.date.today():%b %-d, %Y}. Data (c) OpenStreetMap contributors, ODbL."
     json.dump(have, open(OUT, "w"), separators=(",", ":"))
