@@ -44,7 +44,7 @@ NEW_SUB = re.compile(r"\b(new|construct|build|establish|create)\b.{0,50}\b(subst
                      r"\bsubstation work at new\b", re.I)
 LINE_REWORK = re.compile(r"\b\d{3}\s*kV\b.{0,40}?\b(line|lines|circuits?)\b.{0,15}?\b(reconduct\w*|rebuild\w*|uprate\w*)", re.I)
 NEW_LINE = re.compile(r"\b(construct|build|new|install)\b.{0,60}\b(lines?|circuits?|leads?|loop|extension|tap)\b|\bloop\b.{0,40}\binto\b|"
-                      r"\bcut[- ]?(in|and loop)|\bextend\b", re.I)
+                      r"\bcut[- ]?(in|and loop)|\bextend\b|\binstall\w*\b.{0,40}?\bmi(?:le)?s?\b.{0,40}?\btransmission\b", re.I)
 SPLIT = re.compile(r"\s*[-–—]+\s*|\s*,\s*|\s*/\s*|\s+to\s+|\s+and\s+|\s*&\s*")
 ALT = [(re.compile(r"\bMt\.?\s", re.I), "Mount "), (re.compile(r"\bSt\.?\s", re.I), "Saint "), (re.compile(r"\b(Switch|Sw|Rd|Road)\b\.?", re.I), "")]
 
@@ -56,6 +56,7 @@ def date_of(s):
         return None
 
 
+MILES = re.compile(r"\d+(?:\.\d+)?\s*-?\s*mi(?:le)?s?\b", re.I)
 FIBER = re.compile(r"fiber|opgw|\bADLT\b|dielectric|exit transition", re.I)
 
 
@@ -102,7 +103,8 @@ def pjm_rows():
             ptype = "new substation"
             if kv < 230:
                 continue
-        elif ((lineish and (LINE_WORK.search(desc) or LINE_SAID_KV.search(desc) or LINE_REWORK.search(desc))) or LINE_SAID.search(desc)) \
+        elif ((lineish and (LINE_WORK.search(desc) or LINE_SAID_KV.search(desc) or LINE_REWORK.search(desc))) or LINE_SAID.search(desc)
+              or (LINE_EQUIP.match(eq) and MILES.search(desc) and re.search(r"\binstall\w*\b", desc, re.I))) \
                 and not NOT_LINE.search(desc) and not fiber_only:
             kv = line_kv(r)
             ptype = "new line" if NEW_LINE.search(desc) and not re.search(r"\b(rebuild|reconductor|uprate)\b", desc, re.I) else "upgrade"
