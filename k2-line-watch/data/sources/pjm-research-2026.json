@@ -1,7 +1,7 @@
 {
  "source": "Line Watch research, Nov 13, 2026: state siting cases (VA SCC, MD PSC, PA PUC, NJ BPU, OPSB, WV PSC, KY PSC, ICC, IURC, MPSC, NCUC, DE PSC, DC PSC), PJM TEAC and local-plan materials, utility project pages, developer and news sources. Each project lists its own sources.",
  "checked": "2026-11-13",
- "note": "Projects PJM's Project Construction data does not carry (or carries under a different name): generator ties, merchant lines, announced data-center hookups, state cases. Competing 2026 RTEP Window 1 proposals are left out until PJM picks.",
+ "note": "Projects PJM's Project Construction data does not carry (or carries under a different name): generator ties, merchant lines, announced data-center hookups, state cases. Competing 2026 RTEP Window 1 proposals are left out until PJM picks. Second pass (Nov 13): PJM 2026 TEAC and SRRTEP decks for every zone, and the leads the first pass could not reach.",
  "swept": [
   "Virginia SCC 'Transmission Line Projects' case list (82 cases filed 2021-2026, utility and non-utility): https://www.scc.virginia.gov/consumers/public-utility/electricity-faqs/transmission-line-projects",
   "Dominion Energy power line projects index (VA/NC, ~95 project pages): https://www.dominionenergy.com/en/About/Delivering-Energy/Electric-Projects/Power-Line-Projects",
@@ -62,7 +62,26 @@
   "I&M/AEP Transmission project pages: Olive-Reynolds, Greentown-Sorenson, Lulu-Sorenson, East Indiana Grid Reliability, South Bend-Niles, Buchanan-Bridgman, Niles South, South Cass County https://aeptransmission.com/",
   "IURC orders/testimony: Cause 46389 (Sycamore Riverside CPCN), 46295, 46266, 46276 https://www.in.gov/iurc/",
   "PJM TC1/TC2 facilities studies for ComEd and AEP-Indiana generator interconnections (keyword search, not a full listing) https://www.pjm.com/pjmfiles/pub/planning/project-queues/Facility_Studies/",
-  "Tennessee: PJM 2021 TN state infrastructure report and TPUC Kingsport Power dockets (no 138 kV+ line or 230 kV+ substation found) https://www.pjm.com/-/media/DotCom/library/reports-notices/state-specific-reports/2021/2021-tennessee-state-infrastructure-report.pdf"
+  "Tennessee: PJM 2021 TN state infrastructure report and TPUC Kingsport Power dockets (no 138 kV+ line or 230 kV+ substation found) https://www.pjm.com/-/media/DotCom/library/reports-notices/state-specific-reports/2021/2021-tennessee-state-infrastructure-report.pdf",
+  "PJM TEAC 2026 meeting materials Jan-Nov (supplemental decks for APS, JCPL, Penelec, MetEd, ACE, PECO, PPL, BGE, PSEG, UGI, Pepco, Dominion; reliability analysis updates; 5034 immediate-need; list of new network upgrades 11/03/2026): https://www.pjm.com/committees-and-groups/committees/teac",
+  "PJM SRRTEP Mid-Atlantic 2026 meetings 01/15 - 11/12 (BGE, JCPL, PPL, UGI, MetEd, Penelec, PSEG, DPL, PECO, ACE, Dominion supplemental decks; SMECO 2026 assumptions; reliability analysis updates incl. 2026 RTEP first-read baselines 11/12/2026): https://www.pjm.com/committees-and-groups/committees/srrtep-ma",
+  "PJM SRRTEP South 2026 meetings 01/15 - 11/12 (Dominion supplemental decks; SRRTEP South reliability update 11/12/2026): https://www.pjm.com/committees-and-groups/committees/srrtep-s",
+  "PJM 2025 RTEP Window 1 recommended solutions (Jan 2026 TEAC) and Yeat relocation scope change (Apr/May 2026 TEAC; Jul 2026 Board whitepaper): https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260106/20260106-item-09---reliability-analysis-update.pdf",
+  "PJM 2026 Local Plans: Dominion, BGE, DPL, Pepco, UGI (srrtep postings), ATSI (TEAC 10/06/2026), plus re-diff of ACE/JCPL/MetEd/PECO/Penelec/PPL/PSEG/APS 2026 local plans: https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-s/postings/2026/2026-dominion-local-plan-submission-of-the-supplemental-projects.pdf",
+  "PJM TEAC 11/03/2026 Attachment D list of new interconnection network upgrades (205 IDs): https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20261103/20261103-informational-only---list-of-new-network-upgrades.pdf",
+  "PJM interconnection facilities studies AE1-068 (Monarch) and AE2-094 (Cassius Blue): https://www.pjm.com/pjmfiles/pub/planning/project-queues/facilities/ae1068_fac.pdf",
+  "Virginia SCC Transmission Line Projects page, non-utility solar cases and maps (Firefly PUR-2024-00076, Augusta PUR-2024-00034, CPV County Line PUR-2024-00092, Hecate/Bella Terra PUR-2024-00107/00172, Monarch PUR-2025-00150/PUR-2024-00224, Sycamore Cross PUR-2023-00126, Cavalier PUR-2020-00235, Axton PUR-2021-00085, Foxhound PUR-2019-00107): https://www.scc.virginia.gov/consumers/public-utility/electricity-faqs/transmission-line-projects",
+  "NCUC public hearings / recent orders page (transmission CECPCNs: Merry Hill EMP-127, Macadamia EMP-119, Timbermill EMP-118): https://www.ncuc.gov/hearings/hearings.html",
+  "NJ BPU public document search for N.J.S.A. 40:55D-19 petitions (PSE&G Pennsauken EO24070535, JCP&L Allenhurst EO24060479, Fenwick Creek Solar 2026): https://publicaccess.bpu.state.nj.us/",
+  "Rockland Electric / O&R: 2025 RECO planning assumptions (SRRTEP-MA 12/12/2024) and O&R 2025 Local Transmission Plan: https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-ma/2024/20241212/20241212-item-06---2025-reco-local-planning-assumptions.pdf",
+  "PJM SRRTEP-Western 2026 meeting decks (Jan 16 to Nov 13, 2026): every AEP, ATSI, ComEd, Dayton, DEOK, DLCO and EKPC supplemental deck plus the SRRTEP-West reliability analysis updates (58 PDFs): https://www.pjm.com/committees-and-groups/committees/srrtep-w",
+  "PJM M-3 Process Needs Status tracker, 11/13/2026 (all 1,715 PJM West needs, solution descriptions and upgrade IDs): https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-w/2026/20261113/20261113-informational-only---m-3-process-needs-status.xlsx",
+  "PJM TEAC 2026 decks for western TOs (AEP, ATSI, ComEd, Dayton, DEOK) and TEAC reliability analysis updates Jan-Nov 2026, including the 7/16/2026 special session: https://www.pjm.com/committees-and-groups/committees/teac",
+  "2026 Local Plans for AEP, ATSI/AMPT, ComEd, Dayton, DEOK, DLCO and EKPC (TEAC 10/6/2026), checked down to sub-ID level: https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20261006/",
+  "PJM TEAC 5/6/2025 EKPC deck (Mason County data center): https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2025/20250506/20250506-item-06---ekpc-supplemental-projects.pdf",
+  "PJM TEAC 9/9/2025 ComEd deck (Beverly Road ISD): https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2025/20250909/20250909-item-12---comed-supplemental-projects.pdf",
+  "AEP Piketon Area Improvements filings (Baku Station, Baku 765 kV Ext. 1 and 2, Monza notice): https://www.aeptransmission.com/ohio/PiketonArea",
+  "Web searches: EKPC Mason County KY PSC, Valley Link / Valley North segments, Ohio OPSB 2026 gas-plant certificates, Nottingham and Model Landfill gen-ties (no usable source found for the last two)"
  ],
  "projects": [
   {
@@ -6294,6 +6313,2336 @@
     "https://sullivanenergydata.com/coal-gas-thermal/sycamore-riverside-energy-center"
    ],
    "region_file": "il-in-mi-merchant"
+  },
+  {
+   "key": "dom-occoquan-500-yard-571-loop",
+   "name": "Occoquan 500 kV GIS yard and Ox - Possum Point Line #571 loop-in",
+   "kv": 500,
+   "project_type": "new substation",
+   "state": "VA",
+   "utility": "Dominion Energy Virginia",
+   "ends": [
+    {
+     "name": "Occoquan (new 500 kV yard)",
+     "state": "VA",
+     "county": "Prince William",
+     "new": true
+    },
+    {
+     "name": "Ox",
+     "state": "VA",
+     "county": "Fairfax",
+     "new": false
+    },
+    {
+     "name": "Possum Point",
+     "state": "VA",
+     "county": "Prince William",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-06",
+   "stage": "planned",
+   "stage_basis": "Dominion DNH update at TEAC 11/03/2026 (s2609.4): add a six-breaker 500 kV GIS yard and 1400 MVA 500-230 kV transformer at Occoquan, cut and loop 500 kV Line #571 (Ox - Possum Point) into it; projected in-service moved to 06/01/2029, status Engineering. s2609.4 is not in Line Watch (only s2609.1/.3/.5/.8 are).",
+   "docket": "",
+   "pjm_id": "s2609.4",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20261103/20261103-item-08---dom-supplemental-projects---presentation.pdf"
+   ],
+   "region_file": "pass2-east"
+  },
+  {
+   "key": "dom-tropical-230-substation",
+   "name": "Tropical 230 kV substation (cut-in of Lines #286 and #2091)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "VA",
+   "utility": "Dominion Energy Virginia",
+   "ends": [
+    {
+     "name": "Tropical",
+     "state": "VA",
+     "county": "Henrico",
+     "new": true
+    },
+    {
+     "name": "Chickahominy",
+     "state": "VA",
+     "county": "Charles City",
+     "new": false
+    },
+    {
+     "name": "Darbytown",
+     "state": "VA",
+     "county": "Henrico",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "Dominion 2026 Local Plan s3862: cut 230 kV Lines #286 and #2091 in and out of new 12-breaker breaker-and-a-half Tropical substation for a Henrico County data-center campus; projected in-service Q3 2027 (no month given), status Engineering.",
+   "docket": "",
+   "pjm_id": "s3862",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-s/postings/2026/2026-dominion-local-plan-submission-of-the-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-east"
+  },
+  {
+   "key": "dom-tropical-dnh-2368-2370-rebuild",
+   "name": "Bermuda Hundred - Allied - Shand Creek 230 kV rebuild (Lines #2368, #2370)",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "VA",
+   "utility": "Dominion Energy Virginia",
+   "ends": [
+    {
+     "name": "Bermuda Hundred",
+     "state": "VA",
+     "county": "Chesterfield",
+     "new": false
+    },
+    {
+     "name": "Allied",
+     "state": "VA",
+     "county": "Chesterfield",
+     "new": false
+    },
+    {
+     "name": "Shand Creek",
+     "state": "VA",
+     "county": "Chesterfield",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "Do-No-Harm solution for Tropical (TEAC 07/07/2026; 2026 Local Plan s3862.2/.3): rebuild 230 kV Lines #2368 (Bermuda Hundred-Allied) and #2370 (Allied-Shand Creek) to 1573 MVA; projected in-service Q4 2031 (month not given; may fall just outside the 2031-11 window); mileage not stated.",
+   "docket": "",
+   "pjm_id": "s3862.2; s3862.3",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260707/20260707-item-14---dom-supplemental-projects.pdf",
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-s/postings/2026/2026-dominion-local-plan-submission-of-the-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-east"
+  },
+  {
+   "key": "dom-2027-midlothian-bremo-rebuild",
+   "name": "Midlothian - Bremo 230 kV Line #2027 rebuild (double circuit)",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "VA",
+   "utility": "Dominion Energy Virginia",
+   "ends": [
+    {
+     "name": "Midlothian",
+     "state": "VA",
+     "county": "Chesterfield",
+     "new": false
+    },
+    {
+     "name": "Bremo",
+     "state": "VA",
+     "county": "Fluvanna",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "James Hill Do-No-Harm solution (TEAC 07/07/2026, updated 10/06/2026; 2026 Local Plan s3996.3/.4): rebuild 230 kV Line #2027 Midlothian-Bremo on double-circuit structures to 1573 MVA, $210M transmission; projected in-service Q4 2031 (month not given); mileage not stated.",
+   "docket": "",
+   "pjm_id": "s3996.3; s3996.4",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20261006/20261006-item-14---dom-supplemental-projects---presentation.pdf",
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-s/postings/2026/2026-dominion-local-plan-submission-of-the-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-east"
+  },
+  {
+   "key": "dom-209-58-skiffes-creek-co-junction-rebuild",
+   "name": "Skiffes Creek - C&O Junction 230 kV Line #209 (with 115 kV #58) double-circuit rebuild",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "VA",
+   "utility": "Dominion Energy Virginia",
+   "ends": [
+    {
+     "name": "Skiffes Creek",
+     "state": "VA",
+     "county": "James City",
+     "new": false
+    },
+    {
+     "name": "C&O Junction",
+     "state": "VA",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 6.2,
+   "in_service": "2029-05",
+   "stage": "planned",
+   "stage_basis": "Dominion update (TEAC 05/08/2026; 2026 Local Plan s2623): rebuild ~6.2-mi double-circuit segment of Lines #209/#58 on 230 kV DC monopoles, #209 to 1573 MVA; projected in-service moved from 12/31/2025 to 05/30/2029, status Engineering.",
+   "docket": "",
+   "pjm_id": "s2623",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260508/20260508-item-09---dom-supplemental-projects.pdf",
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-s/postings/2026/2026-dominion-local-plan-submission-of-the-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-east"
+  },
+  {
+   "key": "dom-orrock-matta-230-substation",
+   "name": "Orrock (Matta) 230 kV substation (taps of Lines #256 and #2090)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "VA",
+   "utility": "Dominion Energy Virginia",
+   "ends": [
+    {
+     "name": "Orrock (Matta)",
+     "state": "VA",
+     "county": "Caroline",
+     "new": true
+    },
+    {
+     "name": "Ladysmith CT",
+     "state": "VA",
+     "county": "Caroline",
+     "new": false
+    },
+    {
+     "name": "Thornburg",
+     "state": "VA",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-11",
+   "stage": "planned",
+   "stage_basis": "Dominion 2026 Local Plan s3990: tap Lines #256 and #2090 (Ladysmith CT - Thornburg) and extend four 230 kV circuits to new Orrock (Matta) substation serving a Caroline County data center (REC); projected in-service 11/15/2026, status Engineering. Line Watch lists only the Mudd Tavern lines out of Orrock (s3991.2).",
+   "docket": "",
+   "pjm_id": "s3990",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-s/postings/2026/2026-dominion-local-plan-submission-of-the-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-east"
+  },
+  {
+   "key": "peco-bellwether-230-substation",
+   "name": "Bellwether 230 kV substation (Island Road - Navy Yard cut-in)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "PA",
+   "utility": "PECO",
+   "ends": [
+    {
+     "name": "Bellwether",
+     "state": "PA",
+     "county": "Philadelphia",
+     "new": true
+    },
+    {
+     "name": "Island Road",
+     "state": "PA",
+     "county": "Philadelphia",
+     "new": false
+    },
+    {
+     "name": "Navy Yard",
+     "state": "PA",
+     "county": "Philadelphia",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2031-06",
+   "stage": "planned",
+   "stage_basis": "PECO solution PE-2025-008 (TEAC 04/07/2026): Phase 2 builds a new 20-breaker 230 kV BAAH substation 'Bellwether' bisecting the Island Road - Navy Yard 230 kV line with two feeds to a 500 MW customer ($172M), in-service 6/1/2031; Phase 1 temporary radial tap of Elmwood - Grays Ferry 230 kV by 12/31/2029.",
+   "docket": "",
+   "pjm_id": "",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260407/20260407-item-08---peco-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-east"
+  },
+  {
+   "key": "peco-220-53-trainer-chichester-rebuild",
+   "name": "Trainer - Chichester 230 kV (220-53) rebuild",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "PA",
+   "utility": "PECO",
+   "ends": [
+    {
+     "name": "Trainer",
+     "state": "PA",
+     "county": "Delaware",
+     "new": false
+    },
+    {
+     "name": "Chichester",
+     "state": "PA",
+     "county": "Delaware",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 2,
+   "in_service": "2029-06",
+   "stage": "planned",
+   "stage_basis": "PECO solution PE-2025-008 system reinforcement (TEAC 04/07/2026): rebuild the entire 2 miles of 230 kV line 220-53, $18M, projected in-service 06/01/2029, status Conceptual.",
+   "docket": "",
+   "pjm_id": "",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260407/20260407-item-08---peco-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-east"
+  },
+  {
+   "key": "peco-dpl-claymont-edgemoor-linwood-230-rebuild",
+   "name": "Claymont - Edgemoor (23015) and Linwood - Claymont/Edgemoor (220-84, 220-85) 230 kV rebuilds",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "DE",
+   "utility": "Delmarva Power / PECO",
+   "ends": [
+    {
+     "name": "Claymont",
+     "state": "DE",
+     "county": "New Castle",
+     "new": false
+    },
+    {
+     "name": "Edgemoor",
+     "state": "DE",
+     "county": "New Castle",
+     "new": false
+    },
+    {
+     "name": "Linwood",
+     "state": "PA",
+     "county": "Delaware",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 16.2,
+   "in_service": "2031-06",
+   "stage": "planned",
+   "stage_basis": "PECO/DPL solution PE-2025-008 (TEAC 04/07/2026): rebuild all 7.1 mi of 23015 Claymont-Edgemoor plus DPL sections of 220-84 Claymont-Linwood (1 mi) and 220-85 Edgemoor-Linwood (8.1 mi), $145.4M, projected in-service 06/01/2031.",
+   "docket": "",
+   "pjm_id": "",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260407/20260407-item-08---peco-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-east"
+  },
+  {
+   "key": "dpl-north-seaford-conaway-138-rebuild",
+   "name": "North Seaford - Conaway 138 kV (13767) rebuild to 230 kV standards",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "DE",
+   "utility": "Delmarva Power",
+   "ends": [
+    {
+     "name": "North Seaford",
+     "state": "DE",
+     "county": "Sussex",
+     "new": false
+    },
+    {
+     "name": "Conaway",
+     "state": "DE",
+     "county": "Sussex",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 17,
+   "in_service": "2031-06",
+   "stage": "proposed",
+   "stage_basis": "PJM 2026 RTEP first-read baseline (SRRTEP-MA 11/12/2026): rebuild the entire 17-mi 13767 line to 230 kV standards (operated at 138 kV), $74.7M, required/projected in-service 06/01/2031; not yet Board-approved.",
+   "docket": "",
+   "pjm_id": "",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-ma/2026/20261112/20261112-item-01---srrtep-mid-atlantic---reliability-analysis-update-presentation.pdf"
+   ],
+   "region_file": "pass2-east"
+  },
+  {
+   "key": "ugi-newport-230-switching-station",
+   "name": "Newport 230 kV switching station and ~4 mi double-circuit 230 kV supply lines",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "PA",
+   "utility": "UGI Utilities",
+   "ends": [
+    {
+     "name": "Newport switching station",
+     "state": "PA",
+     "county": "Luzerne",
+     "new": true
+    },
+    {
+     "name": "Customer (Newport Township, 500 MW)",
+     "state": "PA",
+     "county": "Luzerne",
+     "new": true
+    },
+    {
+     "name": "Mountain",
+     "state": "PA",
+     "county": "Luzerne",
+     "new": false
+    }
+   ],
+   "miles_new": 4.5,
+   "miles_upgraded": 0,
+   "in_service": "2030-03",
+   "stage": "planned",
+   "stage_basis": "UGI solution UGI-2026-0003 (TEAC 07/07/2026): ~4 mi of two double-circuit 230 kV lines tapping to a new 230 kV BAAH Newport switching station, 0.5 mi of 230 kV taps to the customer, Mountain 230 kV breakers; $107.2M, projected in-service 03/29/2030.",
+   "docket": "",
+   "pjm_id": "",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260707/20260707-item-04---ugi-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-east"
+  },
+  {
+   "key": "ugi-newport-230-66-substation-t10-tap",
+   "name": "Newport 230/66 kV substation and Susquehanna T10 230 kV cut-in (Hunlock Creek customer)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "PA",
+   "utility": "UGI Utilities",
+   "ends": [
+    {
+     "name": "Newport 230/66 kV substation",
+     "state": "PA",
+     "county": "Luzerne",
+     "new": true
+    },
+    {
+     "name": "Susquehanna T10 230 kV line",
+     "state": "PA",
+     "county": "Luzerne",
+     "new": false
+    }
+   ],
+   "miles_new": 0.75,
+   "miles_upgraded": 0,
+   "in_service": "2029-09",
+   "stage": "planned",
+   "stage_basis": "UGI solution UGI-2026-0001 (TEAC 03/10/2026): new two-transformer 230/66 kV Newport substation fed by ~0.75 mi double-circuit 230 kV cut-in from the Susquehanna T10 230 kV line, for a 200 MW customer by Hunlock Creek; projected in-service 09/30/2029. May share a site with UGI-2026-0003; neither is in UGI's 2026 local plan yet.",
+   "docket": "",
+   "pjm_id": "",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260310/20260310-item-04---ugi-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-east"
+  },
+  {
+   "key": "ppl-siegfried-customer-138-double-circuit",
+   "name": "Siegfried - customer 138 kV double circuit (~3 mi) and Siegfried 138 kV yard rebuild",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "PA",
+   "utility": "PPL Electric Utilities",
+   "ends": [
+    {
+     "name": "Siegfried",
+     "state": "PA",
+     "county": "Northampton",
+     "new": false
+    },
+    {
+     "name": "Customer substation (Northampton, 399 MW)",
+     "state": "PA",
+     "county": "Northampton",
+     "new": true
+    }
+   ],
+   "miles_new": 3,
+   "miles_upgraded": 0,
+   "in_service": "2030-07",
+   "stage": "planned",
+   "stage_basis": "PPL solution PPL-2026-0015 (SRRTEP-MA 08/13/2026): Phase 1 0.2-mi taps of ALLE-SIEG #1/#2 138 kV by 7/31/2027; Phase 2 rebuilds Siegfried 138 kV yard (7-bay BAAH) and builds a new ~3-mi double-circuit 138 kV line to the customer, $63.9M, by 7/31/2030.",
+   "docket": "",
+   "pjm_id": "",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-ma/2026/20260813/20260813-item-05---ppl-supplemental-projects.pdf",
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-ma/2026/20260514/20260514-item-08---ppl-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-east"
+  },
+  {
+   "key": "ppl-jackson-pocono-manor-138",
+   "name": "Jackson - Pocono Manor customer 138 kV double circuit (~5.4 mi)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "PA",
+   "utility": "PPL Electric Utilities",
+   "ends": [
+    {
+     "name": "Jackson",
+     "state": "PA",
+     "county": "Monroe",
+     "new": false
+    },
+    {
+     "name": "Pocono Manor customer substation (290 MW)",
+     "state": "PA",
+     "county": "Monroe",
+     "new": true
+    }
+   ],
+   "miles_new": 5.4,
+   "miles_upgraded": 0,
+   "in_service": "2028-12",
+   "stage": "planned",
+   "stage_basis": "PPL solution PPL-2026-0013 (SRRTEP-MA 06/16/2026): install two ~5.4-mi 138 kV circuits (795 ACSS) from Jackson 138 kV to the customer, add two Jackson bays, $28.8M, projected in-service 12/30/2028.",
+   "docket": "",
+   "pjm_id": "",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-ma/2026/20260616/20260616-item-05---ppl-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-east"
+  },
+  {
+   "key": "gentie-cavalier-solar-septa-500",
+   "name": "Cavalier Solar - Septa 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "VA",
+   "utility": "Cavalier Solar A, LLC (AES)",
+   "ends": [
+    {
+     "name": "Cavalier Solar collector substation",
+     "state": "VA",
+     "county": "Isle of Wight",
+     "new": true
+    },
+    {
+     "name": "Septa",
+     "state": "VA",
+     "county": "Surry",
+     "new": false
+    }
+   ],
+   "miles_new": 0.35,
+   "miles_upgraded": 0,
+   "in_service": "2024-06",
+   "stage": "built",
+   "stage_basis": "SCC granted CPCNs May 27, 2021 (PUR-2020-00235) incl. ~0.35-mi 500 kV gen-tie to Septa; EIA-860-based plant listings give first operation June 2024 (Isle of Wight County, grid voltage 500 kV). Sycamore Cross Solar (PUR-2023-00126) also uses this certificated gen-tie.",
+   "docket": "VA SCC PUR-2020-00235",
+   "pjm_id": "",
+   "sources": [
+    "https://www.tdworld.com/renewables/article/21165788/virginia-regulators-conditionally-approve-solar-project-including-500-kv-gen-tie-line",
+    "https://www.scc.virginia.gov/media/sccvirginiagov-home/consumer-home/public-utilities/electricity/transmission-line-projects/non_200235_cavsolar.pdf",
+    "https://www.gridinfo.com/plant/cavalier-solar/67420"
+   ],
+   "region_file": "pass2-east"
+  },
+  {
+   "key": "dom-ae1-068-monarch-500-switching",
+   "name": "AE1-068 (Monarch Solar) 500 kV switching station on Carson - Rogers Road Line #585",
+   "kv": 500,
+   "project_type": "new substation",
+   "state": "VA",
+   "utility": "Dominion Energy Virginia",
+   "ends": [
+    {
+     "name": "AE1-068 switching station",
+     "state": "VA",
+     "county": "Greensville",
+     "new": true
+    },
+    {
+     "name": "Carson",
+     "state": "VA",
+     "county": "Dinwiddie",
+     "new": false
+    },
+    {
+     "name": "Rogers Road",
+     "state": "VA",
+     "county": "Greensville",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "PJM facilities study AE1-068 (Jul 2023): new three-breaker 500 kV ring bus between structures 585/126-127 in Greensville County with loop of Line #585 (n8326.1/.2); SCC certificate for Monarch Solar (PUR-2025-00150) approved July 28, 2026 per Brunswick County agenda as reported by Energy News Beat. n8326 is not in Line Watch.",
+   "docket": "VA SCC PUR-2025-00150",
+   "pjm_id": "n8326.1; n8326.2",
+   "sources": [
+    "https://www.pjm.com/pjmfiles/pub/planning/project-queues/facilities/ae1068_fac.pdf",
+    "https://energynewsbeat.com/electrical-generation/brunswick-countys-solar-cap-looks-full-take-away-one-dead-project-and-about-2000-acres-open-up/"
+   ],
+   "region_file": "pass2-east"
+  },
+  {
+   "key": "gentie-monarch-solar-138",
+   "name": "Monarch Solar 138 kV gen-tie to Dominion switchyard",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "VA",
+   "utility": "Monarch Solar, LLC",
+   "ends": [
+    {
+     "name": "Monarch collector substation",
+     "state": "VA",
+     "county": "Brunswick",
+     "new": true
+    },
+    {
+     "name": "Monarch project substation / Dominion switchyard on Line #585",
+     "state": "VA",
+     "county": "Greensville",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "SCC project map for PUR-2025-00150 labels a 138 kV gen-tie from the collector substation to the project substation and Dominion switchyard (an earlier filing, PUR-2024-00224, described ~5.1 mi at 115 kV, 4.9 mi in Greensville); certificate approved July 28, 2026 per county record as reported by Energy News Beat. Length of the 138 kV version not stated.",
+   "docket": "VA SCC PUR-2025-00150",
+   "pjm_id": "",
+   "sources": [
+    "https://www.scc.virginia.gov/media/sccvirginiagov-home/consumer-home/public-utilities/electricity/transmission-line-projects/monarch-2500150-project-map.pdf",
+    "https://www.scc.virginia.gov/docketsearch/DOCS/842p01!.PDF"
+   ],
+   "region_file": "pass2-east"
+  },
+  {
+   "key": "gentie-bella-terra-solar-138",
+   "name": "Bella Terra Solar (Hecate) 138 kV gen-tie and switchyard to Appalachian Power",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "VA",
+   "utility": "Hecate Energy Bella Terra LLC",
+   "ends": [
+    {
+     "name": "Bella Terra project substation",
+     "state": "VA",
+     "county": "Pulaski",
+     "new": true
+    },
+    {
+     "name": "Bella Terra switchyard (APCo)",
+     "state": "VA",
+     "county": "Pulaski",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "SCC exhibit (PUR-2024-00172 / PUR-2024-00107, Aug 2024) shows a proposed Bella Terra switchyard, project substation and 138 kV gen-tie in Pulaski County (Radford quad); Hecate lists the 100 MW project as 'In Development'. Length and in-service date not stated.",
+   "docket": "VA SCC PUR-2024-00172; PUR-2024-00107",
+   "pjm_id": "",
+   "sources": [
+    "https://www.scc.virginia.gov/media/sccvirginiagov-home/consumer-home/public-utilities/electricity/transmission-line-projects/hecate-00172-pulaski.pdf",
+    "https://www.hecateenergy.com/projects"
+   ],
+   "region_file": "pass2-east"
+  },
+  {
+   "key": "day-patina-765-345-sub",
+   "name": "Patina 765/345 kV substation (cut-in of Marysville - Flatlick 765 kV)",
+   "kv": 765,
+   "project_type": "new substation",
+   "state": "OH",
+   "utility": "AES Ohio (Dayton) / AEP",
+   "ends": [
+    {
+     "name": "Patina",
+     "state": "OH",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Marysville",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Flatlick",
+     "state": "OH",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2031-05",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 2/3/2026 Dayton solution (Dayton-2025-008, conceptual): new breaker-and-a-half 765/345 kV Patina substation cutting into Marysville-Flatlick 765 kV for a customer near Darby substation in Marysville, OH; project ISD 05/01/2031. Not in PJM's project list yet (no upgrade ID).",
+   "docket": "",
+   "pjm_id": "Dayton-2025-008",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260203/20260203-item-06---dayton-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "day-weaver-345-sub",
+   "name": "Weaver 345 kV substation (Marysville-area data center)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "OH",
+   "utility": "AES Ohio (Dayton)",
+   "ends": [
+    {
+     "name": "Weaver",
+     "state": "OH",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2031-05",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 2/3/2026 Dayton solution (Dayton-2025-008): new breaker-and-a-half 345 kV Weaver substation near the customer site; ISD 05/01/2031.",
+   "docket": "",
+   "pjm_id": "Dayton-2025-008",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260203/20260203-item-06---dayton-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "day-patina-weaver-345",
+   "name": "Patina - Weaver 345 kV (two single-circuit lines)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "OH",
+   "utility": "AES Ohio (Dayton)",
+   "ends": [
+    {
+     "name": "Patina",
+     "state": "OH",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Weaver",
+     "state": "OH",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 10,
+   "miles_upgraded": 0,
+   "in_service": "2031-05",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 2/3/2026 Dayton solution (Dayton-2025-008): two new ~5-mile single-circuit 345 kV lines Patina - Weaver, plus two 345 kV feeds Weaver - customer; ISD 05/01/2031.",
+   "docket": "",
+   "pjm_id": "Dayton-2025-008",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260203/20260203-item-06---dayton-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "day-concord-138-cutin",
+   "name": "West Milton - Eldean 138 kV cut-in to new Concord substation (Project Klondike Phase 1)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "OH",
+   "utility": "AES Ohio (Dayton)",
+   "ends": [
+    {
+     "name": "West Milton",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Eldean",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Concord",
+     "state": "OH",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 2,
+   "miles_upgraded": 0,
+   "in_service": "2028-07",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 5/8/2026 Dayton solution (Dayton-2025-007, data center near Eldean substation in Piqua, OH): cut in West Milton - Eldean 138 kV and extend ~2-mile double circuit to new Concord 138 kV substation, plus three 138 kV customer feeds; Phase 1 ISD July 31, 2028.",
+   "docket": "",
+   "pjm_id": "Dayton-2025-007",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260508/20260508-item-05---dayton-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "day-brown-345-sub",
+   "name": "Brown 345 kV substation (cut-in of Miami - Shelby 345 kV)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "OH",
+   "utility": "AES Ohio (Dayton)",
+   "ends": [
+    {
+     "name": "Brown",
+     "state": "OH",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Miami",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Shelby",
+     "state": "OH",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-12",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 5/8/2026 Dayton solution (Dayton-2025-007 Phase 2): cut existing Miami - Shelby 345 kV into new Brown 345 kV substation; Phase 2 ISD December 31, 2030.",
+   "docket": "",
+   "pjm_id": "Dayton-2025-007",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260508/20260508-item-05---dayton-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "day-brown-miami-345-rebuild",
+   "name": "Brown - Miami 345 kV rebuild to double circuit",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "OH",
+   "utility": "AES Ohio (Dayton)",
+   "ends": [
+    {
+     "name": "Brown",
+     "state": "OH",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Miami",
+     "state": "OH",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 11,
+   "in_service": "2030-12",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 5/8/2026 (Dayton-2025-007 Phase 2): rebuild ~11-mile 345 kV line from new Brown substation to existing Miami substation as double circuit; ISD 12/31/2030.",
+   "docket": "",
+   "pjm_id": "Dayton-2025-007",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260508/20260508-item-05---dayton-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "day-concord-345-sub",
+   "name": "Concord 345/138 kV substation (Project Klondike)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "OH",
+   "utility": "AES Ohio (Dayton)",
+   "ends": [
+    {
+     "name": "Concord",
+     "state": "OH",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-12",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 5/8/2026 (Dayton-2025-007 Phase 2): construct new Concord 345 kV substation near the customer with two 450 MVA 345/138 kV transformers; ISD 12/31/2030 (expanded in Phase 3, 4/30/2031).",
+   "docket": "",
+   "pjm_id": "Dayton-2025-007",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260508/20260508-item-05---dayton-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "day-brown-concord-345",
+   "name": "Brown - Concord 345 kV (double circuit plus third circuit)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "OH",
+   "utility": "AES Ohio (Dayton)",
+   "ends": [
+    {
+     "name": "Brown",
+     "state": "OH",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Concord",
+     "state": "OH",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 20,
+   "miles_upgraded": 0,
+   "in_service": "2031-04",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 5/8/2026 (Dayton-2025-007): ~10-mile double-circuit Brown - Concord 345 kV (Phase 2, ISD 12/31/2030) and a new ~10-mile single-circuit Brown - Concord 345 kV (Phase 3, ISD 4/30/2031); mileage is route length (10 + 10).",
+   "docket": "",
+   "pjm_id": "Dayton-2025-007",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260508/20260508-item-05---dayton-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "day-concord-customer-345",
+   "name": "Concord - customer 345 kV feeds (six)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "OH",
+   "utility": "AES Ohio (Dayton)",
+   "ends": [
+    {
+     "name": "Concord",
+     "state": "OH",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Klondike data center customer",
+     "state": "OH",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2031-04",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 5/8/2026 (Dayton-2025-007 Phase 3): six new 345 kV feeds from Concord substation to the customer (customer-paid); Phase 3 ISD April 30, 2031. Length not stated.",
+   "docket": "",
+   "pjm_id": "Dayton-2025-007",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260508/20260508-item-05---dayton-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "day-stuart-customer-345",
+   "name": "Stuart - customer 345 kV lines (two)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "OH",
+   "utility": "AES Ohio (Dayton)",
+   "ends": [
+    {
+     "name": "Stuart",
+     "state": "OH",
+     "county": "Adams",
+     "new": false
+    },
+    {
+     "name": "Data center customer (Adams County)",
+     "state": "OH",
+     "county": "Adams",
+     "new": true
+    }
+   ],
+   "miles_new": 4,
+   "miles_upgraded": 0,
+   "in_service": "2028-11",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 7/7/2026 Dayton solution (Dayton-2026-001, conceptual): two ~2-mile 345 kV feeds from Stuart 345 kV substation in Adams County to a customer (up to 1,300 MW), with Stuart expansion; ISD 11/01/2028.",
+   "docket": "",
+   "pjm_id": "Dayton-2026-001",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260707/20260707-item-11---dayton-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "day-clinton-customer-345",
+   "name": "Clinton - customer 345 kV lines (two)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "OH",
+   "utility": "AES Ohio (Dayton)",
+   "ends": [
+    {
+     "name": "Clinton",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Customer substation (Wilmington area)",
+     "state": "OH",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 4,
+   "miles_upgraded": 0,
+   "in_service": "2028-12",
+   "stage": "planned",
+   "stage_basis": "Dayton 2026 Local Plan s3898.7 (TEAC 10/6/2026) and TEAC 7/7/2026: establish two ~2-mile 345 kV single-circuit feeds to the customer from Clinton substation; ISD 12/31/2028. Only s3898.3/.6/.8/.9 are in the listed file.",
+   "docket": "",
+   "pjm_id": "s3898.7",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20261006/20261006-informational-only---dayton-local-plan-submission-of-the-supplemental-projects-for-2026.pdf",
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260707/20260707-item-11---dayton-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "day-union-138",
+   "name": "West Milton - Airport 138 kV (13807) cut-in to new Union substation and Union - customer feeds",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "OH",
+   "utility": "AES Ohio (Dayton)",
+   "ends": [
+    {
+     "name": "West Milton",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Airport",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Union",
+     "state": "OH",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-12",
+   "stage": "planned",
+   "stage_basis": "SRRTEP-W 3/19/2026 and TEAC 2/3/2026 Dayton solution (Dayton-2025-009, customer near Airport substation, Tipp City): new 138 kV Union substation cutting into the West Milton - Airport line plus two 138 kV customer feeds; ISD 12/31/2029. Line lengths not stated.",
+   "docket": "",
+   "pjm_id": "Dayton-2025-009",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-w/2026/20260319/20260319-item-06---dayton-supplemental-projects.pdf",
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260203/20260203-item-06---dayton-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "deok-wayne-madison-345",
+   "name": "Wayne-Madison 345 kV switching station (loop of Miami Fort - Woodsdale)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "OH",
+   "utility": "Duke Energy Ohio",
+   "ends": [
+    {
+     "name": "Wayne-Madison",
+     "state": "OH",
+     "county": "Butler",
+     "new": true
+    },
+    {
+     "name": "Miami Fort",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Woodsdale",
+     "state": "OH",
+     "county": "Butler",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-12",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 9/8/2026 DEOK scope change (DEOK-2025-003, customer near Trenton, Butler County): new 10-breaker 345 kV Wayne-Madison switching station looped into Miami Fort - Woodsdale 345 kV; Phase 2 ISD 12/31/2028 (status Engineering). No PJM upgrade ID yet; only the related Woodsdale-customer line (s3909.1) is listed.",
+   "docket": "",
+   "pjm_id": "DEOK-2025-003",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260908/20260908-item-08---deok-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "deok-cotton-run-345",
+   "name": "Cotton Run 345 kV switching station and Cotton Run - Wayne-Madison 345 kV",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "OH",
+   "utility": "Duke Energy Ohio",
+   "ends": [
+    {
+     "name": "Cotton Run",
+     "state": "OH",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Wayne-Madison",
+     "state": "OH",
+     "county": "Butler",
+     "new": true
+    },
+    {
+     "name": "Miami Fort - West Milton 345 kV line",
+     "state": "OH",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 5.5,
+   "miles_upgraded": 0,
+   "in_service": "2029-06",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 9/8/2026 (DEOK-2025-003 Phase 3): new 3-breaker 345 kV Cotton Run switching station looped into Miami Fort - West Milton 345 kV, ~4 miles NW of Wayne-Madison, plus ~5.5 miles of 345 kV to Wayne-Madison; ISD 6/1/2029.",
+   "docket": "",
+   "pjm_id": "DEOK-2025-003",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260908/20260908-item-08---deok-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "deok-port-union-todhunter-345",
+   "name": "Port Union - Todhunter 138 kV double circuit rebuild (one side to 345 kV)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "OH",
+   "utility": "Duke Energy Ohio",
+   "ends": [
+    {
+     "name": "Port Union",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Todhunter",
+     "state": "OH",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 19.4,
+   "in_service": "2030-12",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 9/8/2026 (DEOK-2025-003 Phase 4.1): rebuild 138 kV circuits 3887/3888 Port Union - Todhunter (~9.7 mi each, 19.4 circuit-mi) with bundled 954 ACSS; western side to operate at 345 kV via new 345 kV breaker at Port Union; ISD 12/31/2030.",
+   "docket": "",
+   "pjm_id": "DEOK-2025-003",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260908/20260908-item-08---deok-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "deok-miami-fort-willey-138",
+   "name": "Miami Fort - Willey 138 kV reconductor (circuits 9784, 1689, 5783)",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "OH",
+   "utility": "Duke Energy Ohio",
+   "ends": [
+    {
+     "name": "Miami Fort",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Morgan",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Willey",
+     "state": "OH",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 29.6,
+   "in_service": "2031-11",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 9/8/2026 (DEOK-2025-003 Phase 4.2): reconductor circuit 9784 Miami Fort - Willey (~15 mi, 78 towers replaced) and shared-tower circuits 1689 Miami Fort - Morgan (~7.4 mi) and 5783 Morgan - Willey (~7.2 mi); ISD 11/30/2031.",
+   "docket": "",
+   "pjm_id": "DEOK-2025-003",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260908/20260908-item-08---deok-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "deok-turner-345",
+   "name": "Turner 345 kV substation (cut-in of Hillcrest - Stuart 345 kV), Mt. Orab",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "OH",
+   "utility": "Duke Energy Ohio / OVEC",
+   "ends": [
+    {
+     "name": "Turner",
+     "state": "OH",
+     "county": "Brown",
+     "new": true
+    },
+    {
+     "name": "Hillcrest",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Stuart",
+     "state": "OH",
+     "county": "Adams",
+     "new": false
+    }
+   ],
+   "miles_new": 0.5,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "PJM M-3 tracker (11/13/2026) solution for DEOK-2024-005 (solution meeting 1/7/2025, customer near Mt. Orab in Brown County ramping to 2,000 MW): Duke and OVEC build Turner 345 kV station and extend Hillcrest - Stuart ~0.5 mi into it, in two phases in service 2027 and 2029. No PJM upgrade ID or 2026 update found.",
+   "docket": "",
+   "pjm_id": "DEOK-2024-005",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-w/2026/20261113/20261113-informational-only---m-3-process-needs-status.xlsx"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "ekpc-mason-county-1-345",
+   "name": "Mason County 1 345/138 kV switching station and Spurlock - North Clark 345 kV loop-in",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "KY",
+   "utility": "East Kentucky Power Cooperative",
+   "ends": [
+    {
+     "name": "Mason County 1",
+     "state": "KY",
+     "county": "Mason",
+     "new": true
+    },
+    {
+     "name": "Spurlock",
+     "state": "KY",
+     "county": "Mason",
+     "new": false
+    },
+    {
+     "name": "North Clark",
+     "state": "KY",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 1.5,
+   "miles_upgraded": 0,
+   "in_service": "2027-05",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 5/6/2025 EKPC potential solution (EKPC-2025-001, data center in Mason County to 2,200 MW): new 345/138 kV Mason County 1 station with the Spurlock - North Clark 345 kV line extended ~1.5 mi into it; Phase 1 ISD 5/28/2027. No PJM upgrade ID or KY PSC case found. A separate generator-interconnection upgrade (n9580.0, already listed) also cuts and loops Spurlock - North Clark 345 kV; overlap not confirmed.",
+   "docket": "",
+   "pjm_id": "EKPC-2025-001",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2025/20250506/20250506-item-06---ekpc-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "ekpc-mason-county-2-345",
+   "name": "Mason County 2 345/138 kV station and Spurlock - Mason County 345 kV double circuit",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "KY",
+   "utility": "East Kentucky Power Cooperative",
+   "ends": [
+    {
+     "name": "Spurlock",
+     "state": "KY",
+     "county": "Mason",
+     "new": false
+    },
+    {
+     "name": "Mason County 1",
+     "state": "KY",
+     "county": "Mason",
+     "new": true
+    },
+    {
+     "name": "Mason County 2",
+     "state": "KY",
+     "county": "Mason",
+     "new": true
+    }
+   ],
+   "miles_new": 4,
+   "miles_upgraded": 0,
+   "in_service": "2028-03",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 5/6/2025 (EKPC-2025-001 Phase 2): new Mason County 2 345/138 kV station and ~4.0-mile 345 kV double circuit from Spurlock to Mason County 1 and 2; North Clark side re-terminated at Mason County 2; ISD 3/11/2028.",
+   "docket": "",
+   "pjm_id": "EKPC-2025-001",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2025/20250506/20250506-item-06---ekpc-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "ekpc-mason-county-3-stuart-345",
+   "name": "Stuart - Mason County 345 kV double circuit and Mason County 3 345/138 kV station",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "KY",
+   "utility": "East Kentucky Power Cooperative / AES Ohio",
+   "ends": [
+    {
+     "name": "Stuart",
+     "state": "OH",
+     "county": "Adams",
+     "new": false
+    },
+    {
+     "name": "Mason County 2",
+     "state": "KY",
+     "county": "Mason",
+     "new": true
+    },
+    {
+     "name": "Mason County 3",
+     "state": "KY",
+     "county": "Mason",
+     "new": true
+    }
+   ],
+   "miles_new": 11,
+   "miles_upgraded": 0,
+   "in_service": "2028-09",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 5/6/2025 (EKPC-2025-001 Phase 3): new Mason County 3 345/138 kV station and ~11.0-mile 345 kV double circuit from DP&L's Stuart station to Mason County 2 and 3; ISD 9/01/2028.",
+   "docket": "",
+   "pjm_id": "EKPC-2025-001",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2025/20250506/20250506-item-06---ekpc-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "ekpc-mason-temp-138",
+   "name": "Spurlock - Goddard / Spurlock - Plumville 138 kV temporary taps to Mason County data center",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "KY",
+   "utility": "East Kentucky Power Cooperative",
+   "ends": [
+    {
+     "name": "Spurlock - Goddard 138 kV line",
+     "state": "KY",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Spurlock - Plumville 138 kV line",
+     "state": "KY",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Mason County customer",
+     "state": "KY",
+     "county": "Mason",
+     "new": true
+    }
+   ],
+   "miles_new": 3,
+   "miles_upgraded": 0,
+   "in_service": "2026-12",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 5/6/2025 (EKPC-2025-001 Phase 0): two ~1.5-mile temporary 138 kV tap lines, ISD 12/19/2026, removed in Phase 3.",
+   "docket": "",
+   "pjm_id": "EKPC-2025-001",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2025/20250506/20250506-item-06---ekpc-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "ekpc-boone-longbranch-138-mot",
+   "name": "Boone - Long Branch 138 kV MOT increase",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "KY",
+   "utility": "East Kentucky Power Cooperative",
+   "ends": [
+    {
+     "name": "Boone",
+     "state": "KY",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Long Branch",
+     "state": "KY",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2031-05",
+   "stage": "proposed",
+   "stage_basis": "SRRTEP-W 11/13/2026 2026 RTEP baseline first read: raise maximum operating temperature of Boone - Longbranch 138 kV from 181F to 212F; projected ISD 05/31/2031.",
+   "docket": "",
+   "pjm_id": "",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-w/2026/20261113/20261113-item-01---srrtep-west---reliability-analysis-update-presentation.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "aep-kiwi-138",
+   "name": "Kiwi 138 kV extension (Nottingham - Freebyrd cut-in) and Kiwi - customer",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "OH",
+   "utility": "AEP Ohio Transmission",
+   "ends": [
+    {
+     "name": "Nottingham",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Freebyrd",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Kiwi",
+     "state": "OH",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 7.5,
+   "miles_upgraded": 0,
+   "in_service": "2028-09",
+   "stage": "planned",
+   "stage_basis": "SRRTEP-W 8/14/2026 AEP solution (AEP-2025-OH026, customer in Cadiz, OH): ~6.85-mile greenfield double-circuit 138 kV from new Kiwi station to the Nottingham - Freebyrd line, ~0.41 + 0.16 mi new single-circuit sections converting it fully to double circuit, and a 0.45-mi Kiwi - customer tie; ISD 09/29/2028.",
+   "docket": "",
+   "pjm_id": "AEP-2025-OH026",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-w/2026/20260814/20260814-item-03---aep-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "aep-gable-south-cadiz-138",
+   "name": "Gable - South Cadiz 138 kV clearance mitigation to operate at MOT",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "OH",
+   "utility": "AEP Ohio Transmission",
+   "ends": [
+    {
+     "name": "Gable",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "South Cadiz",
+     "state": "OH",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 11.1,
+   "in_service": "2028-09",
+   "stage": "planned",
+   "stage_basis": "SRRTEP-W 8/14/2026 (AEP-2025-OH026): ratings study and clearance mitigation on ~11.10 miles of derated 477 Hawk conductor so it can operate at MOT; ISD 09/29/2028.",
+   "docket": "",
+   "pjm_id": "AEP-2025-OH026",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-w/2026/20260814/20260814-item-03---aep-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "aep-endor-good-hope-harrison-138",
+   "name": "Good Hope Switch - Harrison 138 kV rebuild to double circuit (Harrison - Endor) and Endor customer feeds",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "OH",
+   "utility": "AEP Ohio Transmission",
+   "ends": [
+    {
+     "name": "Harrison",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Endor",
+     "state": "OH",
+     "county": "Pickaway",
+     "new": true
+    },
+    {
+     "name": "Good Hope Switch",
+     "state": "OH",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0.4,
+   "miles_upgraded": 5.3,
+   "in_service": "2029-01",
+   "stage": "planned",
+   "stage_basis": "SRRTEP-W 11/13/2026 AEP solution (AEP-2025-OH010, Pickaway County customer): rebuild Good Hope Switch - Harrison 138 kV from Harrison to new Endor station as double circuit (~5.3 mi), new 5-breaker Endor 138 kV station, two ~0.2-mi customer feeds; ISD 01/01/2029.",
+   "docket": "",
+   "pjm_id": "AEP-2025-OH010",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-w/2026/20261113/20261113-item-02---aep-supplemental-projects-presentation.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "aep-hartford-valley-corey-138",
+   "name": "Hartford - Valley - Corey 138 kV rebuild",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "MI",
+   "utility": "Indiana Michigan Power (AEP)",
+   "ends": [
+    {
+     "name": "Hartford",
+     "state": "MI",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Valley",
+     "state": "MI",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Flowerfield",
+     "state": "MI",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Corey",
+     "state": "MI",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 34.3,
+   "in_service": "2031-09",
+   "stage": "planned",
+   "stage_basis": "SRRTEP-W 7/17/2026 AEP solution (AEP-2023-IM011): rebuild Hartford - Valley (~13.1 mi), Valley - Stinger Tap (~9.52 mi), Brody Tap - Flowerfield (~6.45 mi) and Flowerfield - Corey (~5.27 mi) 138 kV; ISD 09/23/2031.",
+   "docket": "",
+   "pjm_id": "AEP-2023-IM011",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-w/2026/20260717/20260717-item-04---aep-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "aep-muskingum-customer-345",
+   "name": "Muskingum River - customer 345 kV double-circuit radial",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "OH",
+   "utility": "AEP Ohio Transmission",
+   "ends": [
+    {
+     "name": "Muskingum River",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Customer station (Waterford)",
+     "state": "OH",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 1.78,
+   "miles_upgraded": 0,
+   "in_service": "2028-11",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 10/6/2026 AEP solution (AEP-2025-OH015, 1,200 MW customer near Waterford, OH): ~1.78-mile greenfield 345 kV double-circuit radial from Muskingum River to the customer station; ISD 11/01/2028.",
+   "docket": "",
+   "pjm_id": "AEP-2025-OH015",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20261006/20261006-item-11---aep-supplemental-projects---presentation.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "aep-monza-345-station",
+   "name": "Monza 345 kV switching station and Monza - customer 345 kV feeds (Piketon)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "OH",
+   "utility": "AEP Ohio Transmission",
+   "ends": [
+    {
+     "name": "Monza",
+     "state": "OH",
+     "county": "Pike",
+     "new": true
+    },
+    {
+     "name": "Customer site",
+     "state": "OH",
+     "county": "Pike",
+     "new": true
+    }
+   ],
+   "miles_new": 0.4,
+   "miles_upgraded": 0,
+   "in_service": "2027-12",
+   "stage": "planned",
+   "stage_basis": "AEP 2026 Local Plan s3864.2-.4 (TEAC 10/6/2026): greenfield 345 kV ring-bus switching station with six breakers and a 150 MVAR STATCOM plus two 0.2-mi 345 kV customer feeds; ISD 12/31/2027; OPSB letter of notification 26-0866-EL-BLN. Only the Don Marquis - Monza lines (s3864.1/.6) are listed.",
+   "docket": "OPSB 26-0866-EL-BLN",
+   "pjm_id": "s3864.2",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20261006/20261006-informational-only---aep-local-plan-submission-of-the-supplemental-projects-for-2026.pdf",
+    "https://www.aeptransmission.com/ohio/PiketonArea/docs/BakuExtension-MonzaSubstation_PublicNotice-9-13-26.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "aep-baku-artemis-765-ties",
+   "name": "Baku - Artemis 765 kV tie lines No. 1-3 and Artemis 765/345 kV customer station",
+   "kv": 765,
+   "project_type": "new line",
+   "state": "OH",
+   "utility": "AEP Ohio Transmission / customer",
+   "ends": [
+    {
+     "name": "Baku",
+     "state": "OH",
+     "county": "Pike",
+     "new": true
+    },
+    {
+     "name": "Artemis (customer station)",
+     "state": "OH",
+     "county": "Pike",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "AEP OPSB letters of notification for Baku Station (26-0867-EL-BLN, Aug 2026) and Baku 765 kV Extensions (26-0868/0869-EL-BLN, Sept 2026) say the customer's Artemis 345/765 kV station will connect via three new Baku - Artemis 765 kV tie lines 'to be filed separately'. No length or date given.",
+   "docket": "to be filed (OPSB)",
+   "pjm_id": "",
+   "sources": [
+    "https://www.aeptransmission.com/ohio/PiketonArea/docs/Baku%20765%20kV%20Station%20Application.pdf",
+    "https://www.aeptransmission.com/ohio/PiketonArea/docs/Baku%20Extension%20No%202.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "aep-baku-138-ext",
+   "name": "Baku 138 kV Extension",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "OH",
+   "utility": "AEP Ohio Transmission",
+   "ends": [
+    {
+     "name": "Baku",
+     "state": "OH",
+     "county": "Pike",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "Listed as an associated project 'to be filed separately' on the maps in AEP's Baku Station and Baku 765 kV Extension letters of notification (Aug-Sept 2026); no length or date given.",
+   "docket": "",
+   "pjm_id": "",
+   "sources": [
+    "https://www.aeptransmission.com/ohio/PiketonArea/docs/Baku%20Extension%20No%201.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "aep-lucasville-sargents-138-reroute",
+   "name": "Lucasville - Sargents 138 kV re-route",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "OH",
+   "utility": "AEP Ohio Transmission",
+   "ends": [
+    {
+     "name": "Lucasville",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Sargents",
+     "state": "OH",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "Listed as an associated Piketon-area project 'to be filed separately' on the maps in AEP's Baku 765 kV Extension letters of notification (Sept 2026); no length or date given.",
+   "docket": "",
+   "pjm_id": "",
+   "sources": [
+    "https://www.aeptransmission.com/ohio/PiketonArea/docs/Baku%20Extension%20No%202.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "aep-zodiac-customer-138",
+   "name": "Zodiac - customer 138 kV radials (New Haven, IN)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "IN",
+   "utility": "Indiana Michigan Power (AEP)",
+   "ends": [
+    {
+     "name": "Zodiac",
+     "state": "IN",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Customer stations (New Haven)",
+     "state": "IN",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 3.75,
+   "miles_upgraded": 0,
+   "in_service": "2029-07",
+   "stage": "planned",
+   "stage_basis": "AEP 2026 Local Plan s3750.4: five double-circuit ~0.75-mile 138 kV radials from new Zodiac station to customer-owned stations; ISD 07/01/2029. Only s3750.3 (Allen - Zodiac) is listed.",
+   "docket": "",
+   "pjm_id": "s3750.4",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20261006/20261006-informational-only---aep-local-plan-submission-of-the-supplemental-projects-for-2026.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "aep-hannibal-customer-138",
+   "name": "Hannibal - customer 138 kV radial (Ormet site)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "OH",
+   "utility": "AEP Ohio Transmission",
+   "ends": [
+    {
+     "name": "Hannibal",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Customer site (Ormet)",
+     "state": "OH",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0.2,
+   "miles_upgraded": 0,
+   "in_service": "2026-06",
+   "stage": "planned",
+   "stage_basis": "AEP 2026 Local Plan s4058.1 (AEP-2024-OH040): new ~0.2-mile 138 kV radial feed from Hannibal station to the customer; projected ISD 06/01/2026, status Scoping. Only s4058.2 is listed.",
+   "docket": "",
+   "pjm_id": "s4058.1",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20261006/20261006-informational-only---aep-local-plan-submission-of-the-supplemental-projects-for-2026.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "aep-joshua-falls-765-relocation",
+   "name": "Joshua Falls 765 kV substation relocation and 138 kV reconnection line",
+   "kv": 765,
+   "project_type": "new substation",
+   "state": "VA",
+   "utility": "Appalachian Power (AEP)",
+   "ends": [
+    {
+     "name": "Joshua Falls (relocated)",
+     "state": "VA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Joshua Falls 138 kV yard",
+     "state": "VA",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-06",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 8/4/2026 scope change to 2024-W1-820 (b4000.359): relocate Joshua Falls 765 kV substation (five 765 kV breakers, relocated 765/138 kV transformer, Cloverdale and Yeat lines terminated there) and build a 138 kV line to the existing 138 kV yard; package required ISD 6/1/2029. b4000.359 is not in the listed file.",
+   "docket": "",
+   "pjm_id": "b4000.359",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260804/20260804-item-13---reliability-analysis-update.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "atsi-lockwood-richland-138",
+   "name": "Lockwood Road - Richland 138 kV tap extension and new ring bus",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "OH",
+   "utility": "FirstEnergy (ATSI)",
+   "ends": [
+    {
+     "name": "Lockwood Road",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Richland",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "New 138 kV ring bus / customer",
+     "state": "OH",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 3.6,
+   "miles_upgraded": 0,
+   "in_service": "2028-04",
+   "stage": "planned",
+   "stage_basis": "SRRTEP-W 7/17/2026 ATSI solution (ATSI-2026-041, 120 MVA customer ~7 mi from Richland): ~3.6 miles of double-circuit 138 kV extension (Phase 1 ISD 4/18/2028), then new four-breaker 138 kV ring bus looping the line (Phase 2 ISD 6/21/2029).",
+   "docket": "",
+   "pjm_id": "ATSI-2026-041",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-w/2026/20260717/20260717-item-03---atsi-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "atsi-dawg-pound-138",
+   "name": "Fowles - NASA and Fowles - Fox 138 kV extensions to new Dawg Pound station",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "OH",
+   "utility": "FirstEnergy (ATSI)",
+   "ends": [
+    {
+     "name": "Dawg Pound",
+     "state": "OH",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Fowles",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "NASA",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Fox",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Jim Brown (customer)",
+     "state": "OH",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Ford Brookpark",
+     "state": "OH",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 1.8,
+   "miles_upgraded": 0,
+   "in_service": "2029-11",
+   "stage": "planned",
+   "stage_basis": "SRRTEP-W 10/16/2026 ATSI solution (ATSI-2026-061): re-energize idle Fowles - NASA Q-17/Q-18, 0.8-mi overhead extension, 0.4-mi underground + 0.4-mi overhead extension from Fowles - Fox Q-12/Q-13, 0.1-mi lines to Jim Brown and Ford Brookpark, new 138 kV Dawg Pound ring bus; ISD 11/29/2029.",
+   "docket": "",
+   "pjm_id": "ATSI-2026-061",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-w/2026/20261016/20261016-item-02---atsi-supplemental-projects-presentation.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "atsi-longview-ontario-customer-138",
+   "name": "Longview - Ontario 138 kV customer tap",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "OH",
+   "utility": "FirstEnergy (ATSI)",
+   "ends": [
+    {
+     "name": "Longview",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Ontario",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "New customer",
+     "state": "OH",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0.6,
+   "miles_upgraded": 0,
+   "in_service": "2028-06",
+   "stage": "planned",
+   "stage_basis": "SRRTEP-W 10/16/2026 ATSI solution (ATSI-2026-059): three MOAB switches on Longview - Ontario 138 kV and 0.6 mi of line to the customer POI; ISD 06/26/2028.",
+   "docket": "",
+   "pjm_id": "ATSI-2026-059",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-w/2026/20261016/20261016-item-02---atsi-supplemental-projects-presentation.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "atsi-lake-avenue-customer-345",
+   "name": "Lake Avenue - customer 345 kV feed",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "OH",
+   "utility": "FirstEnergy (ATSI)",
+   "ends": [
+    {
+     "name": "Lake Avenue",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "New customer (200 MVA)",
+     "state": "OH",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-09",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 10/6/2026 ATSI solution (ATSI-2026-058): expand Lake Avenue to 12-breaker breaker-and-a-half and install one 345 kV feed to the customer POI (request ~0.3 mi from Lake Avenue); ISD 09/11/2030.",
+   "docket": "",
+   "pjm_id": "ATSI-2026-058",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20261006/20261006-item-06---atsi-supplemental-projects---presentation.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "atsi-delta-wauseon-tomato-138",
+   "name": "Delta - Wauseon 138 kV loop into new Tomato ring bus and Tri County - Nova Steel 138 kV",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "OH",
+   "utility": "FirstEnergy (ATSI)",
+   "ends": [
+    {
+     "name": "Delta",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Tomato",
+     "state": "OH",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Tri County",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Nova Steel",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Nature Fresh Farms",
+     "state": "OH",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 1.2,
+   "miles_upgraded": 0,
+   "in_service": "2028-12",
+   "stage": "planned",
+   "stage_basis": "SRRTEP-W 11/13/2026 ATSI solution (ATSI-2023-014): new 138 kV Tomato ring bus on Delta - Wauseon, 0.6 mi of new conductor Tri County - Nova Steel and 0.6 mi from structure 61 to Tomato; ISD 12/29/2028.",
+   "docket": "",
+   "pjm_id": "ATSI-2023-014",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-w/2026/20261113/20261113-item-05---atsi-supplemental-projects-presentation.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "atsi-beaver-henrietta-138-recond",
+   "name": "Beaver - Henrietta / Beaver - Wellington 138 kV reconductor",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "OH",
+   "utility": "FirstEnergy (ATSI)",
+   "ends": [
+    {
+     "name": "Beaver",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Henrietta",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Wellington",
+     "state": "OH",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 1.2,
+   "in_service": "2027-12",
+   "stage": "planned",
+   "stage_basis": "SRRTEP-W 8/14/2026 ATSI solution (ATSI-2026-049): reconductor 1.2 mi of the Beaver - Henrietta and Beaver - Wellington 138 kV lines (structure #8888 to #987); ISD 12/31/2027.",
+   "docket": "",
+   "pjm_id": "ATSI-2026-049",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-w/2026/20260814/20260814-item-02---atsi-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "atsi-east-akron-hayes-lemmerz-138",
+   "name": "East Akron - Hayes Lemmerz 138 kV line section rebuild",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "OH",
+   "utility": "FirstEnergy (ATSI)",
+   "ends": [
+    {
+     "name": "East Akron",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Hayes Lemmerz",
+     "state": "OH",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2031-06",
+   "stage": "proposed",
+   "stage_basis": "SRRTEP-W 11/13/2026 2026 RTEP baseline first read: rebuild the East Akron - Hayes Lemmerz 138 kV line section; projected ISD 06/01/2031. Length not stated.",
+   "docket": "",
+   "pjm_id": "",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-w/2026/20261113/20261113-item-01---srrtep-west---reliability-analysis-update-presentation.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "comed-gurler-345-sub",
+   "name": "Gurler 345 kV substation and Gurler - customer 345 kV lines (DeKalb)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IL",
+   "utility": "ComEd",
+   "ends": [
+    {
+     "name": "Gurler",
+     "state": "IL",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Customer substation (DeKalb)",
+     "state": "IL",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-12",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 2/3/2026 ComEd solution (ComEd-2025-009): new 6-breaker 345 kV Gurler ring bus with 150 MVAR capacitor and two 345 kV radials to the customer; ISD 12/4/2029.",
+   "docket": "",
+   "pjm_id": "ComEd-2025-009",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260203/20260203-item-10---comed-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "comed-charter-grove-gurler-345",
+   "name": "Charter Grove - Gurler 345 kV",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "IL",
+   "utility": "ComEd",
+   "ends": [
+    {
+     "name": "Charter Grove",
+     "state": "IL",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Gurler",
+     "state": "IL",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 16,
+   "miles_upgraded": 0,
+   "in_service": "2029-12",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 2/3/2026 (ComEd-2025-009): one new 16-mile 345 kV line from new Charter Grove (Byron - Wayne cut-in) to new Gurler substation; ISD 12/4/2029. Charter Grove substation itself is already listed.",
+   "docket": "",
+   "pjm_id": "ComEd-2025-009",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260203/20260203-item-10---comed-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "comed-keslinger-gurler-345",
+   "name": "Keslinger - Gurler 345 kV",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "IL",
+   "utility": "ComEd",
+   "ends": [
+    {
+     "name": "Keslinger",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Gurler",
+     "state": "IL",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 1.5,
+   "miles_upgraded": 0,
+   "in_service": "2029-12",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 2/3/2026 (ComEd-2025-009): one new 1.5-mile 345 kV line from Keslinger (s3342.1) to new Gurler substation; ISD 12/4/2029.",
+   "docket": "",
+   "pjm_id": "ComEd-2025-009",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260203/20260203-item-10---comed-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "comed-keslinger-customer-345",
+   "name": "Keslinger - customer 345 kV radials (DeKalb)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "IL",
+   "utility": "ComEd",
+   "ends": [
+    {
+     "name": "Keslinger",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Customer substation (DeKalb)",
+     "state": "IL",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 1.0,
+   "miles_upgraded": 0,
+   "in_service": "2028-10",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 2/3/2026 ComEd solution (ComEd-2025-010): four new 345 kV breakers at Keslinger and two new 0.5-mile 345 kV radials to the customer; ISD 10/31/2028.",
+   "docket": "",
+   "pjm_id": "ComEd-2025-010",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260203/20260203-item-10---comed-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
+  },
+  {
+   "key": "comed-beverly-road-345-sub",
+   "name": "Beverly Road 345 kV substation (cut-ins of Libertyville - Tollway and Silver Lake - Wayne), Hoffman Estates",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IL",
+   "utility": "ComEd",
+   "ends": [
+    {
+     "name": "Beverly Road",
+     "state": "IL",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Libertyville",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Tollway",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Silver Lake",
+     "state": "IL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Wayne",
+     "state": "IL",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 2.0,
+   "miles_upgraded": 0,
+   "in_service": "2028-09",
+   "stage": "planned",
+   "stage_basis": "PJM TEAC 9/9/2025 ComEd solution (ComEd-2024-016, up to 612 MW customer in Hoffman Estates): cut in two 345 kV lines and extend four 0.5-mi lines to a new 10-breaker Beverly Road 345 kV substation; ISD 9/1/2028. Referenced as a planned station in ComEd's 3/10/2026 Grayslake solution; no PJM upgrade ID yet.",
+   "docket": "",
+   "pjm_id": "ComEd-2024-016",
+   "sources": [
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2025/20250909/20250909-item-12---comed-supplemental-projects.pdf",
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20260310/20260310-item-08---comed-supplemental-projects.pdf"
+   ],
+   "region_file": "pass2-west"
   }
  ]
 }

@@ -137,13 +137,13 @@
  },
  {
   "check": "Time window (2023-11 built to 2031-11 due) and stage names",
-  "checked": 2796,
+  "checked": 2868,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Substation points are in their state and in the county the source lists",
-  "checked": 2229,
+  "checked": 2293,
   "errors": [],
   "warnings": [
    "substation Holcomb: placed in KS, outside the regions this list covers (the line crosses the state line)",
@@ -173,6 +173,7 @@
    "substation Zenith/Mission: point is 9 miles outside Waller County, the county ERCOT lists",
    "substation Croydon: point is 4 miles outside Bucks County, the county ERCOT lists",
    "substation Farmville: point is 4 miles outside Cumberland County, the county ERCOT lists",
+   "substation Stanley Terrace: point is 6 miles outside Union County, the county ERCOT lists",
    "substation Big Creek: point is 10 miles outside Brazoria County, the county ERCOT lists",
    "substation Big Foot: point is 9 miles outside Medina County, the county ERCOT lists",
    "substation Big Spring West: point is 16 miles outside Martin County, the county ERCOT lists",
@@ -211,18 +212,18 @@
    "substation Triangle: point is 4 miles outside Midland County, the county ERCOT lists",
    "substation Vealmoor: point is 6 miles outside Howard County, the county ERCOT lists",
    "substation Yucca Drive: point is 10 miles outside Ector County, the county ERCOT lists",
-   "682 lines have no placeable substation (no county given, and not on public maps by name): pjm-s3608.5, pjm-b3800.7, pjm-b3800.43, pjm-b3800.53, pjm-b4089.1, pjm-b3800.2, pjm-b4036.10, pjm-b4036.11"
+   "699 lines have no placeable substation (no county given, and not on public maps by name): pjm-s3608.5, pjm-b3800.7, pjm-b3800.43, pjm-b3800.53, pjm-b4089.1, pjm-b3800.2, pjm-b4036.10, pjm-b4036.11"
   ]
  },
  {
   "check": "Substation status agrees between lines and substations",
-  "checked": 3381,
+  "checked": 3482,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Downloads match the page (CSV, GeoJSON, KML, new-only layers)",
-  "checked": 10520,
+  "checked": 10812,
   "errors": [],
   "warnings": []
  },
@@ -557,7 +558,7 @@
  },
  {
   "check": "PJM lines match PJM's project data (voltage, in-service date, stage)",
-  "checked": 1107,
+  "checked": 1121,
   "errors": [],
   "warnings": [
    "pjm-b3692 Elmont - Chickahominy 500 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-06 has passed and PJM has not marked it in service)",
@@ -602,11 +603,13 @@
    "pjm-s3732.2 Summit D.P - Mine Road 230 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2025-12 has passed and PJM has not marked it in service)",
    "pjm-s3737.5 Susquehanna 230 - Tomhicken - Harwood 230 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-09 has passed and PJM has not marked it in service)",
    "pjm-s3737.9 Tomhicken - Northpoint Customer 230 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-09 has passed and PJM has not marked it in service)",
+   "pjm-s3898.4 FAYETTE - Fayette DC West - Fayette DC East 345 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-09 has passed and PJM has not marked it in service)",
    "pjm-s4021.2 Hannibal - Bitdeer 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-09 has passed and PJM has not marked it in service)",
+   "pjm-s4058.1 Hannibal - Bitdeer 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-06 has passed and PJM has not marked it in service)",
    "pjm-s4058.2 Hannibal - Kammer 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-06 has passed and PJM has not marked it in service)",
    "pjm-s4060.1 Anguin - NBY 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2025-08 has passed and PJM has not marked it in service)",
    "pjm-s4064.2 Badger - Fiesta 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-07 has passed and PJM has not marked it in service)",
-   "512 PJM lines have no end substation on public maps yet (they are in the tables, not on the map)"
+   "518 PJM lines have no end substation on public maps yet (they are in the tables, not on the map)"
   ]
  }
 ]
