@@ -21,7 +21,8 @@ CORRECTIONS = os.path.join(HERE, "sources", "texas-corrections-2026.json")
 # Later sweeps in the same shape: the rest of SPP (Kansas to the Dakotas, Nov 2026).
 RESEARCH_FILES = [RESEARCH, os.path.join(HERE, "sources", "spp-research-2026.json"),
                   os.path.join(HERE, "sources", "caiso-research-2026.json"),   # and CAISO (California, Nov 2026)
-                  os.path.join(HERE, "sources", "northeast-research-2026.json")]   # and New York / New England
+                  os.path.join(HERE, "sources", "northeast-research-2026.json"),   # and New York / New England
+                  os.path.join(HERE, "sources", "west-research-2026.json")]   # and the West outside CAISO and SPP
 CORRECTION_FILES = [CORRECTIONS, os.path.join(HERE, "sources", "spp-corrections-2026.json"),
                     os.path.join(HERE, "sources", "caiso-corrections-2026.json")]
 
@@ -39,9 +40,9 @@ def load_corrections():
             out["set"] += d.get("set", [])
             out["drop"].update(d.get("drop", {}))
     return out
-STATES = ["TX", "OK", "NM", "LA", "AR", "KS", "NE", "ND", "SD", "MT", "WY", "CO", "MO", "IA", "MN", "CA", "NV", "AZ", "NY", "CT", "MA", "ME", "NH", "RI", "VT"]
-MARKETS = {"ERCOT": B.MARKET, "SPP": "SPP", "MISO": "MISO", "WECC": "WECC", "CAISO": "CAISO", "NYISO": "NYISO", "ISO-NE": "ISO-NE"}
-PREFIX = {"ERCOT": "txr-", "SPP": "sppr-", "MISO": "etrr-", "WECC": "eper-", "CAISO": "caisor-", "NYISO": "nyr-", "ISO-NE": "isner-"}
+STATES = ["TX", "OK", "NM", "LA", "AR", "KS", "NE", "ND", "SD", "MT", "WY", "CO", "MO", "IA", "MN", "CA", "NV", "AZ", "NY", "CT", "MA", "ME", "NH", "RI", "VT", "UT", "ID", "OR", "WA"]
+MARKETS = {"ERCOT": B.MARKET, "SPP": "SPP", "MISO": "MISO", "WECC": "WECC", "CAISO": "CAISO", "NYISO": "NYISO", "ISO-NE": "ISO-NE", "West": "West"}
+PREFIX = {"ERCOT": "txr-", "SPP": "sppr-", "MISO": "etrr-", "WECC": "eper-", "CAISO": "caisor-", "NYISO": "nyr-", "ISO-NE": "isner-", "West": "westr-"}
 RESEARCHED = "Line Watch research"
 
 

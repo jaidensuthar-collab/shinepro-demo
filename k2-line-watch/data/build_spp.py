@@ -35,7 +35,7 @@ STATE_NAME = {"TX": "Texas", "OK": "Oklahoma", "AR": "Arkansas", "KS": "Kansas",
               "NE": "Nebraska", "MT": "Montana", "WY": "Wyoming", "CO": "Colorado",
               "CA": "California", "NV": "Nevada", "AZ": "Arizona", "ID": "Idaho", "UT": "Utah",
               "NY": "New York", "CT": "Connecticut", "MA": "Massachusetts", "ME": "Maine", "NH": "New Hampshire",
-              "RI": "Rhode Island", "VT": "Vermont"}
+              "RI": "Rhode Island", "VT": "Vermont", "OR": "Oregon", "WA": "Washington"}
 HOME = ("TX", "OK", "KS", "NE", "NM", "ND", "SD", "MT", "WY", "CO", "IA", "MN", "MO", "AR", "LA")   # SPP's states (Nov 2026)
 NEIGHBORS = ()
 STATE_BOX = {"TX": (-106.7, 25.8, -93.5, 36.6), "OK": (-103.1, 33.6, -94.4, 37.1)}
