@@ -224,6 +224,16 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
   `data/sources/caiso-research-2026.json` (projects sharing a CAISO project id are kept once). LADWP, IID, SMUD/BANC
   and TID are not CAISO. Left out (listed in the file): TransWest Express AC and Silver Rock (not CAISO-planned), and the
   Suncrest 230 kV loop-in (SDG&E's application dates it 2032).
+- **New York and New England (Nov 14, 2026)**: markets `NYISO` (ids `nyr-`) and `ISO-NE` (ids `isner-`), regions `nyiso` and
+  `iso-ne`. NYISO's 2026 Gold Book Table VII (as of Mar 15, 2026) and ISO-NE's RSP Project List and Asset Condition List
+  (Oct 2026; asset-condition rows only for 345 kV line rebuilds) read row by row, plus NY PSC Article VII and ORES
+  permits, the six New England states' siting cases, offshore-wind export cables and merchant lines, in
+  `data/sources/northeast-research-2026.json`. U.S. parts only: Champlain Hudson Power Express and NECEC start at the
+  Canadian border. Projects are matched by end substations, not by queue number (NYISO gives one queue number to a whole
+  program, e.g. all 13 Smart Path Connect lines). Left out (listed in the file): NYSEG's SCATE Lines 68/69/72 (NYSEG now
+  dates them Q4 2032), Knickerbocker - Pleasant Valley (energized summer 2023), Twin States and Clean Path NY (cancelled).
+- **U.S. only**: the checker fails if any line or substation is outside a U.S. state; a line that runs to the national
+  border is listed for its U.S. part, and the check lists those for review.
   Stations are placed by name on HIFLD / OpenStreetMap in the state given (and the county, when the source gives one),
   new stations beside the station the source names (`approx`) or at the county center.
 - **SPP 2026 ITP 765 kV lines (Nov 11, 2026)**: `data/sources/spp-itp-2026.json`, kept by hand from SPP's draft 2026 ITP

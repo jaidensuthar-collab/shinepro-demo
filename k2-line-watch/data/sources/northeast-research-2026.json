@@ -1,0 +1,3811 @@
+{
+ "source": "Line Watch New York and New England sweep (Nov 14, 2026): NYISO 2026 Gold Book Table VII, ISO-NE RSP Project List and Asset Condition List (Oct 2026), NY PSC Article VII and ORES cases, New England state siting cases, offshore-wind and merchant line filings, utility pages and news (U.S. parts only)",
+ "checked": "2026-11-14",
+ "swept": [
+  "NYISO 2026 Gold Book (Load & Capacity Data Report) Table VII Proposed Transmission Facilities, as of March 15, 2026 - all 423 rows read: https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+  "NY PSC Case 21-T-0340 (Smart Path Connect) in-service notifications found by search (HA2, HA1, WRY2, Austin Rd-Edic Line 11; not the full case docket): https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B7068E499-0000-C447-80CF-7A033EE81A59%7D, https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B101D3F9D-0000-CA6E-AF99-F8341FEECB4B%7D, https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B10C04F9E-0000-C283-8084-4BDC812FABF1%7D, https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B804FE499-0000-C12E-8CA7-F547F681A4FA%7D",
+  "NY PSC Case 24-T-0446 (Propel NY Energy) Article VII order Sept 17, 2026: https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B704BB0A0-0000-CE2A-B931-5385AD35C0C2%7D",
+  "NY PSC Case 21-T-0569 (O&R Line 705): https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B6041B38D-0000-C01E-B003-B7FF35BBA5E7%7D",
+  "NY PSC Cases 25-T-0246 (NYSEG SCATE) and 25-T-0470 (NYSEG Line 67): https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B005989A1-0000-C72D-B911-A40ED0AEEC18%7D&DocTitle=Notice%20of%20Joint%20Proposal%20and%20Opportunity%20for%20Public%20Comment",
+  "NY PSC CLCPA Phase 2 status report (NYSEG & RG&E): https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B10F6039F-0000-C136-A2BD-A96A60F76B98%7D",
+  "NY PSC Brooklyn Clean Energy Hub approval (Case 20-E-0197): https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BB0769F87-0000-C216-A848-DE5E9498D5ED%7D",
+  "Con Edison 2025 Local Transmission Plan: https://www.nyiso.com/documents/20142/55462035/03b_CECONY_2025_LTP.pdf",
+  "NYPA Smart Path Connect project page: https://www.nypa.gov/Power/Transmission/Transmission-Projects/Smart-Path-Connect",
+  "CHPE construction page: https://chpexpress.com/construction",
+  "ISO-NE RSP Project List, Final October 2026 (revised, posted 2026-11-13), all 1,062 rows: https://www.iso-ne.com/static-assets/documents/100041/final_rsp_project_list_oct2026_revised.xlsx",
+  "ISO-NE Asset Condition List, Final October 2026 (revised, posted 2026-11-13), all 560 rows: https://www.iso-ne.com/static-assets/documents/100041/final_asset_condition_list_oct2026_revised.xlsx",
+  "ISO-NE RSP Project List / ACL October 2026 PAC presentation: https://www.iso-ne.com/static-assets/documents/100041/final_project_list_presentation-oct_2026_clean.pdf",
+  "ISO-NE document library for the RSP/ACL page (all list versions 2023-2026): https://www.iso-ne.com/system-planning/system-plans-studies/rsp/rsp-project-list-and-the-asset-condition-list",
+  "ISO-NE 2025 Longer-Term Transmission Planning RFP final selection report (Aug 14, 2026): https://www.iso-ne.com/static-assets/documents/100038/final_2025_lttp_rfp_report.pdf",
+  "NECEC (QP 639) ISO-NE TOA and DOE PP-438: https://www.iso-ne.com/static-assets/documents/100024/necec_transmission_operators_agreement.pdf",
+  "PAC presentations for ACL 538 (394/397), 528 (301), 511 (323), 449 (313/343), 437 (339/349), 461 (338), 543 (332), 431/432/356 (CT River crossings) on iso-ne.com",
+  "CT Siting Council petitions 1565, 1679, 1690; MA EFSB 19-06A; RI EFSB SB-2026-03",
+  "NY DPS Article VII Major Electric and Gas Transmission Facilities page (active + approved case list): https://dps.ny.gov/article-vii-major-electric-and-gas-transmission-facilities",
+  "NY DPS Active Article VII Cases Table, Sept 2025 (all cases 10-T-0139 through 25-T-0470): https://dps.ny.gov/system/files/documents/2025/09/active-article-vii-cases.pdf",
+  "NY DPS Active Article VII Cases Table, June 2025: https://dps.ny.gov/system/files/documents/2025/05/active-article-vii-cases.pdf",
+  "NY DPS Article VII workload table, Jan 2023 (Beacon, Juno, Empire Wind 2, Hera, Clean Path, Queensboro): https://dps.ny.gov/system/files/documents/2023/01/article-vii-table-and-other-workload-tables.pdf",
+  "NY DPS DMM case records for 2026 orders/filings: 24-T-0446, 24-T-0120, 24-T-0113, 25-T-0241, 25-T-0242, 25-T-0246, 25-T-0470, 25-T-0232, 22-T-0670, 21-T-0340, 21-T-0366, 21-T-0059, 21-T-0569, 20-T-0617, 19-T-0549, 10-T-0139, 26-T-0456: https://documents.dps.ny.gov/public/MatterManagement/CaseMaster.aspx",
+  "ORES permit applications list (permitted, pending, withdrawn, denied): https://dps.ny.gov/ores-permit-applications",
+  "ORES 2025 annual report (permits 2021-2025): https://dps.ny.gov/system/files/documents/2026/05/ores-annual-report-2025.pdf",
+  "ORES/DPS permit press releases 2025-2026 (Fort Covington, Two Rivers, Mill Point, Agricola, Flat Creek, AES repowerings): https://dps.ny.gov/news",
+  "NYISO CY23 Class Year member list (POI voltages for ORES projects): https://www.nyiso.com/documents/20142/47123572/CY23%20Final%20Member%20List%2020240926_OC.pdf",
+  "NYSEG/RG&E CLCPA Phase 2 status report (June 2026): https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B10F6039F-0000-C136-A2BD-A96A60F76B98%7D",
+  "NYSEG CLCPA Phase 1 status report (June 2026): https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B90F0039F-0000-CD36-A014-5EC8E02FE13C%7D&DocTitle=NYSEG%20Phase%201%20Status%20Report",
+  "PSC Phase 2 Areas of Concern approval (Feb 2023): https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BCDEDE950-CFC2-4201-B846-40876D64FBC0%7D",
+  "Coordinated Grid Planning Process Cycle 1 Report and appendices (May-June 2026; all portfolio projects 2034+): https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B9020F49D-0000-C47F-8A25-BC312B13CCFA%7D&DocTitle=JU%20-%20CGPP%20Cycle%201%20Report",
+  "Con Edison 2025 Local Transmission Plan: https://www.nyiso.com/documents/20142/55462035/03b_CECONY_2025_LTP.pdf",
+  "Con Edison Q1 2026 capital expenditure report: https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BD03D2D9E-0000-CD2A-9416-86BFD2B1ACFC%7D",
+  "CECONY Phase 1 projects report (June 2025): https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B10A1C797-0000-CE4A-A5FC-ECA53A80E882%7D&DocTitle=CECONY%20June%202025%20Phase%201%20Report",
+  "NYISO 2025 Comprehensive Area Transmission Review: https://www.nyiso.com/documents/20142/1397660/2025CATR-Report-final.pdf/9babf72b-5690-7308-a65a-7f47e00630ae",
+  "National Grid Upstate Upgrade project hub: https://upstateupgrade.nationalgrid.com/",
+  "National Grid 2025 Local Transmission Plan: https://www.nationalgridus.com/media/oasis/filings-and-studies/national-grid-local-transmission-plan-2025.pdf",
+  "O&R 2025 Local Transmission Plan: https://www.oru.com/en/our-energy-future/our-energy-projects/line-705-project",
+  "NYPA transmission projects (Smart Path Connect, CEEC, Propel, Clean Path PTP denial): https://www.nypa.gov/power/transmission/transmission-projects/smart-path-connect",
+  "Offshore wind / NYC & LI PPTN: Empire Wind, Sunrise Wind, South Fork, Excelsior Wind (25-T-0232), Vineyard Northeast (25-T-0245), NYC PPTN withdrawal (22-E-0633): https://www.empirewind.com/project",
+  "CHPE construction/operation pages: https://chpexpress.com/construction",
+  "NYISO large-load queue as reported by NYSRC (Oct 2026): https://www.nysrc.org/wp-content/uploads/2026/10/8.1-DER-Report-October-2026-for-NYSRC-Exec-Committee-Attachment-8.1.pdf",
+  "GCEDC STAMP site and board materials: https://www.gcedc.com/stamp",
+  "CT Siting Council pending matters list: https://portal.ct.gov/csc/1_applications-and-other-pending-matters/pending-matters",
+  "CT Siting Council petitions 1501-1800 (incl. Pe1483, 1565, 1613, 1679, 1690, 1707, 1720): https://portal.ct.gov/csc/3_petitions/petition-nos-1601-1700 and https://portal.ct.gov/csc/3_petitions/petition-nos-1701-1800",
+  "CT Siting Council Docket 516R (UI 115 kV) and Docket 272 transfer: https://portal.ct.gov/csc/1_applications-and-other-pending-matters/applications/4_docketnos500s/docket-no-516r",
+  "Eversource CT 2026 Forecast of Loads and Resources, Tables 4-1 to 4-4: https://portal.ct.gov/-/media/csc/forecast/2026/20260401-eversource-energy-2026-forecast-of-loads-and-resources.pdf",
+  "UI 2026 Report on Loads and Resources: https://portal.ct.gov/-/media/csc/forecast/2026/2026-02-27--ui-report-on-loads-and-resources-f-2026.pdf",
+  "MA EFSB and DPU siting open dockets: https://www.mass.gov/info-details/efsb-and-dpu-siting-open-dockets",
+  "MA EFSB electric transmission line decisions: https://www.mass.gov/info-details/efsb-electric-transmission-line-decisions",
+  "MA EFSB case pages (Park City Wind 20-01, SouthCoast Wind 22-04, Commonwealth Wind 22-06, Medway Grid 22-02, Trimount 25-05, Tewksbury 25-08, Oakham 25-07, Warwick-Sterling 23-02, Hingham 24-01, Crystal Spring 25-03, Falmouth Tap 25-11): https://www.mass.gov/orgs/energy-facilities-siting-board",
+  "Eversource Cape Cod Solution Phase I/II pages: https://www.eversource.com/residential/about/transmission-distribution/projects/massachusetts-projects/cape-cod-solution",
+  "Maine PUC Northern Maine Renewable Energy Development Program dockets 2021-00369, 2024-00099, 2025-00361, 2026-00033: http://www.maine.gov/mpuc/regulated-utilities/electricity/rfp-awarded-contracts/2025-00361",
+  "Maine PUC CPCN 2025-00276 (CMP Greater Portland, 115 kV) and CMP Integrated Grid Plan: https://www.cmpco.com/ourcompany/reliableservice/greater-portland-transmission-upgrades-projects",
+  "Maine GEO/DOER transmission landscape report (Sept 1, 2026): https://www.maine.gov/energy/sites/maine.gov.energy/files/inline-files/ME%20DOER%20Final%20Report%20Resolves%20Ch%2057%20Transmission_Sept%201%202026.pdf",
+  "NECEC documents (Avangrid, DOE PP-438, ISO-NE ETU IA filing, Maine DEP, NPCC assessments): https://www.iso-ne.com/static-assets/documents/100030/filing_of_first_rev_etuia-isone-cmp-20-01.pdf",
+  "ISO-NE 2025 LTTP RFP final report (TIDE, ISD Q4 2032): https://www.iso-ne.com/static-assets/documents/100038/final_2025_lttp_rfp_report.pdf",
+  "NH SEC dockets (Virtual File Room, SEC 25-072 X-178 115 kV; 2024-2025 biennial report): https://www.nhsec.nh.gov/sec-dockets",
+  "Twin States Clean Energy Link (cancelled Mar 2024): https://www.nhpr.org/environment/2024-03-07/2-billion-twin-state-clean-energy-link-project-canceled",
+  "VT PUC Section 248 / VELCO 2024 Long-Range Transmission Plan and VSPC TCS update: https://www.velco.com/sites/default/files/2024-06/2024%20VLRTP%20to%20PUC_FINAL.pdf",
+  "New England Clean Power Link (TDI) status deck: https://www.vermontspc.com/sites/default/files/2025-10/TDI%20Overview%20for%20VSPC_10.28.pdf",
+  "RI EFSB docket list (SB-2021-01 through SB-2026-03): https://ripuc.ri.gov/general-information/efsb",
+  "BOEM / Tethys / New Bedford Light offshore wind status (Vineyard Wind 1, Revolution Wind, SouthCoast Wind, New England Wind 1-2): https://newbedfordlight.org/offshore-wind-tracker-whats-happening-to-massachusetts-projects/",
+  "ISO-NE Transitional Cluster Study project list (VSPC July 2026): https://www.vermontspc.com/sites/default/files/2026-07/TCS%20Summary%20and%20Results_For%20July%202026%20VSPC.pdf",
+  "Large-load news 2024-2026 (ISO-NE large loads key project, CT Public explainer, Sutton MA data center memo, Maine DCAC): https://www.iso-ne.com/committees/key-projects/large-loads-integration-key-project"
+ ],
+ "projects": [
+  {
+   "key": "gb-chpe-llc-ny-canada-border-astoria-annex",
+   "name": "Champlain Hudson Power Express (NY/Canada border - Astoria Annex) +/-400 kV HVDC",
+   "kv": 400,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "CHPE LLC (Transmission Developers / Hydro-Quebec)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "New York/Canada border (Lake Champlain)",
+     "state": "NY",
+     "county": "Clinton",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Astoria Annex 345 kV",
+     "state": "NY",
+     "county": "Queens",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 339,
+   "miles_upgraded": 0,
+   "in_service": "2026-05",
+   "stage": "built",
+   "stage_basis": "Gold Book Table VII rows Q631 (1000 MW) and Q887 (250 MW uprate) list a 363-mile +/-400 kV VSC-HVDC line Hertel (Quebec) - Astoria Annex for S 2026; only the ~339-mile U.S. part is counted (CHPE), and CHPE reached commercial operation on May 13, 2026 (S&P Global, CHPE).",
+   "docket": "10-T-0139",
+   "caiso_id": "631/887",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://chpexpress.com/construction",
+    "https://www.spglobal.com/energy/en/news-research/latest-news/electric-power/051326-1250-mw-chpe-transmission-line-into-nyc-reaches-commercial-operation-early",
+    "https://www.governor.ny.gov/news/governor-hochul-celebrates-completion-champlain-hudson-power-express-project"
+   ]
+  },
+  {
+   "key": "gb-nypa-astoria-annex-rainey",
+   "name": "Astoria Annex - Rainey 345 kV (underground cable)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "NYPA",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Astoria Annex",
+     "state": "NY",
+     "county": "Queens",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Rainey",
+     "state": "NY",
+     "county": "Queens",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 3.4,
+   "miles_upgraded": 0,
+   "in_service": "2026-06",
+   "stage": "built",
+   "stage_basis": "Gold Book lists this 3.4-mile 345 kV XLPE cable (elective SUF of Q631/887, 'Under Ground Cable') for S 2026; month is the season NYISO gives, and the Governor's June 16, 2026 CHPE completion announcement and CHPE describe the new Astoria-Rainey cable / 3.5 miles of new cable in Queens as built with CHPE.",
+   "docket": "",
+   "caiso_id": "631/887",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://www.governor.ny.gov/news/governor-hochul-celebrates-completion-champlain-hudson-power-express-project",
+    "https://chpexpress.com/construction"
+   ]
+  },
+  {
+   "key": "gb-new-york-transco-dover-substation",
+   "name": "Dover 345 kV Substation (new, with two 750 MVAr PARs)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "New York Transco",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Dover 345 kV Substation",
+     "state": "NY",
+     "county": "Dutchess",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-12",
+   "stage": "built",
+   "stage_basis": "Gold Book Table VII lists Dover (New Station) 345 kV with 2 x 750 MVAr PARs as In-Service 2025, and the Gold Book narrative says the Dover substation (AC Transmission Segment B) went into service in December 2025.",
+   "docket": "",
+   "caiso_id": "543",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+   ]
+  },
+  {
+   "key": "gb-new-york-transco-cricket-valley-ct-state-line",
+   "name": "Cricket Valley - Dover - CT State Line 345 kV (Line 398 loop into Dover)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "New York Transco",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Cricket Valley",
+     "state": "NY",
+     "county": "Dutchess",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Dover 345 kV Substation",
+     "state": "NY",
+     "county": "Dutchess",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "New York/Connecticut state line",
+     "state": "NY",
+     "county": "Dutchess",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 3.4,
+   "miles_upgraded": 0,
+   "in_service": "2025-12",
+   "stage": "built",
+   "stage_basis": "Gold Book rows (Q543) loop Line 398 into the new Dover substation with 0.4 mi Cricket Valley-Dover and 3.0 mi Dover-CT State Line (2-795 ACSS, OH), In-Service 2025, replacing 3.5 mi of the old circuit; the Gold Book narrative dates Dover's in-service to December 2025.",
+   "docket": "",
+   "caiso_id": "543",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+   ]
+  },
+  {
+   "key": "gb-ngrid-austin-road-substation",
+   "name": "Austin Road 345/230 kV Substation (new, Smart Path Connect)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "National Grid",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Austin Road Substation (Glenfield)",
+     "state": "NY",
+     "county": "Lewis",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-10",
+   "stage": "built",
+   "stage_basis": "Gold Book lists 'SPCP: Austin Road 345 kV Substation' as In-Service 2025; National Grid's PSC notice says the Austin Road - Edic Line 11 was energized October 8, 2025, and NYPA describes Austin Road (Town of Glenfield) as a new substation.",
+   "docket": "21-T-0340",
+   "caiso_id": "1125",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B804FE499-0000-C12E-8CA7-F547F681A4FA%7D",
+    "https://www.nypa.gov/News/Press-Releases/2026/20260622-smarthpath"
+   ]
+  },
+  {
+   "key": "gb-ngrid-austin-road-edic",
+   "name": "Austin Road - Edic 345 kV (Line 11, Smart Path Connect)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "NY",
+   "utility": "National Grid",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Austin Road Substation",
+     "state": "NY",
+     "county": "Lewis",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Edic Substation (Marcy)",
+     "state": "NY",
+     "county": "Oneida",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 42.5,
+   "in_service": "2025-10",
+   "stage": "built",
+   "stage_basis": "Gold Book lists this 42.5-mile 345 kV rebuild (replacing 230 kV Chases Lake-Porter) as In-Service 2026; National Grid notified the PSC it was energized October 8, 2025.",
+   "docket": "21-T-0340",
+   "caiso_id": "1125",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B804FE499-0000-C12E-8CA7-F547F681A4FA%7D",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BAB1E2958-25F5-4B4A-88EF-29BDB0806B4E%7D"
+   ]
+  },
+  {
+   "key": "gb-nypa-ngrid-adirondack-austin-road",
+   "name": "Adirondack - Austin Road 345 kV (Line 13, Smart Path Connect)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "NY",
+   "utility": "NYPA / National Grid",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Adirondack Substation (Croghan)",
+     "state": "NY",
+     "county": "Lewis",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Austin Road Substation",
+     "state": "NY",
+     "county": "Lewis",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 11.6,
+   "in_service": "2025-12",
+   "stage": "built",
+   "stage_basis": "Gold Book lists this 11.6-mile 345 kV rebuild of the Adirondack-Chases Lake 230 kV line as In-Service 2025 (NYISO gives only 'In-Service 2025' with no season; month set to December of that year).",
+   "docket": "21-T-0340",
+   "caiso_id": "1125",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BAB1E2958-25F5-4B4A-88EF-29BDB0806B4E%7D",
+    "https://www.nypa.gov/Power/Transmission/Transmission-Projects/Smart-Path-Connect"
+   ]
+  },
+  {
+   "key": "gb-ngrid-rector-road-austin-road",
+   "name": "Rector Road - Austin Road 230 kV (Line 10 extension, Smart Path Connect)",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "National Grid",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Rector Road",
+     "state": "NY",
+     "county": "",
+     "new": false,
+     "location_basis": "no coordinates or county stated in sources"
+    },
+    {
+     "name": "Austin Road Substation",
+     "state": "NY",
+     "county": "Lewis",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 1.0,
+   "miles_upgraded": 0,
+   "in_service": "2026-05",
+   "stage": "built",
+   "stage_basis": "Gold Book lists this 1.0-mile 230 kV extension for W 2026, but Smart Path Connect (Article VII Case 21-T-0340) was completed in May 2026 per NYPA; in_service is that completion month.",
+   "docket": "21-T-0340",
+   "caiso_id": "1125",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://www.nypa.gov/Power/Transmission/Transmission-Projects/Smart-Path-Connect",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BAB1E2958-25F5-4B4A-88EF-29BDB0806B4E%7D"
+   ]
+  },
+  {
+   "key": "gb-nypa-ngrid-adirondack-marcy",
+   "name": "Adirondack - Marcy 345 kV (Line 12, Smart Path Connect)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "NY",
+   "utility": "NYPA / National Grid",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Adirondack Substation (Croghan)",
+     "state": "NY",
+     "county": "Lewis",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Marcy Substation",
+     "state": "NY",
+     "county": "Oneida",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 52.6,
+   "in_service": "2026-05",
+   "stage": "built",
+   "stage_basis": "Gold Book lists this 52.6-mile 345 kV rebuild of the Adirondack-Porter 230 kV line for W 2026, but Smart Path Connect (Article VII Case 21-T-0340) was completed in May 2026 per NYPA; in_service is that completion month.",
+   "docket": "21-T-0340",
+   "caiso_id": "1125",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://www.nypa.gov/Power/Transmission/Transmission-Projects/Smart-Path-Connect",
+    "https://www.nypa.gov/News/Press-Releases/2026/20260622-smarthpath"
+   ]
+  },
+  {
+   "key": "gb-nypa-willis-patnode",
+   "name": "Willis - Patnode 230 kV (two circuits, Smart Path Connect rebuild)",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "NY",
+   "utility": "NYPA",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Willis",
+     "state": "NY",
+     "county": "Franklin",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Patnode",
+     "state": "NY",
+     "county": "Clinton",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 8.7,
+   "in_service": "2025-12",
+   "stage": "built",
+   "stage_basis": "Gold Book lists two rebuilt 8.7-mile Willis-Patnode 230 kV circuits (1272 ACSS) as In-Service 2025, retiring WPN1 (NYISO gives only 'In-Service 2025' with no season; month set to December of that year).",
+   "docket": "21-T-0340",
+   "caiso_id": "1125",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BAB1E2958-25F5-4B4A-88EF-29BDB0806B4E%7D"
+   ]
+  },
+  {
+   "key": "gb-nypa-moses-haverstock",
+   "name": "Moses - Haverstock 230 kV (line diversions into Haverstock, Smart Path Connect)",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "NYPA",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Moses (Massena)",
+     "state": "NY",
+     "county": "St. Lawrence",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Haverstock Substation (Massena)",
+     "state": "NY",
+     "county": "St. Lawrence",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 2.2,
+   "miles_upgraded": 0,
+   "in_service": "2026-05",
+   "stage": "built",
+   "stage_basis": "Gold Book rows divert existing Moses-Adirondack/Moses-Willis 230 kV circuits into Haverstock (2.2 mi, 2 ckts, In-Service 2025; 2.0 mi MA2, S 2026); Smart Path Connect (Article VII Case 21-T-0340) was completed in May 2026 per NYPA; in_service is that completion month.",
+   "docket": "21-T-0340",
+   "caiso_id": "1125",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://www.nypa.gov/Power/Transmission/Transmission-Projects/Smart-Path-Connect"
+   ]
+  },
+  {
+   "key": "gb-nypa-haverstock-adirondack",
+   "name": "Haverstock - Adirondack 345 kV (HA1/HA2, Smart Path Connect)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "NY",
+   "utility": "NYPA",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Haverstock Substation (Massena)",
+     "state": "NY",
+     "county": "St. Lawrence",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Adirondack Substation (Croghan)",
+     "state": "NY",
+     "county": "Lewis",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 84.4,
+   "in_service": "2026-03",
+   "stage": "built",
+   "stage_basis": "Gold Book lists HA2 (84.4 mi, In-Service 2025) and HA1 (83.7 mi, S 2026), converting the Moses-Adirondack 230 kV lines to 345 kV via Haverstock; NYPA told the PSC HA2 was energized October 13, 2025 and HA1 on March 27, 2026.",
+   "docket": "21-T-0340",
+   "caiso_id": "1125",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B7068E499-0000-C447-80CF-7A033EE81A59%7D",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B101D3F9D-0000-CA6E-AF99-F8341FEECB4B%7D"
+   ]
+  },
+  {
+   "key": "gb-nypa-haverstock-willis",
+   "name": "Haverstock - Willis 345 kV (HW1/HW2, Smart Path Connect)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "NY",
+   "utility": "NYPA",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Haverstock Substation (Massena)",
+     "state": "NY",
+     "county": "St. Lawrence",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Willis 345/230 kV Substation (Chateaugay)",
+     "state": "NY",
+     "county": "Franklin",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 35.5,
+   "in_service": "2026-05",
+   "stage": "built",
+   "stage_basis": "Gold Book lists HW2 (35.5 mi, In-Service 2025) and HW1 (35.0 mi, S 2026) rebuilding Moses-Willis 230 kV as 345 kV; Smart Path Connect (Article VII Case 21-T-0340) was completed in May 2026 per NYPA; in_service is that completion month.",
+   "docket": "21-T-0340",
+   "caiso_id": "1125",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://www.nypa.gov/Power/Transmission/Transmission-Projects/Smart-Path-Connect",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BAB1E2958-25F5-4B4A-88EF-29BDB0806B4E%7D"
+   ]
+  },
+  {
+   "key": "gb-nypa-willis-ryan",
+   "name": "Willis - Ryan 230 kV (WRY1/WRY2 rebuild, Smart Path Connect)",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "NY",
+   "utility": "NYPA",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Willis",
+     "state": "NY",
+     "county": "Franklin",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Ryan",
+     "state": "NY",
+     "county": "Clinton",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 6.6,
+   "in_service": "2026-05",
+   "stage": "built",
+   "stage_basis": "Gold Book lists Willis-Ryan 230 kV rebuilds (6.3 mi In-Service 2025; 6.6 mi S 2026); NYPA notified the PSC that Willis-Ryan 2 was energized May 21, 2026.",
+   "docket": "21-T-0340",
+   "caiso_id": "1125",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B10C04F9E-0000-C283-8084-4BDC812FABF1%7D"
+   ]
+  },
+  {
+   "key": "gb-nypa-willis-existing-willis-new",
+   "name": "Willis (existing) - Willis (new) 230 kV ties (Smart Path Connect)",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "NYPA",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Willis (existing)",
+     "state": "NY",
+     "county": "Franklin",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Willis 345/230 kV Substation (new)",
+     "state": "NY",
+     "county": "Franklin",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0.4,
+   "miles_upgraded": 0,
+   "in_service": "2026-05",
+   "stage": "built",
+   "stage_basis": "Gold Book lists two short 230 kV ties (0.3 mi In-Service 2025; 0.4 mi S 2026) between the existing and new Willis stations; Smart Path Connect (Article VII Case 21-T-0340) was completed in May 2026 per NYPA; in_service is that completion month.",
+   "docket": "21-T-0340",
+   "caiso_id": "1125",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://www.nypa.gov/Power/Transmission/Transmission-Projects/Smart-Path-Connect"
+   ]
+  },
+  {
+   "key": "gb-nypa-haverstock-substation",
+   "name": "Haverstock 345/230 kV Substation (new, Smart Path Connect)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "NYPA",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Haverstock Substation (Massena)",
+     "state": "NY",
+     "county": "St. Lawrence",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-05",
+   "stage": "built",
+   "stage_basis": "Gold Book lists Haverstock 230/345 kV transformers (In-Service 2025, S 2026) and the 'Haverstock 345 kV Substation' (S 2026); NYPA calls Haverstock in Massena a new substation and says the project was completed May 2026.",
+   "docket": "21-T-0340",
+   "caiso_id": "1125",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://www.nypa.gov/Power/Transmission/Transmission-Projects/Smart-Path-Connect",
+    "https://www.nypa.gov/News/Press-Releases/2026/20260622-smarthpath"
+   ]
+  },
+  {
+   "key": "gb-nypa-willis-345-substation",
+   "name": "Willis 345/230 kV Substation (new 'Willis Annex', Smart Path Connect)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "NYPA",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Willis Annex Substation (Chateaugay)",
+     "state": "NY",
+     "county": "Franklin",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-05",
+   "stage": "built",
+   "stage_basis": "Gold Book lists 'SPCP: New Willis 345 kV Substation' for S 2026; NYPA lists Willis Annex in Chateaugay as a new substation and says the project was completed May 2026.",
+   "docket": "21-T-0340",
+   "caiso_id": "1125",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://www.nypa.gov/Power/Transmission/Transmission-Projects/Smart-Path-Connect",
+    "https://www.nypa.gov/News/Press-Releases/2026/20260622-smarthpath"
+   ]
+  },
+  {
+   "key": "gb-nypa-adirondack-345-substation",
+   "name": "Adirondack 345 kV Substation (new, Smart Path Connect)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "NYPA",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Adirondack Substation (Croghan)",
+     "state": "NY",
+     "county": "Lewis",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-05",
+   "stage": "built",
+   "stage_basis": "Gold Book lists 'SPCP: Adirondack 345 kV Substation' for S 2026 (transformer In-Service 2025); NYPA lists Adirondack in Croghan as a new substation and says the project was completed May 2026.",
+   "docket": "21-T-0340",
+   "caiso_id": "1125",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://www.nypa.gov/Power/Transmission/Transmission-Projects/Smart-Path-Connect",
+    "https://www.nypa.gov/News/Press-Releases/2026/20260622-smarthpath"
+   ]
+  },
+  {
+   "key": "gb-nypa-transco-uniondale-hub-new-shore-road",
+   "name": "Uniondale Hub - New Shore Road 345 kV (Propel NY, underground)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "NYPA / New York Transco (Propel NY Energy)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Uniondale Hub",
+     "state": "NY",
+     "county": "Nassau",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "New Shore Road 345 kV",
+     "state": "NY",
+     "county": "Nassau",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 10.3,
+   "miles_upgraded": 0,
+   "in_service": "2030-06",
+   "stage": "approved",
+   "stage_basis": "Gold Book lists this LI PPTN (Propel NY) element for S 2030 (month is the season NYISO gives: S = June, W = December); PSC granted the Article VII certificate on September 17, 2026 (Case 24-T-0446); construction not yet started (limited site work expected late 2026, main construction 2027).",
+   "docket": "24-T-0446",
+   "caiso_id": "1289",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B704BB0A0-0000-CE2A-B931-5385AD35C0C2%7D"
+   ]
+  },
+  {
+   "key": "gb-nypa-transco-uniondale-hub-barrett",
+   "name": "Uniondale Hub - Barrett 345 kV (Propel NY, underground)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "NYPA / New York Transco (Propel NY Energy)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Uniondale Hub",
+     "state": "NY",
+     "county": "Nassau",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Barrett 345 kV (new)",
+     "state": "NY",
+     "county": "Nassau",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 8.8,
+   "miles_upgraded": 0,
+   "in_service": "2030-06",
+   "stage": "approved",
+   "stage_basis": "Gold Book lists this LI PPTN (Propel NY) element for S 2030 (month is the season NYISO gives: S = June, W = December); PSC granted the Article VII certificate on September 17, 2026 (Case 24-T-0446); construction not yet started (limited site work expected late 2026, main construction 2027).",
+   "docket": "24-T-0446",
+   "caiso_id": "1289",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B704BB0A0-0000-CE2A-B931-5385AD35C0C2%7D"
+   ]
+  },
+  {
+   "key": "gb-nypa-transco-uniondale-hub-tremont",
+   "name": "Uniondale Hub - Tremont 345 kV (Propel NY, underground)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "NYPA / New York Transco (Propel NY Energy)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Uniondale Hub",
+     "state": "NY",
+     "county": "Nassau",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Tremont",
+     "state": "NY",
+     "county": "Bronx",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 23.5,
+   "miles_upgraded": 0,
+   "in_service": "2030-06",
+   "stage": "approved",
+   "stage_basis": "Gold Book lists this LI PPTN (Propel NY) element for S 2030 (month is the season NYISO gives: S = June, W = December); PSC granted the Article VII certificate on September 17, 2026 (Case 24-T-0446); construction not yet started (limited site work expected late 2026, main construction 2027).",
+   "docket": "24-T-0446",
+   "caiso_id": "1289",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B704BB0A0-0000-CE2A-B931-5385AD35C0C2%7D"
+   ]
+  },
+  {
+   "key": "gb-nypa-transco-barrett-345-substation",
+   "name": "Barrett 345 kV Substation (new, Propel NY)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "NYPA / New York Transco (Propel NY Energy)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Barrett 345 kV (new)",
+     "state": "NY",
+     "county": "Nassau",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-06",
+   "stage": "approved",
+   "stage_basis": "Gold Book lists this LI PPTN (Propel NY) element for S 2030 (month is the season NYISO gives: S = June, W = December); PSC granted the Article VII certificate on September 17, 2026 (Case 24-T-0446); construction not yet started (limited site work expected late 2026, main construction 2027).",
+   "docket": "24-T-0446",
+   "caiso_id": "1289",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B704BB0A0-0000-CE2A-B931-5385AD35C0C2%7D"
+   ]
+  },
+  {
+   "key": "gb-nypa-transco-new-shore-road-substation",
+   "name": "New Shore Road 345 kV Substation (new, Propel NY)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "NYPA / New York Transco (Propel NY Energy)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "New Shore Road 345 kV",
+     "state": "NY",
+     "county": "Nassau",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-06",
+   "stage": "approved",
+   "stage_basis": "Gold Book lists this LI PPTN (Propel NY) element for S 2030 (month is the season NYISO gives: S = June, W = December); PSC granted the Article VII certificate on September 17, 2026 (Case 24-T-0446); construction not yet started (limited site work expected late 2026, main construction 2027).",
+   "docket": "24-T-0446",
+   "caiso_id": "1289",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B704BB0A0-0000-CE2A-B931-5385AD35C0C2%7D"
+   ]
+  },
+  {
+   "key": "gb-nypa-transco-new-shore-road-new-ruland-road",
+   "name": "New Shore Road - New Ruland Road 345 kV (Propel NY, underground)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "NYPA / New York Transco (Propel NY Energy)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "New Shore Road 345 kV",
+     "state": "NY",
+     "county": "Nassau",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "New Ruland Road 345 kV",
+     "state": "NY",
+     "county": "Suffolk",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 17.8,
+   "miles_upgraded": 0,
+   "in_service": "2030-06",
+   "stage": "approved",
+   "stage_basis": "Gold Book lists this LI PPTN (Propel NY) element for S 2030 (month is the season NYISO gives: S = June, W = December); PSC granted the Article VII certificate on September 17, 2026 (Case 24-T-0446); construction not yet started (limited site work expected late 2026, main construction 2027).",
+   "docket": "24-T-0446",
+   "caiso_id": "1289",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B704BB0A0-0000-CE2A-B931-5385AD35C0C2%7D"
+   ]
+  },
+  {
+   "key": "gb-nypa-transco-new-shore-road-sprain-brook",
+   "name": "New Shore Road - Sprain Brook 345 kV, two circuits (Propel NY, underground/submarine)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "NYPA / New York Transco (Propel NY Energy)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "New Shore Road 345 kV",
+     "state": "NY",
+     "county": "Nassau",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Sprain Brook",
+     "state": "NY",
+     "county": "Westchester",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 18.2,
+   "miles_upgraded": 0,
+   "in_service": "2030-06",
+   "stage": "approved",
+   "stage_basis": "Gold Book lists this LI PPTN (Propel NY) element for S 2030 (month is the season NYISO gives: S = June, W = December); PSC granted the Article VII certificate on September 17, 2026 (Case 24-T-0446); construction not yet started (limited site work expected late 2026, main construction 2027).",
+   "docket": "24-T-0446",
+   "caiso_id": "1289",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B704BB0A0-0000-CE2A-B931-5385AD35C0C2%7D"
+   ]
+  },
+  {
+   "key": "gb-nypa-transco-shore-road-syosset",
+   "name": "Shore Road - Syosset 138 kV (Propel NY, underground)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "NYPA / New York Transco (Propel NY Energy)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Shore Road",
+     "state": "NY",
+     "county": "Nassau",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Syosset",
+     "state": "NY",
+     "county": "Nassau",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 11.2,
+   "miles_upgraded": 0,
+   "in_service": "2030-06",
+   "stage": "approved",
+   "stage_basis": "Gold Book lists this LI PPTN (Propel NY) element for S 2030 (month is the season NYISO gives: S = June, W = December); PSC granted the Article VII certificate on September 17, 2026 (Case 24-T-0446); construction not yet started (limited site work expected late 2026, main construction 2027).",
+   "docket": "24-T-0446",
+   "caiso_id": "1289",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B704BB0A0-0000-CE2A-B931-5385AD35C0C2%7D"
+   ]
+  },
+  {
+   "key": "gb-nypa-transco-new-rochelle-substation",
+   "name": "New Rochelle 345 kV Transition Substation (new, Propel NY)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "NYPA / New York Transco (Propel NY Energy)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "New Rochelle transition station",
+     "state": "NY",
+     "county": "Westchester",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-06",
+   "stage": "approved",
+   "stage_basis": "Gold Book lists this LI PPTN (Propel NY) element for S 2030 (month is the season NYISO gives: S = June, W = December); PSC granted the Article VII certificate on September 17, 2026 (Case 24-T-0446); construction not yet started (limited site work expected late 2026, main construction 2027).",
+   "docket": "24-T-0446",
+   "caiso_id": "1289",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B704BB0A0-0000-CE2A-B931-5385AD35C0C2%7D"
+   ]
+  },
+  {
+   "key": "gb-nypa-transco-new-ruland-road-substation",
+   "name": "New Ruland Road 345/138 kV Substation (new, Propel NY)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "NYPA / New York Transco (Propel NY Energy)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "New Ruland Road 345 kV",
+     "state": "NY",
+     "county": "Suffolk",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-06",
+   "stage": "approved",
+   "stage_basis": "Gold Book lists this LI PPTN (Propel NY) element for S 2030 (month is the season NYISO gives: S = June, W = December) (new 345 kV and 138 kV substations with three 345/138 kV transformers); PSC granted the Article VII certificate on September 17, 2026 (Case 24-T-0446); construction not yet started (limited site work expected late 2026, main construction 2027).",
+   "docket": "24-T-0446",
+   "caiso_id": "1289",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B704BB0A0-0000-CE2A-B931-5385AD35C0C2%7D"
+   ]
+  },
+  {
+   "key": "gb-lipa-syosset-oakwood",
+   "name": "Syosset - Oakwood 138 kV (reconfigure to 2-cable circuit, Propel NY)",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "NY",
+   "utility": "LIPA / PSEG Long Island",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Syosset",
+     "state": "NY",
+     "county": "Nassau",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Oakwood",
+     "state": "NY",
+     "county": "",
+     "new": false,
+     "location_basis": "no coordinates or county stated in sources"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 2.7,
+   "in_service": "2030-06",
+   "stage": "approved",
+   "stage_basis": "Gold Book lists this LI PPTN (Propel NY) element for S 2030 (month is the season NYISO gives: S = June, W = December); PSC granted the Article VII certificate on September 17, 2026 (Case 24-T-0446); construction not yet started (limited site work expected late 2026, main construction 2027).",
+   "docket": "24-T-0446",
+   "caiso_id": "1289",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B704BB0A0-0000-CE2A-B931-5385AD35C0C2%7D"
+   ]
+  },
+  {
+   "key": "gb-lipa-syosset-greenlawn",
+   "name": "Syosset - Greenlawn 138 kV (reconfigure to 2-cable circuit, Propel NY)",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "NY",
+   "utility": "LIPA / PSEG Long Island",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Syosset",
+     "state": "NY",
+     "county": "Nassau",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Greenlawn",
+     "state": "NY",
+     "county": "Suffolk",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 2.7,
+   "in_service": "2030-06",
+   "stage": "approved",
+   "stage_basis": "Gold Book lists this LI PPTN (Propel NY) element for S 2030 (month is the season NYISO gives: S = June, W = December); PSC granted the Article VII certificate on September 17, 2026 (Case 24-T-0446); construction not yet started (limited site work expected late 2026, main construction 2027).",
+   "docket": "24-T-0446",
+   "caiso_id": "1289",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B704BB0A0-0000-CE2A-B931-5385AD35C0C2%7D"
+   ]
+  },
+  {
+   "key": "gb-lipa-uniondale-hub-ruland-road",
+   "name": "Uniondale Hub - Ruland Road 345 kV (convert 138-467/567 to 345 kV, Propel NY)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "NY",
+   "utility": "LIPA / PSEG Long Island",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Uniondale Hub",
+     "state": "NY",
+     "county": "Nassau",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Newbridge Road",
+     "state": "NY",
+     "county": "Nassau",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Ruland Road",
+     "state": "NY",
+     "county": "Suffolk",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0.6,
+   "miles_upgraded": 12.4,
+   "in_service": "2030-06",
+   "stage": "approved",
+   "stage_basis": "Gold Book lists this LI PPTN (Propel NY) element for S 2030 (month is the season NYISO gives: S = June, W = December) (reconductor/convert 12.4 mi of 138 kV circuits 138-467/567 to 345 kV plus a new 0.6-mile 345 kV link at Newbridge Road joining them); PSC granted the Article VII certificate on September 17, 2026 (Case 24-T-0446); construction not yet started (limited site work expected late 2026, main construction 2027).",
+   "docket": "24-T-0446",
+   "caiso_id": "1289",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B704BB0A0-0000-CE2A-B931-5385AD35C0C2%7D"
+   ]
+  },
+  {
+   "key": "gb-coned-gowanus-greenwood-3",
+   "name": "Gowanus - Greenwood 138 kV PAR-regulated feeder (third connection)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "Con Edison",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Gowanus",
+     "state": "NY",
+     "county": "Kings",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Greenwood",
+     "state": "NY",
+     "county": "Kings",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-12",
+   "stage": "built",
+   "stage_basis": "Gold Book lists a new PAR-regulated underground feeder Gowanus-Greenwood (345/138 kV xfmr/PAR/feeder, third connection) as In-Service 2025 (NYISO gives only 'In-Service 2025' with no season; month set to December of that year); length not given.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+   ]
+  },
+  {
+   "key": "gb-coned-gowanus-greenwood-4",
+   "name": "Gowanus - Greenwood 138 kV PAR-regulated feeder (fourth connection)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "Con Edison",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Gowanus",
+     "state": "NY",
+     "county": "Kings",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Greenwood",
+     "state": "NY",
+     "county": "Kings",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-06",
+   "stage": "approved",
+   "stage_basis": "Gold Book lists the fourth Gowanus-Greenwood PAR-regulated underground feeder as a firm plan for S 2026 (month is the season NYISO gives: S = June, W = December); Con Ed's 2025 LTP lists it for 2026; in-service not confirmed; length not given.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://www.nyiso.com/documents/20142/55462035/03b_CECONY_2025_LTP.pdf"
+   ]
+  },
+  {
+   "key": "gb-coned-goethals-fox-hills",
+   "name": "Goethals - Fox Hills 138 kV PAR-regulated feeder",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "Con Edison",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Goethals",
+     "state": "NY",
+     "county": "Richmond",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Fox Hills",
+     "state": "NY",
+     "county": "Richmond",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-12",
+   "stage": "built",
+   "stage_basis": "Gold Book lists a new PAR-regulated underground feeder Goethals-Fox Hills (345/138 kV xfmr/PAR/feeder) as In-Service 2025 (NYISO gives only 'In-Service 2025' with no season; month set to December of that year); length not given.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+   ]
+  },
+  {
+   "key": "gb-coned-astoria-east-astoria-annex",
+   "name": "Astoria East - Astoria Annex 138 kV feeder 34091 reconductor",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "NY",
+   "utility": "Con Edison",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Astoria East",
+     "state": "NY",
+     "county": "Queens",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Astoria Annex",
+     "state": "NY",
+     "county": "Queens",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-12",
+   "stage": "built",
+   "stage_basis": "Gold Book lists reconductoring of 138 kV feeder 34091 (elective SUF for Q631 CHPE) as In-Service 2025 (NYISO gives only 'In-Service 2025' with no season; month set to December of that year); length not given.",
+   "docket": "",
+   "caiso_id": "631",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+   ]
+  },
+  {
+   "key": "gb-coned-brooklyn-clean-energy-hub-substation",
+   "name": "Brooklyn Clean Energy Hub 345 kV Substation (new)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "Con Edison",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Brooklyn Clean Energy Hub (Vinegar Hill)",
+     "state": "NY",
+     "county": "Kings",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-06",
+   "stage": "in construction",
+   "stage_basis": "Gold Book lists a new 345 kV substation for S 2028 (month is the season NYISO gives: S = June, W = December); the PSC approved construction on April 20, 2023 and Con Ed's 2025 LTP says it is constructing BCEH (in service summer 2028), intercepting the 345 kV Farragut-Rainey feeders 61/62/63.",
+   "docket": "20-E-0197",
+   "caiso_id": "",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BB0769F87-0000-C216-A848-DE5E9498D5ED%7D",
+    "https://www.nyiso.com/documents/20142/55462035/03b_CECONY_2025_LTP.pdf",
+    "https://www.brooklynpaper.com/coned-brooklyn-clean-energy-hub-rises"
+   ]
+  },
+  {
+   "key": "gb-coned-brooklyn-clean-energy-hub-gateway-park",
+   "name": "Brooklyn Clean Energy Hub - Gateway Park 138 kV feeders (underground)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "Con Edison",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Brooklyn Clean Energy Hub (Vinegar Hill)",
+     "state": "NY",
+     "county": "Kings",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Gateway Park Area Substation (Canarsie)",
+     "state": "NY",
+     "county": "Kings",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 7.5,
+   "miles_upgraded": 0,
+   "in_service": "2028-06",
+   "stage": "in construction",
+   "stage_basis": "Gold Book lists BCEH - Gateway Park (345/138/13 kV new area substation) for S 2028 (month is the season NYISO gives: S = June, W = December); Con Ed says Gateway Park construction runs June 2026-May 2028 and includes 7.5 miles of underground feeders from BCEH, and its LTP says these are 138 kV lines.",
+   "docket": "20-E-0197",
+   "caiso_id": "",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "http://www.coned.com/en/our-energy-future/our-energy-vision/where-we-are-going/gateway-park-substation",
+    "https://www.nyiso.com/documents/20142/37987483/07_Con_Edison_LTP_Update_BCEH_June%205_2023.pdf/3d630ccd-cafb-2172-432a-daa1c0c6bffb"
+   ]
+  },
+  {
+   "key": "gb-nypa-ngrid-stamp-substation",
+   "name": "STAMP 345/115 kV Substation (new, loops Dysinger-area 345 kV lines)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "NYPA / National Grid",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "STAMP Substation (Town of Alabama)",
+     "state": "NY",
+     "county": "Genesee",
+     "new": true,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-12",
+   "stage": "in construction",
+   "stage_basis": "Gold Book lists the STAMP 345/115 kV load-interconnection substation (Q580) for W 2026 (month is the season NYISO gives: S = June, W = December); NYPA describes it as a new 345 kV substation looping in two NYPA 345 kV lines, and GCEDC (site developer) reports it under construction and energizing in 2026.",
+   "docket": "",
+   "caiso_id": "580",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://www.nyiso.com/documents/20142/38502351/NYPA-Transmission%20Plan%20Update-06292023.pdf/79dbec98-1622-3c28-e4d7-5470a1dbaf6f",
+    "http://www.gcedc.com/stamp"
+   ]
+  },
+  {
+   "key": "gb-o-r-burns-west-nyack",
+   "name": "Burns - West Nyack 138 kV (Line 705, underground)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "Orange & Rockland",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Burns (Nanuet)",
+     "state": "NY",
+     "county": "Rockland",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "West Nyack",
+     "state": "NY",
+     "county": "Rockland",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 5.5,
+   "miles_upgraded": 0,
+   "in_service": "2027-06",
+   "stage": "in construction",
+   "stage_basis": "Gold Book lists this new 5.5-mile 138 kV underground line for S 2027 (month is the season NYISO gives: S = June, W = December); the PSC granted the Article VII certificate February 16, 2024 and O&R reported it under construction in May 2026 for completion in early 2027.",
+   "docket": "21-T-0569",
+   "caiso_id": "",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B6041B38D-0000-C01E-B003-B7FF35BBA5E7%7D",
+    "https://www.oru.com/en/about-us/media-center/news/2026/05-20/oru-is-ready-for-every-season"
+   ]
+  },
+  {
+   "key": "gb-lipa-southampton-deerfield",
+   "name": "Southampton - Deerfield 138 kV-design circuit (operated at 69 kV, underground)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "LIPA / PSEG Long Island",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Southampton",
+     "state": "NY",
+     "county": "Suffolk",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Deerfield",
+     "state": "NY",
+     "county": "Suffolk",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 4,
+   "miles_upgraded": 0,
+   "in_service": "2027-06",
+   "stage": "planned",
+   "stage_basis": "Gold Book non-firm plan: new 4-mile 138 kV-design underground circuit to be operated at 69 kV, S 2027 (month is the season NYISO gives: S = June, W = December); not checked further.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+   ]
+  },
+  {
+   "key": "gb-lipa-riverhead-brookhaven",
+   "name": "Riverhead - Brookhaven 138 kV (convert 69 kV overhead circuit)",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "NY",
+   "utility": "LIPA / PSEG Long Island",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Riverhead",
+     "state": "NY",
+     "county": "Suffolk",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "Brookhaven",
+     "state": "NY",
+     "county": "Suffolk",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 9.43,
+   "in_service": "2031-06",
+   "stage": "planned",
+   "stage_basis": "Gold Book non-firm plan: convert the existing 9.43-mile 69 kV overhead circuit to 138 kV, S 2031 (month is the season NYISO gives: S = June, W = December); not checked further.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+   ]
+  },
+  {
+   "key": "gb-ngrid-ames-road-substation",
+   "name": "Ames Road (Marshville) 345/115 kV Station (new)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "National Grid",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Ames Road Station (Marshville)",
+     "state": "NY",
+     "county": "",
+     "new": true,
+     "location_basis": "no coordinates or county stated in sources"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-06",
+   "stage": "planned",
+   "stage_basis": "Gold Book non-firm plan (Q1672, CLCPA): construct a new 345/115 kV breaker-and-a-half station, S 2028 (month is the season NYISO gives: S = June, W = December); not checked further.",
+   "docket": "",
+   "caiso_id": "1672",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf"
+   ]
+  },
+  {
+   "key": "gb-nyseg-stolle-rd-high-sheldon",
+   "name": "Stolle Road - High Sheldon 230 kV (Line 67 rebuild)",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "NY",
+   "utility": "NYSEG",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Stolle Road (Elma)",
+     "state": "NY",
+     "county": "Erie",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    },
+    {
+     "name": "High Sheldon (Sheldon)",
+     "state": "NY",
+     "county": "Wyoming",
+     "new": false,
+     "location_basis": "no coordinates; county only"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 11.0,
+   "in_service": "2031-06",
+   "stage": "planned",
+   "stage_basis": "Gold Book non-firm plan for S 2031 (month is the season NYISO gives: S = June, W = December); CLCPA Phase 2 rebuild with an Article VII Joint Proposal filed August 2026 (Case 25-T-0470) but no certificate found; NYSEG's EWTS fact sheet targets in-service 2029.",
+   "docket": "25-T-0470",
+   "caiso_id": "",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/2226333/2026-Gold-Book-Public.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B60C286A0-0000-C937-BC87-6657C2F66DD3%7D",
+    "https://ewts-ny.com/assets/document-library/EWTS-L67-Fact-Sheet-v7-FINAL.pdf"
+   ]
+  },
+  {
+   "key": "rsp-1552",
+   "name": "Woburn - Wakefield Junction 345 kV (underground cable)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "MA",
+   "utility": "Eversource; National Grid",
+   "market": "ISO-NE",
+   "ends": [
+    {
+     "name": "Woburn",
+     "state": "MA",
+     "county": "Middlesex",
+     "new": false
+    },
+    {
+     "name": "Wakefield Junction",
+     "state": "MA",
+     "county": "Middlesex",
+     "new": false
+    }
+   ],
+   "miles_new": 8.5,
+   "miles_upgraded": 0,
+   "in_service": "2024-03",
+   "stage": "built",
+   "stage_basis": "ISO-NE Oct 2026 RSP list shows RSP 1552 (Eversource cable, with National Grid's Wakefield terminal as RSP 1551) In-service 2024-03; Eversource says the ~8.5-mile line was energized March 25, 2024.",
+   "docket": "MA EFSB 15-04",
+   "caiso_id": "1552; 1551",
+   "sources": [
+    "https://www.iso-ne.com/static-assets/documents/100041/final_rsp_project_list_oct2026_revised.xlsx",
+    "https://www.iso-ne.com/system-planning/system-plans-studies/rsp/rsp-project-list-and-the-asset-condition-list",
+    "https://www.eversource.com/content/residential/about/transmission-distribution/projects/massachusetts-projects/woburn-to-wakefield-line-project"
+   ]
+  },
+  {
+   "key": "rsp-1816",
+   "name": "Coopers Mills - Maine Yankee 345 kV (Section 3027)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "ME",
+   "utility": "Central Maine Power",
+   "market": "ISO-NE",
+   "ends": [
+    {
+     "name": "Coopers Mills",
+     "state": "ME",
+     "county": "Kennebec",
+     "new": false
+    },
+    {
+     "name": "Maine Yankee",
+     "state": "ME",
+     "county": "Lincoln",
+     "new": false
+    }
+   ],
+   "miles_new": 26.5,
+   "miles_upgraded": 0,
+   "in_service": "2025-09",
+   "stage": "built",
+   "stage_basis": "ISO-NE Oct 2026 RSP list shows RSP 1816 'Construct new Coopers Mills to Maine Yankee 345 kV line' (QP 639 / NECEC network upgrade) In-service 2025-09; the 26.5-mile length is from the Maine DEP NECEC order.",
+   "docket": "ME PUC 2017-00232",
+   "caiso_id": "1816",
+   "sources": [
+    "https://www.iso-ne.com/static-assets/documents/100041/final_rsp_project_list_oct2026_revised.xlsx",
+    "https://www.iso-ne.com/system-planning/system-plans-studies/rsp/rsp-project-list-and-the-asset-condition-list",
+    "https://mobile.maine.gov/dep/ftp/projects/necec/archive/2022-07-21%20NECEC%20Decision.pdf"
+   ]
+  },
+  {
+   "key": "rsp-1819",
+   "name": "NECEC HVDC: Maine/Canada border (Beattie Twp) - Merrill Road \u00b1320 kV",
+   "kv": 320,
+   "project_type": "new line",
+   "state": "ME",
+   "utility": "NECEC Transmission LLC (Avangrid)",
+   "market": "ISO-NE",
+   "ends": [
+    {
+     "name": "Maine/Canada border",
+     "state": "ME",
+     "county": "Franklin",
+     "new": true,
+     "lat": 45.51566,
+     "lon": -70.72097,
+     "location_basis": "DOE Presidential Permit PP-438: border crossing in NW corner of Beattie Township at 45\u00b030'56.39\"N, 70\u00b043'15.48\"W"
+    },
+    {
+     "name": "Merrill Road converter",
+     "state": "ME",
+     "county": "Androscoggin",
+     "new": true
+    }
+   ],
+   "miles_new": 145,
+   "miles_upgraded": 0,
+   "in_service": "2025-12",
+   "stage": "built",
+   "stage_basis": "ISO-NE Oct 2026 RSP list shows RSP 1819 In-service 2025-12 (list gives 207 miles Appalaches-Merrill Road; the U.S. part is 145 miles per the NECEC TOA); Avangrid reports commercial operation January 16, 2026.",
+   "docket": "ME PUC 2017-00232; DOE PP-438",
+   "caiso_id": "1819",
+   "sources": [
+    "https://www.iso-ne.com/static-assets/documents/100041/final_rsp_project_list_oct2026_revised.xlsx",
+    "https://www.iso-ne.com/system-planning/system-plans-studies/rsp/rsp-project-list-and-the-asset-condition-list",
+    "https://www.iso-ne.com/static-assets/documents/100024/necec_transmission_operators_agreement.pdf",
+    "https://www.energy.gov/oe/articles/pp-438-necec-presidential-permit",
+    "https://www.avangrid.com/w/avangrid-s-new-england-clean-energy-connect-project-is-complete-and-energized"
+   ]
+  },
+  {
+   "key": "rsp-1820",
+   "name": "Merrill Road HVDC Converter Substation 345 kV",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "ME",
+   "utility": "NECEC Transmission LLC (Avangrid)",
+   "market": "ISO-NE",
+   "ends": [
+    {
+     "name": "Merrill Road converter (Lewiston)",
+     "state": "ME",
+     "county": "Androscoggin",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-12",
+   "stage": "built",
+   "stage_basis": "ISO-NE Oct 2026 RSP list shows RSP 1820 'Construct a new HVDC Converter Terminal at Merrill Road Substation' In-service 2025-12 (345 kV AC / \u00b1320 kV DC per NECEC TOA).",
+   "docket": "ME PUC 2017-00232",
+   "caiso_id": "1820",
+   "sources": [
+    "https://www.iso-ne.com/static-assets/documents/100041/final_rsp_project_list_oct2026_revised.xlsx",
+    "https://www.iso-ne.com/system-planning/system-plans-studies/rsp/rsp-project-list-and-the-asset-condition-list",
+    "https://www.iso-ne.com/static-assets/documents/100024/necec_transmission_operators_agreement.pdf"
+   ]
+  },
+  {
+   "key": "rsp-1821",
+   "name": "Merrill Road - Larrabee Road 345 kV (Section 3007)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "ME",
+   "utility": "NECEC Transmission LLC (Avangrid)",
+   "market": "ISO-NE",
+   "ends": [
+    {
+     "name": "Merrill Road converter",
+     "state": "ME",
+     "county": "Androscoggin",
+     "new": true
+    },
+    {
+     "name": "Larrabee Road",
+     "state": "ME",
+     "county": "Androscoggin",
+     "new": false
+    }
+   ],
+   "miles_new": 1.2,
+   "miles_upgraded": 0,
+   "in_service": "2025-05",
+   "stage": "built",
+   "stage_basis": "ISO-NE Oct 2026 RSP list shows RSP 1821 In-service 2025-05; the RSP row says 1.6 miles but the NECEC TOA and DOE permit give 1.2 miles (1.2 used).",
+   "docket": "ME PUC 2017-00232",
+   "caiso_id": "1821",
+   "sources": [
+    "https://www.iso-ne.com/static-assets/documents/100041/final_rsp_project_list_oct2026_revised.xlsx",
+    "https://www.iso-ne.com/system-planning/system-plans-studies/rsp/rsp-project-list-and-the-asset-condition-list",
+    "https://www.iso-ne.com/static-assets/documents/100024/necec_transmission_operators_agreement.pdf"
+   ]
+  },
+  {
+   "key": "rsp-1870",
+   "name": "Bourne - West Barnstable 345 kV (Mid-Cape line conversion from 115 kV)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "MA",
+   "utility": "Eversource",
+   "market": "ISO-NE",
+   "ends": [
+    {
+     "name": "Bourne 345 kV switching station",
+     "state": "MA",
+     "county": "Barnstable",
+     "new": true
+    },
+    {
+     "name": "West Barnstable",
+     "state": "MA",
+     "county": "Barnstable",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 12.5,
+   "in_service": "2029-12",
+   "stage": "in construction",
+   "stage_basis": "ISO-NE Oct 2026 RSP list shows RSP 1870 'Convert the planned 115 kV Mid-Cape line to 345 kV' (QP 700) Under Construction, in service 2029-12; MA EFSB approved the project change July 23, 2025 (line ~12.5 miles).",
+   "docket": "MA EFSB 19-06A / D.P.U. 19-142A/19-143A/23-22",
+   "caiso_id": "1870",
+   "sources": [
+    "https://www.iso-ne.com/static-assets/documents/100041/final_rsp_project_list_oct2026_revised.xlsx",
+    "https://www.iso-ne.com/system-planning/system-plans-studies/rsp/rsp-project-list-and-the-asset-condition-list",
+    "https://www.mass.gov/info-details/mid-cape-reliability-project-change"
+   ]
+  },
+  {
+   "key": "rsp-1866",
+   "name": "Bourne 345 kV Switching Station (new)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "MA",
+   "utility": "Eversource",
+   "market": "ISO-NE",
+   "ends": [
+    {
+     "name": "Bourne 345 kV switching station (Joint Base Cape Cod)",
+     "state": "MA",
+     "county": "Barnstable",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-12",
+   "stage": "approved",
+   "stage_basis": "ISO-NE Oct 2026 RSP list shows RSP 1866 'Construct a new Bourne 345 kV station' Planned for 2029-12, and the MA EFSB issued its final decision approving the new 345 kV Bourne switching station on July 23, 2025.",
+   "docket": "MA EFSB 19-06A / D.P.U. 19-142A/19-143A/23-22",
+   "caiso_id": "1866",
+   "sources": [
+    "https://www.iso-ne.com/static-assets/documents/100041/final_rsp_project_list_oct2026_revised.xlsx",
+    "https://www.iso-ne.com/system-planning/system-plans-studies/rsp/rsp-project-list-and-the-asset-condition-list",
+    "https://www.mass.gov/info-details/mid-cape-reliability-project-change"
+   ]
+  },
+  {
+   "key": "rsp-1930",
+   "name": "East Granby 345 kV Switchyard (new, QP 1192)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "CT",
+   "utility": "Eversource",
+   "market": "ISO-NE",
+   "ends": [
+    {
+     "name": "East Granby 345 kV switchyard",
+     "state": "CT",
+     "county": "Hartford",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-10",
+   "stage": "planned",
+   "stage_basis": "ISO-NE Oct 2026 RSP list shows RSP 1930 'Installation of a new 345 kV, 3-breaker ring bus switchyard in East Granby' Planned (I.3.9 approved 2024-05-28), in service 2027-10; no Siting Council approval found.",
+   "docket": "",
+   "caiso_id": "1930",
+   "sources": [
+    "https://www.iso-ne.com/static-assets/documents/100041/final_rsp_project_list_oct2026_revised.xlsx",
+    "https://www.iso-ne.com/system-planning/system-plans-studies/rsp/rsp-project-list-and-the-asset-condition-list"
+   ]
+  },
+  {
+   "key": "rsp-1938",
+   "name": "Ellington 345 kV Switchyard on Line 3419 (new, QP 1245)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "CT",
+   "utility": "Eversource",
+   "market": "ISO-NE",
+   "ends": [
+    {
+     "name": "Ellington 345 kV switchyard (3419 line)",
+     "state": "CT",
+     "county": "Tolland",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-10",
+   "stage": "planned",
+   "stage_basis": "ISO-NE Oct 2026 RSP list shows RSP 1938 'Installation of a new 345 kV, 3-breaker ring bus switchyard on the line 3419 in Ellington, CT' Planned (I.3.9 approved 2024-10-01), in service 2028-10; no Siting Council approval found.",
+   "docket": "",
+   "caiso_id": "1938",
+   "sources": [
+    "https://www.iso-ne.com/static-assets/documents/100041/final_rsp_project_list_oct2026_revised.xlsx",
+    "https://www.iso-ne.com/system-planning/system-plans-studies/rsp/rsp-project-list-and-the-asset-condition-list"
+   ]
+  },
+  {
+   "key": "acl-543",
+   "name": "West Farnum - Kent County 345 kV (Line 332 rebuild)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "RI",
+   "utility": "Rhode Island Energy",
+   "market": "ISO-NE",
+   "ends": [
+    {
+     "name": "West Farnum",
+     "state": "RI",
+     "county": "Providence",
+     "new": false
+    },
+    {
+     "name": "Kent County",
+     "state": "RI",
+     "county": "Kent",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 21.4,
+   "in_service": "2029-06",
+   "stage": "planned",
+   "stage_basis": "ISO-NE Oct 2026 Asset Condition List shows ACL 543 '332 West Farnum - Kent County 345kV Line Rebuild' Proposed for 2029-06 (full rebuild, reconductor 21.4 mi with 2-1590 ACSS); RI EFSB docket SB-2026-03 still pending (public hearing Dec 2026).",
+   "docket": "RI EFSB SB-2026-03",
+   "caiso_id": "543",
+   "sources": [
+    "https://www.iso-ne.com/static-assets/documents/100041/final_asset_condition_list_oct2026_revised.xlsx",
+    "https://www.iso-ne.com/system-planning/system-plans-studies/rsp/rsp-project-list-and-the-asset-condition-list",
+    "https://www.iso-ne.com/static-assets/documents/100035/a2.5_332_345_kv_rie_pac_presentation.pdf",
+    "https://ripuc.ri.gov/sites/g/files/xkgbur841/files/2026-11/SB-2026-03%20Notice%20of%20Public%20Comment%20Hearing%2012-1-2026%20Final.pdf"
+   ]
+  },
+  {
+   "key": "acl-431",
+   "name": "Scovill Rock - East of Hurd State Park 345 kV (Lines 362/376 rebuild incl. CT River crossing)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "CT",
+   "utility": "Eversource",
+   "market": "ISO-NE",
+   "ends": [
+    {
+     "name": "Scovill Rock",
+     "state": "CT",
+     "county": "Middlesex",
+     "new": false
+    },
+    {
+     "name": "East of Hurd State Park (Haddam)",
+     "state": "CT",
+     "county": "Middlesex",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 2.4,
+   "in_service": "2026-12",
+   "stage": "in construction",
+   "stage_basis": "ISO-NE Oct 2026 Asset Condition List shows ACL 431 'Hurd State Park and CT River Crossing Rebuild Project - Lines 362, 376, 1772' Under Construction for 2026-12; CT Siting Council Petition 1679 (rebuild and reconductor ~2.4 mi of shared ROW) approved Dec 15, 2025.",
+   "docket": "CT Siting Council Petition 1679",
+   "caiso_id": "431",
+   "sources": [
+    "https://www.iso-ne.com/static-assets/documents/100041/final_asset_condition_list_oct2026_revised.xlsx",
+    "https://www.iso-ne.com/system-planning/system-plans-studies/rsp/rsp-project-list-and-the-asset-condition-list",
+    "https://portal.ct.gov/csc/3_petitions/petition-nos-1601-1700/pe1679",
+    "https://www.iso-ne.com/static-assets/documents/100031/a02.2_pac_connecticut_river_crossing_project_update.pdf"
+   ]
+  },
+  {
+   "key": "acl-432",
+   "name": "East of Hurd State Park - Haddam Neck 345 kV (Lines 362/376 reconductor)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "CT",
+   "utility": "Eversource",
+   "market": "ISO-NE",
+   "ends": [
+    {
+     "name": "East of Hurd State Park (Haddam)",
+     "state": "CT",
+     "county": "Middlesex",
+     "new": false
+    },
+    {
+     "name": "Haddam Neck",
+     "state": "CT",
+     "county": "Middlesex",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 2.4,
+   "in_service": "2025-07",
+   "stage": "built",
+   "stage_basis": "ISO-NE Oct 2026 Asset Condition List shows ACL 432 'Reconductoring East of Hurd State Park to Haddam Neck - Lines 362, 376, 1772' In-service 2025-07 (Eversource PAC: 2.4 mi of 362 and 2.3 mi of 376 reconductored with bundled 1590 ACSS).",
+   "docket": "CT Siting Council Petition 1565",
+   "caiso_id": "432",
+   "sources": [
+    "https://www.iso-ne.com/static-assets/documents/100041/final_asset_condition_list_oct2026_revised.xlsx",
+    "https://www.iso-ne.com/system-planning/system-plans-studies/rsp/rsp-project-list-and-the-asset-condition-list",
+    "https://www.iso-ne.com/static-assets/documents/100007/a03_2024_01_18_hurd_state_park_corridor_rebuild.pdf"
+   ]
+  },
+  {
+   "key": "acl-356",
+   "name": "Haddam - East Haddam Junction 345 kV (Line 348 CT River crossing rebuild)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "CT",
+   "utility": "Eversource",
+   "market": "ISO-NE",
+   "ends": [
+    {
+     "name": "Haddam",
+     "state": "CT",
+     "county": "Middlesex",
+     "new": false
+    },
+    {
+     "name": "East Haddam Junction",
+     "state": "CT",
+     "county": "Middlesex",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 1.5,
+   "in_service": "2026-12",
+   "stage": "in construction",
+   "stage_basis": "ISO-NE Oct 2026 Asset Condition List shows ACL 356 '345 kV Line Asset Condition, River Crossing and OPGW Project - Line 348' Under Construction for 2026-12; CT Siting Council Petition 1690 (rebuild and reconductor ~1.5 mi of 348/1772 ROW incl. river crossing) approved March 2026, construction noticed 3/16/26.",
+   "docket": "CT Siting Council Petition 1690",
+   "caiso_id": "356",
+   "sources": [
+    "https://www.iso-ne.com/static-assets/documents/100041/final_asset_condition_list_oct2026_revised.xlsx",
+    "https://www.iso-ne.com/system-planning/system-plans-studies/rsp/rsp-project-list-and-the-asset-condition-list",
+    "https://portal.ct.gov/csc/3_petitions/petition-nos-1601-1700/pe1690",
+    "https://www.iso-ne.com/static-assets/documents/100031/a02.2_pac_connecticut_river_crossing_project_update.pdf"
+   ]
+  },
+  {
+   "key": "acl-461",
+   "name": "Tewksbury 22A - Billerica/Burlington town line 345 kV (Line 338 rebuild)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "MA",
+   "utility": "National Grid",
+   "market": "ISO-NE",
+   "ends": [
+    {
+     "name": "Tewksbury 22A",
+     "state": "MA",
+     "county": "Middlesex",
+     "new": false
+    },
+    {
+     "name": "Billerica/Burlington town line",
+     "state": "MA",
+     "county": "Middlesex",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 6.7,
+   "in_service": "2029-08",
+   "stage": "planned",
+   "stage_basis": "ISO-NE Oct 2026 Asset Condition List shows ACL 461 '338 345 kV Line Asset Condition Refurbishment' Planned for 2029-08; National Grid's preferred alternative replaces all 63 structures and reconductors ~6.7 mi with bundled 1590 ACSS; no siting approval found.",
+   "docket": "",
+   "caiso_id": "461",
+   "sources": [
+    "https://www.iso-ne.com/static-assets/documents/100041/final_asset_condition_list_oct2026_revised.xlsx",
+    "https://www.iso-ne.com/system-planning/system-plans-studies/rsp/rsp-project-list-and-the-asset-condition-list",
+    "https://www.iso-ne.com/static-assets/documents/100017/a05_pac_338_acr_presentation.pdf"
+   ]
+  },
+  {
+   "key": "ny-chpe-us",
+   "name": "Champlain Hudson Power Express (U.S. part): NY/Canada border - Astoria converter / Astoria Annex 345 kV HVDC",
+   "kv": 400,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "CHPE LLC (Transmission Developers Inc.)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "New York/Canada border (Lake Champlain)",
+     "state": "NY",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Astoria converter station / NYPA Astoria Annex 345 kV",
+     "state": "NY",
+     "county": "Queens",
+     "new": true
+    }
+   ],
+   "miles_new": 339,
+   "miles_upgraded": 0,
+   "in_service": "2026-05",
+   "stage": "built",
+   "stage_basis": "TDI/CHPE and Fitch state the ~339-mile underground/underwater HVDC line from the U.S.-Canada border in Lake Champlain to the new Astoria, Queens converter station reached commercial operation on May 13, 2026.",
+   "docket": "10-T-0139",
+   "caiso_id": "631; 887",
+   "sources": [
+    "https://chpexpress.com/construction",
+    "https://www.fitchratings.com/research/infrastructure-project-finance/fitch-rates-chpe-llc-sr-secured-notes-a-outlook-stable-25-06-2026",
+    "https://www.governor.ny.gov/news/governor-hochul-celebrates-completion-champlain-hudson-power-express-project",
+    "https://documents.dps.ny.gov/public/MatterManagement/CaseMaster.aspx?MatterCaseNo=10-T-0139"
+   ]
+  },
+  {
+   "key": "ny-astoria-rainey-cable",
+   "name": "Astoria Annex - Rainey 345 kV (Astoria-Rainey Cable, ARC)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "NYPA (built by CHPE)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "NYPA Astoria Annex 345 kV",
+     "state": "NY",
+     "county": "Queens",
+     "new": false
+    },
+    {
+     "name": "Con Edison Rainey 345 kV",
+     "state": "NY",
+     "county": "Queens",
+     "new": false
+    }
+   ],
+   "miles_new": 3.5,
+   "miles_upgraded": 0,
+   "in_service": "2026-06",
+   "stage": "built",
+   "stage_basis": "PSC March 2026 order describes the ~3.5-mile 345 kV AC Astoria-Rainey Cable built under the CHPE certificate and transferred to NYPA; the Governor's June 16, 2026 release describes the new ~4-mile line as completed with CHPE (month is the date of that release, not a stated energization date).",
+   "docket": "10-T-0139",
+   "caiso_id": "",
+   "sources": [
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=70BB069D-0000-C318-BFAD-D68B91809F04&DocTitle=Order%20Approving%20Partial%20Certificate%20Transfer%20with%20Conditions",
+    "https://www.governor.ny.gov/news/governor-hochul-celebrates-completion-champlain-hudson-power-express-project"
+   ]
+  },
+  {
+   "key": "ny-queensboro-renewable-express",
+   "name": "Queensboro Renewable Express +/-400 kV HVDC (NYS waters - Ravenswood, Rainey 345 kV / Vernon 138 kV)",
+   "kv": 400,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "Queensboro Development, LLC (Rise Light & Power)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "New York State waters boundary (Lower New York Bay)",
+     "state": "NY",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Ravenswood site HVDC converter station (to Con Edison Rainey 345 kV and Vernon 138 kV)",
+     "state": "NY",
+     "county": "Queens",
+     "new": true
+    }
+   ],
+   "miles_new": 18.5,
+   "miles_upgraded": 0,
+   "in_service": "2029-04",
+   "stage": "proposed",
+   "stage_basis": "Article VII case 22-T-0670 was 'In Settlement' (no certificate) in the Sept 2025 DPS table; NYISO's May 2026 IPSAC list shows queue 1365/1366 Circuits A and B with proposed in-service April 2029.",
+   "docket": "22-T-0670",
+   "caiso_id": "1365; 1366",
+   "sources": [
+    "https://dps.ny.gov/system/files/documents/2025/09/active-article-vii-cases.pdf",
+    "https://www.iso-ne.com/static-assets/documents/100035/2026-05-29_ipsac_a03_ipsac_queue_interconnection_studies.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BC574FAEA-0C4B-450B-81A1-E1FFCD3B5DE8%7D&DocTitle=B01%20Queensboro%20Exhibit%201-General%20Info"
+   ]
+  },
+  {
+   "key": "ny-south-fork-wind-export",
+   "name": "South Fork Wind export cable - East Hampton 138 kV",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "South Fork Wind, LLC (Orsted/Eversource; interconnects to LIPA)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "New York State waters boundary (Atlantic Ocean)",
+     "state": "NY",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "LIPA East Hampton substation",
+     "state": "NY",
+     "county": "Suffolk",
+     "new": false
+    }
+   ],
+   "miles_new": 7.6,
+   "miles_upgraded": 0,
+   "in_service": "2024-03",
+   "stage": "built",
+   "stage_basis": "DPS Active Article VII table lists case 18-T-0604 (138 kV, 7.6 mi, East Hampton) as In-Service with full energization effective 03/2024.",
+   "docket": "18-T-0604",
+   "caiso_id": "",
+   "sources": [
+    "https://dps.ny.gov/system/files/documents/2025/09/active-article-vii-cases.pdf"
+   ]
+  },
+  {
+   "key": "ny-sunrise-wind-export",
+   "name": "Sunrise Wind export cable (320 kV HVDC) - Holbrook converter - LIPA Holbrook 138 kV",
+   "kv": 320,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "Sunrise Wind, LLC (Orsted)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "New York State waters boundary / Smith Point landfall",
+     "state": "NY",
+     "county": "Suffolk",
+     "new": false
+    },
+    {
+     "name": "Sunrise Wind onshore converter station (Holbrook) and LIPA Holbrook 138 kV substation",
+     "state": "NY",
+     "county": "Suffolk",
+     "new": true
+    }
+   ],
+   "miles_new": 24,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "in construction",
+   "stage_basis": "Certificate issued 11/17/2022 (20-T-0617); Newsday (Sept 2026) reports the Holbrook onshore converter station and export cables are finished and full commercial operation is expected in the second half of 2027; a 1.1-mile double-circuit 138 kV AC duct bank links the converter station to Holbrook substation.",
+   "docket": "20-T-0617",
+   "caiso_id": "",
+   "sources": [
+    "https://dps.ny.gov/system/files/documents/2025/09/active-article-vii-cases.pdf",
+    "https://www.newsday.com/long-island/environment/sunrise-empire-wind-wurqm2w1",
+    "https://hauglandgroup.us/projects/sunrise-wind-converter-station/"
+   ]
+  },
+  {
+   "key": "ny-empire-wind-1-export",
+   "name": "Empire Wind 1 230 kV export cable - SBMT onshore substation (230/345 kV) - Gowanus 345 kV",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "Empire Offshore Wind LLC (Equinor)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "New York State waters boundary",
+     "state": "NY",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Empire Wind onshore substation at South Brooklyn Marine Terminal (230/345 kV)",
+     "state": "NY",
+     "county": "Kings",
+     "new": true
+    },
+    {
+     "name": "Con Edison Gowanus 345 kV",
+     "state": "NY",
+     "county": "Kings",
+     "new": false
+    }
+   ],
+   "miles_new": 17.5,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "in construction",
+   "stage_basis": "Certificate issued 12/18/2023 (21-T-0366) for two 230 kV export cables (~17.5 mi), a new onshore substation at SBMT stepping up to 345 kV and two 345 kV circuits (~0.2 mi) to Gowanus; Newsday (Sept 2026) says the onshore substation is expected to be energized by fall 2026 with commercial operation in 2027.",
+   "docket": "21-T-0366",
+   "caiso_id": "",
+   "sources": [
+    "https://dps.ny.gov/system/files/documents/2025/09/active-article-vii-cases.pdf",
+    "https://dps.ny.gov/news/psc-greenlights-offshore-wind-transmission-line-work",
+    "https://www.newsday.com/long-island/environment/sunrise-empire-wind-wurqm2w1",
+    "https://www.empirewind.com/project"
+   ]
+  },
+  {
+   "key": "ny-propel-ny-345",
+   "name": "Propel NY Energy 345 kV (Barrett - Uniondale Hub - Tremont / Shore Road; Ruland Road - Shore Road; Shore Road - Sprain Brook)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "New York Transco LLC / NYPA",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "New Barrett 345 kV substation",
+     "state": "NY",
+     "county": "Nassau",
+     "new": true
+    },
+    {
+     "name": "Uniondale Hub (East Garden City) 345 kV",
+     "state": "NY",
+     "county": "Nassau",
+     "new": false
+    },
+    {
+     "name": "Tremont 345 kV",
+     "state": "NY",
+     "county": "Bronx",
+     "new": false
+    },
+    {
+     "name": "New Ruland Road 345 kV substation",
+     "state": "NY",
+     "county": "Suffolk",
+     "new": true
+    },
+    {
+     "name": "New Shore Road 345 kV substation",
+     "state": "NY",
+     "county": "Nassau",
+     "new": true
+    },
+    {
+     "name": "Sprain Brook 345 kV",
+     "state": "NY",
+     "county": "Westchester",
+     "new": false
+    }
+   ],
+   "miles_new": 78.5,
+   "miles_upgraded": 0,
+   "in_service": "2030-06",
+   "stage": "approved",
+   "stage_basis": "PSC granted the Article VII certificate on September 17, 2026 (24-T-0446) for ~78.5 mi of new underground/submarine 345 kV lines and new Barrett, Shore Road and Ruland Road substations; NYISO's 2026 IPSAC list gives a June 2030 in-service date (rehearing requests pending).",
+   "docket": "24-T-0446",
+   "caiso_id": "1289",
+   "sources": [
+    "https://dps.ny.gov/news/propel-ny-energy-project-links-long-island-rest-state-progresses-psc-approval-siting",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=704BB0A0-0000-CE2A-B931-5385AD35C0C2&DocTitle=Order%20Adopting%20the%20Terms%20of%20a%20Joint%20Proposal",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B008742A1-0000-CB3B-837A-42E8D7D76DC1%7D&DocTitle=Propel_EMCP_App%20D_ECP",
+    "https://www.iso-ne.com/static-assets/documents/100035/2026-05-29_ipsac_a03_ipsac_queue_interconnection_studies.pdf"
+   ]
+  },
+  {
+   "key": "ny-propel-ny-138-syosset-shore",
+   "name": "Propel NY Energy Syosset - Shore Road 138 kV",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "New York Transco LLC / NYPA",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Syosset 138 kV",
+     "state": "NY",
+     "county": "Nassau",
+     "new": false
+    },
+    {
+     "name": "New Shore Road substation (138 kV connection to LIPA Shore Road)",
+     "state": "NY",
+     "county": "Nassau",
+     "new": true
+    }
+   ],
+   "miles_new": 11.2,
+   "miles_upgraded": 0,
+   "in_service": "2030-06",
+   "stage": "approved",
+   "stage_basis": "Segment 5 (Syosset to Shore Road, ~11 mi underground 138 kV) is part of the Propel NY certificate granted September 17, 2026.",
+   "docket": "24-T-0446",
+   "caiso_id": "1289",
+   "sources": [
+    "https://dps.ny.gov/news/propel-ny-energy-project-links-long-island-rest-state-progresses-psc-approval-siting",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=704BB0A0-0000-CE2A-B931-5385AD35C0C2&DocTitle=Order%20Adopting%20the%20Terms%20of%20a%20Joint%20Proposal",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B008742A1-0000-CB3B-837A-42E8D7D76DC1%7D&DocTitle=Propel_EMCP_App%20D_ECP",
+    "https://www.iso-ne.com/static-assets/documents/100035/2026-05-29_ipsac_a03_ipsac_queue_interconnection_studies.pdf"
+   ]
+  },
+  {
+   "key": "ny-newbridge-bypass-345",
+   "name": "Newbridge Bypass: Uniondale Hub - New Ruland Road Line 345-567 (138 kV-operated cables converted to 345 kV)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "NY",
+   "utility": "LIPA / PSEG Long Island",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Uniondale Hub 345 kV",
+     "state": "NY",
+     "county": "Nassau",
+     "new": false
+    },
+    {
+     "name": "New Ruland Road 345 kV substation",
+     "state": "NY",
+     "county": "Suffolk",
+     "new": true
+    }
+   ],
+   "miles_new": 0.35,
+   "miles_upgraded": 13,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "PSC approved the amendment on August 13, 2026 (issued Aug 17) to extend Lines 138-467/138-567 (~4 mi + ~9 mi), bypass Newbridge and raise operating voltage to 345 kV as part of the LI PPTN solution; no in-service date stated.",
+   "docket": "25-T-0242 (amends 04-T-1687)",
+   "caiso_id": "1289",
+   "sources": [
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B40CC10A0-0000-C05A-97F4-31869D8ADF35%7D&DocTitle=Order%20Approving%20Amendment%20to%20the%20Certificate%20of%20Environmental%20Compatibility%20and%20Public%20Need",
+    "https://newbridgebypass.com/index.htm"
+   ]
+  },
+  {
+   "key": "ny-southampton-deerfield-138",
+   "name": "Southampton - Deerfield 138 kV (initially operated at 69 kV)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "LIPA / PSEG Long Island",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Southampton substation",
+     "state": "NY",
+     "county": "Suffolk",
+     "new": false
+    },
+    {
+     "name": "Deerfield substation",
+     "state": "NY",
+     "county": "Suffolk",
+     "new": false
+    }
+   ],
+   "miles_new": 4.5,
+   "miles_upgraded": 0,
+   "in_service": "2028-06",
+   "stage": "approved",
+   "stage_basis": "PSC adopted the joint proposal on October 17, 2025 for a new 4.5-mile 138 kV underground line; EM&CP approved December 22, 2025; PSEG LI says the line must be installed by June 2028.",
+   "docket": "24-T-0113",
+   "caiso_id": "",
+   "sources": [
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B807DF399-0000-CF48-BBA4-1A41C7176D36%7D",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B3050E19A-0000-C911-A528-BC92BAF13430%7D",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B3039C7A1-0000-CE17-960A-86E7772C2182%7D&DocTitle=PSEG%20LI%20SHDF%20EMCP%20Change%20Notice%20002"
+   ]
+  },
+  {
+   "key": "ny-coned-gowanus-greenwood-3",
+   "name": "Gowanus - Greenwood 3rd 345/138 kV PAR-controlled 138 kV feeder",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "Con Edison",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Gowanus",
+     "state": "NY",
+     "county": "Kings",
+     "new": false
+    },
+    {
+     "name": "Greenwood",
+     "state": "NY",
+     "county": "Kings",
+     "new": false
+    }
+   ],
+   "miles_new": 1,
+   "miles_upgraded": 0,
+   "in_service": "2025-05",
+   "stage": "built",
+   "stage_basis": "Con Edison's Phase 1 report (June 2025) lists the ~1-mile underground feeder re-energized 5/23/2025 and its Q1 2026 capex report shows in-service 5/23/2025.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B10A1C797-0000-CE4A-A5FC-ECA53A80E882%7D&DocTitle=CECONY%20June%202025%20Phase%201%20Report",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BD03D2D9E-0000-CD2A-9416-86BFD2B1ACFC%7D"
+   ]
+  },
+  {
+   "key": "ny-coned-goethals-fox-hills",
+   "name": "Goethals - Fox Hills 345/138 kV PAR-controlled 138 kV feeder",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "Con Edison",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Goethals",
+     "state": "NY",
+     "county": "Richmond",
+     "new": false
+    },
+    {
+     "name": "Fox Hills",
+     "state": "NY",
+     "county": "Richmond",
+     "new": false
+    }
+   ],
+   "miles_new": 8,
+   "miles_upgraded": 0,
+   "in_service": "2025-05",
+   "stage": "built",
+   "stage_basis": "Con Edison's Phase 1 report lists a new ~8-mile underground PAR-controlled feeder (with Fox Hills 138 kV rebuild) and the Q1 2026 capex report shows in-service 5/26/2025.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B10A1C797-0000-CE4A-A5FC-ECA53A80E882%7D&DocTitle=CECONY%20June%202025%20Phase%201%20Report",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BD03D2D9E-0000-CD2A-9416-86BFD2B1ACFC%7D",
+    "https://www.coned.com/en/our-energy-future/our-energy-vision/where-we-are-going/reliable-clean-city-project"
+   ]
+  },
+  {
+   "key": "ny-coned-gowanus-greenwood-4",
+   "name": "Gowanus - Greenwood 4th PAR-controlled tie (feeder 42G13)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "Con Edison",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Gowanus",
+     "state": "NY",
+     "county": "Kings",
+     "new": false
+    },
+    {
+     "name": "Greenwood",
+     "state": "NY",
+     "county": "Kings",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-05",
+   "stage": "built",
+   "stage_basis": "Con Edison's Q1 2026 capex report lists the 4th Gowanus-Greenwood PAR-controlled tie via feeder 42G13 with in-service 5/29/2026 (length not stated); its LTP describes it as a 345/138 kV PAR-controlled feeder.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BD03D2D9E-0000-CD2A-9416-86BFD2B1ACFC%7D",
+    "https://www.nyiso.com/documents/20142/55462035/03b_CECONY_2025_LTP.pdf"
+   ]
+  },
+  {
+   "key": "ny-coned-bceh",
+   "name": "Brooklyn Clean Energy Hub 345 kV substation (loops Rainey-Farragut 345 kV feeders 61/62/63)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "Con Edison",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Brooklyn Clean Energy Hub 345 kV",
+     "state": "NY",
+     "county": "Kings",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-05",
+   "stage": "in construction",
+   "stage_basis": "Con Edison's 2025 LTP says it is constructing the new 345 kV BCEH substation (summer 2028 in-service); the Q1 2026 capex report shows it started 2/1/2022 with end date 5/31/2028.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/55462035/03b_CECONY_2025_LTP.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BD03D2D9E-0000-CD2A-9416-86BFD2B1ACFC%7D",
+    "https://www.nyiso.com/documents/20142/1397660/2025CATR-Report-final.pdf/9babf72b-5690-7308-a65a-7f47e00630ae"
+   ]
+  },
+  {
+   "key": "ny-oru-line-705",
+   "name": "Burns - West Nyack 138 kV underground Line 705",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "Orange & Rockland Utilities",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Burns substation (Nanuet)",
+     "state": "NY",
+     "county": "Rockland",
+     "new": false
+    },
+    {
+     "name": "West Nyack substation",
+     "state": "NY",
+     "county": "Rockland",
+     "new": false
+    }
+   ],
+   "miles_new": 5.5,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "in construction",
+   "stage_basis": "PSC certificate issued 2/16/2024 (21-T-0569); construction began ~Sept 2024 and O&R's 2025 LTP and May 2026 release say completion is expected spring/early 2027.",
+   "docket": "21-T-0569",
+   "caiso_id": "",
+   "sources": [
+    "https://dps.ny.gov/system/files/documents/2025/09/active-article-vii-cases.pdf",
+    "https://www.oru.com/en/our-energy-future/our-energy-projects/line-705-project",
+    "https://www.oru.com/en/about-us/media-center/news/2026/05-20/oru-is-ready-for-every-season"
+   ]
+  },
+  {
+   "key": "ny-spc-northern-haverstock-willis",
+   "name": "Smart Path Connect Northern Alignment: Haverstock - Willis 345 kV and Willis - Ryan/Patnode 230 kV rebuild",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "NY",
+   "utility": "NYPA",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Haverstock 345/230 kV (new)",
+     "state": "NY",
+     "county": "St. Lawrence",
+     "new": true
+    },
+    {
+     "name": "Willis 345/230 kV / Willis Annex (new)",
+     "state": "NY",
+     "county": "Franklin",
+     "new": true
+    },
+    {
+     "name": "Ryan / Patnode 230 kV",
+     "state": "NY",
+     "county": "Clinton",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 45,
+   "in_service": "2026-05",
+   "stage": "built",
+   "stage_basis": "NYPA states Smart Path Connect was completed May 2026, including ~45 miles rebuilt between Massena and Clinton and new Haverstock and Willis Annex substations; Willis 1 line energized Oct 22, 2025.",
+   "docket": "21-T-0340",
+   "caiso_id": "1125",
+   "sources": [
+    "https://www.nypa.gov/News/Press-Releases/2026/20260622-smarthpath",
+    "https://www.nypa.gov/power/transmission/transmission-projects/smart-path-connect",
+    "https://dps.ny.gov/system/files/documents/2025/09/active-article-vii-cases.pdf",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B7070129A-0000-C424-9EE7-954087900810%7D&DocTitle=NYPA%20SPC%20In-Service%20Notification%20W1"
+   ]
+  },
+  {
+   "key": "ny-spc-southern-adirondack-marcy",
+   "name": "Smart Path Connect Southern Alignment: Adirondack (Croghan) - Austin Road - Marcy 345 kV rebuild",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "NY",
+   "utility": "National Grid (with NYPA Adirondack substation)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Adirondack 345 kV (new, Croghan)",
+     "state": "NY",
+     "county": "Lewis",
+     "new": true
+    },
+    {
+     "name": "Austin Road 345 kV (new, Glenfield)",
+     "state": "NY",
+     "county": "Lewis",
+     "new": true
+    },
+    {
+     "name": "Marcy 345 kV",
+     "state": "NY",
+     "county": "Oneida",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 55,
+   "in_service": "2026-05",
+   "stage": "built",
+   "stage_basis": "NYPA/Governor (June 2026) state National Grid completed the 55-mile Croghan-Marcy segment including the new Austin Road substation, and NYPA built the new Adirondack substation; project completed May 2026.",
+   "docket": "21-T-0340",
+   "caiso_id": "1125",
+   "sources": [
+    "https://www.nypa.gov/News/Press-Releases/2026/20260622-smarthpath",
+    "https://www.nypa.gov/power/transmission/transmission-projects/smart-path-connect",
+    "https://dps.ny.gov/system/files/documents/2025/09/active-article-vii-cases.pdf"
+   ]
+  },
+  {
+   "key": "ny-spc-haverstock-adirondack-345",
+   "name": "Haverstock - Adirondack 345 kV (Moses-Adirondack Smart Path lines energized at 345 kV)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "NY",
+   "utility": "NYPA",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Haverstock 345 kV",
+     "state": "NY",
+     "county": "St. Lawrence",
+     "new": true
+    },
+    {
+     "name": "Adirondack 345 kV",
+     "state": "NY",
+     "county": "Lewis",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 86,
+   "in_service": "2026-05",
+   "stage": "built",
+   "stage_basis": "NYPA notified the PSC that the Haverstock-Adirondack 1 (HA1) line was energized March 27, 2026; NYPA says the Smart Path line (rebuilt 2023, 345 kV capable) now forms part of a continuous 345 kV path, with Smart Path Connect completed May 2026.",
+   "docket": "21-T-0340; 18-T-0207",
+   "caiso_id": "1125",
+   "sources": [
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId={101D3F9D-0000-CA6E-AF99-F8341FEECB4B}&DocTitle=NYPA%20Smart%20Path%20Connect:%20In-Service%20Notification%20for%20HA1",
+    "https://www.nypa.gov/News/Press-Releases/2026/20260622-smarthpath",
+    "https://www.nypa.gov/power/transmission/transmission-projects/smart-path-connect",
+    "https://dps.ny.gov/system/files/documents/2025/09/active-article-vii-cases.pdf"
+   ]
+  },
+  {
+   "key": "ny-ceec-edic-new-scotland",
+   "name": "Central East Energy Connect: Edic/Marcy - Princetown - New Scotland 345 kV double circuit (Segment A)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "NY",
+   "utility": "LS Power Grid New York / NYPA",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Edic 345 kV",
+     "state": "NY",
+     "county": "Oneida",
+     "new": false
+    },
+    {
+     "name": "Princetown 345 kV (new)",
+     "state": "NY",
+     "county": "Schenectady",
+     "new": true
+    },
+    {
+     "name": "Gordon Road 345 kV (new, Rotterdam)",
+     "state": "NY",
+     "county": "Schenectady",
+     "new": true
+    },
+    {
+     "name": "New Scotland 345 kV",
+     "state": "NY",
+     "county": "Albany",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 93,
+   "in_service": "2023-12",
+   "stage": "built",
+   "stage_basis": "NYPA's petition states the final CEEC lines (Edic-Princetown #351/#352) were energized Dec 7 and Dec 11, 2023, completing all new components of the ~93-mile 345 kV project.",
+   "docket": "19-T-0549",
+   "caiso_id": "556",
+   "sources": [
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B60F88998-0000-C512-9EF0-5F23D9CED8B4%7D",
+    "https://nypa.gov/ceec"
+   ]
+  },
+  {
+   "key": "ny-transco-dover-station",
+   "name": "Dover 345 kV PAR station (loops Cricket Valley - CT line 398)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "New York Transco",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Dover 345 kV station",
+     "state": "NY",
+     "county": "Dutchess",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-12",
+   "stage": "built",
+   "stage_basis": "NY Transco states the new Dover Station with phase angle regulators went into service in December 2025.",
+   "docket": "",
+   "caiso_id": "543",
+   "sources": [
+    "https://www.nytransco.com/energized"
+   ]
+  },
+  {
+   "key": "ny-ames-road-345",
+   "name": "Ames Road 345/115 kV station with Edic - Princetown #351/#352 reroute",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "National Grid (NYPA lines)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Ames Road 345/115 kV station (Canajoharie)",
+     "state": "NY",
+     "county": "Montgomery",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-02",
+   "stage": "approved",
+   "stage_basis": "PSC approved NYPA's amendment on May 14, 2026 to reroute Edic-Princetown #351/#352 into National Grid's new Ames Road 345/115 kV substation (a CLCPA Phase 2 project, town-permitted); National Grid's 2025 LTP gives a 02/2028 in-service date.",
+   "docket": "19-T-0549",
+   "caiso_id": "1672",
+   "sources": [
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId={E02D2C9E-0000-C02B-BD02-84302E9181A1}&DocTitle=Order%20Approving%20Amendment%20to%20the%20Certificate%20of%20Environmental%20Compatibility%20and%20Public%20Need%20Subject%20to%20Conditions",
+    "https://www.nationalgridus.com/media/oasis/filings-and-studies/national-grid-local-transmission-plan-2025.pdf"
+   ]
+  },
+  {
+   "key": "ny-nyseg-ewts-line67-230",
+   "name": "Erie Wyoming Transmission Solution: Stolle Road - High Sheldon 230 kV Line 67 rebuild",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "NY",
+   "utility": "NYSEG",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Stolle Road substation (Elma)",
+     "state": "NY",
+     "county": "Erie",
+     "new": false
+    },
+    {
+     "name": "High Sheldon substation (Sheldon)",
+     "state": "NY",
+     "county": "Wyoming",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 11.3,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "CLCPA Phase 2 project (PSC Feb 2023); Article VII joint proposal filed Aug 10, 2026 and admitted Oct 20, 2026, Commission decision pending; NYSEG's June 2026 status report projects 2029 (2026 Gold Book lists 2031).",
+   "docket": "25-T-0470",
+   "caiso_id": "",
+   "sources": [
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BD0C9EC9F-0000-CA12-AE69-308F1157554F%7D&DocTitle=Executed%20Joint%20Proposal%20-%20NYSEG",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B10F6039F-0000-C136-A2BD-A96A60F76B98%7D",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B50315AA1-0000-CD12-9063-26D60B072EC2%7D&DocTitle=Ruling%20on%20Process%20and%20Admitting%20Evidence"
+   ]
+  },
+  {
+   "key": "ny-micron-clay-345-laterals",
+   "name": "Clay substation expansion - Micron fabs: eight 345 kV underground service laterals",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "National Grid",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Clay 345 kV substation (expanded)",
+     "state": "NY",
+     "county": "Onondaga",
+     "new": false
+    },
+    {
+     "name": "Micron fabrication areas, White Pine Commerce Park",
+     "state": "NY",
+     "county": "Onondaga",
+     "new": true
+    }
+   ],
+   "miles_new": 2.07,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "in construction",
+   "stage_basis": "PSC granted the certificate Oct 16, 2025 for eight 345 kV laterals (0.95-2.07 mi each) and the Clay expansion; National Grid's notice says construction starts March 2026, completion early fall 2028, energized winter 2029 (miles_new = longest circuit).",
+   "docket": "24-T-0120",
+   "caiso_id": "1536; 1627 (load queue)",
+   "sources": [
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId={90CA0C9A-0000-C02A-9861-70A83F829A21}",
+    "https://www.nationalgridus.com/media/construction-projects/pdfs/ny/micron/construction-commencement-notice-february-2026.pdf",
+    "https://www.syracuse.com/micron/2026/10/national-grid-is-building-its-largest-customer-project-ever-to-power-microns-chip-factory-in-upstate-ny.html"
+   ]
+  },
+  {
+   "key": "ny-stamp-345-115-substation",
+   "name": "STAMP 345/115 kV substation (NYPA 345 kV yard; tap of Niagara/Kintigh - New Rochester 345 kV)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "NYPA / National Grid (built by GCEDC)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "STAMP 345/115 kV substation (Town of Alabama)",
+     "state": "NY",
+     "county": "Genesee",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "in construction",
+   "stage_basis": "GCEDC says the 600 MW 345/115 kV greenfield substation is under construction for energization in 2026 (contractor change orders approved Oct 2026); the contractor states the 345 kV yard is NYPA-owned with an adjacent 345 kV line rerouted to feed it.",
+   "docket": "",
+   "caiso_id": "580",
+   "sources": [
+    "https://www.gcedc.com/stamp",
+    "https://samandsoncompany.com/stamp-project",
+    "http://www.gcedc.com/file-library/100322/10.1.26.GCEDC.Board.MeetingMinutes.Final.pdf"
+   ]
+  },
+  {
+   "key": "ny-alle-catt-345-gentie",
+   "name": "Alle-Catt Wind 345 kV interconnection: collection substation - new Lime Lake 345 kV switchyard (Stolle Rd - Five Mile Rd line)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "Alle-Catt Wind Energy LLC (Invenergy); switchyard to National Grid",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Alle-Catt collection substation (Freedom)",
+     "state": "NY",
+     "county": "Cattaraugus",
+     "new": true
+    },
+    {
+     "name": "Lime Lake 345 kV POI switchyard (Yorkshire)",
+     "state": "NY",
+     "county": "Cattaraugus",
+     "new": true
+    }
+   ],
+   "miles_new": 10.2,
+   "miles_upgraded": 0,
+   "in_service": "2026-12",
+   "stage": "in construction",
+   "stage_basis": "Certificate issued 12/18/2023 (21-T-0059); construction notices say full construction began ~April-May 2025 and runs through Nov 30, 2026; NYISO queue proposed completion Dec 1, 2026.",
+   "docket": "21-T-0059",
+   "caiso_id": "596",
+   "sources": [
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BA002CF96-0000-C433-9F1A-8D7EB3E0A5B6%7D",
+    "https://dps.ny.gov/system/files/documents/2025/09/active-article-vii-cases.pdf",
+    "https://www.interconnection.fyi/project/nyiso-0596"
+   ]
+  },
+  {
+   "key": "ny-cider-solar-345-poi",
+   "name": "Cider Solar 345 kV POI switchyard on NYPA Dysinger - New Rochester 345 kV",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "NYPA (built for Hecate/Greenbacker Cider Solar)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Cider Solar NYPA 345 kV switchyard (Oakfield/Elba)",
+     "state": "NY",
+     "county": "Genesee",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "in construction",
+   "stage_basis": "ORES permit (July 2022) covers a new NYPA-owned 345 kV switchyard tapping the Dysinger-New Rochester 345 kV line; major construction began May 2025 and the project is under construction with a proposed COD of January 2027.",
+   "docket": "ORES 21-01108",
+   "caiso_id": "811",
+   "sources": [
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B358F356D-82F5-4209-9CA7-4BF45FC24863%7D",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B6090D19E-0000-C716-B640-3AB3B85DCB8B%7D&DocTitle=ORES%20Approval%20Minor%20Modification%20011",
+    "https://www.infrasure.ai/project/nyiso-811-cider-solar"
+   ]
+  },
+  {
+   "key": "ny-rich-road-solar-345-poi",
+   "name": "Rich Road Solar 345 kV POI switchyard on NYPA Haverstock - Adirondack (HA2)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "NYPA (Rich Road Solar, NYPA/EDF)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Rich Road Solar NYPA 345 kV switchyard (Canton)",
+     "state": "NY",
+     "county": "St. Lawrence",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "ORES siting permit issued Sept 2024 includes a new NYPA-owned POI switchyard on the Moses/Haverstock-Adirondack line at 345 kV; NYPA (Sept 2026) says construction starts late 2027 with operation in 2029.",
+   "docket": "ORES 22-02969",
+   "caiso_id": "800",
+   "sources": [
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=00f1708a-0000-c930-88b3-9704634c36fc&DocTitle=EX_21_Electric_System_Effects_and_Interconnection_Rev_1",
+    "https://www.richroadsolar.com/wp-content/uploads/RichRoadSolar-FinalSitingPermit09-24-2024Signed.pdf",
+    "https://www.nypa.gov/News/Press-Releases/2026/20260928-solar?_sp=601423f9-51b9-4f4a-bc98-a5ec1b54e07e.1791475082932"
+   ]
+  },
+  {
+   "key": "ny-mill-point-solar-345-poi",
+   "name": "Mill Point Solar I 345 kV POI switchyard on National Grid Marcy - New Scotland #18",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "ConnectGen Montgomery County LLC (switchyard to National Grid)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Mill Point Solar 345 kV 3-breaker ring POI switchyard (Glen)",
+     "state": "NY",
+     "county": "Montgomery",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "ORES issued the siting permit Jan 27, 2026 including a new 3-breaker ring 345 kV POI switchyard and two ~305-ft 345 kV segments tapping Marcy-New Scotland; DPS says the project is expected to be operational in 2027.",
+   "docket": "ORES 23-02972",
+   "caiso_id": "1031",
+   "sources": [
+    "https://dps.ny.gov/news/dps-announces-approval-renewable-energy-project-montgomery-county",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=808bf493-0000-c73b-afc9-fa468eb839ee&DocTitle=MPSI_Revised-Application-Glossary"
+   ]
+  },
+  {
+   "key": "ny-fort-covington-solar-345-poi",
+   "name": "Fort Covington Solar 345 kV POI switchyard (loop-in of NYPA Haverstock - Willis HW1)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "NYPA (Fort Covington Solar, Boralex)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Fort Covington Solar NYPA 345 kV POI switchyard",
+     "state": "NY",
+     "county": "Franklin",
+     "new": true,
+     "lat": 44.931266,
+     "lon": -74.464113,
+     "location_basis": "POI coordinates given in the application's Exhibit 3"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "ORES issued the siting permit Aug 21, 2025; the application describes a new NYPA-owned POI switchyard looping in the HW1 345 kV line with commercial operation anticipated in 2027.",
+   "docket": "ORES 23-02990",
+   "caiso_id": "1183",
+   "sources": [
+    "http://dps.ny.gov/news/dps-announces-approval-three-renewable-energy-projects",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=a0a40f91-0000-c91f-b65a-4cad0c02cea9&DocTitle=FCS_22.00_Ex_22_EMF_v0",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=600dc290-0000-c823-84d5-9fd9458a1102"
+   ]
+  },
+  {
+   "key": "ny-two-rivers-solar-345-poi",
+   "name": "Two Rivers Solar 345 kV POI switchyard (NYPA 3-breaker ring on Haverstock - Willis HW2)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "NYPA (Two Rivers Solar, Boralex)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Two Rivers Solar NYPA 345 kV POI switchyard (Massena)",
+     "state": "NY",
+     "county": "St. Lawrence",
+     "new": true,
+     "lat": 44.952,
+     "lon": -74.737,
+     "location_basis": "POI coordinates given in the application's Exhibit 3"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "ORES issued the siting permit Feb 27, 2026; the application describes a three-breaker ring switchyard on HW2 to be transferred to NYPA, construction from spring 2026 and commercial operation by Q4 2027.",
+   "docket": "ORES 23-02991",
+   "caiso_id": "1184",
+   "sources": [
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BA044A09C-0000-CE3F-BDD6-1D1CF3D089FF%7D&DocTitle=Siting%20Permit",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B20A36997-0000-C31F-B2AF-DAB9D5257D8F%7D&DocTitle=TRS_02.00_Ex_02_Overview_Public_Involvement_v1_REDACTED"
+   ]
+  },
+  {
+   "key": "ny-prattsburgh-wind-230-poi",
+   "name": "Prattsburgh Wind 230 kV POI switchyard on NYSEG Stoney Ridge - Canandaigua Line #68",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "Prattsburgh Wind, LLC (switchyard to NYSEG)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Prattsburgh Wind 230 kV 3-CB POI switchyard",
+     "state": "NY",
+     "county": "Steuben",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "in construction",
+   "stage_basis": "ORES-permitted (21-00749); application describes a new 230 kV 3-breaker POI switchyard ~0.7 mi from Canandaigua with two ~1,300-ft 230 kV loop lines; an April 2026 construction plan says substation/O&M civil work under Compliance Filing 1 is complete; NYISO queue COD Sept 2027.",
+   "docket": "ORES 21-00749",
+   "caiso_id": "801",
+   "sources": [
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B309FA487-0000-C256-A26C-AB2EBF11B8BA%7D&DocTitle=21_Prattsburgh%20Wind_Exhibit%2021%20-%20Revision%201_Electric%20System%20Effects%20and%20Interconnection",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BB0EDC09D-0000-CE14-9B2C-BF80EBAE1331%7D&DocTitle=Appendix%203-B%20-%20Revision%201_Construction%20and%20Operations%20Plan",
+    "https://www.interconnection.fyi/project/nyiso-0801"
+   ]
+  },
+  {
+   "key": "ny-morris-ridge-frost-road-230",
+   "name": "Morris Ridge Solar Frost Road 230 kV POI switchyard on NYSEG South Perry - Meyer Line 87",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "NYSEG (built by Morris Ridge Solar Energy Center, EDF)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Frost Road 230 kV switchyard (Mount Morris)",
+     "state": "NY",
+     "county": "Livingston",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2024-12",
+   "stage": "built",
+   "stage_basis": "PSC filings describe a new three-breaker-ring Frost Road POI on 230 kV Line 87 transferred to NYSEG; the project's plan says the switchyard was commissioned earlier in 2024 and EDF announced full commercial operation Dec 16, 2024.",
+   "docket": "ORES 21-00025",
+   "caiso_id": "717",
+   "sources": [
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B107AF38B-0000-CF72-8058-9E50A4FAB7B5%7D",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7BC0DA4B94-0000-C33D-A927-33056DC61F3C%7D&DocTitle=03_Appendix%20Z.%20Decommissioning%20%20and%20Site%20Restoration%20Plan_Revision%203",
+    "https://www.edf-re.com/press-release/edf-renewables-north-america-announces-commercial-operation-of-morris-ridge-solar-project"
+   ]
+  },
+  {
+   "key": "ny-south-ripley-solar-230-poi",
+   "name": "South Ripley Solar 230 kV switching station on National Grid Dunkirk - South Ripley line",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "NY",
+   "utility": "ConnectGen / Repsol (switching station to National Grid)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "South Ripley Solar 230 kV POI switching station (Ripley)",
+     "state": "NY",
+     "county": "Chautauqua",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "ORES permit (21-00750, issued April 2023) covers a new switching station on National Grid's 230 kV Dunkirk-South Ripley line; the developer expects commercial operation in Q4 2027.",
+   "docket": "ORES 21-00750",
+   "caiso_id": "783",
+   "sources": [
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B7A9C4ECE-6727-44BF-BB00-1812739C5287%7D",
+    "https://www.southripleysolar.com/",
+    "https://www.interconnection.fyi/project/nyiso-0783"
+   ]
+  },
+  {
+   "key": "ny-somerset-solar-345-gentie",
+   "name": "Somerset Solar 345 kV gen-tie to NYSEG Kintigh substation",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "NY",
+   "utility": "Somerset Solar, LLC (AES)",
+   "market": "NYISO",
+   "ends": [
+    {
+     "name": "Somerset Solar collector substation",
+     "state": "NY",
+     "county": "Niagara",
+     "new": true
+    },
+    {
+     "name": "NYSEG Kintigh 345 kV substation (existing bay)",
+     "state": "NY",
+     "county": "Niagara",
+     "new": false
+    }
+   ],
+   "miles_new": 0.03,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "ORES siting permit issued Jan 9, 2023 includes a ~159-ft 345 kV overhead gen-tie to an existing bay at Kintigh; AES lists the project as in development (NYISO CY23 list COD Jul-2026).",
+   "docket": "ORES 22-00026",
+   "caiso_id": "1079",
+   "sources": [
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B9082048A-0000-C893-B3B1-DE189D3A8847%7D",
+    "https://www.aes.com/sustainability-impact/people-communities/projects/somerset-solar-project"
+   ]
+  },
+  {
+   "key": "me-necec-hvdc",
+   "name": "Quebec-Maine border - Merrill Road Converter (NECEC) +/-320 kV HVDC",
+   "kv": 320,
+   "project_type": "new line",
+   "state": "ME",
+   "utility": "NECEC Transmission LLC (Avangrid); operated by Central Maine Power",
+   "ends": [
+    {
+     "name": "Maine/Canada border (Beattie Township)",
+     "state": "ME",
+     "county": "Franklin",
+     "new": true,
+     "lat": 45.515664,
+     "lon": -70.720967,
+     "location_basis": "DOE Presidential Permit PP-438 gives the border crossing at 45\u00b030'56.39\"N, 70\u00b043'15.48\"W"
+    },
+    {
+     "name": "Merrill Road Converter Station (Lewiston)",
+     "state": "ME",
+     "county": "Androscoggin",
+     "new": true
+    }
+   ],
+   "miles_new": 145,
+   "miles_upgraded": 0,
+   "in_service": "2026-01",
+   "stage": "built",
+   "stage_basis": "Avangrid press release (Jan 16, 2026) says NECEC is complete and energized with commercial operation January 16, 2026; ISO-NE NPCC presentation confirms COD Jan 16, 2026.",
+   "docket": "ME PUC 2017-00232 (CPCN); DOE PP-438",
+   "caiso_id": "ISO-NE QP 639",
+   "sources": [
+    "https://www.avangrid.com/w/avangrid-s-new-england-clean-energy-connect-project-is-complete-and-energized",
+    "https://www.energy.gov/oe/articles/pp-438-necec-presidential-permit",
+    "https://www.iso-ne.com/static-assets/documents/100030/filing_of_first_rev_etuia-isone-cmp-20-01.pdf"
+   ],
+   "market": "ISO-NE"
+  },
+  {
+   "key": "me-necec-merrill-larrabee-345",
+   "name": "Merrill Road Converter - Larrabee Road 345 kV (NECEC Section 3007)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "ME",
+   "utility": "NECEC Transmission LLC (Avangrid)",
+   "ends": [
+    {
+     "name": "Merrill Road Converter Station (Lewiston)",
+     "state": "ME",
+     "county": "Androscoggin",
+     "new": true
+    },
+    {
+     "name": "Larrabee Road Substation (Lewiston)",
+     "state": "ME",
+     "county": "Androscoggin",
+     "new": false
+    }
+   ],
+   "miles_new": 1.2,
+   "miles_upgraded": 0,
+   "in_service": "2026-01",
+   "stage": "built",
+   "stage_basis": "Avangrid (Jan 16, 2026) lists the new 1.2-mile 345 kV AC line from Merrill Road converter to Larrabee Road as part of the completed, energized NECEC (COD Jan 16, 2026).",
+   "docket": "ME PUC 2017-00232",
+   "caiso_id": "ISO-NE QP 639",
+   "sources": [
+    "https://www.avangrid.com/w/avangrid-s-new-england-clean-energy-connect-project-is-complete-and-energized",
+    "https://www.iso-ne.com/static-assets/documents/100024/necec_transmission_operators_agreement.pdf"
+   ],
+   "market": "ISO-NE"
+  },
+  {
+   "key": "me-coopers-mills-maine-yankee-3027",
+   "name": "Coopers Mills - Maine Yankee 345 kV (Section 3027, NECEC network upgrade)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "ME",
+   "utility": "Central Maine Power (Avangrid)",
+   "ends": [
+    {
+     "name": "Coopers Mills Road Substation (Windsor)",
+     "state": "ME",
+     "county": "Kennebec",
+     "new": false
+    },
+    {
+     "name": "Maine Yankee Substation (Wiscasset)",
+     "state": "ME",
+     "county": "Lincoln",
+     "new": false
+    }
+   ],
+   "miles_new": 26.5,
+   "miles_upgraded": 0,
+   "in_service": "2025-12",
+   "stage": "built",
+   "stage_basis": "NPCC Summer 2026 Reliability Assessment lists the 3027 Line (Coopers Mills - Maine Yankee 345 kV) as in service Q4 2025 (month not given; end of quarter used), and ISO-NE restoration plan Attachment C rev. 15 (Mar 18, 2026) added circuit 3027.",
+   "docket": "ME PUC 2017-00232",
+   "caiso_id": "ISO-NE QP 639 (network upgrade)",
+   "sources": [
+    "https://cdn.prod.website-files.com/67229043316834b1a60feba3/6a28713b188a0646e1984f05_NPCC%20Reliability%20Assessment%20for%20Summer%202026.pdf",
+    "https://www.iso-ne.com/static-assets/documents/rules_proceds/operating/mast_satllte/mlcc18_att_c.pdf",
+    "https://www.energy.gov/oe/articles/application-presidential-permit-pp-438-necec-transmission-llc-exhibit"
+   ],
+   "market": "ISO-NE"
+  },
+  {
+   "key": "ma-vineyard-wind-1-export-220",
+   "name": "Vineyard Wind 1 offshore substation - Barnstable onshore substation 220 kV export cables",
+   "kv": 220,
+   "project_type": "new line",
+   "state": "MA",
+   "utility": "Vineyard Wind LLC (Avangrid / Copenhagen Infrastructure Partners)",
+   "ends": [
+    {
+     "name": "Vineyard Wind 1 offshore substation (federal waters, lease OCS-A 0501)",
+     "state": "MA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Vineyard Wind 1 onshore substation, Independence Park (Barnstable/Hyannis), next to Barnstable Switching Station",
+     "state": "MA",
+     "county": "Barnstable",
+     "new": true
+    }
+   ],
+   "miles_new": 5.3,
+   "miles_upgraded": 0,
+   "in_service": "2024-01",
+   "stage": "built",
+   "stage_basis": "Two 220 kV export cables land at Covell's Beach; project began delivering power in January 2024 and reached full commercial operation Oct 29, 2026 (WBUR/Baird Maritime). Miles = 5.3-mile onshore route only (Cape Cod Commission); offshore cable length not stated in sources checked. Grid tie is at 115 kV.",
+   "docket": "MA EFSB 17-05",
+   "caiso_id": "",
+   "sources": [
+    "https://tethys.pnnl.gov/wind-project-sites/vineyard-wind-1",
+    "https://www.wbur.org/news/2026/11/06/vineyard-wind-fully-running-offshore-wind-massachusetts",
+    "https://resources.capecodcommission.org/resource-library/ac71fc3e4224/vw-connector-dri-recorded-decision"
+   ],
+   "market": "ISO-NE"
+  },
+  {
+   "key": "ri-revolution-wind-export-275",
+   "name": "Revolution Wind offshore substation - Quonset Point onshore substation 275 kV export cables",
+   "kv": 275,
+   "project_type": "new line",
+   "state": "RI",
+   "utility": "Revolution Wind LLC (Orsted / Skyborn Renewables)",
+   "ends": [
+    {
+     "name": "Revolution Wind offshore substation (federal waters, lease OCS-A 0486)",
+     "state": "RI",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Revolution Wind onshore substation, Quonset Point (North Kingstown), next to Davisville Substation",
+     "state": "RI",
+     "county": "Washington",
+     "new": true
+    }
+   ],
+   "miles_new": 43,
+   "miles_upgraded": 0,
+   "in_service": "2026-03",
+   "stage": "built",
+   "stage_basis": "BOEM DEIS: two 275 kV export cables in a corridor up to 42 miles offshore plus ~1 mile onshore; developer says power delivery began March 2026 and RI OER announced full operation Nov 5, 2026. Grid tie to Davisville is at 115 kV.",
+   "docket": "RI EFSB SB-2021-01",
+   "caiso_id": "",
+   "sources": [
+    "https://ripuc.ri.gov/sites/g/files/xkgbur841/files/2022-08/EFSB%20Order%20No%20154.pdf",
+    "https://www.boem.gov/sites/default/files/documents/renewable-energy/state-activities/Revolution_Wind_DEIS__Vol1_508.pdf",
+    "https://revolution-wind.com/",
+    "https://energy.ri.gov/press-releases/office-energy-resources-issues-statement-revolution-wind-reaching-full-operational"
+   ],
+   "market": "ISO-NE"
+  },
+  {
+   "key": "ma-new-england-wind-1-connector",
+   "name": "New England Wind 1 Connector: offshore - Barnstable onshore substation 275 kV and onshore substation - West Barnstable 345 kV",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "MA",
+   "utility": "Park City Wind LLC (Avangrid); 0.7-mi 345 kV grid interconnection to be built and owned by Eversource",
+   "ends": [
+    {
+     "name": "New England Wind 1 offshore substation (federal waters, lease OCS-A 0534)",
+     "state": "MA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "New England Wind 1 onshore substation, 8 Shootflying Hill Road (Barnstable)",
+     "state": "MA",
+     "county": "Barnstable",
+     "new": true
+    },
+    {
+     "name": "West Barnstable Substation",
+     "state": "MA",
+     "county": "Barnstable",
+     "new": false
+    }
+   ],
+   "miles_new": 63.7,
+   "miles_upgraded": 0,
+   "in_service": "2029-12",
+   "stage": "approved",
+   "stage_basis": "MA EFSB Final Decision Dec 15, 2023 approved two 275 kV export cables (63-mile offshore route), new onshore substation and 0.7-mile 345 kV line to West Barnstable (miles = 63 + 0.7; onshore 275 kV cable length not added); ISO-NE TCS lists Park City Offshore Wind (QP1090) op date 12/31/2029. No power contract finalized and DOJ sought remand of the federal permit in Oct 2026.",
+   "docket": "MA EFSB 20-01 / D.P.U. 20-56/20-57",
+   "caiso_id": "ISO-NE TCS QP 1090",
+   "sources": [
+    "https://www.mass.gov/info-details/park-city-wind-project",
+    "https://www.mass.gov/doc/efsb-pcw-tentative-decision/download",
+    "https://www.vermontspc.com/sites/default/files/2026-07/TCS%20Summary%20and%20Results_For%20July%202026%20VSPC.pdf",
+    "https://newbedfordlight.org/offshore-wind-tracker-whats-happening-to-massachusetts-projects/"
+   ],
+   "market": "ISO-NE"
+  },
+  {
+   "key": "ma-new-england-wind-2-connector",
+   "name": "New England Wind 2 Connector: offshore - Barnstable onshore substation 275 kV and onshore substation - West Barnstable 345 kV",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "MA",
+   "utility": "Commonwealth Wind LLC (Avangrid)",
+   "ends": [
+    {
+     "name": "New England Wind 2 offshore substation (federal waters, lease OCS-A 0561)",
+     "state": "MA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "New England Wind 2 onshore substation, north of Route 6 / west of Oak Street (Barnstable)",
+     "state": "MA",
+     "county": "Barnstable",
+     "new": true
+    },
+    {
+     "name": "West Barnstable Substation",
+     "state": "MA",
+     "county": "Barnstable",
+     "new": false
+    }
+   ],
+   "miles_new": 30.1,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "EFSB 22-06 (filed Nov 1, 2022) is still listed as an open docket for ~29.7 miles of 275 kV cable, a new onshore substation and a 0.4-mile 345 kV line to West Barnstable; no in-service date or power contract found.",
+   "docket": "MA EFSB 22-06 / D.P.U. 22-105/22-106",
+   "caiso_id": "",
+   "sources": [
+    "https://www.mass.gov/info-details/efsb-and-dpu-siting-open-dockets",
+    "https://d3i1pf1zzeh4ol.cloudfront.net/fe010c06-0e82-495c-b058-63025c56fc69.pdf"
+   ],
+   "market": "ISO-NE"
+  },
+  {
+   "key": "ma-cape-cod-solution-phase-2",
+   "name": "Bourne - West Barnstable 345 kV conversion (Cape Cod Solution Phase II)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "MA",
+   "utility": "Eversource (NSTAR Electric)",
+   "ends": [
+    {
+     "name": "Bourne 345 kV Switching Station (new, Joint Base Cape Cod)",
+     "state": "MA",
+     "county": "Barnstable",
+     "new": true
+    },
+    {
+     "name": "West Barnstable Substation (new 345 kV switchyard)",
+     "state": "MA",
+     "county": "Barnstable",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 13,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "Eversource says DPU/EFSB approval came July 2025 (Mid-Cape Project Change, EFSB 19-06A) to convert the 13-mile Bourne-West Barnstable line from 115 to 345 kV operation and build a new 345 kV station at Bourne; Feb 2026 Eversource slides list construction start and in-service as TBD.",
+   "docket": "MA EFSB 19-06A / D.P.U. 19-142A/19-143A/23-22",
+   "caiso_id": "",
+   "sources": [
+    "https://www.eversource.com/residential/about/transmission-distribution/projects/massachusetts-projects/cape-cod-solution/cape-cod-solution-phase-2",
+    "https://www.eversource.com/docs/default-source/projects-infrastructure/falmouth-energy-committee-meeting.pdf?sfvrsn=9bb99e6a_1",
+    "https://heirp.com/wp-content/uploads/2026/10/EFSB-24-01-Final-Decision-10-05-26.pdf"
+   ],
+   "market": "ISO-NE"
+  },
+  {
+   "key": "ma-medway-grid-345-tie",
+   "name": "Medway Grid BESS substation - West Medway 345 kV interconnection",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "MA",
+   "utility": "Medway Grid LLC (interconnects to Eversource)",
+   "ends": [
+    {
+     "name": "Medway Grid project substation (345/34.5 kV), Milford Street, Medway",
+     "state": "MA",
+     "county": "Norfolk",
+     "new": true,
+     "lat": 42.1454,
+     "lon": -71.4474,
+     "location_basis": "EIA-860M plant coordinates for Medway Grid (via zoninglabs.com), i.e. the BESS site next to the project substation"
+    },
+    {
+     "name": "West Medway Substation",
+     "state": "MA",
+     "county": "Norfolk",
+     "new": false
+    }
+   ],
+   "miles_new": 0.25,
+   "miles_upgraded": 0,
+   "in_service": "2026-02",
+   "stage": "built",
+   "stage_basis": "DPU approved the ~1,325-foot underground 345 kV interconnection (D.P.U. 22-18/22-19, June 30, 2023); developer states commercial operation on Feb 25, 2026.",
+   "docket": "D.P.U. 22-18/22-19 (EFSB 22-02 dismissed)",
+   "caiso_id": "ISO-NE QP 844",
+   "sources": [
+    "https://www.mass.gov/info-details/medway-grid-battery-project",
+    "https://www.mass.gov/doc/medway-grid-dpu-order/download",
+    "https://vcrenewables.com/medway-grid-energy-storage-system/"
+   ],
+   "market": "ISO-NE"
+  },
+  {
+   "key": "ma-trimount-ess-345-tie",
+   "name": "Trimount BESS substation (Everett) - Mystic 345 kV underground line",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "MA",
+   "utility": "Trimount ESS LLC (Jupiter Power); interconnects to Eversource Mystic Substation",
+   "ends": [
+    {
+     "name": "Trimount Southern Parcel project substation (115/345 kV), Everett",
+     "state": "MA",
+     "county": "Middlesex",
+     "new": true
+    },
+    {
+     "name": "Mystic Substation #250 (Charlestown, Boston)",
+     "state": "MA",
+     "county": "Suffolk",
+     "new": false
+    }
+   ],
+   "miles_new": 0.44,
+   "miles_upgraded": 0,
+   "in_service": "2028-05",
+   "stage": "approved",
+   "stage_basis": "EFSB Final Decision Feb 27, 2026 approved 115 kV and 345 kV underground lines (~2,300 feet) to Mystic for a 700 MW BESS; GIA requires COD May 31, 2028 for the 345 kV position.",
+   "docket": "MA EFSB 25-05 / D.P.U. 24-152",
+   "caiso_id": "",
+   "sources": [
+    "https://www.mass.gov/info-details/everett-battery-project",
+    "https://d3i1pf1zzeh4ol.cloudfront.net/e6301d2f-4e38-4cc1-9281-5d718d172739.pdf"
+   ],
+   "market": "ISO-NE"
+  },
+  {
+   "key": "ma-qp1543-canal-jordan-ring-bus",
+   "name": "New 345 kV ring bus on Line 342 (Canal - Jordan Tap) for 500 MW BESS",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "MA",
+   "utility": "Developer not named; taps Eversource 342 line",
+   "ends": [
+    {
+     "name": "New three-breaker 345 kV ring bus on the 342-2 W line between Canal Substation and Jordan Tap",
+     "state": "MA",
+     "county": "Barnstable",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-12",
+   "stage": "proposed",
+   "stage_basis": "ISO-NE Transitional Cluster Study list (VELCO/VSPC July 2026) shows QP1543, 500 MW BESS in Barnstable County, tapping the 342-2 W line with a new three-breaker ring bus, op date 12/01/2028, not withdrawn as of that list.",
+   "docket": "",
+   "caiso_id": "ISO-NE TCS QP 1543",
+   "sources": [
+    "https://www.vermontspc.com/sites/default/files/2026-07/TCS%20Summary%20and%20Results_For%20July%202026%20VSPC.pdf"
+   ],
+   "market": "ISO-NE"
+  },
+  {
+   "key": "ct-scovill-rock-hurd-362-376-rebuild",
+   "name": "Scovill Rock - East of Hurd State Park 345 kV 362/376 Lines rebuild and reconductor (Northern Connecticut River crossing)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "CT",
+   "utility": "Eversource (CL&P)",
+   "ends": [
+    {
+     "name": "Scovill Rock Switching Station (Middletown)",
+     "state": "CT",
+     "county": "Middlesex",
+     "new": false
+    },
+    {
+     "name": "Structure 19098 east of Hurd State Park (Haddam)",
+     "state": "CT",
+     "county": "Middlesex",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 2.4,
+   "in_service": "2026-12",
+   "stage": "in construction",
+   "stage_basis": "CSC Declaratory Ruling Dec 11/15, 2025 (replace structures, reconductor 362 and 376 Lines with 1590 ACSS / 2048 AECC); construction began ~Feb 16, 2026; Eversource Jan 2026 PAC update gives in-service Q4 2026 (month not given).",
+   "docket": "CT Siting Council Petition No. 1679",
+   "caiso_id": "ISO-NE ACL 431",
+   "sources": [
+    "https://portal.ct.gov/csc/3_petitions/petition-nos-1601-1700/pe1679",
+    "https://portal.ct.gov/-/media/csc/3_petitions-medialibrary/petitions_medialibrary/mediapetitionnos1601-1700/pe1679/decision/pe1679_dcltr_121525_a.pdf?rev=6b81e33343524ea0a9c1ef54929f0a3a",
+    "https://www.iso-ne.com/static-assets/documents/100031/a02.2_pac_connecticut_river_crossing_project_update.pdf"
+   ],
+   "market": "ISO-NE"
+  },
+  {
+   "key": "ct-haddam-east-haddam-348-rebuild",
+   "name": "Haddam - East Haddam Junction 345 kV 348 Line rebuild and reconductor (Southern Connecticut River crossing)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "CT",
+   "utility": "Eversource (CL&P)",
+   "ends": [
+    {
+     "name": "Haddam Substation (Haddam)",
+     "state": "CT",
+     "county": "Middlesex",
+     "new": false
+    },
+    {
+     "name": "East Haddam Junction (East Haddam)",
+     "state": "CT",
+     "county": "Middlesex",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 1.5,
+   "in_service": "2026-12",
+   "stage": "in construction",
+   "stage_basis": "CSC Declaratory Ruling Mar 6, 2026 for replacing structures and conductor (2048 AECC/1590 ACSS) on the 348 Line river crossing; construction commencement noticed Mar 16, 2026; petition and PAC update give in-service Q4 2026 (month not given).",
+   "docket": "CT Siting Council Petition No. 1690",
+   "caiso_id": "",
+   "sources": [
+    "https://portal.ct.gov/csc/3_petitions/petition-nos-1601-1700/pe1690",
+    "https://portal.ct.gov/-/media/csc/3_petitions-medialibrary/petitions_medialibrary/mediapetitionnos1601-1700/pe1690/petitionersubmissions/pe1690_filing_091925.pdf?rev=bddd26252444484795311fb09e194705",
+    "https://www.iso-ne.com/static-assets/documents/100031/a02.2_pac_connecticut_river_crossing_project_update.pdf"
+   ],
+   "market": "ISO-NE"
+  },
+  {
+   "key": "ri-332-west-farnum-kent-county-rebuild",
+   "name": "West Farnum - Kent County 345 kV 332 Line rebuild",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "RI",
+   "utility": "Rhode Island Energy (Narragansett Electric)",
+   "ends": [
+    {
+     "name": "West Farnum Substation (North Smithfield)",
+     "state": "RI",
+     "county": "Providence",
+     "new": false
+    },
+    {
+     "name": "Kent County Substation (Warwick)",
+     "state": "RI",
+     "county": "Kent",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 21.4,
+   "in_service": "2029-06",
+   "stage": "proposed",
+   "stage_basis": "RI EFSB Notice of Intent SB-2026-03 (filed June 1, 2026; hearing Dec 1, 2026) to replace 203 structures and reconductor 21.4 miles with 2-1590 ACSS; PAC presentation gives construction Q1 2027 and in-service Q2 2029 (month not given).",
+   "docket": "RI EFSB SB-2026-03",
+   "caiso_id": "",
+   "sources": [
+    "https://ripuc.ri.gov/Docket-SB-2026-03",
+    "https://www.iso-ne.com/static-assets/documents/100035/a2.5_332_345_kv_rie_pac_presentation.pdf",
+    "https://ripuc.ri.gov/sites/g/files/xkgbur841/files/2026-11/SB-2026-03%20Notice%20of%20Public%20Comment%20Hearing%2012-1-2026%20Final.pdf"
+   ],
+   "market": "ISO-NE"
+  },
+  {
+   "key": "ri-347-sherman-road-ct-border-rebuild",
+   "name": "Sherman Road - RI/CT border 345 kV 347 Line rebuild",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "RI",
+   "utility": "Rhode Island Energy (Narragansett Electric)",
+   "ends": [
+    {
+     "name": "Sherman Road Switching Station (Burrillville)",
+     "state": "RI",
+     "county": "Providence",
+     "new": false
+    },
+    {
+     "name": "Rhode Island/Connecticut border (toward Killingly)",
+     "state": "RI",
+     "county": "Providence",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 8.6,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "Rhode Island Energy filing (D-26-08, May 2026) plans to rebuild and reconductor ~8.6 miles of the 347 345 kV line with construction expected to begin Q3 2029, subject to EFSB approval; no in-service date given.",
+   "docket": "RI DPUC D-26-08 (financing filing); EFSB filing not yet made",
+   "caiso_id": "",
+   "sources": [
+    "https://ripuc.ri.gov/sites/g/files/xkgbur841/files/2026-05/D-26-08-2026%20Long-Term%20Debt-Responses%20to%20AS%20Set%202%20(Redacted)%20(DPUC%205-5-26).pdf"
+   ],
+   "market": "ISO-NE"
+  },
+  {
+   "key": "ri-e105-f106-345-cable-replacement",
+   "name": "Manchester Street - Hartford Avenue 345 kV E-105/F-106 cable replacement",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "RI",
+   "utility": "Rhode Island Energy (Narragansett Electric)",
+   "ends": [
+    {
+     "name": "Manchester Street Substation (Providence)",
+     "state": "RI",
+     "county": "Providence",
+     "new": false
+    },
+    {
+     "name": "Hartford Avenue Substation (Johnston)",
+     "state": "RI",
+     "county": "Providence",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 7,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "Rhode Island Energy filing (D-26-08, May 2026) plans to rebuild the ~7-mile high-pressure fluid-filled E-105 and F-106 345 kV cables with non-fluid-filled cable; no schedule given.",
+   "docket": "RI DPUC D-26-08 (financing filing)",
+   "caiso_id": "",
+   "sources": [
+    "https://ripuc.ri.gov/sites/g/files/xkgbur841/files/2026-05/D-26-08-2026%20Long-Term%20Debt-Responses%20to%20AS%20Set%202%20(Redacted)%20(DPUC%205-5-26).pdf"
+   ],
+   "market": "ISO-NE"
+  },
+  {
+   "key": "vt-381-vernon-northfield-reconductor",
+   "name": "Vernon - Northfield 345 kV 381 Line reconductor",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "VT",
+   "utility": "VELCO / Eversource (paid by interconnecting generators)",
+   "ends": [
+    {
+     "name": "Vernon Substation (VELCO)",
+     "state": "VT",
+     "county": "Windham",
+     "new": false
+    },
+    {
+     "name": "Northfield (Eversource)",
+     "state": "MA",
+     "county": "Franklin",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "VELCO's July 2026 summary of ISO-NE's Transitional Cluster Study says the 381 Line (345 kV Vernon - Northfield) must be reconductored, paid for by impactful generators; no length or date given.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.vermontspc.com/sites/default/files/2026-07/TCS%20Summary%20and%20Results_For%20July%202026%20VSPC.pdf"
+   ],
+   "market": "ISO-NE"
+  }
+ ],
+ "left_out": {
+  "gb-nyseg-hillside-watercure": "Hillside - Watercure 230 kV (Line 69 rebuild)",
+  "gb-nyseg-canandaigua-stoney-ridge": "Canandaigua - Stoney Ridge 230 kV (Line 68 rebuild)",
+  "gb-nyseg-stoney-ridge-hillside": "Stoney Ridge - Hillside 230 kV (Line 72 rebuild)",
+  "ny-nyes-knickerbocker-pleasant-valley": "New York Energy Solution: Knickerbocker - Pleasant Valley 345 kV (Segment B)",
+  "ny-nyseg-scate-230": "SCATE: Canandaigua - Stoney Ridge - Watercure / Hillside 230 kV rebuild (Lines 68, 69, 72)",
+  "ny-syosset-oakwood-138": "same line as gb-lipa-syosset-oakwood (Propel NY)"
+ }
+}

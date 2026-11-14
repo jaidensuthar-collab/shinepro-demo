@@ -146,13 +146,13 @@
  },
  {
   "check": "Time window (2023-11 built to 2031-11 due) and stage names",
-  "checked": 3403,
+  "checked": 3474,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Substation points are in their state and in the county the source lists",
-  "checked": 2898,
+  "checked": 2995,
   "errors": [],
   "warnings": [
    "substation Peach Bottom: point is 3 miles outside York County, the county ERCOT lists",
@@ -218,18 +218,18 @@
    "substation Triangle: point is 4 miles outside Midland County, the county ERCOT lists",
    "substation Vealmoor: point is 6 miles outside Howard County, the county ERCOT lists",
    "substation Yucca Drive: point is 10 miles outside Ector County, the county ERCOT lists",
-   "766 lines have no placeable substation (no county given, and not on public maps by name): tpit-102068, pjm-s3608.5, pjm-b3800.7, pjm-b3800.43, pjm-b3800.53, pjm-b4089.1, spp-170051, spp-170054"
+   "767 lines have no placeable substation (no county given, and not on public maps by name): tpit-102068, pjm-s3608.5, pjm-b3800.7, pjm-b3800.43, pjm-b3800.53, pjm-b4089.1, spp-170051, spp-170054"
   ]
  },
  {
   "check": "Substation status agrees between lines and substations",
-  "checked": 4209,
+  "checked": 4311,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Downloads match the page (CSV, GeoJSON, KML, new-only layers)",
-  "checked": 13147,
+  "checked": 13487,
   "errors": [],
   "warnings": []
  },
@@ -615,7 +615,7 @@
  },
  {
   "check": "Texas and SPP sweep: researched lines have sources; corrections to official lists are deliberate",
-  "checked": 498,
+  "checked": 569,
   "errors": [],
   "warnings": [
    "tpit-102815 SandLake - North McCamey Transmission Line Addition: stage 'built' but ERCOT says 'Under Construction' (changed on purpose: Line Watch research: LCRA (July 2026) says the North McCamey-Sand Lake 345 kV line is complete and energized, and Oncor's Q2 2026 release says it placed its por)",
@@ -672,7 +672,7 @@
  },
  {
   "check": "U.S. only (every line and substation is in a U.S. state)",
-  "checked": 7612,
+  "checked": 7785,
   "errors": [],
   "warnings": [
    "tpit-99022 Border - Quarry Field 345 kV double-circuit line: ends at the national border; only the U.S. part is listed",
@@ -681,8 +681,11 @@
    "spp-156240 North Dakota/Saskatchewan Border (Tableland) - Tande 230 kV Ckt 1: ends at the national border; only the U.S. part is listed",
    "sppr-sps-border-tuco-tap-crawfish Border - TUCO 345 kV tap extension to Crawfish Draw: ends at the national border; only the U.S. part is listed",
    "spp-143182 Chisholm - Woodward - Border 345 kV Ckt 1: ends at the national border; only the U.S. part is listed",
+   "nyr-gb-chpe-llc-ny-canada-border-astoria-annex Champlain Hudson Power Express (NY/Canada border - Astoria Annex) +/-400 kV HVDC: ends at the national border; only the U.S. part is listed",
+   "isner-rsp-1819 NECEC HVDC: Maine/Canada border (Beattie Twp) - Merrill Road \u00b1320 kV: ends at the national border; only the U.S. part is listed",
    "pjmr-grain-belt-express-il-in Grain Belt Express Phase II (Illinois HVDC segment, Clark County converter, AC connector to AEP Sullivan): ends at the national border; only the U.S. part is listed",
-   "tpit-76690 Add Atchison POD: ends at the national border; only the U.S. part is listed"
+   "tpit-76690 Add Atchison POD: ends at the national border; only the U.S. part is listed",
+   "isner-ri-347-sherman-road-ct-border-rebuild Sherman Road - RI/CT border 345 kV 347 Line rebuild: ends at the national border; only the U.S. part is listed"
   ]
  }
 ]
