@@ -1,0 +1,5116 @@
+{
+ "source": "Line Watch CAISO sweep (Nov 14, 2026): CAISO Transmission Development Forum Attachment 1 and 2 (July 2026), the board-approved 2025-2026 Transmission Plan, CPUC CPCN/PTC applications and GO 131 reports, CEC and BLM generator-tie cases, utility project pages and news",
+ "checked": "2026-11-14",
+ "swept": [
+  "CAISO Transmission Development Forum Attachment 1 - Approved Projects (July 2026), all 233 rows: https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+  "CAISO TDF Attachment 2 - Network Upgrades, Generator Interconnection (July 2026), ~171 rows: https://www.caiso.com/documents/attachment-2-network-upgrades-generator-interconnection-july-2026.pdf",
+  "PG&E July 29, 2026 TDF presentation: https://www.caiso.com/documents/presentation-pg-e-transmission-development-forum-jul-29-2026.pdf",
+  "SCE July 29, 2026 TDF presentation: https://www.caiso.com/documents/presentation-southern-california-edison-transmission-development-forum-jul-29-2026.pdf",
+  "SDG&E July 29, 2026 TDF presentation: https://www.caiso.com/documents/presentation-sdge-transmission-development-forum-jul-29-2026.pdf",
+  "LS Power July 29, 2026 TDF presentation: https://www.caiso.com/documents/presentation-ls-power-transmission-development-forum-jul-29-2026.pdf",
+  "GridLiance West July 2026 TDF presentation: https://www.caiso.com/documents/presentation-gridliance-west-transmission-development-forum-jul-29-2026.pdf",
+  "Horizon West Transmission July 2026 TDF presentation: https://www.caiso.com/documents/presentation-horizon-west-transmission-transmission-development-forum-jul-29-2026.pdf",
+  "CalGrid July 2026 TDF presentation: https://www.caiso.com/documents/presentation-cal-grid-transmission-development-forum-jul-29-2026.pdf",
+  "2025-2026 Transmission Plan (Board approved May 19 / updated Aug 27, 2026): Table ES-1/2/3, Tables 8-1, 8-2, 8-3: https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan.pdf",
+  "2025-2026 Transmission Plan Appendix H (project descriptions): https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan-appendix-h-projects.pdf",
+  "Scope checks: 2022-2023, 2023-2024, 2024-2025 Transmission Plans and Appendix H: https://www.caiso.com/Documents/ISO-Board-Approved-2022-2023-Transmission-Plan.pdf ; https://www.caiso.com/documents/iso-board-approved-2023-2024-transmission-plan.pdf ; https://www.caiso.com/documents/iso-board-approved-2024-2025-transmission-plan.pdf",
+  "CPUC GO 131-E quarterly updates (PG&E Q1 2026, SCE Q3 2026, LSPGC Q4 2025 and Q3 2026) and CPUC CEQA project pages (Estrella, Northern San Joaquin, Round Mountain, Collinsville)",
+  "CPUC CEQA Current Projects list (LS Power, PG&E, Horizon West, other) - https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/infrastructure/permitting-and-environmental-review/current-projects",
+  "CPUC GO 131-E reporting page (annual + quarterly reports index) - https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/infrastructure/permitting-and-environmental-review/general-order-131-e-reporting",
+  "PG&E GO 131-E annual report 2025 (Section IV.A, all CPCN/PTC/NOC projects >50 kV; filtered for 230/500 kV) - https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/annual-reports/pge-go-131-e-annual-report-2025.xlsx",
+  "PG&E CPUC GO 131-E quarterly reports Q1 2025, Q4 2025, Q1 2026, Q2 2026, Q3 2026 - https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/pge-cpuc-q3-update-2026-0915.pdf",
+  "LSPGC CPUC quarterly reports Q1 2025, Q2 2025, Q4 2025, Q1 2026, Q3 2026 - https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/lspgc-cpuc-q3-update-2026-0910.pdf",
+  "Horizon West CPUC quarterly report Q3 2025 - https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/hwt-q3-cpuc-quarterly-meeting-2025.pdf",
+  "CPUC project CEQA pages: Manning, Collinsville, Power Santa Clara Valley, NSJTP, Estrella, Egbert - https://ia.cpuc.ca.gov/environment/",
+  "PG&E 2025 and 2026 WECC Annual Progress Reports (planned transmission + generation interconnection tables) - https://www.wecc.org/sites/default/files/documents/progress_report/2026/PGAE%202026%20APR.pdf",
+  "LSPGC 2026 WECC APR, IPX Power 2026 WECC APR (Harlan/Darden) - https://www.wecc.org/sites/default/files/documents/progress_report/2026/LSPGC%202026%20APR.pdf",
+  "PG&E and LS Power CAISO Transmission Development Forum presentations Jan and Jul 2026 (incl. generation-dependent network upgrades) - https://www.caiso.com/documents/presentation-pg-e-transmission-development-forum-jul-29-2026.pdf",
+  "PG&E GO 131-D/E advice letters for 230 kV generation and load interconnections (AL 6529-E, 6570-E, 6634-E, 7236-E, 7636-E, 7706-E, 7785-E) - https://www.pge.com/tariffs/",
+  "CAISO competitive solicitation reports: New Humboldt-Fern Road, New Humboldt-Collinsville, Manning-Metcalf, NRS-San Jose B - https://stakeholdercenter.caiso.com/RecurringStakeholderProcesses/2024-2025-Transmission-planning-process",
+  "CAISO 2023-24 / 2024-25 / 2025-26 transmission plans and 20-Year Outlook (offshore wind Humboldt / Morro Bay) - https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan.pdf",
+  "CEC opt-in dockets: Darden (23-OPT-02), Fountain Wind (23-OPT-01, denied), Corby BESS (24-OPT-05), AVAIO Pittsburg SPPE - https://www.energy.ca.gov/powerplant",
+  "CPUC Resolution E-5455 (Google 230 kV, San Jose) drafts and agendas - https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M623/K979/623979096.PDF",
+  "PG&E 2025 CAISO request window proposals (San Jose serial data center loads) - https://stakeholdercenter.caiso.com/InitiativeDocuments/Presentation-PGE-2025-2026Transmissionplanningprocess-Sep2525.pdf",
+  "Trans Bay Cable filings (BCDC 2026 cable maintenance, CPUC A.25-07-009 ownership transfer; no new line found) - https://www.transbaycable.com/",
+  "Kern / Fresno County CEQA filings for Buttonbush, Key Energy Storage, Pelicans Jaw - https://ceqanet.lci.ca.gov/",
+  "PG&E project pages and news (Northern San Joaquin, Egbert, Momentum, San Jose data centers) - https://www.pge.com/en/about/pge-systems/electric-systems/northern-san-joaquin.html",
+  "CAISO public generation queue report (Nov 10, 2026) - https://www.caiso.com/documents/publicqueuereport.pdf",
+  "CPUC CEQA Current Projects list (SCE, SDG&E, Other incl. Ten West Link, Horizon West Ironwood): https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/infrastructure/permitting-and-environmental-review/current-projects",
+  "CPUC GO 131-E Reporting page (annual + quarterly report index): https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/infrastructure/permitting-and-environmental-review/general-order-131-e-reporting",
+  "SCE GO 131-E quarterly reports Q1 2025, Q2 2025, Q3 2025, Q1 2026, Q2 2026, Q3 2026 (CPCN/PTC/advice letters): https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/sce-cpuc-q3-update-2026-1001.pdf",
+  "SDG&E GO 131-E quarterly reports Q1 2025, Q2 2025, Q3 2025, Q1 2026, Q2 2026, Q3 2026: https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/sdge-cpuc-q3-update-2026-0910.pdf",
+  "Horizon West Transmission GO 131-E Q3 2026 report (Ironwood, Recon): https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/hwt-cpuc-q3-update-2026-0914.pdf",
+  "CPUC project pages: Alberhill A.09-09-022, RTRP A.15-04-013, SOCRE A.12-05-020, Suncrest Loop-In A.26-05-005, Golden Pacific Powerlink (pre-filing), Ironwood A.25-09-008 (CEQAnet NOP)",
+  "SCE TPR stakeholder meetings Feb 2025 and Aug 2026 (CPUC TPR process): https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/transmission-project-review-process/sce/sce-tpr-cycle-5---stakeholder-meeting_-08-28-2026.pdf",
+  "SDG&E TPR stakeholder meeting Sept 2025 and CPUC staff comments on SDG&E Jan 2026 TPR data",
+  "CAISO Transmission Development Forum July 2026 presentations: SCE, GridLiance West/VEA; Jan 2026 SCE/GLW; July 2024 DCRT",
+  "WECC 2025 and 2026 Annual Progress Reports: SCE (transmission + generation tables), GLW, IP Easley; WECC 2026 APR summary",
+  "CAISO 2025-2026 Transmission Plan (revised draft May 2026) and Appendix A; CAISO 2026-2027 TPP stakeholder slides (Sept 2026, SCE/GLW/VEA/SDG&E); CAISO LCR studies 2026/2030 and 2027/2031",
+  "CAISO public generation queue report Nov 10, 2026: https://www.caiso.com/documents/publicqueuereport.pdf",
+  "CEC siting dockets: Willow Rock 21-AFC-02, Perkins 24-OPT-01; FAST-41 dashboard (Perkins)",
+  "County/BLM CEQA-NEPA notices 2024-2026 for gen-ties: Riverside County (Easley, Sapphire, Savira, Grace), CDFW (Redonda/Bajada), Kern County (Galaxy), San Bernardino County (Overnight, Sienna/Calcite), BLM Easley ROD",
+  "Utility/developer news 2024-2026: SDG&E Suncrest and GPP pages, Sempra GPP release, Clearway Arica/Victory Pass, EDF Desert Quartzite, Lydian Atlas North, Sargent & Lundy Ten West/Cielo Azul, Hydrostor Willow Rock, IPX portfolio",
+  "Large-load sources: VEA CEC IEPR large-loads presentation (July 2025), Nevada RTCTF minutes (July 2026), NPM analysis of SCE data-center queue (Mar 2026)",
+  "CAISO TDF Attachment 1 (July 2026) local copy, used only to attach TP project IDs",
+  "CAISO TDF Attachment 1, July 2026 (provided text file) - competitive/merchant/GLW/DCRT sections",
+  "CAISO 2024-2026 ITP submittals and assessment (2024-25 and 2025-26 transmission plans): https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan.pdf",
+  "CAISO 2026-27 TPP study plan, Q1 2026 accepted ITPs: https://stakeholdercenter.caiso.com/InitiativeDocuments/2026-2027-Transmission-Planning-Process-and-Study-plan-jun-15-26.pdf",
+  "CAISO 2026-27 TPP Sept 2026 stakeholder meeting (economic study requests): https://stakeholdercenter.caiso.com/InitiativeDocuments/Presentation-2026-2027-Transmission-Planning-Process-Sep-24-2026.pdf",
+  "CAISO Annual Interregional Coordination Meeting Mar 2026: https://www.caiso.com/documents/presentation-california-iso-annual-interregional-coordination-meeting-mar-26-2026.pdf",
+  "WestConnect interregional coordination page (2026-27 ITPs): https://regplanning.westconnect.com/interregional_coordination.htm",
+  "CAISO public generation queue report, run 11/14/2026 (DCRT, GLW, VEA, SCE, PG&E, SDG&E rows): https://www.caiso.com/documents/publicqueuereport.pdf",
+  "WECC 2026 annual progress reports - SCE, PG&E, SDG&E, GLW, TWE: https://www.wecc.org/sites/default/files/documents/progress_report/2026/",
+  "CEC Opt-In Certification Program project list (11 cases) and each project page: https://www.energy.ca.gov/programs-and-topics/topics/power-plants/opt-certification-program",
+  "CEC docket 21-AFC-02 Willow Rock (decision and compliance reports): https://www.energy.ca.gov/powerplant/energy-storage-system/willow-rock-energy-storage-center",
+  "BLM list of approved solar/wind/geothermal/gen-tie projects (Dec 2024) and BLM press releases (CA, NV, AZ): https://www.blm.gov/programs/energy-and-minerals/renewable-energy/active-renewable-projects",
+  "BLM National NEPA Register (ePlanning) Southern Nevada solar EISs: Rough Hat Clark, Copper Rays, Purple Sage, Bonanza, Mosey, Larrea, Yellow Pine; AZ Socorro: https://eplanning.blm.gov/",
+  "Riverside County Planning solar cases (Easley CUP220021, Sapphire CUP220035): https://planning.rctlma.org/",
+  "Kern County Planning EIRs and CEQAnet (Bellefield, Enterprise, Galaxy, Discovery): https://psbweb.kerncounty.com/planning/",
+  "Fresno County EIR (Key Energy Storage) via CEQAnet: https://ceqanet.opr.ca.gov/2022070414/5",
+  "San Diego County Boulder Brush/Campo Wind CEQA page: https://www.sandiegocounty.gov/pds/ceqa/BoulderBrush.html",
+  "Inyo County Bonanza Peak POD: https://www.inyocounty.us/",
+  "Arizona Corporation Commission line-siting cases (Harquahala Sun, Atlas North, Centennial Flats) via developer/APS pages: https://www.azcc.gov/",
+  "PUCN UEPA renewable docket list: https://pucweb1.state.nv.us/PUC2/Dktinfo.aspx?Util=Renewable",
+  "CPUC permitting current projects page and GO 131-E quarterly reports (SCE, PG&E): https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/infrastructure/permitting-and-environmental-review/current-projects",
+  "CPUC Tracking Energy Development / Resource Tracking Data (no gen-tie list published): https://www.cpuc.ca.gov/trackingenergy",
+  "CPUC data-center energization resolutions and PG&E advice letters (E-5420, E-5433, E-5439, E-5455; AL 7569-E, 7635-E, 7785-E, 7919-E)",
+  "PG&E 2025 request-window presentation (serial data centers): https://stakeholdercenter.caiso.com/InitiativeDocuments/Presentation-PGE-2025-2026Transmissionplanningprocess-Sep2525.pdf",
+  "VEA 2024-25 TPP presentation (Osprey data center) and VEA CEC IEPR presentation 2025",
+  "NV Energy 2026 IRP Vol. 9 (Greenlink West status, GLW interconnection): https://www.nvenergy.com/",
+  "GLW 2025-26 request window and TDF presentations (Sagebrush connection, Greenlink tie points)",
+  "TransWest Express CAISO PTO application and WECC APR 2026",
+  "SWIP-North: LS Power, Nevada Governor, CAISO blog, Idaho Power pages (Sept 2026)",
+  "Ten West Link / Cielo Azul: DCRT TDF presentations Jan & Jul 2024, CAISO TMCC memo Jul 2025",
+  "Offshore wind transmission: CAISO 2023-24 plan Appendix I (Humboldt, ISD June 2034) and Morro Bay assessments",
+  "Pacific Transmission Expansion Project: CAISO 2022-23/2023-24/2025-26 transmission plans and CPUC filings"
+ ],
+ "projects": [
+  {
+   "key": "tdf-2223-p-03",
+   "name": "Borden - Storey 230 kV #1 and #2 reconductoring",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Borden",
+     "state": "CA",
+     "county": "Madera",
+     "new": false
+    },
+    {
+     "name": "Storey",
+     "state": "CA",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-05",
+   "stage": "planned",
+   "stage_basis": "TDF July 2026: In-Flight, CPUC filing TBD, construction expected Oct-29, current ISD May-30 (PG&E: delay from cable/site studies); reconductors the Borden-Storey sections of the Wilson-Storey #1/#2 230 kV lines (TDF Att. 2 C14P2-NFT04); miles not stated.",
+   "docket": "",
+   "caiso_id": "2223-P-03",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-pg-e-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.caiso.com/documents/attachment-2-network-upgrades-generator-interconnection-july-2026.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/annual-reports/pge-go-131-e-annual-report-2025.xlsx"
+   ]
+  },
+  {
+   "key": "tdf-2122-p-03",
+   "name": "Collinsville 500/230 kV Substation (loop Vaca Dixon - Tesla 500 kV; 230 kV lines to Pittsburg)",
+   "kv": 500,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "LS Power Grid California / PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Collinsville",
+     "state": "CA",
+     "county": "Solano",
+     "new": true
+    },
+    {
+     "name": "Pittsburg",
+     "state": "CA",
+     "county": "Contra Costa",
+     "new": false
+    }
+   ],
+   "miles_new": 5,
+   "miles_upgraded": 0,
+   "in_service": "2028-12",
+   "stage": "planned",
+   "stage_basis": "TDF July 2026 LS Power row: Permitting, CPCN filed (A.24-07-018), current ISD Dec-28 (PG&E interconnection row May-28); LSPGC Sept 2026 CPUC update expects CPUC decision Q4 2026 and projects ISD May 31, 2029. Scope: new 500/230 kV substation, ~1 mi overhead and ~4 mi submarine 230 kV lines.",
+   "docket": "A.24-07-018",
+   "caiso_id": "2122-P-03",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-ls-power-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/lspgc-cpuc-q3-update-2026-0910.pdf",
+    "https://ia.cpuc.ca.gov/environment/info/panoramaenv/collinsville/index.html",
+    "https://docs.cpuc.ca.gov/PublishedDocs/Efile/G000/M610/K354/610354846.PDF",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/pge-cpuc-q3-update-2026-0915.pdf"
+   ]
+  },
+  {
+   "key": "tdf-2526-p-02",
+   "name": "East Shore 230 kV Area Reinforcement (loop Pittsburg - San Mateo 230 kV into East Shore; reconductor Pittsburg - East Shore #1/#2)",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Pittsburg",
+     "state": "CA",
+     "county": "Contra Costa",
+     "new": false
+    },
+    {
+     "name": "East Shore",
+     "state": "CA",
+     "county": "Alameda",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-05",
+   "stage": "planned",
+   "stage_basis": "New policy-driven project in the 2025-2026 Transmission Plan (Board approved May 19, 2026); TDF July 2026 status Initiating, current ISD May-30; miles not stated.",
+   "docket": "",
+   "caiso_id": "2526-P-02",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan-appendix-h-projects.pdf",
+    "https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan.pdf"
+   ]
+  },
+  {
+   "key": "tdf-1314-r-06",
+   "name": "Estrella 230/70 kV Substation (loop Morro Bay - Gates 230 kV)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "Horizon West Transmission / PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Estrella",
+     "state": "CA",
+     "county": "San Luis Obispo",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-03",
+   "stage": "in construction",
+   "stage_basis": "CPUC PTC A.17-01-023 approved; CPUC project page says construction began August 4, 2025; TDF July 2026 current ISD Mar-29. New 230 kV substation (HWT) plus PG&E 230 kV interconnection to the Morro Bay-Gates 230 kV line.",
+   "docket": "A.17-01-023",
+   "caiso_id": "1314-R-06",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://ia.cpuc.ca.gov/environment/info/horizonh2o/estrella/index.html",
+    "https://www.caiso.com/documents/attachment-2-network-upgrades-generator-interconnection-july-2026.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/pge-cpuc-q3-update-2026-0915.pdf",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/PGAE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "key": "tdf-2324-r-09",
+   "name": "French Camp 230 kV Substation loop-in of Bellota - Tesla #2 230 kV",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "French Camp",
+     "state": "CA",
+     "county": "San Joaquin",
+     "new": true
+    },
+    {
+     "name": "Bellota - Tesla #2 230 kV line",
+     "state": "CA",
+     "county": "San Joaquin",
+     "new": false
+    }
+   ],
+   "miles_new": 4.4,
+   "miles_upgraded": 0,
+   "in_service": "2030-05",
+   "stage": "planned",
+   "stage_basis": "2023-2024 Transmission Plan approved loop of Bellota-Tesla #2 230 kV into French Camp with a new 230 kV bus (~4.4 circuit miles); PG&E says site selection is ongoing; TDF July 2026 In-Flight, CPUC filing TBD, ISD May-30.",
+   "docket": "",
+   "caiso_id": "2324-R-09",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/iso-board-approved-2023-2024-transmission-plan.pdf",
+    "http://www.pge.com/en/about/pge-systems/electric-systems/french-camp-reinforcement-project.html",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/PGAE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "key": "tdf-1213-r-14",
+   "name": "Lockeford - Thurman 230 kV double circuit and Brighton - Bellota loop-in (Northern San Joaquin 230 kV / Lockeford-Lodi Area 230 kV Development)",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Lockeford",
+     "state": "CA",
+     "county": "San Joaquin",
+     "new": false
+    },
+    {
+     "name": "Thurman Switching Station (Lodi)",
+     "state": "CA",
+     "county": "San Joaquin",
+     "new": true
+    }
+   ],
+   "miles_new": 10.6,
+   "miles_upgraded": 0,
+   "in_service": "2031-06",
+   "stage": "approved",
+   "stage_basis": "TDF July 2026 shows CPCN A.23-09-001 'Filed & Under Review', ISD Jun-31; PG&E project page says the CPUC approved the project in July 2026. ~10.6 miles of new double-circuit 230 kV line and new Thurman switching station.",
+   "docket": "A.23-09-001",
+   "caiso_id": "1213-R-14",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.pge.com/en/about/pge-systems/northern-san-joaquin.html",
+    "https://ia.cpuc.ca.gov/environment/info/ascent/NSJTP/index.html",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/pge-cpuc-q1-update-2026-0317.pdf",
+    "https://www.pge.com/en/about/pge-systems/electric-systems/northern-san-joaquin.html",
+    "https://www.lodi.gov/DocumentCenter/View/10732/FINAL-NSJTP-Joint-Press-Release",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/pge-cpuc-q3-update-2026-0915.pdf"
+   ]
+  },
+  {
+   "key": "tdf-2122-p-04",
+   "name": "Manning 500/230 kV Substation and Manning - Tranquility 230 kV lines",
+   "kv": 500,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "LS Power Grid California / PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Manning",
+     "state": "CA",
+     "county": "Fresno",
+     "new": true
+    },
+    {
+     "name": "Tranquility",
+     "state": "CA",
+     "county": "Fresno",
+     "new": false
+    }
+   ],
+   "miles_new": 10,
+   "miles_upgraded": 0,
+   "in_service": "2028-04",
+   "stage": "in construction",
+   "stage_basis": "CPUC decision Sept 18, 2025 (A.24-06-017); construction started Feb 20, 2026 (LSPGC CPUC update); TDF July 2026 ISD Apr-28. Loops Midway-Los Banos and Gates-Los Banos 500 kV and Panoche-Tranquility 230 kV; 10-12 mi of overhead 230 kV lines incl. new double circuit Manning-Tranquility.",
+   "docket": "A.24-06-017",
+   "caiso_id": "2122-P-04",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-ls-power-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/lspgc-cpuc-q3-update-2026-0910.pdf",
+    "https://www.caiso.com/documents/attachment-2-network-upgrades-generator-interconnection-july-2026.pdf",
+    "https://ia.cpuc.ca.gov/environment/info/ascent/manning/index.html",
+    "https://ia.cpuc.ca.gov/environment/info/ascent/Manning/pdfs/PGE-AL-7706-E-Advice-Letter.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/annual-reports/pge-go-131-e-annual-report-2025.xlsx"
+   ]
+  },
+  {
+   "key": "tdf-1415-r-03",
+   "name": "Egbert 230 kV Switching Station (Martin 230 kV Bus Extension)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Egbert Switching Station",
+     "state": "CA",
+     "county": "San Francisco",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-12",
+   "stage": "approved",
+   "stage_basis": "CPCN A.17-12-021 approved (CPUC: post-CEQA monitoring phase); TDF July 2026 In-Flight, construction expected Jun-27, ISD Dec-29 (delay from GIS commissioning duration). New 230 kV switching station near Martin Substation on the Jefferson-Martin 230 kV path.",
+   "docket": "A.17-12-021",
+   "caiso_id": "1415-R-03",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-pg-e-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/pge-cpuc-q1-update-2026-0317.pdf",
+    "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M341/K769/341769043.PDF",
+    "https://ia.cpuc.ca.gov/environment/info/dudek/egbert/egbert.html",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/pge-cpuc-q3-update-2026-0915.pdf",
+    "https://www.caiso.com/documents/iso-response-to-comments-matrix-transmission-development-forum-jul-29-2026.pdf"
+   ]
+  },
+  {
+   "key": "tdf-1314-r-13",
+   "name": "Midway - Kern PP #1 230 kV reconductor, re-established as Midway - Kern PP #1 and #2",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Midway",
+     "state": "CA",
+     "county": "Kern",
+     "new": false
+    },
+    {
+     "name": "Kern PP",
+     "state": "CA",
+     "county": "Kern",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-12",
+   "stage": "in construction",
+   "stage_basis": "TDF July 2026: In-flight, NOC AL 5026-E approved, construction start Nov-18, current ISD Dec-28; a second phase (Bakersfield-Kern reconductor, NOC AL 5924-E) is due Jan-32. PG&E 2026 WECC report: reconductor Midway-Kern #1 and re-establish as two circuits.",
+   "docket": "",
+   "caiso_id": "1314-R-13",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/PGAE%202026%20APR.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/annual-reports/pge-go-131-e-annual-report-2025.xlsx"
+   ]
+  },
+  {
+   "key": "tdf-1011-r-12",
+   "name": "Midway - Kern PP Nos. 1, 3 and 4 230 kV lines capacity increase",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Midway",
+     "state": "CA",
+     "county": "Kern",
+     "new": false
+    },
+    {
+     "name": "Kern PP",
+     "state": "CA",
+     "county": "Kern",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-02",
+   "stage": "in construction",
+   "stage_basis": "TDF July 2026: In-Flight, permit N/A, construction start Apr-21, current ISD Feb-29.",
+   "docket": "",
+   "caiso_id": "1011-R-12",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf"
+   ]
+  },
+  {
+   "key": "tdf-2122-p-05",
+   "name": "Delevan - Cortina 230 kV reconductor",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Delevan",
+     "state": "CA",
+     "county": "Colusa",
+     "new": false
+    },
+    {
+     "name": "Cortina",
+     "state": "CA",
+     "county": "Colusa",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-02",
+   "stage": "planned",
+   "stage_basis": "TDF July 2026: In-Flight, CPUC filing TBD, construction expected Aug-27, current ISD Feb-28; miles not stated.",
+   "docket": "",
+   "caiso_id": "2122-P-05",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/PGAE%202026%20APR.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/annual-reports/pge-go-131-e-annual-report-2025.xlsx"
+   ]
+  },
+  {
+   "key": "tdf-2324-p-07",
+   "name": "Tesla - Newark 230 kV No. 2 reconductoring",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Tesla",
+     "state": "CA",
+     "county": "Alameda",
+     "new": false
+    },
+    {
+     "name": "Newark",
+     "state": "CA",
+     "county": "Alameda",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-03",
+   "stage": "planned",
+   "stage_basis": "TDF July 2026: In-Flight, CPUC filing TBD, construction expected Mar-28, ISD improved to Mar-30 (PG&E: recalibrated portfolio); miles not stated.",
+   "docket": "",
+   "caiso_id": "2324-P-07",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-pg-e-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/annual-reports/pge-go-131-e-annual-report-2025.xlsx"
+   ]
+  },
+  {
+   "key": "tdf-1819-r-08",
+   "name": "Fern Road 500 kV Substation (loop Round Mountain - Table Mountain #1/#2 500 kV; STATCOM)",
+   "kv": 500,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "LS Power Grid California",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Fern Road",
+     "state": "CA",
+     "county": "Shasta",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-08",
+   "stage": "built",
+   "stage_basis": "TDF July 2026 expected Jul-26; LS Power says initial facilities placed in service June 12, 2026 and final facilities August 28, 2026; LSPGC Sept 2026 CPUC update says energized August 2026 and fully operational.",
+   "docket": "A.22-04-004",
+   "caiso_id": "1819-R-08",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-ls-power-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.lspowergrid.com/wp-content/uploads/20261026_LSPGC_2027_Projection_Meeting_Presentation.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/lspgc-cpuc-q3-update-2026-0910.pdf",
+    "https://ia.cpuc.ca.gov/environment/info/esa/round_mountain/index.html",
+    "https://www.lspowergrid.com/wp-content/uploads/20261005_LSPGC_2027_Projection_Notice_and_Disclosures.pdf",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/LSPGC%202026%20APR.pdf"
+   ]
+  },
+  {
+   "key": "tdf-1819-r-03",
+   "name": "Orchard 500 kV Substation (Gates 500 kV dynamic voltage support, STATCOM)",
+   "kv": 500,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "LS Power Grid California",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Orchard (near Gates)",
+     "state": "CA",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-03",
+   "stage": "built",
+   "stage_basis": "TDF July 2026 lists In-Service; 2025-2026 Transmission Plan Table 8-1 closed out with final ISD Mar-25; LSPGC CPUC update: energized March 2025.",
+   "docket": "A.21-02-018",
+   "caiso_id": "1819-R-03",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/lspgc-cpuc-q4-quarterly-update-2025-1204.pdf",
+    "https://www.lspower.com/news/ls-power-grid-california-energizes-orchard-substation/",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2024/LSPGCA%20Gates%202024%20APR.pdf"
+   ]
+  },
+  {
+   "key": "tdf-2122-r-11",
+   "name": "Newark - Northern Receiving Station 230 kV line (Power the South Bay)",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "LS Power Grid California / PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Newark",
+     "state": "CA",
+     "county": "Alameda",
+     "new": false
+    },
+    {
+     "name": "Northern Receiving Station (NRS)",
+     "state": "CA",
+     "county": "Santa Clara",
+     "new": false
+    }
+   ],
+   "miles_new": 12,
+   "miles_upgraded": 0,
+   "in_service": "2028-04",
+   "stage": "in construction",
+   "stage_basis": "TDF July 2026 (listed as 'San Jose Area HVDC 230 kV Line (Newark - NRS)'): Construction in progress, construction start May-24, ISD Apr-28. LS Power describes ~12 miles of 230 kV underground and overhead AC lines.",
+   "docket": "A.24-05-014",
+   "caiso_id": "2122-R-11",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-ls-power-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/lspgc-cpuc-q3-update-2026-0910.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/lspgc-cpuc-q1-update-2026-0420.pdf"
+   ]
+  },
+  {
+   "key": "tdf-2122-r-10",
+   "name": "Metcalf - San Jose B +/-320 kV HVDC (Power Santa Clara Valley)",
+   "kv": 320,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "LS Power Grid California / PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Metcalf",
+     "state": "CA",
+     "county": "Santa Clara",
+     "new": false
+    },
+    {
+     "name": "San Jose B",
+     "state": "CA",
+     "county": "Santa Clara",
+     "new": false
+    }
+   ],
+   "miles_new": 12,
+   "miles_upgraded": 0,
+   "in_service": "2028-05",
+   "stage": "in construction",
+   "stage_basis": "TDF July 2026: LS Power row Construction in progress, construction start Apr-24, ISD May-28 (a PG&E row approved 2024-2025 shows Jun-30 for PG&E scope). Two new 320 kV HVDC terminals and ~12 miles of underground HVDC line.",
+   "docket": "A.24-04-017",
+   "caiso_id": "2122-R-10",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-ls-power-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/lspgc-cpuc-q3-update-2026-0910.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/lspgc-cpuc-q1-update-2026-0420.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/lspgc-q1-2025-go-131-e-report.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/annual-reports/pge-go-131-e-annual-report-2025.xlsx"
+   ]
+  },
+  {
+   "key": "tdf-2425-r-18",
+   "name": "Northern Receiving Station - San Jose B 230 kV (Power the Valley Connector)",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "LS Power Grid California / PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Northern Receiving Station (NRS)",
+     "state": "CA",
+     "county": "Santa Clara",
+     "new": false
+    },
+    {
+     "name": "San Jose B",
+     "state": "CA",
+     "county": "Santa Clara",
+     "new": false
+    }
+   ],
+   "miles_new": 8,
+   "miles_upgraded": 0,
+   "in_service": "2030-05",
+   "stage": "planned",
+   "stage_basis": "TDF July 2026: Permitting, CPCN filing expected Q2 2027, construction 2028, ISD May-30; ~8 miles of 230 kV lines (LS Power).",
+   "docket": "",
+   "caiso_id": "2425-R-18",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-ls-power-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/lspgc-cpuc-q3-update-2026-0910.pdf",
+    "https://www.caiso.com/documents/appendix-i-board-approved-2024-2025-transmission-plan.pdf"
+   ]
+  },
+  {
+   "key": "tdf-2223-p-22",
+   "name": "SWIP-North 500 kV (Midpoint - Robinson Summit)",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "NV",
+   "utility": "Great Basin Transmission (LS Power)",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Midpoint",
+     "state": "ID",
+     "county": "Jerome",
+     "new": false
+    },
+    {
+     "name": "Robinson Summit",
+     "state": "NV",
+     "county": "White Pine",
+     "new": false
+    }
+   ],
+   "miles_new": 285,
+   "miles_upgraded": 0,
+   "in_service": "2028-05",
+   "stage": "in construction",
+   "stage_basis": "TDF July 2026: Construction in progress (LS Power: construction July 2026), ISD May-28; new 285-mile single-circuit 500 kV line with 70% series compensation, plus series compensation on the existing Robinson Summit-Harry Allen ON Line.",
+   "docket": "",
+   "caiso_id": "2223-P-22",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-ls-power-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.lspowergrid.com/current-projects/great-basin-transmission",
+    "https://www.gov.nv.gov/press-releases/great-basin-transmission-breaks-ground-on-southwest-intertie-project-north",
+    "https://www.caiso.com/about/news/energy-matters-blog/swip-north-construction-underway-provides-key-link-in-western-transmission-connectivity"
+   ]
+  },
+  {
+   "key": "tdf-2122-p-02",
+   "name": "Laguna Bell - Mesa No. 1 230 kV line rating increase",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Laguna Bell",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    },
+    {
+     "name": "Mesa",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-04",
+   "stage": "built",
+   "stage_basis": "TDF July 2026 lists In Service (July 2025 TDF date Apr-25); 2025-2026 Transmission Plan Table 8-1 closed out with final ISD Apr-25.",
+   "docket": "",
+   "caiso_id": "2122-P-02",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan.pdf",
+    "https://www.caiso.com/documents/revised-draft-2025-2026-transmission-plan-may-2026.pdf",
+    "https://stakeholdercenter.caiso.com/InitiativeDocuments/Presentation-Draft-2026and2030-LCR-LA-Basin-and-San-Diego-Imperial-Valley-Local-Areas.pdf"
+   ]
+  },
+  {
+   "key": "tdf-09-r-03",
+   "name": "Alberhill 500/115 kV Substation and 500 kV loop-in of Serrano - Valley",
+   "kv": 500,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Alberhill",
+     "state": "CA",
+     "county": "Riverside",
+     "new": true
+    },
+    {
+     "name": "Serrano - Valley 500 kV line",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "miles_new": 3.5,
+   "miles_upgraded": 0,
+   "in_service": "2029-12",
+   "stage": "approved",
+   "stage_basis": "CPUC approved the CPCN (A.09-09-022) in March 2026; SCE Oct 2026 CPUC update: substation construction anticipated to begin Q4 2026, operating Q4 2029; TDF July 2026 ISD Dec-29. Scope ~3.5 mi of 500 kV loop-in line.",
+   "docket": "A.09-09-022",
+   "caiso_id": "09-R-03",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-southern-california-edison-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/sce-cpuc-q3-update-2026-1001.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/transmission-project-review-process/sce/sce-tpr-cycle-5---stakeholder-meeting_-08-28-2026.pdf",
+    "https://www.sce.com:5900/about-sce/reliability/projects-in-progress/alberhill-system-project"
+   ]
+  },
+  {
+   "key": "tdf-2223-r-01",
+   "name": "Antelope - Whirlwind 500 kV line upgrade",
+   "kv": 500,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Antelope",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    },
+    {
+     "name": "Whirlwind",
+     "state": "CA",
+     "county": "Kern",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-01",
+   "stage": "built",
+   "stage_basis": "TDF July 2026 and SCE presentation: Construction Complete, ISD Jan 2026.",
+   "docket": "",
+   "caiso_id": "2223-R-01",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-southern-california-edison-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "key": "tdf-2223-p-04",
+   "name": "Colorado River - Red Bluff 500 kV No. 1 line upgrade",
+   "kv": 500,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Colorado River",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    },
+    {
+     "name": "Red Bluff",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-12",
+   "stage": "planned",
+   "stage_basis": "TDF July 2026 / SCE presentation: Preliminary Engineering, CPUC permit filing Pending, construction expected Nov-27, ISD Dec 2028.",
+   "docket": "",
+   "caiso_id": "2223-P-04",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-southern-california-edison-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/transmission-project-review-process/sce/sce-tpr-cycle-5---stakeholder-meeting_-08-28-2026.pdf"
+   ]
+  },
+  {
+   "key": "tdf-2223-p-06",
+   "name": "Devers - Valley 500 kV No. 1 line upgrade",
+   "kv": 500,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Devers",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    },
+    {
+     "name": "Valley",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-12",
+   "stage": "planned",
+   "stage_basis": "TDF July 2026 / SCE presentation: Preliminary Engineering, CPUC permit Pending, construction expected Nov-28, ISD Dec 2030.",
+   "docket": "",
+   "caiso_id": "2223-P-06",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-southern-california-edison-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "key": "tdf-2425-r-10",
+   "name": "Julian Hinds - Mirage 230 kV advanced reconductor",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Julian Hinds",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    },
+    {
+     "name": "Mirage",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "Approved in the 2024-2025 Transmission Plan with a 2030 ISD; TDF July 2026 and 2025-2026 plan Table 8-3 show it On Hold (ISO action), current ISD TBD.",
+   "docket": "",
+   "caiso_id": "2425-R-10",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-southern-california-edison-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan.pdf"
+   ]
+  },
+  {
+   "key": "tdf-1516-r-09",
+   "name": "Lugo - Victorville 500 kV upgrade (SCE portion)",
+   "kv": 500,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Lugo",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": false
+    },
+    {
+     "name": "Victorville",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-03",
+   "stage": "in construction",
+   "stage_basis": "TDF July 2026 / SCE presentation: Construction, CPUC exempt, construction start Jan-19, ISD Mar 2027.",
+   "docket": "",
+   "caiso_id": "1516-R-09",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-southern-california-edison-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "key": "tdf-2223-p-09",
+   "name": "Lugo - Victor 230 kV Nos. 1-4 HTLS reconductor (Lugo-Victor-Kramer Upgrade part 2/3)",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Lugo",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": false
+    },
+    {
+     "name": "Victor",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-12",
+   "stage": "planned",
+   "stage_basis": "TDF July 2026 / SCE presentation: Engineering, CPUC permit Pending, construction expected Oct-27, ISD Dec 2028. Part 3/3 (rebuild Kramer-Victor 115 kV to 230 kV, loop into Roadway) is due Dec 2033, outside the window; part 1/3 is a transformer.",
+   "docket": "",
+   "caiso_id": "2223-P-09",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-southern-california-edison-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "key": "tdf-07-r-03",
+   "name": "Riverside Transmission Reliability Project: Mira Loma - Vista 230 kV loop to new Wildlife 230/66 kV Substation",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Mira Loma - Vista No. 1 230 kV line",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    },
+    {
+     "name": "Wildlife",
+     "state": "CA",
+     "county": "Riverside",
+     "new": true
+    }
+   ],
+   "miles_new": 10,
+   "miles_upgraded": 0,
+   "in_service": "2029-10",
+   "stage": "in construction",
+   "stage_basis": "CPCN approved March 2020 (A.15-04-013 filed Apr-15); construction began June 2025; TDF July 2026 status Construction, ISD Oct-29. ~10 miles of new double-circuit 230 kV line (about 4 mi underground, 6 mi overhead).",
+   "docket": "A.15-04-013",
+   "caiso_id": "07-R-03",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-southern-california-edison-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.sce.com/about-sce/reliability/projects-in-progress/riverside-transmission-reliability-project",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/sce-cpuc-q3-update-2026-1001.pdf",
+    "https://ia.cpuc.ca.gov/environment/info/panoramaenv/RTRP",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/sce-cpuc-q2-update-2026-0616.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/transmission-project-review-process/sce/sce-tpr-cycle-5---stakeholder-meeting_-08-28-2026.pdf",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "key": "tdf-2223-p-10",
+   "name": "Mira Loma - Mesa 500 kV underground third cable",
+   "kv": 500,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Mira Loma",
+     "state": "CA",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Mesa",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-12",
+   "stage": "in construction",
+   "stage_basis": "SCE July 2026 TDF presentation: status Construction, CPUC exempt, construction start Jul-26, ISD Dec 2026.",
+   "docket": "",
+   "caiso_id": "2223-P-10",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-southern-california-edison-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "key": "tdf-1920-r-06",
+   "name": "Pardee - Sylmar 230 kV line rating increase",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Pardee",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    },
+    {
+     "name": "Sylmar",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-06",
+   "stage": "in construction",
+   "stage_basis": "TDF July 2026 / SCE presentation: Construction, CPUC exempt, construction start Oct-24, ISD Jun 2029.",
+   "docket": "",
+   "caiso_id": "1920-R-06",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-southern-california-edison-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/transmission-project-review-process/sce/sce-tpr-cycle-5---stakeholder-meeting_-08-28-2026.pdf"
+   ]
+  },
+  {
+   "key": "tdf-2223-p-17",
+   "name": "Serrano - Alberhill - Valley 500 kV No. 1 line upgrade",
+   "kv": 500,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Serrano",
+     "state": "CA",
+     "county": "Orange",
+     "new": false
+    },
+    {
+     "name": "Valley",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2031-06",
+   "stage": "approved",
+   "stage_basis": "TDF July 2026 / SCE presentation: Engineering, CPUC permit Exempt, construction expected Aug-30, ISD Jun 2031.",
+   "docket": "",
+   "caiso_id": "2223-P-17",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-southern-california-edison-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/transmission-project-review-process/sce/sce-tpr-cycle-5---stakeholder-meeting_-08-28-2026.pdf"
+   ]
+  },
+  {
+   "key": "tdf-2223-p-21",
+   "name": "Vista - Etiwanda 230 kV No. 1 line upgrade",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Vista",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": false
+    },
+    {
+     "name": "Etiwanda",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-06",
+   "stage": "approved",
+   "stage_basis": "TDF July 2026 / SCE presentation: Engineering, CPUC permit Exempt, construction expected Oct-26 (start not confirmed), ISD Jun 2028 (material delay).",
+   "docket": "",
+   "caiso_id": "2223-P-21",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-southern-california-edison-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/transmission-project-review-process/sce/sce-tpr-cycle-5---stakeholder-meeting_-08-28-2026.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/sce-cpuc-q3-update-2026-1001.pdf"
+   ]
+  },
+  {
+   "key": "tdf-2223-p-20",
+   "name": "Sycamore Canyon - Chicarita 138 kV (TL13820) upgrade",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "SDG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Sycamore Canyon",
+     "state": "CA",
+     "county": "San Diego",
+     "new": false
+    },
+    {
+     "name": "Chicarita",
+     "state": "CA",
+     "county": "San Diego",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-04",
+   "stage": "planned",
+   "stage_basis": "TDF July 2026: Design, CPUC filing TBD, construction expected Oct-26, current ISD Apr-29 (2025-2026 plan Table 8-3 showed Sep-31). Included because the brief counts lines of 138 kV and up.",
+   "docket": "",
+   "caiso_id": "2223-P-20",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan.pdf"
+   ]
+  },
+  {
+   "key": "tdf-2425-r-06",
+   "name": "Vine 230 kV expansion with loop-in of TL23029 Old Town - Mission (Downtown Reliability Reinforcement)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "SDG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Vine",
+     "state": "CA",
+     "county": "San Diego",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-12",
+   "stage": "planned",
+   "stage_basis": "TDF July 2026 row 'Vine Substation 230kV Expansion': Planning, ISD Dec-29. Conflict: the 2024-2025 plan targets the Vine expansion for 2037 and the 2025-2026 plan Table 8-3 shows Downtown Reliability Reinforcement Dec-37. Scope: expand existing Vine 69/12 kV substation to 230 kV, loop in TL23029, add a 230/69 kV bank.",
+   "docket": "",
+   "caiso_id": "2425-R-06",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/iso-board-approved-2024-2025-transmission-plan.pdf",
+    "https://www.caiso.com/documents/appendix-h-board-approved-2024-2025-transmission-plan.pdf",
+    "https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan.pdf"
+   ]
+  },
+  {
+   "key": "tdf-2223-p-02",
+   "name": "Beatty 230 kV Project (Johnnie Corner - Valley Switch - Lathrop - Beatty 230 kV)",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "NV",
+   "utility": "GridLiance West / VEA",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Johnnie Corner",
+     "state": "NV",
+     "county": "Nye",
+     "new": true
+    },
+    {
+     "name": "Beatty",
+     "state": "NV",
+     "county": "Nye",
+     "new": false
+    }
+   ],
+   "miles_new": 62,
+   "miles_upgraded": 0,
+   "in_service": "2028-05",
+   "stage": "planned",
+   "stage_basis": "TDF July 2026: Permitting, engineering and design; construction expected Mar-27; ISD May-28. Scope: new Johnnie Corner 230 kV station, 32-mi Beatty-Lathrop 230 kV line and 30-mi Johnnie Corner-Valley Switch-Lathrop 230 kV double circuit next to existing 138 kV, Beatty/Lathrop/Valley Switch/Vista expanded to 230 kV.",
+   "docket": "",
+   "caiso_id": "2223-P-02",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-gridliance-west-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.caiso.com/Documents/ISO-Board-Approved-2022-2023-Transmission-Plan.pdf",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/GLW%202026%20APR.pdf",
+    "https://www.energy.nv.gov/siteassets/content/programs/reta/july-22-2026-rtftc-meeting-minutes-.pdf"
+   ]
+  },
+  {
+   "key": "tdf-2122-p-01",
+   "name": "GLW/VEA Area Upgrades (Trout Canyon - Sloan Canyon 500 kV double circuit; Northwest - Desert View - Innovation - Pahrump - Gamebird - Trout Canyon 230 kV rebuilds)",
+   "kv": 500,
+   "project_type": "upgrade",
+   "state": "NV",
+   "utility": "GridLiance West / VEA",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Sloan Canyon",
+     "state": "NV",
+     "county": "Clark",
+     "new": false
+    },
+    {
+     "name": "Northwest",
+     "state": "NV",
+     "county": "Clark",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 155,
+   "in_service": "2028-06",
+   "stage": "in construction",
+   "stage_basis": "TDF July 2026: ISD Jun-28, construction start Jul-26; TDF Att. 2 (GLW-2021-EOP-L1 Trout Canyon-Sloan Canyon line, replaced by this project) says BLM permit received, construction underway. BLM: ~155 miles of double-circuit 230/500 kV upgrade in Nye and Clark Counties; includes new Trout Canyon 500 kV bus.",
+   "docket": "",
+   "caiso_id": "2122-P-01",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-gridliance-west-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.caiso.com/documents/attachment-2-network-upgrades-generator-interconnection-july-2026.pdf",
+    "https://www.caiso.com/Documents/ISO-Board-Approved-2022-2023-Transmission-Plan.pdf",
+    "https://eplanning.blm.gov/Project-Home?id=c6b63ad7-a7f2-f011-8407-001dd803d067",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/GLW%202026%20APR.pdf",
+    "https://www.energy.nv.gov/siteassets/content/programs/reta/july-22-2026-rtftc-meeting-minutes-.pdf",
+    "https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan-appendix-a-system-data.pdf"
+   ]
+  },
+  {
+   "key": "tdf-1314-e-01",
+   "name": "Delaney - Colorado River 500 kV",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "AZ",
+   "utility": "DCR Transmission",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Delaney",
+     "state": "AZ",
+     "county": "Maricopa",
+     "new": false
+    },
+    {
+     "name": "Colorado River",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2024-06",
+   "stage": "built",
+   "stage_basis": "TDF July 2026 lists In-Service, 'Energized 6/7/2024'.",
+   "docket": "",
+   "caiso_id": "1314-E-01",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-1-approved-projects-transmission-planning-process-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-dcrt-transmission-development-forum-jul-31-2024.pdf",
+    "https://www.sargentlundy.com/projects/ten-west-link-transmission-line",
+    "https://www.lotusinfrastructure.com/news/ten-west-link-transmission-line-becomes-operational-expanding-the-grid-between-california-and-the-desert-southwest",
+    "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M420/K858/420858355.PDF"
+   ]
+  },
+  {
+   "key": "tdf-nu-c13p1-fpt02",
+   "name": "Bellota - Warnerville / Bellota - Cottle 230 kV reconductoring",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Bellota",
+     "state": "CA",
+     "county": "San Joaquin",
+     "new": false
+    },
+    {
+     "name": "Warnerville",
+     "state": "CA",
+     "county": "Stanislaus",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 45,
+   "in_service": "2024-03",
+   "stage": "built",
+   "stage_basis": "TDF Att. 2 July 2026: In-Service, ISD Mar-24 (also PG&E 2025 WECC report: in service Mar-2024). ~45 circuit miles reconductored across Bellota-Warnerville, Bellota-Cottle, Cottle-Melones and Warnerville-Wilson 230 kV.",
+   "docket": "",
+   "caiso_id": "C13P1-FPT02",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-2-network-upgrades-generator-interconnection-july-2026.pdf",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2025/PGaE%202025%20APR.pdf"
+   ]
+  },
+  {
+   "key": "tdf-nu-c8p1-34",
+   "name": "Padre Flat SS - Panoche #1 230 kV reconductor",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Padre Flat Switching Station",
+     "state": "CA",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Panoche",
+     "state": "CA",
+     "county": "Fresno",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 32.59,
+   "in_service": "2025-03",
+   "stage": "built",
+   "stage_basis": "TDF Att. 2 July 2026: In-Service, ISD Mar-25; 32.59 mi reconductored with 795 ACSS.",
+   "docket": "",
+   "caiso_id": "C8P1-34",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-2-network-upgrades-generator-interconnection-july-2026.pdf"
+   ]
+  },
+  {
+   "key": "tdf-nu-c9p1-f11",
+   "name": "Dos Amigos PP - Panoche #3 230 kV reconductor",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Dos Amigos PP",
+     "state": "CA",
+     "county": "Merced",
+     "new": false
+    },
+    {
+     "name": "Panoche",
+     "state": "CA",
+     "county": "Fresno",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 23.63,
+   "in_service": "2026-04",
+   "stage": "built",
+   "stage_basis": "TDF Att. 2 and PG&E July 2026 TDF presentation: In-Service Apr 2026 (04/15/26); 23.63 mi reconductored with 795 ACSS.",
+   "docket": "",
+   "caiso_id": "C9P1-F11",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-2-network-upgrades-generator-interconnection-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-pg-e-transmission-development-forum-jul-29-2026.pdf"
+   ]
+  },
+  {
+   "key": "tdf-nu-c11p2-nd03",
+   "name": "North Dublin - Cayetano 230 kV reconductor",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "North Dublin",
+     "state": "CA",
+     "county": "Alameda",
+     "new": false
+    },
+    {
+     "name": "Cayetano",
+     "state": "CA",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 5.45,
+   "in_service": "2026-03",
+   "stage": "built",
+   "stage_basis": "TDF Att. 2 and PG&E July 2026 presentation: In-Service 03/31/26; 2.63 mi overhead and 2.82 mi underground cable replaced.",
+   "docket": "",
+   "caiso_id": "C11P2-ND03",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-2-network-upgrades-generator-interconnection-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-pg-e-transmission-development-forum-jul-29-2026.pdf"
+   ]
+  },
+  {
+   "key": "tdf-nu-c8p2-1",
+   "name": "Borden - Gregg #1 and #2 230 kV reconductor",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Borden",
+     "state": "CA",
+     "county": "Madera",
+     "new": false
+    },
+    {
+     "name": "Gregg",
+     "state": "CA",
+     "county": "Fresno",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 6.25,
+   "in_service": "2028-03",
+   "stage": "planned",
+   "stage_basis": "TDF Att. 2 July 2026: In-Flight; #1 (C8P2-1) ISD Mar-28 and #2 (C9P1-F12) ISD Feb-28; land rights and steel-pole delays, construction moved to 2027. 6.25 mi each circuit.",
+   "docket": "",
+   "caiso_id": "C8P2-1; C9P1-F12",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-2-network-upgrades-generator-interconnection-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-pg-e-transmission-development-forum-jul-29-2026.pdf"
+   ]
+  },
+  {
+   "key": "tdf-nu-22rsmt-4",
+   "name": "New 230 kV switching station looping Dos Amigos - Panoche #3 230 kV",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "New switching station on Dos Amigos - Panoche #3 230 kV",
+     "state": "CA",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-05",
+   "stage": "planned",
+   "stage_basis": "TDF Att. 2 July 2026: In-Flight, 2-bay 230 kV BAAH switching station; three parcels evaluated, land acquisition initiating; current ISD May-30 (1,095 MW with GIAs behind it).",
+   "docket": "",
+   "caiso_id": "22rsmt-4",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-2-network-upgrades-generator-interconnection-july-2026.pdf"
+   ]
+  },
+  {
+   "key": "tdf-nu-sce-c11p2-n-l1",
+   "name": "Pardee - Pastoria - Warne 230 kV line rating increase",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Pardee",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    },
+    {
+     "name": "Pastoria",
+     "state": "CA",
+     "county": "Kern",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-09",
+   "stage": "built",
+   "stage_basis": "TDF Att. 2 July 2026: Closeout, 'Commercially operational', ISD Sep-25 (Jan 2026 TDF); terminal equipment upgrade and ground clearance fixes on the line.",
+   "docket": "",
+   "caiso_id": "SCE-C11P2-N-L1",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-2-network-upgrades-generator-interconnection-july-2026.pdf"
+   ]
+  },
+  {
+   "key": "tdf-nu-pin6902",
+   "name": "Calcite 220 kV Switching Station (loop Lugo - Pisgah No. 1)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Calcite",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": true
+    }
+   ],
+   "miles_new": 0.9,
+   "miles_upgraded": 0,
+   "in_service": "2029-03",
+   "stage": "approved",
+   "stage_basis": "TDF Att. 2 / SCE July 2026: Design, ISD Mar 2029, construction Jan 2028; San Bernardino County certified the EIR Jan 27, 2026 and SCE received CPUC PTC exemption June 28, 2026. Loops ~4,600 ft of the Lugo-Pisgah No. 1 220 kV line.",
+   "docket": "",
+   "caiso_id": "PIN6902",
+   "sources": [
+    "https://www.caiso.com/documents/attachment-2-network-upgrades-generator-interconnection-july-2026.pdf",
+    "https://www.caiso.com/documents/presentation-southern-california-edison-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/transmission-project-review-process/sce/sce-tpr-cycle-5---stakeholder-meeting_-08-28-2026.pdf"
+   ]
+  },
+  {
+   "key": "pge-momentum-230",
+   "name": "Momentum 230/21 kV Substation (Rio Oso-Gold Hill/Atlantic 230 kV loop-in), Placer County",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Momentum",
+     "state": "CA",
+     "county": "Placer",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-12",
+   "stage": "in construction",
+   "stage_basis": "PG&E filed GO 131-E notice AL 7636-E (approved 2025) for a new 230 kV BAAH substation looping an existing 230 kV line; Placer County says PG&E broke ground April 2026 with the first transformer to be energized December 2027.",
+   "docket": "AL 7636-E",
+   "caiso_id": "",
+   "sources": [
+    "https://www.placer.ca.gov/m/newsflash/home/detail/1728",
+    "https://s3.amazonaws.com/ipublishmedia.marketplace.mcclatchy/AdvertImages/notices/IPL0250657/SAC_4x2_NAD44745_July3.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/pgecpuc-q3-quarterly-meeting-2025.pdf"
+   ]
+  },
+  {
+   "key": "pge-borden-gregg-230",
+   "name": "Borden - Gregg #1 and #2 230 kV reconductor",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Borden",
+     "state": "CA",
+     "county": "Madera",
+     "new": false
+    },
+    {
+     "name": "Gregg",
+     "state": "CA",
+     "county": "Fresno",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 12.5,
+   "in_service": "2028-03",
+   "stage": "approved",
+   "stage_basis": "GO 131-D notice AL 7393-E approved (Oct 2024) to reconductor two 6.25-mi circuits; PG&E's July 2026 TDF shows construction rescheduled to 2027 with in-service 02/24/2028 (#2) and 03/03/2028 (#1).",
+   "docket": "AL 7393-E",
+   "caiso_id": "",
+   "sources": [
+    "https://www.caiso.com/documents/presentation-pg-e-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/annual-reports/pge-go-131-e-annual-report-2025.xlsx"
+   ]
+  },
+  {
+   "key": "pge-bellota-warnerville-230",
+   "name": "Bellota - Warnerville / Bellota - Cottle 230 kV reconductor",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Bellota",
+     "state": "CA",
+     "county": "San Joaquin",
+     "new": false
+    },
+    {
+     "name": "Warnerville",
+     "state": "CA",
+     "county": "Stanislaus",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 45,
+   "in_service": "2027-01",
+   "stage": "in construction",
+   "stage_basis": "AL 6047-E approved (2021) for ~45 circuit miles; PG&E's GO 131-E report lists Bellota-Warnerville done 2023-04 and Bellota-Cottle 2024-03, while PG&E's Feb 2026 WECC report still lists project completion Jan-2027.",
+   "docket": "AL 6047-E",
+   "caiso_id": "",
+   "sources": [
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/annual-reports/pge-go-131-e-annual-report-2025.xlsx",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/PGAE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "key": "pge-north-dublin-cayetano-230",
+   "name": "North Dublin - Cayetano 230 kV reconductor (OH and UG cable)",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "North Dublin",
+     "state": "CA",
+     "county": "Alameda",
+     "new": false
+    },
+    {
+     "name": "Cayetano",
+     "state": "CA",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 5.45,
+   "in_service": "2026-03",
+   "stage": "built",
+   "stage_basis": "PG&E's July 2026 TDF lists this generation network upgrade (2.63 mi OH + 2.82 mi UG cable) as In-Service with a 03/31/2026 date.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.caiso.com/documents/presentation-pg-e-transmission-development-forum-jul-29-2026.pdf"
+   ]
+  },
+  {
+   "key": "pge-dos-amigos-panoche-3-230",
+   "name": "Dos Amigos PP - Panoche #3 230 kV reconductor",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Dos Amigos PP",
+     "state": "CA",
+     "county": "Merced",
+     "new": false
+    },
+    {
+     "name": "Panoche",
+     "state": "CA",
+     "county": "Fresno",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 23.63,
+   "in_service": "2026-04",
+   "stage": "built",
+   "stage_basis": "AL 7392-E approved (Oct 2024); PG&E's July 2026 TDF lists the 23.63-mi reconductor In-Service (04/15/2026).",
+   "docket": "AL 7392-E",
+   "caiso_id": "",
+   "sources": [
+    "https://www.caiso.com/documents/presentation-pg-e-transmission-development-forum-jul-29-2026.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/annual-reports/pge-go-131-e-annual-report-2025.xlsx"
+   ]
+  },
+  {
+   "key": "pge-padre-flat-panoche-230",
+   "name": "Padre Flat Sw Sta - Panoche #1 230 kV reconductor",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Padre Flat",
+     "state": "CA",
+     "county": "Merced",
+     "new": false
+    },
+    {
+     "name": "Panoche",
+     "state": "CA",
+     "county": "Fresno",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 32.6,
+   "in_service": "2025-05",
+   "stage": "built",
+   "stage_basis": "AL 6857-E approved (Nov 2022); PG&E's July 2025 GO 131-E annual report gives a current/actual in-service date of 2025-05-09 for the ~32.6-mi reconductor.",
+   "docket": "AL 6857-E",
+   "caiso_id": "",
+   "sources": [
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/annual-reports/pge-go-131-e-annual-report-2025.xlsx"
+   ]
+  },
+  {
+   "key": "pge-birds-landing-contra-costa-230",
+   "name": "Birds Landing - Contra Costa PP 230 kV Sacramento River crossing rebuild",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Birds Landing",
+     "state": "CA",
+     "county": "Solano",
+     "new": false
+    },
+    {
+     "name": "Contra Costa PP",
+     "state": "CA",
+     "county": "Contra Costa",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 1.5,
+   "in_service": "2025-04",
+   "stage": "built",
+   "stage_basis": "AL 6131-E approved (2021): raised/replaced four crossing towers and ~1.5 mi of double-circuit conductor; PG&E's July 2025 GO 131-E report gives 2025-04-30 as current/actual in-service.",
+   "docket": "AL 6131-E",
+   "caiso_id": "",
+   "sources": [
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/annual-reports/pge-go-131-e-annual-report-2025.xlsx"
+   ]
+  },
+  {
+   "key": "pge-dos-amigos-switching-230",
+   "name": "New Dos Amigos-Panoche 230 kV Switching Station (Los Banos-Dos Amigos / Dos Amigos-Panoche loop-ins)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Dos Amigos-Panoche Switching Station",
+     "state": "CA",
+     "county": "Merced",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-04",
+   "stage": "planned",
+   "stage_basis": "Generation-driven PG&E project for a new 3-bay BAAH 230 kV switching station near Dos Amigos PP (ISD 2030-04 in PG&E's July 2025 GO 131-E report); CAISO's Los Banos 70 kV Area Reinforcement (Jan-2031) later adds 230/70 kV there; no CPUC filing yet.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/annual-reports/pge-go-131-e-annual-report-2025.xlsx",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/PGAE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/presentation-pg-e-transmission-development-forum-jul-29-2026.pdf"
+   ]
+  },
+  {
+   "key": "gen-bitterwater-230",
+   "name": "Bitterwater 230 kV Switching Station (Northern Orchard PV, Midway-Wheeler Ridge #2 loop)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "PG&E (built by developer)",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Bitterwater",
+     "state": "CA",
+     "county": "Kern",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2024-04",
+   "stage": "built",
+   "stage_basis": "AL 6634-E (accepted July 2022) for a new 230 kV switching station looping Midway-Wheeler Ridge #2; PG&E's July 2025 GO 131-E report gives 2024-04-24 as current/actual in-service.",
+   "docket": "AL 6634-E",
+   "caiso_id": "",
+   "sources": [
+    "https://www.pge.com/tariffs/assets/pdf/adviceletter/ELEC_6634-E.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/annual-reports/pge-go-131-e-annual-report-2025.xlsx"
+   ]
+  },
+  {
+   "key": "gen-fink-230",
+   "name": "Fink 230 kV Switching Station (Proxima Solar, Quinto-Westley 230 kV loop)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Fink",
+     "state": "CA",
+     "county": "Stanislaus",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2023-12",
+   "stage": "built",
+   "stage_basis": "AL 6529-E (accepted April 2022) for a new switching station looping Quinto Sw Sta-Westley 230 kV; PG&E's July 2025 GO 131-E report gives 2023-12-13 as in-service and its 2025 WECC report lists Proxima Solar in service Mar-2024.",
+   "docket": "AL 6529-E",
+   "caiso_id": "",
+   "sources": [
+    "https://www.pge.com/tariffs/assets/pdf/adviceletter/ELEC_6529-E.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/annual-reports/pge-go-131-e-annual-report-2025.xlsx",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2025/PGaE%202025%20APR.pdf"
+   ]
+  },
+  {
+   "key": "gen-pelicans-jaw-230",
+   "name": "Pelicans Jaw 230 kV Switching Station (Gates-Midway 230 kV loop) and gen-tie",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "PG&E (built by developer)",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Pelicans Jaw switching station",
+     "state": "CA",
+     "county": "Kern",
+     "new": true,
+     "lat": 35.7652,
+     "lon": -119.7436,
+     "location_basis": "Global Energy Monitor point for the Pelicans Jaw solar site; the switchyard is on the project site"
+    }
+   ],
+   "miles_new": 0.15,
+   "miles_upgraded": 0,
+   "in_service": "2028-01",
+   "stage": "in construction",
+   "stage_basis": "AL 7236-E noticed a new switching station looping Gates-Midway 230 kV for the Pelicans Jaw hybrid solar project (~800-ft 230 kV gen-tie); SB Energy lists it under construction and CAISO's Nov 2026 queue shows a 1/24/2028 on-line date.",
+   "docket": "AL 7236-E",
+   "caiso_id": "",
+   "sources": [
+    "https://local.bakersfield.com/san-francisco-ca/california-public-utilities-commission-866-849-8390/2024-04-04-12625156-notice-of-proposed-construction-para-mas-detalles-llame-1-800-660-6789-project-name-pelicans-jaw-hybrid-solar-interconnection-and-switching-station-project-kern-and-kings-counties-t-dot-0008735-dot-01-advice-letter-number-7236-e-propose",
+    "https://downloads.regulations.gov/FWS-R8-ES-2024-0076-0003/content.pdf",
+    "https://sbenergy.com/project/pelicans-jaw",
+    "https://www.caiso.com/documents/publicqueuereport.pdf",
+    "https://www.gem.wiki/Pelicans_Jaw_Hybrid_solar_farm"
+   ]
+  },
+  {
+   "key": "gen-buttonbush-midway-500",
+   "name": "Buttonbush Solar & Storage 500 kV gen-tie to Midway",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "29SC 8me LLC / PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Buttonbush project substation",
+     "state": "CA",
+     "county": "Kern",
+     "new": true
+    },
+    {
+     "name": "Midway",
+     "state": "CA",
+     "county": "Kern",
+     "new": false
+    }
+   ],
+   "miles_new": 15,
+   "miles_upgraded": 0,
+   "in_service": "2029-08",
+   "stage": "approved",
+   "stage_basis": "Kern County approved the project EIR on 3/24/2026 (up to 15-mi 500 kV gen-tie to Midway, new 500 kV bay); PG&E's Q1 2026 CPUC report shows its scope in construction with a 2027 date, while CAISO's Nov 2026 queue lists an 8/1/2029 on-line date. Mileage is the EIR's 'up to 15 miles'.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://ceqanet.lci.ca.gov/2024041028/4",
+    "https://psbweb.kerncounty.com/planning/pdfs/notices/Buttonbush_Solar_Notice_of_Preparation_4_24_24.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/pge-cpuc-q1-update-2026-0317.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "gen-key-storage-gates-500",
+   "name": "Key Energy Storage 500 kV tie to Gates",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Key Energy Storage (NextEra) / PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Key Energy Storage",
+     "state": "CA",
+     "county": "Fresno",
+     "new": true
+    },
+    {
+     "name": "Gates",
+     "state": "CA",
+     "county": "Fresno",
+     "new": false
+    }
+   ],
+   "miles_new": 0.47,
+   "miles_upgraded": 0,
+   "in_service": "2026-06",
+   "stage": "in construction",
+   "stage_basis": "Fresno County certified the EIR (NOD Oct 2024) for a new ~2,500-ft 500 kV line between Gates and the storage site; PG&E's Feb 2026 WECC report lists Key Storage 1 (300 MW) in construction for Jun-2026.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://ceqanet.lci.ca.gov/2022070414/5",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/PGAE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "key": "gen-corby-vaca-230",
+   "name": "Corby BESS 230 kV gen-tie to Vaca-Dixon",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Corby Energy Storage / PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Corby BESS substation",
+     "state": "CA",
+     "county": "Solano",
+     "new": true
+    },
+    {
+     "name": "Vaca-Dixon",
+     "state": "CA",
+     "county": "Solano",
+     "new": false
+    }
+   ],
+   "miles_new": 1.1,
+   "miles_upgraded": 0,
+   "in_service": "2027-01",
+   "stage": "proposed",
+   "stage_basis": "CEC opt-in application 24-OPT-05 under review (staff assessment July 2026) for a 300 MW BESS with a 1.1-mi 230 kV gen-tie to Vaca-Dixon; PG&E's Feb 2026 WECC report shows Jan-2027.",
+   "docket": "CEC 24-OPT-05",
+   "caiso_id": "",
+   "sources": [
+    "https://efiling.energy.ca.gov/GetDocument.aspx?DocumentContentId=109005&tn=271468",
+    "https://www.energy.ca.gov./powerplant/battery-storage-system/corby-battery-energy-storage-system-project",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/PGAE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "key": "load-clawiter-eastshore-230",
+   "name": "Eastshore - Clawiter 230 kV double-circuit (customer substation, Hayward)",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Eastshore",
+     "state": "CA",
+     "county": "Alameda",
+     "new": false
+    },
+    {
+     "name": "Clawiter (customer substation)",
+     "state": "CA",
+     "county": "Alameda",
+     "new": true
+    }
+   ],
+   "miles_new": 0.49,
+   "miles_upgraded": 0,
+   "in_service": "2024-08",
+   "stage": "built",
+   "stage_basis": "AL 6570-E (accepted May 2022) for a ~2,572-ft 230 kV double-circuit line from Eastshore to a new customer-owned substation at 25800 Clawiter Rd; PG&E's July 2025 GO 131-E report gives 2024-08-07 as in-service.",
+   "docket": "AL 6570-E",
+   "caiso_id": "",
+   "sources": [
+    "https://www.pge.com/tariffs/assets/pdf/adviceletter/ELEC_6570-E.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/annual-reports/pge-go-131-e-annual-report-2025.xlsx",
+    "https://stakeholdercenter.caiso.com/InitiativeDocuments/Presentation-PGE-2025-2026Transmissionplanningprocess-Sep2525.pdf"
+   ]
+  },
+  {
+   "key": "load-google-sj-230",
+   "name": "Google San Jose 230 kV Switching Station (5079 Disk Drive) and UG service lines",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Google 230 kV switching station",
+     "state": "CA",
+     "county": "Santa Clara",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-12",
+   "stage": "proposed",
+   "stage_basis": "PG&E AL 7785-E seeks approval of 230 kV service (onsite GIS BAAH switching station, underground 230 kV lines) for a 250 MW Google data center, construction Jan 2027 and in service Dec 2028; Resolution E-5455 approving it with changes is still on the CPUC's Nov 19, 2026 agenda.",
+   "docket": "AL 7785-E; Res. E-5455",
+   "caiso_id": "",
+   "sources": [
+    "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M607/K718/607718746.PDF",
+    "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M623/K979/623979096.PDF",
+    "https://www.stoel.com/insights/reports/energy-regulatory-updates/november-11-2026"
+   ]
+  },
+  {
+   "key": "load-avaio-pittsburg-230",
+   "name": "Pittsburg Data Hub (AVAIO) 230 kV PG&E Switching Station",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Pittsburg Data Hub switching station",
+     "state": "CA",
+     "county": "Contra Costa",
+     "new": true,
+     "lat": 38.011358,
+     "lon": -121.91098,
+     "location_basis": "AVAIO-published campus coordinates; the PG&E switching station is on the campus"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-09",
+   "stage": "approved",
+   "stage_basis": "CEC adopted the IS/MND (NOD Dec 2025) and Pittsburg approved design review (Dec 2025, revised Feb 2026 to relocate the interconnection to a nearby Tesla line) for an onsite PG&E 230 kV BAAH GIS switching station; AVAIO cites energization in Q3 2027.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://ceqanet.lci.ca.gov/2025100607/3",
+    "https://efiling.energy.ca.gov/GetDocument.aspx?DocumentContentId=90356&tn=254728",
+    "https://avaiodigital.com/developments/pittsburg-ca",
+    "https://hs.getobedio.com/blog/187-people-came-to-object.-but-avaiorsquos-data-center-was-already-approved"
+   ]
+  },
+  {
+   "state": "AZ",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-03",
+   "docket": "",
+   "caiso_id": "",
+   "key": "cielo-azul-500-switchyard",
+   "name": "Cielo Azul 500 kV Switchyard (loop on Ten West Link)",
+   "kv": 500,
+   "project_type": "new substation",
+   "utility": "DCR Transmission (Lotus Infrastructure Partners)",
+   "ends": [
+    {
+     "name": "Cielo Azul",
+     "state": "AZ",
+     "county": "La Paz",
+     "new": true
+    }
+   ],
+   "stage": "built",
+   "stage_basis": "Sargent & Lundy project page gives commercial operation of the Cielo Azul 500 kV breaker-and-a-half switchyard to Ten West Link in Q1 2025 (month not stated; Q1 end used); DCRT TDF slide places it about 39 circuit miles from Delaney.",
+   "sources": [
+    "https://www.sargentlundy.com/projects/cielo-azul-switchyard/",
+    "https://www.caiso.com/documents/presentation-dcrt-transmission-development-forum-jul-31-2024.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 7.8,
+   "miles_upgraded": 0,
+   "in_service": "2024-08",
+   "docket": "CPUC A.12-05-020",
+   "caiso_id": "",
+   "key": "socre-talega-san-juan-capistrano-230",
+   "name": "Talega - San Juan Capistrano 230 kV double circuit and San Juan Capistrano 230/138 kV substation (SOCRE)",
+   "kv": 230,
+   "project_type": "new line",
+   "utility": "SDG&E",
+   "ends": [
+    {
+     "name": "Talega",
+     "state": "CA",
+     "county": "San Diego",
+     "new": false
+    },
+    {
+     "name": "San Juan Capistrano (Capistrano)",
+     "state": "CA",
+     "county": "Orange",
+     "new": true
+    }
+   ],
+   "stage": "built",
+   "stage_basis": "SDG&E's January 2026 TPR data (CPUC staff comments) give an actual in-service date of 2024-08-15 for SOCRE and CAISO's 2026/2030 LCR study lists it as in service; CPUC page describes a new ~7.8-mile double-circuit 230 kV line replacing a 138 kV line and a new 230/138/12 kV GIS substation.",
+   "sources": [
+    "https://ia.cpuc.ca.gov/environment/info/ene/socre/socre.html",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/transmission-project-review-process/sdge/cpuc-staff-comments-on-sdge-january-2026-tpr-process-cycle.pdf",
+    "https://stakeholdercenter.caiso.com/InitiativeDocuments/Presentation-Draft-2026and2030-LCR-LA-Basin-and-San-Diego-Imperial-Valley-Local-Areas.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 121,
+   "in_service": "2030-03",
+   "docket": "CPUC A.23-04-009",
+   "caiso_id": "",
+   "key": "eldorado-pisgah-lugo-220-tlrr",
+   "name": "Eldorado - Pisgah - Lugo 220 kV lines rating remediation (reconductor)",
+   "kv": 230,
+   "project_type": "upgrade",
+   "utility": "SCE",
+   "ends": [
+    {
+     "name": "Eldorado",
+     "state": "NV",
+     "county": "Clark",
+     "new": false
+    },
+    {
+     "name": "Pisgah",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": false
+    },
+    {
+     "name": "Lugo",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": false
+    }
+   ],
+   "stage": "proposed",
+   "stage_basis": "SCE Q3 2026 GO 131-E report: PTC application A.23-04-009 (amended from CPCN Sept 2025) in licensing; reconductor about 121 miles of 220 kV conductor on the two ~175-mile lines; operating date Q1 2030 (quarter end used).",
+   "sources": [
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/sce-cpuc-q3-update-2026-1001.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/sce-cpuc-q2-update-2026-0616.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-12",
+   "docket": "CEC 24-OPT-01",
+   "caiso_id": "",
+   "key": "perkins-umbriel-500-switchyard",
+   "name": "Perkins (Umbriel) 500 kV switchyard and loop-in on Imperial Valley - North Gila (Southwest Powerlink)",
+   "kv": 500,
+   "project_type": "new substation",
+   "utility": "SDG&E (interconnection for IP Perkins / Intersect-IPX)",
+   "ends": [
+    {
+     "name": "Perkins/Umbriel 500 kV switchyard",
+     "state": "CA",
+     "county": "Imperial",
+     "new": true,
+     "lat": 33.04036,
+     "lon": -115.36546,
+     "location_basis": "FAST-41 posting gives the Perkins project site coordinate (switchyard is on or next to the site)"
+    },
+    {
+     "name": "Imperial Valley",
+     "state": "CA",
+     "county": "Imperial",
+     "new": false
+    },
+    {
+     "name": "North Gila",
+     "state": "AZ",
+     "county": "Yuma",
+     "new": false
+    }
+   ],
+   "stage": "proposed",
+   "stage_basis": "CEC opt-in docket 24-OPT-01 still under review (data requests Sept 2026); FAST-41 posting plans construction 2026-2027 and operation from 2028; SDG&E reports an 'Umbriel' 500 kV loop-in of TL50002 for a 1,150 MW Imperial County queue project, original ISD Dec 2028, LGIA unsigned. Treating Umbriel and Perkins as the same 1,150 MW interconnection is an inference.",
+   "sources": [
+    "https://www.energy.ca.gov/powerplant/solar-photovoltaic-pv-battery-energy-storage/perkins-renewable-energy-project",
+    "https://www.permits.performance.gov/fast-41-covered-projects-postings-agencies-perkins-renewable-energy-project-0",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/sdgecpuc-q3-quarterly-meeting-2025.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/transmission-project-review-process/sdge/2025-sdge-tpr-stakeholder-meeting-september-26.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 3,
+   "miles_upgraded": 0,
+   "in_service": "2024-04",
+   "docket": "",
+   "caiso_id": "",
+   "key": "arica-victory-pass-red-bluff-230-gentie",
+   "name": "Arica/Victory Pass - Red Bluff 230 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "utility": "Clearway (generator tie)",
+   "ends": [
+    {
+     "name": "Arica/Victory Pass",
+     "state": "CA",
+     "county": "Riverside",
+     "new": true
+    },
+    {
+     "name": "Red Bluff",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "stage": "built",
+   "stage_basis": "Clearway announced Victory Pass and Arica placed in service April 17, 2024; Riverside County's Savira notice describes the existing ~3-mile 230 kV Arica/Victory Pass gen-tie to SCE Red Bluff.",
+   "sources": [
+    "https://www.clearwayenergygroup.com/press-releases/clearway-brings-online-large-solar-storage-energy-complex-in-riverside-county-california",
+    "https://planning.rctlma.org/sites/g/files/aldnop416/files/2026-07/Savira%20Solar%20NOA_English.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2023-11",
+   "docket": "",
+   "caiso_id": "",
+   "key": "oberon-red-bluff-500-gentie",
+   "name": "Oberon - Red Bluff 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "utility": "Intersect Power / IPX (generator tie)",
+   "ends": [
+    {
+     "name": "Oberon switchyard",
+     "state": "CA",
+     "county": "Riverside",
+     "new": true
+    },
+    {
+     "name": "Red Bluff",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "stage": "built",
+   "stage_basis": "Power Technology reports Oberon began commercial operation November 2023, connected to SCE's Red Bluff 500 kV substation via a 500 kV gen-tie; length not stated.",
+   "sources": [
+    "https://www.power-technology.com/projects/oberon-solar-and-storage-project-usa",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2025/SCE%202025%20APR.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 6.7,
+   "miles_upgraded": 0,
+   "in_service": "2027-08",
+   "docket": "",
+   "caiso_id": "",
+   "key": "easley-oberon-500-gentie",
+   "name": "Easley - Oberon switchyard 500 kV gen-tie (to Red Bluff)",
+   "kv": 500,
+   "project_type": "new line",
+   "utility": "IPX Power (generator tie)",
+   "ends": [
+    {
+     "name": "Easley",
+     "state": "CA",
+     "county": "Riverside",
+     "new": true,
+     "lat": 33.7227,
+     "lon": -115.326,
+     "location_basis": "Global Energy Monitor point for the Easley solar site"
+    },
+    {
+     "name": "Oberon switchyard",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "stage": "in construction",
+   "stage_basis": "BLM approved Easley in Dec 2024 (500 kV gen-tie, 7.5 miles per BLM; 6.7 miles per Riverside County); IPX lists Easley as In Construction; SCE 2026 WECC report gives ISD Aug 2027 (Intersect's Jan 2026 WECC letter said COD June 2026).",
+   "sources": [
+    "https://www.blm.gov/press-release/blm-approves-easley-solar-project-riverside-county",
+    "https://planning.rctlma.org/ip-easley-solar-plant-project-cup220021",
+    "https://ipxpower.com/portfolio/",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/IP%20Easley%202026%20APR.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 1.9,
+   "miles_upgraded": 0,
+   "in_service": "2027-03",
+   "docket": "",
+   "caiso_id": "",
+   "key": "grace-colorado-river-230-gentie",
+   "name": "Grace Solar Energy Center - Colorado River 230 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "utility": "Grace Energy Center (generator tie)",
+   "ends": [
+    {
+     "name": "Grace Solar Energy Center",
+     "state": "CA",
+     "county": "Riverside",
+     "new": true
+    },
+    {
+     "name": "Colorado River",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "stage": "approved",
+   "stage_basis": "Riverside County approved the revised project July 14, 2026 (NOD): about 1.9 miles of new line joining an existing 8.6-mile line to SCE's 230 kV Colorado River substation; SCE 2026 WECC report gives ISD March 2027.",
+   "sources": [
+    "https://ceqanet.lci.ca.gov/2025010194/3",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 1.8,
+   "miles_upgraded": 0,
+   "in_service": "2028-12",
+   "docket": "",
+   "caiso_id": "",
+   "key": "savira-arica-victory-pass-230-gentie",
+   "name": "Savira Solar - Arica/Victory Pass 230 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "utility": "Savira Solar (generator tie)",
+   "ends": [
+    {
+     "name": "Savira Solar",
+     "state": "CA",
+     "county": "Riverside",
+     "new": true
+    },
+    {
+     "name": "Arica/Victory Pass substation",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "stage": "proposed",
+   "stage_basis": "Riverside County Draft EIR notice (Aug 2026): new 1.8-mile 230 kV gen-tie to the Arica/Victory Pass substation, then Red Bluff; COD stated only as year 2028 (December used as bound).",
+   "sources": [
+    "https://planning.rctlma.org/sites/g/files/aldnop416/files/2026-07/Savira%20Solar%20NOA_English.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 2.1,
+   "miles_upgraded": 0,
+   "in_service": "2031-01",
+   "docket": "",
+   "caiso_id": "",
+   "key": "redonda-arica-victory-pass-230-gentie",
+   "name": "Redonda Solar - Arica/Victory Pass 230 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "utility": "Clearway (generator tie)",
+   "ends": [
+    {
+     "name": "Redonda Solar",
+     "state": "CA",
+     "county": "Riverside",
+     "new": true,
+     "lat": 33.693189,
+     "lon": -115.249019,
+     "location_basis": "CEQAnet centroid for the Redonda project site"
+    },
+    {
+     "name": "Arica/Victory Pass substation",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "stage": "proposed",
+   "stage_basis": "CDFW NOP (Nov 2025) for Redonda: 2.1-mile 230 kV gen-tie to Arica/Victory Pass then Red Bluff; SCE 2026 WECC report gives Redonda ISD Jan 2031.",
+   "sources": [
+    "https://ceqanet.lci.ca.gov/2025110279",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 19,
+   "miles_upgraded": 0,
+   "in_service": "2030-07",
+   "docket": "CEC 21-AFC-02",
+   "caiso_id": "",
+   "key": "willow-rock-whirlwind-230-gentie",
+   "name": "Willow Rock Energy Storage - Whirlwind 230 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "utility": "Hydrostor / GEM A-CAES (generator tie)",
+   "ends": [
+    {
+     "name": "Willow Rock Energy Storage Center",
+     "state": "CA",
+     "county": "Kern",
+     "new": true,
+     "lat": 34.909676,
+     "lon": -118.155717,
+     "location_basis": "EPA UIC permit coordinate for the facility"
+    },
+    {
+     "name": "Whirlwind",
+     "state": "CA",
+     "county": "Kern",
+     "new": false
+    }
+   ],
+   "stage": "in construction",
+   "stage_basis": "CEC certified the project Dec 19, 2025 with a new ~19-mile 230 kV gen-tie to Whirlwind; Hydrostor says on-site work began July 2026; CAISO queue (Nov 2026) lists COD 7/1/2030.",
+   "sources": [
+    "https://www.energy.ca.gov/powerplant/energy-storage-system/willow-rock-energy-storage-center",
+    "https://hydrostor.ca/willowrockenergystoragecenterofftakeagreementcea",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "state": "AZ",
+   "market": "CAISO",
+   "miles_new": 2,
+   "miles_upgraded": 0,
+   "in_service": "2026-12",
+   "docket": "",
+   "caiso_id": "",
+   "key": "atlas-cielo-azul-500-gentie",
+   "name": "Atlas North - Cielo Azul 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "utility": "Lydian Energy / Atlas (generator tie)",
+   "ends": [
+    {
+     "name": "Atlas solar/BESS",
+     "state": "AZ",
+     "county": "La Paz",
+     "new": true
+    },
+    {
+     "name": "Cielo Azul",
+     "state": "AZ",
+     "county": "La Paz",
+     "new": false
+    }
+   ],
+   "stage": "in construction",
+   "stage_basis": "Lydian (Apr 2026) says the Atlas North projects include a 500 kV gen-tie of up to two miles to Cielo Azul/Ten West Link; EIA 860M lists Atlas phases in La Paz County under construction; SCE 2026 WECC report gives Atlas ISD Dec 2026.",
+   "sources": [
+    "https://lydianenergy.com/news/lydian-energy-acquires-atlas-north-portfolio-from-hanwha-renewables",
+    "https://quicksandcheck.com/arizona/la-paz-county",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "state": "AZ",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-09",
+   "docket": "",
+   "caiso_id": "",
+   "key": "centennial-flats-cielo-azul-500-gentie",
+   "name": "Centennial Flats - Cielo Azul 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "utility": "Copia Power (generator tie)",
+   "ends": [
+    {
+     "name": "Centennial Flats",
+     "state": "AZ",
+     "county": "La Paz",
+     "new": true
+    },
+    {
+     "name": "Cielo Azul",
+     "state": "AZ",
+     "county": "La Paz",
+     "new": false
+    }
+   ],
+   "stage": "in construction",
+   "stage_basis": "SCE 2026 WECC report: dedicated 500 kV gen-tie to Cielo Azul, ISD Aug 2026; EIA 860M (Aug 2026) lists Centennial Flats under construction with planned start 9/2026; length not stated.",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://quicksandcheck.com/arizona/la-paz-county"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-11",
+   "docket": "",
+   "caiso_id": "",
+   "key": "sanborn-hybrid-3-windhub-500-gentie",
+   "name": "Sanborn Hybrid 3 - Windhub 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "utility": "SCE interconnection (generator tie)",
+   "ends": [
+    {
+     "name": "Sanborn Hybrid 3",
+     "state": "CA",
+     "county": "Kern",
+     "new": true
+    },
+    {
+     "name": "Windhub",
+     "state": "CA",
+     "county": "Kern",
+     "new": false
+    }
+   ],
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC Annual Progress Report generation table: Terra-Gen 1,400 MW hybrid; dedicated 500 kV gen-tie, ISD Nov 2026 (EIA 860M shows Dec 2026). Length not stated (miles_new 0 = unknown).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.interconnection.fyi/eia/plant/69956"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-12",
+   "docket": "",
+   "caiso_id": "",
+   "key": "angeleno-vincent-500-gentie",
+   "name": "Angeleno Solar Farm - Vincent 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "utility": "SCE interconnection (generator tie)",
+   "ends": [
+    {
+     "name": "Angeleno Solar Farm",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": true
+    },
+    {
+     "name": "Vincent",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    }
+   ],
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC Annual Progress Report generation table: 1,100 MW hybrid with dedicated 500 kV gen-tie; SCE report said Apr 2026 but the CAISO queue now shows Dec 31, 2028. Length not stated (miles_new 0 = unknown).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.interconnection.fyi/project/caiso-1625"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-12",
+   "docket": "",
+   "caiso_id": "",
+   "key": "marici-walnut-220-gentie",
+   "name": "Marici BESS - Walnut 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "utility": "SCE interconnection (generator tie)",
+   "ends": [
+    {
+     "name": "Marici BESS",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": true
+    },
+    {
+     "name": "Walnut",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    }
+   ],
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC Annual Progress Report generation table: 400 MW BESS in City of Industry; SCE-built 220 kV gen-tie from Walnut (SCE Q1 2026 GO 131-E planned advice letter SP-187). Length not stated (miles_new 0 = unknown).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/sce-cpuc-q1-update-2026-0317.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-12",
+   "docket": "",
+   "caiso_id": "",
+   "key": "gabriel-rio-hondo-220-gentie",
+   "name": "Gabriel Storage - Rio Hondo 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "utility": "SCE interconnection (generator tie)",
+   "ends": [
+    {
+     "name": "Gabriel Storage",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": true
+    },
+    {
+     "name": "Rio Hondo",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    }
+   ],
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC Annual Progress Report generation table: 400 MW BESS in Irwindale; SCE-built 220 kV gen-tie from Rio Hondo (SCE Q1 2026 GO 131-E planned advice letter SP-184). Length not stated (miles_new 0 = unknown).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/sce-cpuc-q1-update-2026-0317.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-03",
+   "docket": "",
+   "caiso_id": "",
+   "key": "sanborn-5-windhub-220-gentie",
+   "name": "Sanborn 5 Hybrid - Windhub 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "utility": "SCE interconnection (generator tie)",
+   "ends": [
+    {
+     "name": "Sanborn 5 Hybrid",
+     "state": "CA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Windhub",
+     "state": "CA",
+     "county": "Kern",
+     "new": false
+    }
+   ],
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC Annual Progress Report generation table: 600 MW DC-coupled hybrid; dedicated 220 kV gen-tie. Length not stated (miles_new 0 = unknown).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-05",
+   "docket": "",
+   "caiso_id": "",
+   "key": "avocet-hinson-220-gentie",
+   "name": "Avocet BESS - Hinson 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "utility": "SCE interconnection (generator tie)",
+   "ends": [
+    {
+     "name": "Avocet BESS",
+     "state": "CA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Hinson",
+     "state": "CA",
+     "county": "",
+     "new": false
+    }
+   ],
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC Annual Progress Report generation table: 200 MW BESS; dedicated 220 kV gen-tie. Length not stated (miles_new 0 = unknown).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-07",
+   "docket": "",
+   "caiso_id": "",
+   "key": "roadhouse-mira-loma-220-gentie",
+   "name": "Roadhouse BESS - Mira Loma 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "utility": "SCE interconnection (generator tie)",
+   "ends": [
+    {
+     "name": "Roadhouse BESS",
+     "state": "CA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Mira Loma",
+     "state": "CA",
+     "county": "",
+     "new": false
+    }
+   ],
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC Annual Progress Report generation table: 300 MW BESS; dedicated 220 kV gen-tie to Mira Loma 'A'. Length not stated (miles_new 0 = unknown).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-11",
+   "docket": "",
+   "caiso_id": "",
+   "key": "kestrel-walnut-220-gentie",
+   "name": "Kestrel Storage - Walnut 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "utility": "SCE interconnection (generator tie)",
+   "ends": [
+    {
+     "name": "Kestrel Storage",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": true
+    },
+    {
+     "name": "Walnut",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    }
+   ],
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC Annual Progress Report generation table: 200 MW BESS; SCE plans GO 131-E exemption 'e' advice letter Q2 2027 for the overhead 220 kV gen-tie from Walnut (City of Industry). Length not stated (miles_new 0 = unknown).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/sce-cpuc-q3-update-2026-1001.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/sce-cpuc-q2-update-2026-0616.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-04",
+   "docket": "",
+   "caiso_id": "",
+   "key": "humidor-vincent-500-gentie",
+   "name": "Humidor Storage - Vincent 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "utility": "SCE interconnection (generator tie)",
+   "ends": [
+    {
+     "name": "Humidor Storage",
+     "state": "CA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Vincent",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    }
+   ],
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC Annual Progress Report generation table: 300 MW BESS; dedicated 500 kV gen-tie. Length not stated (miles_new 0 = unknown).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-04",
+   "docket": "",
+   "caiso_id": "",
+   "key": "dirac-chino-220-gentie",
+   "name": "Dirac BESS - Chino 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "utility": "SCE interconnection (generator tie)",
+   "ends": [
+    {
+     "name": "Dirac BESS",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": true
+    },
+    {
+     "name": "Chino",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": false
+    }
+   ],
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC Annual Progress Report generation table: 400 MW BESS in Chino; dedicated 220 kV gen-tie. Length not stated (miles_new 0 = unknown).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-10",
+   "docket": "",
+   "caiso_id": "",
+   "key": "cobalt-colorado-river-220-gentie",
+   "name": "Cobalt - Colorado River 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "utility": "SCE interconnection (generator tie)",
+   "ends": [
+    {
+     "name": "Cobalt",
+     "state": "CA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Colorado River",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC Annual Progress Report generation table: 250 MW hybrid; dedicated 220 kV gen-tie. Length not stated (miles_new 0 = unknown).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-12",
+   "docket": "",
+   "caiso_id": "",
+   "key": "goldback-moorpark-220-gentie",
+   "name": "Goldback Solar Center - Moorpark 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "utility": "SCE interconnection (generator tie)",
+   "ends": [
+    {
+     "name": "Goldback Solar Center",
+     "state": "CA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Moorpark",
+     "state": "CA",
+     "county": "Ventura",
+     "new": false
+    }
+   ],
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC Annual Progress Report generation table: 500 MW BESS; dedicated 220 kV gen-tie. Length not stated (miles_new 0 = unknown).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-04",
+   "docket": "",
+   "caiso_id": "",
+   "key": "lycan-red-bluff-500-gentie",
+   "name": "Lycan Solar - Red Bluff 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "utility": "SCE interconnection (generator tie)",
+   "ends": [
+    {
+     "name": "Lycan Solar",
+     "state": "CA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Red Bluff",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC Annual Progress Report generation table: 400 MW hybrid; dedicated 500 kV gen-tie. Length not stated (miles_new 0 = unknown).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-06",
+   "docket": "",
+   "caiso_id": "",
+   "key": "los-nietos-johanna-220-gentie",
+   "name": "Los Nietos BESS - Johanna 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "utility": "SCE interconnection (generator tie)",
+   "ends": [
+    {
+     "name": "Los Nietos BESS",
+     "state": "CA",
+     "county": "Orange",
+     "new": true
+    },
+    {
+     "name": "Johanna",
+     "state": "CA",
+     "county": "Orange",
+     "new": false
+    }
+   ],
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC Annual Progress Report generation table: 100 MW BESS in Santa Ana; dedicated 220 kV gen-tie. Length not stated (miles_new 0 = unknown).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-07",
+   "docket": "",
+   "caiso_id": "",
+   "key": "tyrell-viejo-220-gentie",
+   "name": "Tyrell Energy Storage - Viejo 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "utility": "SCE interconnection (generator tie)",
+   "ends": [
+    {
+     "name": "Tyrell Energy Storage",
+     "state": "CA",
+     "county": "Orange",
+     "new": true
+    },
+    {
+     "name": "Viejo",
+     "state": "CA",
+     "county": "Orange",
+     "new": false
+    }
+   ],
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC Annual Progress Report generation table: 300 MW BESS in Lake Forest; dedicated 220 kV gen-tie. Length not stated (miles_new 0 = unknown).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-12",
+   "docket": "",
+   "caiso_id": "",
+   "key": "haven-rio-hondo-220-gentie",
+   "name": "Haven Storage - Rio Hondo 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "utility": "SCE interconnection (generator tie)",
+   "ends": [
+    {
+     "name": "Haven Storage",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": true
+    },
+    {
+     "name": "Rio Hondo",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    }
+   ],
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC Annual Progress Report generation table: 300 MW BESS in Irwindale; dedicated 220 kV gen-tie. Length not stated (miles_new 0 = unknown).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2031-02",
+   "docket": "",
+   "caiso_id": "",
+   "key": "conduit-lugo-500-gentie",
+   "name": "Conduit Energy Storage - Lugo 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "utility": "SCE interconnection (generator tie)",
+   "ends": [
+    {
+     "name": "Conduit Energy Storage",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": true
+    },
+    {
+     "name": "Lugo",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": false
+    }
+   ],
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC Annual Progress Report generation table: 500 MW BESS in Hesperia; dedicated 500 kV gen-tie. Length not stated (miles_new 0 = unknown).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2031-04",
+   "docket": "",
+   "caiso_id": "",
+   "key": "calypso-colorado-river-500-gentie",
+   "name": "Calypso Solar - Colorado River 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "utility": "SCE interconnection (generator tie)",
+   "ends": [
+    {
+     "name": "Calypso Solar",
+     "state": "CA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Colorado River",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC Annual Progress Report generation table: 400 MW hybrid; dedicated 500 kV gen-tie. Length not stated (miles_new 0 = unknown).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2031-04",
+   "docket": "",
+   "caiso_id": "",
+   "key": "greenwood-mesa-500-gentie",
+   "name": "Greenwood Energy Storage - Mesa 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "utility": "SCE interconnection (generator tie)",
+   "ends": [
+    {
+     "name": "Greenwood Energy Storage",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": true
+    },
+    {
+     "name": "Mesa",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    }
+   ],
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC Annual Progress Report generation table: 250 MW BESS in Monterey Park; dedicated 500 kV gen-tie. Length not stated (miles_new 0 = unknown).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "state": "CA",
+   "market": "CAISO",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-10",
+   "docket": "",
+   "caiso_id": "",
+   "key": "shoals-mandalay-220-gentie",
+   "name": "Shoals Energy Storage 220 kV gen-tie (Mandalay / Santa Clara POI)",
+   "kv": 230,
+   "project_type": "new line",
+   "utility": "SCE interconnection (generator tie)",
+   "ends": [
+    {
+     "name": "Shoals Energy Storage",
+     "state": "CA",
+     "county": "Ventura",
+     "new": true
+    },
+    {
+     "name": "Mandalay switchyard",
+     "state": "CA",
+     "county": "Ventura",
+     "new": false
+    }
+   ],
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC report lists a dedicated 220 kV gen-tie for this 400 MW Ventura BESS (POI Santa Clara 220 kV, May 2028); the Nov 2026 CAISO queue shows POI Mandalay Switchyard 220 kV and COD 10/8/2030 (used). Length not stated.",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "cielo-azul-500-switchyard-2",
+   "name": "Cielo Azul 500 kV Switchyard (Ten West Link loop-in)",
+   "kv": 500,
+   "project_type": "new substation",
+   "state": "AZ",
+   "utility": "DCR Transmission (Lotus Infrastructure)",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Cielo Azul",
+     "state": "AZ",
+     "county": "La Paz",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "built",
+   "stage_basis": "New 500 kV breaker-and-a-half switchyard on Ten West Link ~39 circuit mi from Delaney, built to interconnect CAISO-queue generators; Sargent & Lundy reports commercial operation to Ten West Link in Q1 2025 (initial 3 bays, 6-bay ultimate); CAISO TMCC memo calls it a CAISO PTO facility.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.sargentlundy.com/projects/cielo-azul-switchyard/",
+    "https://www.caiso.com/documents/transmission-maintenance-coordination-committee-update-jul-2025.pdf",
+    "https://www.caiso.com/documents/presentation-dcrt-transmission-development-forum-jul-31-2024.pdf"
+   ]
+  },
+  {
+   "key": "glw-sloan-canyon-mead-230-ckt2",
+   "name": "Sloan Canyon - Mead 230 kV Ckt 2",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "NV",
+   "utility": "GridLiance West",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Sloan Canyon",
+     "state": "NV",
+     "county": "Clark",
+     "new": false
+    },
+    {
+     "name": "Mead (WAPA)",
+     "state": "NV",
+     "county": "Clark",
+     "new": false
+    }
+   ],
+   "miles_new": 14,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "GLW ITP submittal (2024-26 cycle, ISD 2028): new 890 MVA circuit strung on vacant position of existing double-circuit-capable towers; CAISO did not select it as an ITP (2025-26 Transmission Plan), and GLW resubmitted 'Sloan Canyon - Mead Project' as an economic study request in the 2026-27 TPP.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.caiso.com/documents/2024-glw-interregional-transmission-project-sloan-canyon-mead-evaluation-plan.pdf",
+    "https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan.pdf",
+    "https://stakeholdercenter.caiso.com/InitiativeDocuments/Presentation-2026-2027-Transmission-Planning-Process-Sep-24-2026.pdf"
+   ]
+  },
+  {
+   "key": "glw-mead-davis-mohave-500",
+   "name": "Mead - Davis - Mohave 500 kV (rebuild Mead-Davis 230 kV to 500 kV + Davis-Mohave extension)",
+   "kv": 500,
+   "project_type": "upgrade",
+   "state": "NV",
+   "utility": "GridLiance West",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Mead (WAPA)",
+     "state": "NV",
+     "county": "Clark",
+     "new": false
+    },
+    {
+     "name": "Davis (WAPA)",
+     "state": "AZ",
+     "county": "Mohave",
+     "new": false
+    },
+    {
+     "name": "Mohave (SCE)",
+     "state": "NV",
+     "county": "Clark",
+     "new": false
+    }
+   ],
+   "miles_new": 5,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "GLW ITP submittal (2024-26 cycle) with proposed ISD 2030: rebuild existing Mead-Davis 230 kV to 500 kV and build a 5-mile Davis-Mohave extension; CAISO found no regional need and did not evaluate further (2025-26 Transmission Plan). Rebuilt mileage not stated.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan.pdf",
+    "https://www.caiso.com/documents/presentation-california-iso-annual-interregional-coordination-meeting-mar-26-2026.pdf"
+   ]
+  },
+  {
+   "key": "darden-gentie-500",
+   "name": "Darden Clean Energy 500 kV gen-tie and switchyard (Los Banos - Midway #2 loop)",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "IP Darden I (Intersect/IPX); switchyard to PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Darden step-up substation",
+     "state": "CA",
+     "county": "Fresno",
+     "new": true
+    },
+    {
+     "name": "Darden 500 kV utility switchyard on Los Banos - Midway #2 (to be PG&E-owned)",
+     "state": "CA",
+     "county": "Fresno",
+     "new": true
+    }
+   ],
+   "miles_new": 15,
+   "miles_upgraded": 0,
+   "in_service": "2027-07",
+   "stage": "in construction",
+   "stage_basis": "CEC certified Darden (23-OPT-02) June 2025 and lists status 'Compliance - Construction'; 15-mile 500 kV gen-tie to a new 500 kV switchyard transferred to PG&E; CAISO queue #1949 (POI Manning-Midway) current on-line date 7/19/2027.",
+   "docket": "CEC 23-OPT-02",
+   "caiso_id": "",
+   "sources": [
+    "https://www.energy.ca.gov/powerplant/solar-photovoltaic-pv-battery-energy-storage/darden-clean-energy-project",
+    "https://efiling.energy.ca.gov/GetDocument.aspx?DocumentContentId=100946&tn=264234",
+    "https://ipxpower.com/portfolio/",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "prairie-song-vincent-500-gentie",
+   "name": "Prairie Song Reliability - Vincent 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Prairie Song Reliability Project LLC (Coval); SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Prairie Song project substation (Acton)",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": true
+    },
+    {
+     "name": "Vincent",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    }
+   ],
+   "miles_new": 1.8,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "CEC Opt-In 25-OPT-02 (1,150 MW BESS) under review; 1.1- or 1.8-mile single-circuit 500 kV gen-tie to SCE Vincent; CEC extended schedule Oct 21, 2026 (staff assessment Jan 11, 2027, decision by May 11, 2027) after SCE changed interconnection scope.",
+   "docket": "CEC 25-OPT-02",
+   "caiso_id": "",
+   "sources": [
+    "https://www.energy.ca.gov/powerplant/battery-storage-system/prairie-song-reliability-project",
+    "https://efiling.energy.ca.gov/GetDocument.aspx?DocumentContentId=101199&tn=264413",
+    "https://efiling.energy.ca.gov/GetDocument.aspx?tn=273180&DocumentContentId=120945"
+   ]
+  },
+  {
+   "key": "potentia-viridi-tesla-500-gentie",
+   "name": "Potentia-Viridi BESS - Tesla 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Levy Alameda LLC (Renew Development); PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Potentia-Viridi project substation",
+     "state": "CA",
+     "county": "Alameda",
+     "new": true
+    },
+    {
+     "name": "Tesla",
+     "state": "CA",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0.55,
+   "miles_upgraded": 0,
+   "in_service": "2028-06",
+   "stage": "approved",
+   "stage_basis": "CEC approved 24-OPT-04 on May 26, 2026 (status 'Compliance - Pre-Construction'); 2,884-ft 500 kV gen-tie to PG&E Tesla; CEC lists expected online June 2028 (CAISO queue #1702: 5/11/2028).",
+   "docket": "CEC 24-OPT-04",
+   "caiso_id": "",
+   "sources": [
+    "https://www.energy.ca.gov/powerplant/battery-storage-system/potentia-viridi-battery-energy-storage-system",
+    "https://efiling.energy.ca.gov/GetDocument.aspx?DocumentContentId=105489&tn=268314",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "corby-vaca-dixon-230-gentie",
+   "name": "Corby BESS - Vaca-Dixon 230 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Corby Energy Storage LLC; PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Corby project substation",
+     "state": "CA",
+     "county": "Solano",
+     "new": true
+    },
+    {
+     "name": "Vaca-Dixon",
+     "state": "CA",
+     "county": "Solano",
+     "new": false
+    }
+   ],
+   "miles_new": 1.1,
+   "miles_upgraded": 0,
+   "in_service": "2027-06",
+   "stage": "proposed",
+   "stage_basis": "CEC Opt-In 24-OPT-05 still under review (staff assessment comment period closed Sept 14, 2026; parts to be recirculated); 1.1-mi 230 kV gen-tie to PG&E Vaca-Dixon; CAISO queue #1270 current on-line date 6/1/2027.",
+   "docket": "CEC 24-OPT-05",
+   "caiso_id": "",
+   "sources": [
+    "https://www.energy.ca.gov/powerplant/battery-storage-system/corby-battery-energy-storage-system-project",
+    "https://efiling.energy.ca.gov/GetDocument.aspx?DocumentContentId=120922&tn=273159",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "willow-rock-whirlwind-230-gentie-2",
+   "name": "Willow Rock Energy Storage Center - Whirlwind 230 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "GEM A-CAES LLC (Hydrostor); SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Willow Rock (north of Rosamond)",
+     "state": "CA",
+     "county": "Kern",
+     "new": true
+    },
+    {
+     "name": "Whirlwind",
+     "state": "CA",
+     "county": "Kern",
+     "new": false
+    }
+   ],
+   "miles_new": 19,
+   "miles_upgraded": 0,
+   "in_service": "2029-11",
+   "stage": "approved",
+   "stage_basis": "CEC certified 21-AFC-02 on Dec 19, 2025 and granted full notice to proceed Oct 2, 2026; monthly compliance report schedules gen-tie construction Dec 2027-Jun 2029 and energization Nov 2029 for the ~19-mile 230 kV line.",
+   "docket": "CEC 21-AFC-02",
+   "caiso_id": "",
+   "sources": [
+    "https://www.energy.ca.gov/powerplant/energy-storage-system/willow-rock-energy-storage-center",
+    "https://efiling.energy.ca.gov/GetDocument.aspx?DocumentContentId=120290&tn=272569",
+    "https://efiling.energy.ca.gov/GetDocument.aspx?DocumentContentId=120748&tn=273008"
+   ]
+  },
+  {
+   "key": "oberon-red-bluff-500-gentie-2",
+   "name": "Oberon Solar - Red Bluff 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "IP Oberon (Intersect/IPX); SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Oberon switchyard",
+     "state": "CA",
+     "county": "Riverside",
+     "new": true,
+     "lat": 33.72899,
+     "lon": -115.38238,
+     "location_basis": "EIA plant coordinates for Oberon Solar as published by GridInfo (plant site, not exact switchyard)"
+    },
+    {
+     "name": "Red Bluff",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "miles_new": 0.5,
+   "miles_upgraded": 0,
+   "in_service": "2023-11",
+   "stage": "built",
+   "stage_basis": "BLM (Nov 14, 2023) announced Oberon fully operational; BLM authorized a ~0.5-mile single-circuit 500 kV gen-tie to SCE Red Bluff; Intersect announced commercial operation Nov 14, 2023.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.blm.gov/press-release/blm-announces-oberon-solar-project-riverside-county-fully-operational",
+    "https://www.intersect.com/news/intersect-power-reaches-commercial-operation-of-oberon-solar-storage-project"
+   ]
+  },
+  {
+   "key": "easley-oberon-500-gentie-2",
+   "name": "Easley Renewable Energy - Oberon switchyard 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Easley Solar LLC (Intersect/IPX); SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Easley project substation",
+     "state": "CA",
+     "county": "Riverside",
+     "new": true
+    },
+    {
+     "name": "Oberon switchyard (to Red Bluff via Oberon 500 kV gen-tie)",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "miles_new": 6.7,
+   "miles_upgraded": 0,
+   "in_service": "2028-03",
+   "stage": "in construction",
+   "stage_basis": "Riverside County FEIR (2024) and BLM decision (Dec 6, 2024, 7.5-mi line) approve a 6.7-mile 500 kV gen-tie into the Oberon switchyard; IPX lists Easley 'In Construction'; CAISO queue #2042 current date 3/6/2028 (SCE 2026 APR: Aug 2027).",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://planning.rctlma.org/ip-easley-solar-plant-project-cup220021",
+    "https://www.blm.gov/press-release/blm-approves-easley-solar-project-riverside-county",
+    "https://ipxpower.com/portfolio/",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "arica-victory-pass-red-bluff-230-gentie-2",
+   "name": "Arica / Victory Pass - Red Bluff 230 kV shared gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Clearway (Arica Solar LLC, Victory Pass I LLC); SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Arica/Victory Pass shared switchyard",
+     "state": "CA",
+     "county": "Riverside",
+     "new": true,
+     "lat": 33.701,
+     "lon": -115.31629,
+     "location_basis": "EIA plant coordinates for Victory Pass as published by GridInfo (plant site, not exact switchyard)"
+    },
+    {
+     "name": "Red Bluff",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "miles_new": 3.2,
+   "miles_upgraded": 0,
+   "in_service": "2024-03",
+   "stage": "built",
+   "stage_basis": "Colorado River RWQCB order describes a ~3.2-mile shared 230 kV gen-tie to SCE Red Bluff's 230 kV bus; CAISO queue lists Victory Pass (#1200) completed 3/26/2024 and Clearway announced both projects placed in service April 2024.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.waterboards.ca.gov/coloradoriver/board_decisions/adopted_orders/orders/2022/2022-0001victorypass-solar-dredgefill.pdf",
+    "https://www.clearwayenergygroup.com/press-releases/clearway-brings-online-large-solar-storage-energy-complex-in-riverside-county-california",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "desert-quartzite-colorado-river-220-gentie",
+   "name": "Desert Quartzite - Colorado River 220 kV gen-tie (double circuit)",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Desert Quartzite LLC (EDF/Power Sustainable); SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Desert Quartzite project substation",
+     "state": "CA",
+     "county": "Riverside",
+     "new": true
+    },
+    {
+     "name": "Colorado River",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "miles_new": 2.8,
+   "miles_upgraded": 0,
+   "in_service": "2024-12",
+   "stage": "built",
+   "stage_basis": "Project POD: 2.8-mile double-circuit 220 kV gen-tie to SCE Colorado River; BLM announced the facility fully operational Dec 16, 2024; CAISO queue Quartzite Solar 8/11 completed 12/17/2024.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://desertquartzite.com/about-this-project",
+    "https://www.blm.gov/press-release/blm-announces-desert-quartzite-solar-fully-operational",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "grace-energy-center-colorado-river-220-gentie",
+   "name": "Grace Energy Center - Colorado River 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Grace Energy Center (developer); SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Grace Energy Center",
+     "state": "CA",
+     "county": "Riverside",
+     "new": true
+    },
+    {
+     "name": "Colorado River",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2027-07",
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC APR lists a dedicated 220 kV gen-tie to Colorado River (Mar 2027); CAISO queue #1761 active, current on-line date 7/26/2027. Local route approval not checked.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "cobalt-colorado-river-220-gentie-2",
+   "name": "Cobalt - Colorado River 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Cobalt (developer); SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Cobalt project",
+     "state": "CA",
+     "county": "Riverside",
+     "new": true
+    },
+    {
+     "name": "Colorado River",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2027-05",
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC APR lists a dedicated 220 kV gen-tie to Colorado River (Oct 2028); CAISO queue #1757 active with executed GIA, current on-line date 5/31/2027.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "calypso-colorado-river-500-gentie-2",
+   "name": "Calypso Solar - Colorado River 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Calypso Solar (developer); SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Calypso Solar",
+     "state": "CA",
+     "county": "Riverside",
+     "new": true
+    },
+    {
+     "name": "Colorado River",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2031-10",
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC APR lists a dedicated 500 kV gen-tie to Colorado River (Apr 2031); CAISO queue #1636 active, current on-line date 10/28/2031.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "bellefield-windhub-230-gentie",
+   "name": "Bellefield Solar - Windhub 230 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "50LW 8me LLC (AES); SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Bellefield 230 kV substation",
+     "state": "CA",
+     "county": "Kern",
+     "new": true
+    },
+    {
+     "name": "Windhub",
+     "state": "CA",
+     "county": "Kern",
+     "new": false
+    }
+   ],
+   "miles_new": 14.5,
+   "miles_upgraded": 0,
+   "in_service": "2025-08",
+   "stage": "built",
+   "stage_basis": "Kern County EIR/CDFW NOD (2024) describe a 14.5-mile 230 kV gen-tie to SCE Windhub shared by Bellefield 1 and 2; SCE 2026 WECC APR lists Bellefield (Q1510) as In-Service and CAISO queue shows its on-line date 8/1/2025 (Bellefield 2 Q1631: 6/30/2027).",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://ceqanet.lci.ca.gov/2021010168/9",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2025/AES%202025%20APR.pdf",
+    "https://www.aes.com/sustainability-impact/people-communities/projects/bellefield-solar-storage",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "galaxy-windhub-230-gentie",
+   "name": "Galaxy Solar PV & Storage - Windhub 230 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Galaxy Solar Storage LLC (Terra-Gen); SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Galaxy 230 kV switchyard",
+     "state": "CA",
+     "county": "Kern",
+     "new": true
+    },
+    {
+     "name": "Windhub",
+     "state": "CA",
+     "county": "Kern",
+     "new": false
+    }
+   ],
+   "miles_new": 16,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "Kern County Draft EIR (Apr 2026) / response to comments (Jul 2026): ~16 miles of single- and double-circuit 230 kV gen-tie, ~10 miles inside the gen-tie corridor approved and built for the Enterprise Solar Storage project; county decision pending; no in-service date stated.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://psbweb.kerncounty.com/planning/pdfs/eirs/galaxy_solar/eir/Galaxy_Draft_EIR_Vol_1.pdf",
+    "https://ceqanet.lci.ca.gov/2025081409/3"
+   ]
+  },
+  {
+   "key": "sanborn-hybrid-3-windhub-500-gentie-2",
+   "name": "Sanborn Hybrid 3 - Windhub 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Sanborn Hybrid 3 (developer); SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Sanborn Hybrid 3",
+     "state": "CA",
+     "county": "Kern",
+     "new": true
+    },
+    {
+     "name": "Windhub",
+     "state": "CA",
+     "county": "Kern",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2026-12",
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC APR: 1,400 MW hybrid with dedicated 500 kV gen-tie to Windhub 500 kV (Nov 2026); CAISO queue #1632 current on-line date 12/31/2026.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "sanborn-5-windhub-220-gentie-2",
+   "name": "Sanborn 5 Hybrid - Windhub 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Sanborn 5 Hybrid (developer); SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Sanborn 5 Hybrid",
+     "state": "CA",
+     "county": "Kern",
+     "new": true
+    },
+    {
+     "name": "Windhub",
+     "state": "CA",
+     "county": "Kern",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2028-04",
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC APR: 600 MW DC-coupled hybrid with dedicated 220 kV gen-tie to Windhub (Mar 2027); CAISO queue #1791 current on-line date 4/1/2028.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "angeleno-vincent-500-gentie-2",
+   "name": "Angeleno Solar Farm - Vincent 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Angeleno Solar Farm (developer); SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Angeleno Solar Farm",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": true
+    },
+    {
+     "name": "Vincent",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2028-12",
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC APR: 1,100 MW hybrid with dedicated 500 kV gen-tie to Vincent 500 kV (Apr 2026); CAISO queue #1625 current on-line date 12/31/2028.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "humidor-vincent-500-gentie-2",
+   "name": "Humidor Storage - Vincent 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Humidor Storage (developer); SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Humidor Storage",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": true
+    },
+    {
+     "name": "Vincent",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2028-10",
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC APR: 300 MW BESS with dedicated 500 kV gen-tie to Vincent (Apr 2028); CAISO queue #1629 current on-line date 10/1/2028.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "conduit-lugo-500-gentie-2",
+   "name": "Conduit Energy Storage - Lugo 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Conduit Energy Storage (developer); SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Conduit Energy Storage (Hesperia)",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": true
+    },
+    {
+     "name": "Lugo",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2031-02",
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC APR: 500 MW BESS in Hesperia with dedicated 500 kV gen-tie to Lugo (Feb 2031); CAISO queue #2105 current on-line date 2/26/2031.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "sienna-calcite-220-gentie",
+   "name": "Sienna Solar Farm - Calcite 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Sienna Solar Farm (developer); SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Sienna Solar Farm",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": true
+    },
+    {
+     "name": "Calcite (new)",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": true
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2028-06",
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC APR: Calcite-Sienna 220 kV gen-tie terminating in a new position at Calcite (June 2028); CAISO queue #1207 shows 1/28/2027, but it depends on the Calcite station (June 2028).",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "marici-walnut-220-gentie-2",
+   "name": "Marici BESS - Walnut 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "BESS developer; SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Marici BESS",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": true
+    },
+    {
+     "name": "Walnut",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2031-02",
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC APR lists a dedicated 220 kV gen-tie to Walnut (Dec 2026); CAISO queue #2116 active, current on-line date 2/26/2031.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "kestrel-walnut-220-gentie-2",
+   "name": "Kestrel Storage - Walnut 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "BESS developer; SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Kestrel Storage",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": true
+    },
+    {
+     "name": "Walnut",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2027-02",
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC APR lists a dedicated 220 kV gen-tie to Walnut (Nov 2027); CAISO queue #1615 active, current on-line date 2/28/2027. SCE's CPUC GO 131-E report (Oct 2026) says SCE will build an overhead 220 kV gen-tie segment from Walnut to the customer line (advice letter Q2 2027).",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/sce-cpuc-q3-update-2026-1001.pdf"
+   ]
+  },
+  {
+   "key": "avocet-hinson-220-gentie-2",
+   "name": "Avocet Storage - Hinson 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "BESS developer; SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Avocet Storage",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": true
+    },
+    {
+     "name": "Hinson",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2027-07",
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC APR lists a dedicated 220 kV gen-tie to Hinson (May 2027); CAISO queue #1608 active, current on-line date 7/1/2027.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "roadhouse-mira-loma-220-gentie-2",
+   "name": "Roadhouse Storage - Mira Loma 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "BESS developer; SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Roadhouse Storage",
+     "state": "CA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Mira Loma",
+     "state": "CA",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2027-06",
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC APR lists a dedicated 220 kV gen-tie to Mira Loma (Jul 2027); CAISO queue #1768 active, current on-line date 6/12/2027.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "dirac-chino-220-gentie-2",
+   "name": "Dirac BESS - Chino 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "BESS developer; SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Dirac BESS",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": true
+    },
+    {
+     "name": "Chino",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2031-02",
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC APR lists a dedicated 220 kV gen-tie to Chino (Apr 2028); CAISO queue #2114 active, current on-line date 2/26/2031.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "haven-rio-hondo-220-gentie-2",
+   "name": "Haven Storage - Rio Hondo 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "BESS developer; SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Haven Storage",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": true
+    },
+    {
+     "name": "Rio Hondo",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2031-02",
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC APR lists a dedicated 220 kV gen-tie to Rio Hondo (Dec 2030); CAISO queue #2136 active, current on-line date 2/26/2031.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "goldback-moorpark-220-gentie-2",
+   "name": "Goldback Solar Center BESS - Moorpark 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "BESS developer; SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Goldback Solar Center BESS",
+     "state": "CA",
+     "county": "Ventura",
+     "new": true
+    },
+    {
+     "name": "Moorpark",
+     "state": "CA",
+     "county": "Ventura",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2029-04",
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC APR lists a dedicated 220 kV gen-tie to Moorpark (Dec 2028); CAISO queue #1619 active, current on-line date 4/1/2029.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "shoals-ventura-220-gentie",
+   "name": "Shoals Energy Storage - Santa Clara/Mandalay 220 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "BESS developer; SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Shoals Energy Storage",
+     "state": "CA",
+     "county": "Ventura",
+     "new": true
+    },
+    {
+     "name": "Santa Clara (SCE APR) / Mandalay (CAISO queue)",
+     "state": "CA",
+     "county": "Ventura",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2030-10",
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC APR lists a dedicated 220 kV gen-tie to Santa Clara (May 2028); CAISO queue #1783 active, current on-line date 10/8/2030.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "greenwood-mesa-500-gentie-2",
+   "name": "Greenwood Energy Storage - Mesa 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Greenwood Energy Storage (developer); SCE",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Greenwood Energy Storage (Monterey Park)",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": true
+    },
+    {
+     "name": "Mesa",
+     "state": "CA",
+     "county": "Los Angeles",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2031-04",
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC APR: 250 MW BESS in Monterey Park with dedicated 500 kV gen-tie to Mesa 500 kV, expected April 2031 (not found by name in the Nov 2026 CAISO queue text).",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "key": "key-energy-storage-gates-500-gentie",
+   "name": "Key Energy Storage - Gates 500 kV tie line",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Key Energy Storage LLC; PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Key Energy Storage",
+     "state": "CA",
+     "county": "Fresno",
+     "new": true
+    },
+    {
+     "name": "Gates",
+     "state": "CA",
+     "county": "Fresno",
+     "new": false
+    }
+   ],
+   "miles_new": 0.5,
+   "miles_upgraded": 0,
+   "in_service": "2026-10",
+   "stage": "in construction",
+   "stage_basis": "Fresno County Final EIR (June 2024): new 2,500-ft (up to 0.5-mi) 500 kV line from Gates Substation to the project; PG&E 2026 WECC APR lists Key Storage 1 in CONSTRUCTION (Jun 2026); CAISO queue #1479 current on-line date 10/1/2026.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://ceqanet.opr.ca.gov/2022070414/5",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/PGAE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "campo-wind-boulder-brush-230-gentie-500-switchyard",
+   "name": "Campo Wind / Boulder Brush 230 kV gen-tie and 500 kV switchyard on Sunrise Powerlink",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "CA",
+   "utility": "Terra-Gen (Campo Wind, Boulder Brush); switchyard to SDG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Campo Wind collector substation (Campo Reservation)",
+     "state": "CA",
+     "county": "San Diego",
+     "new": true
+    },
+    {
+     "name": "Boulder Brush high-voltage substation and 500 kV switchyard on Sunrise Powerlink (to be SDG&E-owned)",
+     "state": "CA",
+     "county": "San Diego",
+     "new": true
+    }
+   ],
+   "miles_new": 8.5,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "San Diego County approved the Boulder Brush facilities (2021): 8.5-mile 230 kV gen-tie, 230/500 kV substation and new SDG&E 500 kV ring-bus switchyard looping Sunrise Powerlink; a Mar 2024 appeals ruling reinstated a legal challenge; CAISO queue Boulder Brush Hybrid (#2177, POI Suncrest line) shows 2/5/2031. Build status of Campo Wind not confirmed.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.sandiegocounty.gov/pds/ceqa/BoulderBrush.html",
+    "http://www.campowind.com/FEIS/B%20-%20Campo%20Wind%20Project%20Description%20Details.pdf",
+    "https://www.sandiegocounty.gov/content/dam/sdc/pds/Groups/boulevard/2024/BL240404AG.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "centennial-flats-cielo-azul-500-gentie-2",
+   "name": "Centennial Flats - Cielo Azul 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "AZ",
+   "utility": "Upstream HC-1 LLC (Copia Power); DCRT",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Centennial Flats project substation",
+     "state": "AZ",
+     "county": "La Paz",
+     "new": true
+    },
+    {
+     "name": "Cielo Azul",
+     "state": "AZ",
+     "county": "La Paz",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2026-07",
+   "stage": "built",
+   "stage_basis": "Developer site and SCE 2026 APR: dedicated 500 kV gen-tie to DCRT Cielo Azul; CAISO queue #1529 status COMPLETED with on-line date 7/20/2026 (ACC case L-21229A-23-0050-00217).",
+   "docket": "ACC L-21229A-23-0050-00217",
+   "caiso_id": "",
+   "sources": [
+    "https://www.centennialflats.com/",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "atlas-north-cielo-azul-500-gentie",
+   "name": "Atlas North - Cielo Azul 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "AZ",
+   "utility": "Atlas North LLC (Hanwha); DCRT",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Atlas North project substation",
+     "state": "AZ",
+     "county": "La Paz",
+     "new": true
+    },
+    {
+     "name": "Cielo Azul",
+     "state": "AZ",
+     "county": "La Paz",
+     "new": false
+    }
+   ],
+   "miles_new": 3,
+   "miles_upgraded": 0,
+   "in_service": "2028-03",
+   "stage": "approved",
+   "stage_basis": "ACC issued the Certificate of Environmental Compatibility Dec 18, 2024 (Decision 79618) for a 2-3 mile 500 kV gen-tie to Cielo Azul; project 'In Development'; Atlas complex queue #1402 current on-line date 3/31/2028. (A separate <0.25-mi Atlas Solar tie into Cielo Azul is not listed.)",
+   "docket": "ACC L-21322A-24-0208-00235",
+   "caiso_id": "",
+   "sources": [
+    "https://www.hanwhadatacenters.com/projects/atlas-north",
+    "https://www.azcc.gov/docs/default-source/arizona-power-plant-files/10-15-2024_notice_of_hearing_case_235.pdf?sfvrsn=f5acc589_1",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "socorro-peak-cielo-azul-gentie",
+   "name": "Socorro Solar (Socorro Peak) - Cielo Azul 230-500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "AZ",
+   "utility": "Socorro Peak LLC (EDF); DCRT",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Socorro Solar",
+     "state": "AZ",
+     "county": "La Paz",
+     "new": true
+    },
+    {
+     "name": "Cielo Azul",
+     "state": "AZ",
+     "county": "La Paz",
+     "new": false
+    }
+   ],
+   "miles_new": 1.3,
+   "miles_upgraded": 0,
+   "in_service": "2029-03",
+   "stage": "proposed",
+   "stage_basis": "BLM Lake Havasu FO EA (paused, extension to spring 2026) for a 350 MW project with a ~1.3-mile 230-to-500 kV gen-tie; CAISO queue #2022 (POI Cielo Azul 500) current on-line date 3/26/2029.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://eplanning.blm.gov/Project-Home?id=3d0476de-a7f2-f011-8406-001dd8008d46",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "harquahala-sun-1-delaney-500-gentie",
+   "name": "Harquahala Sun Phase I - Delaney 500 kV gen-tie",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "AZ",
+   "utility": "HV Sunrise LLC (Copia Power)",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Harquahala Sun collector substation",
+     "state": "AZ",
+     "county": "Maricopa",
+     "new": true
+    },
+    {
+     "name": "Delaney",
+     "state": "AZ",
+     "county": "Maricopa",
+     "new": false
+    }
+   ],
+   "miles_new": 3.5,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "built",
+   "stage_basis": "ACC Decision 78590 (June 2022) authorized ~3.5-mile 500 kV gen-tie to Delaney; BLM issued notice to proceed Nov 2023; developer says the first phase began operation in 2024 (month not stated). Delaney POI is the CAISO/DCRT queue location for Harquahala projects.",
+   "docket": "ACC Decision 78590",
+   "caiso_id": "",
+   "sources": [
+    "https://www.harquahalasun.com/",
+    "https://www.blm.gov/press-release/blm-approves-renewable-energy-generation-tie-line-construction-maricopa-county",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "harquahala-sun-2-delaney-500",
+   "name": "Harquahala Sun Phase II 500 kV lines and substations",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "AZ",
+   "utility": "Copia Power",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Harquahala Sun Phase II 500 kV substations",
+     "state": "AZ",
+     "county": "Maricopa",
+     "new": true
+    },
+    {
+     "name": "Delaney",
+     "state": "AZ",
+     "county": "Maricopa",
+     "new": false
+    }
+   ],
+   "miles_new": 13,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "ACC Decision 78850 (Jan 25, 2023) authorized new 500 kV lines in a ~13-mile corridor with associated 500 kV substations; build status not confirmed. CAISO queue lists Harquahala Sunrise 2 (#2029) at Delaney 500 for 9/1/2026 and Harquahala Flats 2 (#2027) for 4/15/2028.",
+   "docket": "ACC Decision 78850",
+   "caiso_id": "",
+   "sources": [
+    "https://www.harquahalasun.com/",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "harquahala-sun-3-500-switchyard",
+   "name": "Harquahala Sun Phase III 500 kV line and switchyard",
+   "kv": 500,
+   "project_type": "new line",
+   "state": "AZ",
+   "utility": "Copia Power",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Harquahala Sun Phase III switchyard",
+     "state": "AZ",
+     "county": "Maricopa",
+     "new": true
+    },
+    {
+     "name": "Harquahala Sun Phase I/II 500 kV lines (to Delaney)",
+     "state": "AZ",
+     "county": "Maricopa",
+     "new": false
+    }
+   ],
+   "miles_new": 19,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "ACC Decision 79467 (Aug 13, 2024) authorized a new ~19-mile 500 kV line and switchyard extending the Phase I/II lines toward Delaney; in-service date not stated (Harquahala Sunrise queue #1678: 4/1/2030).",
+   "docket": "ACC L-21304A-24-0098-00231",
+   "caiso_id": "",
+   "sources": [
+    "https://www.harquahalasun.com/",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "rough-hat-clark-trout-canyon-230-gentie",
+   "name": "Rough Hat Clark Solar - Trout Canyon 230 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "NV",
+   "utility": "Candela Renewables; GridLiance West",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Rough Hat Clark project substation",
+     "state": "NV",
+     "county": "Clark",
+     "new": true
+    },
+    {
+     "name": "Trout Canyon",
+     "state": "NV",
+     "county": "Clark",
+     "new": false
+    }
+   ],
+   "miles_new": 1.5,
+   "miles_upgraded": 0,
+   "in_service": "2028-12",
+   "stage": "approved",
+   "stage_basis": "BLM Record of Decision signed Jan 13, 2025 approves the 400 MW project and ~1.5-mile 230 kV line to GLW Trout Canyon; CAISO queue Rough Hat Hybrid (#1650) and Rough Hat 2 (#1799) current on-line date 12/13/2028.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.federalregister.gov/documents/2025/01/17/2025-01231/record-of-decision-and-approved-resource-management-plan-amendment-for-the-rough-hat-clark-solar",
+    "https://www.blm.gov/sites/default/files/docs/2021-11/Nevada%20-%20SNDO%20-%20Rough%20Hat%20Clark%20POD%20Final%206-1-21_0.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "purple-sage-trout-canyon-230-gentie",
+   "name": "Purple Sage Energy Center - Trout Canyon 230 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "NV",
+   "utility": "Nobel Solar LLC; GridLiance West",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Purple Sage project substation",
+     "state": "NV",
+     "county": "Clark",
+     "new": true
+    },
+    {
+     "name": "Trout Canyon",
+     "state": "NV",
+     "county": "Clark",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2028-05",
+   "stage": "proposed",
+   "stage_basis": "BLM issued the Final EIS June 12, 2026 (ROD targeted Oct 2026, not confirmed) for a 400 MW project with a new 230 kV gen-tie to Trout Canyon; CAISO queue #1800 current on-line date 5/1/2028.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://eplanning.blm.gov/Project-Home?id=96b17dd2-a7f2-f011-8406-001dd8008d46",
+    "https://www.blm.gov/announcement/blm-issues-final-analysis-purple-sage-energy-center-pahrump-valley",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "larrea-trout-canyon-230-gentie",
+   "name": "Larrea Solar - Trout Canyon 230 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "NV",
+   "utility": "Larrea Solar Project LLC (Naturgy Candela); GridLiance West",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Larrea project substation",
+     "state": "NV",
+     "county": "Clark",
+     "new": true
+    },
+    {
+     "name": "Trout Canyon",
+     "state": "NV",
+     "county": "Clark",
+     "new": false
+    }
+   ],
+   "miles_new": 4.91,
+   "miles_upgraded": 0,
+   "in_service": "2030-12",
+   "stage": "proposed",
+   "stage_basis": "BLM POD: ~4.91-mile 230 kV gen-tie to Trout Canyon; federal permitting dashboard estimates review completion Sept 2028; CAISO queue #2150 current on-line date 12/15/2030.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.blm.gov/sites/default/files/docs/2024-10/BLM_NV_SNDO_Larrea-Solar-Project-POD.pdf",
+    "https://www.permits.performance.gov/permitting-project/fast-41-covered-projects/larrea-solar-project",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "bonanza-peak-trout-canyon-230-gentie",
+   "name": "Bonanza Peak Energy - Trout Canyon 230 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "NV",
+   "utility": "Bonanza Peak (developer); GridLiance West",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Bonanza Peak project substation",
+     "state": "CA",
+     "county": "Inyo",
+     "new": true
+    },
+    {
+     "name": "Trout Canyon",
+     "state": "NV",
+     "county": "Clark",
+     "new": false
+    }
+   ],
+   "miles_new": 9,
+   "miles_upgraded": 0,
+   "in_service": "2027-12",
+   "stage": "proposed",
+   "stage_basis": "Inyo County POD (2026): ~9-mile 230 kV gen-tie (0.5 mi in Inyo, 8.5 mi in Nye/Clark NV on BLM land) to Trout Canyon; CAISO queue Bonanza Peak Solar (#1655) current on-line date 12/31/2027; approvals pending.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.inyocounty.us/sites/default/files/2026-09/Final%20Bonanza%20Peak%20POD%20.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "sunbaked-trout-canyon-230-gentie",
+   "name": "Sunbaked Solar Energy Center - Trout Canyon 230 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "NV",
+   "utility": "Boulevard Associates (NextEra); GridLiance West",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Sunbaked Solar (Inyo County)",
+     "state": "CA",
+     "county": "Inyo",
+     "new": true
+    },
+    {
+     "name": "Trout Canyon",
+     "state": "NV",
+     "county": "Clark",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2029-02",
+   "stage": "proposed",
+   "stage_basis": "PUCN UEPA notice 22-12006 for a 230 kV gen-tie in Clark County for the Sunbaked project; CAISO queue #2149 (Inyo County, POI Trout Canyon) current on-line date 2/26/2029.",
+   "docket": "PUCN 22-12006",
+   "caiso_id": "",
+   "sources": [
+    "https://pucweb1.state.nv.us/PUC2/Dktinfo.aspx?Util=Renewable",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "kawich-innovation-desert-view-230-gentie",
+   "name": "Kawich Solar - Innovation-Desert View 230 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "NV",
+   "utility": "Kawich Renewables (Clearway); GridLiance West",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Kawich project substation",
+     "state": "NV",
+     "county": "Clark",
+     "new": true,
+     "lat": 36.583042,
+     "lon": -115.830494,
+     "location_basis": "project primary location from the federal Permitting Dashboard (project site, not the line end)"
+    },
+    {
+     "name": "GLW Innovation - Desert View 230 kV line",
+     "state": "NV",
+     "county": "Clark",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2029-07",
+   "stage": "proposed",
+   "stage_basis": "Permitting Dashboard (FAST-41): 350 MW project interconnecting to the existing GLW Innovation-Desert View 230 kV line ~2 miles south; PUCN UEPA notice 22-08010; CAISO queue #2147 current on-line date 7/27/2029.",
+   "docket": "PUCN 22-08010",
+   "caiso_id": "",
+   "sources": [
+    "https://www.permits.performance.gov/permitting-project/fast-41-covered-projects/kawich-solar-project",
+    "https://pucweb1.state.nv.us/PUC2/Dktinfo.aspx?Util=Renewable",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "rock-valley-beatty-gentie",
+   "name": "Rock Valley Energy Center - Beatty 230/500 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "NV",
+   "utility": "Boulevard Associates (NextEra); GridLiance West",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Rock Valley project substation",
+     "state": "NV",
+     "county": "Nye",
+     "new": true
+    },
+    {
+     "name": "Beatty (GLW, new)",
+     "state": "NV",
+     "county": "Nye",
+     "new": true
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "2029-03",
+   "stage": "proposed",
+   "stage_basis": "BLM fact sheet: 1,600 MW project with a dedicated 230 kV or 500 kV gen-tie to the proposed Beatty substation, Amargosa substation and/or new Valley switchyard (kv recorded as 230 minimum); CAISO queue #2144 (POI Beatty) current on-line date 3/15/2029.",
+   "docket": "PUCN 23-07023",
+   "caiso_id": "",
+   "sources": [
+    "https://www.blm.gov/sites/default/files/docs/2024-10/BLM_NV_SNDO_Rock-Valley-Energy-Center-Project-Fact-Sheet.pdf",
+    "https://www.caiso.com/documents/publicqueuereport.pdf"
+   ]
+  },
+  {
+   "key": "copper-rays-gamebird-230-gentie",
+   "name": "Copper Rays Solar - Gamebird 230 kV gen-tie",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "NV",
+   "utility": "Copper Rays Solar LLC (Leeward); GridLiance West",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Copper Rays project substation",
+     "state": "NV",
+     "county": "Nye",
+     "new": true
+    },
+    {
+     "name": "Gamebird",
+     "state": "NV",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": null,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "BLM issued the Final EIS Aug 21, 2026 (protest period to Sept 21, 2026; ROD pending) for a 700 MW project; preliminary POD describes a new 230 kV gen-tie to GLW Gamebird, about 4 miles north of the site (POD target full operation Dec 2030, from 2021).",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://eplanning.blm.gov/Project-Home?id=4ca84ed1-a7f2-f011-8407-001dd803d7d3",
+    "https://www.blm.gov/sites/default/files/docs/2022-04/FINAL%20Copper%20Rays%20Summary%20Input_part%201_0.pdf",
+    "https://www.blm.gov/sites/blm.gov/files/docs/2021-11/Preliminary%20Copper%20Rays%20BLM%20POD-062021.pdf"
+   ]
+  },
+  {
+   "key": "pge-google-san-jose-230-switching-station",
+   "name": "Google San Jose 230 kV switching station (5079 Disk Drive)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Google onsite 230 kV GIS switching station",
+     "state": "CA",
+     "county": "Santa Clara",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-12",
+   "stage": "planned",
+   "stage_basis": "PG&E AL 7785-E (Dec 18, 2025): new onsite 230 kV breaker-and-a-half GIS switching station plus three underground 230 kV service lines for a 250 MW Google load, operational Dec 2028; CPUC draft Resolution E-5455 (approve with modifications) was on the Oct/Nov 2026 agenda, final adoption not confirmed.",
+   "docket": "PG&E AL 7785-E / Res. E-5455",
+   "caiso_id": "",
+   "sources": [
+    "https://www.pge.com/tariffs/assets/pdf/adviceletter/ELEC_7785-E.pdf",
+    "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M623/K979/623979096.PDF",
+    "https://www.stoel.com/insights/reports/november-11-2026"
+   ]
+  },
+  {
+   "key": "pge-midpoint-230-substation-serial-dc1",
+   "name": "Midpoint 230/34.5 kV substation (Newark - NRS 230 kV loop-in, Serial Data Center 1)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Midpoint (new)",
+     "state": "CA",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Newark",
+     "state": "CA",
+     "county": "Alameda",
+     "new": false
+    },
+    {
+     "name": "NRS (SVP)",
+     "state": "CA",
+     "county": "Santa Clara",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "PG&E 2025 request-window presentation to CAISO: new 230 kV substation 'Midpoint' looping the Newark-NRS 230 kV line to serve a 250 MW serial data center, requested 2028 (scope $101M-$219M); final approval not confirmed.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://stakeholdercenter.caiso.com/InitiativeDocuments/Presentation-PGE-2025-2026Transmissionplanningprocess-Sep2525.pdf"
+   ]
+  },
+  {
+   "key": "pge-trimble-230-expansion-lc24",
+   "name": "Trimble 230/115 kV substation expansion (NRS - San Jose B 230 kV loop-in, Load Cluster 2024)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Trimble 230 kV (new yard at existing 115 kV substation)",
+     "state": "CA",
+     "county": "Santa Clara",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "CAISO 2025-26 Transmission Plan sec. 2.3.6 lists CAISO-concurred large-load network upgrades for PG&E Load Cluster 2024 data centers, including a Trimble 230/115 kV substation expansion looping onto the NRS-San Jose B 230 kV line, est. 2031 (month not stated).",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan.pdf"
+   ]
+  },
+  {
+   "key": "vea-osprey-data-center-230-substation",
+   "name": "Osprey Data Center 230/34.5 kV substation (off GLW Gamebird 230 kV)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "NV",
+   "utility": "Valley Electric Association / GridLiance West",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Osprey data center substation (new)",
+     "state": "NV",
+     "county": "Nye",
+     "new": true
+    },
+    {
+     "name": "Gamebird",
+     "state": "NV",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "VEA presented the 1,600 MW Osprey data center to CAISO (Sept 2024) with a new 230/34.5 kV substation tied to GLW Gamebird 230 kV; VEA told the CEC (2025) ISD 2027-2028; Nye County adopted a data-center moratorium (June 2026) and banned data centers in Basin 162 (Pahrump) in Aug 2026, so the project is uncertain.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://stakeholdercenter.caiso.com/InitiativeDocuments/VEA-2024-2025-Transmission-Planning-Process-Presentation-Sep-24-2024.pdf",
+    "https://efiling.energy.ca.gov/GetDocument.aspx?tn=264906",
+    "https://signaldata.org/nv/data-centers/nye"
+   ]
+  }
+ ],
+ "left_out": {
+  "calcite-220-switching-station": "same as tdf-nu-pin6902",
+  "gen-darden-harlan-500": "same as darden-gentie-500",
+  "perkins-swpl-500-loopin": "same as perkins-umbriel-500-switchyard",
+  "transwest-express-ac-desert-mountain-bristlecone-500": "not CAISO-planned (Utah-Nevada)",
+  "silver-rock-ipp-southern-nevada-500": "not CAISO-planned (IPP to southern Nevada)"
+ }
+}

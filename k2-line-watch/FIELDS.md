@@ -216,6 +216,14 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
   2026 ITP Northern Stage, utility pages and news) are in `data/sources/spp-research-2026.json` (ids `sppr-`), with
   stage and date changes in `spp-corrections-2026.json`; a correction that moves a line past the window removes it.
   Black Hills Energy is not an SPP RTO member (SPP's Apr 2026 member list), so its Wyoming and Colorado lines are left out.
+- **CAISO (Nov 14, 2026)**: market `CAISO`, region `caiso`, ids `caisor-`. CAISO's own tracking list (Transmission
+  Development Forum Attachment 1 and 2, July 2026; keys `tdf-<TP project id>`, `caiso_id` set) read row by row for 230 kV+
+  lines, HVDC and new 230 kV+ substations (most rows are breakers, short-circuit duty, reactors or 115 kV and below),
+  plus PG&E, SCE, SDG&E, GridLiance West / VEA (Nevada) and competitively built projects from CPUC CPCN/PTC cases,
+  GO 131 reports, CEC and BLM generator-tie cases, WECC progress reports and news, in
+  `data/sources/caiso-research-2026.json` (projects sharing a CAISO project id are kept once). LADWP, IID, SMUD/BANC
+  and TID are not CAISO. Left out (listed in the file): TransWest Express AC and Silver Rock (not CAISO-planned), and the
+  Suncrest 230 kV loop-in (SDG&E's application dates it 2032).
   Stations are placed by name on HIFLD / OpenStreetMap in the state given (and the county, when the source gives one),
   new stations beside the station the source names (`approx`) or at the county center.
 - **SPP 2026 ITP 765 kV lines (Nov 11, 2026)**: `data/sources/spp-itp-2026.json`, kept by hand from SPP's draft 2026 ITP

@@ -146,13 +146,13 @@
  },
  {
   "check": "Time window (2023-11 built to 2031-11 due) and stage names",
-  "checked": 3298,
+  "checked": 3403,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Substation points are in their state and in the county the source lists",
-  "checked": 2753,
+  "checked": 2898,
   "errors": [],
   "warnings": [
    "substation Peach Bottom: point is 3 miles outside York County, the county ERCOT lists",
@@ -179,7 +179,9 @@
    "substation Zenith/Mission: point is 9 miles outside Waller County, the county ERCOT lists",
    "substation Croydon: point is 4 miles outside Bucks County, the county ERCOT lists",
    "substation Farmville: point is 4 miles outside Cumberland County, the county ERCOT lists",
+   "substation Mandalay switchyard: point is 4 miles outside Ventura County, the county ERCOT lists",
    "substation Stanley Terrace: point is 6 miles outside Union County, the county ERCOT lists",
+   "substation Talega: point is 5 miles outside San Diego County, the county ERCOT lists",
    "substation Big Creek: point is 10 miles outside Brazoria County, the county ERCOT lists",
    "substation Big Foot: point is 9 miles outside Medina County, the county ERCOT lists",
    "substation Big Spring West: point is 16 miles outside Martin County, the county ERCOT lists",
@@ -216,18 +218,18 @@
    "substation Triangle: point is 4 miles outside Midland County, the county ERCOT lists",
    "substation Vealmoor: point is 6 miles outside Howard County, the county ERCOT lists",
    "substation Yucca Drive: point is 10 miles outside Ector County, the county ERCOT lists",
-   "765 lines have no placeable substation (no county given, and not on public maps by name): tpit-102068, pjm-s3608.5, pjm-b3800.7, pjm-b3800.43, pjm-b3800.53, pjm-b4089.1, spp-170051, spp-170054"
+   "766 lines have no placeable substation (no county given, and not on public maps by name): tpit-102068, pjm-s3608.5, pjm-b3800.7, pjm-b3800.43, pjm-b3800.53, pjm-b4089.1, spp-170051, spp-170054"
   ]
  },
  {
   "check": "Substation status agrees between lines and substations",
-  "checked": 4055,
+  "checked": 4209,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Downloads match the page (CSV, GeoJSON, KML, new-only layers)",
-  "checked": 12639,
+  "checked": 13147,
   "errors": [],
   "warnings": []
  },
@@ -613,7 +615,7 @@
  },
  {
   "check": "Texas and SPP sweep: researched lines have sources; corrections to official lists are deliberate",
-  "checked": 393,
+  "checked": 498,
   "errors": [],
   "warnings": [
    "tpit-102815 SandLake - North McCamey Transmission Line Addition: stage 'built' but ERCOT says 'Under Construction' (changed on purpose: Line Watch research: LCRA (July 2026) says the North McCamey-Sand Lake 345 kV line is complete and energized, and Oncor's Q2 2026 release says it placed its por)",
