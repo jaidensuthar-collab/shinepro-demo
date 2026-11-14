@@ -146,19 +146,15 @@
  },
  {
   "check": "Time window (2023-11 built to 2031-11 due) and stage names",
-  "checked": 3119,
+  "checked": 3202,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Substation points are in their state and in the county the source lists",
-  "checked": 2595,
+  "checked": 2639,
   "errors": [],
   "warnings": [
-   "substation Bandit: placed in NM, outside the regions this list covers (the line crosses the state line)",
-   "substation Crossroads: placed in NM, outside the regions this list covers (the line crosses the state line)",
-   "substation Holcomb: placed in KS, outside the regions this list covers (the line crosses the state line)",
-   "substation Viola: placed in KS, outside the regions this list covers (the line crosses the state line)",
    "substation Peach Bottom: point is 3 miles outside York County, the county ERCOT lists",
    "substation Peach Botton: point is 3 miles outside York County, the county ERCOT lists",
    "substation Sunbury: point is 3 miles outside Snyder County, the county ERCOT lists",
@@ -179,7 +175,6 @@
    "substation Riverton: point is 18 miles outside Ward County, the county ERCOT lists",
    "substation Roanoke Switch: point is 13 miles outside Tarrant County, the county ERCOT lists",
    "substation Rockhound: point is 11 miles outside Martin County, the county ERCOT lists",
-   "substation Vado: placed in NM, outside the regions this list covers (the line crosses the state line)",
    "substation White River: point is 17 miles outside Motley County, the county ERCOT lists",
    "substation Zenith/Mission: point is 9 miles outside Waller County, the county ERCOT lists",
    "substation Croydon: point is 4 miles outside Bucks County, the county ERCOT lists",
@@ -221,18 +216,18 @@
    "substation Triangle: point is 4 miles outside Midland County, the county ERCOT lists",
    "substation Vealmoor: point is 6 miles outside Howard County, the county ERCOT lists",
    "substation Yucca Drive: point is 10 miles outside Ector County, the county ERCOT lists",
-   "723 lines have no placeable substation (no county given, and not on public maps by name): tpit-102068, pjm-s3608.5, pjm-b3800.7, pjm-b3800.43, pjm-b3800.53, pjm-b4089.1, pjm-b3800.2, pjm-b4036.10"
+   "760 lines have no placeable substation (no county given, and not on public maps by name): tpit-102068, pjm-s3608.5, pjm-b3800.7, pjm-b3800.43, pjm-b3800.53, pjm-b4089.1, spp-170051, spp-170054"
   ]
  },
  {
   "check": "Substation status agrees between lines and substations",
-  "checked": 3821,
+  "checked": 3921,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Downloads match the page (CSV, GeoJSON, KML, new-only layers)",
-  "checked": 11931,
+  "checked": 12204,
   "errors": [],
   "warnings": []
  },
@@ -244,16 +239,32 @@
  },
  {
   "check": "SPP lines match SPP's project list (voltage, in-service date, stage)",
-  "checked": 91,
+  "checked": 175,
   "errors": [],
   "warnings": [
+   "spp-144236 Leland Olds - Finstad - 345 kV New Line: stage 'approved' is estimated (estimated: SPP notice to construct issued (Delay - Mitigation) and due within 18 months, so its route and site should be settled)",
+   "spp-156411 Crossroads - Hobbs 345 kV ckts 1 & 2: stage 'in construction' is estimated (estimated: planned in-service date 2026-05 has passed and SPP has not marked it complete)",
+   "spp-143714 Finstad - Tande 345 kV New Line: stage 'approved' is estimated (estimated: SPP notice to construct issued (Delay - Mitigation) and due within 18 months, so its route and site should be settled)",
+   "spp-156412 Hobbs - Roadrunner 345 kV ckts 1 & 2: stage 'in construction' is estimated (estimated: planned in-service date 2026-05 has passed and SPP has not marked it complete)",
+   "spp-143660 S3454 - S3740 345 kV New Line: stage 'approved' is estimated (estimated: SPP notice to construct issued (Delay - Mitigation Window) and due within 18 months, so its route and site should be settled)",
+   "spp-144226 Finstad - Vanhook 115 kV New Line: stage 'approved' is estimated (estimated: SPP notice to construct issued (Delay - Mitigation) and due within 18 months, so its route and site should be settled)",
+   "spp-71963 Monolith 345 kV Substation: stage 'in construction' is estimated (estimated: planned in-service date 2025-12 has passed and SPP has not marked it complete)",
+   "spp-144230 Finstad 345 kV New Substation: stage 'approved' is estimated (estimated: SPP notice to construct issued (Delay - Mitigation) and due within 18 months, so its route and site should be settled)",
+   "spp-144237 Leland Olds 345 kV Substation: stage 'approved' is estimated (estimated: SPP notice to construct issued (Delay - Mitigation) and due within 18 months, so its route and site should be settled)",
+   "spp-157307 Phantom 345 kV Cap Bank: stage 'in construction' is estimated (estimated: planned in-service date 2026-05 has passed and SPP has not marked it complete)",
+   "spp-156248 North Dakota/Saskatchewan Border (Tableland) - Wheelock 230 kV Ckt 1: stage 'approved' is estimated (estimated: SPP notice to construct issued (On Schedule < 4) and due within 18 months, so its route and site should be settled)",
+   "spp-156240 North Dakota/Saskatchewan Border (Tableland) - Tande 230 kV Ckt 1: stage 'approved' is estimated (estimated: SPP notice to construct issued (On Schedule < 4) and due within 18 months, so its route and site should be settled)",
    "spp-157879 Anadarko - Gracemont 138 kV Ckt 3 New Line: stage 'approved' is estimated (estimated: SPP notice to construct issued (Delay - Mitigation) and due within 18 months, so its route and site should be settled)",
    "spp-157897 Anadarko - Gracemont 138kV Ckt 2 New Line: stage 'approved' is estimated (estimated: SPP notice to construct issued (Delay - Mitigation) and due within 18 months, so its route and site should be settled)",
    "spp-72020 Calumet - Cana 138 kV Ckt 1 Voltage Conversion: stage 'in construction' is estimated (estimated: planned in-service date 2026-06 has passed and SPP has not marked it complete)",
+   "spp-122730 South Shreveport - Wallace Lake 138 kV Ckt 1 Rebuild #2: stage 'in construction' is estimated (estimated: planned in-service date 2025-12 has passed and SPP has not marked it complete)",
+   "spp-132936 Elm Creek - Summit 345 kV GEN-2017-004 Interconnection (TOIF) (ITCGP): stage 'approved' is estimated (estimated: SPP notice to construct issued (On Schedule < 4) and due within 18 months, so its route and site should be settled)",
    "spp-143434 Lawton Eastside - Terry Road 345kV New Interconnection Substation (DISIS-2017-002): stage 'approved' is estimated (estimated: SPP notice to construct issued (On Schedule < 4) and due within 18 months, so its route and site should be settled)",
    "spp-133042 Hugo - Sunnyside 345 kV GEN-2017-075 Interconnection (TOIF) (OKGE): stage 'in construction' is estimated (estimated: planned in-service date 2026-05 has passed and SPP has not marked it complete)",
    "spp-143404 TUCO - Oklaunion 345kV GEN-2017-151 Interconnection (Non-Shared NU): stage 'in construction' is estimated (estimated: planned in-service date 2026-08 has passed and SPP has not marked it complete)",
+   "spp-112331 Lieberman - North Benton 138 kV Substation GEN-2016-167 Interconnection (TOIF) (AEPW): stage 'in construction' is estimated (estimated: planned in-service date 2026-03 has passed and SPP has not marked it complete)",
    "spp-133021 GRDA1 - CLARMR5 161 kV GEN-2017-061 Interconnection (Non-Shared NU): stage 'in construction' is estimated (estimated: planned in-service date 2025-06 has passed and SPP has not marked it complete)",
+   "spp-143336 Tekamah - Raun 161kV GEN-2017-105 Interconnection (Non-Shared NU) (OPPD): stage 'in construction' is estimated (estimated: planned in-service date 2026-10 has passed and SPP has not marked it complete)",
    "spp-143395 Deaf Smith - Plant X 230kV GEN-2017-146 Interconnection (TOIF): stage 'in construction' is estimated (estimated: planned in-service date 2026-08 has passed and SPP has not marked it complete)",
    "substation Chalybe (TX): marked new, but OpenStreetMap Union Carbide Substation is 0.0 miles away on a public map; it may be built already or sit beside an existing station",
    "substation Dunham (TX): marked new, but OpenStreetMap Oncor Dunham Substation is 0.0 miles away on a public map; it may be built already or sit beside an existing station",
@@ -613,7 +624,7 @@
  },
  {
   "check": "Texas and SPP sweep: researched lines have sources; corrections to official lists are deliberate",
-  "checked": 257,
+  "checked": 256,
   "errors": [],
   "warnings": [
    "tpit-102815 SandLake - North McCamey Transmission Line Addition: stage 'built' but ERCOT says 'Under Construction' (changed on purpose: Line Watch research: LCRA (July 2026) says the North McCamey-Sand Lake 345 kV line is complete and energized, and Oncor's Q2 2026 release says it placed its por)",

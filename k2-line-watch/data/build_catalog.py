@@ -906,6 +906,7 @@ REGIONS = {   # file key -> (title, test on a line or substation record)
     "spp-texas": ("Texas, SPP (Panhandle, South Plains, Northeast Texas)", lambda r: "SPP" in r.get("market", "") and "TX" in r.get("state", "")),
     "el-paso": ("Texas, El Paso (El Paso Electric, western grid)", lambda r: "WECC" in r.get("market", "")),
     "oklahoma": ("Oklahoma (SPP)", lambda r: "OK" in r.get("state", "")),
+    "spp": ("SPP (all 15 states: Texas and Oklahoma to the Dakotas, Montana, Wyoming and Colorado)", lambda r: r.get("market") == "SPP"),
     "miso-texas": ("Texas, MISO (Entergy Texas, Southeast Texas)", lambda r: r.get("market") == "MISO" and "TX" in r.get("state", "")),
     "miso": ("MISO (all 15 states: Entergy Texas, local projects, data-center hookups, Tranche 1 backbone)", lambda r: r.get("market") == "MISO"),
     "pjm": ("PJM (13 states and DC: Illinois to New Jersey, Virginia and the Carolinas)", lambda r: r.get("market") == "PJM"),

@@ -52,7 +52,7 @@ def _state_boxes():
 
 
 for _st, _b in _state_boxes().items():
-    if _st in ("ND", "SD", "MN", "WI", "IA", "IL", "IN", "MI", "LA", "MS", "KY") + PJM.PJM_STATES:
+    if _st in ("ND", "SD", "MN", "WI", "IA", "IL", "IN", "MI", "LA", "MS", "KY") + PJM.PJM_STATES + SPP.HOME:
         BOXES.setdefault(_st, tuple(round(v + d, 2) for v, d in zip(_b, (-0.1, -0.1, 0.1, 0.1))))
 ALL_BOX = (min(b[0] for b in BOXES.values()), min(b[1] for b in BOXES.values()), max(b[2] for b in BOXES.values()), max(b[3] for b in BOXES.values()))
 
@@ -135,7 +135,7 @@ def check_locations(lines, sites, places, r):
         if not (box[0] <= st["lon"] <= box[2] and box[1] <= st["lat"] <= box[3]):
             errs.append(f"substation {st['name']}: point {st['lat']}, {st['lon']} is outside {st.get('state', 'TX')}")
             continue
-        if st.get("state", "TX") != "TX" and st.get("state") not in ("OK",) + MISO.MISO_STATES + PJM.PJM_STATES:
+        if st.get("state", "TX") != "TX" and st.get("state") not in ("OK",) + MISO.MISO_STATES + PJM.PJM_STATES + SPP.HOME:
             warns.append(f"substation {st['name']}: placed in {st['state']}, outside the regions this list covers (the line crosses the state line)")
         key = f"{st.get('state', 'TX')}|" + (st["county"] or "")
         if st["confidence"] not in ("exact", "approx") or key not in places.rings:
@@ -365,8 +365,8 @@ def check_spp(lines, sites, r):
     r.add("SPP lines match SPP's project list (voltage, in-service date, stage)", errs, warns, n)
 
 
-TXR_FIX = json.load(open(os.path.join(B.HERE, "sources", "texas-corrections-2026.json"))) \
-    if os.path.exists(os.path.join(B.HERE, "sources", "texas-corrections-2026.json")) else {}
+import build_txr as TXR   # noqa: E402
+TXR_FIX = TXR.load_corrections()
 TXR_DROP = set(TXR_FIX.get("drop", {}))
 
 

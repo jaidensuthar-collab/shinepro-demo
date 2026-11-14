@@ -18,6 +18,24 @@ from build_miso import MisoPlaces, finish, research_lines
 HERE = os.path.dirname(os.path.abspath(__file__))
 RESEARCH = os.path.join(HERE, "sources", "texas-research-2026.json")
 CORRECTIONS = os.path.join(HERE, "sources", "texas-corrections-2026.json")
+# Later sweeps in the same shape: the rest of SPP (Kansas to the Dakotas, Nov 2026).
+RESEARCH_FILES = [RESEARCH, os.path.join(HERE, "sources", "spp-research-2026.json")]
+CORRECTION_FILES = [CORRECTIONS, os.path.join(HERE, "sources", "spp-corrections-2026.json")]
+
+
+def load_research():
+    files = [json.load(open(f)) for f in RESEARCH_FILES if os.path.exists(f)]
+    return {"checked": max((f.get("checked", "") for f in files), default=""), "projects": [p for f in files for p in f["projects"]]}
+
+
+def load_corrections():
+    out = {"set": [], "drop": {}}
+    for f in CORRECTION_FILES:
+        if os.path.exists(f):
+            d = json.load(open(f))
+            out["set"] += d.get("set", [])
+            out["drop"].update(d.get("drop", {}))
+    return out
 STATES = ["TX", "OK", "NM", "LA", "AR"]
 MARKETS = {"ERCOT": B.MARKET, "SPP": "SPP", "MISO": "MISO", "WECC": "WECC"}
 PREFIX = {"ERCOT": "txr-", "SPP": "sppr-", "MISO": "etrr-", "WECC": "eper-"}
@@ -95,9 +113,9 @@ def duplicate(p, listed, pairs):
 
 
 def txr_lines(out):
-    if not os.path.exists(RESEARCH):
+    src = load_research()
+    if not src["projects"]:
         return []
-    src = json.load(open(RESEARCH))
     listed = [ends_of(x) for x in out]
     dockets = {(str(x.get("docket") or "").strip(), x["kv"]) for x in out if str(x.get("docket") or "").strip()}
     (pairs, tpit_ids), keep = tpit_pairs(), []
@@ -117,7 +135,7 @@ def txr_lines(out):
         lines += research_lines(places, have, (), prefix=PREFIX[m], market=label, src={**src, "projects": part})
     gen = re.compile(r"GEN[- ]?TIE|GENERATION TIE|GENERATOR|\bSOLAR\b|\bWIND\b|\bBESS\b|STORAGE|GEN-\d{4}|\bPOI\b", re.I)
     for x in lines:
-        x["checked"] = f"{RESEARCHED}, {src.get('checked', '')} (Texas and SPP sweep)"
+        x["checked"] = f"{RESEARCHED}, {src.get('checked', '')} (Texas and SPP sweeps)"
         if x["purpose"] == "shared grid" and gen.search(x["name"]):
             x["purpose"] = "generator hookup"   # a tie for one plant adds no shared capacity
             finish(x, x["kv"], "the regulator's decision")
@@ -126,9 +144,7 @@ def txr_lines(out):
 
 def apply_corrections(out):
     """Stage and date changes to listed lines where a newer public source shows the official list is behind."""
-    if not os.path.exists(CORRECTIONS):
-        return out
-    fix = json.load(open(CORRECTIONS))
+    fix = load_corrections()
     drop = set(fix.get("drop", {}))
     by_id = {x["id"]: x for x in out}
     for c in fix.get("set", []):

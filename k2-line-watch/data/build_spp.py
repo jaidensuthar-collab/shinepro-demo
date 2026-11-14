@@ -1,4 +1,6 @@
-"""SPP lines for Line Watch: the Texas Panhandle / South Plains and Oklahoma.
+"""SPP lines for Line Watch: every SPP state (Texas Panhandle / South Plains / Northeast Texas, Oklahoma, Kansas,
+Nebraska, New Mexico, the Dakotas, Montana, Wyoming, Colorado (RTO West, Apr 2026) and SPP's parts of Iowa,
+Minnesota, Missouri, Arkansas and Louisiana).
 
 Source: SPP's 2026 Transmission Expansion Plan (STEP) project list, Appendix 1 (sources/spp-step-2026.xlsx), from
 https://www.spp.org/documents/76727/2026%20spp%20transmission%20expansion%20(step)%20plan.zip
@@ -29,9 +31,10 @@ STATE_NAME = {"TX": "Texas", "OK": "Oklahoma", "AR": "Arkansas", "KS": "Kansas",
               "ND": "North Dakota", "SD": "South Dakota", "MN": "Minnesota", "WI": "Wisconsin", "IA": "Iowa", "IL": "Illinois",
               "IN": "Indiana", "MI": "Michigan", "KY": "Kentucky", "MS": "Mississippi",
               "PA": "Pennsylvania", "OH": "Ohio", "VA": "Virginia", "WV": "West Virginia", "MD": "Maryland", "NJ": "New Jersey",
-              "DE": "Delaware", "DC": "District of Columbia", "NC": "North Carolina", "TN": "Tennessee"}
-HOME = ("TX", "OK")              # the states this list covers
-NEIGHBORS = ("AR", "KS", "MO", "NM")   # where a line leaving Oklahoma or the Panhandle can end
+              "DE": "Delaware", "DC": "District of Columbia", "NC": "North Carolina", "TN": "Tennessee",
+              "NE": "Nebraska", "MT": "Montana", "WY": "Wyoming", "CO": "Colorado"}
+HOME = ("TX", "OK", "KS", "NE", "NM", "ND", "SD", "MT", "WY", "CO", "IA", "MN", "MO", "AR", "LA")   # SPP's states (Nov 2026)
+NEIGHBORS = ()
 STATE_BOX = {"TX": (-106.7, 25.8, -93.5, 36.6), "OK": (-103.1, 33.6, -94.4, 37.1)}
 OWNERS = {"SPS": "SPS (Xcel Energy)", "OGE": "OG&E", "AEP": "AEP (PSO / SWEPCO)", "WFEC": "Western Farmers", "GRDA": "GRDA",
           "ETEC": "ETEC", "LEA": "Lea County Coop", "NEET": "NextEra (NEET)", "TBD": "not assigned yet"}
@@ -63,9 +66,9 @@ def read_step(path=STEP_FILE):
         if not any(r):
             continue
         d = dict(zip(cols, r))
-        states = set(re.findall(r"\b(TX|OK)\b", norm(d.get("State(s)"))))
+        states = set(re.findall(r"\b(" + "|".join(HOME) + r")\b", norm(d.get("State(s)"))))
         if states:
-            d["states"] = sorted(states, key=["TX", "OK"].index)
+            d["states"] = sorted(states, key=HOME.index)
             out.append(d)
     return out
 
@@ -269,7 +272,7 @@ def spp_lines(researched=None):
         rows = g["rows"]
         # One line SPP splits between two owners (each builds its part) is one line; it is as far along as its slower part.
         d, life, basis, _, _, isd = max(rows, key=lambda t: B.STAGES.index(t[1]))
-        states = sorted({s for r in rows for s in r[0]["states"]}, key=["TX", "OK"].index)
+        states = sorted({s for r in rows for s in r[0]["states"]}, key=HOME.index)
         ids = sorted({str(r[0].get("Upgrade ID")) for r in rows})
         ends = []
         for n in g["ends"]:
@@ -288,9 +291,7 @@ def spp_lines(researched=None):
                 e["county"] = places.county_at(e)
         placed = [e for e in ends if e.get("lat") is not None]
         if placed and not any(e["state"] in HOME for e in placed):
-            continue   # SPP lists the state that pays; the line itself is in Arkansas, Kansas or Missouri
-        if not placed and not set(r[0]["State(s)"] for r in rows) <= {"TX", "OK"}:
-            continue   # can't tell which state it is in
+            continue   # SPP lists the state that pays; the line itself is outside SPP's states
         placed_states = sorted({e["state"] for e in placed if e["state"] in HOME} or set(states), key=list(HOME).index)
         name = norm(d.get("Upgrade Name")).replace("–", "-")
         name = re.sub(r"\s+", " ", re.sub(r"\s*\((SPS|OGE|AEP|WFEC|GRDA)\)\s*$", "", name))
