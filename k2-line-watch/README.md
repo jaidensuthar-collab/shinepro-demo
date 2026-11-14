@@ -134,7 +134,9 @@ Texas (the news search and the webpage assistant cover them), county commissione
 
 ## Publishing the page (size limit)
 
-One Artifact publish carries at most 64 MB. With all regions the files total about 90 MB, so publish in two
-calls to the same url: first the page, data/texas-lines.json, exports/README.txt, exports/k2-texas-developers.csv,
-the k2-all-* files and the small regions (spp-texas, el-paso, oklahoma, miso-texas); then the k2-texas-*,
-k2-ercot-texas-*, k2-miso-* and k2-pjm-* files. Files left out of a publish are kept.
+One Artifact publish carries at most 64 MB. With all regions the files total about 125 MB, so publish in three
+calls to the same url: (1) the page, data/texas-lines.json, exports/README.txt, exports/k2-texas-developers.csv and
+the k2-all-*-layer / -lines.csv / -substations.csv / -new-only files (about 59 MB); (2) the Texas-side regions:
+k2-texas-*, k2-ercot-texas-*, k2-spp-texas-*, k2-el-paso-*, k2-oklahoma-*, k2-spp-* and k2-miso-texas-* (about 40 MB);
+(3) k2-all-lines.geojson and the other regions: k2-miso-*, k2-pjm-*, k2-caiso-*, k2-nyiso-*, k2-iso-ne-*, k2-west-*
+(about 28 MB). Check the sizes before publishing; when a call would pass 64 MB, move a region to the next call. Files left out of a publish are kept.

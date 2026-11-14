@@ -232,6 +232,13 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
   Canadian border. Projects are matched by end substations, not by queue number (NYISO gives one queue number to a whole
   program, e.g. all 13 Smart Path Connect lines). Left out (listed in the file): NYSEG's SCATE Lines 68/69/72 (NYSEG now
   dates them Q4 2032), Knickerbocker - Pleasant Valley (energized summer 2023), Twin States and Clean Path NY (cancelled).
+- **West outside CAISO and SPP (Nov 14, 2026)**: market `West` (ids `westr-`, region `west`): Arizona, New Mexico,
+  Nevada, Colorado, Utah, Wyoming, Idaho, Montana, Oregon and Washington. WestConnect's Transmission Plan Project List
+  (all 389 rows, keys `wc-<wcprojectID>`) and NorthernGrid's 2024-2025 Regional Transmission Plan and 2026-2027 study
+  scope (keys `ng-`), BPA and PacifiCorp plans, plus every western state's siting cases, utility pages and news, in
+  `data/sources/west-research-2026.json`. Lines owned by SPP RTO members (Tri-State, Basin, WAPA Rocky Mountain and
+  Upper Great Plains, Colorado Springs, Platte River, ...), CAISO participants (GridLiance West / VEA) and El Paso
+  Electric are skipped: they are in their own regions. Black Hills (not an SPP member) is here.
 - **U.S. only**: the checker fails if any line or substation is outside a U.S. state; a line that runs to the national
   border is listed for its U.S. part, and the check lists those for review.
   Stations are placed by name on HIFLD / OpenStreetMap in the state given (and the county, when the source gives one),
