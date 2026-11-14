@@ -259,14 +259,14 @@ def mtep_lines(places=None, skip_pairs=()):
     return out
 
 
-def research_lines(places=None, have=(), have_mtep=(), path=None, prefix="misor-", market=MARKET_MISO):
+def research_lines(places=None, have=(), have_mtep=(), path=None, prefix="misor-", market=MARKET_MISO, src=None):
     """MISO projects found in utility pages, state commission dockets and transmission owners' plans
     (sources/miso-research-2026.json): projects approved before MTEP25 that are still being built, and ones not in
     MISO's list yet. Each carries its own stage and source; projects already in the list (same end substations) are skipped."""
     path = path or RESEARCH_FILE
-    if not os.path.exists(path):
+    if src is None and not os.path.exists(path):
         return []
-    src, places = json.load(open(path)), places or MisoPlaces()
+    src, places = src or json.load(open(path)), places or MisoPlaces()
     out, seen = [], set(have)
     for p in src["projects"]:
         isd = p.get("in_service") or ""

@@ -1,0 +1,203 @@
+{
+ "note": "Changes to listed lines where a newer public source shows the official list is behind (Nov 14, 2026 sweep).",
+ "set": [
+  {
+   "id": "tpit-102815",
+   "basis": "LCRA (July 2026) says the North McCamey-Sand Lake 345 kV line is complete and energized, and Oncor's Q2 2026 release says it placed its portion of the Delaware Basin Stage 2 line in service in June 2026. Energized June 2026 per Oncor Q2 2026 results and LCRA project page.",
+   "sources": [
+    "https://www.lcra.org/energy/electric-transmission/transmission-line-routing/north-mccamey-sand-lake",
+    "https://www.oncor.com/content/oncorwww/wire/en/home/newsroom/oncor-reports-second-quarter-2026-results.html"
+   ],
+   "stage": "built",
+   "in_service": "2026-06"
+  },
+  {
+   "id": "tpit-69709",
+   "basis": "LCRA (July 2026) says the North McCamey-Bearkat 345 kV line is complete and energized; WETT testimony (Sept 2026) says the Bearkat-North McCamey line was energized as of June 30, 2026. LCRA reported energization of both Delaware Basin Stage 2 lines in June 2026.",
+   "sources": [
+    "https://www.lcra.org/energy/electric-transmission/transmission-line-routing/north-mccamey-bearkat",
+    "https://interchange.puc.texas.gov/Documents/60312_1_1685349.PDF"
+   ],
+   "stage": "built",
+   "in_service": "2026-06"
+  },
+  {
+   "id": "tpit-98599",
+   "basis": "PUC order of 8/20/2026 in docket 59280 approved the Bluff Creek-Mulberry Creek double-circuit 345-kV rebuild route; AEP estimated energization by October 2028.",
+   "sources": [
+    "https://interchange.puc.texas.gov/search/filings/?ControlNumber=59280",
+    "https://interchange.puc.texas.gov/Documents/59280_67_1675932.PDF"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "tpit-110943E",
+   "basis": "ERCOT recommended BEC's Tier 2 Cooke County Resiliency project (26RPG007) in Aug 2026 and states a CCN filing is required for 52 mi of new ROW, so the route is not yet regulator-approved.",
+   "sources": [
+    "https://www.ercot.com/files/docs/2026/08/14/3.-EIR_BEC_Cooke_County_Resiliency_Project_Recommendation_RPG_August_2026_FINAL.pdf"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "tpit-110240",
+   "basis": "ERCOT recommended Option 1 of STEC's Southeast Brownsville Large Load project at the May 2026 RPG (Tier 2, $96.6M, ISD June 2028); CCN still needed for 19.1 mi new ROW.",
+   "sources": [
+    "https://www.ercot.com/files/docs/2026/05/08/3.-EIR_STEC_Southeast_Brownsville_Large_Load_Project_Recommendation_RPG_May_2026_FINAL.pdf"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "tpit-110443",
+   "basis": "STEC Nueces Green Ammonia (25RPG016) Option 3 was recommended by ERCOT (ISD May 2031), endorsed unanimously by TAC on Mar 25 2026 and taken to the ERCOT Board on Apr 20-21 2026; CCN still required.",
+   "sources": [
+    "https://www.ercot.com/files/docs/2026/04/15/5.2-Issue-for-the-ERCOT-Board-of-Directors-April_2026_25RPG016-STEC-Revised-04.15.26.pdf",
+    "https://www.ercot.com/files/docs/2026/03/16/4.-EIR-STEC-Nueces-GreenvAmmonia-Project-Status-Update-RPG-March-2026-FINAL.pdf"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "tpit-110397",
+   "basis": "The Lon Hill - Bunsen 138 kV rebuild is part of ERCOT-recommended Option 3 of 25RPG016 (TAC-endorsed Mar 2026, Board item Apr 2026), an upgrade of an existing line.",
+   "sources": [
+    "https://www.ercot.com/files/docs/2026/03/16/4.-EIR-STEC-Nueces-GreenvAmmonia-Project-Status-Update-RPG-March-2026-FINAL.pdf"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "spp-170065",
+   "basis": "SPP issued NTCs 220979/220980 on Dec 17, 2025 to SPS and Transource (owner ISD 2029-10/11), and SPS filed CCN Docket 60479 for the Texas part; it is no longer merely proposed.",
+   "sources": [
+    "https://spp.org/documents/75543/ntc%20220979%20sps.pdf",
+    "https://www.spp.org/Documents/77416/3Q%202026%20Quarterly%20Project%20Tracking%20Report%20Appendix%201%262.zip"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "spp-72019",
+   "basis": "SPP QPT 3Q 2026 shows Calumet - Concho 138 kV voltage conversion 'Complete' with ISD 2025-12.",
+   "sources": [
+    "https://www.spp.org/Documents/77416/3Q%202026%20Quarterly%20Project%20Tracking%20Report%20Appendix%201%262.zip"
+   ],
+   "stage": "built"
+  },
+  {
+   "id": "spp-112435",
+   "basis": "SPP QPT 3Q 2026 shows East Kingfisher - Kingfisher 138 kV rebuild 'Complete', ISD 2026-02. SPP QPT 3Q 2026 owner in-service date for UID 112435 is 2026-02 (listed 2026-05).",
+   "sources": [
+    "https://www.spp.org/Documents/77416/3Q%202026%20Quarterly%20Project%20Tracking%20Report%20Appendix%201%262.zip"
+   ],
+   "stage": "built",
+   "in_service": "2026-02"
+  },
+  {
+   "id": "spp-112458",
+   "basis": "SPP QPT 3Q 2026 shows Sooner - Wekiwa 345 kV new line 'Complete', ISD 2025-11.",
+   "sources": [
+    "https://www.spp.org/Documents/77416/3Q%202026%20Quarterly%20Project%20Tracking%20Report%20Appendix%201%262.zip"
+   ],
+   "stage": "built"
+  },
+  {
+   "id": "spp-143182",
+   "basis": "SPP QPT 3Q 2026 shows Chisholm - Woodward - Border 345 kV 'Complete', ISD 2025-12.",
+   "sources": [
+    "https://www.spp.org/Documents/77416/3Q%202026%20Quarterly%20Project%20Tracking%20Report%20Appendix%201%262.zip"
+   ],
+   "stage": "built"
+  },
+  {
+   "id": "spp-157475",
+   "basis": "SPP QPT 3Q 2026 shows Pine & Peoria Tap - 46th Street Tap 138 kV rebuild delayed (Delay - Mitigation) with owner ISD 2027-01.",
+   "sources": [
+    "https://www.spp.org/Documents/77416/3Q%202026%20Quarterly%20Project%20Tracking%20Report%20Appendix%201%262.zip"
+   ],
+   "in_service": "2027-01"
+  },
+  {
+   "id": "spp-171209",
+   "basis": "SPP QPT 3Q 2026 owner ISD for Lubbock South - Wolfforth 230 kV rebuild is 2029-12.",
+   "sources": [
+    "https://www.spp.org/Documents/77416/3Q%202026%20Quarterly%20Project%20Tracking%20Report%20Appendix%201%262.zip"
+   ],
+   "in_service": "2029-12"
+  },
+  {
+   "id": "spp-170941",
+   "basis": "SPP QPT 3Q 2026 owner ISD for Weyco - Valliant 138 kV Ckt 2 is 2029-05.",
+   "sources": [
+    "https://www.spp.org/Documents/77416/3Q%202026%20Quarterly%20Project%20Tracking%20Report%20Appendix%201%262.zip"
+   ],
+   "in_service": "2029-05"
+  },
+  {
+   "id": "spp-170953",
+   "basis": "SPP QPT 3Q 2026 owner ISD for Lindsay Water Flood - Choctaw 138 kV is 2031-06.",
+   "sources": [
+    "https://www.spp.org/Documents/77416/3Q%202026%20Quarterly%20Project%20Tracking%20Report%20Appendix%201%262.zip"
+   ],
+   "in_service": "2031-06"
+  },
+  {
+   "id": "spp-171012",
+   "basis": "SPP QPT 3Q 2026 owner ISD for Duncan - Duncan Tap 138 kV rebuild is 2027-12.",
+   "sources": [
+    "https://www.spp.org/Documents/77416/3Q%202026%20Quarterly%20Project%20Tracking%20Report%20Appendix%201%262.zip"
+   ],
+   "in_service": "2027-12"
+  },
+  {
+   "id": "etr-millbend",
+   "basis": "Entergy LTP status report (Jan 2026) lists 20-ETI-004 Millbend 138 kV new substation In Service with actual ISD 12/22/2025 (not 2024-03); Entergy also announced completion Jan 8, 2026.",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_October_November_December_2025_Final.pdf"
+   ],
+   "in_service": "2025-12"
+  },
+  {
+   "id": "etr-sandling-sub",
+   "basis": "Entergy LTP status report (Jan 2026) lists 21-ETI-006-1 Sandling 230 kV New Customer Station In Service with actual ISD 11/25/2025.",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_October_November_December_2025_Final.pdf"
+   ],
+   "in_service": "2025-11"
+  },
+  {
+   "id": "etr-rhodair",
+   "basis": "Entergy LTP status report (Oct 2025) lists 24-ETI-005 Rhodair 230 kV New Substation and Transmission Lines In Service with actual ISD 9/20/2025.",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2025_Final.pdf"
+   ],
+   "in_service": "2025-09"
+  },
+  {
+   "id": "etr-texas-sub",
+   "basis": "Entergy LTP status reports (Jul and Oct 2026) give 19-ETI-004 Texas 138 kV New Substation a current projected ISD of 1/25/2027.",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2026_Final.pdf"
+   ],
+   "in_service": "2027-01"
+  },
+  {
+   "id": "etr-southline-jacinto",
+   "basis": "Entergy LTP status report (Oct 2026) gives 23-ETI-011 Southline to Jacinto 138 kV New Line a current projected ISD of 12/31/2027 (PUC approved route 9 in Docket 58662).",
+   "sources": [
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2026_Final.pdf",
+    "https://interchange.puc.texas.gov/Documents/58662_45_1558026.PDF"
+   ],
+   "in_service": "2027-12"
+  },
+  {
+   "id": "etr-war-eagle",
+   "basis": "MISO approved Forest-War Eagle-Porter 138 kV in MTEP25 (Dec 2025) and ETI filed its CCN application (Docket 60130, Aug 2026, pending), so it is past 'proposed'. ETI direct testimony in Docket 60130 gives energize facilities 04/10/2029; Entergy LTP projects 6/1/2029.",
+   "sources": [
+    "https://interchange.puc.texas.gov/Documents/60130_5_1676739.PDF",
+    "https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2026_Final.pdf"
+   ],
+   "stage": "planned",
+   "in_service": "2029-04"
+  }
+ ],
+ "drop": {
+  "etr-sabine-pass": "Entergy LTP status report (Oct 2025) marks 24-ETI-006 Sabine Pass 230 kV New Substation 'Cancelled - project has been deferred, will be re-submitted when customer is ready to move forward'. https://www.oasis.oati.com/ees/eesdocs/Entergy_Long_Term_Transmission_Plan_Status_Report_July_August_September_2025_Final.pdf"
+ }
+}

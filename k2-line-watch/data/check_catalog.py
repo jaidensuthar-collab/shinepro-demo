@@ -27,6 +27,7 @@ import datetime
 import json
 import math
 import os
+import re
 import sys
 import xml.etree.ElementTree as ET
 
@@ -243,12 +244,14 @@ def check_miso(lines, r):
     """MISO lines against their sources: every in-window project is in the list once, with its voltage, in-service
     date and the stage rule (Entergy: status and dates; Tranche 1: MISO's construction column)."""
     errs, warns = [], []
-    got = {x["id"]: x for x in lines if x.get("market") == "MISO"}
+    got = {x["id"]: x for x in lines if x.get("market") == "MISO" and not x["id"].startswith("etrr-")}   # etrr-: Texas sweep, checked there
     etr, lrtp = json.load(open(MISO.ETR_FILE)), json.load(open(MISO.LRTP_FILE))
     want = 0
     for p in etr["projects"]:
         if p["in_service"] and (p["in_service"] > B.HORIZON or p["in_service"] < B.CUTOFF.strftime("%Y-%m")):
             continue
+        if "etr-" + p["key"] in TXR_DROP:
+            continue   # cancelled or deferred since Entergy's list (sources/texas-corrections-2026.json)
         want += 1
         x = got.get("etr-" + p["key"])
         if not x:
@@ -362,6 +365,36 @@ def check_spp(lines, sites, r):
     r.add("SPP lines match SPP's project list (voltage, in-service date, stage)", errs, warns, n)
 
 
+TXR_FIX = json.load(open(os.path.join(B.HERE, "sources", "texas-corrections-2026.json"))) \
+    if os.path.exists(os.path.join(B.HERE, "sources", "texas-corrections-2026.json")) else {}
+TXR_DROP = set(TXR_FIX.get("drop", {}))
+
+
+def check_research(lines, r):
+    """Researched Texas/SPP lines carry a source and a reason for their stage. A listed line whose stage or date was
+    changed by the sweep (texas-corrections-2026.json) no longer matches its official list on purpose, so those
+    mismatches move from errors to warnings that name the newer source."""
+    errs, warns, n = [], [], 0
+    for x in lines:
+        if x["id"].startswith(("txr-", "sppr-", "etrr-", "eper-")):
+            n += 1
+            if not x["source"] or not x["lifecycle_basis"]:
+                errs.append(f"{x['id']}: a researched project needs a source and a reason for its stage")
+    fixed = {x["id"]: x for x in lines if x["lifecycle_basis"].startswith("Line Watch research")}
+    for c in r.checks:
+        keep = []
+        for e in c["errors"]:
+            i = re.match(r"(\S+?):?\s", e)
+            if i and i[1].rstrip(":") in fixed:
+                warns.append(f"{e} (changed on purpose: {fixed[i[1].rstrip(':')]['lifecycle_basis'][:160]})")
+            else:
+                keep.append(e)
+        c["errors"] = keep
+    missing = [c["id"] for c in TXR_FIX.get("set", []) if c["id"] not in {x["id"] for x in lines}]
+    errs += [f"correction for {i} matches no line in the list" for i in missing]
+    r.add("Texas and SPP sweep: researched lines have sources; corrections to official lists are deliberate", errs, warns, n + len(fixed))
+
+
 def main():
     path = os.path.join(WEB, "data", "texas-lines.json")
     d = json.load(open(path))
@@ -377,6 +410,7 @@ def main():
     check_spp(lines, sites, r)
     check_miso(lines, r)
     check_pjm(lines, r)
+    check_research(lines, r)
     failed = [c for c in r.checks if c["errors"]]
     nwarn = sum(len(c["warnings"]) for c in r.checks)
     for c in r.checks:

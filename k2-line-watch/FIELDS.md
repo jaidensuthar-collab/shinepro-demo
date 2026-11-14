@@ -197,6 +197,19 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
   OpenStreetMap, else at the town they are named for (Census places now cover every MISO and PJM state).
   Researched projects PJM's list does not carry (generator ties, merchant lines, announced data-center hookups,
   state siting cases) are in `data/sources/pjm-research-2026.json`, ids `pjmr-<key>`.
+- **Texas and SPP sweep (Nov 14, 2026)**: lines the official lists (ERCOT TPIT, Oncor CCN map, SPP STEP and ITP,
+  El Paso Electric, Entergy Texas) do not carry, from PUC of Texas CCN cases and monthly construction reports, ERCOT
+  RPG reviews and Regional Transmission Plans, SPP quarterly project tracking and NTCs, Oklahoma Corporation Commission
+  cases, utility status reports and news: `data/sources/texas-research-2026.json`, built by `data/build_txr.py`, ids
+  `txr-` (ERCOT), `sppr-` (SPP), `etrr-` (Entergy Texas), `eper-` (El Paso). A project is skipped when a listed line
+  has the same end substations (names compared by their identifying words, so 'Tiger Solar POI' = 'Tiger Solar
+  collector'), the same docket at the same voltage, or when ERCOT's report already lists the pair (its own date and
+  rules win). Ties to one generator are `generator hookup`. Newer stages or dates for listed lines (and lines
+  cancelled since their list) are in `data/sources/texas-corrections-2026.json`; such a line's stage basis starts
+  "Line Watch research:" and the checker reports its difference from the official list for review, not as an error.
+  The same sweep found that the ERCOT reader dropped any project whose description mentioned equipment (an
+  autotransformer, breakers) even when it built miles of line; equipment words now only rule out records with no
+  line miles, which added 19 ERCOT-listed lines (Del Sol - Frontera 345 kV, RELLIS - TNP One 345 kV, ...).
   Stations are placed by name on HIFLD / OpenStreetMap in the state given (and the county, when the source gives one),
   new stations beside the station the source names (`approx`) or at the county center.
 - **SPP 2026 ITP 765 kV lines (Nov 11, 2026)**: `data/sources/spp-itp-2026.json`, kept by hand from SPP's draft 2026 ITP

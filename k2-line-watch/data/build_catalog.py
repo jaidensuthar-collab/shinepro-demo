@@ -56,7 +56,8 @@ BOILERPLATE = "This models"   # ERCOT's generic title for load-addition upgrade 
 # ERCOT's names for stations the Line Watch cards call something else.
 ALIASES = {"MORLEY": "HILLJE", "MORELY": "HILLJE", "CLEARFORK": "MASCHO"}
 BIG_LOAD = re.compile(r"DATA ?CENTER|LARGE LOAD|NEW LOAD|ALPHA LOAD|CUSTOMER|LNG|CRYPTO|MINING|REFINERY|HYDROGEN|\bLOAD\b.{0,25}INTERCONNECT|INTERCONNECT.{0,40}\bLOAD\b", re.I)
-EQUIPMENT = re.compile(r"^MODELS|LOAD RECORD|CAP(ACITOR)? BANK|REACTOR|AUTO ?TRANSFORMER|CONDENSER|DYNAMIC REACTIVE|BREAKER|RELAY|METER|STATCOM|SVC\b", re.I)
+EQUIPMENT = re.compile(r"CAP(ACITOR)? BANK|REACTOR|AUTO ?TRANSFORMER|CONDENSER|DYNAMIC REACTIVE|BREAKER|RELAY|METER|STATCOM|SVC\b", re.I)
+MODEL_RECORD = re.compile(r"^MODELS|LOAD RECORD", re.I)   # ERCOT's modelling and load records, not projects
 NEW_STATION = re.compile(r"(NEW|CONSTRUCT|ESTABLISH|ADDITION|\bADD\b).{0,60}(STATION|SWITCH|SUBSTATION)|(STATION|SWITCH|SUBSTATION).{0,30}(ADDITION)", re.I)
 UPGRADE_KIND = [("reconductor", re.compile(r"RECONDUCT", re.I)), ("rebuild", re.compile(r"REBUILD", re.I)),
                 ("voltage upgrade", re.compile(r"CONVERT|CONVERSION|VOLTAGE UPGRADE", re.I)),
@@ -787,7 +788,9 @@ def classify(r):
     text = title + " " + str(r["desc"] or "")
     kv = int(num(r["kv"]))
     new_mi, upg_mi = num(r["new_mi"]), num(r["upg_mi"])
-    if kv < 138 or EQUIPMENT.search(text) or (CAPACITOR.search(text) and new_mi < 1 and upg_mi < 1):
+    # Equipment words only rule a record out when it builds no line: a new line that also adds an autotransformer,
+    # breakers or relays at its ends is still a line (Del Sol - Frontera 345 kV, RELLIS - TNP One 345 kV).
+    if kv < 138 or MODEL_RECORD.search(text) or ((EQUIPMENT.search(text) or CAPACITOR.search(text)) and new_mi < 1 and upg_mi < 1):
         return None
     same_corridor = new_mi >= 1 and new_mi == upg_mi and bool(REUSE.search(text))
     if new_mi >= 1 and not same_corridor:
@@ -1141,6 +1144,10 @@ def build(projects_src, tpit_path, queue_path=None):
     # PJM: every upgrade in PJM's Project Construction data (baseline, supplemental, generator-interconnection).
     from build_pjm import pjm_lines, PJM_FILE, PAGE_URL as PJM_URL
     out += pjm_lines()
+    # Texas, Oklahoma and El Paso lines the official lists miss (Nov 2026 sweep), and newer stages or dates for listed ones.
+    from build_txr import txr_lines, apply_corrections, RESEARCH as TXR_FILE
+    out += txr_lines(out)
+    out = apply_corrections(out)
     out.sort(key=lambda x: -x["priority_score"])
     stations = attach_queue(out, places, queue_path)
     sites = station_sites(out, stations)
@@ -1154,6 +1161,7 @@ def build(projects_src, tpit_path, queue_path=None):
                         "MISO MTEP25 Appendix A": "MISO MTEP25 Appendix A, new local projects approved Dec 2025 (data as of Oct 2025), " + MTEP_URL,
                         "MISO researched projects": json.load(open(RESEARCH_FILE))["source"],
                         "PJM Project Construction data": f"{PJM_URL} (fetched {json.load(open(PJM_FILE))['fetched']})",
+                        "Texas and SPP researched projects": json.load(open(TXR_FILE))["source"],
                         "HIFLD substations": HIFLD_URL,
                         "OpenStreetMap substations": "https://www.openstreetmap.org/", "ERCOT interconnection queue (GIS report)": QUEUE_URL},
             "scope": f"Texas (ERCOT, SPP, MISO and El Paso Electric), Oklahoma (SPP), MISO and PJM: new and upgraded lines 138 kV and up and new 345 kV+ substations, from proposed to built since {CUTOFF:%B %Y}, in service by {HORIZON}, plus Line Watch cards not yet in ERCOT's report",

@@ -1,7 +1,7 @@
 [
  {
   "check": "Lines match ERCOT's report (voltage, in-service date, stage)",
-  "checked": 886,
+  "checked": 905,
   "errors": [],
   "warnings": [
    "tpit-67329 San Miguel to Cruce 345 kV lines: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
@@ -10,7 +10,9 @@
    "tpit-87017 Riverton - Sandlake 138 kV Line Conversion 345 kV and Riverton - Sandlake 138 kV Line: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-99016 Drill Hole - El Capitan (fka Culberson) 345 kV double-circuit line: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-87021 Construct Drill Hole \u2013 Riverton 345 kV Double-Circuit: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
+   "tpit-66101 Del Sol to Frontera: Build New 345 kV Double Circuit Line: stage 'in construction' is estimated (estimated: planned in-service date 2026-10 has passed and ERCOT has not marked it in service yet)",
    "tpit-92274 Whitebaker 345kV - Part of Upgrade L13 2024 Permian Basin Study: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
+   "tpit-64858 La Palma Expansion: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-71187 Reiter - Tesoro 345 kV Double-Circuit Line: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-111798 Establish Wingate 345 kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-87010 Establish Drill Hole 345/138 kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
@@ -44,6 +46,9 @@
    "tpit-91457A Establish Drane 345 kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-107136 LCRATSC Duff Ranch Substation Addition: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-107132 Water Valley Substation Addition: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
+   "tpit-111724 Gossip 345 kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
+   "tpit-105012 Lomond_Switch_345kV: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
+   "tpit-105312 Alba Road 345 kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-92280 Alamo St - Bottlebrush 138kV - Upgrade L12 2024 Permian Basin Study: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-77805 TNMP Pecos County RPG: Leon Creek to Coyanosa 138kV Double Ckt: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-100478 Establish Woodfin 138 kV Switch: ERCOT gives an actual in-service date (2025-05) but its status still says 'Planned'; counted as built",
@@ -128,6 +133,10 @@
    "tpit-99551 Chalice: Construct New 345 kV Station: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-99825 Boiken: Construct New 345 kV Station: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-98737 Agrios: Construct New 345 kV Station: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
+   "tpit-100155 Establish Mormino 345 kV Switch for customer POD: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
+   "tpit-113229 Oncor_MNW_113229_Cashion_Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
+   "tpit-104832 Oncor_MW_104832_CarolinaStorage_Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
+   "tpit-91553 RCEC_Union_Valley: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-90057 Volar: Construct New 138 kV Station: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-91986 Establish the Wofford/Berryville POI: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-104652 Establish Bell Springs 138 kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
@@ -137,15 +146,17 @@
  },
  {
   "check": "Time window (2023-11 built to 2031-11 due) and stage names",
-  "checked": 2868,
+  "checked": 3119,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Substation points are in their state and in the county the source lists",
-  "checked": 2293,
+  "checked": 2595,
   "errors": [],
   "warnings": [
+   "substation Bandit: placed in NM, outside the regions this list covers (the line crosses the state line)",
+   "substation Crossroads: placed in NM, outside the regions this list covers (the line crosses the state line)",
    "substation Holcomb: placed in KS, outside the regions this list covers (the line crosses the state line)",
    "substation Viola: placed in KS, outside the regions this list covers (the line crosses the state line)",
    "substation Peach Bottom: point is 3 miles outside York County, the county ERCOT lists",
@@ -183,7 +194,6 @@
    "substation China Grove: point is 12 miles outside Scurry County, the county ERCOT lists",
    "substation Clodine: point is 5 miles outside Harris County, the county ERCOT lists",
    "substation DEWALT: point is 9 miles outside Harris County, the county ERCOT lists",
-   "substation Driver: point is 6 miles outside Upton County, the county ERCOT lists",
    "substation East Huntingto: point is 4 miles outside Cabell County, the county ERCOT lists",
    "substation East Huntington: point is 4 miles outside Cabell County, the county ERCOT lists",
    "substation Eiland: point is 14 miles outside Howard County, the county ERCOT lists",
@@ -197,7 +207,6 @@
    "substation Needville: point is 7 miles outside Brazoria County, the county ERCOT lists",
    "substation Nimrod: point is 14 miles outside Comanche County, the county ERCOT lists",
    "substation Pinehurst /Tomball: point is 4 miles outside Harris County, the county ERCOT lists",
-   "substation Quanah: point is 15 miles outside Childress County, the county ERCOT lists",
    "substation Ranchtown: point is 7 miles outside Medina County, the county ERCOT lists",
    "substation Rutherford: point is 18 miles outside Travis County, the county ERCOT lists",
    "substation SANDY SWITCH: point is 7 miles outside Grimes County, the county ERCOT lists",
@@ -212,18 +221,18 @@
    "substation Triangle: point is 4 miles outside Midland County, the county ERCOT lists",
    "substation Vealmoor: point is 6 miles outside Howard County, the county ERCOT lists",
    "substation Yucca Drive: point is 10 miles outside Ector County, the county ERCOT lists",
-   "699 lines have no placeable substation (no county given, and not on public maps by name): pjm-s3608.5, pjm-b3800.7, pjm-b3800.43, pjm-b3800.53, pjm-b4089.1, pjm-b3800.2, pjm-b4036.10, pjm-b4036.11"
+   "723 lines have no placeable substation (no county given, and not on public maps by name): tpit-102068, pjm-s3608.5, pjm-b3800.7, pjm-b3800.43, pjm-b3800.53, pjm-b4089.1, pjm-b3800.2, pjm-b4036.10"
   ]
  },
  {
   "check": "Substation status agrees between lines and substations",
-  "checked": 3482,
+  "checked": 3821,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Downloads match the page (CSV, GeoJSON, KML, new-only layers)",
-  "checked": 10812,
+  "checked": 11931,
   "errors": [],
   "warnings": []
  },
@@ -238,20 +247,14 @@
   "checked": 91,
   "errors": [],
   "warnings": [
-   "spp-143182 Chisholm - Woodward - Border 345 kV Ckt 1: stage 'in construction' is estimated (estimated: planned in-service date 2025-12 has passed and SPP has not marked it complete)",
-   "spp-112458 Sooner - Wekiwa 345 kV New Line: stage 'in construction' is estimated (estimated: planned in-service date 2025-11 has passed and SPP has not marked it complete)",
    "spp-157879 Anadarko - Gracemont 138 kV Ckt 3 New Line: stage 'approved' is estimated (estimated: SPP notice to construct issued (Delay - Mitigation) and due within 18 months, so its route and site should be settled)",
    "spp-157897 Anadarko - Gracemont 138kV Ckt 2 New Line: stage 'approved' is estimated (estimated: SPP notice to construct issued (Delay - Mitigation) and due within 18 months, so its route and site should be settled)",
-   "spp-72019 Calumet - Concho 138 kV Ckt 1 Voltage Conversion: stage 'in construction' is estimated (estimated: planned in-service date 2025-12 has passed and SPP has not marked it complete)",
    "spp-72020 Calumet - Cana 138 kV Ckt 1 Voltage Conversion: stage 'in construction' is estimated (estimated: planned in-service date 2026-06 has passed and SPP has not marked it complete)",
-   "spp-112435 East Kingfisher - Kingfisher 138 kV Rebuild: stage 'in construction' is estimated (estimated: planned in-service date 2026-05 has passed and SPP has not marked it complete)",
-   "spp-157475 Pine & Peoria Tap - 46th Street Tap 138 kV Ckt 1 Rebuild: stage 'in construction' is estimated (estimated: planned in-service date 2026-05 has passed and SPP has not marked it complete)",
    "spp-143434 Lawton Eastside - Terry Road 345kV New Interconnection Substation (DISIS-2017-002): stage 'approved' is estimated (estimated: SPP notice to construct issued (On Schedule < 4) and due within 18 months, so its route and site should be settled)",
    "spp-133042 Hugo - Sunnyside 345 kV GEN-2017-075 Interconnection (TOIF) (OKGE): stage 'in construction' is estimated (estimated: planned in-service date 2026-05 has passed and SPP has not marked it complete)",
    "spp-143404 TUCO - Oklaunion 345kV GEN-2017-151 Interconnection (Non-Shared NU): stage 'in construction' is estimated (estimated: planned in-service date 2026-08 has passed and SPP has not marked it complete)",
    "spp-133021 GRDA1 - CLARMR5 161 kV GEN-2017-061 Interconnection (Non-Shared NU): stage 'in construction' is estimated (estimated: planned in-service date 2025-06 has passed and SPP has not marked it complete)",
    "spp-143395 Deaf Smith - Plant X 230kV GEN-2017-146 Interconnection (TOIF): stage 'in construction' is estimated (estimated: planned in-service date 2026-08 has passed and SPP has not marked it complete)",
-   "substation East Watermill (TX): marked new, but HIFLD WATERMILL is 0.0 miles away on a public map; it may be built already or sit beside an existing station",
    "substation Chalybe (TX): marked new, but OpenStreetMap Union Carbide Substation is 0.0 miles away on a public map; it may be built already or sit beside an existing station",
    "substation Dunham (TX): marked new, but OpenStreetMap Oncor Dunham Substation is 0.0 miles away on a public map; it may be built already or sit beside an existing station",
    "substation Jordan/King (TX): marked new, but OpenStreetMap King Substation is 0.0 miles away on a public map; it may be built already or sit beside an existing station",
@@ -265,15 +268,11 @@
  },
  {
   "check": "MISO lines match their sources (Entergy Texas report, MISO MTEP25 Appendix A, Tranche 1 dashboard, researched utility and state filings)",
-  "checked": 532,
+  "checked": 531,
   "errors": [],
   "warnings": [
-   "etr-texas-sub Texas 138 kV substation and line to L-487: stage 'in construction' is estimated (estimated: Entergy's report: construction Jun 2025 to Jul 2026 (no energized date reported yet))",
-   "etr-sandling-sub Sandling 230 kV substation (cut-in of L-829 and L-830): stage 'built' is estimated (estimated: Entergy's planned finish (2026-01) is more than 6 months past. Entergy's report: construction Jun 2024 to Jan)",
-   "etr-rhodair Rhodair 230 kV substation and two lines from Garden: stage 'built' is estimated (estimated: Entergy's planned finish (2025-06) is more than 6 months past. Entergy's report: construction Jul 2024 to Jun)",
    "etr-brad-park Brad Park 230 kV switching station (cut-in of Rhodair - Garden 230 kV): stage 'built' is estimated (estimated: Entergy's planned finish (2025-08) is more than 6 months past. Entergy's report: construction Aug 2024 to Aug)",
    "etr-castle Castle 230 kV substation and line from L-136: stage 'built' is estimated (estimated: Entergy's planned finish (2024-10) is more than 6 months past. Entergy's report: construction Oct 2023 to Oct)",
-   "etr-millbend Millbend 138 kV substation and line from L-92 or L-586: stage 'built' is estimated (estimated: Entergy's planned finish (2024-03) is more than 6 months past. Entergy's report: construction Apr 2023 to Mar)",
    "misor-ell-cargas-smalling-500 Car Gas Road - Smalling 500 kV lines 2 and 3 (Northeast Louisiana 500 kV lines): Car Gas Road (Cargas) has no public location yet",
    "mtep25-51246 Sarepta - Mt Olive 500 kV: Mt Olive has no public location yet",
    "mtep25-51249 Babel - Webre 500 kV: Babel has no public location yet",
@@ -610,6 +609,35 @@
    "pjm-s4060.1 Anguin - NBY 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2025-08 has passed and PJM has not marked it in service)",
    "pjm-s4064.2 Badger - Fiesta 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-07 has passed and PJM has not marked it in service)",
    "518 PJM lines have no end substation on public maps yet (they are in the tables, not on the map)"
+  ]
+ },
+ {
+  "check": "Texas and SPP sweep: researched lines have sources; corrections to official lists are deliberate",
+  "checked": 257,
+  "errors": [],
+  "warnings": [
+   "tpit-102815 SandLake - North McCamey Transmission Line Addition: stage 'built' but ERCOT says 'Under Construction' (changed on purpose: Line Watch research: LCRA (July 2026) says the North McCamey-Sand Lake 345 kV line is complete and energized, and Oncor's Q2 2026 release says it placed its por)",
+   "tpit-69709 Bearkat - North McCamey Transmission Line Addition: stage 'built' but ERCOT says 'Under Construction' (changed on purpose: Line Watch research: LCRA (July 2026) says the North McCamey-Bearkat 345 kV line is complete and energized; WETT testimony (Sept 2026) says the Bearkat-North Mc)",
+   "tpit-110397 Lon Hill to Bunsen: Rebuild 138 kV: stage 'approved' but ERCOT says 'Conceptual' (changed on purpose: Line Watch research: The Lon Hill - Bunsen 138 kV rebuild is part of ERCOT-recommended Option 3 of 25RPG016 (TAC-endorsed Mar 2026, Board item Apr 2026), an upg)",
+   "tpit-110443 STEC Nueces Green Ammonia Load Interconnection Project: stage 'planned' but ERCOT says 'Conceptual' (changed on purpose: Line Watch research: STEC Nueces Green Ammonia (25RPG016) Option 3 was recommended by ERCOT (ISD May 2031), endorsed unanimously by TAC on Mar 25 2026 and taken)",
+   "tpit-110240 Southeast Brownsville Large load transmission system improvements project: stage 'planned' but ERCOT says 'Conceptual' (changed on purpose: Line Watch research: ERCOT recommended Option 1 of STEC's Southeast Brownsville Large Load project at the May 2026 RPG (Tier 2, $96.6M, ISD June 2028); CCN stil)",
+   "spp-170065 Beckham County - Potter 345 kV Ckt 1 New Line: stage 'planned' but SPP says identified (changed on purpose: Line Watch research: SPP issued NTCs 220979/220980 on Dec 17, 2025 to SPS and Transource (owner ISD 2029-10/11), and SPS filed CCN Docket 60479 for the Texas pa)",
+   "spp-143182 Chisholm - Woodward - Border 345 kV Ckt 1: stage 'built' but SPP says delay - mitigation (changed on purpose: Line Watch research: SPP QPT 3Q 2026 shows Chisholm - Woodward - Border 345 kV 'Complete', ISD 2025-12.)",
+   "spp-112458 Sooner - Wekiwa 345 kV New Line: stage 'built' but SPP says on schedule < 4 (changed on purpose: Line Watch research: SPP QPT 3Q 2026 shows Sooner - Wekiwa 345 kV new line 'Complete', ISD 2025-11.)",
+   "spp-170941 Weyco - Valliant 138 kV Ckt 2 New Line: in service 2029-05 here, blank in SPP's list (changed on purpose: Line Watch research: SPP QPT 3Q 2026 owner ISD for Weyco - Valliant 138 kV Ckt 2 is 2029-05.)",
+   "spp-157475 Pine & Peoria Tap - 46th Street Tap 138 kV Ckt 1 Rebuild: in service 2027-01 here, 2026-05 in SPP's list (changed on purpose: Line Watch research: SPP QPT 3Q 2026 shows Pine & Peoria Tap - 46th Street Tap 138 kV rebuild delayed (Delay - Mitigation) with owner ISD 2027-01.)",
+   "spp-171012 Duncan - Duncan Tap 138 kV Ckt 1 Rebuild: in service 2027-12 here, blank in SPP's list (changed on purpose: Line Watch research: SPP QPT 3Q 2026 owner ISD for Duncan - Duncan Tap 138 kV rebuild is 2027-12.)",
+   "spp-170953 Lindsay Water Flood - Choctaw 138 kV Ckt 1 New Line: in service 2031-06 here, blank in SPP's list (changed on purpose: Line Watch research: SPP QPT 3Q 2026 owner ISD for Lindsay Water Flood - Choctaw 138 kV is 2031-06.)",
+   "spp-72019 Calumet - Concho 138 kV Ckt 1 Voltage Conversion: stage 'built' but SPP says delay - mitigation (changed on purpose: Line Watch research: SPP QPT 3Q 2026 shows Calumet - Concho 138 kV voltage conversion 'Complete' with ISD 2025-12.)",
+   "spp-112435 East Kingfisher - Kingfisher 138 kV Rebuild: in service 2026-02 here, 2026-05 in SPP's list (changed on purpose: Line Watch research: SPP QPT 3Q 2026 shows East Kingfisher - Kingfisher 138 kV rebuild 'Complete', ISD 2026-02. SPP QPT 3Q 2026 owner in-service date for UID 11)",
+   "spp-112435 East Kingfisher - Kingfisher 138 kV Rebuild: stage 'built' but SPP says delay - mitigation (changed on purpose: Line Watch research: SPP QPT 3Q 2026 shows East Kingfisher - Kingfisher 138 kV rebuild 'Complete', ISD 2026-02. SPP QPT 3Q 2026 owner in-service date for UID 11)",
+   "spp-171209 Lubbock South - Wolfforth 230 kV Ckt 1 Rebuild: in service 2029-12 here, blank in SPP's list (changed on purpose: Line Watch research: SPP QPT 3Q 2026 owner ISD for Lubbock South - Wolfforth 230 kV rebuild is 2029-12.)",
+   "etr-southline-jacinto: 138 kV / 2027-12 but the source says 138 kV /  (changed on purpose: Line Watch research: Entergy LTP status report (Oct 2026) gives 23-ETI-011 Southline to Jacinto 138 kV New Line a current projected ISD of 12/31/2027 (PUC appro)",
+   "etr-war-eagle: 138 kV / 2029-04 but the source says 138 kV /  (changed on purpose: Line Watch research: MISO approved Forest-War Eagle-Porter 138 kV in MTEP25 (Dec 2025) and ETI filed its CCN application (Docket 60130, Aug 2026, pending), so i)",
+   "etr-texas-sub: 138 kV / 2027-01 but the source says 138 kV / 2026-07 (changed on purpose: Line Watch research: Entergy LTP status reports (Jul and Oct 2026) give 19-ETI-004 Texas 138 kV New Substation a current projected ISD of 1/25/2027.)",
+   "etr-sandling-sub: 230 kV / 2025-11 but the source says 230 kV / 2026-01 (changed on purpose: Line Watch research: Entergy LTP status report (Jan 2026) lists 21-ETI-006-1 Sandling 230 kV New Customer Station In Service with actual ISD 11/25/2025.)",
+   "etr-rhodair: 230 kV / 2025-09 but the source says 230 kV / 2025-06 (changed on purpose: Line Watch research: Entergy LTP status report (Oct 2025) lists 24-ETI-005 Rhodair 230 kV New Substation and Transmission Lines In Service with actual ISD 9/20/)",
+   "etr-millbend: 138 kV / 2025-12 but the source says 138 kV / 2024-03 (changed on purpose: Line Watch research: Entergy LTP status report (Jan 2026) lists 20-ETI-004 Millbend 138 kV new substation In Service with actual ISD 12/22/2025 (not 2024-03); E)"
   ]
  }
 ]
