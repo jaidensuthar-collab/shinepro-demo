@@ -52,7 +52,7 @@ def _state_boxes():
 
 
 for _st, _b in _state_boxes().items():
-    if _st in ("ND", "SD", "MN", "WI", "IA", "IL", "IN", "MI", "LA", "MS", "KY") + PJM.PJM_STATES + SPP.HOME + ("CA", "NV", "AZ", "ID", "UT"):
+    if _st in ("ND", "SD", "MN", "WI", "IA", "IL", "IN", "MI", "LA", "MS", "KY") + PJM.PJM_STATES + SPP.HOME + ("CA", "NV", "AZ", "ID", "UT", "NY", "CT", "MA", "ME", "NH", "RI", "VT"):
         BOXES.setdefault(_st, tuple(round(v + d, 2) for v, d in zip(_b, (-0.1, -0.1, 0.1, 0.1))))
 ALL_BOX = (min(b[0] for b in BOXES.values()), min(b[1] for b in BOXES.values()), max(b[2] for b in BOXES.values()), max(b[3] for b in BOXES.values()))
 
@@ -135,7 +135,7 @@ def check_locations(lines, sites, places, r):
         if not (box[0] <= st["lon"] <= box[2] and box[1] <= st["lat"] <= box[3]):
             errs.append(f"substation {st['name']}: point {st['lat']}, {st['lon']} is outside {st.get('state', 'TX')}")
             continue
-        if st.get("state", "TX") != "TX" and st.get("state") not in ("OK",) + MISO.MISO_STATES + PJM.PJM_STATES + SPP.HOME + ("CA", "NV", "AZ", "ID", "UT"):
+        if st.get("state", "TX") != "TX" and st.get("state") not in ("OK",) + MISO.MISO_STATES + PJM.PJM_STATES + SPP.HOME + ("CA", "NV", "AZ", "ID", "UT", "NY", "CT", "MA", "ME", "NH", "RI", "VT"):
             warns.append(f"substation {st['name']}: placed in {st['state']}, outside the regions this list covers (the line crosses the state line)")
         key = f"{st.get('state', 'TX')}|" + (st["county"] or "")
         if st["confidence"] not in ("exact", "approx") or key not in places.rings:
@@ -376,7 +376,7 @@ def check_research(lines, r):
     mismatches move from errors to warnings that name the newer source."""
     errs, warns, n = [], [], 0
     for x in lines:
-        if x["id"].startswith(("txr-", "sppr-", "etrr-", "eper-", "caisor-")):
+        if x["id"].startswith(("txr-", "sppr-", "etrr-", "eper-", "caisor-", "nyr-", "isner-")):
             n += 1
             if not x["source"] or not x["lifecycle_basis"]:
                 errs.append(f"{x['id']}: a researched project needs a source and a reason for its stage")
