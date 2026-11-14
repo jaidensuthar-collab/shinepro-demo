@@ -210,6 +210,12 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
   The same sweep found that the ERCOT reader dropped any project whose description mentioned equipment (an
   autotransformer, breakers) even when it built miles of line; equipment words now only rule out records with no
   line miles, which added 19 ERCOT-listed lines (Del Sol - Frontera 345 kV, RELLIS - TNP One 345 kV, ...).
+- **Rest of SPP (Nov 14, 2026)**: SPP's STEP list is now read for all 15 SPP states (region `spp`), not only Texas and
+  Oklahoma, with HIFLD substations and Census towns added for Nebraska, Montana, Wyoming and Colorado. Researched SPP
+  lines outside Texas and Oklahoma (state siting cases, SPP NTCs, the Q4 2026 quarterly project tracking report, the
+  2026 ITP Northern Stage, utility pages and news) are in `data/sources/spp-research-2026.json` (ids `sppr-`), with
+  stage and date changes in `spp-corrections-2026.json`; a correction that moves a line past the window removes it.
+  Black Hills Energy is not an SPP RTO member (SPP's Apr 2026 member list), so its Wyoming and Colorado lines are left out.
   Stations are placed by name on HIFLD / OpenStreetMap in the state given (and the county, when the source gives one),
   new stations beside the station the source names (`approx`) or at the county center.
 - **SPP 2026 ITP 765 kV lines (Nov 11, 2026)**: `data/sources/spp-itp-2026.json`, kept by hand from SPP's draft 2026 ITP

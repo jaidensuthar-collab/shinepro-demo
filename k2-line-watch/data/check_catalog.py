@@ -390,7 +390,8 @@ def check_research(lines, r):
             else:
                 keep.append(e)
         c["errors"] = keep
-    missing = [c["id"] for c in TXR_FIX.get("set", []) if c["id"] not in {x["id"] for x in lines}]
+    missing = [c["id"] for c in TXR_FIX.get("set", []) if c["id"] not in {x["id"] for x in lines}
+               and not (c.get("in_service") and c["in_service"][:7] > B.HORIZON)]   # moved past the window on purpose
     errs += [f"correction for {i} matches no line in the list" for i in missing]
     r.add("Texas and SPP sweep: researched lines have sources; corrections to official lists are deliberate", errs, warns, n + len(fixed))
 

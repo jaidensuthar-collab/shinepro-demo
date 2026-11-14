@@ -1,0 +1,360 @@
+{
+ "note": "Changes to listed SPP lines where a newer public source shows SPP's STEP list is behind (Nov 14, 2026 sweep).",
+ "set": [
+  {
+   "id": "spp-159336",
+   "basis": "KCC order of May 12, 2026 (Docket 26-EKCE-0148-STG) found the Buffalo Flats - Delaware 345 kV line necessary and approved Evergy's route from Buffalo Flats to US-77 in Cowley County; the segment east of US-77 to the Oklahoma line was denied and is being re-routed. The listing also shows state OK only, but ~133 miles are in Kansas.",
+   "sources": [
+    "https://www.kcc.ks.gov/news-5-12-26",
+    "https://bcg.evergy.com/partner-with-us/transmission-projects/buffalo-flats"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "spp-50442",
+   "basis": "NPPD authorized Forbes Bros. Timberline to start R-Project construction from Gerald Gentleman Station toward Stapleton on June 15, 2026 (outside the ABB permit area after the June 8 injunction); NPPD Sept 2026 board update says construction continues on GGS-Stapleton segments; in-service still Sept 2028.",
+   "sources": [
+    "https://rproject.nppd.com/milestones/project-timeline/",
+    "https://rproject.nppd.com/wp-content/uploads/2026-07_RProject_Newsletter.pdf",
+    "https://docs.nppd.com/FileDownload.aspx?Filename=Board%2F2026%2FSeptember5.pdf"
+   ],
+   "stage": "in construction"
+  },
+  {
+   "id": "spp-50445",
+   "basis": "The Nebraska Power Review Board approved the R-Project (PRB-3774) on Oct 10, 2014 and NPPD announced the final route in Jan 2015; the Thedford-Holt County segment is routed and permitted by the state but construction there awaits the federal ABB permit, so it is past 'planned'.",
+   "sources": [
+    "https://rproject.nppd.com/milestones/project-timeline/",
+    "https://powerreview.nebraska.gov/orders-issued-board"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "spp-50444",
+   "basis": "R-Project timeline: substation construction began February 2020; NPPD's 2026 newsletter says it will complete needed substation work in the R-Project area while line work proceeds.",
+   "sources": [
+    "https://rproject.nppd.com/milestones/project-timeline/",
+    "https://rproject.nppd.com/wp-content/uploads/2026-07_RProject_Newsletter.pdf"
+   ],
+   "stage": "in construction"
+  },
+  {
+   "id": "spp-143660",
+   "basis": "S3454-S3740 is OPPD's Cass-to-Sarpy 345 kV line: construction began Oct 2025; by end of Aug 2026 foundations 96%, structures 84%, wire 60% strung; energization expected Dec 2026.",
+   "sources": [
+    "https://www.oppdcommunityconnect.com/cass-to-sarpy-transmission-project",
+    "https://oppdthewire.com/major-transmission-buildouts-will-help-meet-nebraska-power-needs",
+    "http://www.oppd.com/media/320935/2025-8-aug-resolution-6724-rfp-6196-cass-to-sarpy-transmission-labor-contract.pdf"
+   ],
+   "stage": "in construction"
+  },
+  {
+   "id": "spp-71963",
+   "basis": "Monolith's VP said at the July 23, 2026 Hallam town hall that the NPPD substation/switchyard for the Olive Creek expansion has been built; NPPD's Feb 2026 facility study calls the Olive Creek 345/115 kV facilities existing, with breakers 'recently installed'; no exact in-service date published. SPP Q4 2026 QPT shows the Monolith 345 kV substation (and both 345/115 kV transformers) Complete on 2025-12-23.",
+   "sources": [
+    "https://hallamsaysno.com/transcript",
+    "https://opsportal.spp.org/documents/studies/files/2023_Generation_Studies/GEN-2023-222-223-224-225%20FS%20-%20Draft.pdf",
+    "https://villageofhallamnebraska.com/wp-content/uploads/2026/10/8-19-26-Planning-Commision-minutes.pdf",
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "stage": "built"
+  },
+  {
+   "id": "spp-144236",
+   "basis": "Basin's PU-24-361 monthly report for August 2026 shows foundations 99% and conductor stringing 61% complete; construction began June 2025, energization targeted Nov-Dec 2026.",
+   "sources": [
+    "https://www.psc.nd.gov/webdocs/case/24-0361/122-010.pdf",
+    "https://www.basinelectric.com/News-center/news-briefs/Construction-begins-on-Basin-Electrics-Crane-Creek-Substation"
+   ],
+   "stage": "in construction"
+  },
+  {
+   "id": "spp-143714",
+   "basis": "Finstad (Basin's Crane Creek) - Tande is part of the single Leland Olds-Crane Creek-Tande 345 kV line under construction since June 2025 (PSC route permit 248, April 2025).",
+   "sources": [
+    "https://www.psc.nd.gov/webdocs/case/24-0361/122-010.pdf",
+    "https://www.psc.nd.gov/webdocs/case/24-0361/101-010.pdf"
+   ],
+   "stage": "in construction"
+  },
+  {
+   "id": "spp-144230",
+   "basis": "Basin reported on 2026-03-04 that construction began on the Crane Creek 345 kV substation (SPP's 'Finstad'), the new substation on the LOS-Tande line, completion targeted November 2026.",
+   "sources": [
+    "https://www.basinelectric.com/News-center/news-briefs/Construction-begins-on-Basin-Electrics-Crane-Creek-Substation"
+   ],
+   "stage": "in construction"
+  },
+  {
+   "id": "spp-144237",
+   "basis": "Basin's 2025 recap says the new Leland Olds Station 345 kV substation (nine line terminals) was completed in November 2025. Same source: Leland Olds Station substation completed November 2025.",
+   "sources": [
+    "https://kemelectric.com/news/year-new-initiatives-strategic-growth-and-serving-members"
+   ],
+   "stage": "built",
+   "in_service": "2025-11"
+  },
+  {
+   "id": "spp-171264",
+   "basis": "SPP NTC-C 220968 and the 2025 ITP NTC table give a need date and projected in-service of 1/1/2032 for Belfield - Roundup 345 kV (outside the 2031-11 window). Listed with no date; SPP Q4 2026 QPT owner-indicated ISD for Belfield-Roundup 345 kV (beyond window; NTC 221023 of Sept 17, 2026 gives a 1/1/2032 need date) is 2033-12.",
+   "sources": [
+    "https://spp.org/documents/75653/ntc-c%20220968%20bepc.pdf",
+    "https://www.spp.org/media/2429/2025-itp-report-v10.pdf",
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx",
+    "https://www.spp.org/documents/78106/ntc%20221023%20wapa.pdf"
+   ],
+   "in_service": "2033-12"
+  },
+  {
+   "id": "spp-170877",
+   "basis": "2025 ITP NTC table: Patentgate - Pioneer 345 kV Line Tap (Marley) need date 1/1/2028, projected in service 5/18/2029. Listed with no date; SPP Q4 2026 QPT owner-indicated ISD for Patent Gate-Pioneer 345 kV line tap (beyond window) is 2031-12.",
+   "sources": [
+    "https://www.spp.org/media/2429/2025-itp-report-v10.pdf",
+    "https://spp.org/documents/75644/ntc%20220961%20bepc.pdf",
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2031-12"
+  },
+  {
+   "id": "spp-170878",
+   "basis": "Marley 345 kV new substation is part of the same 2025 ITP project (NTC 220961), projected in service 5/18/2029. Listed with no date; SPP Q4 2026 QPT owner-indicated ISD for Marley 345 kV substation (beyond window) is 2031-12.",
+   "sources": [
+    "https://www.spp.org/media/2429/2025-itp-report-v10.pdf",
+    "https://spp.org/documents/75644/ntc%20220961%20bepc.pdf",
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2031-12"
+  },
+  {
+   "id": "spp-156411",
+   "basis": "SPP Q4 2026 QPT shows Crossroads-Hobbs 345 kV Complete on 2026-04-19; NEET Southwest says the line was energized in April 2026. SPP Q4 2026 QPT completion date 2026-04-19.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx",
+    "https://www.nexteraenergytransmission.com/subsidiaries/neetsw/projects/crossroads-hobbs-roadrunner.html",
+    "https://newsroom.nexteraenergy.com/2026-06-10-Critical-New-Power-Line-Boosts-New-Mexicos-Grid-Reliability,-Economic-Growth-and-Access-to-Affordable-Energy?l=12"
+   ],
+   "stage": "built",
+   "in_service": "2026-04"
+  },
+  {
+   "id": "spp-156412",
+   "basis": "SPP Q4 2026 QPT shows Hobbs-Roadrunner 345 kV Complete on 2026-04-28; NEET Southwest says the line was energized in April 2026. SPP Q4 2026 QPT completion date 2026-04-28.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx",
+    "https://www.nexteraenergytransmission.com/subsidiaries/neetsw/projects/crossroads-hobbs-roadrunner.html",
+    "https://newsroom.nexteraenergy.com/2026-06-10-Critical-New-Power-Line-Boosts-New-Mexicos-Grid-Reliability,-Economic-Growth-and-Access-to-Affordable-Energy?l=12"
+   ],
+   "stage": "built",
+   "in_service": "2026-04"
+  },
+  {
+   "id": "spp-157307",
+   "basis": "SPP Q4 2026 QPT shows the Phantom 345 kV cap bank Complete on 2026-05-01.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "stage": "built"
+  },
+  {
+   "id": "spp-122730",
+   "basis": "SPP Q4 2026 QPT shows South Shreveport-Wallace Lake 138 kV Rebuild #2 Complete on 2025-12-29.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "stage": "built"
+  },
+  {
+   "id": "spp-132964",
+   "basis": "SPP Q4 2026 QPT shows Altoona-Parson 138 kV (GEN-2017-022 TOIF) Complete on 2026-04-03, not 2026-07.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2026-04"
+  },
+  {
+   "id": "spp-144226",
+   "basis": "SPP Q4 2026 QPT owner ISD for Finstad-Vanhook is 2027-12-31 (the QPT also gives it as 115 kV, not 345 kV).",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2027-12"
+  },
+  {
+   "id": "spp-122614",
+   "basis": "SPP Q4 2026 QPT owner ISD for Reno-Summit 345 kV GEN-2016-111 is 2029-12-31.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2029-12"
+  },
+  {
+   "id": "spp-159379",
+   "basis": "SPP Q4 2026 QPT owner ISD for Sub 1209-Sub 1358 161 kV rebuild is 2026-12-30.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2026-12"
+  },
+  {
+   "id": "spp-159365",
+   "basis": "SPP Q4 2026 QPT owner ISD for Sub 1209-Sub 1250 161 kV Ckt 2 rebuild is 2027-06-01.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2027-06"
+  },
+  {
+   "id": "spp-159373",
+   "basis": "SPP Q4 2026 QPT owner ISD for Sub 1250-Sub 1358 161 kV rebuild is 2027-06-01.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2027-06"
+  },
+  {
+   "id": "spp-170996",
+   "basis": "Listed with no date; SPP Q4 2026 QPT owner-indicated ISD for Kiowa-Road Runner 345 kV line tap is 2029-12.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2029-12"
+  },
+  {
+   "id": "spp-170997",
+   "basis": "Listed with no date; SPP Q4 2026 QPT owner-indicated ISD for Sand Dunes 345 kV substation is 2029-12.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2029-12"
+  },
+  {
+   "id": "spp-171051",
+   "basis": "Listed with no date; SPP Q4 2026 QPT owner-indicated ISD for Hobbs-Kiowa 345 kV line tap is 2029-12.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2029-12"
+  },
+  {
+   "id": "spp-171052",
+   "basis": "Listed with no date; SPP Q4 2026 QPT owner-indicated ISD for Lea National 345 kV substation is 2029-12.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2029-12"
+  },
+  {
+   "id": "spp-169649",
+   "basis": "Listed with no date; SPP Q4 2026 QPT owner-indicated ISD for North Branson-Monett 345 kV is 2030-12.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2030-12"
+  },
+  {
+   "id": "spp-169893",
+   "basis": "Listed with no date; SPP Q4 2026 QPT owner-indicated ISD for Monett 345 kV substation is 2030-12.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2030-12"
+  },
+  {
+   "id": "spp-170916",
+   "basis": "Listed with no date; SPP Q4 2026 QPT owner-indicated ISD for Maryville-Midway 161 kV rebuild is 2029-12.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2029-12"
+  },
+  {
+   "id": "spp-170919",
+   "basis": "Listed with no date; SPP Q4 2026 QPT owner-indicated ISD for St. Joseph-Avenue City Tap 161 kV rebuild is 2030-06.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2030-06"
+  },
+  {
+   "id": "spp-170922",
+   "basis": "Listed with no date; SPP Q4 2026 QPT owner-indicated ISD for Midway-Avenue City Tap 161 kV rebuild is 2030-06.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2030-06"
+  },
+  {
+   "id": "spp-171221",
+   "basis": "Listed with no date; SPP Q4 2026 QPT owner-indicated ISD for KCI-Ferrelview 161 kV rebuild is 2030-12.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2030-12"
+  },
+  {
+   "id": "spp-171224",
+   "basis": "Listed with no date; SPP Q4 2026 QPT owner-indicated ISD for KCI-Platte City 161 kV rebuild is 2030-12.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2030-12"
+  },
+  {
+   "id": "spp-171392",
+   "basis": "Listed with no date; SPP Q4 2026 QPT owner-indicated ISD for Smoky Hills-Summit 230 kV rebuild is 2029-12.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2029-12"
+  },
+  {
+   "id": "spp-171412",
+   "basis": "Listed with no date; SPP Q4 2026 QPT owner-indicated ISD for Craig-Lenexa 161 kV Ckt 2 rebuild is 2029-12.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2029-12"
+  },
+  {
+   "id": "spp-171230",
+   "basis": "Listed with no date; SPP Q4 2026 QPT owner-indicated ISD for Roanridge-North Congress 161 kV rebuild (beyond 2031-11 window) is 2031-12.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2031-12"
+  },
+  {
+   "id": "spp-171227",
+   "basis": "Listed with no date; SPP Q4 2026 QPT owner-indicated ISD for Ferrelview-TWA 161 kV rebuild (beyond window) is 2032-12.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2032-12"
+  },
+  {
+   "id": "spp-170851",
+   "basis": "Listed with no date; SPP Q4 2026 QPT owner-indicated ISD for TWA-North Congress 161 kV rebuild (beyond window) is 2033-12.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2033-12"
+  },
+  {
+   "id": "spp-171235",
+   "basis": "Listed with no date; SPP Q4 2026 QPT owner-indicated ISD for Roanridge-First Creek 161 kV rebuild (beyond window) is 2033-12.",
+   "sources": [
+    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
+   ],
+   "in_service": "2033-12"
+  },
+  {
+   "id": "sppr-swepco-north-jefferson-lieberman-138",
+   "basis": "SPP NTC 221018 (Aug 11, 2026) directs AEP to rebuild the 27-mile Jefferson-Lieberman 138 kV line with a 9/1/2028 need date (an NTC need date, not an owner ISD).",
+   "sources": [
+    "https://www.spp.org/documents/77474/ntc%20221018%20aep.pdf"
+   ],
+   "in_service": "2028-09"
+  }
+ ],
+ "drop": {}
+}
