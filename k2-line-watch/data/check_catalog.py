@@ -396,6 +396,30 @@ def check_research(lines, r):
     r.add("Texas and SPP sweep: researched lines have sources; corrections to official lists are deliberate", errs, warns, n + len(fixed))
 
 
+US_STATES = {"AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME",
+             "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI",
+             "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"}
+
+
+def check_us_only(lines, sites, r):
+    """Line Watch covers the United States only: every line's state and every mapped substation is in a U.S. state.
+    A line that runs to the border (Basin's North Dakota - Saskatchewan ties) is listed for its U.S. part only."""
+    errs, warns = [], []
+    for x in lines:
+        bad = {s.strip() for s in str(x.get("state", "TX")).split(",") if s.strip()} - US_STATES
+        if bad:
+            errs.append(f"{x['id']} {x['name']}: state {', '.join(sorted(bad))} is not a U.S. state")
+        for e in x["endpoints"]:
+            if e.get("state") and e["state"] not in US_STATES:
+                errs.append(f"{x['id']}: end {e['name']} is in {e['state']}, outside the U.S.")
+            if re.search(r"BORDER", e["name"], re.I):
+                warns.append(f"{x['id']} {x['name']}: ends at the national border; only the U.S. part is listed")
+    for st in sites:
+        if st.get("state") and st["state"] not in US_STATES:
+            errs.append(f"substation {st['name']}: state {st['state']} is outside the U.S.")
+    r.add("U.S. only (every line and substation is in a U.S. state)", errs, warns, len(lines) + len(sites))
+
+
 def main():
     path = os.path.join(WEB, "data", "texas-lines.json")
     d = json.load(open(path))
@@ -412,6 +436,7 @@ def main():
     check_miso(lines, r)
     check_pjm(lines, r)
     check_research(lines, r)
+    check_us_only(lines, sites, r)
     failed = [c for c in r.checks if c["errors"]]
     nwarn = sum(len(c["warnings"]) for c in r.checks)
     for c in r.checks:

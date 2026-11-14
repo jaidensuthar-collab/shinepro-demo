@@ -669,5 +669,20 @@
    "etr-rhodair: 230 kV / 2025-09 but the source says 230 kV / 2025-06 (changed on purpose: Line Watch research: Entergy LTP status report (Oct 2025) lists 24-ETI-005 Rhodair 230 kV New Substation and Transmission Lines In Service with actual ISD 9/20/)",
    "etr-millbend: 138 kV / 2025-12 but the source says 138 kV / 2024-03 (changed on purpose: Line Watch research: Entergy LTP status report (Jan 2026) lists 20-ETI-004 Millbend 138 kV new substation In Service with actual ISD 12/22/2025 (not 2024-03); E)"
   ]
+ },
+ {
+  "check": "U.S. only (every line and substation is in a U.S. state)",
+  "checked": 7612,
+  "errors": [],
+  "warnings": [
+   "tpit-99022 Border - Quarry Field 345 kV double-circuit line: ends at the national border; only the U.S. part is listed",
+   "spp-156248 North Dakota/Saskatchewan Border (Tableland) - Wheelock 230 kV Ckt 1: ends at the national border; only the U.S. part is listed",
+   "spp-122823 Border - Woodward Tap 345 kV Substation: ends at the national border; only the U.S. part is listed",
+   "spp-156240 North Dakota/Saskatchewan Border (Tableland) - Tande 230 kV Ckt 1: ends at the national border; only the U.S. part is listed",
+   "sppr-sps-border-tuco-tap-crawfish Border - TUCO 345 kV tap extension to Crawfish Draw: ends at the national border; only the U.S. part is listed",
+   "spp-143182 Chisholm - Woodward - Border 345 kV Ckt 1: ends at the national border; only the U.S. part is listed",
+   "pjmr-grain-belt-express-il-in Grain Belt Express Phase II (Illinois HVDC segment, Clark County converter, AC connector to AEP Sullivan): ends at the national border; only the U.S. part is listed",
+   "tpit-76690 Add Atchison POD: ends at the national border; only the U.S. part is listed"
+  ]
  }
 ]
