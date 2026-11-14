@@ -774,7 +774,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   const REGION_TEST = { "texas": (r) => (r.state || "TX").includes("TX"), "ercot-texas": (r) => (r.market || "ERCOT (Texas)").includes("ERCOT"),
                         "spp-texas": (r) => (r.market || "").includes("SPP") && (r.state || "").includes("TX"), "el-paso": (r) => (r.market || "").includes("WECC"), "oklahoma": (r) => (r.state || "").includes("OK"),
                         "miso-texas": (r) => r.market === "MISO" && (r.state || "").includes("TX"), "miso": (r) => r.market === "MISO", "pjm": (r) => r.market === "PJM",
-                        "spp": (r) => r.market === "SPP" };
+                        "spp": (r) => r.market === "SPP", "caiso": (r) => r.market === "CAISO" };
   const inRegion = (r) => !LS.region || !REGION_TEST[LS.region] || REGION_TEST[LS.region](r);
   const onMap = (e) => (LS.sites[e.site_id] || {}).on_public_map || "can't tell";
   function lineMatch(x, noLife) {
@@ -1433,6 +1433,7 @@ How to answer: plain English for someone new to the grid; short; lead with the a
         if (r.miso && r["miso-texas"] && r.miso.lines > r["miso-texas"].lines) parts.push(`${nfmt(r.miso.lines - r["miso-texas"].lines)} MISO outside Texas`);
         if (r.spp && r["spp-texas"] && r.oklahoma) parts.push(`${nfmt(r.spp.lines)} SPP in all its states`);
         if (r.pjm) parts.push(`${nfmt(r.pjm.lines)} PJM`);
+        if (r.caiso) parts.push(`${nfmt(r.caiso.lines)} CAISO`);
         return [`${nfmt(L.length)} lines, ${nfmt(sites.length)} substations`, nfmt(L.length), `lines and new substations: ${parts.join(" · ")}. Updated ${LS.built}.`, "Open the lines list", goLines()]; }
       case "tap": { const c = (v) => L.filter((x) => x.tappable === v).length; return [`${nfmt(c("yes"))} tappable · ${nfmt(c("no"))} substation only`, nfmt(c("yes")), `lines K2 can tap (345 kV and below); ${nfmt(c("maybe"))} maybe (500 kV); ${nfmt(c("no"))} substation only (765 kV)`, "Open the lines list", goLines({ })]; }
       case "decide": { const c = (v) => L.filter((x) => x.recommended_next_step === v).length; return [`${nfmt(c("substation campaign"))} substation · ${nfmt(c("line campaign"))} line campaigns`, nfmt(c("substation campaign") + c("line campaign")), `ready for a campaign: ${nfmt(c("substation campaign"))} substation, ${nfmt(c("line campaign"))} line; ${nfmt(c("follow updates"))} to follow; ${nfmt(c("informational"))} informational`, "See substation campaigns", goLines({ rec: "substation campaign" })]; }

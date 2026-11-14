@@ -295,7 +295,8 @@ def research_lines(places=None, have=(), have_mtep=(), path=None, prefix="misor-
                "miles_new": p.get("miles_new") or 0, "miles_upgraded": p.get("miles_upgraded") or 0, "transformer_mva": 0, "in_service": isd,
                "in_service_kind": ("actual" if p["stage"] == "built" else "projected") if isd else "", "construction_start": "", "capacity_mw": None,
                "purpose": "large-load hookup" if B.BIG_LOAD.search(p["name"] + " " + p["stage_basis"]) else "shared grid",
-               "program": f"{market} (" + (f"MTEP project {p['mtep_id']}" if p.get("mtep_id") else f"PJM upgrade {p['pjm_id']}" if p.get("pjm_id") else "utility and state filings") + ")",
+               "program": f"{market} (" + (f"MTEP project {p['mtep_id']}" if p.get("mtep_id") else f"PJM upgrade {p['pjm_id']}" if p.get("pjm_id") else
+                                                f"transmission plan project {p['caiso_id']}" if p.get("caiso_id") else "utility and state filings") + ")",
                "rpg": "", "tier": "", "ercot_board": "", "docket": p.get("docket", ""),
                "route_status": "existing corridor" if p["project_type"] == "upgrade" else "route final" if p["stage"] in ("approved", "in construction", "built") else "end substations only",
                "card_id": "", "card_ids": [], "endpoints": ends, "market": market, "state": ", ".join(states),

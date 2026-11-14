@@ -152,7 +152,7 @@
  },
  {
   "check": "Substation points are in their state and in the county the source lists",
-  "checked": 2748,
+  "checked": 2753,
   "errors": [],
   "warnings": [
    "substation Peach Bottom: point is 3 miles outside York County, the county ERCOT lists",
@@ -216,7 +216,7 @@
    "substation Triangle: point is 4 miles outside Midland County, the county ERCOT lists",
    "substation Vealmoor: point is 6 miles outside Howard County, the county ERCOT lists",
    "substation Yucca Drive: point is 10 miles outside Ector County, the county ERCOT lists",
-   "769 lines have no placeable substation (no county given, and not on public maps by name): tpit-102068, pjm-s3608.5, pjm-b3800.7, pjm-b3800.43, pjm-b3800.53, pjm-b4089.1, spp-170051, spp-170054"
+   "765 lines have no placeable substation (no county given, and not on public maps by name): tpit-102068, pjm-s3608.5, pjm-b3800.7, pjm-b3800.43, pjm-b3800.53, pjm-b4089.1, spp-170051, spp-170054"
   ]
  },
  {
@@ -227,7 +227,7 @@
  },
  {
   "check": "Downloads match the page (CSV, GeoJSON, KML, new-only layers)",
-  "checked": 12630,
+  "checked": 12639,
   "errors": [],
   "warnings": []
  },

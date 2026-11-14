@@ -19,8 +19,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 RESEARCH = os.path.join(HERE, "sources", "texas-research-2026.json")
 CORRECTIONS = os.path.join(HERE, "sources", "texas-corrections-2026.json")
 # Later sweeps in the same shape: the rest of SPP (Kansas to the Dakotas, Nov 2026).
-RESEARCH_FILES = [RESEARCH, os.path.join(HERE, "sources", "spp-research-2026.json")]
-CORRECTION_FILES = [CORRECTIONS, os.path.join(HERE, "sources", "spp-corrections-2026.json")]
+RESEARCH_FILES = [RESEARCH, os.path.join(HERE, "sources", "spp-research-2026.json"),
+                  os.path.join(HERE, "sources", "caiso-research-2026.json")]   # and CAISO (California, Nov 2026)
+CORRECTION_FILES = [CORRECTIONS, os.path.join(HERE, "sources", "spp-corrections-2026.json"),
+                    os.path.join(HERE, "sources", "caiso-corrections-2026.json")]
 
 
 def load_research():
@@ -36,9 +38,9 @@ def load_corrections():
             out["set"] += d.get("set", [])
             out["drop"].update(d.get("drop", {}))
     return out
-STATES = ["TX", "OK", "NM", "LA", "AR"]
-MARKETS = {"ERCOT": B.MARKET, "SPP": "SPP", "MISO": "MISO", "WECC": "WECC"}
-PREFIX = {"ERCOT": "txr-", "SPP": "sppr-", "MISO": "etrr-", "WECC": "eper-"}
+STATES = ["TX", "OK", "NM", "LA", "AR", "KS", "NE", "ND", "SD", "MT", "WY", "CO", "MO", "IA", "MN", "CA", "NV", "AZ"]
+MARKETS = {"ERCOT": B.MARKET, "SPP": "SPP", "MISO": "MISO", "WECC": "WECC", "CAISO": "CAISO"}
+PREFIX = {"ERCOT": "txr-", "SPP": "sppr-", "MISO": "etrr-", "WECC": "eper-", "CAISO": "caisor-"}
 RESEARCHED = "Line Watch research"
 
 
