@@ -80,7 +80,12 @@ UTILITY_PAGES = [
 ]
 # SPP's transmission planning page: the yearly STEP project list and ITP reports (Line Watch's SPP source).
 SPP_PLANNING = "https://www.spp.org/engineering/transmission-planning/"
-SPP_DOC_KEEP = re.compile(r"STEP|Transmission Expansion Plan|ITP (Assessment )?Report|Project List|20[- ]Year Assessment Report", re.I)
+# More SPP planning pages that post ITP documents (fact sheets, portfolio summaries) between the yearly reports.
+SPP_PAGES = [SPP_PLANNING, "https://www.spp.org/engineering/transmission-planning/integrated-transmission-planning/",
+             "https://www.spp.org/engineering/consolidated-planning-process/"]
+SPP_DOC_KEEP = re.compile(r"STEP|Transmission Expansion Plan|\bITP\b|Integrated Transmission|Project List|20[- ]Year Assessment Report|"
+                          r"765|Portfolio|Notification to Construct|\bNTC\b|Consolidated Planning|\bCPP\b|Fact Sheet|Summit|Education", re.I)
+SPP_DOC_SKIP = re.compile(r"Scope|Manual|Form|Template|Late Data", re.I)   # process documents, not projects
 ONCOR_CCN = "https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer"
 ONCOR_CCN_MAP = "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems.html"
 # Link text that says nothing about the project; the page's address names it instead.
@@ -103,6 +108,28 @@ NEWS_QUERIES = [
 ]
 NEWS_KEEP = ("kv", "transmission line", "power line", "open house", "substation", "ccn", "ercot",
              "transmission project")
+
+# Regional plans move many lines at once, often weeks before a board vote and before any utility page or
+# filing (SPP's $23.7B 2026 ITP was reported Oct 19 and voted Nov 17). Searched nationwide; trade press included.
+PLAN_QUERIES = [
+    '"Integrated Transmission Plan" SPP',
+    'SPP board transmission plan',
+    'SPP "765-kV"',
+    'MISO "Tranche" transmission',
+    'MISO MTEP transmission projects approved',
+    'PJM board transmission projects',
+    'PJM "765-kV"',
+    'CAISO "transmission plan"',
+    'NYISO transmission project selected',
+    'ISO-NE transmission plan',
+    'WestConnect OR NorthernGrid OR SERTP transmission plan',
+    '"765-kV" transmission',
+    'transmission portfolio billion approved',
+    'site:rtoinsider.com transmission plan',
+    'site:utilitydive.com transmission line',
+]
+PLAN_KEEP = ("transmission plan", "transmission portfolio", "itp", "mtep", "rtep", "tranche", "765", "transmission projects",
+             "transmission line", "transmission expansion", "backbone", "kv")
 NEWS_HIGH = ("open house", "765", "route", "routing")
 
 # Inside a watched route case, these filings matter. Everything else (letters, protests,
@@ -366,13 +393,19 @@ def parse_utility_projects(page_html, page_url, prefix):
 
 def spp_signals(today):
     """One signal per SPP planning document posted this year or last (STEP project list, ITP report)."""
-    page = fetch(SPP_PLANNING)
+    page = ""
+    for url in SPP_PAGES:
+        try:
+            page += fetch(url)
+        except RuntimeError:
+            if url == SPP_PLANNING:
+                raise
     signals, done = [], set()
     for href, text in re.findall(r'<a[^>]*href="(/documents/\d+/[^"]+)"[^>]*>([^<]*)', page, re.I):
         doc = re.search(r"/documents/(\d+)/", href, re.I).group(1)
         title = clean(text) or urllib.parse.unquote(href.rsplit("/", 1)[-1])
         years = [int(y) for y in re.findall(r"\b(20\d\d)\b", title + " " + href)]
-        if doc in done or not SPP_DOC_KEEP.search(title + " " + href) or not years or max(years) < today.year - 1:
+        if doc in done or not SPP_DOC_KEEP.search(title + " " + href) or SPP_DOC_SKIP.search(title) or not years or max(years) < today.year - 1:
             continue
         done.add(doc)
         signals.append(Signal(
@@ -525,6 +558,32 @@ def parse_news(xml_text):
     return items
 
 
+def plan_news_signals(days, today):
+    """Regional transmission plans and big portfolios across the U.S., from news and the trade press."""
+    signals = []
+    for query in PLAN_QUERIES:
+        url = ("https://news.google.com/rss/search?" +
+               urllib.parse.urlencode({"q": "%s when:%dd" % (query, days), "hl": "en-US", "gl": "US",
+                                       "ceid": "US:en"}))
+        for item in parse_news(fetch(url)):
+            title = item["title"]
+            low = title.lower()
+            if not any(word in low for word in PLAN_KEEP):
+                continue
+            signals.append(Signal(
+                id=short_id("news", re.sub(r"\s+-\s+[^-]+$", "", low)),   # same id as the local news feed: one alert per story
+                step="2+ regional plan news",
+                source="News: %s" % (item["source"] or "Google News"),
+                utility=guess_utility(title),
+                voltage_kv=voltage(title),
+                title=title,
+                source_date=item["date"][:16],
+                url=item["link"],
+            ))
+        time.sleep(0.5)
+    return signals
+
+
 def news_signals(days, today):
     signals = []
     for query in NEWS_QUERIES:
@@ -634,6 +693,10 @@ def run(args):
             signals += news_signals(args.news_days, today)
         except (RuntimeError, ET.ParseError) as err:
             errors.append("News: %s" % err)
+        try:
+            signals += plan_news_signals(args.news_days, today)
+        except (RuntimeError, ET.ParseError) as err:
+            errors.append("Regional plan news: %s" % err)
     if "dockets" in sources:
         # Watch every route case already in the feed, the ones found today, and the fixed list.
         controls = set(WATCH_DOCKETS) | set(args.watch or [])

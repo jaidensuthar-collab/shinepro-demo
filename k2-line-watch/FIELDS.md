@@ -279,6 +279,11 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
   finds are mostly proposed generator connection points on existing lines, often with no in-service date yet.
 - **Page data size**: `web/data/texas-lines.json` leaves out `check_link` (the page builds the satellite link from the
   point), so it stays under the 16 MB file limit; the exports keep it.
+- **Monitor, wider (Nov 16, 2026)**: besides Texas and Oklahoma sources, the twice-daily monitor now searches news and
+  the trade press (RTO Insider, Utility Dive) nationwide for regional plans and portfolios (SPP ITP, MISO MTEP and
+  tranches, PJM RTEP and 765 kV, CAISO, NYISO, ISO-NE, western and southeastern plans), as "Plan news" rows, and reads
+  more SPP planning pages (ITP documents, fact sheets, portfolio summaries). Non-U.S. stories are dropped. A test over
+  the last 45 days caught SPP's $23.7B 2026 ITP endorsement (RTO Insider, Oct 19), three weeks before Richard's email.
 - **U.S. only**: the checker fails if any line or substation is outside a U.S. state; a line that runs to the national
   border is listed for its U.S. part, and the check lists those for review.
   Stations are placed by name on HIFLD / OpenStreetMap in the state given (and the county, when the source gives one),

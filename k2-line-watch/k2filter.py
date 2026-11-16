@@ -28,11 +28,16 @@ RPG_NOISE = ("status update", "statusupdate", "batch", "assessment", "financial"
 NEWS_NOISE = ("opinion", "op-ed", "editorial", "study finds", "could save", "ratepayers", "bill ",
               "how we build", "letter to the editor", "podcast")
 NEWS_SPECIFIC = ("kv", "open house", "route", "transmission line", "power line")
+# Line Watch is U.S. only: plan news about other countries is dropped.
+FOREIGN = re.compile(r"\b(India|Indian|Peru|Chile|Brazil|Mexico|Canada|Canadian|Ontario|Quebec|Alberta|British Columbia|"
+                     r"Australia|UK|Britain|England|Scotland|Ireland|Europe|EU|Germany|France|Spain|China|Japan|Philippines|"
+                     r"Vietnam|Indonesia|Africa|Nigeria|Kenya|Saudi|UAE|Pakistan|Bangladesh)\b")
 
 STAGES = {
     "2": "ERCOT review: the grid operator is checking the need. Usually 1 to 2 years before a route is filed.",
     "3": "Utility project page or open houses: draft route options are being shown. Usually 4 to 9 months before a route is filed.",
     "3+": "In the news: often the first public word of open houses or a fight over a route.",
+    "2+": "Regional plan news: a grid operator's plan or portfolio is moving (stakeholder vote, board vote, new list).",
     "4-5": "Route case filed at the Texas PUC: route options and landowners are now public. A decision usually takes about 6 months.",
     "5-6": "Decision stage in the route case: the PUC is close to picking, or has picked, the final route.",
 }
@@ -121,11 +126,11 @@ def explain(sig):
     elif step == "2" and sig.get("source", "").startswith("SPP"):  # SPP planning document
         out["project"] = ""
         out["what_happened"] = "SPP posted a planning document: %s." % _short(title, 120)
-        out["why_k2"] = ("SPP's yearly project list (STEP) and ITP report are where new lines in the Texas Panhandle, "
-                         "South Plains, Northeast Texas and Oklahoma first appear, with end substations and in-service dates.")
+        out["why_k2"] = ("SPP's yearly project list (STEP), ITP reports and portfolio documents are where new SPP lines "
+                         "(Texas Panhandle to the Dakotas) first appear, with end substations and in-service dates.")
         out["next_step"] = ("If it is a new STEP project list, download it to data/sources and rebuild the Line Watch list "
                             "(data/build_spp.py reads it); otherwise skim it for new 345 kV and 765 kV lines.")
-        out["importance"] = "High" if re.search(r"STEP|Project List", title, re.I) else "Medium"
+        out["importance"] = "High" if re.search(r"STEP|Project List|\bITP\b|Integrated Transmission|765|Portfolio|\bNTC\b", title, re.I) else "Medium"
         out["stage"] = "SPP planning: in SPP's yearly plan. Usually 1 to 3 years before a line is built."
     elif step == "2":  # ERCOT planning
         if any(word in low for word in RPG_NOISE):
@@ -156,6 +161,18 @@ def explain(sig):
         out["why_k2"] = ("A project page usually means open houses with draft route maps are coming or under way. "
                          "That map shows the whole area the line could cross.")
         out["next_step"] = "Check the page for open-house dates and a study-area map, and note the end substations."
+    elif step == "2+":  # regional plans and big portfolios, anywhere in the U.S.
+        if any(word in low for word in NEWS_NOISE) or FOREIGN.search(title):
+            return None
+        out["project"] = ""
+        out["what_happened"] = "Plan news: %s" % _short(title, 140)
+        out["why_k2"] = ("A regional plan names many new lines and substations at once, usually months before any "
+                         "utility page or route case. SPP's 2026 ITP (six new 765 kV projects) was reported weeks "
+                         "before its Nov 17 board vote.")
+        out["next_step"] = ("Read it. If a plan was endorsed or approved, get the project list (end substations, voltage, "
+                            "in-service dates) and add the lines to Line Watch.")
+        big = "765" in low or "billion" in low or re.search(r"\b(approv|endors|board|vote)", low)
+        out["importance"] = "High" if big else "Medium"
     elif step == "3+":  # news
         if any(word in low for word in NEWS_NOISE) or not any(word in low for word in NEWS_SPECIFIC):
             return None
