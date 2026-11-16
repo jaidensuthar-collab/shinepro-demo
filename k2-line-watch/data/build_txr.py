@@ -24,10 +24,12 @@ RESEARCH_FILES = [RESEARCH, os.path.join(HERE, "sources", "spp-research-2026.jso
                   os.path.join(HERE, "sources", "northeast-research-2026.json"),   # and New York / New England
                   os.path.join(HERE, "sources", "west-research-2026.json"),   # and the West outside CAISO and SPP
                   os.path.join(HERE, "sources", "southeast-research-2026.json"),   # and the Southeast (SERTP and Florida)
-                  os.path.join(HERE, "sources", "us-process-research-2026.json")]   # and every state's line-approval process (Nov 16)
+                  os.path.join(HERE, "sources", "us-process-research-2026.json"),
+                  os.path.join(HERE, "sources", "us-sources2-research-2026.json")]   # and new kinds of sources (federal reviews, grants, studies, filings)   # and every state's line-approval process (Nov 16)
 CORRECTION_FILES = [CORRECTIONS, os.path.join(HERE, "sources", "spp-corrections-2026.json"),
                     os.path.join(HERE, "sources", "caiso-corrections-2026.json"),
-                    os.path.join(HERE, "sources", "us-process-corrections-2026.json")]
+                    os.path.join(HERE, "sources", "us-process-corrections-2026.json"),
+                    os.path.join(HERE, "sources", "us-sources2-corrections-2026.json")]
 
 
 def load_research():
