@@ -268,14 +268,14 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   <header class="top">
     <div>
       <h1><span class="tape" aria-hidden="true"></span>K2 Line Watch</h1>
-      <p class="sub">New high-voltage lines in Texas and Oklahoma: where they run, who builds them, how far along they are, and whether their substations are new.</p>
+      <p class="sub">New high-voltage lines across the U.S.: where they run, who builds them, how far along they are, and whether their substations are new.</p>
     </div>
     <div class="stamp" id="stamp">Loading the watch list...</div>
   </header>
 
   <nav class="tabs" role="tablist" aria-label="Page sections">
     <button type="button" role="tab" id="t-flow" aria-controls="p-flow" aria-selected="true">How K2 works</button>
-    <button type="button" role="tab" id="t-lines" aria-controls="p-lines" aria-selected="false" tabindex="-1">Lines (TX, OK)</button>
+    <button type="button" role="tab" id="t-lines" aria-controls="p-lines" aria-selected="false" tabindex="-1">Lines (U.S.)</button>
     <button type="button" role="tab" id="t-watch" aria-controls="p-watch" aria-selected="false" tabindex="-1">Early signals</button>
     <button type="button" role="tab" id="t-irp" aria-controls="p-irp" aria-selected="false" tabindex="-1">Utility plans (IRPs)</button>
     <button type="button" role="tab" id="t-help" aria-controls="p-help" aria-selected="false" tabindex="-1">How to use</button>
@@ -346,7 +346,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 
   <section class="research" aria-labelledby="gh">
     <h2 id="gh">Data for GIS</h2>
-    <p class="sub">Everything as GIS files in one zip: the lines layer for every region (every line and substation in Texas and Oklahoma), the early-signal projects with their study-area counties and filed route options, tables and Google Earth files. WGS84 longitude/latitude. The layer on its own, for all regions or one, is at the top of the Texas lines tab.</p>
+    <p class="sub">Everything as GIS files in one zip: the lines layer for every region (every line and substation in the list), the early-signal projects with their study-area counties and filed route options, tables and Google Earth files. WGS84 longitude/latitude. The layer on its own, for all regions or one, is at the top of the Lines tab.</p>
     <p><button type="button" class="mapbtn" id="gisbtn">Download GIS files (.zip)</button> <span class="pmeta" id="gisnote"></span></p>
   </section>
 
@@ -359,7 +359,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 
   <div id="p-lines" role="tabpanel" aria-labelledby="t-lines" class="panel land" hidden>
     <section class="lhead">
-      <p>New and upgraded lines (138 kV+) in Texas (ERCOT, SPP, MISO and El Paso Electric), Oklahoma, SPP (15 states, Texas to the Dakotas, Montana, Wyoming and Colorado), MISO (15 states), PJM (13 states and DC), CAISO (California with its Nevada and Arizona edges), New York (NYISO), New England (ISO-NE), the West outside California and SPP (Arizona to Washington) and the Southeast (Georgia, the Carolinas, Tennessee, Alabama, Mississippi, Kentucky and Florida), U.S. only, built since <span id="cutoff">October 2023</span> or due in service <span id="window">through October 2031</span>. <span class="pmeta" id="linesstamp">Loading...</span> <span class="pmeta" id="checkline"></span></p>
+      <p>New and upgraded lines (138 kV+) in Texas (ERCOT, SPP, MISO and El Paso Electric), Oklahoma, SPP (15 states, Texas to the Dakotas, Montana, Wyoming and Colorado), MISO (15 states), PJM (13 states and DC), CAISO (California with its Nevada and Arizona edges), New York (NYISO), New England (ISO-NE), the West outside California and SPP (Arizona to Washington) and the Southeast (Georgia, the Carolinas, Tennessee, Alabama, Mississippi, Kentucky and Florida), U.S. only, built since <span id="cutoff">November 2023</span> or due in service <span id="window">through November 2031</span>. <span class="pmeta" id="linesstamp">Loading...</span> <span class="pmeta" id="checkline"></span></p>
       <p class="dl"><b>Download:</b> <button type="button" class="linkbtn" id="layergj">GIS layer (.geojson, zipped)</button> · <button type="button" class="linkbtn" id="layerkml">Google Earth (.kml, zipped)</button> · <b>New only:</b> <button type="button" class="linkbtn" id="newgj" title="Lines not yet built, substations not on HIFLD or OpenStreetMap, and mapped substations being expanded">GIS layer (.geojson, zipped)</button> · <button type="button" class="linkbtn" id="newkml">Google Earth (.kml, zipped)</button> · <button type="button" class="linkbtn" id="linesdl">Lines (.csv)</button> · <button type="button" class="linkbtn" id="subsdl">Substations (.csv)</button> <span class="pmeta" id="linesdlnote"></span> <span class="pmeta" id="dlscope">All regions in one file; pick a region below for just that region.</span></p>
     </section>
     <div class="recs stages" id="linesrecs"></div>
@@ -385,7 +385,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     <p class="pmeta legend">Substations: <span class="stag new">not there yet · new</span> a new substation is being built · <span class="stag exp">there now · adding</span> a new line, transformer or expansion is coming · <span class="stag">there now</span> line upgrades or nothing new · <span class="stag unk">not on maps</span> can't confirm it exists. <b>On a public map</b> checks every placed substation against HIFLD and OpenStreetMap: any substation, by any name, within 0.2 mi counts as already on the map. The stage after it (approved, planned...) is how far along that substation work is. <span class="tap yes">tap</span> 345 kV and below · <span class="tap maybe">maybe</span> 500 kV · <span class="tap no">substation only</span> 765 kV. Lines are straight between substations, not routes.</p>
     <details class="fold">
       <summary>Developers queued at these substations <span class="pmeta" id="devstamp"></span></summary>
-      <p class="pmeta">ERCOT lines only for now. Generation and battery projects in ERCOT's interconnection queue at the end substations, listed under the company that filed them (often a project company, not the parent developer). <button type="button" class="linkbtn" id="devdl">Download (.csv)</button></p>
+      <p class="pmeta">Queued developers cover ERCOT lines only for now. Generation and battery projects in ERCOT's interconnection queue at the end substations, listed under the company that filed them (often a project company, not the parent developer). <button type="button" class="linkbtn" id="devdl">Download (.csv)</button></p>
       <div id="devtable"></div>
       <button class="chip more" id="moreDevs" hidden>Show more substations</button>
     </details>
@@ -458,7 +458,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     <section>
       <h2>What this page is</h2>
       <p>K2 Renew buys land before the grid gets to it. Land near a new high-voltage line, and above all near the substations at each end, becomes worth much more once the line is built. This page is the research layer: where new lines are going, who is building them, how far along they are, and whether their substations are new or existing. K2's GIS team takes the layer into its own map; routes and parcels are the next phase.</p>
-      <p><b>Texas lines</b> is the main list: every new or upgraded ERCOT line built in the last 3 years or due in service within the next 5. <b>Early signals</b> tracks lines before ERCOT's report lists them (planning meetings, open houses, route cases, news). A monitor checks the public sources every day at 7am and 5pm Central, and the Texas list is rebuilt when ERCOT posts a new report.</p>
+      <p><b>Lines (U.S.)</b> is the main list: every new or upgraded line of 138 kV and up in the continental U.S. built in the last 3 years or due in service within the next 5, from the grid operators' project lists, every state's siting cases and utility filings. <b>Early signals</b> tracks Texas and Oklahoma lines before the official lists show them (planning meetings, open houses, route cases, news). A monitor checks the public sources every day at 7am and 5pm Central, and the list is rebuilt when ERCOT, SPP or PJM post new data.</p>
     </section>
 
     <section>
@@ -491,7 +491,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     </section>
 
     <section>
-      <h2>The Texas lines tab</h2>
+      <h2>The Lines tab</h2>
       <ol>
         <li>Click a stage (built, in construction, approved, planned, proposed) to see only those lines. Click it again to see all.</li>
         <li>Narrow by voltage, substation status (new, existing and expanding), builder or K2 next step, and sort by voltage, in-service date or stage.</li>
@@ -516,14 +516,15 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     <section>
       <h2>Where the information comes from</h2>
       <ul>
-        <li><b>ERCOT's Transmission Project and Information Tracking report</b> (TPIT): every planned ERCOT project with its end substations, voltage, status and in-service date. It feeds the Texas lines tab.</li>
+        <li><b>ERCOT's Transmission Project and Information Tracking report</b> (TPIT): every planned ERCOT project with its end substations, voltage, status and in-service date. It feeds the Texas part of the Lines tab.</li>
         <li><b>ERCOT Regional Planning Group</b> meeting documents (stage 2).</li>
         <li><b>Utility project pages</b>: Oncor, AEP Texas, LCRA and CPS Energy (stage 3).</li>
         <li><b>Texas PUC filings</b>: new route cases, and new filings in cases already on the list (stages 4 to 6).</li>
+        <li><b>Other regions</b>: the project lists of SPP, MISO, PJM, CAISO, NYISO, ISO-NE, WestConnect, NorthernGrid, SERTP and FRCC, each state's siting and certificate cases, and utility project pages (the Lines tab lists every source).</li>
         <li><b>News</b> about new lines and route fights across the US.</li>
       </ul>
       <p>Items that don't matter to K2 are dropped before they reach this page: repairs of existing lines, lines under 138 kV, short hookups for single wind or solar farms, and routine case paperwork.</p>
-      <p><b>Not covered yet:</b> most utilities outside Texas (only news covers them), county commissioners court agendas, and county easement records. ERCOT's planning email list is faster than the meeting pages, but it needs a personal subscription.</p>
+      <p><b>Not covered yet:</b> early signals outside Texas and Oklahoma (only news covers them), county commissioners court agendas, and county easement records. ERCOT's planning email list is faster than the meeting pages, but it needs a personal subscription.</p>
     </section>
   </div>
 </div>

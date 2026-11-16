@@ -148,12 +148,23 @@ def pjm_rows():
     return out
 
 
+# Where a PJM row leaves State blank, its transmission owner's states, most likely first.
+TO_STATES = {"AEP": ["OH", "WV", "VA", "IN", "MI", "KY"], "Dominion": ["VA", "NC"], "PPL": ["PA"], "NEET": ["WV", "VA", "PA", "MD"],
+             "ComEd": ["IL"], "PENELEC": ["PA"], "PECO": ["PA"], "ATSI": ["OH", "PA"], "Transource": ["PA", "MD", "WV", "OH"],
+             "DEOK": ["OH", "KY"], "APS": ["WV", "PA", "MD", "VA"], "PSEG": ["NJ"], "EKPC": ["KY"], "DPL": ["DE", "MD", "VA"],
+             "PEPCO": ["MD", "DC"], "JCPL": ["NJ"], "BGE": ["MD"], "Duquesne": ["PA"], "Dayton": ["OH"], "AECO": ["NJ"],
+             "METED": ["PA"], "RECO": ["NJ"], "ODEC": ["VA", "MD", "DE"], "UGI": ["PA"]}
+PJM_CODE = re.compile(r"^[bns]\d{3,5}(\.\d+)?(-\d+)?$", re.I)
+
+
 def pjm_lines(places=None):
     places = places or MisoPlaces(states=PJM_STATES)
     out = []
     for r in pjm_rows():
-        states = [s.strip() for s in (r["State"] or "").split(",") if s.strip() in PJM_STATES] or ["PA"]
-        names = ends_of(r) or [r["Location"] or r["UpgradeId"]]
+        given = [s.strip() for s in (r["State"] or "").split(",") if s.strip() in PJM_STATES]
+        states = given or TO_STATES.get((r["TransmissionOwner"] or "").strip(), ["PA"])   # PJM left the state blank
+        names = [f"Unnamed station (PJM {r['UpgradeId']})" if PJM_CODE.match(n) else n
+                 for n in (ends_of(r) or [r["Location"] or r["UpgradeId"]])]
         ends = []
         for n in names:
             near = next((e for e in ends if e.get("lat") is not None), None)
@@ -167,7 +178,12 @@ def pjm_lines(places=None):
                         break
                 if hit.get("lat") is not None:
                     break
+            if hit.get("lat") is None and not given:
+                hit = places.place({"name": n}, r["kv"], states[0], PAGE_URL, near)   # not found anywhere: the owner's home state
+                hit["name"] = n
             ends.append(hit)
+        if not given:
+            states = sorted({e["state"] for e in ends if e.get("lat") is not None}) or states[:1]
         driver = r["Driver"] or ""
         purpose = ("generator hookup" if r["ProjectType"] == "Network" or re.search(r"generat|interconnection request", driver, re.I) or B.GENERATOR.search(r["desc"])
                    else "large-load hookup" if re.search(r"customer|load", driver, re.I) and B.BIG_LOAD.search(r["desc"] + " " + driver)

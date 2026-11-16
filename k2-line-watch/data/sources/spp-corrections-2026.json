@@ -172,14 +172,6 @@
    "in_service": "2026-04"
   },
   {
-   "id": "spp-144226",
-   "basis": "SPP Q4 2026 QPT owner ISD for Finstad-Vanhook is 2027-12-31 (the QPT also gives it as 115 kV, not 345 kV).",
-   "sources": [
-    "https://www.spp.org/documents/78044/q4%202026%20quarterly%20project%20tracking%20report%20appendix%201.xlsx"
-   ],
-   "in_service": "2027-12"
-  },
-  {
    "id": "spp-122614",
    "basis": "SPP Q4 2026 QPT owner ISD for Reno-Summit 345 kV GEN-2016-111 is 2029-12-31.",
    "sources": [

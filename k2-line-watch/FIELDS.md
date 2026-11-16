@@ -258,6 +258,16 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
   generator-tie applications from the PUCN's UEPA case list, marked proposed: their decisions were not checked.
 - **KML layers** leave out `geometry_note`, `check_link` and `recommendation_reason` (the GeoJSON and CSV keep them)
   so the all-regions KML stays under the 16 MB per-file publish limit.
+- **Data fixes (Nov 16, 2026 audit)**: when a list's voltage column disagrees with the voltage its own title states
+  (ERCOT "Rockhound - Connell 345 kV" with 138 in the kV column, SPP "Finstad - Vanhook 115 kV" with 345), the title
+  wins (`stated_kv` in build_catalog.py; a "345/138" or "345-138" title counts both, a conversion keeps the higher);
+  SCE's 220 kV lines stay 220 kV. A researched line that is approved or planned and past its due date shows as in
+  construction (estimated) until a source says it is finished. SPP rows marked in service but carrying a future date
+  get no date. PJM rows with a blank state are placed by their transmission owner's states (not Pennsylvania by
+  default), and rows with no location are "Unnamed station (PJM id)". One station spelled two ways (Sand Lake /
+  Sandlake, Peach Bottom / Peach Botton, ...) is one site, a station listed as both ends of a line is one end, and a
+  line with no builder in its source says "Not named in the source". Substation wording no longer says ERCOT outside
+  Texas.
 - **U.S. only**: the checker fails if any line or substation is outside a U.S. state; a line that runs to the national
   border is listed for its U.S. part, and the check lists those for review.
   Stations are placed by name on HIFLD / OpenStreetMap in the state given (and the county, when the source gives one),

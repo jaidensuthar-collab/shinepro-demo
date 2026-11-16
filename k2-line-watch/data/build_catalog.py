@@ -54,7 +54,10 @@ CAPACITOR = re.compile(r"CAPACITOR", re.I)   # capacitor-only records are equipm
 REUSE = re.compile(r"REBUILD|RECONDUCT|UPGRADE|OVERHAUL|CONVER", re.I)
 BOILERPLATE = "This models"   # ERCOT's generic title for load-addition upgrade sets; the description says what it is
 # ERCOT's names for stations the Line Watch cards call something else.
-ALIASES = {"MORLEY": "HILLJE", "MORELY": "HILLJE", "CLEARFORK": "MASCHO"}
+ALIASES = {"MORLEY": "HILLJE", "MORELY": "HILLJE", "CLEARFORK": "MASCHO",
+           # one station spelled two ways in the sources
+           "SANDLAKE": "SAND LAKE", "MATHEWSON": "MATTHEWSON", "PEARSAL": "PEARSALL", "BUXMOUNT": "BUXMONT", "DAHLGREEN": "DAHLGREN",
+           "NOKEVILLE": "NOKESVILLE", "BOTTON": "BOTTOM", "CREEEK": "CREEK", "GEROGE": "GEORGE", "HUNTINGTO": "HUNTINGTON"}
 BIG_LOAD = re.compile(r"DATA ?CENTER|LARGE LOAD|NEW LOAD|ALPHA LOAD|CUSTOMER|LNG|CRYPTO|MINING|REFINERY|HYDROGEN|\bLOAD\b.{0,25}INTERCONNECT|INTERCONNECT.{0,40}\bLOAD\b", re.I)
 EQUIPMENT = re.compile(r"CAP(ACITOR)? BANK|REACTOR|AUTO ?TRANSFORMER|CONDENSER|DYNAMIC REACTIVE|BREAKER|RELAY|METER|STATCOM|SVC\b", re.I)
 MODEL_RECORD = re.compile(r"^MODELS|LOAD RECORD", re.I)   # ERCOT's modelling and load records, not projects
@@ -397,7 +400,7 @@ def read_queue(path):
         names, tap = poi_names(g("POI Location"))
         ia = g("IA Signed")
         fuel, tech = clean(g("Fuel")), clean(g("Technology"))
-        out.append({"inr": clean(r[0]), "project": clean(g("Project Name")), "developer": clean(g("Interconnecting Entity")),
+        out.append({"inr": clean(r[0]), "project": clean(g("Project Name")), "developer": clean(g("Interconnecting Entity")).rstrip(" ,;"),
                     "fuel": "battery" if tech == "BA" else FUELS.get(fuel, fuel.lower()), "mw": round(num(g("Capacity (MW)")), 1),
                     "cod": ym(g("Projected COD")), "phase": clean(g("GIM Study Phase")),
                     "ia_signed": ("signed" if ia.year < 1950 else ym(ia)) if isinstance(ia, (datetime.date, datetime.datetime)) else "",
@@ -486,7 +489,7 @@ def same_station(stations, n, county, e, places):
 RANK = {"exact": 0, "approx": 1, "town": 2, "county": 3, "unknown": 4}
 STATUS_WHY = {"on maps": "on public maps (HIFLD or OpenStreetMap)", "existing line": "an existing line is being upgraded to it",
               "built line": "a line built in the last 3 years ends here", "new name": "ERCOT calls it new",
-              "new per ERCOT": "the ERCOT or SPP project describes it as new", "expands": "ERCOT's project expands it", "more coming": "a new line, new substation work or transformer is planned here"}
+              "new per ERCOT": "the project's source describes it as new", "expands": "a listed project expands it", "more coming": "a new line, new substation work or transformer is planned here"}
 
 
 def station_sites(lines, stations):
@@ -569,7 +572,7 @@ def station_sites(lines, stations):
             if not work:
                 work = [x for x in pick("upgrade") if x["lifecycle"] != "built"]
         else:
-            status, why = "unconfirmed", ["not on public maps by this name, and ERCOT doesn't say it is new; could be new or renamed"]
+            status, why = "unconfirmed", ["not on public maps by this name, and its source doesn't say it is new; could be new or renamed"]
             work = [x for x, _ in roles if x["lifecycle"] != "built"]
         # Substation stage: what is happening at it, how far along, and whether it is there today.
         best = min(work, key=lambda x: (STAGES.index(x["lifecycle"]), x["in_service"] or "9999"), default=None)
@@ -638,7 +641,7 @@ def first_seen(lines):
     json.dump(dict(sorted(seen.items())), open(f, "w"), indent=0)
 
 
-PHRASE_ALIASES = {"BELL COUNTY EAST": "BELL EAST", "GREENE ROAD": "GREENE"}
+PHRASE_ALIASES = {"BELL COUNTY EAST": "BELL EAST", "GREENE ROAD": "GREENE", "EDITH CLARK": "EDITH CLARKE", "EAST SIDE": "EASTSIDE"}
 
 
 def alias(name):
@@ -783,10 +786,62 @@ def cards_for(r, kv, cards):
             if int(num(p.get("kv"))) == kv and all(f" {n} " in text for n in pair if n) and all(pair)]
 
 
+OFFICIAL = ("tpit-", "spp-", "pjm-", "mtep25-", "miso-", "etr-", "epe-", "card-", "oncor-", "sppitp26-")
+
+
+TYPOS = [(r"\bGeroge\b", "George"), (r"\bCreeek\b", "Creek"), (r"\bHuntingto\b", "Huntington"), (r"\bBuxmount\b", "Buxmont"),
+         (r"\bDahlgreen\b", "Dahlgren"), (r"\bNokeville\b", "Nokesville"), (r"\bPeach Botton\b", "Peach Bottom"),
+         (r"\bSandlake\b", "Sand Lake"), (r"\bPearsal\b", "Pearsall"), (r"\bEdith Clark\b", "Edith Clarke"),
+         (r"\bLawton East Side\b", "Lawton Eastside"), (r"\bMathewson\b", "Matthewson"), (r"[;,]+\s*$", "")]
+
+
+def fix_typos(text):
+    for rx, rep in TYPOS:
+        text = re.sub(rx, rep, text)
+    return text
+
+
+def past_due(lines):
+    """A researched line that is approved or planned and whose due date has passed shows as in construction until a
+    source says it is finished (the same rule the official lists follow). The official lists' own rules stay as they are."""
+    now = TODAY.strftime("%Y-%m")
+    for x in lines:
+        for k in ("name", "from", "to"):
+            x[k] = fix_typos(x.get(k) or "")
+        for e in x["endpoints"]:
+            e["name"] = fix_typos(e["name"])
+        seen = set()   # one station listed twice as both ends ('Big Cedar - Big Cedar') is one end
+        x["endpoints"] = [e for e in x["endpoints"] if not (e["name"] in seen or seen.add(e["name"]))]
+        x["to"] = x["endpoints"][-1]["name"] if len(x["endpoints"]) > 1 else ""
+        if not (x.get("utility") or "").strip():
+            x["utility"] = "Not named in the source"
+        if (not x["id"].startswith(OFFICIAL) and x["lifecycle"] in ("approved", "planned") and x["in_service"]
+                and x["in_service"][:7] < now):
+            x["lifecycle_basis"] = (f"estimated: due {x['in_service']}, which has passed, and no source shows it finished. "
+                                    + x["lifecycle_basis"])
+            x["lifecycle"] = "in construction"
+            x["recommended_next_step"], x["recommendation_reason"] = recommend(x)
+            x["priority_score"] = priority(x)
+    return lines
+
+
+NAMED_KV = re.compile(r"((?:\d{2,3}\s*[/-]\s*)*\d{2,3})\s*-?\s*kV", re.I)
+
+
+def stated_kv(kv, title):
+    """The voltage a project's own title states wins over the list's voltage column when the two disagree (ERCOT's
+    'Rockhound - Connell 345 kV' row carries 138 in its kV column; SPP's 'Finstad - Vanhook 115 kV' carries 345).
+    A '345/138 kV' or '345-138 kV' title counts both; a conversion title keeps the higher voltage."""
+    named = {int(v) for m in NAMED_KV.findall(str(title or "")) for v in re.split(r"\s*[/-]\s*", m) if 30 <= int(v) <= 800}
+    if not named or kv in named:
+        return max(named | {kv}) if named and re.search(r"(?i)conver", str(title or "")) else kv
+    return max(named)
+
+
 def classify(r):
     title = "" if str(r["title"] or "").startswith(BOILERPLATE) else str(r["title"] or "")
     text = title + " " + str(r["desc"] or "")
-    kv = int(num(r["kv"]))
+    kv = stated_kv(int(num(r["kv"])), title)
     new_mi, upg_mi = num(r["new_mi"]), num(r["upg_mi"])
     # Equipment words only rule a record out when it builds no line: a new line that also adds an autotransformer,
     # breakers or relays at its ends is still a line (Del Sol - Frontera 345 kV, RELLIS - TNP One 345 kV).
@@ -1159,7 +1214,7 @@ def build(projects_src, tpit_path, queue_path=None):
     # Texas, Oklahoma and El Paso lines the official lists miss (Nov 2026 sweep), and newer stages or dates for listed ones.
     from build_txr import txr_lines, apply_corrections, RESEARCH as TXR_FILE
     out += txr_lines(out)
-    out = apply_corrections(out)
+    out = past_due(apply_corrections(out))
     out.sort(key=lambda x: -x["priority_score"])
     stations = attach_queue(out, places, queue_path)
     sites = station_sites(out, stations)

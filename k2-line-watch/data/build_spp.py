@@ -81,7 +81,7 @@ def read_step(path=STEP_FILE):
 def kv_of(d):
     v = norm(d.get("Voltages (kV)"))
     kvs = [int(x) for x in re.findall(r"\d+", v)] or [int(x) for x in re.findall(r"(\d{2,3})\s*-?\s*kV", norm(d.get("Upgrade Name")), re.I)]
-    return max(kvs) if kvs else 0
+    return B.stated_kv(max(kvs), norm(d.get("Upgrade Name"))) if kvs else 0
 
 
 ENDS = re.compile(r"^(?:Line\s*-\s*)?(.+?)\s+\d{2,3}(?:/\d{2,3})?\s*-?\s*kV", re.I)
@@ -315,6 +315,9 @@ def spp_lines(researched=None):
                "route_status": "existing corridor" if g["ptype"] == "upgrade" else "end substations only",
                "card_id": "", "card_ids": [], "endpoints": ends, "market": "SPP", "state": ", ".join(placed_states),
                "source": f"SPP STEP ({STEP_URL}), {STEP_LABEL}", "checked": "SPP " + STEP_LABEL.split(" (")[0]}
+        if life == "built" and rec["in_service"] > B.TODAY.strftime("%Y-%m"):   # SPP marks it in service but kept the owner's old future date
+            rec["lifecycle_basis"] += f" SPP's date for it ({rec['in_service']}) is the owner's old projected date, so it is left blank."
+            rec["in_service"] = ""
         if not rec["in_service"]:
             rec["in_service_kind"] = ""
         rec["tappable"], rec["tap_note"] = B.tap(g["kv"])

@@ -269,6 +269,7 @@ def research_lines(places=None, have=(), have_mtep=(), path=None, prefix="misor-
     src, places = src or json.load(open(path)), places or MisoPlaces()
     out, seen = [], set(have)
     for p in src["projects"]:
+        p = {**p, "kv": B.stated_kv(int(p["kv"]), p["name"])}   # 'Calcite 220 kV' stays 220 kV
         isd = p.get("in_service") or ""
         if p["kv"] < 138 or (isd and (isd > B.HORIZON or isd < B.CUTOFF.strftime("%Y-%m"))) or p["stage"] not in STAGES:
             continue

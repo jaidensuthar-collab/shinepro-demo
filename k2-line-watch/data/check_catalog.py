@@ -24,6 +24,7 @@ The summary is written into web/data/texas-lines.json ("checks") so the page sho
 """
 import csv
 import datetime
+import collections
 import json
 import math
 import os
@@ -89,7 +90,8 @@ def check_tpit(lines, r):
             errs.append(f"{x['id']} {x['name']}: not found in the ERCOT TPIT edition it cites")
             continue
         n += 1
-        if int(B.num(row["kv"])) != x["kv"]:
+        title = "" if str(row["title"] or "").startswith(B.BOILERPLATE) else str(row["title"] or "")
+        if B.stated_kv(int(B.num(row["kv"])), title) != x["kv"]:
             errs.append(f"{x['id']} {x['name']}: {x['kv']} kV here, {row['kv']} kV in ERCOT's report")
         when = B.ym(row["actual"]) or B.ym(row["isd"])
         if when != x["in_service"]:
@@ -110,18 +112,29 @@ def check_tpit(lines, r):
 
 
 def check_window(lines, meta, r):
-    errs = []
+    errs, warns = [], []
     cutoff, horizon = meta["cutoff"][:7], meta["horizon"]
+    undated = collections.Counter()
     for x in lines:
         if x["lifecycle"] not in B.STAGES:
             errs.append(f"{x['id']}: unknown stage '{x['lifecycle']}'")
-        if x["lifecycle"] == "built" and (not x["in_service"] or x["in_service"] < cutoff):
-            errs.append(f"{x['id']} {x['name']}: built {x['in_service'] or 'with no date'}, before {cutoff}")
+        if x["lifecycle"] == "built" and x["in_service"] and x["in_service"] < cutoff:
+            errs.append(f"{x['id']} {x['name']}: built {x['in_service']}, before {cutoff}")
+        if x["lifecycle"] == "built" and not x["in_service"]:
+            warns.append(f"{x['id']} {x['name']}: built, but its source gives no finish date, so the {cutoff} start can't be checked")
+        if not x["in_service"]:
+            undated[x["market"]] += 1
         if x["in_service"] and x["in_service"][:7] > horizon:
             errs.append(f"{x['id']} {x['name']}: due {x['in_service']}, after the 5-year horizon {horizon}")
     ids = [x["id"] for x in lines]
     errs += [f"duplicate id {i}" for i in sorted({i for i in ids if ids.count(i) > 1})]
-    r.add(f"Time window ({cutoff} built to {horizon} due) and stage names", errs, checked=len(lines))
+    if undated:
+        warns.append(f"{sum(undated.values())} lines have no in-service date yet, so the {horizon} end can't be checked for them ("
+                     + ", ".join(f"{m} {n}" for m, n in undated.most_common()) + ")")
+    r.add(f"Time window ({cutoff} built to {horizon} due) and stage names", errs, warns, checked=len(lines))
+
+
+VA_CITIES = {"Richmond", "Roanoke", "Fairfax", "Franklin", "Bedford"}   # independent cities that share a county's name
 
 
 def check_locations(lines, sites, places, r):
@@ -143,8 +156,9 @@ def check_locations(lines, sites, places, r):
         if B.in_county(places, key, pt):
             continue
         d = min(miles((pt["lon"], pt["lat"]), xy) for ring in places.rings[key] for xy in ring)
-        msg = f"substation {st['name']}: point is {d:.0f} miles outside {st['county']} County, the county ERCOT lists"
-        (errs if d > 40 else warns if d > 3 else []).append(msg)
+        msg = f"substation {st['name']}: point is {d:.0f} miles outside {st['county']} County, the county its source lists"
+        city = st.get("state") == "VA" and st["county"] in VA_CITIES   # HIFLD gives Richmond city as "Richmond County"
+        (errs if d > 40 and not city else warns if d > 3 else []).append(msg + (" (Virginia has a city and a county by this name)" if city else ""))
     unplaced = [x["id"] for x in lines if not any(e.get("lat") is not None for e in x["endpoints"])]
     if unplaced:
         warns.append(f"{len(unplaced)} lines have no placeable substation (no county given, and not on public maps by name): " + ", ".join(unplaced[:8]))
@@ -360,7 +374,10 @@ def check_spp(lines, sites, r):
         if x["kv"] not in {SPP.kv_of(d) for d in got}:
             errs.append(f"{x['id']} {x['name']}: {x['kv']} kV here, {sorted({SPP.kv_of(d) for d in got})} kV in SPP's list")
         dates = {B.ym(d.get("Project Owner Indicated In-Service Date")) for d in got} - {""}
-        if (x["in_service"] or "") != max(dates, default=""):
+        want_isd = max(dates, default="")
+        if x["lifecycle"] == "built" and want_isd > B.TODAY.strftime("%Y-%m"):
+            want_isd = ""   # SPP marks it in service; its future date is the owner's old projection
+        if (x["in_service"] or "") != want_isd:
             errs.append(f"{x['id']} {x['name']}: in service {x['in_service'] or 'blank'} here, {max(dates, default='blank')} in SPP's list")
         statuses = {SPP.norm(d.get("Project Status")).lower() for d in got}
         want = expect.get(x["lifecycle"])
