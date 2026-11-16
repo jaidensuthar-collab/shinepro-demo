@@ -268,6 +268,17 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
   Sandlake, Peach Bottom / Peach Botton, ...) is one site, a station listed as both ends of a line is one end, and a
   line with no builder in its source says "Not named in the source". Substation wording no longer says ERCOT outside
   Texas.
+- **New kinds of sources (Nov 16, 2026, second nationwide sweep)**: Federal Register and federal permitting reviews
+  (BLM, Forest Service, DOE, WAPA, BPA, USACE; the Federal Permitting Dashboard), USDA RUS co-op environmental
+  reviews, the federal power marketing administrations and state transmission authorities, DOE grants (GRIP, SPARK),
+  Transmission Facilitation Program and loans, FERC incentive and merchant filings, generator and large-load
+  interconnection studies (SPP DISIS, MISO DPP/ERAS via secondary sources, ERCOT GINR, PJM queue, CAISO clusters,
+  NYISO, ISO-NE, BPA cluster studies), utility investor reports, merchant developers, data-center announcements,
+  county permits and public notices, in `data/sources/us-sources2-research-2026.json` and
+  `us-sources2-corrections-2026.json` (`process_notes` says what each source is and how useful it was). Queue-study
+  finds are mostly proposed generator connection points on existing lines, often with no in-service date yet.
+- **Page data size**: `web/data/texas-lines.json` leaves out `check_link` (the page builds the satellite link from the
+  point), so it stays under the 16 MB file limit; the exports keep it.
 - **U.S. only**: the checker fails if any line or substation is outside a U.S. state; a line that runs to the national
   border is listed for its U.S. part, and the check lists those for review.
   Stations are placed by name on HIFLD / OpenStreetMap in the state given (and the county, when the source gives one),

@@ -1073,8 +1073,9 @@ def map_check(sites):
 
 
 # Left out of the KML layers only (the GeoJSON and CSV keep them): the note the KML already gives once in its
-# description, the map-check link and the long "why" text, so the all-regions KML stays under the 16 MB file limit.
-KML_SKIP = {"geometry_note", "check_link", "recommendation_reason"}
+# description, the map-check link, the tap note and the long "why" texts, so the all-regions KML stays under the
+# 16 MB file limit.
+KML_SKIP = {"geometry_note", "check_link", "recommendation_reason", "tap_note", "status_reason"}
 
 
 def write_kml(path, line_feats, site_feats, title="Texas"):
@@ -1235,7 +1236,12 @@ def build(projects_src, tpit_path, queue_path=None):
             "regions": {k: {"title": t, "lines": sum(1 for x in out if f(x))} for k, (t, f) in REGIONS.items()},
             "map_radius_miles": MAP_RADIUS,
             "cutoff": CUTOFF.isoformat(), "horizon": HORIZON, "stages": STAGE_HELP}
-    json.dump({**meta, "lines": out, "stations": stations, "sites": sites}, open(os.path.join(WEB, "data", "texas-lines.json"), "w"), separators=(",", ":"))
+    # The page builds each satellite link from the point itself, so the page's copy leaves check_link out (it keeps
+    # data/texas-lines.json under the 16 MB file limit); the CSV, GeoJSON and KML exports keep it.
+    slim = lambda d: {k: v for k, v in d.items() if k != "check_link"}
+    page_lines = [{**x, "endpoints": [slim(e) for e in x["endpoints"]]} for x in out]
+    json.dump({**meta, "lines": page_lines, "stations": stations, "sites": [slim(st) for st in sites]},
+              open(os.path.join(WEB, "data", "texas-lines.json"), "w"), separators=(",", ":"))
 
     dcols = ["station", "county", "lat", "lon", "station_status", "lines", "line_names", "max_kv", "inr", "project", "developer", "fuel", "mw",
              "cod", "phase", "ia_signed", "construction_start", "connection", "poi"]

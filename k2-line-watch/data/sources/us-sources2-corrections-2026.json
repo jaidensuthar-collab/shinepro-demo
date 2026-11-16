@@ -1,0 +1,215 @@
+{
+ "source": "Line Watch second nationwide sweep, new kinds of sources (Nov 16, 2026)",
+ "set": [
+  {
+   "id": "westr-ng-cross-tie",
+   "basis": "BLM and the Forest Service published Records of Decision on Dec 19, 2025 authorizing the Cross-Tie 500 kV right-of-way across BLM land in Nevada and Utah and the Humboldt-Toiyabe NF (FEIS Sept 20, 2024). TransCanyon told the White Pine County Natural Resources Advisory Committee on Aug 18, 2026 that construction starts in late 2028, with operations beginning in 2031 on the approved 218-mile route.",
+   "sources": [
+    "https://www.blm.gov/press-release/blm-and-forest-service-approve-cross-tie-transmission-project",
+    "https://www.federalregister.gov/documents/2024/09/20/2024-21279/notice-of-availability-of-the-final-environmental-impact-statement-for-the-cross-tie-500-kv",
+    "https://www.whitepinecounty.net/DocumentCenter/View/14121/NRAC-81826-minutes"
+   ],
+   "stage": "approved",
+   "in_service": "2031"
+  },
+  {
+   "id": "westr-twe-dc-wyoming-utah",
+   "basis": "TransWest's Feb 27, 2026 WECC Annual Progress Report says the first elements of the TWE Project are planned to be placed in service in 2031 (earlier reports said 2028). TransWest Express's January 2026 project overview says the first stage of the TWE Project is expected to be complete in 2030.",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/TWE%202026%20APR.pdf",
+    "https://transwestexpress.net/news/docs/TransWest-Express-Overview-v0126.pdf"
+   ],
+   "in_service": "2030"
+  },
+  {
+   "id": "westr-az-wapa-bouse-230-upgrade",
+   "basis": "WAPA DSW Ten-Year Plan (Sept 24, 2026) lists the Bouse Upgrade (new 18-mile double-circuit 230 kV Bouse - Parker-Liberty #2 line and Bouse 230 kV bays) as an active construction project with in-service Q1 2030.",
+   "sources": [
+    "https://www.wapa.gov/wp-content/uploads/2026/09/10-Year-Plan-Meeting-Book-2026.09.24Final.pdf"
+   ],
+   "in_service": "2030-03"
+  },
+  {
+   "id": "ser-ga-gtc-east-moultrie-hwy112-230",
+   "basis": "RUS issued the EA (Feb 2026) and a signed FONSI (March 2026) for the East Moultrie - Highway 37 230 kV line and Highway 37 230 kV switching station, the federal environmental clearance of the route (Georgia has no state line-siting certificate).",
+   "sources": [
+    "https://www.rd.usda.gov/resources/environmental-studies/assessment/east-moultrie-highway-37-230-kv-transmission-line-and-highway-37-230-kv-switching-station"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "ser-ga-gtc-lagrange-northopelika-230",
+   "basis": "RUS posted a Final EA and signed FONSI (2025) for the LaGrange Primary - Oseligee Creek 230 kV line and Oseligee Creek 230/25 kV substation, clearing the Georgia portion's route.",
+   "sources": [
+    "https://www.rd.usda.gov/resources/environmental-studies/assessment/lagrange-primary-oseligee-creek-230kv-transmission-line-and-oseligee-creek-23025kv-substation"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "sppr-wfec-hugo-scct-345-tie",
+   "basis": "RUS issued the final EA (May 29, 2026) and a FONSI (June 1, 2026) for WFEC's Hugo New Generation, including the 0.5-mile 345 kV tie to ITC Great Plains' Hugo 345 kV switchyard and a 0.4-mile 138 kV tie to WFEC's 138 kV switchyard; construction is expected to begin early 2027.",
+   "sources": [
+    "https://www.rd.usda.gov/media/file/download/rus-ea-hugo-new-generation.pdf",
+    "https://www.rd.usda.gov/media/file/download/rus-nofo-hugo-new-generation.pdf"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "westr-nm-az-riosol-500",
+   "basis": "RETA's 2026 annual report (Oct 2026) and July 2026 legislative briefing say RioSol is in late-stage development, construction may begin as early as 2027, and the line is anticipated in service by 2029.",
+   "sources": [
+    "https://www.nmlegis.gov/handouts/NMFA%20102826%20Item%203%20Empowering%20New%20Mexico%20To%20Power%20The%20West.pdf",
+    "https://www.nmlegis.gov/handouts/WNR%20071326%20Item%203%20RETA%20Energy%20Transmission%20Role%20and%20Updates.pdf"
+   ],
+   "in_service": "2029"
+  },
+  {
+   "id": "westr-nm-reta-hidden-mountain-extension-345",
+   "basis": "RETA's 2026 annual report says the 21-mile, 345 kV Hidden Mountain Extension in Valencia County (RioSol to PNM Hidden Mountain, lease agreement June 2025) is slated for completion by December 2028.",
+   "sources": [
+    "https://www.nmlegis.gov/handouts/NMFA%20102826%20Item%203%20Empowering%20New%20Mexico%20To%20Power%20The%20West.pdf"
+   ],
+   "in_service": "2028-12"
+  },
+  {
+   "id": "sppr-three-corners-connector-ok",
+   "basis": "Three Corners Connector received its Oklahoma Corporation Commission Certificate of Authority on July 29, 2026; the developer and the Otero County permit state operation is expected in 2031 (construction start 2027-2028). Developer says Three Corners Connector could be operational as early as 2031; OCC granted the Certificate of Authority (PUD 2026-000004, Final Order 759344) on July 29, 2026.",
+   "sources": [
+    "https://threecornersconnector.com/wp-content/uploads/GU-Three-Corners-Connector-Newsletter-8.26.26.pdf",
+    "https://oterocounty.colorado.gov/sites/g/files/lrnvjt1386/files/documents/3CC-Otero-Stipulations.pdf",
+    "https://threecornersconnector.com/",
+    "https://oklahoma.gov/occ/divisions/public-utility/energy/high-voltage-electric-transmission-facility-act.html"
+   ],
+   "in_service": "2031"
+  },
+  {
+   "id": "westr-wc-2028-1521",
+   "basis": "The Arizona Corporation Commission approved the Certificate of Environmental Compatibility for UNS Electric's Santa Cruz Reliability Project North (new ~9-12 mi Canoa Ranch - Kantor 138 kV line) on Jan 14, 2026 (Decision 81596, docket L-00000F-25-0209-00252, Line Siting Case 252); the project is partly funded by a DOE GRIP grant.",
+   "sources": [
+    "https://edocket.azcc.gov/search/docket-search/item-detail/29664",
+    "https://www.uesaz.com/santa-cruz-reliability-north",
+    "https://docs.uesaz.com/wp-content/uploads/UniSource-2026-IRP-Report.pdf"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "sppr-aep-comanche-eras-345",
+   "basis": "SPP's GI active queue (checked 2026-11-16) shows ERAS-2025-024 and ERAS-2025-026 (744 MW each, Comanche) as 'IA FULLY EXECUTED/ON SCHEDULE', and the ERAS-2025 facility-study report (rev. 2026-09-03) assigns the new Comanche 345 kV substation and Comanche Tap - New Comanche 345 kV line as current-study network upgrades; executed GIAs make this grid-operator approved. SPP's GI active queue lists a proposed in-service date of 4/1/2029 (COD 11/30/2029) for ERAS-2025-026, whose interconnection requires the new Comanche 345 kV station.",
+   "sources": [
+    "https://opsportal.spp.org/Studies/GIActive",
+    "https://opsportal.spp.org/documents/studies/files/2025_Generation_Studies/ERAS-2025%20Interconnection%20Facility%20Studies%20Draft%20Report%20REV2.xlsx"
+   ],
+   "stage": "planned",
+   "in_service": "2029-04"
+  },
+  {
+   "id": "nyr-ny-rich-road-solar-345-poi",
+   "basis": "NYISO queue (Nov 2026) gives Q0800 Rich Road Solar proposed in-service/initial backfeed 10-2027 (COD 04-2028), status 10.",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx"
+   ],
+   "in_service": "2027-10"
+  },
+  {
+   "id": "nyr-ny-prattsburgh-wind-230-poi",
+   "basis": "NYISO queue gives Q0801 Prattsburgh Wind proposed in-service/initial backfeed 06-2027 (COD 09-2027), status 11.",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx"
+   ],
+   "in_service": "2027-06"
+  },
+  {
+   "id": "nyr-ny-mill-point-solar-345-poi",
+   "basis": "NYISO queue gives Q1031 Mill Point Solar proposed in-service/initial backfeed 07-2028 (COD 12-2028), status 10.",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx"
+   ],
+   "in_service": "2028-07"
+  },
+  {
+   "id": "nyr-ny-fort-covington-solar-345-poi",
+   "basis": "NYISO queue gives Q1183 Fort Covington Solar proposed in-service/initial backfeed 05-2028 (COD 07-2028), status 11 (IA completed).",
+   "sources": [
+    "https://www.nyiso.com/documents/20142/1407078/NYISO-Interconnection-Queue.xlsx"
+   ],
+   "in_service": "2028-05"
+  },
+  {
+   "id": "sppr-evergy-buffalo-flats-delaware-345",
+   "basis": "KCC order of May 12, 2026 granted Evergy's siting permit for the portion of the ~133-mile route west of U.S. 77 and denied the portion east of U.S. 77, ordering a new routing study; a later KCC order sets a March 4, 2027 deadline for the eastern segment, so the line is partly route-approved and partly still pending.",
+   "sources": [
+    "https://www.cowleycountyks.gov/AgendaCenter/ViewFile/Item/769?fileID=3082"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "westr-ng-gww-e8-midpoint-hemingway2",
+   "basis": "IDACORP Q3 2026 10-Q and PacifiCorp's Segment E-8 page: the Hemingway-Mayfield section is due November 2028 but the Mayfield-Midpoint section (completing the segment) is due June 2030; the joint IPUC CPCN request filed April 3, 2026 is still pending.",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/49648/000105787726000137/ida-20260930.htm",
+    "https://www.pacificorp.com/transmission/transmission-projects/energy-gateway/gateway-west/segment-e8.html",
+    "https://docs.idahopower.com/pdfs/AboutUs/PlanningForFuture/irp/2027/2027IRP_TransmissionUpdate.pdf"
+   ],
+   "in_service": "2030-06"
+  },
+  {
+   "id": "txr-ercot-southern-spirit-hvdc",
+   "basis": "Pattern Energy's Southern Spirit page shows a projected schedule of full construction start 2029 and target in-service 2032, later than the listed 2031-06 (outside the window).",
+   "sources": [
+    "https://patternenergy.com/projects/southern-spirit-transmission/"
+   ],
+   "in_service": "2032"
+  },
+  {
+   "id": "westr-twe-ac-utah-nevada",
+   "basis": "TransWest Express's January 2026 project overview says the first stage of the TWE Project is expected to be complete in 2030.",
+   "sources": [
+    "https://transwestexpress.net/news/docs/TransWest-Express-Overview-v0126.pdf"
+   ],
+   "in_service": "2030"
+  },
+  {
+   "id": "misor-in-aes-antioch-bluebluff-345",
+   "basis": "The Indiana Utility Regulatory Commission approved AES Indiana's ~$737 million HEA 1007 grid plan for the Google Monrovia data center (Oct 2026), which includes the ~10-mile Antioch - Blue Bluff 345 kV line and the new substations.",
+   "sources": [
+    "https://datacenterdynamics.com/en/news/iurc-approves-aes-indiana-plan-for-13bn-solar-storage-and-transmission-project-for-google-data-center-in-monrovia",
+    "https://gcn.com/?p=22412",
+    "https://www.aesindiana.com/morgan-county-transmission-upgrade"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "pjm-b3800.200",
+   "basis": "Dominion's NOVA project page says the SCC approved the Aspen-Golden 500/230 kV project on Feb 5, 2025 and the Supreme Court of Virginia affirmed on Feb 19, 2026; project is in final pre-construction preparation.",
+   "sources": [
+    "https://www.dominionenergy.com/about/delivering-energy/electric-projects/power-line-projects/nova"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "pjm-b3800.120",
+   "basis": "Dominion's Loudoun County supplemental filing for the Aspen Substation (LEGI-2024-0038) states the SCC approved the Aspen Substation project in February 2025; county commission permit/special exceptions were heard by the Board of Supervisors April 15, 2026.",
+   "sources": [
+    "https://lfportal.loudoun.gov/LFPortalinternet/0/edoc/1973107/Item%2006%20LEGI-2024-0038,%20Aspen%20Substation-Supplemental.pdf"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "sppr-pso-north-yale-345",
+   "basis": "PSO's North Yale Power Connect fact sheet (July 2025) gives construction fall 2026 - late 2027 and facilities placed in service late 2027.",
+   "sources": [
+    "https://www.aeptransmission.com/oklahoma/NorthYale/docs/ProjectClydesdale_Factsheet.pdf"
+   ],
+   "in_service": "2027"
+  },
+  {
+   "id": "sppr-pso-catoosa-northeastern-138",
+   "basis": "PSO's Catoosa - Verdigris project page (rebuild of ~11 mi of the Catoosa - Northeastern Power Station 138 kV line plus ~3 mi of connecting lines) says construction fall 2026 to late 2027, with facilities placed in service late 2027.",
+   "sources": [
+    "https://aeptransmission.com/oklahoma/Catoosa-Verdigris/"
+   ],
+   "in_service": "2027"
+  }
+ ],
+ "drop": {}
+}

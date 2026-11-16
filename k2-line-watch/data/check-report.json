@@ -142,22 +142,23 @@
  },
  {
   "check": "Time window (2023-11 built to 2031-11 due) and stage names",
-  "checked": 4241,
+  "checked": 4531,
   "errors": [],
   "warnings": [
    "spp-143452 Nashua - St. Joe 345kV New Interconnection Substation (DISIS-2017-002): built, but its source gives no finish date, so the 2023-11 start can't be checked",
    "spp-143453 Nashua - St. Joe 345kV GEN-2017-183 Interconnection (TOIF) (KCPL): built, but its source gives no finish date, so the 2023-11 start can't be checked",
    "spp-143343 Stillwell - Clinton 161kV GEN-2017-108 Interconnection (TOIF) (KCPL): built, but its source gives no finish date, so the 2023-11 start can't be checked",
-   "640 lines have no in-service date yet, so the 2031-11 end can't be checked for them (West 192, SPP 127, PJM 100, MISO 81, ERCOT (Texas) 76, Southeast 40, NYISO 11, CAISO 9, ISO-NE 3, WECC 1)"
+   "799 lines have no in-service date yet, so the 2031-11 end can't be checked for them (West 212, PJM 201, SPP 148, MISO 84, ERCOT (Texas) 76, Southeast 47, CAISO 16, NYISO 11, ISO-NE 3, WECC 1)"
   ]
  },
  {
   "check": "Substation points are in their state and in the county the source lists",
-  "checked": 4010,
+  "checked": 4401,
   "errors": [],
   "warnings": [
    "substation Kammer: point is 5 miles outside Marshall County, the county its source lists",
    "substation Durham 500 kV Substation: point is 5 miles outside Durham County, the county its source lists",
+   "substation Little Goose: point is 6 miles outside Whitman County, the county its source lists",
    "substation Peach Bottom: point is 3 miles outside York County, the county its source lists",
    "substation Sunbury: point is 3 miles outside Snyder County, the county its source lists",
    "substation AJ Swope: point is 11 miles outside Deaf Smith County, the county its source lists",
@@ -220,18 +221,18 @@
    "substation Triangle: point is 4 miles outside Midland County, the county its source lists",
    "substation Vealmoor: point is 6 miles outside Howard County, the county its source lists",
    "substation Yucca Drive: point is 10 miles outside Ector County, the county its source lists",
-   "813 lines have no placeable substation (no county given, and not on public maps by name): tpit-102068, pjm-s3608.5, pjm-b3800.7, pjm-b3800.43, pjm-b3800.53, pjm-b4089.1, spp-170051, spp-170054"
+   "831 lines have no placeable substation (no county given, and not on public maps by name): tpit-102068, pjm-s3608.5, pjm-b3800.7, pjm-b3800.43, pjm-b3800.53, pjm-b4089.1, spp-170051, spp-170054"
   ]
  },
  {
   "check": "Substation status agrees between lines and substations",
-  "checked": 5393,
+  "checked": 5894,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Downloads match the page (CSV, GeoJSON, KML, new-only layers)",
-  "checked": 17072,
+  "checked": 18526,
   "errors": [],
   "warnings": []
  },
@@ -573,6 +574,7 @@
    "pjm-b3800.103: 500 kV / 2030-12 / planned but PJM gives 500 kV / 2030-06 / approved (changed on purpose: Line Watch research: This is part of Potomac Edison's Gore-Doubs-Goose Creek project; the Virginia CPCN application was filed with the SCC Oct 30, 2026 (PUR-202)",
    "pjm-b3800.104: 500 kV / 2030-06 / planned but PJM gives 500 kV / 2030-06 / approved (changed on purpose: Line Watch research: Gore-Doubs-Goose Creek West Virginia (Jefferson County, 15.4 mi) portion: only a notice of intent is on file at the WV PSC; Potomac Edison )",
    "pjm-b3800.105: 500 kV / 2030-12 / planned but PJM gives 500 kV / 2030-06 / approved (changed on purpose: Line Watch research: This is part of Potomac Edison's Gore-Doubs-Goose Creek project; the Virginia CPCN application was filed with the SCC Oct 30, 2026 (PUR-202)",
+   "pjm-b3800.120: 500 kV / 2030-09 / approved but PJM gives 500 kV / 2030-09 / planned (changed on purpose: Line Watch research: Dominion's Loudoun County supplemental filing for the Aspen Substation (LEGI-2024-0038) states the SCC approved the Aspen Substation projec)",
    "pjm-b3800.122: left out on purpose, a newer public source puts it in service 2031-12, past the window",
    "pjm-b3800.124: left out on purpose, a newer public source puts it in service 2031-12, past the window",
    "pjm-b3800.125: left out on purpose, a newer public source puts it in service 2031-12, past the window",
@@ -580,6 +582,7 @@
    "pjm-b3800.127: left out on purpose, a newer public source puts it in service 2031-12, past the window",
    "pjm-b3800.13: 230 kV / 2028-06 / planned but PJM gives 230 kV / 2028-06 / approved (changed on purpose: Line Watch research: b3800.13/.15 are Potomac Edison's Maryland section of Carroll-Hunterstown 230 kV; its CPCN (MD PSC Case 9803, filed July 18, 2025) is still)",
    "pjm-b3800.15: 230 kV / 2028-06 / planned but PJM gives 230 kV / 2028-06 / in construction (changed on purpose: Line Watch research: b3800.13/.15 are Potomac Edison's Maryland section of Carroll-Hunterstown 230 kV; its CPCN (MD PSC Case 9803, filed July 18, 2025) is still)",
+   "pjm-b3800.200: 500 kV / 2028-06 / approved but PJM gives 500 kV / 2028-06 / planned (changed on purpose: Line Watch research: Dominion's NOVA project page says the SCC approved the Aspen-Golden 500/230 kV project on Feb 5, 2025 and the Supreme Court of Virginia aff)",
    "pjm-b3800.210: 230 kV / 2029-06 / approved but PJM gives 230 kV / 2029-06 / planned (changed on purpose: Line Watch research: The 230 kV Golden-Mars line was approved in PUR-2025-00056 (Final Order June 29, 2026); note the Prentice Loop replaced the Lockridge Loop )",
    "pjm-b3800.211: 230 kV / 2029-06 / approved but PJM gives 230 kV / 2029-06 / planned (changed on purpose: Line Watch research: The 230 kV Golden-Mars line was approved in PUR-2025-00056 (Final Order June 29, 2026); note the Prentice Loop replaced the Lockridge Loop )",
    "pjm-b3800.212: 500 kV / 2028-06 / approved but PJM gives 500 kV / 2028-06 / planned (changed on purpose: Line Watch research: SCC CPCN for 500 kV and 230 kV Golden-Mars lines granted Apr 9, 2026; Final Order June 29, 2026 approved Route 3A (PUR-2025-00056; appeal t)",
@@ -664,7 +667,7 @@
  },
  {
   "check": "Texas and SPP sweep: researched lines have sources; corrections to official lists are deliberate",
-  "checked": 1446,
+  "checked": 1757,
   "errors": [],
   "warnings": [
    "tpit-102815 SandLake - North McCamey Transmission Line Addition: stage 'built' but ERCOT says 'Under Construction' (changed on purpose: Line Watch research: LCRA (July 2026) says the North McCamey-Sand Lake 345 kV line is complete and energized, and Oncor's Q2 2026 release says it placed its por)",
@@ -729,7 +732,7 @@
  },
  {
   "check": "U.S. only (every line and substation is in a U.S. state)",
-  "checked": 9634,
+  "checked": 10425,
   "errors": [],
   "warnings": [
    "pjms-pjm-east-marl-500-pa-portion MidAtlantic Resiliency Link 500 kV - Pennsylvania portions (502 Junction - WV border, Greene/Fayette): ends at the national border; only the U.S. part is listed",
@@ -740,6 +743,7 @@
    "spp-156240 North Dakota/Saskatchewan Border (Tableland) - Tande 230 kV Ckt 1: ends at the national border; only the U.S. part is listed",
    "sppr-sps-border-tuco-tap-crawfish Border - TUCO 345 kV tap extension to Crawfish Draw: ends at the national border; only the U.S. part is listed",
    "spp-143182 Chisholm - Woodward - Border 345 kV Ckt 1: ends at the national border; only the U.S. part is listed",
+   "pjms-nextera-lake-erie-connector-us Lake Erie Connector +/-320 kV HVDC - U.S. portion (US/Canada border in Lake Erie - Erie Converter Station - Erie West 345 kV): ends at the national border; only the U.S. part is listed",
    "nyr-gb-chpe-llc-ny-canada-border-astoria-annex Champlain Hudson Power Express (NY/Canada border - Astoria Annex) +/-400 kV HVDC: ends at the national border; only the U.S. part is listed",
    "isner-rsp-1819 NECEC HVDC: Maine/Canada border (Beattie Twp) - Merrill Road \u00b1320 kV: ends at the national border; only the U.S. part is listed",
    "pjmr-grain-belt-express-il-in Grain Belt Express Phase II (Illinois HVDC segment, Clark County converter, AC connector to AEP Sullivan): ends at the national border; only the U.S. part is listed",
