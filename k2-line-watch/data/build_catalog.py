@@ -904,7 +904,7 @@ REGIONS = {   # file key -> (title, test on a line or substation record)
     "texas": ("Texas (ERCOT, SPP, MISO, El Paso)", lambda r: "TX" in r.get("state", "TX")),
     "ercot-texas": ("Texas, ERCOT", lambda r: r.get("market", MARKET) == MARKET),
     "spp-texas": ("Texas, SPP (Panhandle, South Plains, Northeast Texas)", lambda r: "SPP" in r.get("market", "") and "TX" in r.get("state", "")),
-    "el-paso": ("Texas, El Paso (El Paso Electric, western grid)", lambda r: "WECC" in r.get("market", "")),
+    "el-paso": ("El Paso Electric (El Paso and southern New Mexico, western grid)", lambda r: "WECC" in r.get("market", "")),
     "oklahoma": ("Oklahoma (SPP)", lambda r: "OK" in r.get("state", "")),
     "spp": ("SPP (all 15 states: Texas and Oklahoma to the Dakotas, Montana, Wyoming and Colorado)", lambda r: r.get("market") == "SPP"),
     "caiso": ("CAISO (California, with its Nevada and Arizona edges)", lambda r: r.get("market") == "CAISO"),
@@ -1017,11 +1017,17 @@ def map_check(sites):
             st.update(on_public_map="no", nearest_mapped=best[1] if best else "", nearest_mapped_miles=round(best[0], 2) if best else "")
 
 
+# Left out of the KML layers only (the GeoJSON and CSV keep them): the note the KML already gives once in its
+# description, the map-check link and the long "why" text, so the all-regions KML stays under the 16 MB file limit.
+KML_SKIP = {"geometry_note", "check_link", "recommendation_reason"}
+
+
 def write_kml(path, line_feats, site_feats, title="Texas"):
     from xml.sax.saxutils import escape
     def placemark(f, style):
         p, g = f["properties"], f["geometry"]
-        data = "".join(f'<Data name="{escape(str(k))}"><value>{escape(str(v))}</value></Data>' for k, v in p.items() if v not in ("", None))
+        data = "".join(f'<Data name="{escape(str(k))}"><value>{escape(str(v))}</value></Data>' for k, v in p.items()
+                       if v not in ("", None) and k not in KML_SKIP)
         if g["type"] == "LineString":
             shape = "<LineString><tessellate>1</tessellate><coordinates>" + " ".join(f"{a},{b},0" for a, b in g["coordinates"]) + "</coordinates></LineString>"
         else:

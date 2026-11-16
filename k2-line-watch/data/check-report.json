@@ -146,13 +146,13 @@
  },
  {
   "check": "Time window (2023-11 built to 2031-11 due) and stage names",
-  "checked": 4174,
+  "checked": 4243,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Substation points are in their state and in the county the source lists",
-  "checked": 3939,
+  "checked": 4019,
   "errors": [],
   "warnings": [
    "substation Durham 500 kV Substation: point is 5 miles outside Durham County, the county ERCOT lists",
@@ -219,18 +219,18 @@
    "substation Triangle: point is 4 miles outside Midland County, the county ERCOT lists",
    "substation Vealmoor: point is 6 miles outside Howard County, the county ERCOT lists",
    "substation Yucca Drive: point is 10 miles outside Ector County, the county ERCOT lists",
-   "834 lines have no placeable substation (no county given, and not on public maps by name): tpit-102068, pjm-s3608.5, pjm-b3800.7, pjm-b3800.43, pjm-b3800.53, pjm-b4089.1, spp-170051, spp-170054"
+   "835 lines have no placeable substation (no county given, and not on public maps by name): tpit-102068, pjm-s3608.5, pjm-b3800.7, pjm-b3800.43, pjm-b3800.53, pjm-b4089.1, spp-170051, spp-170054"
   ]
  },
  {
   "check": "Substation status agrees between lines and substations",
-  "checked": 5405,
+  "checked": 5485,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Downloads match the page (CSV, GeoJSON, KML, new-only layers)",
-  "checked": 16858,
+  "checked": 17155,
   "errors": [],
   "warnings": []
  },
@@ -560,7 +560,7 @@
  },
  {
   "check": "PJM lines match PJM's project data (voltage, in-service date, stage)",
-  "checked": 1116,
+  "checked": 1115,
   "errors": [],
   "warnings": [
    "pjm-b3683: 138 kV / 2028-06 / planned but PJM gives 138 kV / 2028-06 / approved (changed on purpose: Line Watch research: Messick Road-Ridgeley 138 kV rebuild: WV PSC staff found no WV certificate needed, but the Maryland CPCN (PSC Case 9818, filed Oct 3, 2025))",
@@ -632,6 +632,7 @@
    "pjm-s2923.1 Mayfield - Pinegrove Q3 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2024-06 has passed and PJM has not marked it in service)",
    "pjm-s2923.2 Leroy Center - Pinegrove Q3 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2024-06 has passed and PJM has not marked it in service)",
    "pjm-s3035.2: 230 kV / 2029-11 / approved but PJM gives 230 kV / 2029-11 / planned (changed on purpose: Line Watch research: Hornbaker 230 kV Line Loop and Hornbaker Switching Station approved by SCC Final Order Dec 11, 2025 (PUR-2025-00046).)",
+   "pjm-s3594.1: left out on purpose, a newer public source puts it in service 2032-07, past the window",
    "pjm-s3608.5 s3608.5 765 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2025-12 has passed and PJM has not marked it in service)",
    "pjm-s3677.2: 230 kV / 2028-08 / approved but PJM gives 230 kV / 2028-08 / planned (changed on purpose: Line Watch research: SCC Final Order Feb 9, 2026 approved the 230 kV Duval-Midlothian Lines and Duval Substation (PUR-2025-00073).)",
    "pjm-s3693.2: 230 kV / 2029-06 / approved but PJM gives 230 kV / 2029-06 / planned (changed on purpose: Line Watch research: Devlin-Pegasus 230 kV lines are part of the Hornbaker 230 kV Line Loop approved by SCC Final Order Dec 11, 2025 (PUR-2025-00046).)",
@@ -661,7 +662,7 @@
  },
  {
   "check": "Texas and SPP sweep: researched lines have sources; corrections to official lists are deliberate",
-  "checked": 1381,
+  "checked": 1454,
   "errors": [],
   "warnings": [
    "tpit-102815 SandLake - North McCamey Transmission Line Addition: stage 'built' but ERCOT says 'Under Construction' (changed on purpose: Line Watch research: LCRA (July 2026) says the North McCamey-Sand Lake 345 kV line is complete and energized, and Oncor's Q2 2026 release says it placed its por)",
@@ -727,7 +728,7 @@
  },
  {
   "check": "U.S. only (every line and substation is in a U.S. state)",
-  "checked": 9579,
+  "checked": 9728,
   "errors": [],
   "warnings": [
    "pjms-pjm-east-marl-500-pa-portion MidAtlantic Resiliency Link 500 kV - Pennsylvania portions (502 Junction - WV border, Greene/Fayette): ends at the national border; only the U.S. part is listed",
@@ -741,6 +742,7 @@
    "nyr-gb-chpe-llc-ny-canada-border-astoria-annex Champlain Hudson Power Express (NY/Canada border - Astoria Annex) +/-400 kV HVDC: ends at the national border; only the U.S. part is listed",
    "isner-rsp-1819 NECEC HVDC: Maine/Canada border (Beattie Twp) - Merrill Road \u00b1320 kV: ends at the national border; only the U.S. part is listed",
    "pjmr-grain-belt-express-il-in Grain Belt Express Phase II (Illinois HVDC segment, Clark County converter, AC connector to AEP Sullivan): ends at the national border; only the U.S. part is listed",
+   "westr-nv-western-bounty-hvdc Western Bounty Transmission Line (Auriga converter - Nevada/Oregon border, 500-800 kV, Segments 1-3): ends at the national border; only the U.S. part is listed",
    "tpit-76690 Add Atchison POD: ends at the national border; only the U.S. part is listed",
    "isner-ri-347-sherman-road-ct-border-rebuild Sherman Road - RI/CT border 345 kV 347 Line rebuild: ends at the national border; only the U.S. part is listed"
   ]

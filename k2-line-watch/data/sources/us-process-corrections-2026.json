@@ -502,7 +502,7 @@
   },
   {
    "id": "misor-cannoli-brownstown-wayne-345",
-   "basis": "ITC's Project Cannoli page: the first 345 kV feed from Brownstown-Wayne #1/#2 is due in service late 2027 and the second late 2028.",
+   "basis": "ITC's Project Cannoli page: the first 345 kV feed from Brownstown-Wayne #1/#2 is due in service late 2027 and the second late 2028. ITC's Project Cannoli profile (Aug 2026): the first 345 kV feed (from Brownstown - Wayne #1) is scheduled in service late 2027 and the second (from Brownstown - Wayne #2) late 2028.",
    "sources": [
     "https://www.itc-holdings.com/projects/project-cannoli/",
     "https://www.itc-holdings.com/wp-content/uploads/2026/08/CPP-Project-Cannoli.pdf"
@@ -511,9 +511,11 @@
   },
   {
    "id": "misor-cannoli-345-swst",
-   "basis": "ITC's Project Cannoli page: switching station construction starts Q1 2028 and is due to finish Q3 2028 (for DTE's 1 GW data center in Van Buren Township).",
+   "basis": "ITC's Project Cannoli page: switching station construction starts Q1 2028 and is due to finish Q3 2028 (for DTE's 1 GW data center in Van Buren Township). ITC's Project Cannoli capital project profile (Aug 2026) says switching station construction begins Q1 2028 and is scheduled to be completed Q3 2028 (DTE request for Google's 1 GW Van Buren Township data center; MPSC approved the DTE-Google contracts 2026-10-01 in U-22058).",
    "sources": [
-    "https://www.itc-holdings.com/projects/project-cannoli/"
+    "https://www.itc-holdings.com/projects/project-cannoli/",
+    "https://www.itc-holdings.com/wp-content/uploads/2026/08/CPP-Project-Cannoli.pdf",
+    "https://www.michigan.gov/mpsc/commission/news-releases/2026/10/01/mpsc-approves-dte-electric-google-data-center-and-contracts-protects-customers-from-project-cost"
    ],
    "in_service": "2028-09"
   },
@@ -1016,6 +1018,40 @@
     "https://www.doa.nc.gov/media/17969/open"
    ],
    "in_service": "2028"
+  },
+  {
+   "id": "pjm-s3594.1",
+   "basis": "I&M's Olive-Reynolds 345 kV rebuild fact sheet dated 2026-10-28 shows construction early 2028 - summer 2032 and facilities placed in service summer 2032 (past the 2031-11 window), replacing the earlier 'conclude in spring 2031' date.",
+   "sources": [
+    "https://aeptransmission.com/Indiana/Olive-Reynolds/docs/Olive-Reynolds_FactSheet.pdf"
+   ],
+   "in_service": "2032-07"
+  },
+  {
+   "id": "misor-in-aes-antioch-bluebluff-345",
+   "basis": "AES Indiana selected Route A (~10 mi, 345 kV, Antioch near Monrovia to Blue Bluff near Eagle Valley) on 2026-09-14; its Sept 2026 fact sheet schedules construction fall 2028 - fall 2029 and facilities in service fall 2029.",
+   "sources": [
+    "https://www.aesindiana.com/sites/aesvault.com/files/2026-09/Morgan-County-Fact-Sheet-AES-Indiana-September-09-2026.pdf",
+    "https://morgancountycorrespondent.com/2026/09/17/aes-announces-final-decision-on-powerline-route"
+   ],
+   "in_service": "2029-10"
+  },
+  {
+   "id": "ser-tva-clay-artesia-161",
+   "basis": "TVA's Belmont Stage 2 page (update May 2026) says the Clay - Artesia 161 kV project is temporarily on hold though still planned; revised dates will be posted when work resumes, so the summer 2027 date no longer stands.",
+   "sources": [
+    "https://www.tva.com/energy/transmission/transmission-projects/belmont-stage-2--mississippi-%28clay--lowndes--and-oktibbeha-counties%29"
+   ],
+   "in_service": ""
+  },
+  {
+   "id": "ser-tva-south-macon-scooba-dekalb-161",
+   "basis": "TVA's final EA/FONSI (March 2025) schedules construction of the S. Macon - DeKalb 161 kV line from fall 2026 with an in-service date of late spring 2028 (TVA's project page says winter 2027-2028), earlier than the listed 2029.",
+   "sources": [
+    "https://tva-azr-eastus-cdn-ep-tvawcm-prd.azureedge.net/cdn-tvawcma/docs/default-source/environment/environmental-stewardship/nepa-environmental-reviews/final-ea_starkville-and-east-mississippi-area-power-improvement-project.pdf?sfvrsn=12cfff9e_3",
+    "https://www.tva.com/energy/transmission/transmission-projects/south-macon-scooba-dekalb-mississippi"
+   ],
+   "in_service": "2028-05"
   }
  ],
  "drop": {

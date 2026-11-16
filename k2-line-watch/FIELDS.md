@@ -248,6 +248,16 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
   why three projects were dropped). TVA's 161 kV lines count. PJM members (Dominion NC, EKPC, AEP Kentucky Power,
   Duke Energy Kentucky) and MISO members (Entergy Mississippi, Cooperative Energy, Big Rivers) are in their own regions.
   A researched project's `state` may name several states ("GA, AL").
+- **Every state's line-approval process (Nov 16, 2026)**: a sweep of each state's siting / certificate case list
+  (2023-2026), utilities' open-house and project pages, large-load and generator hookups and news, in
+  `data/sources/us-process-research-2026.json` (its `process_notes` say who approves lines in each state and where the
+  case list is; `left_out` says why some finds were not added) and `data/sources/us-process-corrections-2026.json`
+  (newer stages and dates for listed lines, with sources; a line moved past the window comes off, and the PJM check
+  lists those as left out on purpose). New ids: `pjms-` for PJM-area finds; other markets reuse their research
+  prefixes. Lines built to 230 kV but run at 115 kV (Alaska's Kenai rebuilds) do not count. Most Nevada finds are
+  generator-tie applications from the PUCN's UEPA case list, marked proposed: their decisions were not checked.
+- **KML layers** leave out `geometry_note`, `check_link` and `recommendation_reason` (the GeoJSON and CSV keep them)
+  so the all-regions KML stays under the 16 MB per-file publish limit.
 - **U.S. only**: the checker fails if any line or substation is outside a U.S. state; a line that runs to the national
   border is listed for its U.S. part, and the check lists those for review.
   Stations are placed by name on HIFLD / OpenStreetMap in the state given (and the county, when the source gives one),
