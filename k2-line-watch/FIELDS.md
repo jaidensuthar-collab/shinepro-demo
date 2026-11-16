@@ -239,6 +239,15 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
   `data/sources/west-research-2026.json`. Lines owned by SPP RTO members (Tri-State, Basin, WAPA Rocky Mountain and
   Upper Great Plains, Colorado Springs, Platte River, ...), CAISO participants (GridLiance West / VEA) and El Paso
   Electric are skipped: they are in their own regions. Black Hills (not an SPP member) is here.
+- **Southeast (Nov 16, 2026)**: market `Southeast` (ids `ser-`, region `southeast`): Georgia, Alabama, Mississippi
+  (Mississippi Power and TVA), Tennessee, Kentucky (LG&E/KU, TVA), North and South Carolina (Duke, Santee Cooper,
+  Dominion SC) and Florida. Researched from SERTP's 2024-2026 regional plans, the Georgia ITS 2025 ten-year plan, the
+  NC Transmission Planning Collaborative, NCUC and SC PSC siting cases, TVA project pages and environmental reviews,
+  Florida utilities' Ten-Year Site Plans, FRCC and Florida Transmission Line Siting Act cases, and Alabama,
+  Mississippi and Kentucky commission cases, in `data/sources/southeast-research-2026.json` (its `left_out` says
+  why three projects were dropped). TVA's 161 kV lines count. PJM members (Dominion NC, EKPC, AEP Kentucky Power,
+  Duke Energy Kentucky) and MISO members (Entergy Mississippi, Cooperative Energy, Big Rivers) are in their own regions.
+  A researched project's `state` may name several states ("GA, AL").
 - **U.S. only**: the checker fails if any line or substation is outside a U.S. state; a line that runs to the national
   border is listed for its U.S. part, and the check lists those for review.
   Stations are placed by name on HIFLD / OpenStreetMap in the state given (and the county, when the source gives one),

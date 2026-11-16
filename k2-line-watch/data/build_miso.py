@@ -287,7 +287,7 @@ def research_lines(places=None, have=(), have_mtep=(), path=None, prefix="misor-
                 near = next((x for x in ends if x.get("lat") is not None), None)
                 ends.append(places.place({"name": e["name"], "county": e.get("county", ""), "new": e.get("new", False)}, p["kv"], e["state"], p["sources"][0], near))
         new = [e["name"] for e in p["ends"] if e.get("new")]
-        states = sorted({e["state"] for e in p["ends"]} | {p["state"]})
+        states = sorted({e["state"] for e in p["ends"]} | {s.strip() for s in str(p["state"]).split(",") if s.strip()})
         rec = {"id": prefix + p["key"], "ercot_project": "", "name": p["name"], "description": (f"New substation{'s' if len(new) > 1 else ''}: {', '.join(new)}. " if new else "") + p["stage_basis"],
                "kv": p["kv"], "project_type": p["project_type"], "upgrade_kind": "", "lifecycle": p["stage"], "lifecycle_basis": p["stage_basis"],
                "tpit_status": "", "utility": p["utility"], "from": ends[0]["name"], "to": ends[-1]["name"] if len(ends) > 1 else "",

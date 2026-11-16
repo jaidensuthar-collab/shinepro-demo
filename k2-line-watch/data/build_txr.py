@@ -103,9 +103,14 @@ def covers(ends, h):
     return True
 
 
+def pstates(p):
+    """A researched project's own state field may name several states ('GA, AL')."""
+    return {s.strip() for s in str(p["state"]).split(",") if s.strip()}
+
+
 def duplicate(p, listed, pairs):
     ends = [t for t in (toks(e["name"]) for e in p["ends"]) if t]
-    states = {p["state"]} | {e["state"] for e in p["ends"]}
+    states = pstates(p) | {e["state"] for e in p["ends"]}
     listed = [h for st, h in listed if st & states]   # same names in another state are other stations
     if len(ends) >= 2:
         if any(covers(ends, h) for h in listed):
@@ -131,7 +136,7 @@ def txr_lines(out):
         if duplicate(p, listed, pairs) or (p.get("docket") and (str(p["docket"]).strip(), p["kv"]) in dockets and p["project_type"] != "new substation"):
             continue
         keep.append(p)
-        listed.append((frozenset({p["state"]} | {e["state"] for e in p["ends"]}), [t for t in (toks(e["name"]) for e in p["ends"]) if t]))   # the sweep files overlap each other too
+        listed.append((frozenset(pstates(p) | {e["state"] for e in p["ends"]}), [t for t in (toks(e["name"]) for e in p["ends"]) if t]))   # the sweep files overlap each other too
     places = MisoPlaces(states=STATES)
     have = {frozenset((B.base(e["name"]), e.get("state", "")) for e in x["endpoints"]) for x in out}
     lines = []
