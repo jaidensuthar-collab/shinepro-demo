@@ -1,0 +1,1025 @@
+{
+ "source": "Line Watch nationwide state-process sweep (Nov 16, 2026)",
+ "set": [
+  {
+   "id": "nyr-gb-lipa-syosset-oakwood",
+   "basis": "The Syosset - Oakwood work is under its own Article VII application, Case 25-T-0241 (filed April 15, 2025; public statement hearing Dec 3, 2025), not covered by the 24-T-0446 Propel NY certificate; no certificate for 25-T-0241 was found, so the route is still pending.",
+   "sources": [
+    "https://dps.ny.gov/system/files/documents/2025/09/active-article-vii-cases.pdf",
+    "https://dps.ny.gov/event/lipa-syosset-oakwood-project-public-statement-hearing"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b3800.7",
+   "basis": "This is PSEG's Maryland Piedmont Reliability Project (Conastone vicinity - Doubs 500 kV); its CPCN (MD PSC Case 9773, filed Dec 31, 2024) is still pending, with public comment hearings from March/May 2027 and evidentiary hearings May 11-21, 2027 per Order No. 92606, so the route is not approved.",
+   "sources": [
+    "https://psc.maryland.gov/proceeding/case-no-9773",
+    "https://dnr.maryland.gov/pprp/pages/projects-under-review.aspx",
+    "http://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2022-rtep-window-1/2022-dea-pseg-b3800.pdf"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b3800.43",
+   "basis": "This is PSEG's Maryland Piedmont Reliability Project (Conastone vicinity - Doubs 500 kV); its CPCN (MD PSC Case 9773, filed Dec 31, 2024) is still pending, with public comment hearings from March/May 2027 and evidentiary hearings May 11-21, 2027 per Order No. 92606, so the route is not approved.",
+   "sources": [
+    "https://psc.maryland.gov/proceeding/case-no-9773",
+    "https://dnr.maryland.gov/pprp/pages/projects-under-review.aspx",
+    "http://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2022-rtep-window-1/2022-dea-pseg-b3800.pdf"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b3800.4",
+   "basis": "b3800.4 (BGE's 1.6-mi Otter Creek/Chanceford - Doubs segment, MD border to PSEG demarcation) is BGE's Lieb Road Transmission Upgrade, whose CPCN (MD PSC Case 9882, filed June 16, 2026) is pending with a public comment hearing the week of May 3, 2027.",
+   "sources": [
+    "https://dnr.maryland.gov/pprp/pages/projects-under-review.aspx",
+    "https://webpscxb.pscmaryland.com/DMS/cpcnapplication"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b3800.13",
+   "basis": "b3800.13/.15 are Potomac Edison's Maryland section of Carroll-Hunterstown 230 kV; its CPCN (MD PSC Case 9803, filed July 18, 2025) is still pending (public comment hearing Oct 29, 2026) and construction is planned to begin around June 2027 for June 2028 service, so it is neither approved nor in construction.",
+   "sources": [
+    "https://dnr.maryland.gov/pprp/Documents/9803-PE-Carroll-State-Line-Project-Fact-Sheet-11-25-25.pdf",
+    "https://psc.maryland.gov/news/2026/maryland-public-service-commission-invites-comments-on-proposed-potomac-edison-230-kv-line-in-carroll-county"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b3800.15",
+   "basis": "b3800.13/.15 are Potomac Edison's Maryland section of Carroll-Hunterstown 230 kV; its CPCN (MD PSC Case 9803, filed July 18, 2025) is still pending (public comment hearing Oct 29, 2026) and construction is planned to begin around June 2027 for June 2028 service, so it is neither approved nor in construction.",
+   "sources": [
+    "https://dnr.maryland.gov/pprp/Documents/9803-PE-Carroll-State-Line-Project-Fact-Sheet-11-25-25.pdf",
+    "https://psc.maryland.gov/news/2026/maryland-public-service-commission-invites-comments-on-proposed-potomac-edison-230-kv-line-in-carroll-county"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b3772",
+   "basis": "Potomac Edison's Messick Road-Morgan 138 kV rebuild (27.3 mi, 16.4 in MD) is pending CPCN review in MD PSC Case 9876 (filed May 1, 2026), with an evening public comment hearing the week of July 14, 2027.",
+   "sources": [
+    "https://dnr.maryland.gov/pprp/pages/projects-under-review.aspx",
+    "https://webpscxb.pscmaryland.com/DMS/cpcnapplication"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b3683",
+   "basis": "Messick Road-Ridgeley 138 kV rebuild: WV PSC staff found no WV certificate needed, but the Maryland CPCN (PSC Case 9818, filed Oct 3, 2025) is still pending (testimony Oct 2026, hearing Nov 2026); construction planned ~Sept 2027 for June 2028 service.",
+   "sources": [
+    "https://dnr.maryland.gov/pprp/Documents/Case-9818-PE-Messick-Road-to-Ridgeley-Project-Fact-Sheet-2-3-26_1.pdf",
+    "https://www.firstenergycorp.com/content/dam/corporate/transmission/maryland/projects/Messick-Road-Application.pdf"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b3800.243",
+   "basis": "Pepco's Doubs-Aspen 500 kV / Dickerson H 23111 rebuild work (Dickerson H to MD/VA line, Montgomery County) is in MD PSC CPCN Case 9883, filed June 18, 2026 and pending (public comment hearing week of Nov 29, 2027).",
+   "sources": [
+    "https://psc.maryland.gov/proceeding/case-no-9883",
+    "https://dnr.maryland.gov/pprp/pages/projects-under-review.aspx",
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20261006/20261006-item-16---reliability-analysis-update---presentation.pdf"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b3800.244",
+   "basis": "Pepco's Doubs-Aspen 500 kV / Dickerson H 23111 rebuild work (Dickerson H to MD/VA line, Montgomery County) is in MD PSC CPCN Case 9883, filed June 18, 2026 and pending (public comment hearing week of Nov 29, 2027).",
+   "sources": [
+    "https://psc.maryland.gov/proceeding/case-no-9883",
+    "https://dnr.maryland.gov/pprp/pages/projects-under-review.aspx",
+    "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2026/20261006/20261006-item-16---reliability-analysis-update---presentation.pdf"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b3800.122",
+   "basis": "Potomac Edison's Maryland Doubs-Goose Creek corridor work (rebuilt Doubs-Goose Creek 500 kV, new Doubs-Aspen 500 kV with 230 kV underbuild) is in MD PSC CPCN Case 9870, filed March 27, 2026 and pending (final order requested by Dec 2027). Potomac Edison's Gore-Doubs-Goose Creek CPCN application (Case 9870) gives Maryland construction from May 2028 with an in-service date of December 31, 2031 (later than the listed 2030-06).",
+   "sources": [
+    "https://www.firstenergycorp.com/content/dam/corporate/transmission/maryland/projects/Application-Gore-Doubs-Goose-Creek-CPCN.pdf",
+    "https://psc.maryland.gov/proceeding/case-no-9870"
+   ],
+   "stage": "planned",
+   "in_service": "2031-12"
+  },
+  {
+   "id": "pjm-b3800.125",
+   "basis": "Potomac Edison's Maryland Doubs-Goose Creek corridor work (rebuilt Doubs-Goose Creek 500 kV, new Doubs-Aspen 500 kV with 230 kV underbuild) is in MD PSC CPCN Case 9870, filed March 27, 2026 and pending (final order requested by Dec 2027). Potomac Edison's Gore-Doubs-Goose Creek CPCN application (Case 9870) gives Maryland construction from May 2028 with an in-service date of December 31, 2031 (later than the listed 2030-06).",
+   "sources": [
+    "https://www.firstenergycorp.com/content/dam/corporate/transmission/maryland/projects/Application-Gore-Doubs-Goose-Creek-CPCN.pdf",
+    "https://psc.maryland.gov/proceeding/case-no-9870"
+   ],
+   "stage": "planned",
+   "in_service": "2031-12"
+  },
+  {
+   "id": "pjm-b3800.126",
+   "basis": "Potomac Edison's Maryland Doubs-Goose Creek corridor work (rebuilt Doubs-Goose Creek 500 kV, new Doubs-Aspen 500 kV with 230 kV underbuild) is in MD PSC CPCN Case 9870, filed March 27, 2026 and pending (final order requested by Dec 2027). Potomac Edison's Gore-Doubs-Goose Creek CPCN application (Case 9870) gives Maryland construction from May 2028 with an in-service date of December 31, 2031 (later than the listed 2030-06).",
+   "sources": [
+    "https://www.firstenergycorp.com/content/dam/corporate/transmission/maryland/projects/Application-Gore-Doubs-Goose-Creek-CPCN.pdf",
+    "https://psc.maryland.gov/proceeding/case-no-9870"
+   ],
+   "stage": "planned",
+   "in_service": "2031-12"
+  },
+  {
+   "id": "pjm-b3800.127",
+   "basis": "Potomac Edison's Maryland Doubs-Goose Creek corridor work (rebuilt Doubs-Goose Creek 500 kV, new Doubs-Aspen 500 kV with 230 kV underbuild) is in MD PSC CPCN Case 9870, filed March 27, 2026 and pending (final order requested by Dec 2027). Potomac Edison's Gore-Doubs-Goose Creek CPCN application (Case 9870) gives Maryland construction from May 2028 with an in-service date of December 31, 2031 (later than the listed 2030-06).",
+   "sources": [
+    "https://www.firstenergycorp.com/content/dam/corporate/transmission/maryland/projects/Application-Gore-Doubs-Goose-Creek-CPCN.pdf",
+    "https://psc.maryland.gov/proceeding/case-no-9870"
+   ],
+   "stage": "planned",
+   "in_service": "2031-12"
+  },
+  {
+   "id": "pjm-b3800.124",
+   "basis": "Potomac Edison's Gore-Doubs-Goose Creek CPCN application (Case 9870) gives Maryland construction from May 2028 with an in-service date of December 31, 2031 (later than the listed 2030-06).",
+   "sources": [
+    "https://www.firstenergycorp.com/content/dam/corporate/transmission/maryland/projects/Application-Gore-Doubs-Goose-Creek-CPCN.pdf",
+    "https://psc.maryland.gov/proceeding/case-no-9870"
+   ],
+   "in_service": "2031-12"
+  },
+  {
+   "id": "pjm-b3780.5",
+   "basis": "The Maryland PSC issued its final order granting BGE's Brandon Shores Retirement Mitigation Project CPCN (Case 9748), which covers the Solley Road and Batavia Road substation connections, on Aug 7, 2026; projected in service Dec 2028.",
+   "sources": [
+    "https://www.bge.com/critical-bge-transmission-project-receives-approval-to-move-forward-from-state-regulator",
+    "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/brandon-shores-updated-cost-allocation.pdf",
+    "https://psc.maryland.gov/proceeding/case-no-9748"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "pjm-b3780.7",
+   "basis": "The Maryland PSC issued its final order granting BGE's Brandon Shores Retirement Mitigation Project CPCN (Case 9748), which covers the Solley Road and Batavia Road substation connections, on Aug 7, 2026; projected in service Dec 2028.",
+   "sources": [
+    "https://www.bge.com/critical-bge-transmission-project-receives-approval-to-move-forward-from-state-regulator",
+    "https://www.pjm.com/-/media/DotCom/planning/gen-retire/deactivation-notices/brandon-shores-updated-cost-allocation.pdf",
+    "https://psc.maryland.gov/proceeding/case-no-9748"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "pjmr-wv-marl-500",
+   "basis": "MARL is a PJM-selected RTEP project (NEET MidAtlantic is the designated entity) with state applications now pending in PA (A-2026-3060856, filed March 3, 2026, requested in-service Dec 2029) and MD (Case 9857), so 'planned' rather than 'proposed'. MARL was selected by PJM (2022 Window 3); CPCN applications are pending in WV (26-0075-E-CN, hearing Oct 26-Nov 2, 2026, Staff recommends denial) and VA (PUR-2026-00018, evidentiary hearing Dec 8, 2026).",
+   "sources": [
+    "https://www.puc.pa.gov/pcdocs/1917562.pdf",
+    "https://dnr.maryland.gov/pprp/pages/projects-under-review.aspx",
+    "https://www.firstenergycorp.com/content/dam/corporate/transmission/gore-doubs-goose-creek-va-wv-fact-sheet.pdf",
+    "https://www.psc.state.wv.us/scripts/WebDocket/ViewDocument.cfm?CaseActivityID=661714&NotType=WebDocket",
+    "https://wvcleanbeautiful.com/projects/",
+    "https://stopmarlvirginia.com/virginia"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjmr-atsi-krendale-maple-138-tap",
+   "basis": "The PA PUC approved the ATSI/FE PA joint Letter of Notification for the Krendale-Maple 138 kV tap to Rozic Farm substation on Feb 6, 2025 (A-2024-3052660 / A-2025-3052831).",
+   "sources": [
+    "https://www.puc.pa.gov/pcdocs/1865070.pdf"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "pjm-s3737.5",
+   "basis": "PPL's Letter of Notification for the 1.1-mi double-circuit 230 kV taps from Susquehanna-Harwood #1/#2 into the new Tomhicken switchyard and the 0.1-mi lines to the customer 230-34 kV substation (A-2025-3059443, filed Dec 19, 2025) was protested and went to evidentiary hearings Sept 17-18, 2026; the record closed Oct 28, 2026 with the PUC decision still pending, so siting is not yet approved.",
+   "sources": [
+    "https://www.puc.pa.gov/pcdocs/1956500.pdf",
+    "https://www.puc.pa.gov/pcdocs/1950851.pdf",
+    "https://www.pacodeandbulletin.gov/Display/pabull?file=/secure/pabulletin/data/vol56/56-5/175.html"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-s3737.9",
+   "basis": "PPL's Letter of Notification for the 1.1-mi double-circuit 230 kV taps from Susquehanna-Harwood #1/#2 into the new Tomhicken switchyard and the 0.1-mi lines to the customer 230-34 kV substation (A-2025-3059443, filed Dec 19, 2025) was protested and went to evidentiary hearings Sept 17-18, 2026; the record closed Oct 28, 2026 with the PUC decision still pending, so siting is not yet approved.",
+   "sources": [
+    "https://www.puc.pa.gov/pcdocs/1956500.pdf",
+    "https://www.puc.pa.gov/pcdocs/1950851.pdf",
+    "https://www.pacodeandbulletin.gov/Display/pabull?file=/secure/pabulletin/data/vol56/56-5/175.html"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-n8188.1",
+   "basis": "KATCo filed a Letter of Notification on Oct 2, 2026 to construct the Brookville-Squab Hollow 138 kV Transmission Line Interconnection Project in Reynoldsville Borough (A-2026-3065688), on the PUC's Nov 5, 2026 agenda with a recommendation to approve, so the line was not in construction in 2025.",
+   "sources": [
+    "https://www.puc.pa.gov/media/4109/pm110526.pdf"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-s3876.1",
+   "basis": "s3876.1 is the KATCo/FE PA Kiski Valley-North Washington 138 kV tap (0.04 mi) to CNX Gas's new Strawberry substation; the PA PUC approved the joint Letter of Notification on Aug 6, 2026 (A-2026-3062984/-3062985). The Letter of Notification states construction from Aug 31, 2026 to meet an in-service date of June 9, 2027 (listed 2030-03).",
+   "sources": [
+    "https://www.puc.pa.gov/pcdocs/1944240.pdf",
+    "https://www.puc.pa.gov/pcdocs/1933735.pdf"
+   ],
+   "stage": "approved",
+   "in_service": "2027-06"
+  },
+  {
+   "id": "pjm-b3800.212",
+   "basis": "SCC CPCN for 500 kV and 230 kV Golden-Mars lines granted Apr 9, 2026; Final Order June 29, 2026 approved Route 3A (PUR-2025-00056; appeal to Supreme Court of Virginia pending).",
+   "sources": [
+    "https://www.scc.virginia.gov/docketsearch/DOCS/8d5z01!.PDF",
+    "https://unitedloudoun.org/tracker/golden-to-mars"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "pjm-b3800.211",
+   "basis": "The 230 kV Golden-Mars line was approved in PUR-2025-00056 (Final Order June 29, 2026); note the Prentice Loop replaced the Lockridge Loop in the approved project.",
+   "sources": [
+    "https://www.scc.virginia.gov/docketsearch/DOCS/8d5z01!.PDF",
+    "https://unitedloudoun.org/tracker/golden-to-mars"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "pjm-b3800.210",
+   "basis": "The 230 kV Golden-Mars line was approved in PUR-2025-00056 (Final Order June 29, 2026); note the Prentice Loop replaced the Lockridge Loop in the approved project.",
+   "sources": [
+    "https://www.scc.virginia.gov/docketsearch/DOCS/8d5z01!.PDF",
+    "https://unitedloudoun.org/tracker/golden-to-mars"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "pjm-s3677.2",
+   "basis": "SCC Final Order Feb 9, 2026 approved the 230 kV Duval-Midlothian Lines and Duval Substation (PUR-2025-00073).",
+   "sources": [
+    "https://www.dominionenergy.com/-/media/content/about/power-line-projects/western-chesterfield-electric-transmission-improvement-project/pdfs/scc-final-order.pdf"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "pjm-s3693.2",
+   "basis": "Devlin-Pegasus 230 kV lines are part of the Hornbaker 230 kV Line Loop approved by SCC Final Order Dec 11, 2025 (PUR-2025-00046).",
+   "sources": [
+    "https://www.dominionenergy.com/about/delivering-energy/electric-projects/power-line-projects/hornbaker-devlin",
+    "https://www.scc.virginia.gov/docketsearch/DOCS/84x_01!.PDF"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "pjm-s3035.2",
+   "basis": "Hornbaker 230 kV Line Loop and Hornbaker Switching Station approved by SCC Final Order Dec 11, 2025 (PUR-2025-00046).",
+   "sources": [
+    "https://www.dominionenergy.com/about/delivering-energy/electric-projects/power-line-projects/hornbaker-devlin",
+    "https://www.scc.virginia.gov/docketsearch/DOCS/84x_01!.PDF"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "pjm-b3800.103",
+   "basis": "This is part of Potomac Edison's Gore-Doubs-Goose Creek project; the Virginia CPCN application was filed with the SCC Oct 30, 2026 (PUR-2026-00178) and is pending, so the route is not yet approved. Potomac Edison's Nov 2, 2026 release gives an anticipated in-service date of December 2030 for the Virginia portion.",
+   "sources": [
+    "https://investors.firstenergycorp.com/investor-materials/news-releases/news-details/2026/Potomac-Edison-Advances-Power-Line-Upgrades-to-Strengthen-Reliability-for-Virginia-Customers/default.aspx",
+    "https://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2022-rtep-window-3/2022-w3-dea-poted-b3800.pdf",
+    "https://stopmarlvirginia.com/virginia"
+   ],
+   "stage": "planned",
+   "in_service": "2030-12"
+  },
+  {
+   "id": "pjm-b3800.105",
+   "basis": "This is part of Potomac Edison's Gore-Doubs-Goose Creek project; the Virginia CPCN application was filed with the SCC Oct 30, 2026 (PUR-2026-00178) and is pending, so the route is not yet approved. Potomac Edison's Nov 2, 2026 release gives an anticipated in-service date of December 2030 for the Virginia portion.",
+   "sources": [
+    "https://investors.firstenergycorp.com/investor-materials/news-releases/news-details/2026/Potomac-Edison-Advances-Power-Line-Upgrades-to-Strengthen-Reliability-for-Virginia-Customers/default.aspx",
+    "https://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2022-rtep-window-3/2022-w3-dea-poted-b3800.pdf",
+    "https://stopmarlvirginia.com/virginia"
+   ],
+   "stage": "planned",
+   "in_service": "2030-12"
+  },
+  {
+   "id": "pjm-b3800.104",
+   "basis": "Gore-Doubs-Goose Creek West Virginia (Jefferson County, 15.4 mi) portion: only a notice of intent is on file at the WV PSC; Potomac Edison said Nov 2, 2026 it will file the WV application next month.",
+   "sources": [
+    "https://investors.firstenergycorp.com/investor-materials/news-releases/news-details/2026/Potomac-Edison-Advances-Power-Line-Upgrades-to-Strengthen-Reliability-for-Virginia-Customers/default.aspx",
+    "https://www.pjm.com/-/media/DotCom/planning/rtep-dev/expan-plan-process/ferc-order-1000/rtep-proposal-windows/2022-rtep-window-3/2022-w3-dea-poted-b3800.pdf",
+    "https://www.firstenergycorp.com/about/transmission_projects/westvirginia/gore-doubs.html"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b3800.300",
+   "basis": "Charlottesville-Gordonsville 230 kV rebuild (Lines #2054/#2135 via Hollymeade Junction) application filed Apr 23, 2026 (PUR-2026-00050) and still pending; comments due Nov 23, 2026.",
+   "sources": [
+    "https://www.scc.virginia.gov/docketsearch/DOCS/8dkh01!.PDF",
+    "https://www.scc.virginia.gov/case-information/submit-public-comments/"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b3800.301",
+   "basis": "Charlottesville-Gordonsville 230 kV rebuild (Lines #2054/#2135 via Hollymeade Junction) application filed Apr 23, 2026 (PUR-2026-00050) and still pending; comments due Nov 23, 2026.",
+   "sources": [
+    "https://www.scc.virginia.gov/docketsearch/DOCS/8dkh01!.PDF",
+    "https://www.scc.virginia.gov/case-information/submit-public-comments/"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b4000.300",
+   "basis": "Marsh Run CT-Remington CT Lines #299/#280 rebuild application filed May 12, 2026 (PUR-2026-00063); no SCC final order found.",
+   "sources": [
+    "https://www.dominionenergy.com/about/delivering-energy/electric-projects/power-line-projects/remington-marsh-run",
+    "https://www.dominionenergy.com/-/media/content/about/power-line-projects/remington-marshrun/pdfs/scc-application---marsh-run-volume-two.pdf"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b4000.301",
+   "basis": "Marsh Run CT-Remington CT Lines #299/#280 rebuild application filed May 12, 2026 (PUR-2026-00063); no SCC final order found.",
+   "sources": [
+    "https://www.dominionenergy.com/about/delivering-energy/electric-projects/power-line-projects/remington-marsh-run",
+    "https://www.dominionenergy.com/-/media/content/about/power-line-projects/remington-marshrun/pdfs/scc-application---marsh-run-volume-two.pdf"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-s3701.2",
+   "basis": "Allman Station 230 kV project is pending at the SCC (PUR-2026-00068, filed 2026); no final order found.",
+   "sources": [
+    "https://www.scc.virginia.gov/consumers/public-utility/electricity-faqs/transmission-line-projects"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b4000.304",
+   "basis": "Dominion's Gainesville-Wheeler 230 kV rebuild (~6 miles) had not been filed with the SCC as of Aug 2026 (filing planned Q4 2026, approval anticipated summer 2027).",
+   "sources": [
+    "https://www.dominionenergy.com/about/delivering-energy/electric-projects/power-line-projects/gainesville-wheeler"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b4000.305",
+   "basis": "Dominion's Gainesville-Wheeler 230 kV rebuild (~6 miles) had not been filed with the SCC as of Aug 2026 (filing planned Q4 2026, approval anticipated summer 2027).",
+   "sources": [
+    "https://www.dominionenergy.com/about/delivering-energy/electric-projects/power-line-projects/gainesville-wheeler"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b4000.306",
+   "basis": "Dominion's Gainesville-Wheeler 230 kV rebuild (~6 miles) had not been filed with the SCC as of Aug 2026 (filing planned Q4 2026, approval anticipated summer 2027).",
+   "sources": [
+    "https://www.dominionenergy.com/about/delivering-energy/electric-projects/power-line-projects/gainesville-wheeler"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b4000.307",
+   "basis": "Dominion's Gainesville-Wheeler 230 kV rebuild (~6 miles) had not been filed with the SCC as of Aug 2026 (filing planned Q4 2026, approval anticipated summer 2027).",
+   "sources": [
+    "https://www.dominionenergy.com/about/delivering-energy/electric-projects/power-line-projects/gainesville-wheeler"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-s3699.3",
+   "basis": "Dominion's Vint Hill-Devlin 230 kV line had not been filed with the SCC as of Aug 2026 (filing planned Q4 2026, approval anticipated summer 2027).",
+   "sources": [
+    "https://www.dominionenergy.com/about/delivering-energy/electric-projects/power-line-projects/gainesville-wheeler"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-s4031.1",
+   "basis": "Dominion's BECO-to-Firehouse page says the new lines are expected in service by early 2029 (application PUR-2026-00062 filed May 8, 2026).",
+   "sources": [
+    "https://www.dominionenergy.com/about/delivering-energy/electric-projects/power-line-projects/beco-to-firehouse"
+   ],
+   "in_service": "2029"
+  },
+  {
+   "id": "pjmr-dom-global-plaza-extension-230",
+   "basis": "Dominion targets an SCC filing in Dec 2026 and lines in service by the end of 2029.",
+   "sources": [
+    "https://www.dominionenergy.com/about/delivering-energy/electric-projects/power-line-projects/global-plaza-extension"
+   ],
+   "in_service": "2029"
+  },
+  {
+   "id": "pjmr-dom-carson-midlothian-500-rebuild",
+   "basis": "Dominion fact sheet: Carson-Midlothian construction Q4 2027-late 2030 (~37.4 miles).",
+   "sources": [
+    "https://cdn-dominionenergy-prd-001.azureedge.net/-/media/content/about/power-line-projects/carson-midlothian-north-anna/pdfs/carson-midlothian-northanna-fact-sheet.pdf?rev=ac9bd1f546234b8db6c97bc376beaca3"
+   ],
+   "in_service": "2030"
+  },
+  {
+   "id": "pjmr-dom-north-anna-midlothian-500-rebuild",
+   "basis": "Dominion fact sheet: North Anna-Midlothian construction Q2 2028-late 2030 (~41.1 miles).",
+   "sources": [
+    "https://cdn-dominionenergy-prd-001.azureedge.net/-/media/content/about/power-line-projects/carson-midlothian-north-anna/pdfs/carson-midlothian-northanna-fact-sheet.pdf?rev=ac9bd1f546234b8db6c97bc376beaca3"
+   ],
+   "in_service": "2030"
+  },
+  {
+   "id": "pjm-b4000.359",
+   "basis": "AEP's Joshua Falls 765 kV substation relocation (with ~1.5 mi new 765 kV and ~2.7 mi new 138 kV line) targets SCC filing late 2026 and in-service fall 2030.",
+   "sources": [
+    "https://aeptransmission.com/virginia/JoshuaFallsStation/open-house/dist/docs/JoshuaFalls-SS_VOH.pdf"
+   ],
+   "in_service": "2030"
+  },
+  {
+   "id": "pjm-b4068.3",
+   "basis": "OPSB pre-application notification letter for the Ohio part, now named Greentown - Thistlewood 765 kV (Teddy = Thistlewood), was filed 2026-08-28 by Grid Growth Ohio EHV, LLC; certificate application planned for spring 2027 (docket 26-0809-EL-BTX).",
+   "sources": [
+    "https://dis.puc.state.oh.us/CaseRecord.aspx?CaseNo=26-0809-EL-BTX"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b4068.4",
+   "basis": "Same line as b4068.3: OPSB pre-application filed 2026-08-28 as Greentown - Thistlewood 765 kV, docket 26-0809-EL-BTX (Grid Growth Ohio EHV, LLC).",
+   "sources": [
+    "https://dis.puc.state.oh.us/CaseRecord.aspx?CaseNo=26-0809-EL-BTX"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b4068.7",
+   "basis": "OPSB pre-application filed 2026-08-28 as Thistlewood - Marysville 765 kV (~35 mi, Clark, Champaign and Union counties), docket 26-0810-EL-BTX, public info meetings Sept 22-24, 2026.",
+   "sources": [
+    "https://opsb.ohio.gov/cases/26-0810-el-btx",
+    "https://dis.puc.state.oh.us/CaseRecord.aspx?CaseNo=26-0810"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-b4068.8",
+   "basis": "Same line as b4068.7: Thistlewood - Marysville 765 kV, OPSB docket 26-0810-EL-BTX (pre-application filed 2026-08-28).",
+   "sources": [
+    "https://opsb.ohio.gov/cases/26-0810-el-btx"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "pjm-s3898.3",
+   "basis": "AES Ohio's Atlanta-Fayette 345 kV LON (25-0810-EL-BLN) received an OPSB Staff Report of Investigation on 2026-03-11 and AES filed condition-compliance notices in Sept 2026; a route amendment (26-0800-EL-BLN) was filed 2026-08-17.",
+   "sources": [
+    "https://dis.puc.state.oh.us/CaseRecord.aspx?CaseNo=25-0810-EL-BLN",
+    "https://dis.puc.state.oh.us/CaseRecord.aspx?CaseNo=26-0800-EL-BLN&Type=All"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "pjm-s3898.6",
+   "basis": "OPSB Finding & Order approving AES Ohio's Fayette to Clinton 345 kV application issued 2026-08-20 (25-0871-EL-BLN).",
+   "sources": [
+    "https://dis.puc.state.oh.us/CaseRecord.aspx?CaseNo=25-0871-EL-BLN"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "miso-lrtp-17",
+   "basis": "On 2025-07-10 the MPSC approved METC's Act 30 certificate for the Helix-Hiple 345 kV line (proposed route), the Michigan part of this Hiple - Duck Lake (Helix) project: ~55 miles from northern Indiana to the new Helix substation southwest of Lansing.",
+   "sources": [
+    "https://www.mifuturegrid.com/helix-hiple/",
+    "https://www.michigan.gov/mpsc/commission/news-releases/2025/07/10/mpsc-approves-two-new-transmission-lines-to-be-built-by-michigan-electric-transmission-co"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "miso-lrtp-18",
+   "basis": "On 2025-07-10 the MPSC approved METC's Act 30 certificate for the Nelson Road - Oneida 345 kV line (alternate route), ~40 miles from Oneida (Eaton County) to Nelson Road (Gratiot County).",
+   "sources": [
+    "https://www.mifuturegrid.com/nelson-road-oneida/",
+    "https://www.michigan.gov/mpsc/commission/news-releases/2025/07/10/mpsc-approves-two-new-transmission-lines-to-be-built-by-michigan-electric-transmission-co"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "misor-cannoli-brownstown-wayne-345",
+   "basis": "ITC's Project Cannoli page: the first 345 kV feed from Brownstown-Wayne #1/#2 is due in service late 2027 and the second late 2028.",
+   "sources": [
+    "https://www.itc-holdings.com/projects/project-cannoli/",
+    "https://www.itc-holdings.com/wp-content/uploads/2026/08/CPP-Project-Cannoli.pdf"
+   ],
+   "in_service": "2028-12"
+  },
+  {
+   "id": "misor-cannoli-345-swst",
+   "basis": "ITC's Project Cannoli page: switching station construction starts Q1 2028 and is due to finish Q3 2028 (for DTE's 1 GW data center in Van Buren Township).",
+   "sources": [
+    "https://www.itc-holdings.com/projects/project-cannoli/"
+   ],
+   "in_service": "2028-09"
+  },
+  {
+   "id": "pjm-s2797.1",
+   "basis": "I&M's Anderson-Elwood project page: rebuild of ~15 mi of 138 kV between Pendleton and Makahoy substations, construction began fall 2025 and is due to conclude by early 2027 (listed as approved, 2029-10). Same page: construction expected to conclude by early 2027.",
+   "sources": [
+    "https://www.aeptransmission.com/indiana/Anderson-Elwood/"
+   ],
+   "stage": "in construction",
+   "in_service": "2027"
+  },
+  {
+   "id": "pjm-s2428.4",
+   "basis": "Kentucky Power: the Wooton - Stinnett section (~11 mi of 161 kV) was under construction in 2025 with completion planned for November 2025 and restoration through June 2026; the Stinnett - Pineville rebuild was announced 2026-03-05 and a proposed route was selected 2026-07-31.",
+   "sources": [
+    "https://www.aeptransmission.com/kentucky/Wooton-Stinnett/",
+    "https://www.aeptransmission.com/kentucky/Stinnett-Pineville/"
+   ],
+   "stage": "in construction"
+  },
+  {
+   "id": "miso-lrtp-2",
+   "basis": "MN PUC issued route permits for Alexandria-Big Oaks (Oct 2024, under construction per MN biennial report) and Big Stone South-Alexandria (June 25, 2026). SD PUC granted the Big Stone South-Alexandria facility permit Jan 30, 2025 (EL24-015), MN PUC issued the Alexandria-Big Oaks route permit Oct 2024 and the Big Stone South-Alexandria Minnesota route permit June 25, 2026; construction 2028, in service end of 2030.",
+   "sources": [
+    "https://puc.eip.mn.gov/web/project/15867",
+    "https://www.minnelectrans.com/documents/2025_Biennial_Report/html/Ch_5_Transmission_Planning_Zones.htm",
+    "https://puc.sd.gov/Dockets/Electric/2024/EL24-015.aspx",
+    "https://www.mrenergy.com/news/wmmpa-and-otter-tail-power-company-receive-route-permit-approval-for-minnesota-portion-of-new-transmission-line"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "miso-lrtp-4",
+   "basis": "MN PUC granted the CN and route permit for Mankato-Mississippi River (Wilmarth-North Rochester-Mississippi) on April 14, 2026, and PSCW issued a final decision for the Wisconsin Alma-Blair (Tremval) 345 kV segment in March 2026 (1515-CE-103).",
+   "sources": [
+    "https://puc.eip.mn.gov/web/project/15507",
+    "https://psc.wi.gov/Pages/CommissionActions/CasePages/AlmaBlair.aspx"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "miso-lrtp-5",
+   "basis": "PSCW final decision December 11, 2025 (5-CE-158, Western Wisconsin Transmission Connection); construction Q3 2026, completion Q3 2029.",
+   "sources": [
+    "https://psc.wi.gov/Pages/CommissionActions/CasePages/WesternWisconsin.aspx"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "miso-lrtp-6",
+   "basis": "PSCW approved Grid Forward Central Wisconsin (Tremval-Arpin-Columbia, 5-CE-157) December 10, 2025; ATC reported line construction began Q2 2026. ATC says the project remains on schedule for a December 2030 in-service date.",
+   "sources": [
+    "https://www.atcllc.com/grid-forward-central-wisconsin-project-advances-into-construction-remains-aligned-with-original-cost-estimate",
+    "https://psc.wi.gov/Pages/CommissionActions/CasePages/GridForwardCentralWisconsin.aspx"
+   ],
+   "stage": "in construction",
+   "in_service": "2030-12"
+  },
+  {
+   "id": "miso-lrtp-7",
+   "basis": "The Marshalltown (Twinkle) - Morgan Valley 345 kV segment received IUC franchise E-22544 on Dec 1, 2025 and ITC Midwest began construction in early 2026 (in service Sept 2027); the MidAmerican Webster-Franklin segment (E-22543) had IUC hearings in Aug 2026.",
+   "sources": [
+    "https://www.itc-holdings.com/community-stories/itc-midwest-begins-construction-on-morgan-valley-twinkle-project/",
+    "https://iuc.iowa.gov/press-release/2025-12-01/iuc-issues-decision-itc-midwest-electric-transmission-line-docket"
+   ],
+   "stage": "in construction"
+  },
+  {
+   "id": "miso-lrtp-8",
+   "basis": "ITC Midwest reports the IUC issued its order on the Beverly - Sub 92 franchise (E-22560, hearing July 7, 2026). ITC Midwest project site: construction complete fourth quarter 2028.",
+   "sources": [
+    "https://www.itc-holdings.com/wp-content/uploads/2026/10/ITC-Midwest-Fall-PIB-2026-Presentation.pdf",
+    "https://www.beverly-sub92.com/"
+   ],
+   "stage": "approved",
+   "in_service": "2028-12"
+  },
+  {
+   "id": "miso-lrtp-12",
+   "basis": "ITC Midwest reports an IUC order issued for the Ottumwa - Skunk River/Coddington 345 kV franchise (E-22548, 54 mi) — the Ottumwa-Skunk River segment of this project.",
+   "sources": [
+    "https://www.itc-holdings.com/wp-content/uploads/2026/10/ITC-Midwest-Fall-PIB-2026-Presentation.pdf"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "miso-lrtp-14",
+   "basis": "ICC granted the CPCN for the Central Illinois Grid Transformation Program (Docket 24-0088) on July 2, 2025; construction beginning 2026, completion 2029.",
+   "sources": [
+    "https://www.ameren.com/reliability/transmission/central-illinois",
+    "https://icc.illinois.gov/api/web-management/documents/downloads/public/en/2025%20Electricity%20Gas%20Water%20Sewer%20Utilities%20Report.pdf"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "miso-lrtp-15",
+   "basis": "Illinois portion (Champaign, Ford, Iroquois counties) approved in ICC Docket 24-0088 order of July 2, 2025 (Central Illinois Grid Transformation Program).",
+   "sources": [
+    "https://www.ameren.com/reliability/transmission/central-illinois",
+    "https://icc.illinois.gov/docket/P2024-0088/documents/361990/files/633929.pdf"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "mtep25-50330",
+   "basis": "ICC approved the preferred route and issued a CPCN for the Illinois Valley Reliability Project (Princeton - new Lima switching station near Peru, 21 mi 138 kV; Docket 26-0081) on September 3, 2026. Ameren targets in-service in late 2029.",
+   "sources": [
+    "https://www.ameren.com/reliability/transmission/illinois-valley"
+   ],
+   "stage": "approved",
+   "in_service": "2029-12"
+  },
+  {
+   "id": "mtep25-50269",
+   "basis": "ITC Midwest energized the Big Cedar 345 kV substation in March 2026. ITC Midwest energized the Big Cedar Substation in March 2026.",
+   "sources": [
+    "https://www.itc-holdings.com/projects/big-cedar-substation"
+   ],
+   "stage": "built",
+   "in_service": "2026-03"
+  },
+  {
+   "id": "mtep25-50273",
+   "basis": "ITC Midwest project site shows Beverly - Hills construction complete Q4 2028 (IUC order issued in E-22559 after July 7, 2026 hearing).",
+   "sources": [
+    "https://www.beverly-hillsproject.com/",
+    "https://www.itc-holdings.com/wp-content/uploads/2026/10/ITC-Midwest-Fall-PIB-2026-Presentation.pdf"
+   ],
+   "in_service": "2028-12"
+  },
+  {
+   "id": "misor-osceola-winterset-161",
+   "basis": "ITC Midwest project site: construction begins Q1 2029 if approved, complete 2030.",
+   "sources": [
+    "https://www.osceola-winterset.com/"
+   ],
+   "in_service": "2030"
+  },
+  {
+   "id": "misor-il-sursee-aviston-138",
+   "basis": "ATXI's 2026 ICC eminent-domain filing (Docket 25-0886) states the expected in-service date is now December 2027.",
+   "sources": [
+    "https://icc.illinois.gov/docket/P2025-0886/documents/379852/files/666338.pdf"
+   ],
+   "in_service": "2027-12"
+  },
+  {
+   "id": "misor-il-mo-grandtower-wittenberg-jenkins-138",
+   "basis": "Ameren targets in-service by end of 2028; Missouri PSC issued the CCN Feb 5, 2026; Illinois ICC application planned for 2027. Missouri PSC Order Approving Stipulation and Agreement and Granting CCN issued 2026-02-05 in EA-2025-0222 for ATXI's Grand Tower 138 kV line in Perry County. Ameren's Grand Tower Crossing project materials state the goal is to have the new ~4-mile 138 kV line in service by the end of 2028.",
+   "sources": [
+    "https://ameren.mediaroom.com/2026-11-13-Ameren-Illinois-to-host-open-houses-for-transmission-project-in-Grand-Tower",
+    "https://www.grandtowercrossing.com/",
+    "https://efis.psc.mo.gov/Document/Display/865341",
+    "https://efis.psc.mo.gov/Case/Display/93493",
+    "https://www.ameren.com/grandtowercrossing",
+    "https://ameren.mediaroom.com/2025-02-24-Ameren-Transmission-hosts-additional-open-houses-for-public-input-on-Grand-Tower-Crossing-Project"
+   ],
+   "in_service": "2028-12",
+   "stage": "approved"
+  },
+  {
+   "id": "mtep25-51249",
+   "basis": "Entergy's Q3 2026 results release (2026-11-02) states the LPSC approved Entergy Louisiana's $1.2 billion Babel to Webre transmission project (certification sought in LPSC Docket U-37812, filed Dec 2025).",
+   "sources": [
+    "https://finviz.com/news/412965/entergy-reports-third-quarter-2026-financial-results",
+    "https://www.bicmagazine.com/industry/powergen/entergy-advances-louisiana-transmission-project/"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "mtep25-51246",
+   "basis": "LPSC Order U-37425 (Aug 2025, Meta Laidley/Richland Parish) found the new ~60-mile Mount Olive-Sarepta 500 kV line and Sarepta 500/345 kV autotransformer in the public interest with generalized siting appropriate under the Transmission Siting Order; Entergy reports the project in progress.",
+   "sources": [
+    "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=nDWn%2Fjuc2%20A%3D",
+    "https://www.entergylouisiana.com/transmission"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "misor-eno-sullivan-230-sub",
+   "basis": "Entergy New Orleans transmission page (as of March 2026): Sullivan 230 kV substation for the Sewerage and Water Board 'Completed - July 2025'.",
+   "sources": [
+    "https://www.entergy-neworleans.com/transmission"
+   ],
+   "in_service": "2025-07"
+  },
+  {
+   "id": "miso-lrtp-10",
+   "basis": "Missouri PSC Order Granting CCN issued 2025-07-16 in EA-2025-0087 authorized ATXI's ~200-mile Denny-Zachary-Thomas Hill-Maywood (DZTM) 345 kV project; case closed 2026-07-21.",
+   "sources": [
+    "https://efis.psc.mo.gov/Case/Display/90142",
+    "https://efis.psc.mo.gov/Document/Display/839713"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "miso-lrtp-9",
+   "basis": "Missouri PSC Report and Order of 2025-12-11 in EA-2024-0302 granted ATXI a CCN for the Missouri portion (44 miles of 345 kV in Worth, Gentry and DeKalb counties plus new Denny 345 kV substation, the 'Fairport-Denny-Iowa/Missouri Border' project); Iowa portion not covered by this order.",
+   "sources": [
+    "https://efis.psc.mo.gov/Document/Display/860128",
+    "https://efis.psc.mo.gov/Case/Display/86962"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "miso-lrtp-11",
+   "basis": "Missouri PSC Report and Order of 2025-12-11 in EA-2024-0302 granted ATXI a CCN for the Maywood-Mississippi River Crossing (about 9 miles of 345 kV from Maywood near Palmyra to the IL/MO border, Marion County); Illinois portion not covered by this order.",
+   "sources": [
+    "https://efis.psc.mo.gov/Document/Display/860128",
+    "https://efis.psc.mo.gov/Case/Display/86962"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "mtep25-50258",
+   "basis": "The 28-mile Burns-Montgomery double-circuit 345 kV (Montgomery-Callaway Connector) CCN in EA-2026-0058 is still pending; Ameren Missouri filed an amended application on 2026-11-02, so the route is not yet approved by the PSC. Amended application (2026-11-02) in EA-2026-0058: construction to start fall 2029, anticipated in-service December 1, 2030.",
+   "sources": [
+    "https://efis.psc.mo.gov/Case/Display/100845",
+    "https://efis.psc.mo.gov/Document/Display/857817"
+   ],
+   "stage": "planned",
+   "in_service": "2030-12"
+  },
+  {
+   "id": "sppr-mo-evergy-st-joseph-edmond-lake-alabama-161",
+   "basis": "Evergy's St. Joseph project page: new 3.3-mile Edmond Street-Lake Road and 1.3-mile Lake Road-Alabama Street 161 kV lines, construction to begin 2027 and be completed in fall 2028 (route selection under way).",
+   "sources": [
+    "https://www.evergy.com/partner-with-us/transmission-projects/st-joseph"
+   ],
+   "in_service": "2028-10"
+  },
+  {
+   "id": "miso-lrtp-1",
+   "basis": "ND PSC granted the JETx Certificate of Corridor Compatibility No. 244 and route permit on June 24, 2026 (PU-25-236); landowner/township appeal filed July 2026.",
+   "sources": [
+    "https://www.psc.nd.gov/webdocs/case/25-0236/108-010.pdf",
+    "https://www.newsdakota.com/2026/06/25/psc-grants-final-approval-to-jetx-transmission-line/"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "spp-156248",
+   "basis": "ND PSC approved Wheelock-Saskatchewan 230 kV (PU-25-283) May 14, 2026; Basin filed a notice of intent to start construction June 9, 2026 and monthly construction reports for Aug-Oct 2026.",
+   "sources": [
+    "https://apps.psc.nd.gov/cases/pscasedetail?getId=25&getId2=283"
+   ],
+   "stage": "in construction"
+  },
+  {
+   "id": "spp-156240",
+   "basis": "ND PSC approved Tande-Saskatchewan 230 kV (PU-25-284) May 14, 2026; Basin filed a notice of intent to start construction June 9, 2026 and a monthly construction report for August 2026.",
+   "sources": [
+    "https://apps.psc.nd.gov/cases/sortpscd?getId=25&getId2=284&sort=OB"
+   ],
+   "stage": "in construction"
+  },
+  {
+   "id": "caisor-tdf-2122-p-03",
+   "basis": "LSPGC's Sept 2026 GO 131-E report gives the Collinsville current projected in-service date as May 31, 2029 (CPCN delay, PG&E readiness); Final EIR published March 23, 2026, CPUC decision expected Q4 2026.",
+   "sources": [
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/lspgc-cpuc-q3-update-2026-0910.pdf"
+   ],
+   "in_service": "2029-05"
+  },
+  {
+   "id": "caisor-tdf-1415-r-03",
+   "basis": "PG&E's Sept 2026 GO 131-E report shows Egbert 230 kV Switching Station in service date 2/28/2030.",
+   "sources": [
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/pge-cpuc-q3-update-2026-0915.pdf"
+   ],
+   "in_service": "2030-02"
+  },
+  {
+   "id": "caisor-tdf-2223-p-21",
+   "basis": "SCE's Oct 2026 GO 131-E report gives the Etiwanda-Vista 230 kV Line Upgrade (SP-168, ~10 miles ACCC reconductor) an anticipated in-service date of December 2031, with an advice letter planned for Q2/Q3 2027.",
+   "sources": [
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/sce-cpuc-q3-update-2026-1001.pdf"
+   ],
+   "in_service": "2031-12"
+  },
+  {
+   "id": "westr-az-mariposa-pinal-west-jojoba-500",
+   "basis": "ACC unanimously approved Mariposa Energy Park's CEC (Case 265) on Nov 4, 2026 for the ~3.6-mile 500 kV interconnection.",
+   "sources": [
+    "https://www.azcc.gov/news/home/2026/11/09/november-4--2026-open-meeting-highlights"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "westr-az-wild-stallion-trilby-wash-230",
+   "basis": "ACC unanimously approved the Wild Stallion CEC (Case 264, up to 2-mile 230 kV line) on Nov 4, 2026. ACC Nov 4, 2026 highlights state the project is expected to be completed in 2030.",
+   "sources": [
+    "https://www.azcc.gov/news/home/2026/11/09/november-4--2026-open-meeting-highlights"
+   ],
+   "stage": "approved",
+   "in_service": "2030"
+  },
+  {
+   "id": "westr-az-vulcan-hassayampa-500",
+   "basis": "ACC approved the CEC for the Vulcan Interconnection Project 500 kV gen-tie to SRP Hassayampa (Case 258) on April 8, 2026.",
+   "sources": [
+    "https://azcc.gov/news/home/2026/04/10/april-8--2026-open-meeting-highlights"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "westr-ng-sand-dune",
+   "basis": "NV Energy's 2026 WECC Annual Progress Report gives the Sand Dune 230 kV switching station (Harry Allen-Pecos #1 fold) a proposed ISD of June 2030.",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/NVE%202026%20APR.pdf"
+   ],
+   "in_service": "2030-06"
+  },
+  {
+   "id": "westr-ng-lantern-comstock",
+   "basis": "NV Energy's 2026 WECC Annual Progress Report says the new Lantern-Comstock Meadows 345 kV line for Sierra Solar phase 2 has an ISD of 2028.",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/NVE%202026%20APR.pdf"
+   ],
+   "in_service": "2028"
+  },
+  {
+   "id": "westr-wc-2030-1653",
+   "basis": "Circuit 5107 Daniels Park - Santa Fe uprate: CPCN granted by Decision R26-0001 in Proceeding 24A-0560E (in service 2030).",
+   "sources": [
+    "https://tristate.coop/wp-content/uploads/2026/08/appendix-f-public-service-projects-2.pdf"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "westr-wc-2030-1661",
+   "basis": "Circuits 5167/5285 Smoky Hill - Buckley - Tollgate - Jewell - Leetsdale uprate: CPCN granted by Decision R26-0001 in 24A-0560E (construction 2027, in service 2030).",
+   "sources": [
+    "https://tristate.coop/wp-content/uploads/2026/08/appendix-f-public-service-projects-2.pdf"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "westr-wc-2027-1643",
+   "basis": "Circuit 5283 Leetsdale - Elati underground upgrade: CPCN granted by Decision R26-0001 in 24A-0560E (construction 2026, in service 2027).",
+   "sources": [
+    "https://tristate.coop/wp-content/uploads/2026/08/appendix-f-public-service-projects-2.pdf"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "westr-wc-2030-1663",
+   "basis": "Circuit 5625 Denver Terminal - Elati uprate: CPCN granted by Decision R26-0001 in 24A-0560E. Appendix F of the 2026 Rule 3627 plan lists construction 2030 and in-service 2031.",
+   "sources": [
+    "https://tristate.coop/wp-content/uploads/2026/08/appendix-f-public-service-projects-2.pdf"
+   ],
+   "stage": "approved",
+   "in_service": "2031"
+  },
+  {
+   "id": "westr-wc-2027-1650",
+   "basis": "Circuit 5709 Greenwood - Arapahoe reconductor: CPCN granted by Decision R26-0001 in 24A-0560E (construction 2026, in service 2027).",
+   "sources": [
+    "https://tristate.coop/wp-content/uploads/2026/08/appendix-f-public-service-projects-2.pdf"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "westr-wc-2026-1330",
+   "basis": "Daniels Park - Prairie (Circuits 5111/5707 to Greenwood) uprate: CPCN granted by Decision R26-0001 in 24A-0560E; same project as listed westr-co-5111-5707-daniels-park-prairie-greenwood-230. Appendix F lists construction 2026 and in-service 2027 for Circuits 5111/5707.",
+   "sources": [
+    "https://tristate.coop/wp-content/uploads/2026/08/appendix-f-public-service-projects-2.pdf"
+   ],
+   "stage": "approved",
+   "in_service": "2027"
+  },
+  {
+   "id": "westr-wc-2026-1478",
+   "basis": "Kestrel Substation (Circuit 5185 tap, 2.8 mi 230 kV) is 'Under Construction' with CPCN Decision C24-0378 in 23A-0330E, in service 2026.",
+   "sources": [
+    "https://tristate.coop/wp-content/uploads/2026/08/appendix-f-public-service-projects-2.pdf"
+   ],
+   "stage": "in construction"
+  },
+  {
+   "id": "westr-wc-2027-1641",
+   "basis": "Lacombe - Barker 230 kV and Barker substation: CPCN granted by Decision R25-0597 in Proceeding 21A-0069E; in service 2027 (same as listed westr-co-lacombe-barker-230).",
+   "sources": [
+    "https://tristate.coop/wp-content/uploads/2026/08/appendix-f-public-service-projects-2.pdf"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "westr-clfp-aeolus-cheyenne-230",
+   "basis": "Cheyenne Light filed a WPSC CPCN on Nov 2, 2026 for the $606M Aeolus Transmission Project (two new 230 kV lines, ~125 mi, built for 345 kV upgrade), completion expected mid-2029; decision expected mid-2027 (stage stays proposed, application now filed).",
+   "sources": [
+    "https://ir.blackhillscorp.com/news-releases/news-release-details/black-hills-corp-reports-2026-third-quarter-results-and",
+    "https://ir.blackhillscorp.com/static-files/a829232d-8850-4d4c-9596-b7d3b8a2b27c"
+   ],
+   "in_service": "2029"
+  },
+  {
+   "id": "westr-clfp-south-cheyenne-transmission",
+   "basis": "South Cheyenne Transmission Project CPCN (WPSC 20003-278-EN-26, filed Sept 1, 2026): new Goldeneye 230/115 kV substation, two ~4.3 mi 230 kV lines to the Holliday-Bluffs line and a ~6 mi Robinson-Holliday 230 kV line; in service in phases late 2027 through 2028.",
+   "sources": [
+    "https://ir.blackhillscorp.com/news-releases/news-release-details/black-hills-corp-reports-2026-third-quarter-results-and",
+    "https://datacenterfeed.com/article/black-hills-google-cheyenne-data-center-power-agreements-october-2026"
+   ],
+   "in_service": "2028"
+  },
+  {
+   "id": "westr-clfp-robinson-230-substation",
+   "basis": "Robinson Substation CPCN application (WPSC 20003-263-EN-26) targets full service by August 2027; Black Hills reports the CPCN was approved in May 2026.",
+   "sources": [
+    "https://wyomingdigitalcollections.ptfs.com/aw-server/rest/product/purl/WSL/s/e877af74-c7e9-484b-b64f-23f749c84feb",
+    "https://www.publicpower.org/periodical/article/energy-company-signs-agreements-serve-planned-google-data-center-wyoming"
+   ],
+   "in_service": "2027-08"
+  },
+  {
+   "id": "westr-laramie-range-wind-345-gentie",
+   "basis": "Wyoming ISC approved the Laramie Range Wind permit (DEQ/ISC 24-02) on Sept 1, 2026; both phases (with 345 kV line and switchyard on Tri-State's Ault - Laramie River 345 kV) expected operational by end of 2029.",
+   "sources": [
+    "https://cowboystatedaily.com/2026/09/01/scaled-down-laramie-range-wind-project-gets-go-ahead-after-intense-2-day-hearing",
+    "https://content.govdelivery.com/accounts/WYDEQ/bulletins/4268a7e"
+   ],
+   "in_service": "2029"
+  },
+  {
+   "id": "westr-bpa-la-pine-bonanza-230",
+   "basis": "BPA 2025 Transmission Plan: La Pine - Bonanza 230 kV (52 mi) estimated completion 2032 (updated from 2030), i.e. now beyond the 2031-11 window.",
+   "sources": [
+    "https://www.bpa.gov/-/media/Aep/transmission/attachment-k/2025-BPA-Transmission-Plan_Final.pdf"
+   ],
+   "in_service": "2032"
+  },
+  {
+   "id": "westr-ng-gww-e8-midpoint-hemingway2",
+   "basis": "E-8 first phase Hemingway - Mayfield 500 kV in service 2028 (PacifiCorp: Hemingway-Mayfield complete Nov 2028), Mayfield - Midpoint June 2030; Idaho PUC CPCN (IPC-E-26-09 / PAC-E-26-06, filed Apr 3, 2026) still pending, replies filed Sept 11, 2026.",
+   "sources": [
+    "https://www.pacificorp.com/transmission/transmission-projects/energy-gateway/gateway-west/segment-e8.html",
+    "https://puc.idaho.gov/case/Details/7741",
+    "https://docs.idahopower.com/pdfs/AboutUs/PlanningForFuture/irp/2027/2027IRP_TransmissionUpdate.pdf"
+   ],
+   "in_service": "2028-11"
+  },
+  {
+   "id": "westr-ng-bpa-six-mile-canyon",
+   "basis": "BPA issued categorical exclusion CX-035823 (May 7, 2026) for construction of the Sixmile Canyon 500/230 kV substation on Ashe-Slatt No. 1 about 7 mi west of Boardman, with UEC's 230 kV tie; BPA's 2026 WECC report gives a 2029 completion. BPA 2026 WECC Annual Progress Report: Six Mile Canyon 500/230 kV substation addition expected to be completed in 2029.",
+   "sources": [
+    "https://www.bpa.gov/-/media/Aep/environmental-initiatives/categorical-exclusions/cx-2026/20260507-sixmile-canyon-substation-construction-and-ashe-slatt-no1-line-mods.pdf",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/BPA%202026%20APR.pdf"
+   ],
+   "stage": "approved",
+   "in_service": "2029"
+  },
+  {
+   "id": "westr-ng-pearl-sherwood",
+   "basis": "PGE 2026 WECC progress report gives June 2026 release to operations for the Pearl/Sherwood Reinforcement; BPA 2025 plan gave May 2026.",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/PGE%202026%20APR.pdf",
+    "https://www.bpa.gov/-/media/Aep/transmission/attachment-k/2025-BPA-Transmission-Plan_Final.pdf"
+   ],
+   "in_service": "2026-06"
+  },
+  {
+   "id": "westr-pac-limber-terminal-345",
+   "basis": "PacifiCorp 2026 WECC Annual Progress Report lists the Limber 500/345/138 kV substation and related Gateway Central work for Q4 2032 (outside the 2031-11 window).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/PacifiCorp%202026%20APR.pdf"
+   ],
+   "in_service": "2032-12"
+  },
+  {
+   "id": "ser-scpsa-varnville-indian-field-230",
+   "basis": "SC PSC Order No. 2026-628 (Oct 12, 2026, Docket 2026-216-E) granted Santee Cooper's 'like facility' determination, so no Siting Act certificate is required for the ~40-mile Varnville-Indian Field 230 kV line (rebuild of Varnville-Bells Crossroads and Bells Crossroads-St. George 115 kV as double circuit plus 3.5 mi new 230 kV); construction to begin late 2026. Santee Cooper's request as recited in SC PSC Order No. 2026-628 projects a December 2028 in-service date ($128.7M).",
+   "sources": [
+    "https://dms.psc.sc.gov/Attachments/Order/f0bd172d-120b-4cb3-a547-ba5adf5234ba"
+   ],
+   "stage": "approved",
+   "in_service": "2028-12"
+  },
+  {
+   "id": "ser-scpsa-edisto-river-230-ss",
+   "basis": "SC PSC Order No. 2026-350 (June 12, 2026, Docket 2025-323-E) granted Santee Cooper and DESC a Siting Act certificate for the Canadys Joint Resource including the new jointly owned 230 kV Edisto River Switchyard and re-termination of DESC 230 kV lines into it.",
+   "sources": [
+    "https://dms.psc.sc.gov/Attachments/Order/88dd14bf-1335-452c-8741-d260e5b41f3d"
+   ],
+   "stage": "approved"
+  },
+  {
+   "id": "ser-dep-lee-milburnie-230-rebuild",
+   "basis": "Duke Energy's Lee-Milburnie project page: ~40 miles in Wake, Johnston and Wayne counties, preconstruction winter 2027, line construction early 2028, construction completion and restoration fall 2031.",
+   "sources": [
+    "https://www.duke-energy.com/Our-Company/Grid-Infrastructure/North-Carolina/Lee-Milburnie-Line-Upgrade"
+   ],
+   "in_service": "2031"
+  },
+  {
+   "id": "ser-dep-morrisville-wicket-230",
+   "basis": "Duke Energy's Morrisville-Wicket project page (formerly Morrisville Industrial; NCUC E-2 Sub 1371, application filed Mar 17, 2025) now shows clearing fall 2026/early 2027, construction beginning early 2027 and completion spring 2028. The NCUC order on the certificate could not be retrieved (NCUC document server returned 403).",
+   "sources": [
+    "https://www.duke-energy.com/our-company/grid-infrastructure/north-carolina/morrisville-wicket",
+    "https://www.doa.nc.gov/media/17969/open"
+   ],
+   "in_service": "2028"
+  }
+ ],
+ "drop": {
+  "isner-vt-381-vernon-northfield-reconductor": "ISO-NE's Final RSP Project List (October 2026) changed RSP 1750 (Reconductor VELCO's section of the 381 Vernon - Northfield 345 kV line, QP 501) and RSP 1697 (Eversource NH portion) from Planned (June 2026) to Cancelled; the MA portion (RSP 1699) was already cancelled.",
+  "misor-toronto-astoria-345": "Applicants moved to withdraw the Toronto Power Plant and 4.3-mile 345 kV gen-tie application on Oct 26, 2026 and the SD PUC issued an Order Granting Withdrawal of Application Without Prejudice on Nov 9, 2026."
+ }
+}

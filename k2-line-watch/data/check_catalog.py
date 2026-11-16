@@ -319,8 +319,11 @@ def check_pjm(lines, r):
     for w in want:
         x = got.get("pjm-" + w["UpgradeId"])
         if not x:
+            late = {c["id"]: c for c in TXR_FIX.get("set", []) if c.get("in_service", "")[:7] > B.HORIZON}
             if "pjm-" + w["UpgradeId"] in TXR_DROP:
                 warns.append(f"pjm-{w['UpgradeId']}: left out on purpose ({TXR_FIX['drop']['pjm-' + w['UpgradeId']]})")
+            elif "pjm-" + w["UpgradeId"] in late:
+                warns.append(f"pjm-{w['UpgradeId']}: left out on purpose, a newer public source puts it in service {late['pjm-' + w['UpgradeId']]['in_service']}, past the window")
             else:
                 errs.append(f"PJM upgrade {w['UpgradeId']} ({w['Location']}) is missing")
             continue
@@ -332,7 +335,8 @@ def check_pjm(lines, r):
                 errs.append(msg)
         if w["basis"].startswith("estimated"):
             warns.append(f"{x['id']} {x['name']}: stage '{x['lifecycle']}' is estimated ({w['basis']})")
-    dropped = sum(1 for w in want if "pjm-" + w["UpgradeId"] in TXR_DROP)
+    dropped = sum(1 for w in want if "pjm-" + w["UpgradeId"] in TXR_DROP or "pjm-" + w["UpgradeId"] in
+                  {c["id"] for c in TXR_FIX.get("set", []) if c.get("in_service", "")[:7] > B.HORIZON})
     if len(got) + dropped != len(want):
         errs.append(f"{len(got)} PJM lines in the list, {len(want)} kept from PJM's data")
     unplaced = sum(1 for x in got.values() if not any(e.get("lat") is not None for e in x["endpoints"]))
