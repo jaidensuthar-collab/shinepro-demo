@@ -242,7 +242,7 @@
  },
  {
   "check": "Every project on Oncor's CCN Public Viewer is in the list",
-  "checked": 24,
+  "checked": 25,
   "errors": [],
   "warnings": []
  },

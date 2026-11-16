@@ -1,5 +1,5 @@
 {
- "fetched": "2026-11-05",
+ "fetched": "2026-11-16",
  "source": "https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer",
  "projects": [
   {
@@ -417,6 +417,24 @@
     }
    ],
    "kv": 138
+  },
+  {
+   "project_id": 1052,
+   "name": "Muscovy - Limmer",
+   "status": "In-Progress",
+   "stations": [
+    {
+     "name": "Muscovy Switch",
+     "lat": 30.56024,
+     "lon": -97.4758
+    },
+    {
+     "name": "Limmer Substation",
+     "lat": 30.54343,
+     "lon": -97.52258
+    }
+   ],
+   "kv": 345
   },
   {
    "project_id": 1053,
