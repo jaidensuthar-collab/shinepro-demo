@@ -210,6 +210,18 @@ def pjm_lines(places=None):
                "endpoints": ends, "market": MARKET_PJM, "state": ", ".join(states), "pjm_upgrade": r["UpgradeId"], "pjm_status": r["Status"],
                "source": PAGE_URL, "checked": f"PJM Project Construction data (fetched {json.load(open(PJM_FILE))['fetched']})"}
         out.append(finish(rec, r["kv"], "PJM approval"))
+    # PJM splits one project into sub-rows (owners, phases) that each repeat the whole length: count it once.
+    seen_mi = {}
+    for x in out:
+        mi = x["miles_new"] or x["miles_upgraded"]
+        if not mi:
+            continue
+        key = (x["pjm_upgrade"].split(".")[0], frozenset(B.base(e["name"]) for e in x["endpoints"]), mi)
+        if key in seen_mi:
+            x["miles_new"] = x["miles_upgraded"] = 0
+            x["description"] = f"(Length counted once, on {seen_mi[key]}.) " + x["description"]
+        else:
+            seen_mi[key] = x["id"]
     # Projects PJM's list does not carry (generator ties, merchant lines, announced data-center hookups, state cases),
     # from research (sources/pjm-research-2026.json); ones with the same end substations as a PJM row are skipped.
     have = {frozenset((B.base(e["name"]), e.get("state", "")) for e in x["endpoints"]) for x in out if x["project_type"] != "substation upgrade"}

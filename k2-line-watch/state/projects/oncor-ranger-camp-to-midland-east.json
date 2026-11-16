@@ -1,7 +1,7 @@
 {
   "checked": "needs checking",
   "counties": "Midland, Martin, Howard, Mitchell",
-  "docket": "",
+  "docket": "60453",
   "endpoints": "Ranger Camp Switch (Mitchell County) to Midland East Switch (Midland County)",
   "geo": {
     "counties": [
@@ -40,6 +40,10 @@
     {
       "label": "Oncor project page",
       "url": "https://www.oncor.com/content/oncorwww/us/en/home/about-us/transmission-systems/current-transmission-line-projects/ranger-camp-switch-to-midland-east-switch-345kv-transmission-lin.html"
+    },
+    {
+      "label": "PUC Docket 60453",
+      "url": "https://interchange.puc.texas.gov/search/filings/?UtilityType=A&ControlNumber=60453&ItemMatch=Equal&DocumentType=ALL&SortOrder=Ascending"
     }
   ],
   "miles": "",

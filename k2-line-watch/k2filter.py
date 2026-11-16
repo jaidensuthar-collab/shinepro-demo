@@ -26,7 +26,10 @@ RPG_NOISE = ("status update", "statusupdate", "batch", "assessment", "financial"
              "agenda", "minutes")
 # News that is opinion or policy talk rather than a specific line.
 NEWS_NOISE = ("opinion", "op-ed", "editorial", "study finds", "could save", "ratepayers", "bill ",
-              "how we build", "letter to the editor", "podcast")
+              "how we build", "letter to the editor", "podcast",
+              # accidents, politics and people stories mention a line without saying anything about it
+              "fatal", "killed", "dies", "died", "death", "injur", "electrocut", "election", "concede", "concession",
+              "obituary", "arrest", "lawsuit settled", "wildfire")
 NEWS_SPECIFIC = ("kv", "open house", "route", "transmission line", "power line")
 # Line Watch is U.S. only: plan news about other countries is dropped.
 FOREIGN = re.compile(r"\b(India|Indian|Peru|Chile|Brazil|Mexico|Canada|Canadian|Ontario|Quebec|Alberta|British Columbia|"
@@ -174,7 +177,7 @@ def explain(sig):
         big = "765" in low or "billion" in low or re.search(r"\b(approv|endors|board|vote)", low)
         out["importance"] = "High" if big else "Medium"
     elif step == "3+":  # news
-        if any(word in low for word in NEWS_NOISE) or not any(word in low for word in NEWS_SPECIFIC):
+        if any(word in low for word in NEWS_NOISE) or not any(word in low for word in NEWS_SPECIFIC) or FOREIGN.search(title):
             return None
         out["project"] = ""
         out["what_happened"] = "News: %s" % _short(title, 140)

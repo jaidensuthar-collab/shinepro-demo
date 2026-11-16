@@ -284,6 +284,12 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
   tranches, PJM RTEP and 765 kV, CAISO, NYISO, ISO-NE, western and southeastern plans), as "Plan news" rows, and reads
   more SPP planning pages (ITP documents, fact sheets, portfolio summaries). Non-U.S. stories are dropped. A test over
   the last 45 days caught SPP's $23.7B 2026 ITP endorsement (RTO Insider, Oct 19), three weeks before Richard's email.
+- **Substation upgrades (Nov 16, 2026)**: project type `substation upgrade` = work at an EXISTING substation of 230 kV
+  and up, from ERCOT's TPIT, SPP's STEP, PJM's Project Construction data and MISO's MTEP25 (`sub_upgrade` in
+  build_catalog.py). `upgrade_kind` says which: transformer added, transformer replaced or upgraded, substation
+  expansion, new line terminal, bus reconfiguration, substation rebuild. Routine breaker, relay, metering, protection
+  and reactive equipment (capacitors, reactors, STATCOMs) are left out. The station shows as "existing, expanding".
+  Smaller stations (115 kV, 69 kV) wait on Richard's answer about how low to go.
 - **U.S. only**: the checker fails if any line or substation is outside a U.S. state; a line that runs to the national
   border is listed for its U.S. part, and the check lists those for review.
   Stations are placed by name on HIFLD / OpenStreetMap in the state given (and the county, when the source gives one),

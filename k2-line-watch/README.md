@@ -4,7 +4,9 @@ One project: the **line monitor** (this folder) finds new high-voltage lines ear
 **landowner search** (`landowners/`, an n8n workflow) finds the landowners near each line's end
 substations every Monday. Both feed one page, **K2 Line Watch**
 (https://claude.ai/artifact/FCARNQ1KQBr5r5DX9V6XfG): the watch list, a Landowners tab, utility plans
-and help. Texas today; the landowner search is built to add other states (see `landowners/README.md`).
+and help. The lines list covers the continental U.S. (14 regions: Texas ERCOT, SPP and MISO, El Paso, Oklahoma, all of
+SPP, MISO, PJM, CAISO, New York, New England, the West and the Southeast; see FIELDS.md). The monitor's early signals
+are Texas and Oklahoma plus nationwide regional-plan news. The landowner search is on hold (Texas only so far).
 
 ## Line monitor
 
@@ -18,6 +20,7 @@ It watches the public signals that come before a route is approved, earliest fir
 |---|---|---|
 | 2 | ERCOT Regional Planning Group (RPG) meeting pages | A utility submitted a project, or ERCOT posted its scope or recommendation. Names the end substations, often 1 to 2 years before a route filing. |
 | 3 | Oncor, AEP Texas, LCRA and CPS Energy project-list pages | A new project page usually means open houses with preliminary route links are coming, 4 to 9 months before filing. |
+| 2+ | Google News searches for regional plans and portfolios across the U.S. (SPP ITP, MISO MTEP and tranches, PJM, CAISO, NYISO, ISO-NE, RTO Insider, Utility Dive) | A grid operator's plan is moving: stakeholder or board votes that name many new lines at once. |
 | 3+ | Google News searches (765 kV, open houses, routes, CenterPoint, ERCOT) | Local press and landowner news, often the first public word of an open house. Covers other states too. |
 | 4-5 | PUCT Interchange new electric cases | A utility opened a case to amend its CCN for a transmission line: a route filing is starting or has just been made. |
 | 5-6 | New filings inside every route case already in the feed, plus Docket 59475 | Orders, approvals, settlements, rehearing motions and the utility's own route filings. Letters, protests and procedural paperwork are skipped. Works like PUCT's email alerts without an account. |

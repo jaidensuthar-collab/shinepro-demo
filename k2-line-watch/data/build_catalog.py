@@ -816,7 +816,7 @@ def sub_upgrade(text):
 OFFICIAL = ("tpit-", "spp-", "pjm-", "mtep25-", "miso-", "etr-", "epe-", "card-", "oncor-", "sppitp26-")
 
 
-TYPOS = [(r"\bGeroge\b", "George"), (r"\bCreeek\b", "Creek"), (r"\bHuntingto\b", "Huntington"), (r"\bBuxmount\b", "Buxmont"),
+TYPOS = [("â€“", "–"), ("â€”", "—"), ("â€™", "'"), ("â€œ", '"'), ("â€\x9d", '"'), ("Â", ""), (r"\bGeroge\b", "George"), (r"\bCreeek\b", "Creek"), (r"\bHuntingto\b", "Huntington"), (r"\bBuxmount\b", "Buxmont"),
          (r"\bDahlgreen\b", "Dahlgren"), (r"\bNokeville\b", "Nokesville"), (r"\bPeach Botton\b", "Peach Bottom"),
          (r"\bSandlake\b", "Sand Lake"), (r"\bPearsal\b", "Pearsall"), (r"\bEdith Clark\b", "Edith Clarke"),
          (r"\bLawton East Side\b", "Lawton Eastside"), (r"\bMathewson\b", "Matthewson"), (r"[;,]+\s*$", "")]
@@ -833,7 +833,7 @@ def past_due(lines):
     source says it is finished (the same rule the official lists follow). The official lists' own rules stay as they are."""
     now = TODAY.strftime("%Y-%m")
     for x in lines:
-        for k in ("name", "from", "to"):
+        for k in ("name", "from", "to", "description"):
             x[k] = fix_typos(x.get(k) or "")
         for e in x["endpoints"]:
             e["name"] = fix_typos(e["name"])
@@ -1111,7 +1111,7 @@ def map_check(sites):
 # Left out of the KML layers only (the GeoJSON and CSV keep them): the note the KML already gives once in its
 # description, the map-check link, the tap note and the long "why" texts, so the all-regions KML stays under the
 # 16 MB file limit.
-KML_SKIP = {"geometry_note", "check_link", "recommendation_reason", "tap_note", "status_reason"}
+KML_SKIP = {"geometry_note", "check_link", "recommendation_reason", "tap_note", "status_reason", "location_basis", "stage_detail"}
 
 
 def write_kml(path, line_feats, site_feats, title="Texas"):
@@ -1224,7 +1224,8 @@ def build(projects_src, tpit_path, queue_path=None):
                "miles_upgraded": 0, "transformer_mva": 0, "in_service": isd, "in_service_kind": "projected" if isd else "", "construction_start": "", "capacity_mw": None,
                "purpose": "shared grid", "program": PROGRAMS.get(str(p.get("rpg", "")).split(" ")[0], p.get("rpg", "")), "rpg": p.get("rpg", ""),
                "tier": "", "ercot_board": "", "docket": p.get("docket", ""), "route_status": STAGE_ROUTE.get(stage, "end substations only"),
-               "card_id": p["id"], "card_ids": [p["id"]], "endpoints": ends, "checked": p.get("checked", ""), "market": MARKET,
+               "card_id": p["id"], "card_ids": [p["id"]], "endpoints": ends, "checked": p.get("checked", ""),
+               "market": "WECC" if "el paso" in str(p.get("utility", "")).lower() else MARKET,
                "source": "; ".join(dict.fromkeys([l["url"] for l in p.get("links", [])[:2]] + [fact[k] for k in ("miles_source", "in_service_source") if fact.get(k)]))}
         if rec["in_service"] and rec["in_service"][:7] > HORIZON:
             continue
@@ -1277,8 +1278,12 @@ def build(projects_src, tpit_path, queue_path=None):
             "cutoff": CUTOFF.isoformat(), "horizon": HORIZON, "stages": STAGE_HELP}
     # The page builds each satellite link from the point itself, so the page's copy leaves check_link out (it keeps
     # data/texas-lines.json under the 16 MB file limit); the CSV, GeoJSON and KML exports keep it.
-    slim = lambda d: {k: v for k, v in d.items() if k != "check_link"}
-    page_lines = [{**x, "endpoints": [slim(e) for e in x["endpoints"]]} for x in out]
+    slim = lambda d: {k: v for k, v in d.items() if k not in ("check_link", "in_place")}
+    # The page never reads route_status or purpose, and shows lifecycle_basis next to the description, so its copy of a
+    # description drops the repeated basis text (the exports keep everything).
+    page_lines = [{**{k: v for k, v in x.items() if k not in ("route_status", "purpose")},
+                   "description": x["description"].replace(x["lifecycle_basis"], "").strip(" .") if x.get("lifecycle_basis") else x["description"],
+                   "endpoints": [slim(e) for e in x["endpoints"]]} for x in out]
     json.dump({**meta, "lines": page_lines, "stations": stations, "sites": [slim(st) for st in sites]},
               open(os.path.join(WEB, "data", "texas-lines.json"), "w"), separators=(",", ":"))
 
