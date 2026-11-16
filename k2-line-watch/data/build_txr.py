@@ -23,9 +23,11 @@ RESEARCH_FILES = [RESEARCH, os.path.join(HERE, "sources", "spp-research-2026.jso
                   os.path.join(HERE, "sources", "caiso-research-2026.json"),   # and CAISO (California, Nov 2026)
                   os.path.join(HERE, "sources", "northeast-research-2026.json"),   # and New York / New England
                   os.path.join(HERE, "sources", "west-research-2026.json"),   # and the West outside CAISO and SPP
-                  os.path.join(HERE, "sources", "southeast-research-2026.json")]   # and the Southeast (SERTP and Florida)
+                  os.path.join(HERE, "sources", "southeast-research-2026.json"),   # and the Southeast (SERTP and Florida)
+                  os.path.join(HERE, "sources", "us-process-research-2026.json")]   # and every state's line-approval process (Nov 16)
 CORRECTION_FILES = [CORRECTIONS, os.path.join(HERE, "sources", "spp-corrections-2026.json"),
-                    os.path.join(HERE, "sources", "caiso-corrections-2026.json")]
+                    os.path.join(HERE, "sources", "caiso-corrections-2026.json"),
+                    os.path.join(HERE, "sources", "us-process-corrections-2026.json")]
 
 
 def load_research():
@@ -41,9 +43,12 @@ def load_corrections():
             out["set"] += d.get("set", [])
             out["drop"].update(d.get("drop", {}))
     return out
-STATES = ["TX", "OK", "NM", "LA", "AR", "KS", "NE", "ND", "SD", "MT", "WY", "CO", "MO", "IA", "MN", "CA", "NV", "AZ", "NY", "CT", "MA", "ME", "NH", "RI", "VT", "UT", "ID", "OR", "WA", "GA", "NC", "SC", "TN", "AL", "FL", "KY", "MS"]
-MARKETS = {"ERCOT": B.MARKET, "SPP": "SPP", "MISO": "MISO", "WECC": "WECC", "CAISO": "CAISO", "NYISO": "NYISO", "ISO-NE": "ISO-NE", "West": "West", "Southeast": "Southeast"}
-PREFIX = {"ERCOT": "txr-", "SPP": "sppr-", "MISO": "etrr-", "WECC": "eper-", "CAISO": "caisor-", "NYISO": "nyr-", "ISO-NE": "isner-", "West": "westr-", "Southeast": "ser-"}
+STATES = ["TX", "OK", "NM", "LA", "AR", "KS", "NE", "ND", "SD", "MT", "WY", "CO", "MO", "IA", "MN", "CA", "NV", "AZ", "NY", "CT", "MA", "ME", "NH", "RI", "VT", "UT", "ID", "OR", "WA", "GA", "NC", "SC", "TN", "AL", "FL", "KY", "MS",
+          "PA", "NJ", "MD", "DE", "DC", "VA", "WV", "OH", "IN", "MI", "IL", "WI", "MN", "IA", "AK", "HI"]
+MARKETS = {"ERCOT": B.MARKET, "SPP": "SPP", "MISO": "MISO", "WECC": "WECC", "CAISO": "CAISO", "NYISO": "NYISO", "ISO-NE": "ISO-NE", "West": "West", "Southeast": "Southeast", "PJM": "PJM",
+           "Alaska and Hawaii": "Alaska and Hawaii"}
+PREFIX = {"ERCOT": "txr-", "SPP": "sppr-", "MISO": "etrr-", "WECC": "eper-", "CAISO": "caisor-", "NYISO": "nyr-", "ISO-NE": "isner-", "West": "westr-", "Southeast": "ser-", "PJM": "pjms-",
+          "Alaska and Hawaii": "akhi-"}
 RESEARCHED = "Line Watch research"
 
 

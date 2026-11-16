@@ -912,6 +912,7 @@ REGIONS = {   # file key -> (title, test on a line or substation record)
     "iso-ne": ("New England (ISO-NE: Connecticut, Massachusetts, Maine, New Hampshire, Rhode Island, Vermont)", lambda r: r.get("market") == "ISO-NE"),
     "west": ("West outside California and SPP (Arizona, New Mexico, Nevada, Colorado, Utah, Wyoming, Idaho, Montana, Oregon, Washington)", lambda r: r.get("market") == "West"),
     "southeast": ("Southeast (Georgia, the Carolinas, Tennessee, Alabama, Mississippi, Kentucky and Florida: SERTP and FRCC)", lambda r: r.get("market") == "Southeast"),
+    "alaska-hawaii": ("Alaska and Hawaii", lambda r: r.get("market") == "Alaska and Hawaii"),
     "miso-texas": ("Texas, MISO (Entergy Texas, Southeast Texas)", lambda r: r.get("market") == "MISO" and "TX" in r.get("state", "")),
     "miso": ("MISO (all 15 states: Entergy Texas, local projects, data-center hookups, Tranche 1 backbone)", lambda r: r.get("market") == "MISO"),
     "pjm": ("PJM (13 states and DC: Illinois to New Jersey, Virginia and the Carolinas)", lambda r: r.get("market") == "PJM"),

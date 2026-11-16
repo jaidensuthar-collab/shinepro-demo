@@ -52,7 +52,7 @@ def _state_boxes():
 
 
 for _st, _b in _state_boxes().items():
-    if _st in ("ND", "SD", "MN", "WI", "IA", "IL", "IN", "MI", "LA", "MS", "KY") + PJM.PJM_STATES + SPP.HOME + ("CA", "NV", "AZ", "ID", "UT", "NY", "CT", "MA", "ME", "NH", "RI", "VT", "OR", "WA", "GA", "NC", "SC", "TN", "AL", "FL", "KY", "MS"):
+    if _st in ("ND", "SD", "MN", "WI", "IA", "IL", "IN", "MI", "LA", "MS", "KY") + PJM.PJM_STATES + SPP.HOME + ("CA", "NV", "AZ", "ID", "UT", "NY", "CT", "MA", "ME", "NH", "RI", "VT", "OR", "WA", "GA", "NC", "SC", "TN", "AL", "FL", "KY", "MS", "AK", "HI"):
         BOXES.setdefault(_st, tuple(round(v + d, 2) for v, d in zip(_b, (-0.1, -0.1, 0.1, 0.1))))
 ALL_BOX = (min(b[0] for b in BOXES.values()), min(b[1] for b in BOXES.values()), max(b[2] for b in BOXES.values()), max(b[3] for b in BOXES.values()))
 
@@ -135,7 +135,7 @@ def check_locations(lines, sites, places, r):
         if not (box[0] <= st["lon"] <= box[2] and box[1] <= st["lat"] <= box[3]):
             errs.append(f"substation {st['name']}: point {st['lat']}, {st['lon']} is outside {st.get('state', 'TX')}")
             continue
-        if st.get("state", "TX") != "TX" and st.get("state") not in ("OK",) + MISO.MISO_STATES + PJM.PJM_STATES + SPP.HOME + ("CA", "NV", "AZ", "ID", "UT", "NY", "CT", "MA", "ME", "NH", "RI", "VT", "OR", "WA", "GA", "NC", "SC", "TN", "AL", "FL", "KY", "MS"):
+        if st.get("state", "TX") != "TX" and st.get("state") not in ("OK",) + MISO.MISO_STATES + PJM.PJM_STATES + SPP.HOME + ("CA", "NV", "AZ", "ID", "UT", "NY", "CT", "MA", "ME", "NH", "RI", "VT", "OR", "WA", "GA", "NC", "SC", "TN", "AL", "FL", "KY", "MS", "AK", "HI"):
             warns.append(f"substation {st['name']}: placed in {st['state']}, outside the regions this list covers (the line crosses the state line)")
         key = f"{st.get('state', 'TX')}|" + (st["county"] or "")
         if st["confidence"] not in ("exact", "approx") or key not in places.rings:
@@ -319,13 +319,21 @@ def check_pjm(lines, r):
     for w in want:
         x = got.get("pjm-" + w["UpgradeId"])
         if not x:
-            errs.append(f"PJM upgrade {w['UpgradeId']} ({w['Location']}) is missing")
+            if "pjm-" + w["UpgradeId"] in TXR_DROP:
+                warns.append(f"pjm-{w['UpgradeId']}: left out on purpose ({TXR_FIX['drop']['pjm-' + w['UpgradeId']]})")
+            else:
+                errs.append(f"PJM upgrade {w['UpgradeId']} ({w['Location']}) is missing")
             continue
         if x["kv"] != w["kv"] or x["in_service"] != w["isd"] or x["lifecycle"] != w["life"]:
-            errs.append(f"{x['id']}: {x['kv']} kV / {x['in_service']} / {x['lifecycle']} but PJM gives {w['kv']} kV / {w['isd']} / {w['life']}")
+            msg = f"{x['id']}: {x['kv']} kV / {x['in_service']} / {x['lifecycle']} but PJM gives {w['kv']} kV / {w['isd']} / {w['life']}"
+            if x["kv"] == w["kv"] and x["id"] in {c["id"] for c in TXR_FIX.get("set", [])}:
+                warns.append(f"{msg} (changed on purpose: {x['lifecycle_basis'][:160]})")   # a newer public source
+            else:
+                errs.append(msg)
         if w["basis"].startswith("estimated"):
             warns.append(f"{x['id']} {x['name']}: stage '{x['lifecycle']}' is estimated ({w['basis']})")
-    if len(got) != len(want):
+    dropped = sum(1 for w in want if "pjm-" + w["UpgradeId"] in TXR_DROP)
+    if len(got) + dropped != len(want):
         errs.append(f"{len(got)} PJM lines in the list, {len(want)} kept from PJM's data")
     unplaced = sum(1 for x in got.values() if not any(e.get("lat") is not None for e in x["endpoints"]))
     if unplaced:
@@ -376,7 +384,7 @@ def check_research(lines, r):
     mismatches move from errors to warnings that name the newer source."""
     errs, warns, n = [], [], 0
     for x in lines:
-        if x["id"].startswith(("txr-", "sppr-", "etrr-", "eper-", "caisor-", "nyr-", "isner-", "westr-", "ser-")):
+        if x["id"].startswith(("txr-", "sppr-", "etrr-", "eper-", "caisor-", "nyr-", "isner-", "westr-", "ser-", "pjms-", "akhi-")):
             n += 1
             if not x["source"] or not x["lifecycle_basis"]:
                 errs.append(f"{x['id']}: a researched project needs a source and a reason for its stage")
