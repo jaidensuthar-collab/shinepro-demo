@@ -133,7 +133,7 @@ def txr_lines(out):
     src = load_research()
     if not src["projects"]:
         return []
-    listed = [ends_of(x) for x in out]
+    listed = [ends_of(x) for x in out if x["project_type"] != "substation upgrade"]   # work at a station does not make a new one there a duplicate
     dockets = {(str(x.get("docket") or "").strip(), x["kv"]) for x in out if str(x.get("docket") or "").strip()}
     (pairs, tpit_ids), keep = tpit_pairs(), []
     for p in src["projects"]:
@@ -145,7 +145,7 @@ def txr_lines(out):
         keep.append(p)
         listed.append((frozenset(pstates(p) | {e["state"] for e in p["ends"]}), [t for t in (toks(e["name"]) for e in p["ends"]) if t]))   # the sweep files overlap each other too
     places = MisoPlaces(states=STATES)
-    have = {frozenset((B.base(e["name"]), e.get("state", "")) for e in x["endpoints"]) for x in out}
+    have = {frozenset((B.base(e["name"]), e.get("state", "")) for e in x["endpoints"]) for x in out if x["project_type"] != "substation upgrade"}
     lines = []
     for m, label in MARKETS.items():
         part = [p for p in keep if p.get("market", "ERCOT") == m]

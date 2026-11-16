@@ -539,6 +539,9 @@ def station_sites(lines, stations):
             role = "upgrade" if x["project_type"] == "upgrade" else "other"
             if x["project_type"] in ("new line", "new substation") or x["transformer_mva"] or x["upgrade_kind"] == "voltage upgrade":
                 role = "add"
+            if x["project_type"] == "substation upgrade":   # work at the station itself: there now, and expanding
+                ev.update({"expands"} | ({"more coming"} if x["lifecycle"] != "built" else set()))
+                role = "add"
             if named and re.search(r"\bEXPAN(D|DS|DING|SION)\b", title + desc):
                 ev.update({"expands"} | ({"more coming"} if x["lifecycle"] != "built" else set()))
                 role = "add"
@@ -786,6 +789,30 @@ def cards_for(r, kv, cards):
             if int(num(p.get("kv"))) == kv and all(f" {n} " in text for n in pair if n) and all(pair)]
 
 
+# Work at an existing substation of 230 kV and up (Richard, Nov 16: "capture upgraded substations"). Routine
+# breaker, relay, protection, metering and reactive equipment are not upgrades of the station itself.
+XFMR = r"(?:AUTO ?-?TRANSFORMERS?|TRANSFORMERS?|XFMRS?|XFRS?)"
+SUB_KINDS = [("transformer added", re.compile(r"\b(INSTALL\w*|ADD\w*|NEW|SECOND|2ND|THIRD|3RD|FOURTH|ADDITIONAL)\b.{0,40}\b" + XFMR, re.I)),
+             ("substation expansion", re.compile(r"\bEXPAN(D|DS|DING|SION)\b|\b(SUBSTATION|STATION|SWITCHYARD|YARD)\b.{0,30}\bEXPAN", re.I)),
+             ("new line terminal", re.compile(r"\bNEW\b.{0,25}\b(LINE\s+)?(TERMINALS?|BAYS?|POSITIONS?)\b|\bCONSTRUCT\w*\s+NEW\s+\d{3}\s*KV\s+TERMINAL", re.I)),
+             ("transformer replaced or upgraded", re.compile(r"\b(REPLAC|UPGRAD|UPRAT|RESTOR)\w*\b.{0,40}\b" + XFMR + r"(?!\s+(LEADS?|BUSHINGS?|RELAY|PROTECTION|CONTROLS?|METER))|\d{3}\s*/\s*\d{2,3}\s*-?\s*KV\s+(AUTO ?-?)?TRANSFORMER", re.I)),
+             ("bus reconfiguration", re.compile(r"RING BUS|BREAKER[- ]AND[- ]A[- ]HALF|DOUBLE[- ]BREAKER|RECONFIGUR", re.I)),
+             ("substation rebuild", re.compile(r"\b(REBUILD|REPLAC)\w*\b.{0,20}\b(SUBSTATION|SWITCHYARD|STATION)\b|\bGIS\b", re.I))]
+MINOR = re.compile(r"REACTOR|CAPACITOR|STATCOM|\bSVC\b|SHUNT|CONDENSER|INSTRUMENT TRANSFORMER|STATION SERVICE|GROUNDING TRANSFORMER|"
+                   r"\bCCVT|\bRTU\b|SCADA|FIBER|OPGW|CONTROL (HOUSE|BUILDING|ENCLOSURE)|WAVE ?TRAP|JUMPER|LEADS|BUS CONDUCTOR|BAY CONDUCTOR|"
+                   r"UNDERGROUND|\bUG\b|MILES?\b|RELAY|METER|TRANSCEIVER|LINE TRAP|\bSTRUCTURES?\b|BUSHING", re.I)
+
+
+def sub_upgrade(text):
+    """The kind of work at an existing 230 kV+ substation, or None for routine equipment and line work."""
+    kind = next((k for k, rx in SUB_KINDS if rx.search(text or "")), None)
+    if not kind:
+        return None
+    if MINOR.search(text) and kind not in ("transformer added", "substation expansion"):
+        return None
+    return kind
+
+
 OFFICIAL = ("tpit-", "spp-", "pjm-", "mtep25-", "miso-", "etr-", "epe-", "card-", "oncor-", "sppitp26-")
 
 
@@ -845,7 +872,12 @@ def classify(r):
     new_mi, upg_mi = num(r["new_mi"]), num(r["upg_mi"])
     # Equipment words only rule a record out when it builds no line: a new line that also adds an autotransformer,
     # breakers or relays at its ends is still a line (Del Sol - Frontera 345 kV, RELLIS - TNP One 345 kV).
-    if kv < 138 or MODEL_RECORD.search(text) or ((EQUIPMENT.search(text) or CAPACITOR.search(text)) and new_mi < 1 and upg_mi < 1):
+    if kv < 138 or MODEL_RECORD.search(text):
+        return None
+    if new_mi < 1 and upg_mi < 1 and kv >= 230 and not NEW_STATION.search(title) and sub_upgrade(text):
+        gen = GENERATOR.search(text) or (POI.search(text) and not str(r["rpg"] or "").strip() and not GRID_PLAN.search(text))
+        return kv, "substation upgrade", sub_upgrade(text), "generator hookup" if gen else "large-load hookup" if BIG_LOAD.search(text) else "shared grid", False
+    if (EQUIPMENT.search(text) or CAPACITOR.search(text)) and new_mi < 1 and upg_mi < 1:
         return None
     same_corridor = new_mi >= 1 and new_mi == upg_mi and bool(REUSE.search(text))
     if new_mi >= 1 and not same_corridor:
@@ -882,6 +914,8 @@ def lifecycle(r, card, route):
         return "approved", "PUC approved the route (Line Watch card)"
     if route == "existing corridor":
         return "approved", "ERCOT: planned; an upgrade in its existing corridor, so there is no new route to approve"
+    if route == "existing substation":
+        return "approved", "ERCOT: planned; work inside an existing substation, so there is no new site to approve"
     if isd and (isd.date() if isinstance(isd, datetime.datetime) else isd) <= TODAY + datetime.timedelta(days=548):
         return "approved", "estimated: planned to be in service within 18 months, so its route and site should be settled"
     return "planned", "ERCOT: planned; the route or site is not final yet"
@@ -903,7 +937,9 @@ def recommend(rec):
     if rec["lifecycle"] == "proposed":
         return "follow updates", "Still proposed: watch for ERCOT endorsement and end substations."
     route_set = rec["route_status"] in ("existing corridor", "approved route") or rec["lifecycle"] in ("in construction", "built")
-    if rec["kv"] < 500 and route_set and rec["project_type"] != "new substation":
+    if rec["project_type"] == "substation upgrade":
+        return "substation campaign", "An existing substation is being expanded or upgraded: land next to it gains first."
+    if rec["kv"] < 500 and route_set and rec["project_type"] not in ("new substation", "substation upgrade"):
         return "line campaign", ("Upgrade of an existing line: the corridor is known" if rec["route_status"] == "existing corridor"
                                  else "Route is set") + f" and a {rec['kv']} kV line can be tapped along the way."
     if not located:
@@ -915,7 +951,7 @@ def recommend(rec):
 
 def priority(rec):
     kv = {765: 40, 500: 35, 345: 25}.get(rec["kv"], 10)
-    typ = {"new line": 15, "new substation": 12, "upgrade": 5}[rec["project_type"]]
+    typ = {"new line": 15, "new substation": 12, "substation upgrade": 8, "upgrade": 5}[rec["project_type"]]
     y = int(rec["in_service"][:4]) if rec["in_service"] else 2035
     when = 10 if rec["lifecycle"] == "built" else 20 if y <= TODAY.year + 1 else 15 if y == TODAY.year + 2 else 10 if y <= TODAY.year + 4 else 5
     score = kv + typ + when + min(rec["miles_new"], 100) / 10
@@ -1123,7 +1159,8 @@ def build(projects_src, tpit_path, queue_path=None):
         card = (cards.get(frozenset([alias(base(frm)), alias(base(to))])) if frm and to else None) or \
             min(matched, key=lambda p: p.get("stage", 0), default=None)  # a line spanning two cards is as far along as its slower part
         matched = list({p["id"]: p for p in ([card] if card else []) + matched}.values())
-        route = "existing corridor" if ptype == "upgrade" else STAGE_ROUTE.get((card or {}).get("stage"), "end substations only")
+        route = ("existing corridor" if ptype == "upgrade" else "existing substation" if ptype == "substation upgrade"
+                 else STAGE_ROUTE.get((card or {}).get("stage"), "end substations only"))
         life, life_basis = lifecycle(r, card, route)
         if not life:
             continue
@@ -1139,6 +1176,8 @@ def build(projects_src, tpit_path, queue_path=None):
             if hit:
                 hit["name"] = name
             ends.append(hit or places.county_point(name, county))
+        if ptype == "substation upgrade":
+            ends = ends[:1]   # work at one station
         if ends:
             frm, to = ends[0]["name"], ends[-1]["name"] if len(ends) > 1 else ""
         rpg = str(r["rpg"] or "").strip()

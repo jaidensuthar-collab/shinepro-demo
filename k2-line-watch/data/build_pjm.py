@@ -117,6 +117,9 @@ def pjm_rows():
             ptype = "new substation"
             if kv < 230:
                 continue
+        elif B.sub_upgrade(desc) and max([int(n) for n in re.findall(r"\d+", r["Voltage"] or "")] or [0]) >= 230:
+            kv = max(int(n) for n in re.findall(r"\d+", r["Voltage"] or ""))
+            ptype = "substation upgrade"   # work at an existing 230 kV+ station: transformers, expansion, new bays
         else:
             continue
         if kv < 138:
@@ -133,8 +136,8 @@ def pjm_rows():
             life, basis = "built", "PJM: in service"
         elif st.startswith("UC"):
             life, basis = "in construction", "PJM: under construction"
-        elif st == "EP" and (ptype == "upgrade" or (isd and isd <= soon)):
-            life, basis = "approved", "PJM: engineering and procurement" + ("" if ptype == "upgrade" else "; due within 18 months, so its route and site should be settled (estimated)")
+        elif st == "EP" and (ptype in ("upgrade", "substation upgrade") or (isd and isd <= soon)):
+            life, basis = "approved", "PJM: engineering and procurement" + ("" if ptype in ("upgrade", "substation upgrade") else "; due within 18 months, so its route and site should be settled (estimated)")
         elif st == "EP":
             life, basis = "planned", "PJM: engineering and procurement; route or site not final yet"
         elif st == "PL" and not sup:
@@ -188,9 +191,12 @@ def pjm_lines(places=None):
         purpose = ("generator hookup" if r["ProjectType"] == "Network" or re.search(r"generat|interconnection request", driver, re.I) or B.GENERATOR.search(r["desc"])
                    else "large-load hookup" if re.search(r"customer|load", driver, re.I) and B.BIG_LOAD.search(r["desc"] + " " + driver)
                    else "shared grid")
-        detail = next((k for k, rx in B.UPGRADE_KIND if rx.search(r["desc"])), "upgrade") if r["ptype"] == "upgrade" else ""
+        detail = (next((k for k, rx in B.UPGRADE_KIND if rx.search(r["desc"])), "upgrade") if r["ptype"] == "upgrade"
+                  else B.sub_upgrade(r["desc"]) if r["ptype"] == "substation upgrade" else "")
+        if r["ptype"] == "substation upgrade":
+            ends = ends[:1]
         miles = re.search(r"(\d+(?:\.\d+)?)\s*-?\s*mi", r["desc"], re.I)
-        name = (" - ".join(e["name"] for e in ends) if len(ends) > 1 else ends[0]["name"]) + f" {r['kv']} kV" + (" substation" if r["ptype"] == "new substation" else "")
+        name = (" - ".join(e["name"] for e in ends) if len(ends) > 1 else ends[0]["name"]) + f" {r['kv']} kV" + (" substation" if r["ptype"] == "new substation" else " substation upgrade" if r["ptype"] == "substation upgrade" else "")
         rec = {"id": "pjm-" + r["UpgradeId"], "ercot_project": "", "name": name, "description": r["desc"][:400], "kv": r["kv"],
                "project_type": r["ptype"], "upgrade_kind": detail, "lifecycle": r["life"], "lifecycle_basis": r["basis"], "tpit_status": r["Status"],
                "utility": r["TransmissionOwner"], "from": ends[0]["name"], "to": ends[-1]["name"] if len(ends) > 1 else "",
@@ -200,13 +206,13 @@ def pjm_lines(places=None):
                "in_service": r["isd"], "in_service_kind": "actual" if r["life"] == "built" else ("projected" if r["isd"] else ""),
                "construction_start": "", "capacity_mw": None, "purpose": purpose,
                "program": f"PJM {r['ProjectType'].lower()} upgrade {r['UpgradeId']}", "rpg": "", "tier": "", "ercot_board": r["PJMBoardApprovalDate"],
-               "docket": "", "route_status": "existing corridor" if r["ptype"] == "upgrade" else "end substations only", "card_id": "", "card_ids": [],
+               "docket": "", "route_status": "existing corridor" if r["ptype"] == "upgrade" else "existing substation" if r["ptype"] == "substation upgrade" else "end substations only", "card_id": "", "card_ids": [],
                "endpoints": ends, "market": MARKET_PJM, "state": ", ".join(states), "pjm_upgrade": r["UpgradeId"], "pjm_status": r["Status"],
                "source": PAGE_URL, "checked": f"PJM Project Construction data (fetched {json.load(open(PJM_FILE))['fetched']})"}
         out.append(finish(rec, r["kv"], "PJM approval"))
     # Projects PJM's list does not carry (generator ties, merchant lines, announced data-center hookups, state cases),
     # from research (sources/pjm-research-2026.json); ones with the same end substations as a PJM row are skipped.
-    have = {frozenset((B.base(e["name"]), e.get("state", "")) for e in x["endpoints"]) for x in out}
+    have = {frozenset((B.base(e["name"]), e.get("state", "")) for e in x["endpoints"]) for x in out if x["project_type"] != "substation upgrade"}
     out += research_lines(places, have, {x["pjm_upgrade"] for x in out}, path=PJM_RESEARCH, prefix="pjmr-", market=MARKET_PJM)
     return out
 

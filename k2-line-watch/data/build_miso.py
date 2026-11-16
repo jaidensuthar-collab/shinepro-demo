@@ -205,6 +205,8 @@ def mtep_rows():
             ptype = "upgrade"
         elif ftype == "Substation" and kv >= 345 and B.NEW_STATION.search(desc):
             ptype = "new substation"
+        elif ftype == "Substation" and kv >= 230 and B.sub_upgrade(desc):
+            ptype = "substation upgrade"
         else:
             continue
         out.append({**r, "kv": kv, "isd": isd, "desc": desc, "ptype": ptype})
@@ -231,7 +233,10 @@ def mtep_lines(places=None, skip_pairs=()):
         if ends[0].get("lat") is None and len(ends) > 1 and ends[1].get("lat") is not None:
             ends[0] = places.place({"name": names[0]}, r["kv"], st, MTEP_URL, ends[1])
         status = str(r["Plan Status"] or "")
-        detail = next((k for k, rx in B.UPGRADE_KIND if rx.search(r["desc"])), "upgrade") if r["ptype"] == "upgrade" else ""
+        detail = (next((k for k, rx in B.UPGRADE_KIND if rx.search(r["desc"])), "upgrade") if r["ptype"] == "upgrade"
+                  else B.sub_upgrade(r["desc"]) if r["ptype"] == "substation upgrade" else "")
+        if r["ptype"] == "substation upgrade":
+            ends, names = ends[:1], names[:1]
         if status.startswith("M4"):
             life, basis = "built", "MISO: project in service (MTEP25 status)"
         elif status.startswith("M3"):
@@ -240,20 +245,22 @@ def mtep_lines(places=None, skip_pairs=()):
             life, basis = "in construction", f"estimated: planned in-service date {r['isd']} has passed and MISO's list does not show it in service"
         elif r["ptype"] == "upgrade":
             life, basis = "approved", "MISO-approved (MTEP25 Appendix A); work on an existing line"
+        elif r["ptype"] == "substation upgrade":
+            life, basis = "approved", "MISO-approved (MTEP25 Appendix A); work inside an existing substation"
         elif r["isd"] <= soon:
             life, basis = "approved", "estimated: MISO-approved (MTEP25 Appendix A) and due within 18 months, so its route and site should be settled"
         else:
             life, basis = "planned", "MISO-approved (MTEP25 Appendix A, Dec 2025); route or site not confirmed here"
         gen = str(r.get("Submitting Comp.") or "")
         purpose = "generator hookup" if B.GENERATOR.search(r["desc"]) else "large-load hookup" if B.BIG_LOAD.search(r["desc"]) else "shared grid"
-        rec = {"id": f"mtep25-{r['Facility ID']}", "ercot_project": "", "name": (" - ".join(names) + f" {r['kv']} kV" + (f" ckt {r['Ckt']}" if r.get("Ckt") else "")) if r["ptype"] != "new substation" else f"{names[0]} {r['kv']} kV substation",
+        rec = {"id": f"mtep25-{r['Facility ID']}", "ercot_project": "", "name": (" - ".join(names) + f" {r['kv']} kV" + (f" ckt {r['Ckt']}" if r.get("Ckt") else "")) if r["ptype"] not in ("new substation", "substation upgrade") else f"{names[0]} {r['kv']} kV substation" + (" upgrade" if r["ptype"] == "substation upgrade" else ""),
                "description": r["desc"][:400], "kv": r["kv"], "project_type": r["ptype"], "upgrade_kind": detail, "lifecycle": life,
                "lifecycle_basis": basis, "tpit_status": "", "utility": gen.title(), "from": ends[0]["name"], "to": ends[-1]["name"] if len(ends) > 1 else "",
                "county_from": ends[0].get("county", ""), "county_to": ends[-1].get("county", "") if len(ends) > 1 else "",
                "miles_new": round(B.num(r["Miles New"]), 1), "miles_upgraded": round(B.num(r["Miles Upgrade"]), 1), "transformer_mva": 0,
                "in_service": r["isd"], "in_service_kind": "actual" if life == "built" else "projected", "construction_start": "", "capacity_mw": None,
                "purpose": purpose, "program": f"MISO MTEP25 project {r['PrjID']}", "rpg": "", "tier": "", "ercot_board": "", "docket": "",
-               "route_status": "existing corridor" if r["ptype"] == "upgrade" else "end substations only", "card_id": "", "card_ids": [],
+               "route_status": "existing corridor" if r["ptype"] == "upgrade" else "existing substation" if r["ptype"] == "substation upgrade" else "end substations only", "card_id": "", "card_ids": [],
                "endpoints": ends, "market": MARKET_MISO, "state": st, "source": MTEP_URL, "checked": "MISO MTEP25 Appendix A (data as of Oct 2025)"}
         out.append(finish(rec, r["kv"], "MISO approval"))
     return out
@@ -311,7 +318,7 @@ def miso_lines():
     etr = etr_lines(places)
     pairs = {frozenset(B.base(e["name"]) for e in x["endpoints"]) for x in etr}
     known = etr + lrtp_lines(places) + mtep_lines(places, pairs)
-    have = {frozenset((B.base(e["name"]), e.get("state", "")) for e in x["endpoints"]) for x in known}
+    have = {frozenset((B.base(e["name"]), e.get("state", "")) for e in x["endpoints"]) for x in known if x["project_type"] != "substation upgrade"}
     have_mtep = {re.sub(r"\D", "", x["program"]) for x in known if x["id"].startswith("mtep25-")}
     drop = json.load(open(CORRECTIONS_FILE))["drop"] if os.path.exists(CORRECTIONS_FILE) else {}
     return [x for x in known + research_lines(places, have, have_mtep) if x["id"] not in drop]   # withdrawn or cancelled since the list was made

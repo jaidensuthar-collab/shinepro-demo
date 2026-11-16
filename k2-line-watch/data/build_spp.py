@@ -101,6 +101,12 @@ def classify(d):
     name, desc = norm(d.get("Upgrade Name")), norm(d.get("Project Description/ Comments"))
     text = f"{name} {desc}"
     kv = kv_of(d)
+    gen0 = re.search(r"GEN-\d{4}-\d+", norm(d.get("Project Name")) + " " + text)
+    new_station = kv >= 345 and re.search(r"(NEW|BUILD|INSTALL|CONSTRUCT|ESTABLISH)\b.{0,40}(SUBSTATION|SWITCHING STATION|SWITCHYARD)", text, re.I)
+    kind = B.sub_upgrade(text) if kv >= 230 and not line_ends(name) and not new_station else None
+    if kind and not re.search(r"(NEW|BUILD|INSTALL|CONSTRUCT|ESTABLISH)\b.{0,40}(SUBSTATION|SWITCHING STATION|SWITCHYARD)", name, re.I):
+        site = re.sub(r"(?i)\s+\d{3}(/\d{2,3})?\s*kV.*$", "", name).strip() or name
+        return kv, "substation upgrade", kind, [site], 0.0, 0.0, gen0
     if kv < 138 or re.search(r"TERMINAL|TRANSFORMER|\bXFR\b|REACTOR|CAPACITOR|STATCOM|SVC\b|BREAKER|RELAY|METER|RING BUS|"
                              r"WAVE ?TRAP|JUMPER|SWITCHES|CT\b|BUS TIE", name, re.I):
         return None
@@ -138,6 +144,8 @@ def stage(d, ptype):
         return "in construction", f"estimated: planned in-service date {isd:%Y-%m} has passed and SPP has not marked it complete"
     if ptype == "upgrade":
         return "approved", f"SPP: notice to construct issued ({label}); an upgrade in its existing corridor, so there is no new route to approve"
+    if ptype == "substation upgrade":
+        return "approved", f"SPP: notice to construct issued ({label}); work inside an existing substation, so there is no new site to approve"
     if isd and isd <= B.TODAY + datetime.timedelta(days=548):
         return "approved", f"estimated: SPP notice to construct issued ({label}) and due within 18 months, so its route and site should be settled"
     return "planned", f"SPP: notice to construct issued ({label}); the route or site is not final yet"
@@ -312,7 +320,7 @@ def spp_lines(researched=None):
                "in_service": max((r[5] for r in rows if r[5]), default=""), "in_service_kind": "actual" if life == "built" else "projected",
                "construction_start": "", "capacity_mw": None, "purpose": purpose,
                "program": f"SPP {norm(d.get('Source Study'))}".strip(), "rpg": "", "tier": "", "ercot_board": "", "docket": "",
-               "route_status": "existing corridor" if g["ptype"] == "upgrade" else "end substations only",
+               "route_status": "existing corridor" if g["ptype"] == "upgrade" else "existing substation" if g["ptype"] == "substation upgrade" else "end substations only",
                "card_id": "", "card_ids": [], "endpoints": ends, "market": "SPP", "state": ", ".join(placed_states),
                "source": f"SPP STEP ({STEP_URL}), {STEP_LABEL}", "checked": "SPP " + STEP_LABEL.split(" (")[0]}
         if life == "built" and rec["in_service"] > B.TODAY.strftime("%Y-%m"):   # SPP marks it in service but kept the owner's old future date

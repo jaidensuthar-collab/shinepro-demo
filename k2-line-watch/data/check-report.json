@@ -1,7 +1,7 @@
 [
  {
   "check": "Lines match ERCOT's report (voltage, in-service date, stage)",
-  "checked": 907,
+  "checked": 978,
   "errors": [],
   "warnings": [
    "tpit-67329 San Miguel to Cruce 345 kV lines: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
@@ -24,7 +24,6 @@
    "tpit-107130 LCRATSC Highline Substation Addition: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-107128 Concho River Substation Addition: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-102788 Overland_Substation_Addition: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
-   "tpit-99353 Oak Spring (fka Roscoe, Plowboy) 345/138 kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-92778 Dunham 345-138 kV Switch and Dunham - Burger Lake 138 kV Line Section: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-99685 Nimbus 345 kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-99687 Paradise Lake 345 kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
@@ -44,6 +43,8 @@
    "tpit-87804 Establish Notus 345 kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-78361B Lake Creek - Rattlesnake Road 345 kV Line: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-91457A Establish Drane 345 kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
+   "tpit-99641 Static: Expand 345 kV Station: stage 'in construction' is estimated (estimated: planned in-service date 2026-10 has passed and ERCOT has not marked it in service yet)",
+   "tpit-90964 Tier 3 project to add second autotransformer at Long Draw: stage 'in construction' is estimated (estimated: planned in-service date 2026-10 has passed and ERCOT has not marked it in service yet)",
    "tpit-107136 LCRATSC Duff Ranch Substation Addition: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-107132 Water Valley Substation Addition: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-111724 Gossip 345 kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
@@ -112,8 +113,6 @@
    "tpit-99808 Cesium: Construct New 345 kV Station: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-91459 Establish Mosher 345 kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-90061 Poisson: Construct New 345 kV Station: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
-   "tpit-78495 Hillje 345kV Substation Expansion for Space City Solar - Generator Interconnection (21INR0341): stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
-   "tpit-72059 Hillje 345kV Substation Expansion for Ramsey Storage - Generator Interconnection to FLATLA (FLA) (21INR0505): stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-75792 New substation for generation interconnection project for 21INR0359: stage 'in construction' is estimated (estimated: planned in-service date 2025-12 has passed and ERCOT has not marked it in service yet)",
    "tpit-109613 Install generation for Pinewood Solar (25INR0170) at Seabreeze 345kV CEHE substation. Connect at the same generator lead as Tanglewood Solar.: stage 'in construction' is estimated (estimated: planned in-service date 2026-10 has passed and ERCOT has not marked it in service yet)",
    "tpit-104830 WesternWind_Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
@@ -121,6 +120,8 @@
    "tpit-75780B Loop new Elmaton substation into Ckt.39A to create new Ckt.39 STP to Elmaton to WA Parish. Install generator lead from Elmaton (ELM) substation to DUFFY (DUF) / Duffy BESS (26INR0250): stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-90043 Candela: Construct New 345 kV Station: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-87346 Upgrade Ckt 25 Jeanetta to Westwood to increase thermal limits: ERCOT gives an actual in-service date (2026-07) but its status still says 'Planned'; counted as built",
+   "tpit-109841 Red Creek: Expand 345 kV Station: stage 'in construction' is estimated (estimated: planned in-service date 2026-06 has passed and ERCOT has not marked it in service yet)",
+   "tpit-90006 Oklaunion: Construct New 345 kV Terminal: stage 'in construction' is estimated (estimated: planned in-service date 2026-10 has passed and ERCOT has not marked it in service yet)",
    "tpit-78468A Pradera (PRD) CEHE-Owned 345kV Substation for Austin Bayou Solar (25INR0102): stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-86933 Paladio: Construct New 345 kV Station: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-91774 Janka: Construct New 345 kV Station: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
@@ -136,24 +137,27 @@
    "tpit-90057 Volar: Construct New 138 kV Station: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-91986 Establish the Wofford/Berryville POI: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-104652 Establish Bell Springs 138 kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
+   "tpit-76237 Lobo: Construct New 345 kV Terminal: ERCOT gives an actual in-service date (2025-06) but its status still says 'Planned'; counted as built",
    "tpit-111374 Gliese: Construct New 138 kV Station: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-81006 DIABOX Customer Load Addition with related line upgrades: stage 'in construction' is estimated (estimated: planned in-service date 2026-08 has passed and ERCOT has not marked it in service yet)"
   ]
  },
  {
   "check": "Time window (2023-11 built to 2031-11 due) and stage names",
-  "checked": 4531,
+  "checked": 4888,
   "errors": [],
   "warnings": [
    "spp-143452 Nashua - St. Joe 345kV New Interconnection Substation (DISIS-2017-002): built, but its source gives no finish date, so the 2023-11 start can't be checked",
+   "spp-143400 Johnson County 345kV Interconnection Expansion (DISIS-2017-002): built, but its source gives no finish date, so the 2023-11 start can't be checked",
+   "spp-143518 Buffalo Flats 345kV Interconnection Expansion (DISIS-2017-002): built, but its source gives no finish date, so the 2023-11 start can't be checked",
    "spp-143453 Nashua - St. Joe 345kV GEN-2017-183 Interconnection (TOIF) (KCPL): built, but its source gives no finish date, so the 2023-11 start can't be checked",
    "spp-143343 Stillwell - Clinton 161kV GEN-2017-108 Interconnection (TOIF) (KCPL): built, but its source gives no finish date, so the 2023-11 start can't be checked",
-   "799 lines have no in-service date yet, so the 2031-11 end can't be checked for them (West 212, PJM 201, SPP 148, MISO 84, ERCOT (Texas) 76, Southeast 47, CAISO 16, NYISO 11, ISO-NE 3, WECC 1)"
+   "812 lines have no in-service date yet, so the 2031-11 end can't be checked for them (West 212, PJM 202, SPP 160, MISO 84, ERCOT (Texas) 76, Southeast 47, CAISO 16, NYISO 11, ISO-NE 3, WECC 1)"
   ]
  },
  {
   "check": "Substation points are in their state and in the county the source lists",
-  "checked": 4401,
+  "checked": 4461,
   "errors": [],
   "warnings": [
    "substation Kammer: point is 5 miles outside Marshall County, the county its source lists",
@@ -221,18 +225,18 @@
    "substation Triangle: point is 4 miles outside Midland County, the county its source lists",
    "substation Vealmoor: point is 6 miles outside Howard County, the county its source lists",
    "substation Yucca Drive: point is 10 miles outside Ector County, the county its source lists",
-   "831 lines have no placeable substation (no county given, and not on public maps by name): tpit-102068, pjm-s3608.5, pjm-b3800.7, pjm-b3800.43, pjm-b3800.53, pjm-b4089.1, spp-170051, spp-170054"
+   "930 lines have no placeable substation (no county given, and not on public maps by name): tpit-102068, pjm-s3608.5, pjm-b3800.7, pjm-b3800.43, pjm-b3800.53, pjm-b4089.1, spp-170051, spp-170054"
   ]
  },
  {
   "check": "Substation status agrees between lines and substations",
-  "checked": 5894,
+  "checked": 5980,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Downloads match the page (CSV, GeoJSON, KML, new-only layers)",
-  "checked": 18526,
+  "checked": 19287,
   "errors": [],
   "warnings": []
  },
@@ -244,9 +248,10 @@
  },
  {
   "check": "SPP lines match SPP's project list (voltage, in-service date, stage)",
-  "checked": 170,
+  "checked": 227,
   "errors": [],
   "warnings": [
+   "spp-71964 Monolith 345/115 kV Transformer #1: stage 'in construction' is estimated (estimated: planned in-service date 2025-12 has passed and SPP has not marked it complete)",
    "spp-157879 Anadarko - Gracemont 138 kV Ckt 3 New Line: stage 'approved' is estimated (estimated: SPP notice to construct issued (Delay - Mitigation) and due within 18 months, so its route and site should be settled)",
    "spp-157897 Anadarko - Gracemont 138kV Ckt 2 New Line: stage 'approved' is estimated (estimated: SPP notice to construct issued (Delay - Mitigation) and due within 18 months, so its route and site should be settled)",
    "spp-72020 Calumet - Cana 138 kV Ckt 1 Voltage Conversion: stage 'in construction' is estimated (estimated: planned in-service date 2026-06 has passed and SPP has not marked it complete)",
@@ -254,17 +259,16 @@
    "spp-132936 Elm Creek - Summit 345 kV GEN-2017-004 Interconnection (TOIF) (ITCGP): stage 'approved' is estimated (estimated: SPP notice to construct issued (On Schedule < 4) and due within 18 months, so its route and site should be settled)",
    "spp-143434 Lawton Eastside - Terry Road 345kV New Interconnection Substation (DISIS-2017-002): stage 'approved' is estimated (estimated: SPP notice to construct issued (On Schedule < 4) and due within 18 months, so its route and site should be settled)",
    "spp-133042 Hugo - Sunnyside 345 kV GEN-2017-075 Interconnection (TOIF) (OKGE): stage 'in construction' is estimated (estimated: planned in-service date 2026-05 has passed and SPP has not marked it complete)",
+   "spp-122666 Riverside 345kV GEN-2016-133 thru 146 Interconnection (Non-Shared NU): stage 'in construction' is estimated (estimated: planned in-service date 2025-06 has passed and SPP has not marked it complete)",
    "spp-143404 TUCO - Oklaunion 345kV GEN-2017-151 Interconnection (Non-Shared NU): stage 'in construction' is estimated (estimated: planned in-service date 2026-08 has passed and SPP has not marked it complete)",
    "spp-112331 Lieberman - North Benton 138 kV Substation GEN-2016-167 Interconnection (TOIF) (AEPW): stage 'in construction' is estimated (estimated: planned in-service date 2026-03 has passed and SPP has not marked it complete)",
    "spp-133021 GRDA1 - CLARMR5 161 kV GEN-2017-061 Interconnection (Non-Shared NU): stage 'in construction' is estimated (estimated: planned in-service date 2025-06 has passed and SPP has not marked it complete)",
    "spp-143336 Tekamah - Raun 161kV GEN-2017-105 Interconnection (Non-Shared NU) (OPPD): stage 'in construction' is estimated (estimated: planned in-service date 2026-10 has passed and SPP has not marked it complete)",
    "spp-143395 Deaf Smith - Plant X 230kV GEN-2017-146 Interconnection (TOIF): stage 'in construction' is estimated (estimated: planned in-service date 2026-08 has passed and SPP has not marked it complete)",
-   "substation Chalybe (TX): marked new, but OpenStreetMap Union Carbide Substation is 0.0 miles away on a public map; it may be built already or sit beside an existing station",
    "substation Dunham (TX): marked new, but OpenStreetMap Oncor Dunham Substation is 0.0 miles away on a public map; it may be built already or sit beside an existing station",
    "substation Jordan/King (TX): marked new, but OpenStreetMap King Substation is 0.0 miles away on a public map; it may be built already or sit beside an existing station",
    "substation Lamesa (TX): marked new, but HIFLD unnamed substation is 0.0 miles away on a public map; it may be built already or sit beside an existing station",
    "substation Pin Oak 345 kV Switch (TX): marked new, but OpenStreetMap Big Brown Station is 0.0 miles away on a public map; it may be built already or sit beside an existing station",
-   "substation Redland Switch (TX): marked new, but HIFLD unnamed substation is 0.02 miles away on a public map; it may be built already or sit beside an existing station",
    "substation Spruce (TX): marked new, but OpenStreetMap J. K. Spruce Switchyard is 0.03 miles away on a public map; it may be built already or sit beside an existing station",
    "substation WAParish/Whaley (TX): marked new, but HIFLD PARISH is 0.03 miles away on a public map; it may be built already or sit beside an existing station",
    "substation Welsh HVDC (TX): marked new, but HIFLD unnamed substation is 0.02 miles away on a public map; it may be built already or sit beside an existing station",
@@ -274,7 +278,7 @@
  },
  {
   "check": "MISO lines match their sources (Entergy Texas report, MISO MTEP25 Appendix A, Tranche 1 dashboard, researched utility and state filings)",
-  "checked": 530,
+  "checked": 542,
   "errors": [],
   "warnings": [
    "etr-brad-park Brad Park 230 kV switching station (cut-in of Rhodair - Garden 230 kV): stage 'built' is estimated (estimated: Entergy's planned finish (2025-08) is more than 6 months past. Entergy's report: construction Aug 2024 to Aug)",
@@ -291,6 +295,7 @@
    "mtep25-50372 Whitestown/Hortonville 345 kV: Whitestown/Hortonville has no public location yet",
    "miso-lrtp-10 Denny - Zachary - Thomas Hill - Maywood 345 kV: Zachary has no public location yet",
    "mtep25-50297 Jupiter - Mount Pleasant 345 kV: Jupiter has no public location yet",
+   "mtep25-51414 RiverPlex 500 kV substation upgrade: RiverPlex has no public location yet",
    "mtep25-51320 Lumberjack 345 kV substation: Lumberjack has no public location yet",
    "mtep25-50296 Jupiter 345 kV substation: Jupiter has no public location yet",
    "mtep25-50419 DAEC 345 kV substation: DAEC has no public location yet",
@@ -319,6 +324,7 @@
    "misor-amil-mogul-ph3-345-lines Turner and Lanesville - new Mogul Phase 3 substation 345 kV (two new lines): New substation (Mogul Phase 3) has no public location yet",
    "misor-p3-in-wvtc-kinnard-345-lines Kinnard - Fayette, Kinnard - Wolf Creek and Kinnard - Bartlett #1/#2 345 kV (Central Indiana Grid Expansion Phase 2): Fayette (Duke) has no public location yet",
    "misor-p3-in-wvtc-kinnard-345-lines Kinnard - Fayette, Kinnard - Wolf Creek and Kinnard - Bartlett #1/#2 345 kV (Central Indiana Grid Expansion Phase 2): Wolf Creek (Duke) has no public location yet",
+   "mtep25-50155 Green Acres 345 kV substation upgrade: Green Acres has no public location yet",
    "misor-mo-elkhorn-345-sub Project Elkhorn 345 kV substation (1,000 MW load) and 3.25 mi 345 kV cut-in from Lumberjack: Project Elkhorn has no public location yet",
    "mtep25-50812 Emerson Rd 345 kV substation: Emerson Rd has no public location yet",
    "mtep25-50815 Emerson Rd 345 kV substation: Emerson Rd has no public location yet",
@@ -364,6 +370,7 @@
    "misor-p2c-il-beehive-dupoferry-138 Beehive - Dupo Ferry 138 kV (Rush Island reinforcement): Dupo Ferry has no public location yet",
    "misor-p3-il-ppi-babylon-steamboat-138 Babylon - Steamboat 138 kV (new PPI Babylon 138/69 kV substation to new Ameren Steamboat ring bus): Babylon has no public location yet",
    "misor-p3-il-ppi-babylon-steamboat-138 Babylon - Steamboat 138 kV (new PPI Babylon 138/69 kV substation to new Ameren Steamboat ring bus): Steamboat (Ameren ring bus on Castro Jct - Monmouth Blvd W 138 kV, at PPI Ellisville tap) has no public location yet",
+   "mtep25-27300 Spencer Creek 345 kV substation upgrade: Spencer Creek has no public location yet",
    "misor-ell-sunrise-230-sub Sunrise 230 kV new substation: Sunrise has no public location yet",
    "misor-ell-crown-230-sub Crown 230 kV station (Jeff Davis Electric Co-op): Crown has no public location yet",
    "misor-ell-midbend-230-sub Midbend 230 kV station: Midbend has no public location yet",
@@ -459,6 +466,8 @@
    "misor-p2c-il-havana-puro-138-rebuild Havana - Puro 138 kV rebuild / Havana 138 kV line upgrade: Puro has no public location yet",
    "misor-p2c-il-vermilion-tilton-138-rebuild Vermilion - Tilton Energy Center 138 kV rebuild (line 1572): Tilton Energy Center has no public location yet",
    "misor-p3-il-ppi-hopewell-138 Ameren tie - Hopewell 138 kV and Hopewell 138/69 kV substation (north of Carrollton): Ameren tie point has no public location yet",
+   "mtep25-51279 Entergy's 230kV Ritchie 230 kV substation upgrade: Entergy's 230kV Ritchie has no public location yet",
+   "mtep25-51294 Andes 230 kV substation upgrade: Andes has no public location yet",
    "misor-ell-riverplex-500-230-sub RiverPlex 500-230 kV station (incl. Mulberry Road 230 kV), near Donaldsonville: RiverPlex has no public location yet",
    "misor-eal-jenkins-500-230-sub Jenkins 500/230 kV new substation: Jenkins has no public location yet",
    "misor-eml-oak-bend-230-sub Oak Bend 230 kV new substation (Project XP): Oak Bend has no public location yet",
@@ -563,7 +572,7 @@
  },
  {
   "check": "PJM lines match PJM's project data (voltage, in-service date, stage)",
-  "checked": 1115,
+  "checked": 1335,
   "errors": [],
   "warnings": [
    "pjm-b3683: 138 kV / 2028-06 / planned but PJM gives 138 kV / 2028-06 / approved (changed on purpose: Line Watch research: Messick Road-Ridgeley 138 kV rebuild: WV PSC staff found no WV certificate needed, but the Maryland CPCN (PSC Case 9818, filed Oct 3, 2025))",
@@ -615,6 +624,7 @@
    "pjm-n8120.1 Firefly 230 kV substation: stage 'in construction' is estimated (estimated: PJM's in-service date 2023-12 has passed and PJM has not marked it in service)",
    "pjm-n8120.2 East Danville - Roxboro 230 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2023-12 has passed and PJM has not marked it in service)",
    "pjm-n8168.1 Hoytdale - McClelland 345 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2025-12 has passed and PJM has not marked it in service)",
+   "pjm-n8168.11 Hoytdale 345 kV substation upgrade: stage 'in construction' is estimated (estimated: PJM's in-service date 2025-12 has passed and PJM has not marked it in service)",
    "pjm-n8188.1: 138 kV / 2025-12 / planned but PJM gives 138 kV / 2025-12 / in construction (changed on purpose: Line Watch research: KATCo filed a Letter of Notification on Oct 2, 2026 to construct the Brookville-Squab Hollow 138 kV Transmission Line Interconnection Proje)",
    "pjm-n8188.1 Brookeville - Squab Hollow 138 kV: stage 'planned' is estimated (estimated: PJM's in-service date 2025-12 has passed and PJM has not marked it in service)",
    "pjm-n8203.1 Carson - Clubhouse 230 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-03 has passed and PJM has not marked it in service)",
@@ -625,11 +635,13 @@
    "pjm-n8393 05BEATTY 138.0 kV - 05ZUBER 138.0 kV 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2024-12 has passed and PJM has not marked it in service)",
    "pjm-n8406.4 Stanton - Summit 230 kV substation: stage 'in construction' is estimated (estimated: PJM's in-service date 2023-12 has passed and PJM has not marked it in service)",
    "pjm-n8432.1 AE1 - 072 Switching 230 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-06 has passed and PJM has not marked it in service)",
+   "pjm-n8436.2 TSS 908 Mole Creek 345 kV substation upgrade: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-09 has passed and PJM has not marked it in service)",
    "pjm-n8444.1 AF1 - 114 Switching 230 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-09 has passed and PJM has not marked it in service)",
    "pjm-n8444.3 Northern Neck - Dahlgren 230 kV substation: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-09 has passed and PJM has not marked it in service)",
    "pjm-n8760.0 Hartford City 345 kV substation: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-09 has passed and PJM has not marked it in service)",
    "pjm-s1687.5 Ramey - Bellefonte - Grangson 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2023-12 has passed and PJM has not marked it in service)",
    "pjm-s1827 Fawn 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2024-06 has passed and PJM has not marked it in service)",
+   "pjm-s1907.2 South Lebanon 230 kV substation upgrade: stage 'in construction' is estimated (estimated: PJM's in-service date 2025-12 has passed and PJM has not marked it in service)",
    "pjm-s2328.9 Dulle - Global Plaza - Reston 230 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2025-12 has passed and PJM has not marked it in service)",
    "pjm-s2428.4: 161 kV / 2027-11 / in construction but PJM gives 161 kV / 2027-11 / approved (changed on purpose: Line Watch research: Kentucky Power: the Wooton - Stinnett section (~11 mi of 161 kV) was under construction in 2025 with completion planned for November 2025 a)",
    "pjm-s2742.2 Davis Drive 230 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-06 has passed and PJM has not marked it in service)",
@@ -638,6 +650,7 @@
    "pjm-s2923.2 Leroy Center - Pinegrove Q3 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2024-06 has passed and PJM has not marked it in service)",
    "pjm-s3035.2: 230 kV / 2029-11 / approved but PJM gives 230 kV / 2029-11 / planned (changed on purpose: Line Watch research: Hornbaker 230 kV Line Loop and Hornbaker Switching Station approved by SCC Final Order Dec 11, 2025 (PUR-2025-00046).)",
    "pjm-s3594.1: left out on purpose, a newer public source puts it in service 2032-07, past the window",
+   "pjm-s3601.1 Trenton 345 kV substation upgrade: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-03 has passed and PJM has not marked it in service)",
    "pjm-s3608.5 Unnamed station (PJM s3608.5) 765 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2025-12 has passed and PJM has not marked it in service)",
    "pjm-s3677.2: 230 kV / 2028-08 / approved but PJM gives 230 kV / 2028-08 / planned (changed on purpose: Line Watch research: SCC Final Order Feb 9, 2026 approved the 230 kV Duval-Midlothian Lines and Duval Substation (PUR-2025-00073).)",
    "pjm-s3693.2: 230 kV / 2029-06 / approved but PJM gives 230 kV / 2029-06 / planned (changed on purpose: Line Watch research: Devlin-Pegasus 230 kV lines are part of the Hornbaker 230 kV Line Loop approved by SCC Final Order Dec 11, 2025 (PUR-2025-00046).)",
@@ -656,13 +669,16 @@
    "pjm-s3898.3: 345 kV / 2029-04 / approved but PJM gives 345 kV / 2029-04 / planned (changed on purpose: Line Watch research: AES Ohio's Atlanta-Fayette 345 kV LON (25-0810-EL-BLN) received an OPSB Staff Report of Investigation on 2026-03-11 and AES filed condition)",
    "pjm-s3898.4 FAYETTE - Fayette DC West - Fayette DC East 345 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-09 has passed and PJM has not marked it in service)",
    "pjm-s3898.6: 345 kV / 2030-01 / approved but PJM gives 345 kV / 2030-01 / planned (changed on purpose: Line Watch research: OPSB Finding & Order approving AES Ohio's Fayette to Clinton 345 kV application issued 2026-08-20 (25-0871-EL-BLN).)",
+   "pjm-s3964.1 Traynor 230 kV substation upgrade: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-09 has passed and PJM has not marked it in service)",
+   "pjm-s3978.1 Shelocta 230 kV substation upgrade: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-05 has passed and PJM has not marked it in service)",
    "pjm-s4021.2 Hannibal - Bitdeer 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-09 has passed and PJM has not marked it in service)",
    "pjm-s4031.1: 230 kV / 2029 / planned but PJM gives 230 kV / 2030-12 / planned (changed on purpose: Line Watch research: Dominion's BECO-to-Firehouse page says the new lines are expected in service by early 2029 (application PUR-2026-00062 filed May 8, 2026).)",
    "pjm-s4058.1 Hannibal - Bitdeer 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-06 has passed and PJM has not marked it in service)",
    "pjm-s4058.2 Hannibal - Kammer 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-06 has passed and PJM has not marked it in service)",
    "pjm-s4060.1 Anguin - NBY 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2025-08 has passed and PJM has not marked it in service)",
+   "pjm-s4063.1 Jug Street 345 kV substation upgrade: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-07 has passed and PJM has not marked it in service)",
    "pjm-s4064.2 Badger - Fiesta 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-07 has passed and PJM has not marked it in service)",
-   "491 PJM lines have no end substation on public maps yet (they are in the tables, not on the map)"
+   "566 PJM lines have no end substation on public maps yet (they are in the tables, not on the map)"
   ]
  },
  {
@@ -732,7 +748,7 @@
  },
  {
   "check": "U.S. only (every line and substation is in a U.S. state)",
-  "checked": 10425,
+  "checked": 10868,
   "errors": [],
   "warnings": [
    "pjms-pjm-east-marl-500-pa-portion MidAtlantic Resiliency Link 500 kV - Pennsylvania portions (502 Junction - WV border, Greene/Fayette): ends at the national border; only the U.S. part is listed",
@@ -744,6 +760,7 @@
    "sppr-sps-border-tuco-tap-crawfish Border - TUCO 345 kV tap extension to Crawfish Draw: ends at the national border; only the U.S. part is listed",
    "spp-143182 Chisholm - Woodward - Border 345 kV Ckt 1: ends at the national border; only the U.S. part is listed",
    "pjms-nextera-lake-erie-connector-us Lake Erie Connector +/-320 kV HVDC - U.S. portion (US/Canada border in Lake Erie - Erie Converter Station - Erie West 345 kV): ends at the national border; only the U.S. part is listed",
+   "tpit-99020 Border 345/138 kV Switch and two new 345/138 kV Autotransformers: ends at the national border; only the U.S. part is listed",
    "nyr-gb-chpe-llc-ny-canada-border-astoria-annex Champlain Hudson Power Express (NY/Canada border - Astoria Annex) +/-400 kV HVDC: ends at the national border; only the U.S. part is listed",
    "isner-rsp-1819 NECEC HVDC: Maine/Canada border (Beattie Twp) - Merrill Road \u00b1320 kV: ends at the national border; only the U.S. part is listed",
    "pjmr-grain-belt-express-il-in Grain Belt Express Phase II (Illinois HVDC segment, Clark County converter, AC connector to AEP Sullivan): ends at the national border; only the U.S. part is listed",
