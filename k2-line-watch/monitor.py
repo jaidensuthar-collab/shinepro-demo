@@ -156,7 +156,7 @@ KNOWN_UTILITIES = [
     ("SOUTH TEXAS ELECTRIC", "STEC"), ("BRAZOS", "Brazos Electric"), ("BEC", "Brazos Electric"),
     ("DME", "Denton Municipal"), ("DENTON", "Denton Municipal"), ("AUSTIN ENERGY", "Austin Energy"),
     ("EL PASO ELECTRIC", "El Paso Electric"), ("SOUTHWESTERN ELECTRIC POWER", "SWEPCO"),
-    ("SOUTHWESTERN PUBLIC SERVICE", "SPS (Xcel)"), ("ENTERGY", "Entergy Texas"),
+    ("SOUTHWESTERN PUBLIC SERVICE", "SPS (Xcel)"), ("ENTERGY TEXAS", "Entergy Texas"), ("ENTERGY LOUISIANA", "Entergy Louisiana"), ("ENTERGY ARKANSAS", "Entergy Arkansas"), ("ENTERGY MISSISSIPPI", "Entergy Mississippi"), ("ENTERGY NEW ORLEANS", "Entergy New Orleans"),
     ("GSEC", "Golden Spread"), ("GOLDEN SPREAD", "Golden Spread"), ("SHARYLAND", "Sharyland"),
     ("CROSS TEXAS", "Cross Texas"), ("CTT", "Cross Texas"), ("LONESTAR", "Lone Star Transmission"),
     ("LPL", "Lubbock Power & Light"), ("LUBBOCK", "Lubbock Power & Light"),
