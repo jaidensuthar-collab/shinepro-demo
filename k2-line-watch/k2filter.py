@@ -30,7 +30,7 @@ NEWS_NOISE = ("opinion", "op-ed", "editorial", "study finds", "could save", "rat
               # accidents, politics and people stories mention a line without saying anything about it
               "fatal", "killed", "dies", "died", "death", "injur", "electrocut", "election", "concede", "concession",
               "obituary", "arrest", "lawsuit settled", "wildfire")
-NEWS_SPECIFIC = ("kv", "open house", "route", "transmission line", "power line")
+NEWS_SPECIFIC = ("kv", "open house", "route", "transmission line", "power line", "substation", "switching station")
 # Line Watch is U.S. only: plan news about other countries is dropped.
 FOREIGN = re.compile(r"\b(India|Indian|Peru|Chile|Brazil|Mexico|Canada|Canadian|Ontario|Quebec|Alberta|British Columbia|"
                      r"Australia|UK|Britain|England|Scotland|Ireland|Europe|EU|Germany|France|Spain|China|Japan|Philippines|"
@@ -40,6 +40,7 @@ STAGES = {
     "2": "ERCOT review: the grid operator is checking the need. Usually 1 to 2 years before a route is filed.",
     "3": "Utility project page or open houses: draft route options are being shown. Usually 4 to 9 months before a route is filed.",
     "3+": "In the news: often the first public word of open houses or a fight over a route.",
+    "4p": "Army Corps permit: the line or substation has a federal water or levee permit record, so its route or site is settled enough to permit. Usually months before construction.",
     "2+": "Regional plan news: a grid operator's plan or portfolio is moving (stakeholder vote, board vote, new list).",
     "4-5": "Route case filed at the Texas PUC: route options and landowners are now public. A decision usually takes about 6 months.",
     "5-6": "Decision stage in the route case: the PUC is close to picking, or has picked, the final route.",
@@ -176,6 +177,17 @@ def explain(sig):
                             "in-service dates) and add the lines to Line Watch.")
         big = "765" in low or "billion" in low or re.search(r"\b(approv|endors|board|vote)", low)
         out["importance"] = "High" if big else "Medium"
+    elif step == "4p":  # Army Corps permit record (any state)
+        if GEN_TIE.search(title) or (0 < kv < 138) or (kv == 0 and "substation" not in low and "switch" not in low):
+            return None
+        out["project"] = _short(title, 90)
+        what = sig.get("note", "").split(";")[0] or "permit record"
+        out["what_happened"] = "Army Corps %s: %s." % (what, _short(title, 120))
+        out["why_k2"] = ("A Corps permit or wetland review means the utility has fixed the route or the substation site "
+                         "well enough to permit it. The record has a map point and the district.")
+        out["next_step"] = ("Open the record, note the point and county, and check whether the line or substation is "
+                            "already in Line Watch; if not, add it with the permit as the source.")
+        out["importance"] = "High" if kv >= 345 else "Medium"
     elif step == "3+":  # news
         if any(word in low for word in NEWS_NOISE) or not any(word in low for word in NEWS_SPECIFIC) or FOREIGN.search(title):
             return None

@@ -144,7 +144,7 @@
  },
  {
   "check": "Time window (2023-11 built to 2031-11 due) and stage names",
-  "checked": 4888,
+  "checked": 4952,
   "errors": [],
   "warnings": [
    "spp-143452 Nashua - St. Joe 345kV New Interconnection Substation (DISIS-2017-002): built, but its source gives no finish date, so the 2023-11 start can't be checked",
@@ -152,12 +152,12 @@
    "spp-143518 Buffalo Flats 345kV Interconnection Expansion (DISIS-2017-002): built, but its source gives no finish date, so the 2023-11 start can't be checked",
    "spp-143453 Nashua - St. Joe 345kV GEN-2017-183 Interconnection (TOIF) (KCPL): built, but its source gives no finish date, so the 2023-11 start can't be checked",
    "spp-143343 Stillwell - Clinton 161kV GEN-2017-108 Interconnection (TOIF) (KCPL): built, but its source gives no finish date, so the 2023-11 start can't be checked",
-   "812 lines have no in-service date yet, so the 2031-11 end can't be checked for them (West 212, PJM 202, SPP 160, MISO 84, ERCOT (Texas) 76, Southeast 47, CAISO 16, NYISO 11, ISO-NE 3, WECC 1)"
+   "814 lines have no in-service date yet, so the 2031-11 end can't be checked for them (PJM 204, West 198, SPP 159, MISO 85, ERCOT (Texas) 76, Southeast 59, CAISO 16, NYISO 9, ISO-NE 7, WECC 1)"
   ]
  },
  {
   "check": "Substation points are in their state and in the county the source lists",
-  "checked": 4461,
+  "checked": 4538,
   "errors": [],
   "warnings": [
    "substation Kammer: point is 5 miles outside Marshall County, the county its source lists",
@@ -225,18 +225,18 @@
    "substation Triangle: point is 4 miles outside Midland County, the county its source lists",
    "substation Vealmoor: point is 6 miles outside Howard County, the county its source lists",
    "substation Yucca Drive: point is 10 miles outside Ector County, the county its source lists",
-   "930 lines have no placeable substation (no county given, and not on public maps by name): tpit-102068, pjm-s3608.5, pjm-b3800.7, pjm-b3800.43, pjm-b3800.53, pjm-b4089.1, spp-170051, spp-170054"
+   "937 lines have no placeable substation (no county given, and not on public maps by name): tpit-102068, pjm-s3608.5, pjm-b3800.7, pjm-b3800.43, pjm-b3800.53, pjm-b4089.1, spp-170051, spp-170054"
   ]
  },
  {
   "check": "Substation status agrees between lines and substations",
-  "checked": 5980,
+  "checked": 6073,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Downloads match the page (CSV, GeoJSON, KML, new-only layers)",
-  "checked": 19287,
+  "checked": 19578,
   "errors": [],
   "warnings": []
  },
@@ -278,7 +278,7 @@
  },
  {
   "check": "MISO lines match their sources (Entergy Texas report, MISO MTEP25 Appendix A, Tranche 1 dashboard, researched utility and state filings)",
-  "checked": 542,
+  "checked": 541,
   "errors": [],
   "warnings": [
    "etr-brad-park Brad Park 230 kV switching station (cut-in of Rhodair - Garden 230 kV): stage 'built' is estimated (estimated: Entergy's planned finish (2025-08) is more than 6 months past. Entergy's report: construction Aug 2024 to Aug)",
@@ -364,7 +364,6 @@
    "mtep25-50367 Clinton Rail Air Park Substation 161 kV: Clinton Rail Air Park Substation has no public location yet",
    "mtep25-50768 Quad Cities Station - Rock Creek 345 kV ckt 2: Quad Cities Station has no public location yet",
    "mtep25-50769 Quad Cities Station - Rock Creek 345 kV ckt 1: Quad Cities Station has no public location yet",
-   "misor-saratoga-7-mile-creek-138 Saratoga - 7 Mile Creek 138 kV: 7 Mile Creek has no public location yet",
    "misor-jtiq-raun-s3452-345 Raun - S3452 345/161 kV double circuit (MISO-SPP JTIQ): S3452 345 kV Substation (new, expansion of OPPD S1252 north of Omaha) has no public location yet",
    "misor-p2c-il-beehive-dupoferry-138 Beehive - Dupo Ferry 138 kV (Rush Island reinforcement): Beehive has no public location yet",
    "misor-p2c-il-beehive-dupoferry-138 Beehive - Dupo Ferry 138 kV (Rush Island reinforcement): Dupo Ferry has no public location yet",
@@ -396,6 +395,7 @@
    "mtep25-51458 Lyon County - Brookings County 345 kV ckt 1: Brookings County has no public location yet",
    "mtep25-51468 Substation 91 - Utica Ridge 161 kV ckt 1: Utica Ridge has no public location yet",
    "mtep25-51470 Nucor - Wolf Creek 345 kV: Wolf Creek has no public location yet",
+   "misor-saratoga-7-mile-creek-138 Saratoga - 7 Mile Creek 138 kV: 7 Mile Creek has no public location yet",
    "misor-mo-rushisland-joachim-345-reconductor Rush Island - Joachim 345 kV reconductor: Joachim has no public location yet",
    "misor-mi-hagensville-jct-interconnection-138 Hagensville Junction interconnection to Rockport - Port Calcite 138 kV line: Hagensville Junction has no public location yet",
    "misor-mi-hagensville-jct-interconnection-138 Hagensville Junction interconnection to Rockport - Port Calcite 138 kV line: Rockport - Port Calcite 138 kV line (METC) has no public location yet",
@@ -452,7 +452,6 @@
    "misor-ell-fairview-madisonville-230 Fairview - Madisonville 230 kV upgrades: Fairview has no public location yet",
    "misor-eal-ebony-kuhn-161 Ebony - Kuhn Road 161 kV upgrade: Ebony has no public location yet",
    "misor-eal-ebony-kuhn-161 Ebony - Kuhn Road 161 kV upgrade: Kuhn Road has no public location yet",
-   "misor-oak-creek-oakview-138-uprate Oak Creek - Oakview 138 kV (836) uprate: Oakview has no public location yet",
    "misor-nature-park-138-mullet-river Nature Park 138 kV line work (Mullet River Area Reliability Project): Nature Park has no public location yet",
    "misor-nature-park-138-mullet-river Nature Park 138 kV line work (Mullet River Area Reliability Project): Mullet River site (X-57) has no public location yet",
    "misor-mo-wildwood-eatherton-babler-138 Wildwood - Eatherton and Wildwood - Babler 138 kV (two new lines): Eatherton has no public location yet",
@@ -532,6 +531,7 @@
    "misor-kaukauna-melissa-138-rerate Kaukauna Central Tap - Melissa 138 kV (971K11) rerate: Kaukauna Central Tap has no public location yet",
    "misor-edgewater-lodestar-138 Edgewater - Lodestar 138 kV (X-48/Y-31) underground cable rebuild: Lodestar has no public location yet",
    "misor-harbor-russel-138 Harbor - Russel Terminal 138 kV (893K11) rebuild: Russel Terminal has no public location yet",
+   "misor-oak-creek-oakview-138-uprate Oak Creek - Oakview 138 kV (836) uprate: Oakview has no public location yet",
    "misor-pulliam-maplewood-138 Pulliam SW YD - Maplewood 138 kV (X-76) rebuild: Pulliam has no public location yet",
    "misor-presque-isle-huron-138-rerate Presque Isle - Huron 138 kV (X-118) rerate: Huron has no public location yet",
    "misor-il-hoosier-fairfieldsouth-wheelercreek-138 Fairfield South - Wheeler Creek 138 kV (Wheeler Creek to Kays, 69 kV to 138 kV rebuild): Wheeler Creek has no public location yet",
@@ -631,6 +631,8 @@
    "pjm-n8203.2 Carson - Clubhouse 230 kV substation: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-03 has passed and PJM has not marked it in service)",
    "pjm-n8211.1 Albright - Cross School 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2025-08 has passed and PJM has not marked it in service)",
    "pjm-n8258.1 AE2 - 092 Switching 230 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-06 has passed and PJM has not marked it in service)",
+   "pjm-n8317.2: 230 kV / 2026-03 / built but PJM gives 230 kV / 2025-12 / in construction (changed on purpose: Line Watch research: Dominion completed the three overhead 230 kV circuits Fentress - Harpers in June 2025 and CVOW delivered first power over them on March 23,)",
+   "pjm-n8317.3: 230 kV / 2026-03 / built but PJM gives 230 kV / 2025-12 / in construction (changed on purpose: Line Watch research: Harpers Switching Station carried CVOW's first power to the grid on March 23, 2026; Dominion's Q3 2026 10-Q says onshore construction for f)",
    "pjm-n8329.2 TSS 962 HOG RUN CREEK 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-10 has passed and PJM has not marked it in service)",
    "pjm-n8393 05BEATTY 138.0 kV - 05ZUBER 138.0 kV 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2024-12 has passed and PJM has not marked it in service)",
    "pjm-n8406.4 Stanton - Summit 230 kV substation: stage 'in construction' is estimated (estimated: PJM's in-service date 2023-12 has passed and PJM has not marked it in service)",
@@ -683,7 +685,7 @@
  },
  {
   "check": "Texas and SPP sweep: researched lines have sources; corrections to official lists are deliberate",
-  "checked": 1757,
+  "checked": 1878,
   "errors": [],
   "warnings": [
    "tpit-102815 SandLake - North McCamey Transmission Line Addition: stage 'built' but ERCOT says 'Under Construction' (changed on purpose: Line Watch research: LCRA (July 2026) says the North McCamey-Sand Lake 345 kV line is complete and energized, and Oncor's Q2 2026 release says it placed its por)",
@@ -739,16 +741,26 @@
    "miso-lrtp-6: stage in construction but MISO's construction column says '' (changed on purpose: Line Watch research: PSCW approved Grid Forward Central Wisconsin (Tremval-Arpin-Columbia, 5-CE-157) December 10, 2025; ATC reported line construction began Q2 )",
    "miso-lrtp-7: stage in construction but MISO's construction column says '' (changed on purpose: Line Watch research: The Marshalltown (Twinkle) - Morgan Valley 345 kV segment received IUC franchise E-22544 on Dec 1, 2025 and ITC Midwest began construction )",
    "miso-lrtp-8: 345 kV / 2028-12 but MISO says 345 kV / 2028-06 (changed on purpose: Line Watch research: ITC Midwest reports the IUC issued its order on the Beverly - Sub 92 franchise (E-22560, hearing July 7, 2026). ITC Midwest project site: c)",
+   "mtep25-50860: 138 kV / 2030-01 but MTEP25 says 138 kV / 2028-05 (changed on purpose: Line Watch research: ATC 2026 10-Year Assessment lists Stiles - Sherwood 138 kV (L-142) partial rebuild at est. ISD Jan-2030 (updated schedule).)",
+   "mtep25-50882: 345 kV / 2028-07 but MTEP25 says 345 kV / 2028-04 (changed on purpose: Line Watch research: ATC 2026 10-Year Assessment lists Racine County DIC Cosmos Substation at est. ISD Jul-2028.)",
+   "mtep25-51267: 345 kV / 2031-03 but MTEP25 says 345 kV / 2029-01 (changed on purpose: Line Watch research: ATC 2026 10-Year Assessment lists Forest Junction - Branch River 345 kV (W-15) line uprate at est. ISD Mar-2031 (updated schedule).)",
    "mtep25-50258: 345 kV / 2030-12 but MTEP25 says 345 kV / 2027-12 (changed on purpose: Line Watch research: The 28-mile Burns-Montgomery double-circuit 345 kV (Montgomery-Callaway Connector) CCN in EA-2026-0058 is still pending; Ameren Missouri fi)",
    "mtep25-50269: 345 kV / 2026-03 but MTEP25 says 345 kV / 2027-09 (changed on purpose: Line Watch research: ITC Midwest energized the Big Cedar 345 kV substation in March 2026. ITC Midwest energized the Big Cedar Substation in March 2026.)",
    "mtep25-50269: stage built but MISO's status is M2 - Appendix A Approved (changed on purpose: Line Watch research: ITC Midwest energized the Big Cedar 345 kV substation in March 2026. ITC Midwest energized the Big Cedar Substation in March 2026.)",
    "mtep25-50273: 345 kV / 2028-12 but MTEP25 says 345 kV / 2027-09 (changed on purpose: Line Watch research: ITC Midwest project site shows Beverly - Hills construction complete Q4 2028 (IUC order issued in E-22559 after July 7, 2026 hearing).)",
-   "mtep25-50330: 138 kV / 2029-12 but MTEP25 says 138 kV / 2029-06 (changed on purpose: Line Watch research: ICC approved the preferred route and issued a CPCN for the Illinois Valley Reliability Project (Princeton - new Lima switching station near)"
+   "mtep25-50296: 345 kV / 2027-03 but MTEP25 says 345 kV / 2027-01 (changed on purpose: Line Watch research: ATC 2026 10-Year Assessment lists Racine County DIC Jupiter Substation at est. ISD Mar-2027.)",
+   "mtep25-28255: 138 kV / 2027-12 but MTEP25 says 138 kV / 2026-09 (changed on purpose: Line Watch research: ATC 2026 10-Year Assessment lists Highland - Hill Valley 138 kV new line at est. ISD Dec-2027 (ISY change, updated schedule).)",
+   "mtep25-50330: 138 kV / 2029-12 but MTEP25 says 138 kV / 2029-06 (changed on purpose: Line Watch research: ICC approved the preferred route and issued a CPCN for the Illinois Valley Reliability Project (Princeton - new Lima switching station near)",
+   "mtep25-50401: stage built but MISO's status is M2 - Appendix A Approved (changed on purpose: Line Watch research: ATC 2026 10-Year Assessment network project list marks North Lake Geneva - Elkhorn 138 kV (X-55) rebuild as In-Service with ISD Jun-2026.)",
+   "mtep25-28140: 345 kV / 2028-01 but MTEP25 says 345 kV / 2027-10 (changed on purpose: Line Watch research: ATC 2026 10-Year Assessment lists the Mill Road - Granville Project at est. ISD Jan-2028 (CPCN approved 2025).)",
+   "mtep25-28172: 138 kV / 2028-10 but MTEP25 says 138 kV / 2028-06 (changed on purpose: Line Watch research: ATC 2026 10-Year Assessment lists Range Line Dist - Range Line Switchyard 138 kV (61441) cable replacement at est. ISD Oct-2028.)",
+   "mtep25-28173: 138 kV / 2029-06 but MTEP25 says 138 kV / 2028-06 (changed on purpose: Line Watch research: ATC 2026 10-Year Assessment lists Range Line Dist - Range Line Switchyard 138 kV (61452) cable replacement at est. ISD Jun-2029.)",
+   "mtep25-51411: stage built but MISO's status is M1 - Proposed (changed on purpose: Line Watch research: ATC 2026 10-Year Assessment network project list marks Portage - Columbia 138 kV (X-13/X-20) reconductor as In-Service with ISD Sep-2026.)"
   ]
  },
  {
   "check": "U.S. only (every line and substation is in a U.S. state)",
-  "checked": 10868,
+  "checked": 11025,
   "errors": [],
   "warnings": [
    "pjms-pjm-east-marl-500-pa-portion MidAtlantic Resiliency Link 500 kV - Pennsylvania portions (502 Junction - WV border, Greene/Fayette): ends at the national border; only the U.S. part is listed",

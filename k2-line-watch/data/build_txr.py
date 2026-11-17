@@ -25,11 +25,13 @@ RESEARCH_FILES = [RESEARCH, os.path.join(HERE, "sources", "spp-research-2026.jso
                   os.path.join(HERE, "sources", "west-research-2026.json"),   # and the West outside CAISO and SPP
                   os.path.join(HERE, "sources", "southeast-research-2026.json"),   # and the Southeast (SERTP and Florida)
                   os.path.join(HERE, "sources", "us-process-research-2026.json"),
-                  os.path.join(HERE, "sources", "us-sources2-research-2026.json")]   # and new kinds of sources (federal reviews, grants, studies, filings)   # and every state's line-approval process (Nov 16)
+                  os.path.join(HERE, "sources", "us-sources2-research-2026.json"),   # and new kinds of sources (federal reviews, grants, studies, filings)
+                  os.path.join(HERE, "sources", "us-sources3-research-2026.json")]   # and a third sweep (Nov 17): long-range plans, permits, boards, open maps, builders, offshore wind
 CORRECTION_FILES = [CORRECTIONS, os.path.join(HERE, "sources", "spp-corrections-2026.json"),
                     os.path.join(HERE, "sources", "caiso-corrections-2026.json"),
                     os.path.join(HERE, "sources", "us-process-corrections-2026.json"),
-                    os.path.join(HERE, "sources", "us-sources2-corrections-2026.json")]
+                    os.path.join(HERE, "sources", "us-sources2-corrections-2026.json"),
+                    os.path.join(HERE, "sources", "us-sources3-corrections-2026.json")]
 
 
 def load_research():
@@ -80,7 +82,8 @@ def same(a, b):
 
 
 def ends_of(x):
-    return (frozenset(str(x.get("state", "TX")).replace(" ", "").split(",")), [t for t in (toks(e["name"]) for e in x["endpoints"]) if t])
+    return (frozenset(str(x.get("state", "TX")).replace(" ", "").split(",")), [t for t in (toks(e["name"]) for e in x["endpoints"]) if t],
+            B.circuits(x["name"]))
 
 
 def tpit_pairs():
@@ -118,7 +121,8 @@ def pstates(p):
 def duplicate(p, listed, pairs):
     ends = [t for t in (toks(e["name"]) for e in p["ends"]) if t]
     states = pstates(p) | {e["state"] for e in p["ends"]}
-    listed = [h for st, h in listed if st & states]   # same names in another state are other stations
+    mine = B.circuits(p["name"])
+    listed = [h for st, h, c in listed if st & states and not (mine and c and not mine & c)]   # same names in another state are other stations; '#3' is not '#2'
     if len(ends) >= 2:
         if any(covers(ends, h) for h in listed):
             return True
@@ -143,13 +147,13 @@ def txr_lines(out):
         if duplicate(p, listed, pairs) or (p.get("docket") and (str(p["docket"]).strip(), p["kv"]) in dockets and p["project_type"] != "new substation"):
             continue
         keep.append(p)
-        listed.append((frozenset(pstates(p) | {e["state"] for e in p["ends"]}), [t for t in (toks(e["name"]) for e in p["ends"]) if t]))   # the sweep files overlap each other too
+        listed.append((frozenset(pstates(p) | {e["state"] for e in p["ends"]}), [t for t in (toks(e["name"]) for e in p["ends"]) if t], B.circuits(p["name"])))   # the sweep files overlap each other too
     places = MisoPlaces(states=STATES)
     have = {frozenset((B.base(e["name"]), e.get("state", "")) for e in x["endpoints"]) for x in out if x["project_type"] != "substation upgrade"}
     lines = []
     for m, label in MARKETS.items():
         part = [p for p in keep if p.get("market", "ERCOT") == m]
-        lines += research_lines(places, have, (), prefix=PREFIX[m], market=label, src={**src, "projects": part})
+        lines += research_lines(places, have, (), prefix=PREFIX[m], market=label, src={**src, "projects": part}, by_circuit=True)
     gen = re.compile(r"GEN[- ]?TIE|GENERATION TIE|GENERATOR|\bSOLAR\b|\bWIND\b|\bBESS\b|STORAGE|GEN-\d{4}|\bPOI\b", re.I)
     for x in lines:
         x["checked"] = f"{RESEARCHED}, {src.get('checked', '')} (Texas and SPP sweeps)"

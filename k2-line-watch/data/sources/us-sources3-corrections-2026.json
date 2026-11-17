@@ -1,0 +1,517 @@
+{
+ "source": "Line Watch third nationwide sweep, more kinds of sources (Nov 17, 2026)",
+ "set": [
+  {
+   "id": "etrr-wi-elm-road-racine-345",
+   "basis": "ATC 2026 10-Year Assessment major-projects update gives a target in-service date of April 2028 and says the PSCW approved the CPCN in September 2026.",
+   "sources": [
+    "https://www.atc10yearplan.com/summary-report/emerging-projects-update",
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf"
+   ],
+   "in_service": "2028-04"
+  },
+  {
+   "id": "misor-saratoga-7-mile-creek-138",
+   "basis": "ATC 2026 10-Year Assessment network project list shows Saratoga - 7 Mile Creek 138 kV new line with est. ISD May-2028 (Updated ISD).",
+   "sources": [
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf",
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/Table-PR-23-Changed-Since-Last-Report-TYA-2026.pdf"
+   ],
+   "in_service": "2028-05"
+  },
+  {
+   "id": "misor-indian-lake-hiawatha-138-conversion",
+   "basis": "ATC 2026 10-Year Assessment network project list shows Indian Lake - Hiawatha 69 kV new line and 138 kV conversion with est. ISD Oct-2031 (Updated ISD and cost).",
+   "sources": [
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf"
+   ],
+   "in_service": "2031-10"
+  },
+  {
+   "id": "misor-western-up-lakota-winona-138",
+   "basis": "ATC 2026 10-Year Assessment network project list shows the Western UP Reliability Project at est. ISD Apr-2031 (Updated ISD); the narrative says a target of March 2031 with a Wisconsin CA filing in 2027.",
+   "sources": [
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf",
+    "https://www.atc10yearplan.com/summary-report/emerging-projects-update"
+   ],
+   "in_service": "2031-04"
+  },
+  {
+   "id": "misor-oak-creek-oakview-138-uprate",
+   "basis": "ATC 2026 10-Year Assessment network project list marks Oak Creek - Oakview 138 kV (836) uprate as In-Service with ISD Aug-2026.",
+   "sources": [
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf"
+   ],
+   "stage": "built"
+  },
+  {
+   "id": "mtep25-50401",
+   "basis": "ATC 2026 10-Year Assessment network project list marks North Lake Geneva - Elkhorn 138 kV (X-55) rebuild as In-Service with ISD Jun-2026.",
+   "sources": [
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf"
+   ],
+   "stage": "built"
+  },
+  {
+   "id": "mtep25-51411",
+   "basis": "ATC 2026 10-Year Assessment network project list marks Portage - Columbia 138 kV (X-13/X-20) reconductor as In-Service with ISD Sep-2026.",
+   "sources": [
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf",
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/Table-PR-23-Changed-Since-Last-Report-TYA-2026.pdf"
+   ],
+   "stage": "built"
+  },
+  {
+   "id": "misor-maplewood-badger-138",
+   "basis": "ATC 2026 10-Year Assessment network project list moves Maplewood - Badger 138 kV (W-75) rebuild to est. ISD Aug-2032 (outside the Line Watch window).",
+   "sources": [
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf",
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/Table-PR-23-Changed-Since-Last-Report-TYA-2026.pdf"
+   ],
+   "in_service": "2032-08"
+  },
+  {
+   "id": "misor-st-martins-oak-creek-138",
+   "basis": "ATC 2026 10-Year Assessment network project list shows St Martins - Oak Creek 138 kV reconfiguration at est. ISD Jan-2031 (Updated ISD).",
+   "sources": [
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf",
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/Table-PR-23-Changed-Since-Last-Report-TYA-2026.pdf"
+   ],
+   "in_service": "2031-01"
+  },
+  {
+   "id": "mtep25-28255",
+   "basis": "ATC 2026 10-Year Assessment lists Highland - Hill Valley 138 kV new line at est. ISD Dec-2027 (ISY change, updated schedule).",
+   "sources": [
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf",
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/Table-PR-23-Changed-Since-Last-Report-TYA-2026.pdf"
+   ],
+   "in_service": "2027-12"
+  },
+  {
+   "id": "mtep25-50860",
+   "basis": "ATC 2026 10-Year Assessment lists Stiles - Sherwood 138 kV (L-142) partial rebuild at est. ISD Jan-2030 (updated schedule).",
+   "sources": [
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf",
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/Table-PR-23-Changed-Since-Last-Report-TYA-2026.pdf"
+   ],
+   "in_service": "2030-01"
+  },
+  {
+   "id": "mtep25-28172",
+   "basis": "ATC 2026 10-Year Assessment lists Range Line Dist - Range Line Switchyard 138 kV (61441) cable replacement at est. ISD Oct-2028.",
+   "sources": [
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf",
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/Table-PR-23-Changed-Since-Last-Report-TYA-2026.pdf"
+   ],
+   "in_service": "2028-10"
+  },
+  {
+   "id": "mtep25-28173",
+   "basis": "ATC 2026 10-Year Assessment lists Range Line Dist - Range Line Switchyard 138 kV (61452) cable replacement at est. ISD Jun-2029.",
+   "sources": [
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf",
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/Table-PR-23-Changed-Since-Last-Report-TYA-2026.pdf"
+   ],
+   "in_service": "2029-06"
+  },
+  {
+   "id": "mtep25-28140",
+   "basis": "ATC 2026 10-Year Assessment lists the Mill Road - Granville Project at est. ISD Jan-2028 (CPCN approved 2025).",
+   "sources": [
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf"
+   ],
+   "in_service": "2028-01"
+  },
+  {
+   "id": "mtep25-51267",
+   "basis": "ATC 2026 10-Year Assessment lists Forest Junction - Branch River 345 kV (W-15) line uprate at est. ISD Mar-2031 (updated schedule).",
+   "sources": [
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf",
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/Table-PR-23-Changed-Since-Last-Report-TYA-2026.pdf"
+   ],
+   "in_service": "2031-03"
+  },
+  {
+   "id": "mtep25-50882",
+   "basis": "ATC 2026 10-Year Assessment lists Racine County DIC Cosmos Substation at est. ISD Jul-2028.",
+   "sources": [
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf"
+   ],
+   "in_service": "2028-07"
+  },
+  {
+   "id": "mtep25-50296",
+   "basis": "ATC 2026 10-Year Assessment lists Racine County DIC Jupiter Substation at est. ISD Mar-2027.",
+   "sources": [
+    "https://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf"
+   ],
+   "in_service": "2027-03"
+  },
+  {
+   "id": "westr-ng-bpa-six-mile-canyon",
+   "basis": "BPA 2025 Transmission Plan project table lists Six Mile Canyon 500/230 kV Substation Addition L0510 (P05580) with expected energization 2028; GERP 1.0 summary says early 2028.",
+   "sources": [
+    "https://www.bpa.gov/-/media/Aep/transmission/attachment-k/2025-BPA-Transmission-Plan_Final.pdf"
+   ],
+   "in_service": "2028"
+  },
+  {
+   "id": "westr-bpa-bonanza-500-230",
+   "basis": "BPA 2025 Transmission Plan GERP 1.0 summary (updated 1/23/26) gives Bonanza 115/230/500 kV substation estimated completion 2031 (updated from 2030); the area table still shows 2030.",
+   "sources": [
+    "https://www.bpa.gov/-/media/Aep/transmission/attachment-k/2025-BPA-Transmission-Plan_Final.pdf"
+   ],
+   "in_service": "2031"
+  },
+  {
+   "id": "westr-bpa-buckley-500-substation-rebuild",
+   "basis": "BPA 2025 Transmission Plan GERP 1.0 summary gives the Buckley 500 kV air-insulated substation rebuild estimated completion 2029 (the intertie table shows 2030).",
+   "sources": [
+    "https://www.bpa.gov/-/media/Aep/transmission/attachment-k/2025-BPA-Transmission-Plan_Final.pdf"
+   ],
+   "in_service": "2029"
+  },
+  {
+   "id": "westr-bpa-monroe-novelty-230-upgrade",
+   "basis": "BPA 2025 Transmission Plan lists Monroe-Novelty 230 kV Line Upgrade (P02367, 60 to 80 C) with expected energization 2028.",
+   "sources": [
+    "https://www.bpa.gov/-/media/Aep/transmission/attachment-k/2025-BPA-Transmission-Plan_Final.pdf"
+   ],
+   "in_service": "2028"
+  },
+  {
+   "id": "westr-az-aps-dromedary-230",
+   "basis": "APS 2026-2035 Ten-Year Plan lists the Dromedary 230kV Lines project among projects placed in service in 2025.",
+   "sources": [
+    "https://docket.images.azcc.gov/e000049070.pdf"
+   ],
+   "stage": "built"
+  },
+  {
+   "id": "westr-az-snowflake-solar-cholla-500",
+   "basis": "APS 2026-2035 Ten-Year Plan shows Snowflake Solar Transmission Provider Interconnection Facilities (500 kV, ~1.5 mi to Cholla) with construction 2026 and in-service 2027.",
+   "sources": [
+    "https://docket.images.azcc.gov/e000049070.pdf"
+   ],
+   "in_service": "2027"
+  },
+  {
+   "id": "westr-az-aps-runway-diamond-230",
+   "basis": "APS 2026-2035 Ten-Year Plan shows the Diamond 230kV Lines (formerly Runway Additional 230kV Lines; CEC Case 209) with construction start 2026 and in-service 2027, Diamond substation in service 2026.",
+   "sources": [
+    "https://docket.images.azcc.gov/e000049070.pdf"
+   ],
+   "in_service": "2027"
+  },
+  {
+   "id": "westr-az-srp-marigold-230",
+   "basis": "SRP Power Committee and Customer Utility Panel packets (May-Oct 2026) show the Marigold 230 kV transmission lines and 500/230 kV substation with an in-service target of May 2029 (Q2 2029); CEC application filed Aug 14, 2026.",
+   "sources": [
+    "https://www.srpnet.com/v3/assets/bltefc1fc708dcc94e7/blte6a6585e3cc6f104/6a88c4bbe509f4cc9776e08a/20260827_CUP_packet.pdf"
+   ],
+   "in_service": "2029-05"
+  },
+  {
+   "id": "westr-nv-nve-comstock-meadows-west-tracy-345",
+   "basis": "NV Energy 2026 WECC Annual Progress Report gives the West Tracy - Comstock Meadows 345 kV line with the Comstock Meadows 345 kV addition and two 345/120 kV transformers a planned ISD of February 2027.",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/NVE%202026%20APR.pdf"
+   ],
+   "in_service": "2027-02"
+  },
+  {
+   "id": "westr-nv-herb-goforth-prospector-230",
+   "basis": "NV Energy 2026 WECC Annual Progress Report lists HG III (Apex Central/Goforth) 230/12 kV substation energized from the Prospector 230 kV line with target ISD October 2028.",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/NVE%202026%20APR.pdf"
+   ],
+   "in_service": "2028-10"
+  },
+  {
+   "id": "epe-pine-sub",
+   "basis": "El Paso Electric 2026 WECC Annual Progress Report (Jan 26, 2026) lists the new Pine 345/115 kV Switching Station with expected in-service May 2031.",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/EPE%202026%20APR.pdf"
+   ],
+   "in_service": "2031-05"
+  },
+  {
+   "id": "epe-caliente-pine",
+   "basis": "El Paso Electric 2026 WECC Annual Progress Report lists the new Caliente-Pine 345 kV line with expected in-service May 2031.",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/EPE%202026%20APR.pdf"
+   ],
+   "in_service": "2031-05"
+  },
+  {
+   "id": "westr-pse-grand-ridge-230-substation",
+   "basis": "PSE 2026 WECC Annual Progress Report lists the Issaquah Area Distribution Capacity project (Grand Ridge Substation looped into Sammamish - Maple Valley 230 kV) in design with planned operating date 2027.",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/PSE%202026%20APR.pdf"
+   ],
+   "in_service": "2027"
+  },
+  {
+   "id": "westr-gcpd-mountain-view-loop1-230",
+   "basis": "Grant County PUD 2026 WECC Annual Progress Report gives January 2027 for converting Mountain View to a 230 kV breaker-and-a-half station intersecting the Columbia - Rocky Ford 230 kV line (QTEP).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/GCPD%202026%20APR.pdf"
+   ],
+   "in_service": "2027-01"
+  },
+  {
+   "id": "westr-gcpd-monument-hill-loop1-230",
+   "basis": "Grant County PUD 2026 WECC Annual Progress Report gives May 2028 for the new Monument Hill 230 kV breaker-and-a-half station intersecting the Columbia - Rocky Ford 230 kV line (QTEP).",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/GCPD%202026%20APR.pdf"
+   ],
+   "in_service": "2028-05"
+  },
+  {
+   "id": "westr-co-pi-2024-06-345-switching",
+   "basis": "PSCo 2026 WECC Annual Progress Report lists the PI-2024-06 Generation Interconnection Substation (new 345 kV switching station) with in-service date 2028.",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/PSCo%202026%20APR.pdf"
+   ],
+   "in_service": "2028"
+  },
+  {
+   "id": "westr-co-5111-5707-daniels-park-prairie-greenwood-230",
+   "basis": "PSCo 2026 WECC Annual Progress Report lists the Daniels Park - Prairie - Greenwood circuits 5111 and 5707 reconductor/uprate with in-service date 2027.",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/PSCo%202026%20APR.pdf"
+   ],
+   "in_service": "2027"
+  },
+  {
+   "id": "westr-az-unse-black-mountain-griffith-230",
+   "basis": "TEP/UNSE 2026 WECC Annual Progress Report says the Black Mountain Generating Station expansion with its 230 kV line to WAPA's Griffith substation has an expected in-service date of 2028.",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/TEP%202026%20APR.pdf"
+   ],
+   "in_service": "2028"
+  },
+  {
+   "id": "misor-riverton-mud-lake-230-uprate",
+   "basis": "Minnesota 2025 Biennial Transmission Projects Report (Tracking 2025-NE-N16, Great River Energy) says the Riverton - Mud Lake 230 kV temperature upgrade is planned to be in service by 2029.",
+   "sources": [
+    "https://www.minnelectrans.com/documents/2025_Biennial_Report/AS_FILED_Biennial_Transmission_Projects_Report_10.31.25.pdf"
+   ],
+   "in_service": "2029"
+  },
+  {
+   "id": "misor-beaver-creek-161",
+   "basis": "Minnesota 2025 Biennial Transmission Projects Report (Dairyland, J898 Interconnection at Beaver Creek 161 kV) gives late 2026 for the new 4-breaker 161 kV substation and late 2027 for the ~6-mile 161 kV line on new right-of-way.",
+   "sources": [
+    "https://www.minnelectrans.com/documents/2025_Biennial_Report/AS_FILED_Biennial_Transmission_Projects_Report_10.31.25.pdf"
+   ],
+   "in_service": "2027"
+  },
+  {
+   "id": "westr-ca-nv-ladwp-mccullough-victorville-500-upgrade",
+   "basis": "LADWP's July 2026 notice for the draft Subsequent EIR says the re-scoped project now replaces all ~1,750 towers over 162 miles, with construction early-to-mid 2027 through 2029 and the lines fully operational by the end of 2029 (listed 2028-12).",
+   "sources": [
+    "https://webprod.ladwp.com/sites/default/files/2026-07/ES26-0330%20MCC-VIC%20Lines%201_2%20NOA_SEIR_Final%20%28english%29_ACC.pdf",
+    "https://www.ladwp.com/community/construction-projects/other/mccullough-victorville-transmission-lines-1-and-2"
+   ],
+   "in_service": "2029-12"
+  },
+  {
+   "id": "ser-scpsa-marion-red-bluff-230",
+   "basis": "Santee Cooper's project page says it 'is constructing' the ~50-mile Marion-Red Bluff 230 kV line, with clearing on existing right-of-way in 2025 and construction on existing right-of-way June 2025 - June 2027 (energization shown Dec 2028 on that page; SCRTP March 2026 lists 12/1/2029).",
+   "sources": [
+    "https://www.santeecooper.com/community/power-line-projects/marion-red-bluff",
+    "https://www.scrtp.com/assets/pdfs/meeting-archives/scrtp-meeting-2026-03-11-presentation.pdf"
+   ],
+   "stage": "in construction"
+  },
+  {
+   "id": "ser-scpsa-varnville-indian-field-230",
+   "basis": "Santee Cooper's committed-facilities table at the March 11, 2026 SCRTP meeting lists Varnville - Indian Field 230 kV line in service 6/1/2029 (listed 2028-12).",
+   "sources": [
+    "https://www.scrtp.com/assets/pdfs/meeting-archives/scrtp-meeting-2026-03-11-presentation.pdf"
+   ],
+   "in_service": "2029-06"
+  },
+  {
+   "id": "ser-scpsa-cross-jefferies-2-230",
+   "basis": "Santee Cooper's committed-facilities table at the March 11, 2026 SCRTP meeting lists Cross - Jefferies #2 230 kV line in service 6/1/2030 (listed 2029-12).",
+   "sources": [
+    "https://www.scrtp.com/assets/pdfs/meeting-archives/scrtp-meeting-2026-03-11-presentation.pdf"
+   ],
+   "in_service": "2030-06"
+  },
+  {
+   "id": "westr-gcpd-columbia-mountain-view-230",
+   "basis": "Grant PUD's QTEP schedule shows Columbia to Mountain View construction early 2026 and in-service late 2026 (listed with no date). Grant PUD's QTEP schedule shows Columbia to Mountain View construction early 2026 and in-service late 2026.",
+   "sources": [
+    "https://grantpudqtep.org/",
+    "https://www.grantpudqtep.org/"
+   ],
+   "in_service": "2026"
+  },
+  {
+   "id": "westr-gcpd-monument-hill-rocky-ford-230",
+   "basis": "Grant PUD's QTEP schedule shows Monument Hill to Rocky Ford construction late 2026 - early 2027 and in-service mid 2027; its Feb 2026 WECC progress report lists the Monument Hill station for May 2028 (listed with no date). Grant PUD's QTEP schedule shows Monument Hill to Rocky Ford construction late 2026 to early 2027 and in-service mid 2027.",
+   "sources": [
+    "https://grantpudqtep.org/",
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/GCPD%202026%20APR.pdf",
+    "https://www.grantpudqtep.org/"
+   ],
+   "in_service": "2027"
+  },
+  {
+   "id": "westr-gcpd-mountain-view-monument-hill-230",
+   "basis": "Grant PUD's QTEP schedule shows Mountain View to Monument Hill construction late 2026 - early 2027 and in-service mid 2027 (listed with no date). Grant PUD's QTEP schedule shows Mountain View to Monument Hill construction late 2026 to early 2027 and in-service mid 2027.",
+   "sources": [
+    "https://grantpudqtep.org/",
+    "https://www.grantpudqtep.org/"
+   ],
+   "in_service": "2027"
+  },
+  {
+   "id": "sppr-les-north-bluff-345-buildout",
+   "basis": "LES's 2025 continuing disclosure report to rating agencies (EMMA, May 2026) says phase two of North Bluff, adding two 345/115 kV transformers to integrate the site into LES's 345 kV system, began in 2025 and is expected to be completed in 2028 (listed with no date).",
+   "sources": [
+    "https://emma.msrb.org/P11947604.pdf"
+   ],
+   "in_service": "2028"
+  },
+  {
+   "id": "caisor-tdf-2223-p-04",
+   "basis": "CAISO Board-approved 2025-2026 Transmission Plan Tables 8-2/8-3 give a current expected in-service date of Apr-27 for the Colorado River-Red Bluff 500 kV No. 1 line upgrade (listed 2028-12).",
+   "sources": [
+    "https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan.pdf"
+   ],
+   "in_service": "2027-04"
+  },
+  {
+   "id": "caisor-tdf-2223-p-06",
+   "basis": "CAISO Board-approved 2025-2026 Transmission Plan status table gives Dec-28 for the Devers-Valley 500 kV No. 1 line upgrade (listed 2030-12).",
+   "sources": [
+    "https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan.pdf"
+   ],
+   "in_service": "2028-12"
+  },
+  {
+   "id": "caisor-tdf-2223-p-03",
+   "basis": "CAISO Board-approved 2025-2026 Transmission Plan status table gives Jan-30 for the Borden-Storey 230 kV No. 1 and 2 reconductoring (listed 2030-05).",
+   "sources": [
+    "https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan.pdf"
+   ],
+   "in_service": "2030-01"
+  },
+  {
+   "id": "westr-nv-east-tracy-west-tracy-345-2",
+   "basis": "NV Energy's 2026 IRP Action Plan (PUCN Docket 26-05007, filed May 2026) seeks approval of East Tracy-West Tracy 345 kV #2 with an in-service date of 2029.",
+   "sources": [
+    "https://www.nvenergy.com/publish/content/dam/nvenergy/brochures_arch/about-nvenergy/rates-regulatory/recent-regulatory-filings/2026-irp/NPC-SPPC-Volume-2.pdf"
+   ],
+   "in_service": "2029"
+  },
+  {
+   "id": "westr-nv-frontier-lander-230",
+   "basis": "NV Energy's 2026 IRP Action Plan (PUCN Docket 26-05007, filed May 2026) seeks approval of the Frontier-Lander 230 kV line with an in-service date of 2030.",
+   "sources": [
+    "https://www.nvenergy.com/publish/content/dam/nvenergy/brochures_arch/about-nvenergy/rates-regulatory/recent-regulatory-filings/2026-irp/NPC-SPPC-Volume-2.pdf"
+   ],
+   "in_service": "2030"
+  },
+  {
+   "id": "westr-nv-coyote-creek-falcon-345",
+   "basis": "NV Energy's 2026 IRP Action Plan (PUCN Docket 26-05007, filed May 2026) seeks approval of the Coyote Creek-Falcon 345 kV line with an in-service date of 2030.",
+   "sources": [
+    "https://www.nvenergy.com/publish/content/dam/nvenergy/brochures_arch/about-nvenergy/rates-regulatory/recent-regulatory-filings/2026-irp/NPC-SPPC-Volume-2.pdf"
+   ],
+   "in_service": "2030"
+  },
+  {
+   "id": "westr-nv-olinghouse-chukar-345",
+   "basis": "NV Energy's 2026 IRP Action Plan (PUCN Docket 26-05007, filed May 2026) seeks approval of the Olinghouse-Chukar 345 kV line with an in-service date of 2030.",
+   "sources": [
+    "https://www.nvenergy.com/publish/content/dam/nvenergy/brochures_arch/about-nvenergy/rates-regulatory/recent-regulatory-filings/2026-irp/NPC-SPPC-Volume-2.pdf"
+   ],
+   "in_service": "2030"
+  },
+  {
+   "id": "westr-nv-walker-river-grayskull-525",
+   "basis": "NV Energy's 2026 IRP Action Plan (PUCN Docket 26-05007, filed May 2026) seeks approval of the Grayskull 525/345 kV substation and Grayskull-Walker River 525 kV line with an in-service date of 2030.",
+   "sources": [
+    "https://www.nvenergy.com/publish/content/dam/nvenergy/brochures_arch/about-nvenergy/rates-regulatory/recent-regulatory-filings/2026-irp/NPC-SPPC-Volume-2.pdf"
+   ],
+   "in_service": "2030"
+  },
+  {
+   "id": "pjm-n8317.3",
+   "basis": "Harpers Switching Station carried CVOW's first power to the grid on March 23, 2026; Dominion's Q3 2026 10-Q says onshore construction for first power was completed December 2025 and the rest substantially completed October 2026. CVOW first power delivered through Harpers on March 23, 2026.",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/715957/000119312526440697/d-20260930.htm",
+    "https://coastalvawind.com/about/the-project/timeline"
+   ],
+   "stage": "built",
+   "in_service": "2026-03"
+  },
+  {
+   "id": "pjm-n8317.2",
+   "basis": "Dominion completed the three overhead 230 kV circuits Fentress - Harpers in June 2025 and CVOW delivered first power over them on March 23, 2026 (Q3 2026 10-Q: onshore construction for first power done Dec 2025). CVOW first power to the grid on March 23, 2026.",
+   "sources": [
+    "https://coastalvawind.com/community/residents",
+    "https://www.sec.gov/Archives/edgar/data/715957/000119312526440697/d-20260930.htm",
+    "https://coastalvawind.com/about/the-project/timeline"
+   ],
+   "stage": "built",
+   "in_service": "2026-03"
+  },
+  {
+   "id": "ser-duke-lilesville-oakboro-230-rebuild",
+   "basis": "The CTPC August 2026 mid-year update to the 2025 Collaborative Transmission Plan changed DEP project E230124 (Lilesville - Oakboro 230 kV Black & White rebuild) to status Underway with a 12/1/2028 in-service date; the DEC portion W230323 is Planned for 6/1/2028.",
+   "sources": [
+    "https://www.carolinastpc.org/media/reference/2026/08/14/2025_Collaborative_Transmission_Plan_MidYear_Update_08-13-26.pdf"
+   ],
+   "stage": "in construction"
+  },
+  {
+   "id": "ser-dep-greenville-everetts-230-reconductor",
+   "basis": "The CTPC 2025-2035 Collaborative Transmission Plan (Apr 2026) and its Aug 2026 update list E190092 Greenville - VEPCO Everetts 230 kV reconductor as Underway, in service 12/1/2026.",
+   "sources": [
+    "https://carolinastpc.org/media/reference/2026/04/22/2025_CTPC_Collaborative_Transmission_Plan_Report_FINAL_04-16-2026.pdf",
+    "https://www.carolinastpc.org/media/reference/2026/08/14/2025_Collaborative_Transmission_Plan_MidYear_Update_08-13-26.pdf"
+   ],
+   "stage": "in construction"
+  },
+  {
+   "id": "westr-nm-pnm-mid-state-345",
+   "basis": "PNM filed its CCN application with the NM PRC on Oct 30, 2026 for the 102.8-mile Mid-State 345 kV project (Western Spirit Switching Station - Hidden Mountain), with in-service by end of 2029 and a requested final order by July 30, 2027; it is now a utility project with a pending application rather than only proposed.",
+   "sources": [
+    "https://www.pnm.com/documents/d/pnm.com/2-1-executive-summary-1",
+    "https://www.pnm.com/documents/d/pnm.com/3-1-application-1"
+   ],
+   "stage": "planned"
+  },
+  {
+   "id": "nyr-ny-sunrise-wind-export",
+   "basis": "Orsted says Sunrise Wind's Holbrook onshore converter and export cables are finished and the project expects commercial operation in the second half of 2027 (Newsday, Sept/Oct 2026; NYSERDA CES report July 2026: onshore work 100% complete, full commissioning 2027).",
+   "sources": [
+    "https://www.newsday.com/long-island/environment/sunrise-empire-wind-wurqm2w1",
+    "https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B4005239F-0000-C930-9958-2BD4486AD7B2%7D"
+   ],
+   "in_service": "2027"
+  },
+  {
+   "id": "nyr-ny-empire-wind-1-export",
+   "basis": "Equinor said in Oct 2026 that Empire Wind 1 first power slips into early 2027 with turbine installation starting 2027 and commercial operation expected in 2027; the SBMT onshore substation was expected to be energized in fall 2026.",
+   "sources": [
+    "https://www.newsday.com/long-island/environment/empire-wind-equinor-fi5gvdv3",
+    "https://www.nyserda.ny.gov/All-Programs/Offshore-Wind/Focus-Areas/NY-Offshore-Wind-Projects"
+   ],
+   "in_service": "2027"
+  }
+ ],
+ "drop": {
+  "pjms-pjm-east-njcec-east-windsor-smithburg-500": "This is NJ SAA project b3737.29 (East Windsor - Smithburg E2005 conversion to 500/230 kV); it is on Schedule 1 (canceled) of the NJ BPU-PJM Mutual Termination Agreement, approved by NJ BPU April 22, 2026 and accepted by FERC June 22, 2026 (ER26-2294), and PJM's Board removed it from the RTEP.",
+  "pjms-pjm-east-njcec-clarksville-lawrence-230": "NJ SAA project b3737.27 (rebuild ~0.8 mi of D1018 Clarksville - Lawrence 230 kV) is on Schedule 1 (canceled) of the SAA Mutual Termination Agreement accepted by FERC June 22, 2026.",
+  "pjms-pjm-east-njcec-clarksville-windsor-230": "The Windsor - Clarksville SAA subproject (b3737.59) is on Schedule 1 (canceled) of the NJ SAA Mutual Termination Agreement; only b3737.1, .38, .39, .45, .47 and .60 remain in the RTEP.",
+  "pjms-pjm-east-njcec-middlesex-red-oak-230": "The Northern NJ SAA reconductoring projects (b3737.31 Lake Nelson I - Middlesex, b3737.33/.34 Red Oak A/B - Raritan River, b3737.55 Middlesex) are on Schedule 1 (canceled) of the SAA Mutual Termination Agreement accepted by FERC June 22, 2026."
+ }
+}

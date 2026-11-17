@@ -30,6 +30,7 @@ Examples:
 
 import argparse
 import datetime as dt
+import email.utils
 import hashlib
 import html
 import json
@@ -610,6 +611,98 @@ def news_signals(days, today):
     return signals
 
 
+# Trade press feeds (third sweep, Nov 17, 2026): construction starts, energizations and contract awards
+# for named lines and substations anywhere in the U.S.
+TRADE_FEEDS = [
+    ("T&D World: overhead transmission",
+     "https://www.tdworld.com/__rss/website-scheduled-content.xml?input=%7B%22sectionAlias%22%3A%22overhead-transmission%22%7D"),
+    ("T&D World: substations",
+     "https://www.tdworld.com/__rss/website-scheduled-content.xml?input=%7B%22sectionAlias%22%3A%22substations%22%7D"),
+    ("MYR Group (Sturgeon, Harlan, Great Southwestern, High Country)", "https://myrgroup.com/feed/"),
+]
+
+
+def trade_feed_signals(days, today):
+    """New items from transmission trade-press and contractor feeds, kept if they are about lines or substations."""
+    signals, errors = [], []
+    since = today - dt.timedelta(days=days)
+    for name, url in TRADE_FEEDS:
+        try:
+            items = parse_news(fetch(url))
+        except (RuntimeError, ET.ParseError) as err:
+            errors.append("%s: %s" % (name, err))
+            continue
+        for item in items:
+            title = clean(item["title"])
+            low = title.lower()
+            try:
+                when = email.utils.parsedate_to_datetime(item["date"]).date()
+            except (TypeError, ValueError):
+                when = today
+            if when < since or not any(word in low for word in NEWS_KEEP):
+                continue
+            signals.append(Signal(
+                id=short_id("news", re.sub(r"\s+-\s+[^-]+$", "", low)),   # one alert per story across feeds
+                step="3+ news (open houses, routes)",
+                source="Trade press: %s" % name,
+                utility=guess_utility(title),
+                voltage_kv=voltage(title),
+                title=title,
+                source_date=when.isoformat(),
+                url=item["link"],
+                priority="High" if any(word in low for word in NEWS_HIGH) else "Medium",
+            ))
+    return signals, errors
+
+
+# U.S. Army Corps of Engineers permit records (public ORM data, every district): a permit, levee-crossing request
+# or wetland determination for a named line or substation means its route or site is settled enough to permit.
+CORPS_API = "https://permits.ops.usace.army.mil/orm-public-api/permits/search"
+CORPS_TERMS = ("kV", "transmission line", "substation", "switching station", "switchyard")   # one query each: the site refuses brackets
+CORPS_KEEP = re.compile(r"\b\d{2,3}\s*-?\s*kV\b|transmission line|substation|switching station|switchyard", re.I)
+CORPS_SKIP = re.compile(r"vegetation|maintenance|fiber|\bgas\b|pipeline|telecom|distribution|\bOPGW\b|\bwater\b|sewer|"
+                        r"Transmission Services|cable replacement|emergency", re.I)
+CORPS_KINDS = {"issued": "permit issued", "pending": "permit application pending",
+               "wrda": "permit review paid for by the applicant (WRDA Section 214)",
+               "s408": "request to cross or alter a Corps levee or waterway (Section 408)",
+               "jds": "wetland determination for the site", "nepa_ea": "environmental assessment",
+               "nepa_eis": "environmental impact statement"}
+
+
+def corps_signals(today, lookback_days=60):
+    """Army Corps permit records dated in the last two months that name a line or substation."""
+    start = (today - dt.timedelta(days=lookback_days)).strftime("%Y%m%d")
+    features = []
+    for term in CORPS_TERMS:
+        query = "%s AND vdate:[%s TO %s]" % (term, start, today.strftime("%Y%m%d"))
+        data = json.loads(fetch(CORPS_API + "?" + urllib.parse.urlencode({"da": "true", "max": "1000", "q": query},
+                                                                         quote_via=urllib.parse.quote)))
+        features += data.get("results", {}).get("features", [])
+        time.sleep(0.5)
+    signals = []
+    for feature in features:
+        rec = feature.get("properties", {})
+        title = clean(rec.get("requestName") or rec.get("projectName") or rec.get("locationName") or "")
+        ident = rec.get("identifier") or rec.get("daNumber") or rec.get("requestId")
+        if not ident or not CORPS_KEEP.search(title) or CORPS_SKIP.search(title):
+            continue
+        vdate = str(rec.get("vdate") or "")
+        lon, lat = (feature.get("geometry") or {}).get("coordinates") or (None, None)
+        signals.append(Signal(
+            id="usace:%s" % ident,
+            step="4p Army Corps permit",
+            source="Army Corps permits (%s)" % (rec.get("district") or rec.get("org") or "district"),
+            utility=guess_utility(title),
+            voltage_kv=voltage(title),
+            title=title,
+            source_date="%s-%s-%s" % (vdate[:4], vdate[4:6], vdate[6:8]) if len(vdate) == 8 else "",
+            url=CORPS_API + "?" + urllib.parse.urlencode({"da": "true", "q": ident}),
+            note="%s%s" % (CORPS_KINDS.get(rec.get("vtype"), rec.get("vtype") or ""),
+                           "; at %.5f, %.5f" % (lat, lon) if lat is not None and lon is not None else ""),
+        ))
+    return signals
+
+
 # ---------------------------------------------------------------- reading project pages
 
 # Only phrases that say THIS line is finished ("energized" alone also appears in history and plans).
@@ -664,7 +757,7 @@ def run(args):
             pass
 
     signals, errors = [], []
-    sources = {"puct", "rpg", "spp", "util", "news", "dockets"} if args.only == "all" else {args.only}
+    sources = {"puct", "rpg", "spp", "util", "news", "dockets", "permits"} if args.only == "all" else {args.only}
     if "puct" in sources:
         try:
             signals += puct_signals(args.puct_days, today)
@@ -697,6 +790,14 @@ def run(args):
             signals += plan_news_signals(args.news_days, today)
         except (RuntimeError, ET.ParseError) as err:
             errors.append("Regional plan news: %s" % err)
+        trade, trade_errors = trade_feed_signals(max(args.news_days, 7), today)
+        signals += trade
+        errors += trade_errors
+    if "permits" in sources:
+        try:
+            signals += corps_signals(today)
+        except (RuntimeError, ValueError) as err:
+            errors.append("Army Corps permits: %s" % err)
     if "dockets" in sources:
         # Watch every route case already in the feed, the ones found today, and the fixed list.
         controls = set(WATCH_DOCKETS) | set(args.watch or [])
@@ -794,7 +895,7 @@ def main(argv=None):
     p.add_argument("--all", action="store_true", help="keep signals the K2 filter would drop")
     p.add_argument("--db-dir", help="write new K2 signals as K2 Line Watch database files (one JSON each + writes.json)")
     p.add_argument("--baseline", action="store_true", help="mark everything as 'Known at start' (first run)")
-    p.add_argument("--only", choices=["all", "puct", "rpg", "spp", "util", "news", "dockets"], default="all")
+    p.add_argument("--only", choices=["all", "puct", "rpg", "spp", "util", "news", "dockets", "permits"], default="all")
     p.add_argument("--news-days", type=int, default=3, help="how many days of news to scan")
     p.add_argument("--watch-days", type=int, default=4,
                    help="how many days of filings to scan inside watched route cases")

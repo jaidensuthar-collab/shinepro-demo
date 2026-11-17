@@ -266,7 +266,7 @@ def mtep_lines(places=None, skip_pairs=()):
     return out
 
 
-def research_lines(places=None, have=(), have_mtep=(), path=None, prefix="misor-", market=MARKET_MISO, src=None):
+def research_lines(places=None, have=(), have_mtep=(), path=None, prefix="misor-", market=MARKET_MISO, src=None, by_circuit=False):
     """MISO projects found in utility pages, state commission dockets and transmission owners' plans
     (sources/miso-research-2026.json): projects approved before MTEP25 that are still being built, and ones not in
     MISO's list yet. Each carries its own stage and source; projects already in the list (same end substations) are skipped."""
@@ -283,9 +283,12 @@ def research_lines(places=None, have=(), have_mtep=(), path=None, prefix="misor-
         if p["stage"] == "built" and not isd:
             continue   # built, but no date to show it is within the last 3 years
         key = frozenset((B.base(e["name"]), e["state"]) for e in p["ends"])
-        if key in seen or any(p.get(k) and str(p[k]) in have_mtep for k in ("mtep_id", "pjm_id")) or p["key"] in DROP:
+        if any(p.get(k) and str(p[k]) in have_mtep for k in ("mtep_id", "pjm_id")) or p["key"] in DROP:
             continue
-        seen.add(key)
+        circ = frozenset(B.circuits(p["name"])) if by_circuit else frozenset()
+        if (key, circ) in seen if circ else key in seen:
+            continue   # 'A - B #3' is another line than 'A - B #2' (the caller already checked the official lists)
+        seen.update({key, (key, circ)} if circ else {key})
         ends = []
         for e in p["ends"]:
             if e.get("lat") is not None:

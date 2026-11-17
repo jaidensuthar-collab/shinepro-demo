@@ -855,6 +855,16 @@ def past_due(lines):
 NAMED_KV = re.compile(r"((?:\d{2,3}\s*[/-]\s*)*\d{2,3})\s*-?\s*kV", re.I)
 
 
+CIRCUIT = re.compile(r"(?:#\s*|\bNO\.?\s*|\bCKT\.?\s*|\bCIRCUIT\s+)(\d)\b", re.I)
+SECOND = re.compile(r"\b(?:SECOND|2ND)\s+(?:CIRCUIT|CKT)", re.I)
+
+
+def circuits(name):
+    """Circuit numbers a name states ('#3', 'No. 2', 'ckt 1', 'second circuit'); empty when it names none."""
+    found = {int(n) for n in CIRCUIT.findall(str(name or ""))}
+    return found | ({2} if SECOND.search(str(name or "")) else set())
+
+
 def stated_kv(kv, title):
     """The voltage a project's own title states wins over the list's voltage column when the two disagree (ERCOT's
     'Rockhound - Connell 345 kV' row carries 138 in its kV column; SPP's 'Finstad - Vanhook 115 kV' carries 345).

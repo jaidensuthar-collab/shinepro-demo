@@ -317,3 +317,37 @@ map (John) take the layer in; routes, county records and parcels are phase 2 for
   point inside Texas and its listed county, substation status consistent between lines and substations, downloads
   matching the page data, and every Oncor viewer project present. A failed check blocks publishing.
 - **Market** (`market`): "ERCOT (Texas)" for now, so lines can be sorted by market once other regions are added.
+
+
+## Third nationwide sweep: more kinds of sources (Nov 17, 2026)
+
+Six more kinds of public sources, across the whole U.S., checked against the 4,888 lines already listed
+(`data/sources/us-sources3-research-2026.json` and `us-sources3-corrections-2026.json`):
+
+- **Utility and state long-range plans:** FERC Order 890 local plans, ATC's 10-Year Assessment, BPA's plan, the
+  WECC 2026 annual progress reports (every western utility's planned projects with dates), Minnesota's biennial
+  report, Florida ten-year site plans, Arizona, Colorado and Nevada plans. About 97% already listed; mostly new dates.
+- **Environmental and crossing permits:** Army Corps of Engineers permit records and district notices, Pennsylvania
+  Bulletin DEP notices, FWS habitat plans. The Corps' public permit data now also feeds the monitor (step 4p).
+- **Where the money is approved:** formula-rate project lists, rate cases, public power and co-op board approvals
+  (OUC, JEA, SMUD, Santee Cooper, Washington and Oregon PUDs and co-ops) and bond statements.
+- **Maps and open data:** OpenStreetMap lines and substations under construction (each confirmed by a utility,
+  regulator, grid operator or news source before listing), public ArcGIS layers (Our Grid Future's national
+  planned-transmission layer was the most useful), HIFLD.
+- **Builders and suppliers:** contractor awards and project pages (Quanta, MYR, MasTec and others), T&D World and
+  ENR, bid notices, equipment orders. T&D World and MYR feeds now also feed the monitor.
+- **Reliability reports, regional studies and offshore wind:** NERC and regional assessments, the Carolinas and
+  Florida plans, WestTEC, state studies, and the onshore parts of offshore wind (SouthCoast Wind at Brayton Point,
+  New England Wind in Barnstable, CVOW's Harpers 230 kV, built March 2026).
+
+Results: 79 new projects after removing the agents' overlaps, 60 listed lines with newer stages or dates, and 5 lines off
+the list: New Jersey ended its offshore-wind transmission agreement with PJM (FERC accepted June 22, 2026), which
+cancels four NJCEC upgrades including East Windsor - Smithburg 500 kV, and ATC moved Maplewood - Badger 138 kV to 2032.
+About 85-97% of what each kind of source named was already listed.
+
+Two build fixes came with it:
+- **Circuit numbers count.** "Harry Allen - Reid Gardner #3" is a different line from the "#2 relocation", and a
+  "second circuit" differs from "ckt 1"; researched lines with different stated circuit numbers are no longer
+  merged.
+- Two earlier researched entries had no in-service date although their own sources gave one (Keeler - Horizon #2,
+  2024; Jumpoff Ridge 230/115 kV substation, 2025). A built line needs its date to show, so they now carry it.

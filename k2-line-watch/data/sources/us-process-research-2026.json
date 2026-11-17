@@ -5253,9 +5253,9 @@
    ],
    "miles_new": 0,
    "miles_upgraded": 0,
-   "in_service": "",
-   "stage": "in construction",
-   "stage_basis": "Chelan PUD's Jan 2026 WECC progress-report submission says its only active project is the Jumpoff Ridge 230/115 kV station for a large load; the $86.5M greenfield substation (paid by Microsoft under a 2022 large-load agreement) includes relocating an existing 230 kV line and two 1.5-mile 115 kV lines; 2024 WECC report showed construction under way, completion previously targeted end-2025 with no energization confirmed.",
+   "in_service": "2025",
+   "stage": "built",
+   "stage_basis": "Chelan PUD's Jan 2026 WECC progress-report submission says its only active project is the Jumpoff Ridge 230/115 kV station for a large load; the $86.5M greenfield substation (paid by Microsoft under a 2022 large-load agreement) includes relocating an existing 230 kV line and two 1.5-mile 115 kV lines; 2024 WECC report showed construction under way, completion previously targeted end-2025 with no energization confirmed. Chelan PUD's 2025 annual report says the substation was commissioned in summer 2025 (third sweep, Nov 17, 2026).",
    "docket": "",
    "caiso_id": "",
    "sources": [

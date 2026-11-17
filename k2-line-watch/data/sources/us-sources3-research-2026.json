@@ -1,0 +1,2922 @@
+{
+ "source": "Line Watch third nationwide sweep, more kinds of sources (Nov 17, 2026): utility and state long-range transmission plans, environmental and crossing permits (Army Corps notices, state water permits), formula rates, rate cases, public power and co-op boards and bond statements, maps and open data (OpenStreetMap, public ArcGIS layers), builders and suppliers, reliability assessments, regional studies and offshore wind onshore transmission (U.S. only)",
+ "checked": "2026-11-17",
+ "swept": [
+  "APS 2025-2034 Ten-Year Plan (for projects placed in service in 2025): https://www.oasis.oati.com/woa/docs/AZPS/AZPSdocs/2025_APS_Ten-Year_Plan.pdf",
+  "APS 2026-2035 Ten-Year Transmission System Plan (ACC Docket E-99999A-25-0006; all 22 project sheets + in-service/changed lists): https://docket.images.azcc.gov/e000049070.pdf",
+  "ATC 2026 10-Year Assessment Table PR-23 changed/canceled/new projects: https://www.atc10yearplan.com/wp-content/uploads/2026/11/Table-PR-23-Changed-Since-Last-Report-TYA-2026.pdf",
+  "ATC 2026 10-Year Assessment major projects update and zone 1/3/5 pages: https://www.atc10yearplan.com/summary-report/emerging-projects-update",
+  "ATC 2026 10-Year Assessment network project list (all ~330 projects, zones 1-5 + LRTP): https://www.atc10yearplan.com/wp-content/uploads/2026/11/TYA-2026-Network-Project-List.pdf",
+  "ATC 2026 10-Year Assessment project lists (confirming source for ATC items in Our Grid Future): http://www.atc10yearplan.com/wp-content/uploads/2026/10/TYA-2026-Q2-of-2026-Updated-Project-List-10012026_INTERIM.pdf",
+  "ArcGIS Online keyword sweep of public Feature Services (queries: proposed/planned transmission, preferred route, proposed substation, 138/161/230/345/500/765 kV titles, modified 2025-2026), about 420 distinct items screened; layers queried include AES Ohio Atlanta-Fayette and Fayette-Clinton 345 kV, Xcel Emerald sub centerline, TEP Aerospace Research Campus, Santee Cooper Yemassee-Varnville 230 kV, Northland Reliability Project (NRP_Approved_Route2), Valley Link (Jefferson County WV GIS), Basin Pioneer-Judson 345 kV, AEP Texas LRGV Cenizo-Cruce, PacifiCorp Three Peaks-Purgatory Flat 345 kV (Stantec), SPS Potter-Crossroads-Phantom 765 kV (_PCP_765_Proposed_Website), SPP 765 kV lines, ATC Milwaukee-area 230 kV conversion, Cooper-Moore 345 kV, Morrow County OR transmission projects, Survey123 comment layers for FirstEnergy Elko-Moshannon / Carroll-Mt Airy / Dutch Fork-Enon",
+  "Austin City Council / Electric Utility Commission agenda items for Austin Energy transmission 2024-2026 - https://services.austintexas.gov/edims/document.cfm?id=473624 ; https://services.austintexas.gov/edims/document.cfm?id=470908",
+  "BOEM state activities / COPs: SouthCoast Wind (FEIS, ROD, COP), New England Wind 1 & 2, Vineyard Northeast COP, Kitty Hawk North/CVOW-South COP, Maryland Offshore Wind FEIS, Atlantic Shores South, CVOW-Commercial COP - https://www.boem.gov/renewable-energy/state-activities",
+  "BPA 2025 Transmission Plan (Attachment K local plan; GERP 1.0/2.0 summaries and all 9 planning-area project tables): https://www.bpa.gov/-/media/Aep/transmission/attachment-k/2025-BPA-Transmission-Plan_Final.pdf",
+  "BPA Evolving Grid Project 1.0 summaries (cited by Our Grid Future): https://www.bpa.gov/-/media/Aep/transmission/evolving-grid/EGP-10-Project-Summaries.pdf",
+  "BPA Grid Expansion and Reinforcement Portfolio (GERP 1.0/2.0) summaries and Aug 2026 GAT workshop - https://www.bpa.gov/energy-and-services/transmission/grid-expansion-and-reinforcement-portfolio",
+  "BPA Grid Expansion and Reinforcement Portfolio (GERP) status, Aug 19 2026 GAT workshop: https://www.bpa.gov/-/media/Aep/transmission/Grid-Access-Transformation/August-19-GAT-Update-Workshop.pdf (reached via Burns & McDonnell Quenett Creek project page)",
+  "Basin Electric transmission project pages and news - https://www.basinelectric.com/about-us/transmission/LOS-Burkley-Crane-Creek-transmission-line.html",
+  "Big Rivers, Cooperative Energy, AECI annual reports - https://cooperativeenergy.com/wp-content/uploads/2026/06/2025-Annual-Report.pdf",
+  "Burns & McDonnell project pages (Aiken-Sage Mill, Shale 345 kV, Quenett Creek, Greenfield 230 kV OUC, NYES, Watson): https://www.burnsmcd.com/projects/aiken-sage-mill-transmission-line-substation",
+  "CAISO 2023-24, 2024-25 and 2025-26 transmission plans (Humboldt and Morro Bay offshore wind transmission, Del Amo cancellation) - https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan.pdf",
+  "CAISO Board-approved 2023-2024 Transmission Plan status tables (via Our Grid Future citations): https://www.caiso.com/documents/iso-board-approved-2023-2024-transmission-plan.pdf",
+  "CAISO Board-approved 2025-2026 Transmission Plan, Tables 8-1 to 8-3 (status of previously approved projects), cross-checked because the Our Grid Future layer cites CAISO plans: https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan.pdf",
+  "CETA Colorado transmission study and project shortlist - https://www.cotransmissionauthority.com/transmission-study",
+  "CPS Energy Board of Trustees book Aug 31, 2026 - https://www.cpsenergy.com/content/dam/corporate/en/Documents/Trustees/2026.08.31_BoTRegularAugustBoard_Book_(POSTING)V.2.pdf",
+  "CTPC (Carolinas Transmission Planning Collaborative, Duke DEC/DEP Order 890 local plan) 2025-2035 Collaborative Transmission Plan report, Appendices C/E/G: https://carolinastpc.org/media/reference/2026/04/22/2025_CTPC_Collaborative_Transmission_Plan_Report_FINAL_04-16-2026.pdf",
+  "CTPC 2025 Plan Mid-Year Update (Aug 2026, all reliability + public policy project statuses): https://carolinastpc.org/media/reference/2026/08/14/2025_Collaborative_Transmission_Plan_MidYear_Update_08-13-26.pdf",
+  "CTPC 2025 Plan mid-year update Aug 2026 - https://www.carolinastpc.org/media/reference/2026/08/14/2025_Collaborative_Transmission_Plan_MidYear_Update_08-13-26.pdf",
+  "CTPC 2025-2035 Collaborative Transmission Plan (Appendix C reliability, public policy/RZEP and MVST tables) - https://carolinastpc.org/media/reference/2026/04/22/2025_CTPC_Collaborative_Transmission_Plan_Report_FINAL_04-16-2026.pdf",
+  "California State Water Board CWA 401 certification notices (multi-regional): https://www.waterboards.ca.gov/water_issues/programs/cwa401/notices/",
+  "Chelan PUD annual report 2025, commission news, Chelan County CUP/SEPA - https://www.chelanpud.org/docs/default-source/default-document-library/ar-2025-web.pdf",
+  "City of Lodi bid postings (electric utility): https://www.lodi.gov/Bids.aspx",
+  "Colorado Rule 3627 2026 10-Year Transmission Plan, Table 1 (101 projects) - https://tristate.coop/wp-content/uploads/2026/08/2026-combined-10-year-report.pdf",
+  "Colorado Springs Utilities project pages and Colorado Rule 3627 plan appendix - https://www.csu.org/current-projects/midway-kelker-transmission-line",
+  "Con Edison 2025 Local Transmission Plan / Reliable Clean City (Eastern Queens) - https://www.nyiso.com/documents/20142/55462035/03b_CECONY_2025_LTP.pdf",
+  "DOE NIETC Phase 3 corridors (Southwestern Grid Connector, Tribal Energy Access, Lake Erie-Canada) and Aug 2026 cancellation - https://www.congress.gov/crs-product/LSB11478",
+  "Dominion CVOW onshore construction pages, VA SCC quarterly reports (PUR-2021-00142) and Q3 2026 10-Q - https://coastalvawind.com/community/residents",
+  "Dominion power line projects index (reached from L.E. Myers Chase City - Cloud case study): https://www.dominionenergy.com/en/About/Delivering-Energy/Electric-Projects/Power-Line-Projects",
+  "Douglas County PUD commission meeting reports 2022-2026 - https://douglaspud.org/feed/",
+  "Duke Energy Florida 2026 TYSP (Table 3.4 TLSA list + Schedule 10): https://www.floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/2026/Duke%20Energy%20Florida.pdf",
+  "Duke Energy NC MYRP/rate-case and CTPC references (spot check) - https://carolinastpc.org/media/highlights/2026/06/30/TAG_Meeting_Presentation_for_06-30_2026_FINAL.pdf",
+  "EMMA official statements and continuing disclosures for public power (SRP, LES, PowerSouth, NYPA green bond, small TVA munis, UT/CA munis) - https://emma.msrb.org/",
+  "ENR regional Best Projects, Energy/Industrial winners 2024-2026 (Aiken Sage Mill, Birds Landing, Limestone Ridge, Carlson Creek, Smart Path Connect, Watson): https://www.enr.com/articles/keyword/725-transmission-line?page=1",
+  "FERC formula-rate postings on pjm.com (AEP East TransCos 2027 PTRR RTEP list, PSEG, AMPT, ATSI etc.) - https://www.pjm.com/markets-and-operations/billing-settlements-and-credit/formula-rates ; https://docs.aep.com/docs/requiredpostings/TariffFilings/2026/2027_Projected_Revenue_Requirement-East_TransCos/Formula%20Rate%20Projection%20AEP%20East%20TransCo%20Summary%202027.pdf",
+  "FPL 2026-2035 Ten Year Power Plant Site Plan (Table III.E.1 TLSA lines + 84 generation transmission sections): https://www.fpl.com/content/dam/fplgp/us/en/about/pdf/ten-year-site-plan.pdf",
+  "Federal Register API - Corps of Engineers / Army notices 2023-2026 mentioning transmission: https://www.federalregister.gov/api/v1/documents.json?conditions[agencies][]=engineers-corps&conditions[term]=transmission",
+  "Federal Register API - Fish and Wildlife Service notices 2023-2026 mentioning transmission lines (HCPs/ITPs): https://www.federalregister.gov/api/v1/documents.json?conditions[agencies][]=fish-and-wildlife-service&conditions[term]=transmission",
+  "Florida DEP Siting Coordination Office TLSA files and water-management-district agency reports (searched for permit-stage items): https://floridadep.gov/water/siting-coordination-office",
+  "Georgia EPD state-waters buffer variance public notices (searched): https://epd.georgia.gov/public-announcements-0/public-advisories-requests-state-waters-buffer-variance",
+  "Georgia Transmission annual report 2025 and project notices - https://www.gatransmission.com/wp-content/uploads/2026/03/2025-Georgia-Transmission-Annual-Report.pdf",
+  "Grant PUD 2026 forecasted procurement needs (Q3 update) and Procureware notices: https://www.grantpud.org/media/attachments/2026/07/22/2026-forecasted-needs-q3-update-1.pdf",
+  "Grant PUD QTEP page, commission packets and WECC APR - https://grantpudqtep.org/ ; https://www.wecc.org/sites/default/files/documents/progress_report/2026/GCPD%202026%20APR.pdf",
+  "HIFLD/Esri U.S. Electric Power Transmission Lines layer, STATUS='UNDER CONSTRUCTION' (25 features): https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/US_Electric_Power_Transmission_Lines/FeatureServer/0",
+  "Hitachi Energy, Siemens Energy, Prysmian, Trench, Linxon press releases on U.S. HVDC/765 kV orders: https://www.hitachienergy.com/news-and-events/press-releases/2026/06/hitachi-energy-celebrates-the-inauguration-of-pattern-energy-s-sunzia-project-now-delivering-clean-reliable-power-to-millions-across-the-american-southwest",
+  "IBEW Local 1245 Outside Line Construction quarterly reports 2024-2026: https://ibew1245.com/2026/08/20/outside-line-construction-summer-2026",
+  "IID IRP review, WECC progress reports 2024/2026, board news - https://www.wecc.org/sites/default/files/documents/progress_report/2026/IID%202026%20APR.pdf",
+  "ISO-NE 2025 Longer-Term Transmission Planning RFP selection (LTP A1 'TIDE') - https://www.iso-ne.com/static-assets/documents/100038/final_2025_lttp_rfp_report.pdf",
+  "JEA board budgets FY25-FY27 and Capital Projects Committee major-project tables - https://www.jea.com/About/Board_and_Management/FY25_JEA_Board_Approved_Budget/ ; http://jea.com/uploadedFiles/jea.com/Events/Board_Meetings/Agenda/Capital%20Projects%20Committee%20Meeting%20Materials%20-%20February%2011%2C%202026.pdf",
+  "KUA, FMPA, Seminole, JEA Ten-Year Site Plans (FL PSC 2026) - https://www.floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/2026/JEA.pdf",
+  "Kiewit power delivery project pages (Cavalier, Piney Creek, Gemini, Copperhead, Madison Fields, Hickory Run): https://www.kiewit.com/our-markets/power-delivery/transmission",
+  "LADWP Power Infrastructure Plans 2023-24 and 2025-26, Strategic Vision transmission list, WECC progress reports 2024-2026, MND/SEIR notices - https://www.ladwp.com/sites/default/files/2026-06/2025-26%20Power%20Infrastructure%20Plan.pdf ; https://www.wecc.org/sites/default/files/documents/progress_report/2026/LADWP%202026%20APR.pdf",
+  "LCRA TSC board capital approvals 2025-2026 and LCRA TSC PUCT monthly construction progress report (Project 57477) - https://interchange.puc.texas.gov/Documents/57477_142_1499099.PDF",
+  "Lincoln Electric System CIP (City of Lincoln), board minutes, 2025 continuing disclosure on EMMA - https://www.lincoln.ne.gov/files/sharedassets/public/v/1/planning/long-range-planning/cip/2024-30/lincoln-electric-system-2024-cip-final-version.pdf ; https://emma.msrb.org/P11947604.pdf",
+  "MA EFSB SouthCoast Wind Brayton Point; Cape Cod Commission New England Wind 1 Connector DRI - https://www.mass.gov/info-details/southcoast-wind-energy-brayton-point",
+  "MLGW, NES, Huntsville Utilities, KUB board/budget documents - https://www.mlgw.com/images/content/files/financials/Budget/2027%20Budget%20Book_Preliminary_FNL.pdf",
+  "MYR Group completed-project portfolio (Chase City - Cloud 230 kV, Marysville 765/345 kV, others): https://myrgroup.com/projects/",
+  "MYR Group earnings-call award mentions Q2 2025-Q3 2026 (investor.myrgroup.com transcripts): https://investor.myrgroup.com/static-files/e6ebdf11-b6d6-4f30-b0f0-ba45726ea9ab",
+  "Maine PUC Northern Maine Renewable Energy Development Program RFP, Docket 2026-00033 - https://www.maine.gov/tools/whatsnew/index.php?id=13360938&topic=puc-pressreleases&v=article088",
+  "Maine Transmission Infrastructure Study (GEO, 2026) - https://www.maine.gov/energy/sites/maine.gov.energy/files/inline-files/20260731_Draft%20Maine%20Transmission%20Infrastructure%20Study.pdf",
+  "Maryland POWER Act SAA request (PSC Case 9800) and PJM TEAC Sept 2025 - https://www.pjm.com//-/media/DotCom/committees-groups/committees/teac/2025/20250909/20250909-item-02---maryland-saa-request.pdf",
+  "Michels Power 2026 brochure project list: https://www.michels.us/wp-content/uploads/2026/06/MPI-brochure-WDTM-26.pdf",
+  "Michels project portfolio (Carlson Creek, Birds Landing, Northland Reliability): https://www.michels.us/experience/projects/carlson-creek-switchyard",
+  "Michigan EGLE MiEnviro public notice list (current notices JSON): https://mienviro.michigan.gov/ncore/ss/publicnoticeslist",
+  "Minnesota 2025 Biennial Transmission Projects Report (all 6 zones, ~158 tracking numbers, needed + completed tables): https://www.minnelectrans.com/documents/2025_Biennial_Report/AS_FILED_Biennial_Transmission_Projects_Report_10.31.25.pdf",
+  "Montana Regional Transmission Connectivity Study (NWEC, Oct 2025) - https://nwenergy.org/wp-content/uploads/2026/03/NWEC-MT-Regional-Transmission-Connectivity-Study-Report-1.pdf",
+  "Mortenson power delivery projects: https://www.mortenson.com/projects/seaside-energy-storage-project",
+  "NERC 2024 LTRA - https://www.nerc.com/pa/RAPA/ra/Reliability%20Assessments%20DL/NERC_LTRA_2024.pdf",
+  "NERC 2025 Long-Term Reliability Assessment (assessment-area transmission narratives) - https://www.nerc.com/globalassets/our-work/assessments/nerc_ltra_2025.pdf",
+  "NJ BPU State Agreement Approach: SAA termination order (Apr 22, 2026), PJM-NJBPU Mutual Termination Agreement Schedules 1-3 (FERC ER26-2294), PJM TEAC May/June 2026, MAOD and PSE&G wind-down reports - https://www.nj.gov/bpu/pdf/boardorders/2026/20260422/LSA%20ORDER%20SAA%20Termination.pdf",
+  "NPCC 2025 Long Range Adequacy Overview (NY/NE major transmission list) - https://cdn.prod.website-files.com/67229043316834b1a60feba3/697a3e3ecc9ec43dce7594ee_NPCC_2025_LongRangeAdequacyOverview_Report.pdf",
+  "NPPD R-Project status and board reports (contractor Forbes Bros. Timberline; already listed as Cherry Co. segments): https://rproject.nppd.com/status/",
+  "NPPD bid list (nebraskabids.com mirror): https://www.nebraskabids.com/government-agencies/platte/nebraska-public-power-district-1522",
+  "NPPD board minutes/presentations 2026 and OPPD board/project pages - https://docs.nppd.com/FileDownload.aspx?Filename=Board/2026/September5.pdf ; https://www.oppdcommunityconnect.com/cass-to-sarpy-transmission-project",
+  "NV Energy 2026 Joint IRP Vol. 2 Action Plan transmission list (reached via IBEW 1245 outside-line reports on Nevada work): https://www.nvenergy.com/publish/content/dam/nvenergy/brochures_arch/about-nvenergy/rates-regulatory/recent-regulatory-filings/2026-irp/NPC-SPPC-Volume-2.pdf",
+  "NY PSC Coordinated Grid Planning Process Cycle 1 report (Case 20-E-0197) and comments - https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId=%7B9020F49D-0000-C47F-8A25-BC312B13CCFA%7D",
+  "NY offshore wind: NYSERDA solicitation pages, NY PSC Article VII list, Empire/Sunrise status - https://dps.ny.gov/article-vii-major-electric-and-gas-transmission-facilities",
+  "New Braunfels Utilities board agendas and CIP overview - https://www.nbutexas.com/wp-content/uploads/2026/04/FY25-29-Capital-Imorovement-Projects-Overview.pdf",
+  "New Mexico RETA project list and 2025/2026 annual reports - https://nmreta.com/reta-projects/ ; https://www.nmlegis.gov/handouts/NMFA%20102826%20Item%203%20Empowering%20New%20Mexico%20To%20Power%20The%20West.pdf",
+  "North Plains Connector (DOE/MT DEQ Final EIS, ND PSC PU-26-82) - https://www.energy.gov/sites/default/files/2026-08/eis-0568-north-plains-connector-2026-08.pdf",
+  "NorthWestern Energy 2026 Montana IRP transmission chapter (narrative only, no project table): https://www2.northwesternenergy.com/docs/default-source/default-document-library/about-us/erp-irp/2026-mt-irp-public.pdf",
+  "Northeast Missouri Electric Power Coop / NW Electric Power Coop project pages and annual report - https://northeast-power.coop/current-projects",
+  "OPPD Cass-to-Sarpy project page (contract award to Brink Constructors; already listed as spp-143660): https://www.oppdcommunityconnect.com/cass-to-sarpy-transmission-project",
+  "OUC Commission agendas and project pages 2025-2026 - https://espanol.ouc.com/wp-content/uploads/2026/02/2026_03-Meeting-Agenda.pdf ; https://www.ouc.com/about/infrastructure-projects/",
+  "Ohio EPA 401 WQC / isolated wetland permit program and Wisconsin DNR / Minnesota DNR utility-crossing pages (searched; no public per-project lists found)",
+  "OpenStreetMap via Overpass API (maps.mail.ru/osm/tools/overpass mirror; overpass-api.de reset connections): power=construction / construction:power=* / proposed:power=* / power=proposed / power=line+construction=* ways, nodes and relations, lower-48 in 14 bounding boxes",
+  "Our Grid Future (Horizon Energy Systems) national planned-transmission layer, June 2026: https://services3.arcgis.com/vQ3OYhyPnynK3Zqb/arcgis/rest/services/OurGridFuture_PlannedTransmissionProjects_Jun2026/FeatureServer/2 (707 segments) plus layer 0 (1,083 substations) and layer 1 (15 study concepts)",
+  "Out-of-window checks: CAISO Manning-Metcalf 500 kV sponsor report (ISD 2034) https://stakeholdercenter.caiso.com/InitiativeDocuments/Manning-to-Metcalf-500-kV-Transmission-Line-Project-Project-Sponsor-Selection-Report-May-20-2026.pdf ; Pattern Southern Spirit (ISD 2032) https://patternenergy.com/projects/southern-spirit-transmission/ ; PJM b4053.3 Heritage-Mosby HVDC (ISD 2032) https://www.pjm.com/-/media/DotCom/library/reports-notices/2025-rtep/2025-rtep-report.pdf ; MN PUC Bison-Alexandria 2nd circuit (ISD June 2032) http://puc.eip.mn.gov/web/project/25116 ; MISO EASL/BECI selections (2032-2034)",
+  "PGE Warm Springs Power Pathway and PSE 2025 Plan (Cross-Cascades) - https://www.warmspringspowerpathway.com/ ; https://www.oasis.oati.com/woa/docs/PSEI/PSEIdocs/PSE_Plan_2025_Final.pdf",
+  "PNM 20-Year Transmission Outlook and Mid-State 345 kV CCN filing (Oct 2026) - https://www.pnm.com/documents/d/pnm.com/3-1-application-1",
+  "PacifiCorp Blueprint and Three Peaks - Purgatory Flat project pages - https://www.pacificorp.com/transmission/transmission-projects.html",
+  "Pennsylvania Bulletin DEP 'Applications, actions and special notices' (Chapter 105, 401 WQC and NPDES construction-stormwater notices), every weekly issue vol 53-56 (2023-2026): https://www.pacodeandbulletin.gov/secure/pabulletin/data/vol56/56-36/index.html",
+  "Pike, Irby, Sumter Utilities, Wilson Construction, Henkels & McCoy, MasTec project portfolios: https://www.irbyconstruction.com/project_category/transmission ; https://www.sumter-utilities.com/project ; https://www.wilsonconst.com/services/transmission-construction ; https://www.pike.com/main-projects/230-kv-overhead-transmission-line-florida/",
+  "Portland General Electric RFP for Warm Springs Power Pathway owner's engineer (Bethel - Round Butte 500 kV; COD 2032, outside window): https://assets.ctfassets.net/416ywc1laqmd/1NwEkHFmp7K3OBthQjwy3A/55ccbffb703c50629bc9c55e14a6f0f8/PGE01-GID05-SH-005_-_Request_for_Proposal.pdf",
+  "PowerSouth RUS EA (Lowman 3) and EMMA financials - https://www.rd.usda.gov/media/file/download/usda-rd-ea-powersouth-lowman-01312026.pdf",
+  "Quanta Services stories/press (SunZia, Gateway South, Grain Belt): https://www.quantaservices.com/stories/quanta-services-selected-for-the-sunziatransmission-and-sunzia-wind-projects",
+  "SCE CPUC GO 131-E quarterly reports (North of SONGS-Serrano/Orange Regional) - https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/infrastructure/ceqa-permitting/quarterly-general-order-131-e-reports/sce-cpuc-q2-update-2026-0616.pdf",
+  "SERC 2024-2034 Long-Term Reliability Assessment - https://www.serc.org/docs/default-source/program-areas/reliability-assessment/reliability-assessments/2024-2034-long-term-reliability-assessment.pdf",
+  "SMUD board packets and budget books 2025-2026 - https://www.smud.org/-/media/Documents/Corporate/About-Us/Board-Meetings-and-Agendas/2026/Oct/Board-Info-Packet-Oct-15-2026.ashx",
+  "SPP formula rate filings / Evergy TFR and Tri-State incentive order ER26-2616 - https://www.spp.org/documents/77392/20260731_order%20-%20tri-state%20incentive%20rates%20filing_er26-2616-000.pdf",
+  "SRP 2026 bond official statement on EMMA - https://emma.msrb.org/P11960443.pdf",
+  "SRP board/committee and Customer Utility Panel packets 2026 (Marigold, transmission siting portfolio) - https://www.srpnet.com/grid-water-management/grid-management/improvement-projects ; https://www.srpnet.com/v3/assets/bltefc1fc708dcc94e7/blt3c652d0db6c3c001/6a21528132255b850ac6c6b2/20260129_CUP_packet.pdf",
+  "SRP transmission siting project list (Customer Utility Panel / Power Committee packets 2026; SRP 2026 ten-year plan PDF not found online): https://www.srpnet.com/v3/assets/bltefc1fc708dcc94e7/blt3c652d0db6c3c001/6a21528132255b850ac6c6b2/20260129_CUP_packet.pdf",
+  "Santee Cooper rate-study GT&D report, 2025 IRP update, 2026 IRP Appendix B, SCRTP March 2026 committed list - https://www.santeecooper.com/Rates/Rate-Study/_pdfs/RatesDocuments2026/Generation-Transmission-and-Distribution-Report.pdf ; https://www.scrtp.com/assets/pdfs/meeting-archives/scrtp-meeting-2026-03-11-presentation.pdf",
+  "Snohomish PUD, Tacoma Power, Seattle City Light CIP (all 115 kV or below) - https://www.seattle.gov/documents/Departments/FinanceDepartment/2631adoptedcip/cip_appendix.pdf",
+  "Sunflower / KEPCo / KCC siting docket 27-SEPE-0138-STG - https://www.sunflower.net/interconnection-guidelines/holcomb-sidney",
+  "T&D World overhead transmission and substation news, 2025-2026 (SWIP-North, ATC Grid Forward, ComEd Wilton Center and wind substations, BPA Hanford, Tri-State Burlington-Lamar, Georgia Power Ashley Park, FirstEnergy PJM awards, SDG&E 500 kV, ISA 345 kV): https://www.tdworld.com/overhead-transmission",
+  "TEP Southeast Energy Link 345 kV public ArcGIS layer: https://services1.arcgis.com/nzEjCipDPq9k9np9/arcgis/rest/services/Southeast_Energy_Link_345kV/FeatureServer",
+  "TVA board minutes Aug 2026 (capital/land-rights resolutions; attachments not public) and TVA transmission project pages - https://www.tva.com/energy/transmission/transmission-projects",
+  "TVA-GIS TSSProjects_Hosted (TVA transmission siting register, 447 proposed-centerline features): https://services.arcgis.com/w8auYAijfGK1Mydj/arcgis/rest/services/TSSProjects_Hosted/FeatureServer",
+  "Tampa Electric, JEA, Seminole, OUC, City of Tallahassee, GRU, Lakeland, FMPA 2026 TYSPs (Schedule 10 / transmission tables): https://www.floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/2026/",
+  "Tri-State board minutes May/July 2026 and Colorado 10-year plan appendix - https://tristate.coop/sites/default/files/July%202026%20Board%20Minutes.pdf",
+  "Turlock ID / Modesto ID board and IRP documents - https://swagit-attachments.granicus.com/uploads/video/agenda_file/401772/9-22_TIDWater_PowerBOD.pdf",
+  "UAMPS Central-St. George project documents and St. George power board report (Utah Public Notice) - https://www.utah.gov/pmn/files/1357213.pdf ; https://www.utah.gov/pmn/files/1278227.pdf",
+  "USACE ORM public data API - all Section 408 requests (9,023 records, all districts; filtered 2023-2026 for electric transmission/substation/kV terms): https://permits.ops.usace.army.mil/orm-public-api/permits/search?da=true&q=vtype:s408",
+  "USACE ORM public data API - all final individual permits (53,267 records, all districts; filtered 2023-2026): https://permits.ops.usace.army.mil/orm-public-api/permits/search?da=true&q=vtype:issued",
+  "USACE ORM public data API - approved jurisdictional determinations matching transmission/substation/kV (2023-2026): https://permits.ops.usace.army.mil/orm-public?type=jds",
+  "USACE ORM public data API - pending individual permits (681), NEPA EAs (1,695), EISs, emergency actions (969): https://permits.ops.usace.army.mil/orm-public?type=pending",
+  "USACE Regulatory Request System - all 132 active public notices nationwide: https://rrs.usace.army.mil/rrs/public-notices",
+  "USACE district public-notice pages searched for kV/transmission notices (direct access blocked by Akamai 403; read through search index): Fort Worth, Galveston, Tulsa, Little Rock, Albuquerque, Vicksburg, New Orleans, Memphis, Mobile, Savannah, Charleston, Wilmington, Jacksonville, Norfolk, Baltimore, Philadelphia, Pittsburgh, Huntington, Louisville, Nashville, St. Louis, Kansas City, Omaha, Rock Island, St. Paul, Detroit, Chicago, Buffalo, New York, New England, Sacramento, Los Angeles, San Francisco, Portland, Seattle, Walla Walla (e.g. https://www.mvk.usace.army.mil/Missions/Regulatory/Public-Notices/)",
+  "Umatilla Electric Cooperative projects pages - https://www.umatillaelectric.com/about-us/news-events-updates/projects/",
+  "Virginia DEQ VWP public notices (all past and upcoming): https://www.deq.virginia.gov/news-info/shortcuts/public-notices/water/wetlands-streams-vwp/-toggle-all",
+  "Virginia Energy VA_PlannedTransmissionLines_March2026 layer (Our Grid Future subset for VA): https://services1.arcgis.com/svR4Fvpv5xPThQN4/arcgis/rest/services/VA_PlannedTransmissionLines_March2026/FeatureServer",
+  "WECC 2026 APRs for California TOs read: SCE, PGAE, SDGE (2025 report posted), LADWP, SMUD, IID (LADWP/SMUD/IID already fully listed)",
+  "WECC 2026 APRs read in full: PacifiCorp, IPC, NVE, PNM, EPE, TSGT, PSCo, BHC, AVA, PSE, PGE, CHPD, GCPD, SCL, TPWR, SNPUD, PRPA, CSU, WAPA, WAPA SNR, AEPCO, APS, TEP, IID, LADWP, SMUD, VEA, TANC, MID, TID, MEID (https://www.wecc.org/sites/default/files/documents/progress_report/2026/<NAME>%202026%20APR.pdf)",
+  "WECC 2026 Annual Progress Reports (utility plan filings; index): https://www.wecc.org/program-areas/reliability-planning-performance-analysis/reliability-modeling/progress-reports",
+  "WECC 2026 Annual Progress Reports list and Summary (waiver list of ~116 projects; PacifiCorp, LADWP, PNM, TWE APRs) - https://www.wecc.org/program-areas/reliability-planning-performance-analysis/reliability-modeling/progress-reports",
+  "WestTEC West-Wide Transmission Study 10-Year Horizon Report (Feb 2026), planned-upgrade reference tables (~110 rows checked) - https://www.westernpowerpool.org/private-media/documents/WestTEC_10-year_Full_Report.pdf",
+  "Wyoming: Wyoming Intertie, TransWest Express (WECC APR) - https://wyomingintertie.com/ ; https://www.wecc.org/sites/default/files/documents/progress_report/2026/TWE%202026%20APR.pdf"
+ ],
+ "process_notes": {
+  "Minnesota Biennial Transmission Projects Report (state-required)": "Biennial MPUC report by all MN transmission owners (2025 edition, Oct 31 2025, ~158 tracking numbers with schedules + completed tables) at minnelectrans.com/report-2025.html. Very complete but almost entirely already in Line Watch (MISO/MTEP and MN siting sweeps); yielded 2 built second-circuit 345 kV lines (Brookings-Lyon, Hampton-Helena) and 2 date corrections.",
+  "ATC 10-Year Assessment (FERC 890 local plan)": "ATC posts its annual 10-Year Assessment (2026 edition released Nov 2026) at atc10yearplan.com with a PDF network project list (~330 projects, est. ISD month-year, in-service flags) and a changed-since-last-report table. No new facilities (ATC already well covered) but the best source for date/stage updates: 17 corrections (3 now in service, schedule slips).",
+  "Florida PSC Ten-Year Site Plans (state-required)": "Each FL utility files an April TYSP (FPL, DEF, TECO, JEA, Seminole, OUC, Tallahassee, GRU, Lakeland, FMPA) with TLSA 230 kV+ line tables and per-plant transmission sections; PDFs at floridapsc.com/pscfiles/website-files/PDF/Utilities/Electricgas/TenYearSitePlans/2026/ and fpl.com. FL already thoroughly listed from earlier TYSP use; 1 new FPL solar 230 kV substation (Chinkapin). Andytown-Oasis 500 kV is Dec 2031/2033 (outside window).",
+  "Carolinas Transmission Planning Collaborative (Duke DEC/DEP local plan, NC/SC)": "Annual Collaborative Transmission Plan + August mid-year update at carolinastpc.org/reference with full project tables (ID, status, ISD, cost). Fully covered already; no new 230 kV+ items in window (remaining new items are 100 kV or 2032+).",
+  "BPA Attachment K Transmission Plan": "BPA's annual local plan (2025 plan published Aug 2026) at bpa.gov Attachment K page, with GERP 1.0/2.0 summaries and per-area project tables (P-numbers, energization years, completed items). Useful: 3 new (Longhorn 500/230 kV built Apr 2025, Keeler-Horizon #2 230 kV built 2024, Ross-Rivergate 230 kV upgrade) and 4 date corrections.",
+  "Arizona ACC Ten-Year Transmission Plans (A.R.S. 40-360.02, Biennial Transmission Assessment)": "APS/SRP/TEP/UNSE/AEPCO file each Jan 31 in ACC docket E-99999A-25-0006 (14th BTA). APS 2026 plan (docket.images.azcc.gov/e000049070.pdf) has one sheet per project; nearly all already listed via WestConnect; 1 new (Goodyear 230 kV substation, in service 2025) and 3 corrections. SRP's 2026 plan PDF is not posted publicly online (used SRP board packets instead).",
+  "WECC Annual Progress Reports (utility plan filings to WECC StS)": "Every WECC transmission owner files an annual progress report (Jan-Mar) listing planned BES projects with ISDs; all 2026 reports are on one WECC page. Best single sweep for the West: covered PacifiCorp, IPC, NVE, PNM, EPE, Tri-State, PSCo, Black Hills, Avista, PSE, PGE, Chelan, Grant, SCL, Tacoma, Snohomish, PRPA, CSU, WAPA, AEPCO, TEP, IID, LADWP, SMUD, SCE, PG&E, SDG&E. Yielded 6 new and ~14 corrections; many entities (LADWP, SMUD, IID, TEP) were already fully listed.",
+  "NorthWestern Energy Montana IRP / LG&E-KU TEP / Wisconsin SEA": "Checked as plan sources: NorthWestern 2026 MT IRP has only narrative (no project table); LG&E/KU 2026 preliminary TEP major-BES list has one breaker job (full list is confidential at KY PSC); Wisconsin PSC draft SEA 2026-2032 (docid 595734) discusses LRTP but has no project table. None yielded items.",
+  "SRP board/CUP packets": "SRP Customer Utility Panel and Power Committee packets (srpnet.com) give target ISDs for SRP's siting pipeline (Marigold, Coronado-Pinnacle Peak 2033, SE Valley Hub 2032, Pinal Central-East Mesa 2032); most are 2032+ or already listed; 1 correction.",
+  "USACE ORM public data (permits.ops.usace.army.mil)": "Public JSON search API behind the Corps 'Regulatory and Section 408 Publicly Available Data' map, covering every district: issued individual permits, pending IPs, EAs/EISs, emergency actions, AJDs and Section 408 requests with name, status and a point. Best systematic Corps source: it surfaced Overland Trail-Pony Creek, Coast-McCall, LeJeune-Riverside, Corbett-Conservation, Maybank and Emory, but most transmission work goes under NWP 57 and never appears; names rarely give kV, so each lead needs a second source.",
+  "USACE district public notices": "Each district's Public Notices page (DVIDS sites block scripts with Akamai 403; content readable through search) plus the national RRS list (only active notices, 132 at sweep time). Individual-permit notices for transmission are rare (mostly big Entergy 500 kV lines in Vicksburg/New Orleans and offshore-wind/HVDC cables); almost all were already listed.",
+  "RRS (rrs.usace.army.mil)": "National Regulatory Request System public-notice list; JSON POST api/publicnotice/getPublicNotices; only currently open notices, no archive. Good for monitoring, nothing new at sweep time.",
+  "Pennsylvania Bulletin DEP notices": "Weekly DEP 'Applications, actions and special notices' with Chapter 105, 401 and NPDES construction-stormwater entries (application and 'issued' lists) naming utility line projects (PPL, PECO, FirstEnergy/MAIT) with townships, miles and permit numbers; fully crawlable HTML (vol 53-56 all swept). ~20 lines of 138 kV+ found, but nearly all map to PJM supplemental IDs already listed under generic names (s3185/s3186 PECO, s3755 Dutch Fork tap, s4020 Johnstown-Seward, s3311 Juniata-Bernheisel, b3800 Chanceford); only Ashtabula-Erie West 345 kV was new. Very useful for stage evidence (permit issued dates).",
+  "Virginia DEQ VWP notices": "DEQ calendar of VWP individual-permit public notices; only ~16 notices since late 2024 because most utility work uses general permits. Surfaced Dominion's White Oak 230 kV lines.",
+  "FWS HCPs/ITPs (Federal Register)": "Only two transmission HCPs in 2023-2026 (NPPD R-Project, NEET Crossroads-Hobbs-Roadrunner); both already listed. Low yield.",
+  "State wetland/buffer/401 notices (GA EPD, MI EGLE, CA water boards, OH EPA, WI/MN DNR)": "Mostly sub-138 kV maintenance or no public per-project list; Georgia buffer-variance notices name lines but those found were 115 kV or below; MiEnviro shows only current notices without project descriptions. Low yield.",
+  "Section 106 and DOT/railroad crossing notices": "No systematic public lists found for transmission; searches returned only items already captured through Corps/state sources.",
+  "FERC formula-rate annual updates/projections": "PJM TO postings at pjm.com/markets-and-operations/billing-settlements-and-credit/formula-rates (AEP, ATSI, PSEG, PPL, Dominion...), SPP Attachment H templates on spp.org; project detail is mostly RTEP b-numbers or plant totals, every in-scope b-number spot-checked was already listed (the unlisted ones are breakers/terminal work or pre-2023 projects) - low yield, not worth a recurring sweep.",
+  "State rate cases / capital plans / IRPs": "Duke NC MYRP, Santee Cooper rate-study GT&D report and IRP appendix, Florida Ten-Year Site Plans, Ameren MO IRP appendix; useful mainly for dates/stages (gave 3 Santee Cooper corrections), almost no unlisted lines.",
+  "Public power and co-op boards": "Board packets/minutes on each utility site (SRP CUP packets, SMUD board packets, OUC commission agendas, JEA capital-projects committee tables, Douglas PUD commission reports, Tri-State/NPPD minutes, LCRA TSC and CPS board books, Austin Legistar). Best yield in this sweep, especially Pacific Northwest PUDs/co-ops (Douglas, Chelan, Umatilla) and Florida munis (OUC, JEA) that are outside RTO lists; RTO-area boards (LCRA, CPS, NPPD, OPPD, LES, Sunflower) were almost fully listed already.",
+  "Municipal bond official statements (EMMA)": "emma.msrb.org PDFs reachable directly (200 with K2 user agent) but the site has no public search API and OS capital sections are generic; the useful hit was an LES continuing-disclosure date (North Bluff 2028). Low yield.",
+  "TVA board": "Board minutes approve transmission budgets and land-rights lists by reference to memo attachments that are not posted; TVA project pages (403 to scripts) are already well covered in the list.",
+  "Co-op project pages tied to RUS/board approvals": "Northeast Missouri Power, UEC, UAMPS/St. George reports surfaced small 138-230 kV lines missing from the list; some co-op lines are built to 161 kV but operated at 69 kV (Missouri-Iowa, Axtell-Lovelake) and were skipped.",
+  "OpenStreetMap (Overpass API)": "Volunteer-tagged lifecycle features (power=construction, construction:power=*, proposed:power=*). overpass-api.de reset connections from here; the maps.mail.ru Overpass mirror answered 14 lower-48 bounding-box queries (some retried after 504s). Only ~40 U.S. features at 138 kV+ are tagged; every one that could be identified (Delaney-Colorado River, Jamestown-Ellendale, TVA 161 kV lines, CHPE/Astoria-Rainey, Sunrise/Empire Wind, Harpers, Dover PAR, Loudoun substations, Jerome) is already listed. Useful only as a cross-check; tagging is sparse and stale, and several features were in Mexico/Canada.",
+  "Our Grid Future national planned-transmission layer (ArcGIS)": "Horizon Energy Systems compilation published as a public ArcGIS FeatureServer (June 2026: 707 line segments with owner, status, kV, est. year, endpoints and a source link per row; plus substations and study concepts). Most useful map source: after automated plus manual matching, roughly 90-95% of in-window rows were already in Line Watch (often under PJM/MISO/ERCOT/TPIT IDs); the rest led, via each row's cited utility/BPA/CAISO/ATC source, to the new items here. Rows cited only to misoenergy.org (MTEP) could not be confirmed and were left out.",
+  "Other ArcGIS Online / Hub layers": "Searched www.arcgis.com/sharing/rest/search with ~25 queries (about 420 distinct public items screened, many student/foreign/irrelevant). Utility and consultant project layers (TEP, AES Ohio, Xcel, Santee Cooper, PacifiCorp/Stantec, ATC, TVA, Basin, AEP Texas, SPS, FirstEnergy Survey123) were queried through their REST endpoints. Most map projects already listed; new ones were TEP Southeast Energy Link and FirstEnergy Elko-Moshannon. Three Peaks-Purgatory Flat 345 kV is real but due 2033 (outside the window). Many layers are Survey123 forms or parcel layers with no attributes.",
+  "TVA TSSProjects_Hosted": "TVA's public siting register (447 proposed-centerline features). Projects that are not already listed trace to 2014-2019 TVA environmental assessments with in-service dates of 2016-2020, so they fall outside the window, and TVA's site is behind a Cloudflare challenge. Low yield.",
+  "HIFLD / EIA open data": "The HIFLD/Esri U.S. Electric Power Transmission Lines layer has only 25 'UNDER CONSTRUCTION' features, all 2014-2021 vintage (AEP Ohio 69/138 kV, Red Butte-Sigurd, Selmer-West Adamsville), with no proposed status. It is stale and yielded nothing new. EIA publishes no open planned-transmission dataset (EIA-411 is not public line-level data). Not useful.",
+  "State PUC / siting-board GIS route layers": "Found as embedded layers rather than catalogs: Virginia Energy planned-lines layer (an Our Grid Future subset), Wisconsin PSC experience-builder maps, Morrow County OR planning layer, Jefferson County WV Valley Link layer. All projects they show are already listed.",
+  "CAISO transmission plan status tables (follow-up from map citations)": "Tables 8-1 to 8-3 of the CAISO 2025-2026 plan list current expected in-service dates for every previously approved project. This gave 3 new upgrades and 3 date corrections. It is a good cross-check source for date changes.",
+  "Contractor press releases and project portfolios (MYR Group subsidiaries, Quanta, MasTec, Kiewit, Michels, Burns & McDonnell, Mortenson, Pike, Irby, Sumter, Wilson, Henkels & McCoy)": "Company news pages and 'projects' portfolios (e.g., myrgroup.com/projects, burnsmcd.com/projects, kiewit.com/projects, michels.us/experience/projects, mortenson.com/projects). Most portfolio entries were older than 2023-11, 115-138 kV, unnamed/'confidential', or already listed; earnings-call award mentions (MYR) rarely name the line. Moderate value as a pointer: led to Carlson Creek 345 kV switchyard, Seaside and Sundial 230 kV BESS substations, Chase City-Cloud (listed) and from there Dominion's Clover-Chase City rebuild.",
+  "Engineering News-Record (ENR) and T&D World": "ENR keyword list (enr.com/articles/keyword/725-transmission-line) and regional Best Projects; T&D World section RSS feeds. Good for energization/construction-start confirmations; most named items were already listed, but surfaced BPA Midway-Ashe 230 kV, ComEd's two 345 kV wind substations, the ISA 345 kV application and Carlson Creek.",
+  "Utility / public-power bid notices and procurement plans": "City bid boards (Lodi), Grant PUD forecasted-needs PDF and Procureware notices, NPPD bids (nebraskabids mirror), OPPD project page, PGE RFPs. Small but high-precision: Guild 230/60 kV (Lodi), Monument Hill 230 kV switchyard and dated QTEP schedules (Grant PUD); PGE's Warm Springs Power Pathway RFP is out of window (COD 2032).",
+  "Equipment supplier orders (Hitachi Energy, Siemens Energy, GE Vernova, Prysmian, Trench, Linxon)": "Supplier press rooms. Orders are almost all for already-listed megaprojects (SunZia, Grain Belt, SOO Green, CHPE, North Plains Connector, Minnesota Power HVDC, Texas 765 kV); several new HVDC links found (Southern Spirit, Commonwealth Energy Express, Warm Springs) are due 2032+ and were excluded. Low yield for new items.",
+  "IBEW locals and project labor agreements": "IBEW 1245 quarterly Outside Line reports (ibew1245.com/feed). Names contractors and job starts (Wilson on SWIP-North, T&D Power on Greenlink); pointed to NV Energy's 2026 IRP transmission action plan, which yielded 8 unlisted NV projects and 5 date corrections. A union report alone is not used as a source.",
+  "Spill-over utility sources reached from builder leads": "BPA GERP status (Aug 2026 GAT workshop, 2025 Transmission Plan), NV Energy 2026 IRP Vol. 2 action plan, Dominion power line project index, PGE/OPUC filings, MISO EPR (Murphy-Orr Road, via Grid Strategies/FERC infrastructure update). These produced most of the new items.",
+  "NERC LTRA and seasonal assessments": "Annual/seasonal reliability reports at nerc.com (Reliability Assessments). They report transmission only as mileage totals and a few marquee projects (B2H, Blueprint, CHPE, Energy Gateway) that Line Watch already has; essentially zero new items.",
+  "Regional entity assessments (SERC, NPCC LRAO, MRO, RF, Texas RE)": "Annual long-term assessments on each regional entity site; mostly aggregate miles; the NPCC LRAO names NY/NE projects (CHPE, Smart Path, BCEH, Eastern Queens, Propel) all already listed or below the size threshold. Low value.",
+  "WECC Annual Progress Reports": "Per-utility APRs and a yearly summary/waiver list on the WECC Progress Reports page (8 pages of PDFs). Line Watch evidently already mined these (LADWP, SCE, APS items all present); yielded Feedville (Blueprint East). Medium value as a monitor source since new APRs post each Feb-Mar.",
+  "WestTEC 10-year study": "Western Power Pool PDF; its reference-case tables list ~110 planned western upgrades with sponsors. About 85% were already listed; remainder were post-2031 (Blueprint South/North, Big Eddy-Chemawa, Warm Springs Pathway, Three Peaks-Purgatory Flat, PSE Cross-Cascades) or cancelled (Del Amo-Mesa-Serrano); yielded Bolo and Ross-Rivergate. Its own 'solutions' (Townsend-Midpoint etc.) are conceptual and were not listed.",
+  "CTPC Collaborative Transmission Plan": "carolinastpc.org reference documents (annual plan in April, mid-year update in August). All 230/500 kV items were already listed; useful for status changes (2 corrections). Medium value for corrections.",
+  "Colorado Rule 3627 10-year plan / CETA": "Combined Colorado plan filed every Feb (hosted on tristate.coop and in CO PUC 26M-0051E). Nearly all 230/345 kV items listed; found Cross Point 230/69 kV. CETA's shortlist is conceptual (no dates).",
+  "New Mexico RETA": "nmreta.com project list and legislative annual reports. All in-window projects already listed (Mora, Hidden Mountain, RioSol, CHR built); North Path is 2032; Eastern NM Connector has no date or application (not listed).",
+  "Montana / Wyoming / Nevada state studies": "Montana connectivity study is conceptual; Wyoming Intertie already listed; North Plains Connector in service end-2032 (outside window); Greenlink already listed. Low value.",
+  "BPA GERP": "bpa.gov GERP page with project summaries and dated ISDs. Most items listed or post-2031; added Ross-Rivergate 230 kV (2031).",
+  "NY CGPP / Con Edison LTP": "NY PSC Case 20-E-0197 Cycle 1 report (May 2026) proposes NYSEG Binghamton 230-to-345 kV and Southern Tier 345 kV expansions and National Grid 115 kV upgrades, but none is approved and in-service years in the modeling are 2035+; Eastern Queens is a 138 kV substation (below threshold). Nothing added.",
+  "ISO-NE LTTP / Maine NMRED": "ISO-NE selected CMP/Eversource LTP A1 (Pittsfield - Coopers Mills and Buxton - Deerfield 345 kV etc.) in Aug 2026 but in-service is Q4 2032; Maine's Pittsfield - Haynesville line is 2033. Both outside the 2031-11 window, so not listed.",
+  "DOE Needs Study / NIETC": "DOE cancelled all three Phase 3 NIETC corridors on Aug 12, 2026; corridors named Heartland Spirit, Southline Ph 3, TRIBES but no new dated projects. No value.",
+  "NJ BPU SAA": "BPU docket QO20100630 and PJM TEAC. The SAA was terminated (BPU Apr 22, 2026; FERC accepted June 22, 2026): 42 projects cancelled, only b3737.1/.38/.39/.45/.47/.60 remain. High value for corrections (4 listed NJCEC items now cancelled).",
+  "Maryland POWER Act SAA": "PSC Case 9800 / PJM TEAC; only injection scenarios (Indian River, Cool Spring, Piney Grove, Nelson, Calvert Cliffs), no solution selected yet. Nothing to list.",
+  "BOEM COPs and state siting for offshore wind": "BOEM state-activities pages hold each COP/FEIS/ROD with onshore routes and POIs. Highest-yield source here: SouthCoast Wind (Brayton Point), New England Wind 1 and 2 (West Barnstable), Vineyard Northeast CT (Montville), CVOW onshore export cables. Skipped: Atlantic Shores (OREC vacated, ISA cancelled), Ocean Wind/Empire Wind 2/NY5 (cancelled or no award), CVOW-South/Kitty Hawk (mid-2030s), Humboldt (2034), Morro Bay (no approved transmission), Gulf of Maine (no onshore project).",
+  "Offshore wind status trackers": "New Bedford Light tracker, NYSERDA pages, Dominion 10-Q/SCC reports: used for status corrections (CVOW Harpers/Fentress built Mar 2026; Sunrise and Empire Wind COD 2027)."
+ },
+ "projects": [
+  {
+   "key": "xcel-brookings-lyon-2nd-345",
+   "name": "Brookings County - Lyon County 345 kV second circuit",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "MN, SD",
+   "utility": "Xcel Energy",
+   "market": "MISO",
+   "ends": [
+    {
+     "name": "Brookings County Substation",
+     "state": "SD",
+     "county": "Brookings",
+     "new": false
+    },
+    {
+     "name": "Lyon County Substation",
+     "state": "MN",
+     "county": "Lyon",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 60,
+   "in_service": "2025-09",
+   "stage": "built",
+   "stage_basis": "Minnesota 2025 Biennial Transmission Projects Report (Tracking 2023-SW-N3) says the ~60-mile second 345 kV circuit strung on existing CapX2020 double-circuit structures went in service September 15, 2025.",
+   "docket": "MPUC tracking 2023-SW-N3",
+   "caiso_id": "",
+   "sources": [
+    "https://www.minnelectrans.com/documents/2025_Biennial_Report/AS_FILED_Biennial_Transmission_Projects_Report_10.31.25.pdf"
+   ]
+  },
+  {
+   "key": "xcel-hampton-helena-2nd-345",
+   "name": "Hampton Corner - Helena 345 kV second circuit",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "MN",
+   "utility": "Xcel Energy",
+   "market": "MISO",
+   "ends": [
+    {
+     "name": "Hampton Corner Substation",
+     "state": "MN",
+     "county": "Dakota",
+     "new": false
+    },
+    {
+     "name": "Helena Substation",
+     "state": "MN",
+     "county": "Scott",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 39,
+   "in_service": "2025-09",
+   "stage": "built",
+   "stage_basis": "Minnesota 2025 Biennial Transmission Projects Report (Tracking 2023-SW-N3) says the ~39-mile second 345 kV circuit on existing double-circuit structures went in service September 15, 2025.",
+   "docket": "MPUC tracking 2023-SW-N3",
+   "caiso_id": "",
+   "sources": [
+    "https://www.minnelectrans.com/documents/2025_Biennial_Report/AS_FILED_Biennial_Transmission_Projects_Report_10.31.25.pdf"
+   ]
+  },
+  {
+   "key": "fpl-chinkapin-230-sub",
+   "name": "Chinkapin 230 kV substation (Sand Pine and Pinecone Solar Energy Centers, Quincy 230 kV bus extension)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "FL",
+   "utility": "Florida Power & Light",
+   "market": "Southeast",
+   "ends": [
+    {
+     "name": "Chinkapin 230 kV Substation",
+     "state": "FL",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Quincy 230 kV Substation",
+     "state": "FL",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-06",
+   "stage": "planned",
+   "stage_basis": "FPL 2026-2035 Ten Year Power Plant Site Plan (sections III.E.4 and III.E.42) plans to extend the Quincy 230 kV bus to a new Chinkapin substation to connect the Sand Pine Solar Energy Center (Calhoun County) in Q2 2026 and Pinecone Solar Energy Center in Q3 2027; no completion is reported yet.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.fpl.com/content/dam/fplgp/us/en/about/pdf/ten-year-site-plan.pdf"
+   ]
+  },
+  {
+   "key": "bpa-longhorn-500-230-sub",
+   "name": "Longhorn 500/230 kV substation (McNary - Coyote Springs 500 kV loop-in, Boardman)",
+   "kv": 500,
+   "project_type": "new substation",
+   "state": "OR",
+   "utility": "Bonneville Power Administration",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Longhorn Substation",
+     "state": "OR",
+     "county": "Morrow",
+     "new": true
+    },
+    {
+     "name": "McNary - Coyote Springs 500 kV line",
+     "state": "OR",
+     "county": "Morrow",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-04",
+   "stage": "built",
+   "stage_basis": "BPA 2025 Transmission Plan lists Longhorn 500/230 kV Substation Addition L0482 (P04342) as Completed; BPA's April 15, 2025 news release says the substation was energized.",
+   "docket": "BPA L0482",
+   "caiso_id": "",
+   "sources": [
+    "https://www.bpa.gov/-/media/Aep/transmission/attachment-k/2025-BPA-Transmission-Plan_Final.pdf",
+    "https://www.bpa.gov/about/newsroom/news-articles/20250417-new-substation-in-boardman-ore-supports-growing-energy-needs"
+   ]
+  },
+  {
+   "key": "pge-bpa-keeler-horizon-2-230",
+   "name": "Keeler - Horizon #2 230 kV",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "OR",
+   "utility": "Portland General Electric / Bonneville Power Administration",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Keeler Substation (BPA)",
+     "state": "OR",
+     "county": "Washington",
+     "new": false
+    },
+    {
+     "name": "Horizon Substation (PGE)",
+     "state": "OR",
+     "county": "Washington",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2024",
+   "stage": "built",
+   "stage_basis": "BPA 2025 Transmission Plan (GERP 1.0 Portland Area Upgrades) says Keeler-Horizon 230 kV line #2, PGE's new line terminated at BPA Keeler, was completed and energized in 2024.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.bpa.gov/-/media/Aep/transmission/attachment-k/2025-BPA-Transmission-Plan_Final.pdf"
+   ]
+  },
+  {
+   "key": "bpa-ross-rivergate-230-upgrade",
+   "name": "Ross - Rivergate #1 230 kV upgrade (reconductor incl. Columbia River crossing)",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "OR, WA",
+   "utility": "Bonneville Power Administration",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Ross Substation (BPA)",
+     "state": "WA",
+     "county": "Clark",
+     "new": false
+    },
+    {
+     "name": "Rivergate Substation (PGE)",
+     "state": "OR",
+     "county": "Multnomah",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 6,
+   "in_service": "2031",
+   "stage": "planned",
+   "stage_basis": "BPA 2025 Transmission Plan (GERP 1.0) proposes reconductoring 6 miles of the Ross-Rivergate #1 230 kV line with estimated completion 2031 (updated from 2029); BPA has not finished NEPA/approval.",
+   "docket": "BPA TSEP 2022",
+   "caiso_id": "",
+   "sources": [
+    "https://www.bpa.gov/-/media/Aep/transmission/attachment-k/2025-BPA-Transmission-Plan_Final.pdf"
+   ]
+  },
+  {
+   "key": "aps-goodyear-230-sub",
+   "name": "Goodyear 230 kV substation and Rudd - Three Rivers 230 kV cut-in (Goodyear 230kV Lines)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "AZ",
+   "utility": "Arizona Public Service",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Goodyear 230 kV Substation",
+     "state": "AZ",
+     "county": "Maricopa",
+     "new": true
+    },
+    {
+     "name": "Rudd - Three Rivers 230 kV line",
+     "state": "AZ",
+     "county": "Maricopa",
+     "new": false
+    }
+   ],
+   "miles_new": 1,
+   "miles_upgraded": 0,
+   "in_service": "2025",
+   "stage": "built",
+   "stage_basis": "APS 2026-2035 Ten-Year Transmission System Plan (ACC Docket E-99999A-25-0006, filed Jan 30, 2026) lists the Goodyear 230kV Lines project among projects placed in service in 2025; the 2025 plan describes cutting the Rudd-Three Rivers 230 kV line into a new 230 kV bus at Goodyear substation (south of Van Buren St, east of Bullard Ave) to serve a high-load customer.",
+   "docket": "ACC E-99999A-25-0006",
+   "caiso_id": "",
+   "sources": [
+    "https://docket.images.azcc.gov/e000049070.pdf",
+    "https://www.oasis.oati.com/woa/docs/AZPS/AZPSdocs/2025_APS_Ten-Year_Plan.pdf"
+   ]
+  },
+  {
+   "key": "nve-reid-gardner-harry-allen-3-230",
+   "name": "Harry Allen - Reid Gardner #3 230 kV",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "NV",
+   "utility": "NV Energy (Nevada Power)",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Harry Allen Substation",
+     "state": "NV",
+     "county": "Clark",
+     "new": false
+    },
+    {
+     "name": "Reid Gardner Substation",
+     "state": "NV",
+     "county": "Clark",
+     "new": false
+    }
+   ],
+   "miles_new": 22,
+   "miles_upgraded": 0,
+   "in_service": "2028-06",
+   "stage": "planned",
+   "stage_basis": "NV Energy 2026 WECC Annual Progress Report (March 4, 2026) describes a new 22-mile Harry Allen - Reid Gardner #3 230 kV line to support new generator interconnections at Reid Gardner, estimated ISD June 30, 2028 (WECC significant-impact waiver granted).",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/NVE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "key": "nve-el-capitan-northwest-138-reconductor",
+   "name": "El Capitan - Northwest 138 kV reconductor",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "NV",
+   "utility": "NV Energy (Nevada Power)",
+   "market": "West",
+   "ends": [
+    {
+     "name": "El Capitan Substation",
+     "state": "NV",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Northwest Substation",
+     "state": "NV",
+     "county": "Clark",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-05",
+   "stage": "planned",
+   "stage_basis": "NV Energy 2026 WECC Annual Progress Report says the El Capitan - Northwest 138 kV reconductor (needed for the Amargosa solar/battery and White Pine pumped hydro network resources) is now being pursued by the company with expected ISD May 2027.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/NVE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "key": "chpd-jumpoff-ridge-230-sub",
+   "name": "Jumpoff Ridge 230/115 kV substation (Microsoft Malaga data center large load)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "WA",
+   "utility": "Chelan County PUD",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Jumpoff Ridge Substation",
+     "state": "WA",
+     "county": "Chelan",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025",
+   "stage": "built",
+   "stage_basis": "Chelan PUD's 2026 WECC Annual Progress Report names the Jumpoff Ridge 230/115 kV station for a large load as its only active project; Chelan PUD's 2025 Annual Report says the Jumpoff Ridge substation was commissioned in summer 2025.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/CHPD%202026%20APR.pdf",
+    "https://www.chelanpud.org/docs/default-source/default-document-library/ar-2025-web.pdf"
+   ]
+  },
+  {
+   "key": "pge-horizon-keeler-1-230-reconductor",
+   "name": "Horizon - Keeler #1 230 kV reconductor",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "OR",
+   "utility": "Portland General Electric",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Horizon Substation",
+     "state": "OR",
+     "county": "Washington",
+     "new": false
+    },
+    {
+     "name": "Keeler Substation (BPA)",
+     "state": "OR",
+     "county": "Washington",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-04",
+   "stage": "planned",
+   "stage_basis": "PGE 2026 WECC Annual Progress Report lists reconductoring the Horizon-Keeler #1 230 kV line (from 1272 AAC) for NERC TPL overloads with estimated release to operations April 2026; completion not yet confirmed in a public source.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/PGE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "key": "sce-etiwanda-vista-220-upgrade",
+   "name": "Etiwanda - Vista 220 kV line upgrade (ground clearance and terminal equipment)",
+   "kv": 220,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "Southern California Edison",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Etiwanda Substation",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": false
+    },
+    {
+     "name": "Vista Substation",
+     "state": "CA",
+     "county": "San Bernardino",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027-06",
+   "stage": "planned",
+   "stage_basis": "SCE 2026 WECC Annual Progress Report (Feb 20, 2026), project 10, increases the Etiwanda - Vista 220 kV line rating by fixing ground clearance and replacing limiting terminal equipment, in-service June 2027 (waiver requested).",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/SCE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "key": "pge-bakersfield-230-tap-reconductor",
+   "name": "Bakersfield Nos. 1 and 2 230 kV tap lines reconductor and Bakersfield loop onto Midway - Kern No. 2 230 kV",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "Pacific Gas and Electric",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Bakersfield 230 kV Substation",
+     "state": "CA",
+     "county": "Kern",
+     "new": false
+    },
+    {
+     "name": "Midway - Kern No. 2 230 kV line",
+     "state": "CA",
+     "county": "Kern",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2028-02",
+   "stage": "planned",
+   "stage_basis": "PG&E 2026 WECC Annual Progress Report (Table 1, waiver granted) lists looping Bakersfield 230 kV Substation onto the Midway-Kern No. 2 230 kV line and reconductoring the Bakersfield Nos. 1 and 2 230 kV tap lines, in service Feb 2028.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/PGAE%202026%20APR.pdf"
+   ]
+  },
+  {
+   "key": "mec-overland-trail-pony-creek-345",
+   "name": "Overland Trail - Pony Creek 345 kV",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "IA",
+   "utility": "MidAmerican Energy",
+   "market": "MISO",
+   "ends": [
+    {
+     "name": "Overland Trail",
+     "state": "IA",
+     "county": "Pottawattamie",
+     "new": false
+    },
+    {
+     "name": "Pony Creek",
+     "state": "IA",
+     "county": "Pottawattamie",
+     "new": false
+    }
+   ],
+   "miles_new": 1.5,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "USACE Omaha District Section 408 public notice 408-NWO-2025-0058 (published Dec 17, 2025) describes MidAmerican's request to cross the Pony Creek / Missouri River levees southeast of Council Bluffs with a new ~1.5-mile 345 kV line connecting Overland Trail and Pony Creek substations for customer load; Section 408 decision pending at notice.",
+   "docket": "USACE 408-NWO-2025-0058",
+   "caiso_id": "",
+   "sources": [
+    "https://www.nwo.usace.army.mil/Media/Public-Notices/Article/4362495/408-nwo-2025-0058/"
+   ]
+  },
+  {
+   "key": "fpl-coast-mccall-138",
+   "name": "Coast - McCall 138 kV (FPL T31435)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "FL",
+   "utility": "Florida Power & Light",
+   "market": "Southeast",
+   "ends": [
+    {
+     "name": "Coast",
+     "state": "FL",
+     "county": "Charlotte",
+     "new": false
+    },
+    {
+     "name": "McCall",
+     "state": "FL",
+     "county": "Charlotte",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "USACE Jacksonville District public notice SAJ-2025-01427 (July 21, 2025, emergency energy processing) describes FPL's new Coast-McCall 138 kV transmission line T31435 crossing the Myakka River beside the SR 776 bridge in Port Charlotte; the USACE ORM public data lists the environmental assessment for SAJ-2025-01427-JRP as Finalized. Line length not stated.",
+   "docket": "USACE SAJ-2025-01427",
+   "caiso_id": "",
+   "sources": [
+    "https://www.saj.usace.army.mil/Missions/Regulatory/Public-Notices/Article/4250722/saj-2025-01427sp-jrp",
+    "https://permits.ops.usace.army.mil/orm-public-api/permits/search?da=true&max=5&q=%22SAJ-2025-01427%22"
+   ]
+  },
+  {
+   "key": "fpl-lejeune-riverside-138-reconductor",
+   "name": "LeJeune - Riverside 138 kV reconductor",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "FL",
+   "utility": "Florida Power & Light",
+   "market": "Southeast",
+   "ends": [
+    {
+     "name": "LeJeune",
+     "state": "FL",
+     "county": "Miami-Dade",
+     "new": false
+    },
+    {
+     "name": "Riverside",
+     "state": "FL",
+     "county": "Miami-Dade",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "in construction",
+   "stage_basis": "USACE Section 408 request 408-SAJ-2025-0030 'LeJeune-Riverside 138 kV Reconductor' (submitted Feb 3, 2025; regulatory file SAJ-2024-05056) crossing a C&SF canal near NW 20th St, Miami, shows status 'Under Construction' in the USACE ORM public data.",
+   "docket": "USACE 408-SAJ-2025-0030 / SAJ-2024-05056",
+   "caiso_id": "",
+   "sources": [
+    "https://permits.ops.usace.army.mil/orm-public-api/permits/search?da=true&max=5&q=identifier:%22408-SAJ-2025-0030%22"
+   ]
+  },
+  {
+   "key": "fpl-corbett-conservation-500-rebuild",
+   "name": "Corbett - Conservation 500 kV rebuild (Levee-Midway corridor segments 2-4)",
+   "kv": 500,
+   "project_type": "upgrade",
+   "state": "FL",
+   "utility": "Florida Power & Light",
+   "market": "Southeast",
+   "ends": [
+    {
+     "name": "Corbett",
+     "state": "FL",
+     "county": "Palm Beach",
+     "new": false
+    },
+    {
+     "name": "Conservation",
+     "state": "FL",
+     "county": "Broward",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 33,
+   "in_service": "",
+   "stage": "in construction",
+   "stage_basis": "USACE Jacksonville District public notice SAJ-2024-02384 (Sept 23, 2024) describes FPL's rebuild (pole/foundation replacement and access road repair) of the Corbett-Conservation 500 kV line: northern 7 mi of Segment 2 (Palm Beach), 14.5 mi of Segment 3 and 11.5 mi of Segment 4 (Broward); the related Section 408 requests 408-SAJ-2025-0085 and 408-SAJ-2026-0219 ('Corbett-Conservation Phase 2') show 'Under Construction' in USACE ORM public data.",
+   "docket": "USACE SAJ-2024-02384; 408-SAJ-2025-0085",
+   "caiso_id": "",
+   "sources": [
+    "https://www.saj.usace.army.mil/Missions/Regulatory/Public-Notices/Article/3914506/saj-2024-02384-sp-kgm",
+    "https://permits.ops.usace.army.mil/orm-public-api/permits/search?da=true&max=5&q=identifier:%22408-SAJ-2025-0085%22"
+   ]
+  },
+  {
+   "key": "dom-elmont-white-oak-2075-chickahominy-white-oak-2294-230",
+   "name": "Elmont - White Oak 230 kV (Line #2075) and Chickahominy - White Oak 230 kV (Line #2294), White Oak project",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "VA",
+   "utility": "Dominion Energy Virginia",
+   "market": "PJM",
+   "ends": [
+    {
+     "name": "Elmont",
+     "state": "VA",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "White Oak",
+     "state": "VA",
+     "county": "Henrico",
+     "new": false
+    },
+    {
+     "name": "Chickahominy",
+     "state": "VA",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "Virginia SCC final order of March 25, 2024 (Case PUR-2023-00110) approved the 230 kV Elmont-White Oak Line #2075, Chickahominy-White Oak Line #2294 and White Oak Substation expansion (double-circuit line serving White Oak Technology Park, Henrico County); Virginia DEQ noticed the draft VWP individual permit #25-0033 for 'White Oaks 230 kV Transmission Line, Phase I' Oct 22 - Nov 24, 2025; Dominion expected construction to begin early 2025.",
+   "docket": "VA SCC PUR-2023-00110; VWPP 25-0033",
+   "caiso_id": "",
+   "sources": [
+    "https://www.deq.virginia.gov/news-info/shortcuts/public-notices/water/wetlands-streams-vwp/-toggle-all",
+    "https://www.dominionenergy.com/about/delivering-energy/electric-projects/power-line-projects/white-oak",
+    "https://cdn-dominionenergy-prd-001.azureedge.net/-/media/content/about/power-line-projects/technology-boulevard-electric-transmission-project/pdf/scc-final-order-(1).pdf?rev=fc118f94a0b04781bfe643e1931fb2d4"
+   ]
+  },
+  {
+   "key": "scpsa-maybank-230-115-sub",
+   "name": "Maybank 230/115 kV substation (Santee Cooper)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "SC",
+   "utility": "Santee Cooper",
+   "market": "Southeast",
+   "ends": [
+    {
+     "name": "Maybank",
+     "state": "SC",
+     "county": "Colleton",
+     "new": true,
+     "lat": 32.83288,
+     "lon": -80.61864,
+     "location_basis": "Center coordinates of the 90-acre project/review area given in the USACE Charleston District approved jurisdictional determination (west of Cooks Hill Road near Ernest Court, nearest town Walterboro)"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "USACE Charleston District approved jurisdictional determination SAC-2025-01196 (Jan 23, 2026) for 'Santee Cooper - Maybank 230/115kV Substation Project' on a 90-acre site in Colleton County; this is a pre-application wetland determination, no siting approval found.",
+   "docket": "USACE SAC-2025-01196 (AJD)",
+   "caiso_id": "",
+   "sources": [
+    "https://publibrary.sec.usace.army.mil/api/download?id=5f4aa449-a60d-4a3f-f296-00ec7a27254c&filename=SAC-2025-01196_Maybank_230kV_115kV_Substation.pdf&token=&preview=true",
+    "https://permits.ops.usace.army.mil/orm-public-api/permits/search?da=true&max=5&q=identifier:%22SAC-2025-01196%22"
+   ]
+  },
+  {
+   "key": "desc-emory-230-sub-vcs2-ward-foldin",
+   "name": "Emory 230-23 kV substation and VCS2 - Ward 230 kV fold-in",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "SC",
+   "utility": "Dominion Energy South Carolina",
+   "market": "Southeast",
+   "ends": [
+    {
+     "name": "Emory",
+     "state": "SC",
+     "county": "",
+     "new": true,
+     "lat": 34.00872,
+     "lon": -81.6829,
+     "location_basis": "Point of the USACE Charleston District jurisdictional determination SAC-2022-00706 'Emory 230kV Substation Site' (ORM public data)"
+    },
+    {
+     "name": "VCS2 - Ward 230 kV line (fold-in point)",
+     "state": "SC",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0.3,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "SC PSC Order No. 2023-153 (Mar 13, 2023, Docket 2022-321-E) granted 'like facility' status for DESC's new Emory 230-23 kV substation and fold-in of the VCS2-Ward 230 kV line (two parallel steel monopole lines ~745 ft into the substation) to serve the greater Saluda County area; USACE issued a jurisdictional determination for the 'Emory 230kV Substation Site' (SAC-2022-00706) on Jan 30, 2023. No in-service date found.",
+   "docket": "SC PSC 2022-321-E; USACE SAC-2022-00706",
+   "caiso_id": "",
+   "sources": [
+    "https://dms.psc.sc.gov/Attachments/Order/76ea3b21-3837-49f1-9535-90691016db9b",
+    "https://permits.ops.usace.army.mil/orm-public-api/permits/search?da=true&max=5&q=identifier:%22SAC-2022-00706%22"
+   ]
+  },
+  {
+   "key": "nemo-mark-bottoms-161-rebuild",
+   "name": "South River - Palmyra 345 and South River - Emerson 161 kV lines rebuild (Mark Bottoms rebuild; NEP lines 60 & 62)",
+   "kv": 161,
+   "project_type": "upgrade",
+   "state": "MO",
+   "utility": "Northeast Missouri Electric Power Cooperative (Northeast Power)",
+   "market": "Southeast",
+   "ends": [
+    {
+     "name": "South River",
+     "state": "MO",
+     "county": "Marion",
+     "new": false
+    },
+    {
+     "name": "Palmyra 345",
+     "state": "MO",
+     "county": "Marion",
+     "new": false
+    },
+    {
+     "name": "Emerson",
+     "state": "MO",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 12.2,
+   "in_service": "",
+   "stage": "in construction",
+   "stage_basis": "USACE Rock Island District Section 408 request 408-MVR-2026-0002 'NEP 161KV Transmission Lines 60 & 62' (regulatory file MVR-2025-01112, Marion County Drainage District / South River levees) shows status 'Under Construction' in USACE ORM public data; Northeast Power describes rebuilding ~12.2 mi of the two 161 kV lines (South River-Palmyra 345 and South River-Emerson) plus 6.7 mi of 69 kV in the Mark Bottoms north of Palmyra.",
+   "docket": "USACE 408-MVR-2026-0002 / MVR-2025-01112",
+   "caiso_id": "",
+   "sources": [
+    "https://permits.ops.usace.army.mil/orm-public-api/permits/search?da=true&max=5&q=identifier:%22408-MVR-2026-0002%22",
+    "https://northeast-power.coop/mark-bottoms"
+   ]
+  },
+  {
+   "key": "teco-fishhawk-wheeler-davis-230-upgrade",
+   "name": "FishHawk - Wheeler - Davis 230 kV transmission upgrade (TECO)",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "FL",
+   "utility": "Tampa Electric",
+   "market": "Southeast",
+   "ends": [
+    {
+     "name": "FishHawk",
+     "state": "FL",
+     "county": "Hillsborough",
+     "new": false
+    },
+    {
+     "name": "Wheeler (Wheeler Road)",
+     "state": "FL",
+     "county": "Hillsborough",
+     "new": false
+    },
+    {
+     "name": "Davis",
+     "state": "FL",
+     "county": "Hillsborough",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "USACE Jacksonville District individual-permit file SAJ-2025-02794 'TECO / FishHawk Wheeler Davis Transmission / 12895 West Wheeler Road / Hillsborough' has a pending NEPA EA (received Apr 1, 2026) and the related Section 408 request 408-SAJ-2026-0233 (Tampa Bypass Canal crossing, submitted Sept 29, 2026) shows 'Decision Letter to be Sent'; FDEP's TLSA record shows the Wheeler-Davis line is 230 kV. Scope (rebuild vs new circuit), length and date not stated in an official source.",
+   "docket": "USACE SAJ-2025-02794; 408-SAJ-2026-0233",
+   "caiso_id": "",
+   "sources": [
+    "https://permits.ops.usace.army.mil/orm-public-api/permits/search?da=true&max=5&q=%22SAJ-2025-02794-TEH%22",
+    "https://permits.ops.usace.army.mil/orm-public-api/permits/search?da=true&max=5&q=identifier:%22408-SAJ-2026-0233%22",
+    "https://floridadep.gov/water/siting-coordination-office/content/tampa-electric-company-wheeler-davis-willow-oak-line"
+   ]
+  },
+  {
+   "key": "mait-ashtabula-erie-west-345-rehab-pa",
+   "name": "Ashtabula - Erie West 345 kV rehabilitation (Pennsylvania portion)",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "PA",
+   "utility": "Mid-Atlantic Interstate Transmission (FirstEnergy)",
+   "market": "PJM",
+   "ends": [
+    {
+     "name": "Ashtabula",
+     "state": "OH",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Erie West",
+     "state": "PA",
+     "county": "Erie",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 7.2,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "Pennsylvania Bulletin (May 23, 2026) noticed MAIT's NPDES construction stormwater application PAD250027 for the Ashtabula-Erie West 345 kV Rehabilitation Project in Conneaut and Springfield Townships, Erie County (replace ~5.8 mi of existing line and reconductor ~1.4 mi, reusing some towers, 140 acres disturbance); the July 11, 2026 Bulletin lists PAD250027 as issued. Only the Pennsylvania segment is described.",
+   "docket": "PA DEP PAD250027",
+   "caiso_id": "",
+   "sources": [
+    "https://www.pacodeandbulletin.gov/secure/pabulletin/data/vol56/56-21/732.html",
+    "https://www.pacodeandbulletin.gov/secure/pabulletin/data/vol56/56-28/981b.html"
+   ]
+  },
+  {
+   "key": "smud-jackson-bulk-230-sub",
+   "name": "Jackson Bulk 230/69 kV Substation (SMUD)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "Sacramento Municipal Utility District",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Jackson Bulk Substation (Jackson Rd & Excelsior Rd)",
+     "state": "CA",
+     "county": "Sacramento",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "SMUD Board on Oct 15, 2026 adopted the CEQA MND and approved the Jackson Bulk Substation Project (18-acre 230/69 kV bulk substation with new or modified 230 kV and 69 kV connections); Notice of Determination posted Oct 19, 2026 (SCH 2026050302).",
+   "docket": "SCH 2026050302",
+   "caiso_id": "",
+   "sources": [
+    "https://www.smud.org/-/media/Documents/Corporate/About-Us/Board-Meetings-and-Agendas/2026/Oct/Board-Info-Packet-Oct-15-2026.ashx",
+    "https://ceqanet.lci.ca.gov/2026050302/5"
+   ]
+  },
+  {
+   "key": "ouc-pershing-lake-highland-230",
+   "name": "Pershing - Lake Highland 230 kV (OUC Downtown 230 kV Transmission Line Project) and Lake Highland 230 kV Substation",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "FL",
+   "utility": "Orlando Utilities Commission",
+   "market": "Southeast",
+   "ends": [
+    {
+     "name": "Pershing",
+     "state": "FL",
+     "county": "Orange",
+     "new": false
+    },
+    {
+     "name": "Lake Highland (new 230 kV substation, 1020 Highland Ave, Orlando)",
+     "state": "FL",
+     "county": "Orange",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029",
+   "stage": "approved",
+   "stage_basis": "OUC Commission on March 3, 2026 approved $274.4 million for the Downtown 230 kV Transmission Line Project (agenda item 8, 'Pershing to Weber - Phase 1 of 3'), a new 230 kV line (underground on Fern Creek Ave/Robinson St/Crystal Lake Dr, overbuilt on Curry Ford Rd poles) from Pershing substation to a new Lake Highland substation; OUC's project page shows substation construction Fall 2026 - Summer 2029 and the full project is expected complete late summer 2029; Robinson St conduit was installed by Jan 2025; city conditional use permit for the Lake Highland site was heard April 21, 2026. OUC's 2026 civil bid documents say the new 230 kV circuit will ultimately connect Lake Highland to Stanton Energy Center. Mileage not stated.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://espanol.ouc.com/wp-content/uploads/2026/02/2026_03-Meeting-Agenda.pdf",
+    "https://www.ouc.com/about/infrastructure-projects/highland-avenue-new-electric-substation/",
+    "https://www.orlando.gov/files/sharedassets/public/v/1/departments/edv/city-planning/development-applications/mpb/2026/04-april/cup26-10002-ouc-wtr-plant/3.5-cup-11-pg-standards-of-review.pdf",
+    "https://bungalower.com/2026/03/26/new-substation-years-of-street-work-what-oucs-274m-downtown-power-project-means-for-your-neighborhood",
+    "https://www.clickorlando.com/news/local/2026/03/27/drivers-brace-for-years-of-detours-as-ouc-approves-274m-power-upgrade-project"
+   ]
+  },
+  {
+   "key": "nwpower-nepower-zachary-locust-creek-161",
+   "name": "Zachary - Locust Creek 161 kV (NW Power / Northeast Power, co-located with ATXI Denny - Zachary 345 kV)",
+   "kv": 161,
+   "project_type": "new line",
+   "state": "MO",
+   "utility": "NW Electric Power Cooperative / Northeast Missouri Electric Power Cooperative (Associated Electric system)",
+   "market": "Southeast",
+   "ends": [
+    {
+     "name": "Zachary (ATXI)",
+     "state": "MO",
+     "county": "Adair",
+     "new": false
+    },
+    {
+     "name": "Locust Creek (NW Power)",
+     "state": "MO",
+     "county": "Sullivan",
+     "new": false
+    }
+   ],
+   "miles_new": 33,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "Northeast Power's October 2025 fact sheet describes a new ~33-mile 161 kV line (15 mi Adair County, 18 mi Sullivan County) on double-circuit structures shared with ATXI's 345 kV line from Zachary to NW Power's Locust Creek substation; a Missouri PSC-filed joint use agreement says AECI has commenced development and right-of-way acquisition for the ~35-mile Locust Creek - Zachary 161 kV circuit. No in-service date stated; the co-located ATXI Denny - Zachary 345 kV segment is listed for 2030-06.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://northeast-power.coop/zachary-locust-creek",
+    "https://northeast-power.coop/sites/default/files/documents/Z%20to%20LC%20factsheet%20-%20October%202025.pdf-4_0.pdf",
+    "https://efis.psc.mo.gov/Document/Display/823373"
+   ]
+  },
+  {
+   "key": "uec-mcnary-wanapa-230",
+   "name": "McNary (BPA) - Wanapa 230 kV (UEC)",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "OR",
+   "utility": "Umatilla Electric Cooperative",
+   "market": "West",
+   "ends": [
+    {
+     "name": "McNary (BPA)",
+     "state": "OR",
+     "county": "Umatilla",
+     "new": false
+    },
+    {
+     "name": "Wanapa (UEC, Port of Umatilla)",
+     "state": "OR",
+     "county": "Umatilla",
+     "new": false
+    }
+   ],
+   "miles_new": 5.6,
+   "miles_upgraded": 0,
+   "in_service": "2025-10",
+   "stage": "built",
+   "stage_basis": "UEC's project page (listed under Completed Projects) says the 5.6-mile 230 kV McNary to Wanapa line, connecting BPA's McNary substation to UEC's Wanapa substation at the Port of Umatilla, was built with construction from fall 2024 to completion in October 2025.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.umatillaelectric.com/about-us/news-events-updates/projects/mcnary-to-wanapa-transmission-line/",
+    "https://www.umatillaelectric.com/about-us/news-events-updates/projects"
+   ]
+  },
+  {
+   "key": "uec-ordnance-cottonwood-230",
+   "name": "Ordnance - Cottonwood 230 kV (UEC Rockpile Transmission Line Integration)",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "OR",
+   "utility": "Umatilla Electric Cooperative",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Ordnance",
+     "state": "OR",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Cottonwood (UEC)",
+     "state": "OR",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-04",
+   "stage": "built",
+   "stage_basis": "UEC's Rockpile Transmission Line Integration page (Completed Projects) says UEC completed 9 miles of 230 kV and 9.5 miles of 115 kV, including a new-build Ordnance-Cottonwood 230 kV line, with construction July 2025 - April 2026; per-segment mileage not stated.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.umatillaelectric.com/about-us/news-events-updates/projects/rockpile-transmission-line-integration/"
+   ]
+  },
+  {
+   "key": "uec-rockpile-ordnance-230-reconductor",
+   "name": "Rockpile - Ordnance 230 kV reconductor (UEC)",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "OR",
+   "utility": "Umatilla Electric Cooperative",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Rockpile Switchyard (Powerline Rd, south of Umatilla)",
+     "state": "OR",
+     "county": "Umatilla",
+     "new": false
+    },
+    {
+     "name": "Ordnance",
+     "state": "OR",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-04",
+   "stage": "built",
+   "stage_basis": "UEC's Rockpile Transmission Line Integration page (Completed Projects) lists reconductoring of the Rockpile-Ordnance 230 kV line as part of work done July 2025 - April 2026.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.umatillaelectric.com/about-us/news-events-updates/projects/rockpile-transmission-line-integration/"
+   ]
+  },
+  {
+   "key": "uec-rockpile-230-switchyard",
+   "name": "Rockpile 230 kV Switchyard (UEC)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "OR",
+   "utility": "Umatilla Electric Cooperative",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Rockpile Switchyard (Powerline Rd, south of Umatilla)",
+     "state": "OR",
+     "county": "Umatilla",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2024",
+   "stage": "built",
+   "stage_basis": "UEC says it built the Rockpile Switchyard on Powerline Road south of Umatilla, completed in 2024; the switchyard terminates the Rockpile-Ordnance 230 kV line (voltage taken from that line).",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.umatillaelectric.com/about-us/news-events-updates/projects/rockpile-transmission-line-integration/"
+   ]
+  },
+  {
+   "key": "douglaspud-wells-foster-creek-230-conversion",
+   "name": "Wells - Foster Creek 115 kV to 230 kV reconductor/conversion (Douglas PUD)",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "WA",
+   "utility": "Douglas County PUD",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Wells (Wells Hydroelectric Project switchyard)",
+     "state": "WA",
+     "county": "Douglas",
+     "new": false
+    },
+    {
+     "name": "Foster Creek",
+     "state": "WA",
+     "county": "Douglas",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "Douglas PUD commissioners on April 21, 2026 (Res. 26-035) approved a $1.1 million design contract amendment adding the 'Wells to Foster Creek 115 kV to 230 kV reconductor project'; in design, no in-service date stated.",
+   "docket": "Douglas PUD Res. 26-035",
+   "caiso_id": "",
+   "sources": [
+    "http://douglaspud.org/commission-meeting-report-2026-04-21"
+   ]
+  },
+  {
+   "key": "douglaspud-misawa-230-sub",
+   "name": "Misawa 230 kV Substation and looped 230 kV lines (Douglas PUD)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "WA",
+   "utility": "Douglas County PUD",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Misawa (new)",
+     "state": "WA",
+     "county": "Douglas",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "Douglas PUD commissioners on April 21, 2026 (Res. 26-035) added design of 'the looped 230 kV transmission lines necessary to serve the new Misawa substation' to a transmission design contract; location and date not stated (county assumed Douglas as the PUD's service territory).",
+   "docket": "Douglas PUD Res. 26-035",
+   "caiso_id": "",
+   "sources": [
+    "http://douglaspud.org/commission-meeting-report-2026-04-21"
+   ]
+  },
+  {
+   "key": "douglaspud-clovis-230-sub-urban-clovis-rapids",
+   "name": "Clovis 230 kV Substation and Urban Industrial - Clovis - Rapids 230/115 kV line (Douglas PUD)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "WA",
+   "utility": "Douglas County PUD",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Clovis (new)",
+     "state": "WA",
+     "county": "Douglas",
+     "new": true
+    },
+    {
+     "name": "Urban Industrial",
+     "state": "WA",
+     "county": "Douglas",
+     "new": false
+    },
+    {
+     "name": "Rapids Switchyard",
+     "state": "WA",
+     "county": "Douglas",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "in construction",
+   "stage_basis": "Douglas PUD commissioners on Aug 6, 2024 awarded contract 24-13-D (Urban-Clovis-Rapids 230/115 kV line, Michels Pacific Energy) and 24-32-D (Construct Clovis Substation); 230 kV breakers, switches and instrument transformers for Clovis were bought in 2023-2024 and a BPA easement for the new 230 kV line serving Urban Industrial and Clovis was approved Aug 19, 2024. Energization date not found.",
+   "docket": "Douglas PUD contracts 24-13-D, 24-32-D",
+   "caiso_id": "",
+   "sources": [
+    "https://douglaspud.org/commission-meeting-report-2024-08-06/",
+    "https://douglaspud.org/commission-meeting-report-2024-08-19/",
+    "https://douglaspud.org/commission-meeting-report-2023-08-22"
+   ]
+  },
+  {
+   "key": "uamps-purgatory-flat-st-george-138-loop",
+   "name": "Purgatory Flat - St. George 138 kV loop (new line, Washington County UT)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "UT",
+   "utility": "UAMPS Central-St. George Project / St. George Energy Services",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Purgatory Flat",
+     "state": "UT",
+     "county": "Washington",
+     "new": false
+    },
+    {
+     "name": "St. George",
+     "state": "UT",
+     "county": "Washington",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025",
+   "stage": "built",
+   "stage_basis": "A 2026 southwest Utah transmission report posted on the Utah Public Notice site lists '2025 Install 138 kV Loop' and says construction of the new 138 kV loop from Purgatory Flat substation to St George substation was completed in summer 2025, with Red Butte RAS changes finished October 2025. Mileage and owner split not stated.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.utah.gov/pmn/files/1357213.pdf"
+   ]
+  },
+  {
+   "key": "st-george-purgatory-flat-138-reconductor",
+   "name": "St. George - Purgatory Flat 138 kV reconductor (ACCC)",
+   "kv": 138,
+   "project_type": "upgrade",
+   "state": "UT",
+   "utility": "UAMPS Central-St. George Project / St. George Energy Services",
+   "market": "West",
+   "ends": [
+    {
+     "name": "St. George",
+     "state": "UT",
+     "county": "Washington",
+     "new": false
+    },
+    {
+     "name": "Purgatory Flat",
+     "state": "UT",
+     "county": "Washington",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2024",
+   "stage": "built",
+   "stage_basis": "The same 2026 southwest Utah transmission report lists '2024 St. George-Purgatory Flat line reconductor with advanced conductor (ACCC)' as a completed project. Voltage taken from the report's description of the 138 kV system between these substations.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.utah.gov/pmn/files/1357213.pdf"
+   ]
+  },
+  {
+   "project_type": "new substation",
+   "state": "FL",
+   "utility": "JEA",
+   "market": "Southeast",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "docket": "",
+   "caiso_id": "",
+   "key": "jea-maxville-230-sub",
+   "name": "Maxville 230-26 kV Substation (new) and 230 kV transmission tie (JEA)",
+   "kv": 230,
+   "ends": [
+    {
+     "name": "Maxville (new)",
+     "state": "FL",
+     "county": "Duval",
+     "new": true
+    }
+   ],
+   "stage_basis": "JEA's board-approved FY25 capital budget lists 'Maxville New 230-26kV Substation' ($16.0M, FY25-FY28 spending) plus 'Maxville New 230kV Substation - Transmission' and protection/control line items; the FY26-FY30 CIP lists Maxville area 230-26 kV substation site acquisition. No in-service date stated.",
+   "sources": [
+    "https://www.jea.com/About/Board_and_Management/FY25_JEA_Board_Approved_Budget/",
+    "https://www.jacksonville.gov/getContentAsset/542488d5-5396-4186-9ad0-e7a2f75d4496/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Meeting-4-Independent-Agencies.pdf?language=en"
+   ]
+  },
+  {
+   "project_type": "new substation",
+   "state": "FL",
+   "utility": "JEA",
+   "market": "Southeast",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "docket": "",
+   "caiso_id": "",
+   "key": "jea-durbin-230-sub",
+   "name": "Durbin 230-26 kV Substation (new) and Durbin 230 kV Circuit 924/932 interconnect (JEA)",
+   "kv": 230,
+   "ends": [
+    {
+     "name": "Durbin (new)",
+     "state": "FL",
+     "county": "",
+     "new": true
+    }
+   ],
+   "stage_basis": "JEA's board-approved FY25 capital budget lists Durbin 230-26 kV Substation distribution and protection/control items and 'Durbin Sub 230kV Circuit 924/932 Interconnect'; the FY26-FY30 CIP presented to Jacksonville City Council (Aug 2025) carries the interconnect ($2.5M through FY29) and Durbin substation property acquisition. No in-service date stated; county not stated (Durbin area of JEA territory).",
+   "sources": [
+    "https://www.jea.com/About/Board_and_Management/FY25_JEA_Board_Approved_Budget/",
+    "https://www.jacksonville.gov/getContentAsset/542488d5-5396-4186-9ad0-e7a2f75d4496/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Meeting-4-Independent-Agencies.pdf?language=en"
+   ]
+  },
+  {
+   "project_type": "new line",
+   "state": "FL",
+   "utility": "JEA",
+   "market": "Southeast",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "docket": "",
+   "caiso_id": "",
+   "key": "jea-bct-ss2-nocatee-230",
+   "name": "BCT SS2 - Nocatee 230 kV (corridor acquisition, JEA)",
+   "kv": 230,
+   "ends": [
+    {
+     "name": "BCT SS2",
+     "state": "FL",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Nocatee",
+     "state": "FL",
+     "county": "",
+     "new": false
+    }
+   ],
+   "stage_basis": "JEA Capital Projects Committee major-project table (Feb 2026) lists 'RES - BCT SS2 to Nocatee 230 kV - Transmission Corridor' ($31M), planned phase starting Jan 2028 with final completion June 2031; this is the corridor/real-estate phase, and no line in-service date is given.",
+   "sources": [
+    "http://jea.com/uploadedFiles/jea.com/Events/Board_Meetings/Agenda/Capital%20Projects%20Committee%20Meeting%20Materials%20-%20February%2011%2C%202026.pdf",
+    "https://www.jea.com/uploadedFiles/jea.com/Events/Board_Meetings/Agenda/Capital%20Projects%20Committee%20Materials%20-%20October%2031,%202025.pdf"
+   ]
+  },
+  {
+   "project_type": "new substation",
+   "state": "FL",
+   "utility": "JEA",
+   "market": "Southeast",
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "docket": "",
+   "caiso_id": "",
+   "key": "jea-sjrpp-230-sub",
+   "name": "SJRPP 230-26 kV Distribution Substation (JEA, St. Johns River Power Park site)",
+   "kv": 230,
+   "ends": [
+    {
+     "name": "SJRPP 230-26 kV substation",
+     "state": "FL",
+     "county": "Duval",
+     "new": true
+    }
+   ],
+   "stage_basis": "JEA's FY25 board-approved budget and FY26-FY30 CIP fund 'SJRPP 230-26kV Distribution Substation' ($3.2M FY25, $2.6M FY26) with a later T2 transformer addition; in-service date not stated.",
+   "sources": [
+    "https://www.jea.com/About/Board_and_Management/FY25_JEA_Board_Approved_Budget/",
+    "https://www.jacksonville.gov/getContentAsset/542488d5-5396-4186-9ad0-e7a2f75d4496/135b97c9-84fa-4e82-b956-0fbccec4aa1f/Meeting-4-Independent-Agencies.pdf?language=en"
+   ]
+  },
+  {
+   "key": "lcra-henne-kohlenberg-138",
+   "name": "Henne - Kohlenberg 138 kV (LCRA TSC T-780) and Kohlenberg 138 kV ring bus (NBU substation)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "TX",
+   "utility": "LCRA Transmission Services Corporation / New Braunfels Utilities",
+   "market": "ERCOT",
+   "ends": [
+    {
+     "name": "Henne (Comal)",
+     "state": "TX",
+     "county": "Comal",
+     "new": false
+    },
+    {
+     "name": "Kohlenberg (new, FM 1101 & Kohlenberg Rd)",
+     "state": "TX",
+     "county": "Comal",
+     "new": true
+    }
+   ],
+   "miles_new": 2.96,
+   "miles_upgraded": 0,
+   "in_service": "2026-05",
+   "stage": "approved",
+   "stage_basis": "LCRA TSC's May 2025 monthly construction progress report to the PUCT (Project 57477) lists the Henne-Kohlenberg 138 kV line (2.96 mi) and an affidavit that on May 14, 2025 LCRA TSC acquired all right-of-way with written landowner consent under PUC rule 25.101(c)(5)(A) and mailed notice; the LCRA TSC board approved the 'Sahinne to Kohlenberg' line addition on June 18, 2025 with a recommended completion of May 15, 2026 (target, not confirmed in service); NBU's board conveyed further easements for the Kohlenberg Substation Project on Sept 22, 2026.",
+   "docket": "PUCT Project 57477 (MCPR)",
+   "caiso_id": "",
+   "sources": [
+    "https://interchange.puc.texas.gov/Documents/57477_142_1499099.PDF",
+    "https://mccmeetingspublic.blob.core.usgovcloudapi.net/nbutx-meet-b9f396ebdfbd44c5bb62d25b3323a689/ITEM-Attachment-005-c6c99e159855422baf5e07135f90caf1.pdf",
+    "https://www.nbutexas.com/wp-content/uploads/2026/09/9.22.26.Regular-Board-Meeting.final_.pdf",
+    "https://www.nbutexas.com/wp-content/uploads/2026/04/FY25-29-Capital-Imorovement-Projects-Overview.pdf"
+   ]
+  },
+  {
+   "key": "cps-legend-falls-138",
+   "name": "Legend Falls 138 kV substation and double-circuit 138 kV taps to Talley - Texas Research line and to STEC San Geronimo (CPS Energy, Rio Medina portfolio)",
+   "kv": 138,
+   "project_type": "new line",
+   "state": "TX",
+   "utility": "CPS Energy (joint with South Texas Electric Cooperative)",
+   "market": "ERCOT",
+   "ends": [
+    {
+     "name": "Legend Falls (new 138 kV)",
+     "state": "TX",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Talley - Texas Research 138 kV line (tap)",
+     "state": "TX",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "San Geronimo (STEC, future)",
+     "state": "TX",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 1,
+   "miles_upgraded": 0,
+   "in_service": "2028-05",
+   "stage": "approved",
+   "stage_basis": "CPS Energy's Aug 31, 2026 board book seeks approval to build the Legend Falls Project: CCN application filed April 6, 2026, PUCT Notice of Approval for Route 17 issued June 30, 2026; ~1 mile of new double-circuit 138 kV line in two segments plus a new 138 kV substation, $26.8M CPS share, target in-service May 2028. PUC docket number not shown in the board book.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.cpsenergy.com/content/dam/corporate/en/Documents/Trustees/2026.08.31_BoTRegularAugustBoard_Book_(POSTING)V.2.pdf"
+   ]
+  },
+  {
+   "key": "bpa-schultz-raver-500-reconductor",
+   "name": "Schultz - Raver #3 and #4 500 kV reconductor",
+   "kv": 500,
+   "project_type": "upgrade",
+   "state": "WA",
+   "utility": "Bonneville Power Administration",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Schultz",
+     "state": "WA",
+     "county": "Kittitas",
+     "new": false
+    },
+    {
+     "name": "Raver",
+     "state": "WA",
+     "county": "King",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 77,
+   "in_service": "2031",
+   "stage": "planned",
+   "stage_basis": "BPA Evolving Grid Project 1.0 summaries: Cross Cascades North upgrades include reconductoring the 77 miles of the Schultz-Raver #3 and #4 500 kV lines, estimated completion 2031 (updated).",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.bpa.gov/-/media/Aep/transmission/evolving-grid/EGP-10-Project-Summaries.pdf"
+   ]
+  },
+  {
+   "key": "duke-disston-largo-230",
+   "name": "Disston - Largo 230 kV",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "FL",
+   "utility": "Duke Energy Florida",
+   "market": "Southeast",
+   "ends": [
+    {
+     "name": "Disston",
+     "state": "FL",
+     "county": "Pinellas",
+     "new": false
+    },
+    {
+     "name": "Largo",
+     "state": "FL",
+     "county": "Pinellas",
+     "new": false
+    }
+   ],
+   "miles_new": 11.5,
+   "miles_upgraded": 0,
+   "in_service": "2029",
+   "stage": "planned",
+   "stage_basis": "Duke Energy project page: new 230 kV line added in the existing 11.5-mile Disston-Largo corridor (Pinellas County Reliability Program); preconstruction work began 2024, line construction 2027, completion 2029.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.duke-energy.com/our-company/about-us/electric-transmission-projects/pinellas-county-reliability-program/disston-to-largo"
+   ]
+  },
+  {
+   "key": "duke-fl-piedmont-wekiva-230-rebuild",
+   "name": "Piedmont - Wekiva 230 kV rebuild",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "FL",
+   "utility": "Duke Energy Florida",
+   "market": "Southeast",
+   "ends": [
+    {
+     "name": "Piedmont",
+     "state": "FL",
+     "county": "Seminole",
+     "new": false
+    },
+    {
+     "name": "Wekiva",
+     "state": "FL",
+     "county": "Seminole",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 3.15,
+   "in_service": "2026",
+   "stage": "in construction",
+   "stage_basis": "Duke Energy project page: upgrade and rebuild of the 3.15-mile 230 kV line between Piedmont (Apopka) and Wekiva (Longwood) substations; substation upgrades and line construction in 2025, expected completion 2026.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.duke-energy.com/Our-Company/About-Us/Electric-Transmission-Projects/Wekiva"
+   ]
+  },
+  {
+   "key": "swan-lake-north-malin-230-gentie",
+   "name": "Swan Lake North Pumped Storage - Malin 230 kV",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "OR",
+   "utility": "Swan Lake North Hydro LLC (Copenhagen Infrastructure Partners; developer Rye Development)",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Swan Lake North project substation",
+     "state": "OR",
+     "county": "Klamath",
+     "new": true
+    },
+    {
+     "name": "Malin",
+     "state": "OR",
+     "county": "Klamath",
+     "new": false
+    }
+   ],
+   "miles_new": 32.8,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "FERC issued the original license for the Swan Lake North Pumped Storage Project (P-13318), including a 32.8-mile 230 kV line to Malin Substation, on 2019-04-30 and amended it in January 2026; Oregon DOE's November 2026 update lists it as pre-construction and the project site shows construction beginning 2027-2028.",
+   "docket": "FERC P-13318",
+   "caiso_id": "",
+   "sources": [
+    "https://www.oregon.gov/energy/facilities/Documents/General/EFSC-Project-Updates.pdf",
+    "https://www.permits.performance.gov/permitting-projects/swan-lake-north-pumped-storage",
+    "https://www.slenergystorage.com/project.html"
+   ]
+  },
+  {
+   "key": "lucky-corridor-vista-trail-345",
+   "name": "Vista Trail 345 kV (Taos area - Springer)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "NM",
+   "utility": "Lucky Corridor LLC (Ameren Transmission)",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Taos area",
+     "state": "NM",
+     "county": "Taos",
+     "new": false
+    },
+    {
+     "name": "Springer",
+     "state": "NM",
+     "county": "Colfax",
+     "new": false
+    }
+   ],
+   "miles_new": 65,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "Lucky Corridor LLC (owned by Ameren Transmission) proposes the Vista Trail project, an approximately 65-mile 345 kV line in northeast New Mexico; no regulatory approval or in-service date stated.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "http://www.luckycorridor.com/VistaTrailProject.html"
+   ]
+  },
+  {
+   "key": "atc-north-appleton-fox-river-345-uprate",
+   "name": "North Appleton - Fox River 345 kV (NAPL121) uprate/reconductor",
+   "kv": 345,
+   "project_type": "upgrade",
+   "state": "WI",
+   "utility": "American Transmission Co.",
+   "market": "MISO",
+   "ends": [
+    {
+     "name": "North Appleton",
+     "state": "WI",
+     "county": "Outagamie",
+     "new": false
+    },
+    {
+     "name": "Fox River",
+     "state": "WI",
+     "county": "Brown",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "ATC's 2026 10-Year Assessment (Table PF-2, Nov 2026) includes the NAPL121 North Appleton - Fox River 345 kV line uprate in its 2031 model, and a Aug 2026 PUC Texas testimony CV describes ATC's North Appleton to Fox River 345 kV reconductoring route study with a PSCW filing estimated late 2026-early 2027.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "http://www.atc10yearplan.com/wp-content/uploads/2026/11/2026TYA_Table-PF2.pdf",
+    "https://interchange.puc.texas.gov/Documents/60157_5_1678761.PDF"
+   ]
+  },
+  {
+   "key": "mdu-wishek-merricourt-230-reconductor",
+   "name": "Wishek - Merricourt 230 kV reconductor",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "ND",
+   "utility": "Montana-Dakota Utilities",
+   "market": "MISO",
+   "ends": [
+    {
+     "name": "Wishek",
+     "state": "ND",
+     "county": "McIntosh",
+     "new": false
+    },
+    {
+     "name": "Merricourt",
+     "state": "ND",
+     "county": "Dickey",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "MDU's July 2024 North Dakota Ten Year Plan (ND PSC case 24-0264) says reconductoring the Wishek to Merricourt 230 kV line is required as a MISO interconnection upgrade for the Badger Wind Project (scheduled for 2025); completion not confirmed.",
+   "docket": "ND PSC 24-0264",
+   "caiso_id": "",
+   "sources": [
+    "https://www.psc.nd.gov/webdocs/case/24-0264/001-010.pdf"
+   ]
+  },
+  {
+   "key": "tep-southeast-energy-link-345",
+   "name": "Southeast Energy Link 345 kV (Vail - new switchyard on the Vail - Winchester/Greenlee 345 kV corridor)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "AZ",
+   "utility": "Tucson Electric Power",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Vail",
+     "state": "AZ",
+     "county": "Pima",
+     "new": false,
+     "lat": 32.0706,
+     "lon": -110.8134,
+     "location_basis": "TEP Southeast Energy Link ArcGIS layer, existing 345 kV substation point"
+    },
+    {
+     "name": "Proposed switchyard (east of Winchester)",
+     "state": "AZ",
+     "county": "Cochise",
+     "new": true,
+     "lat": 32.474,
+     "lon": -109.6677,
+     "location_basis": "TEP Southeast Energy Link ArcGIS layer, 'Proposed Switchyard' point"
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "TEP project page (Nov 2026 open houses): new 345 kV transmission path into TEP's service area; siting process Sept 2026-June 2027, CEC application planned August 2027, ACC open meeting December 2027; TEP's 2026 IRP describes the corresponding Vail East 345 kV line as targeted for service in the early 2030s.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.tep.com/southeast-energy-link",
+    "https://docs.tep.com/wp-content/uploads/TEP-2026-IRP-Report.pdf"
+   ]
+  },
+  {
+   "key": "pge-moraga-castro-valley-230-capacity",
+   "name": "Moraga - Castro Valley 230 kV line capacity increase",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "PG&E",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Moraga",
+     "state": "CA",
+     "county": "Contra Costa",
+     "new": false
+    },
+    {
+     "name": "Castro Valley",
+     "state": "CA",
+     "county": "Alameda",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2025-04",
+   "stage": "built",
+   "stage_basis": "CAISO 2025-2026 Transmission Plan Table 8-1 lists project 1011-R-13, Moraga-Castro Valley 230 kV Line Capacity Increase, as closed out with final in-service date Apr-25.",
+   "docket": "",
+   "caiso_id": "1011-R-13",
+   "sources": [
+    "https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan.pdf"
+   ]
+  },
+  {
+   "key": "sce-devers-red-bluff-500-1-2-upgrade",
+   "name": "Devers - Red Bluff 500 kV No. 1 and No. 2 line upgrade",
+   "kv": 500,
+   "project_type": "upgrade",
+   "state": "CA",
+   "utility": "Southern California Edison",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Devers",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    },
+    {
+     "name": "Red Bluff",
+     "state": "CA",
+     "county": "Riverside",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030-12",
+   "stage": "approved",
+   "stage_basis": "Approved in the CAISO 2022-2023 Transmission Plan (project 2223-P-05); the 2025-2026 plan's Table 8-3 shows a current expected in-service date of Dec-30.",
+   "docket": "",
+   "caiso_id": "2223-P-05",
+   "sources": [
+    "https://www.caiso.com/documents/board-approved-2025-2026-transmission-plan.pdf"
+   ]
+  },
+  {
+   "key": "katco-elko-moshannon-230-rebuild",
+   "name": "Elko - Moshannon 230 kV rebuild",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "PA",
+   "utility": "Keystone Appalachian Transmission Co. (FirstEnergy)",
+   "market": "PJM",
+   "ends": [
+    {
+     "name": "Elko",
+     "state": "PA",
+     "county": "Elk",
+     "new": false
+    },
+    {
+     "name": "Moshannon",
+     "state": "PA",
+     "county": "Clearfield",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 21.5,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "FirstEnergy project page (updated Aug 2026): KATCo plans to rebuild about 21.5 miles of the existing Elko-Moshannon 230 kV line in its existing corridor for age and condition; the project has been presented to PJM and a public information meeting was held Aug 20, 2026; no in-service date published.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.firstenergycorp.com/about/transmission_projects/pennsylvania/elko-moshannon-transmission-line-rebuild-project.html"
+   ]
+  },
+  {
+   "key": "bld-mi-metc-murphy-orr-road-345",
+   "name": "Murphy - Orr Road 345 kV (Project Phoenix-Husky load)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "MI",
+   "utility": "Michigan Electric Transmission Co. (ITC)",
+   "market": "MISO",
+   "ends": [
+    {
+     "name": "Murphy",
+     "state": "MI",
+     "county": "Saginaw",
+     "new": false
+    },
+    {
+     "name": "Orr Road",
+     "state": "MI",
+     "county": "Saginaw",
+     "new": false
+    }
+   ],
+   "miles_new": 4,
+   "miles_upgraded": 0,
+   "in_service": "2025-12",
+   "stage": "built",
+   "stage_basis": "Grid Strategies' Nov 2026 report, citing FERC's December 2025 Energy Infrastructure Update, lists the 4-mile METC Murphy - Orr Road 345 kV line as completed in December 2025; MISO's Feb 2024 expedited project review (MTEP project 50038) describes the new 345 kV line serving a Consumers Energy industrial load in Richland Twp.",
+   "docket": "MISO MTEP project 50038",
+   "caiso_id": "",
+   "sources": [
+    "https://gridstrategiesllc.com/wp-content/uploads/GS_US-Trails-the-World-in-High-Capacity-Transmission-Construction-1.pdf",
+    "https://cdn.misoenergy.org/20240207%20ESPM1%20Item%2004%20METC%20EPR%20Project%20Phoenix-Husky%20Substation631687.pdf"
+   ]
+  },
+  {
+   "key": "bld-or-bpa-big-eddy-quenett-creek-230",
+   "name": "Big Eddy - Quenett Creek #1 and #2 230 kV upgrade",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "OR",
+   "utility": "Bonneville Power Administration",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Big Eddy",
+     "state": "OR",
+     "county": "Wasco",
+     "new": false
+    },
+    {
+     "name": "Quenett Creek",
+     "state": "OR",
+     "county": "Wasco",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 7.35,
+   "in_service": "2031",
+   "stage": "planned",
+   "stage_basis": "BPA GERP 2.0 project; Aug 2026 GAT workshop lists Big Eddy-Quenett Creek 230 kV upgrade at $10M with estimated completion 2031 (a 2025 BPA cluster study models it as a contingent facility, rebuilding both circuits to 1430 A, ISD Jan 2029); line length 7.35 mi from BPA outage log.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.bpa.gov/-/media/Aep/transmission/Grid-Access-Transformation/August-19-GAT-Update-Workshop.pdf",
+    "https://www.bpa.gov/-/media/Aep/transmission/interconnection-reports/25TCS_CA-LC2_P1-R1.pdf"
+   ]
+  },
+  {
+   "key": "bld-nv-nve-sapphire-basin-230",
+   "name": "Sapphire - Basin 230 kV (Sapphire phase 3)",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "NV",
+   "utility": "NV Energy",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Sapphire",
+     "state": "NV",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Basin",
+     "state": "NV",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2031",
+   "stage": "planned",
+   "stage_basis": "NV Energy's 2026 Joint IRP (filed May 2026, PUCN Docket 26-05007) Action Plan asks the PUCN to approve construction of the Sapphire to Basin 230 kV line (Sapphire phase 3) with an in-service date of 2031; approval pending.",
+   "docket": "PUCN 26-05007",
+   "caiso_id": "",
+   "sources": [
+    "https://www.nvenergy.com/publish/content/dam/nvenergy/brochures_arch/about-nvenergy/rates-regulatory/recent-regulatory-filings/2026-irp/NPC-SPPC-Volume-2.pdf"
+   ]
+  },
+  {
+   "key": "bld-nv-nve-basin-525-230-sub",
+   "name": "Basin 525/230 kV substation (Basin phases 1-2)",
+   "kv": 525,
+   "project_type": "new substation",
+   "state": "NV",
+   "utility": "NV Energy",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Basin",
+     "state": "NV",
+     "county": "",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2031",
+   "stage": "planned",
+   "stage_basis": "NV Energy's 2026 Joint IRP (filed May 2026, PUCN Docket 26-05007) Action Plan asks the PUCN to approve construction of the Basin 525/230 kV 1500 MVA transformer substation and a second 525/230 kV transformer (Basin phases 1 and 2) with an in-service date of 2031; approval pending.",
+   "docket": "PUCN 26-05007",
+   "caiso_id": "",
+   "sources": [
+    "https://www.nvenergy.com/publish/content/dam/nvenergy/brochures_arch/about-nvenergy/rates-regulatory/recent-regulatory-filings/2026-irp/NPC-SPPC-Volume-2.pdf"
+   ]
+  },
+  {
+   "key": "bld-nv-nve-opal-230-sw",
+   "name": "Opal 230 kV switching station with Sapphire - Opal and HGIII - Opal 230 kV lines",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "NV",
+   "utility": "NV Energy",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Opal",
+     "state": "NV",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Sapphire",
+     "state": "NV",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "HGIII",
+     "state": "NV",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2031",
+   "stage": "planned",
+   "stage_basis": "NV Energy's 2026 Joint IRP (filed May 2026, PUCN Docket 26-05007) Action Plan asks the PUCN to approve construction of the new Opal 230 kV switching station with HVD lines and 230 kV lines to Sapphire and HGIII (Opal project, Sapphire phase 5, HGIII phase 1) with an in-service date of 2031; approval pending.",
+   "docket": "PUCN 26-05007",
+   "caiso_id": "",
+   "sources": [
+    "https://www.nvenergy.com/publish/content/dam/nvenergy/brochures_arch/about-nvenergy/rates-regulatory/recent-regulatory-filings/2026-irp/NPC-SPPC-Volume-2.pdf"
+   ]
+  },
+  {
+   "key": "bld-nv-nve-navigator-230-sw",
+   "name": "Navigator 230 kV switching station with Sand Dune - Navigator and HGIII - Navigator 230 kV",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "NV",
+   "utility": "NV Energy",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Navigator",
+     "state": "NV",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Sand Dune",
+     "state": "NV",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "HGIII",
+     "state": "NV",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2031",
+   "stage": "planned",
+   "stage_basis": "NV Energy's 2026 Joint IRP (filed May 2026, PUCN Docket 26-05007) Action Plan asks the PUCN to approve construction of the new Navigator switching station with 230 kV HVD lines and 230 kV lines to HGIII and Sand Dune (Navigator project, Sand Dune phase 3) with an in-service date of 2031; approval pending.",
+   "docket": "PUCN 26-05007",
+   "caiso_id": "",
+   "sources": [
+    "https://www.nvenergy.com/publish/content/dam/nvenergy/brochures_arch/about-nvenergy/rates-regulatory/recent-regulatory-filings/2026-irp/NPC-SPPC-Volume-2.pdf"
+   ]
+  },
+  {
+   "key": "bld-nv-nve-vaquero-345-sw",
+   "name": "Vaquero 345 kV switching station (Lantern - Comstock Meadows fold, TRIC)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NV",
+   "utility": "NV Energy",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Vaquero",
+     "state": "NV",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Lantern",
+     "state": "NV",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Comstock Meadows",
+     "state": "NV",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2031",
+   "stage": "planned",
+   "stage_basis": "NV Energy's 2026 Joint IRP (filed May 2026, PUCN Docket 26-05007) Action Plan asks the PUCN to approve construction of the Vaquero 345 kV switching station connecting to the Lantern-Comstock 345 kV line with 345/120 kV transformers with an in-service date of 2031; approval pending.",
+   "docket": "PUCN 26-05007",
+   "caiso_id": "",
+   "sources": [
+    "https://www.nvenergy.com/publish/content/dam/nvenergy/brochures_arch/about-nvenergy/rates-regulatory/recent-regulatory-filings/2026-irp/NPC-SPPC-Volume-2.pdf"
+   ]
+  },
+  {
+   "key": "bld-nv-nve-petroglyph-345-sw",
+   "name": "Petroglyph 345 kV switching station (West Tracy - Comstock Meadows fold)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "NV",
+   "utility": "NV Energy",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Petroglyph",
+     "state": "NV",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "West Tracy",
+     "state": "NV",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Comstock Meadows",
+     "state": "NV",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029",
+   "stage": "planned",
+   "stage_basis": "NV Energy's 2026 Joint IRP (filed May 2026, PUCN Docket 26-05007) Action Plan asks the PUCN to approve construction of the Petroglyph switching station on the West Tracy - Comstock Meadows 345 kV line with new 345 kV HVD lines with an in-service date of 2029; approval pending.",
+   "docket": "PUCN 26-05007",
+   "caiso_id": "",
+   "sources": [
+    "https://www.nvenergy.com/publish/content/dam/nvenergy/brochures_arch/about-nvenergy/rates-regulatory/recent-regulatory-filings/2026-irp/NPC-SPPC-Volume-2.pdf"
+   ]
+  },
+  {
+   "key": "bld-nv-nve-scorpion-230-sw",
+   "name": "Scorpion 230 kV switching station (Arden - Mead fold)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "NV",
+   "utility": "NV Energy",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Scorpion",
+     "state": "NV",
+     "county": "",
+     "new": true
+    },
+    {
+     "name": "Arden",
+     "state": "NV",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Mead",
+     "state": "NV",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030",
+   "stage": "planned",
+   "stage_basis": "NV Energy's 2026 Joint IRP (filed May 2026, PUCN Docket 26-05007) Action Plan asks the PUCN to approve construction of the Scorpion 230 kV switching station on the Arden - Mead 230 kV line with HVD lines with an in-service date of 2030; approval pending.",
+   "docket": "PUCN 26-05007",
+   "caiso_id": "",
+   "sources": [
+    "https://www.nvenergy.com/publish/content/dam/nvenergy/brochures_arch/about-nvenergy/rates-regulatory/recent-regulatory-filings/2026-irp/NPC-SPPC-Volume-2.pdf"
+   ]
+  },
+  {
+   "key": "bld-nv-nve-esmeralda-millers-230",
+   "name": "Esmeralda - Millers 230 kV",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "NV",
+   "utility": "NV Energy",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Esmeralda",
+     "state": "NV",
+     "county": "",
+     "new": false
+    },
+    {
+     "name": "Millers",
+     "state": "NV",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2030",
+   "stage": "planned",
+   "stage_basis": "NV Energy's 2026 Joint IRP (filed May 2026, PUCN Docket 26-05007) Action Plan asks the PUCN to approve construction of the Esmeralda-Millers 230 kV line with an in-service date of 2030; approval pending.",
+   "docket": "PUCN 26-05007",
+   "caiso_id": "",
+   "sources": [
+    "https://www.nvenergy.com/publish/content/dam/nvenergy/brochures_arch/about-nvenergy/rates-regulatory/recent-regulatory-filings/2026-irp/NPC-SPPC-Volume-2.pdf"
+   ]
+  },
+  {
+   "key": "bld-ca-lodi-guild-230-60-sub",
+   "name": "Guild 230/60 kV Substation (Lodi Electric Utility; part of PG&E Northern San Joaquin 230 kV project)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "CA",
+   "utility": "City of Lodi Electric Utility",
+   "market": "CAISO",
+   "ends": [
+    {
+     "name": "Guild",
+     "state": "CA",
+     "county": "San Joaquin",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2029-12",
+   "stage": "approved",
+   "stage_basis": "Lodi's Sept 1, 2026 Owner's Engineer RFP says the CPUC issued a CPCN approving PG&E's Northern San Joaquin 230 kV Transmission Project (of which the LEU-owned Guild 230/60 kV substation is a component) on July 16, 2026, with EPC award July 2027, construction July 2027-Nov 2029 and commissioning Dec 2029; LEU also issued an Oct 2026 RFP for two 230/60 kV autotransformers.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.lodi.gov/DocumentCenter/View/10697",
+    "https://www.lodi.gov/Bids.aspx?bidID=131",
+    "https://www.lodi.gov/bids.aspx?bidID=134"
+   ]
+  },
+  {
+   "key": "bld-wa-gcpud-monument-hill-230-switchyard",
+   "name": "Monument Hill 230 kV Switchyard (Grant PUD QTEP)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "WA",
+   "utility": "Grant County PUD",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Monument Hill",
+     "state": "WA",
+     "county": "Grant",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "Grant PUD's 2026 Forecasted Needs (Q3 2026 update) lists a $26.4M competitive bid for construction labor of the new Monument Hill Switchyard (solicitation and award Q1 2027) plus 230 kV capacitor banks, instrument transformers and steel for it; QTEP describes it as a proposed switchyard NE of Road 11 NW and Road O NW (Quincy).",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.grantpud.org/media/attachments/2026/07/22/2026-forecasted-needs-q3-update-1.pdf",
+    "https://www.grantpudqtep.org/"
+   ]
+  },
+  {
+   "key": "bld-or-pge-seaside-bess-230-sub",
+   "name": "Seaside BESS 230/34.5 kV substation and 230 kV generation lead to Rivergate",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "OR",
+   "utility": "Portland General Electric (Seaside BESS, built by Eolian/Mortenson)",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Seaside BESS substation",
+     "state": "OR",
+     "county": "Multnomah",
+     "new": true
+    },
+    {
+     "name": "Rivergate",
+     "state": "OR",
+     "county": "Multnomah",
+     "new": false
+    }
+   ],
+   "miles_new": 0.5,
+   "miles_upgraded": 0,
+   "in_service": "2025-07",
+   "stage": "built",
+   "stage_basis": "Oregon PUC Order 25-417 says the PGE-owned 200 MW Seaside BESS came online July 1, 2025, interconnecting at PGE's Rivergate Substation via a new 230 kV line position about a half-mile away; Mortenson's project page says it built a new 230/34.5 kV substation (240 MVA) and a new 230 kV line.",
+   "docket": "OPUC UE 455",
+   "caiso_id": "",
+   "sources": [
+    "https://apps.puc.state.or.us/orders/2025ords/25-417.pdf",
+    "https://edocs.puc.state.or.us/efdocs/UAA/ue455uaa337138026.pdf",
+    "https://www.mortenson.com/projects/seaside-energy-storage-project"
+   ]
+  },
+  {
+   "key": "bld-va-dom-clover-chase-city-230-rebuild",
+   "name": "Clover - Chase City 230 kV rebuild and reconductor",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "VA",
+   "utility": "Dominion Energy Virginia",
+   "market": "PJM",
+   "ends": [
+    {
+     "name": "Clover",
+     "state": "VA",
+     "county": "Halifax",
+     "new": false
+    },
+    {
+     "name": "Chase City (half mile west)",
+     "state": "VA",
+     "county": "Mecklenburg",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 16,
+   "in_service": "2026",
+   "stage": "approved",
+   "stage_basis": "Dominion's project page says the SCC approved the ~16-mile Clover-Chase City 230 kV rebuild/reconductor (Case PUR-2023-00141; final order/CPCN 2024), with an anticipated timeline of construction beginning Spring 2025 and complete Summer 2026.",
+   "docket": "VA SCC PUR-2023-00141",
+   "caiso_id": "",
+   "sources": [
+    "https://www.dominionenergy.com/about/delivering-energy/electric-projects/power-line-projects/clover-chase-city"
+   ]
+  },
+  {
+   "key": "bld-in-carlson-creek-345-switchyard",
+   "name": "Carlson Creek 345 kV switchyard (Cavalry Solar + Storage POI on NIPSCO Reynolds - Burr Oak 345 kV)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IN",
+   "utility": "NextEra Energy Resources (Cavalry Energy Center) / NIPSCO",
+   "market": "MISO",
+   "ends": [
+    {
+     "name": "Carlson Creek switchyard",
+     "state": "IN",
+     "county": "White",
+     "new": true
+    },
+    {
+     "name": "Reynolds",
+     "state": "IN",
+     "county": "White",
+     "new": false
+    },
+    {
+     "name": "Burr Oak",
+     "state": "IN",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2024",
+   "stage": "built",
+   "stage_basis": "ENR's 2024 Midwest Best Projects (Nov 2024) describes the completed Carlson Creek 345 kV switchyard near Monon, Ind., owned by NextEra and built by Michels, as the POI for solar and battery storage; the IURC order in Cause 45474 says Cavalry Solar interconnects at a POI on NIPSCO's Reynolds - Burr Oak 345 kV line, and NIPSCO reports Cavalry entered service May 2024.",
+   "docket": "IURC 45474; MISO J1067",
+   "caiso_id": "",
+   "sources": [
+    "https://www.enr.com/articles/59724-award-of-merit-energy-industrial-carlson-creek-switchyard",
+    "https://www.michels.us/experience/projects/carlson-creek-switchyard",
+    "https://www.in.gov/iurc/files/ord_45474_052621.pdf",
+    "https://www.nipsco.com/our-company/news-room/news-article/nipsco's-electric-generation-transition-continues-with-completion-of-third-solar-project"
+   ]
+  },
+  {
+   "key": "bld-or-sundial-bess-230-sub",
+   "name": "Sundial BESS 34.5/230 kV step-up substation (Troutdale)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "OR",
+   "utility": "Eolian / NextEra Energy Resources (storage capacity agreement with PGE)",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Sundial BESS substation (Troutdale)",
+     "state": "OR",
+     "county": "Multnomah",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2024-12",
+   "stage": "built",
+   "stage_basis": "PGE's Aug 7, 2025 release says the 200 MW Sundial battery in Troutdale (developed by Eolian, operated by NextEra) achieved commercial operation in December 2024; Michels' 2026 power brochure lists its Troutdale BESS work (Jan-Oct 2024) including substation step-up transformers rated 34.5-230 kV to interconnect to the transmission system.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://portlandgeneral.com/news/2025-08-pge-energizes-475-mw-of-battery-energy-storage-to-boost-grid",
+    "https://www.michels.us/wp-content/uploads/2026/06/MPI-brochure-WDTM-26.pdf"
+   ]
+  },
+  {
+   "key": "bld-wa-bpa-midway-ashe-230",
+   "name": "Midway - Ashe 230 kV double-circuit rebuild (Midway-Ashe #1 and Midway-HEW #1, Hanford Site)",
+   "kv": 230,
+   "project_type": "upgrade",
+   "state": "WA",
+   "utility": "Bonneville Power Administration / DOE Hanford Field Office",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Midway",
+     "state": "WA",
+     "county": "Benton",
+     "new": false
+    },
+    {
+     "name": "Ashe",
+     "state": "WA",
+     "county": "Benton",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 18,
+   "in_service": "2025-05",
+   "stage": "built",
+   "stage_basis": "BPA's May 8, 2025 news release says the new 18-mile double-circuit Midway-to-Ashe 230 kV line (Midway-Ashe #1 and Midway-HEW #1) replacing a 70-year-old line was energized May 6, 2025; DOE and T&D World reported the energization.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.bpa.gov/about/newsroom/news-articles/20250508-new-high-voltage-tx-line-supports-reliability-for-the-hanford-site",
+    "https://www.energy.gov/em/articles/new-transmission-line-powers-progress-hanford",
+    "https://www.tdworld.com/overhead-transmission/news/55302415/bpa-and-doe-announce-energization-of-230-kv-transmission-line-at-hanford"
+   ]
+  },
+  {
+   "key": "bld-il-comed-two-345-wind-substations-2026",
+   "name": "ComEd two new 345 kV transmission substations for Osagrove Flats and Panther Grove wind (names not stated)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "IL",
+   "utility": "Commonwealth Edison (ComEd)",
+   "market": "PJM",
+   "ends": [
+    {
+     "name": "New 345 kV substation (Osagrove Flats wind, name not stated)",
+     "state": "IL",
+     "county": "LaSalle",
+     "new": true
+    },
+    {
+     "name": "New 345 kV substation (Panther Grove wind, name not stated)",
+     "state": "IL",
+     "county": "Woodford",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2026-07",
+   "stage": "built",
+   "stage_basis": "ComEd's July 9, 2026 release says it energized two new 345 kV transmission substations in LaSalle and Woodford counties to interconnect up to 550 MW of wind (Osagrove Flats 150 MW, Panther Grove 400 MW); names not given, so these may correspond to PJM queue POI stations already in the list under queue numbers.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.comed.com/news/news-releases/2026-07-09",
+    "https://www.tdworld.com/substations/news/55390927/comeds-new-substations-to-support-550-mw-of-wind-generation-capacity"
+   ]
+  },
+  {
+   "key": "bld-mn-mp-atc-iron-range-st-louis-county-arrowhead-345",
+   "name": "Iron Range - St. Louis County - Arrowhead 345 kV (ISA, MISO LRTP #21)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "MN",
+   "utility": "Minnesota Power / American Transmission Co.",
+   "market": "MISO",
+   "ends": [
+    {
+     "name": "Iron Range",
+     "state": "MN",
+     "county": "Itasca",
+     "new": false
+    },
+    {
+     "name": "St. Louis County",
+     "state": "MN",
+     "county": "St. Louis",
+     "new": false
+    },
+    {
+     "name": "Arrowhead",
+     "state": "MN",
+     "county": "St. Louis",
+     "new": false
+    }
+   ],
+   "miles_new": 34.2,
+   "miles_upgraded": 33.3,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "MISO-approved LRTP Tranche 2.1 project; Minnesota Power and ATC filed a combined Certificate of Need and Route Permit application on Jan 5, 2026 (pending; Commerce comments July 2026); T&D World reports construction expected to start late 2027 with operation before 2032 (no exact date).",
+   "docket": "MN PUC E015/CN-25-111; E015/TL-25-112",
+   "caiso_id": "",
+   "sources": [
+    "https://puc.eip.mn.gov/web/project/25112",
+    "https://isatransmissionproject.com/wp-content/uploads/2026/01/1_Filing-Letter_Summary_Application.pdf",
+    "https://www.tdworld.com/overhead-transmission/news/55344083/minnesota-power-and-american-transmission-file-application-for-345-kv-transmission-line-in-itasca-and-st-louis-counties-mn"
+   ]
+  },
+  {
+   "key": "osw-southcoast-wind-1-brayton-point-hvdc",
+   "name": "SouthCoast Wind Project 1 export cables: Brayton Point landfall - Brayton Point HVDC converter - Brayton Point 345 kV (National Grid)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "MA",
+   "utility": "SouthCoast Wind Energy LLC (Ocean Winds); POI owner New England Power Co. (National Grid)",
+   "market": "ISO-NE",
+   "ends": [
+    {
+     "name": "Brayton Point landfall (Lee River side)",
+     "state": "MA",
+     "county": "Bristol",
+     "new": true
+    },
+    {
+     "name": "SouthCoast Wind HVDC converter station (former Brayton Point Power Station site)",
+     "state": "MA",
+     "county": "Bristol",
+     "new": true,
+     "lat": 41.713,
+     "lon": -71.192,
+     "location_basis": "approximate location of the former Brayton Point Power Station, Somerset, which the BOEM FEIS names as the converter station site"
+    },
+    {
+     "name": "Brayton Point 345 kV substation (National Grid)",
+     "state": "MA",
+     "county": "Bristol",
+     "new": false
+    }
+   ],
+   "miles_new": 0.8,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "MA EFSB approved SouthCoast Wind Project 1 (two +/-320 kV HVDC cables landing at Brayton Point, ~0.6 mi onshore HVDC to a new converter, 345 kV underground to the National Grid Brayton Point substation) on Oct 1, 2024 and BOEM approved the COP on Jan 17, 2025; the federal approval is being reconsidered/the project is on hold federally, while RI CRMC approved the cable route through RI waters on June 9, 2026.",
+   "docket": "MA EFSB (SouthCoast Wind Brayton Point, decision Oct 1, 2024); BOEM OCS-A 0521",
+   "caiso_id": "",
+   "sources": [
+    "https://www.mass.gov/info-details/southcoast-wind-energy-brayton-point",
+    "https://www.boem.gov/renewable-energy/state-activities/southcoast-wind-formerly-mayflower-wind",
+    "https://www.boem.gov/renewable-energy/southcoast-feis-vol1",
+    "https://www.providencejournal.com/story/news/environment/2026/06/10/long-stalled-southcoast-wind-offshore-project-can-run-cables-in-ri-waters/90497030007"
+   ]
+  },
+  {
+   "key": "osw-new-england-wind-1-barnstable-west-barnstable",
+   "name": "New England Wind 1 Connector: Craigville Beach landfall - Shootflying Hill Road onshore substation (275/345 kV) - West Barnstable 345 kV",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "MA",
+   "utility": "Park City Wind LLC (Avangrid); POI owner Eversource (NSTAR Electric)",
+   "market": "ISO-NE",
+   "ends": [
+    {
+     "name": "Craigville Beach landfall",
+     "state": "MA",
+     "county": "Barnstable",
+     "new": true
+    },
+    {
+     "name": "New England Wind 1 onshore substation, 6 and 8 Shootflying Hill Road",
+     "state": "MA",
+     "county": "Barnstable",
+     "new": true
+    },
+    {
+     "name": "West Barnstable 345 kV substation (Eversource)",
+     "state": "MA",
+     "county": "Barnstable",
+     "new": false
+    }
+   ],
+   "miles_new": 4.7,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "approved",
+   "stage_basis": "Cape Cod Commission granted DRI approval for the New England Wind 1 Connector (two 275 kV cables, ~4 mi underground to a new substation at 8 Shootflying Hill Road, ~0.7 mi to West Barnstable 345 kV) on May 11, 2023 and BOEM approved the COP in July 2024; the federal government asked a court in Dec 2025 to remand the COP approval (held in abeyance April 2026) and the power contract is still unsigned as of Nov 2026.",
+   "docket": "Cape Cod Commission DRI 22005; BOEM OCS-A 0534",
+   "caiso_id": "",
+   "sources": [
+    "https://resources.capecodcommission.org/resource-library/9c2f89e6c80d/2023-05-11-ne-wind-connector-i-exec-dec",
+    "https://www.newenglandwind1.com/barnstable",
+    "https://www.boem.gov/renewable-energy/state-activities/new-england-wind-1-and-2",
+    "https://newbedfordlight.org/offshore-wind-tracker-whats-happening-to-massachusetts-projects"
+   ]
+  },
+  {
+   "key": "osw-new-england-wind-2-barnstable-west-barnstable",
+   "name": "New England Wind 2 Connector: Dowses Beach landfall - Oak Street (Clay Hill) onshore substation (275/345 kV) - West Barnstable 345 kV",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "MA",
+   "utility": "Commonwealth Wind LLC (Avangrid); POI owner Eversource (NSTAR Electric)",
+   "market": "ISO-NE",
+   "ends": [
+    {
+     "name": "Dowses Beach landfall (Osterville)",
+     "state": "MA",
+     "county": "Barnstable",
+     "new": true
+    },
+    {
+     "name": "New England Wind 2 onshore substation off Oak Street, north of Route 6 (Clay Hill site)",
+     "state": "MA",
+     "county": "Barnstable",
+     "new": true
+    },
+    {
+     "name": "West Barnstable 345 kV substation (Eversource)",
+     "state": "MA",
+     "county": "Barnstable",
+     "new": false
+    }
+   ],
+   "miles_new": 7.1,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "BOEM approved the New England Wind 2 COP (lease OCS-A 0561) in 2024; Avangrid says NEW 2 (about 6.7 mi underground from Dowses Beach to a new substation off Oak Street and 0.4 mi to West Barnstable) is still in federal, state and local permitting, and it has no power contract.",
+   "docket": "BOEM OCS-A 0561",
+   "caiso_id": "",
+   "sources": [
+    "https://www.newenglandwind2.com/barnstable",
+    "https://www.boem.gov/renewable-energy/state-activities/new-england-wind-1-and-2",
+    "https://tethys.pnnl.gov/sites/default/files/publications/NewEnglandWind_COP.pdf"
+   ]
+  },
+  {
+   "key": "osw-vineyard-northeast-ct-montville",
+   "name": "Vineyard Northeast Connecticut export: New London-area landfall - Montville HVDC converter/onshore substation - Montville 345 kV (Eversource)",
+   "kv": 345,
+   "project_type": "new substation",
+   "state": "CT",
+   "utility": "Vineyard Northeast LLC (Vineyard Offshore); POI owner Eversource (CL&P)",
+   "market": "ISO-NE",
+   "ends": [
+    {
+     "name": "Ocean Beach, Eastern Point Beach or Niantic Beach landfall",
+     "state": "CT",
+     "county": "New London",
+     "new": true
+    },
+    {
+     "name": "Vineyard Northeast onshore substation/converter, Montville",
+     "state": "CT",
+     "county": "New London",
+     "new": true
+    },
+    {
+     "name": "Montville 345 kV substation (Eversource)",
+     "state": "CT",
+     "county": "New London",
+     "new": false
+    }
+   ],
+   "miles_new": 13,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "proposed",
+   "stage_basis": "Vineyard Northeast COP (Mar 2024) proposes 320-525 kV HVDC onshore cables of about 13 mi from a New London-area landfall to a new Montville onshore substation tied to Eversource's 345 kV Montville substation; BOEM review is paused on the FAST-41 dashboard until April 1, 2027 and the project has no offtake contract.",
+   "docket": "BOEM OCS-A 0522; NY PSC Article VII (NY segment) 2025",
+   "caiso_id": "",
+   "sources": [
+    "https://www.boem.gov/renewable-energy/state-activities/vne-cop-vol-i-text-march-2024public",
+    "https://www.permits.performance.gov/permitting-project/fast-41-covered-projects/vineyard-northeast"
+   ]
+  },
+  {
+   "key": "osw-cvow-smr-harpers-230-export",
+   "name": "CVOW onshore export cables: State Military Reservation landfall - Harpers Switching Station 230 kV (9 underground circuits)",
+   "kv": 230,
+   "project_type": "new line",
+   "state": "VA",
+   "utility": "Dominion Energy Virginia",
+   "market": "PJM",
+   "ends": [
+    {
+     "name": "State Military Reservation (Camp Pendleton) cable landing, Virginia Beach",
+     "state": "VA",
+     "county": "Virginia Beach city",
+     "new": true
+    },
+    {
+     "name": "Harpers Switching Station (NAS Oceana)",
+     "state": "VA",
+     "county": "Virginia Beach city",
+     "new": true
+    }
+   ],
+   "miles_new": 4.4,
+   "miles_upgraded": 0,
+   "in_service": "2026-03",
+   "stage": "built",
+   "stage_basis": "Dominion's Q3 2026 10-Q says onshore construction to support first power was completed in December 2025 and remaining onshore work was substantially complete in October 2026; CVOW delivered first power through these facilities on March 23, 2026.",
+   "docket": "VA SCC PUR-2021-00142",
+   "caiso_id": "",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/715957/000119312526440697/d-20260930.htm",
+    "https://coastalvawind.com/community/residents",
+    "https://www.govinfo.gov/content/pkg/FR-2024-04-09/html/2024-07470.htm",
+    "https://coastalvawind.com/about/the-project/timeline"
+   ]
+  },
+  {
+   "key": "west-pac-feedville-500-230-blueprint-east",
+   "name": "Feedville 500/230 kV substation and 500 kV connection (Blueprint East, Apex - Maverick - Feedville)",
+   "kv": 500,
+   "project_type": "new substation",
+   "state": "OR",
+   "utility": "PacifiCorp",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Feedville 500/230 kV substation (near Hermiston)",
+     "state": "OR",
+     "county": "Umatilla",
+     "new": true
+    },
+    {
+     "name": "Apex - Maverick 500 kV system (Blueprint East)",
+     "state": "OR",
+     "county": "Morrow",
+     "new": true
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "",
+   "stage": "planned",
+   "stage_basis": "PacifiCorp's 2026 WECC Annual Progress Report lists Blueprint East (Apex-Maverick-Feedville 500 kV) including a future Feedville 500/230 kV transformation connecting to the Feedville 230 kV substation being built for load customers, to be built under load interconnection service agreements with in-service dates Q3 2026 through Q3 2031; PacifiCorp's 2024-2025 LTSP places Feedville near Hermiston. No separate date is given for Feedville.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.wecc.org/sites/default/files/documents/progress_report/2026/PacifiCorp%202026%20APR.pdf",
+    "https://www.oasis.oati.com/woa/docs/PPW/PPWdocs/PacifiCorp_Local_Transmission_System_Plan_2024-2025_Q4_Draft_Report.pdf"
+   ]
+  },
+  {
+   "key": "spp-tsgt-cross-point-230-69-sub",
+   "name": "Cross Point 230/69 kV substation (sectionalizes Lincoln - Midway 230 kV near Yoder)",
+   "kv": 230,
+   "project_type": "new substation",
+   "state": "CO",
+   "utility": "Tri-State Generation and Transmission",
+   "market": "SPP",
+   "ends": [
+    {
+     "name": "Cross Point 230/69 kV substation (near Yoder)",
+     "state": "CO",
+     "county": "El Paso",
+     "new": true
+    },
+    {
+     "name": "Lincoln - Midway 230 kV line (Tri-State)",
+     "state": "CO",
+     "county": "El Paso",
+     "new": false
+    }
+   ],
+   "miles_new": 0,
+   "miles_upgraded": 0,
+   "in_service": "2027",
+   "stage": "planned",
+   "stage_basis": "The February 2026 Colorado Rule 3627 10-Year Transmission Plan (Tri-State section) lists the Cross Point 230/69 kV Delivery Point ($22.7M, in service 2027), a new substation sectionalizing Tri-State's Lincoln - Midway 230 kV line near Yoder that replaced the earlier Falcon-Paddock-Calhan 115 kV plan.",
+   "docket": "CO PUC 26M-0051E (Rule 3627 10-year plan filing)",
+   "caiso_id": "",
+   "sources": [
+    "https://tristate.coop/wp-content/uploads/2026/08/2026-combined-10-year-report.pdf",
+    "https://tristate.coop/transmission-planning/"
+   ]
+  },
+  {
+   "key": "west-pattern-bolo-345-western-spirit-pete-heinrich",
+   "name": "Bolo Transmission: Western Spirit - Pete Heinrich 345 kV double circuit (PNM - SunZia tie)",
+   "kv": 345,
+   "project_type": "new line",
+   "state": "NM",
+   "utility": "Pattern Energy (Bolo Transmission); PNM",
+   "market": "West",
+   "ends": [
+    {
+     "name": "Western Spirit 345 kV Switchyard (PNM)",
+     "state": "NM",
+     "county": "Torrance",
+     "new": false
+    },
+    {
+     "name": "Pete Heinrich 345 kV Switchyard (SunZia system)",
+     "state": "NM",
+     "county": "",
+     "new": false
+    }
+   ],
+   "miles_new": 24,
+   "miles_upgraded": 0,
+   "in_service": "2027",
+   "stage": "proposed",
+   "stage_basis": "Pattern's Bolo Transmission open-solicitation site describes a ~24-mile double-circuit 345 kV line between PNM's Western Spirit switchyard and the Pete Heinrich switchyard on SunZia, construction from 2026 and commercial operation in 2027, but its capacity open solicitation (set for Jan-Feb 2026) was postponed; WestTEC's 10-year reference case lists 'Bolo Tie' (35 mi, PNM) among planned upgrades.",
+   "docket": "",
+   "caiso_id": "",
+   "sources": [
+    "https://www.bolo-os.com/home",
+    "https://www.westernpowerpool.org/private-media/documents/WestTEC_10-year_Full_Report.pdf"
+   ]
+  }
+ ],
+ "left_out": {
+  "pge-keeler-horizon-2-230": "duplicate of pge-bpa-keeler-horizon-2-230 (plans sweep)",
+  "bld-or-pge-horizon-keeler-2-230": "duplicate of pge-bpa-keeler-horizon-2-230 (plans sweep)",
+  "bld-or-pge-horizon-keeler-1-230-reconductor": "duplicate of pge-horizon-keeler-1-230-reconductor (plans sweep)",
+  "bpa-ross-rivergate-230-reconductor": "duplicate of bpa-ross-rivergate-230-upgrade; BPA's 2025 plan gives 2031, not 2029",
+  "bld-wa-or-bpa-ross-rivergate-230": "duplicate of bpa-ross-rivergate-230-upgrade (plans sweep)",
+  "west-bpa-ross-rivergate-230-upgrade": "duplicate of bpa-ross-rivergate-230-upgrade (plans sweep)",
+  "chelanpud-jumpoff-ridge-230-sub": "duplicate of chpd-jumpoff-ridge-230-sub (plans sweep)",
+  "sce-vista-etiwanda-230-1-upgrade": "duplicate of sce-etiwanda-vista-220-upgrade (SCE runs this line at 220 kV)",
+  "nepower-mark-bottoms-161-rebuild": "duplicate of nemo-mark-bottoms-161-rebuild (permit sweep shows it in construction)",
+  "bpa-la-pine-bonanza-230": "BPA's Jan 2025 summary said late 2029, but BPA has since moved La Pine - Bonanza to 2032, past the window (left out in the second sweep for the same reason)",
+  "gtc-dresden-talbot-county-500": "Dresden - Talbot County 500 kV: GTC gives Q4 2031, past the window (left out in the earlier sweeps too)",
+  "money-boards:westr-gcpd-monument-hill-loop1-230": "Grant PUD's QTEP site says late 2026, but its 2026 WECC progress report gives May 2028; the formal report wins",
+  "builders:westr-gcpd-monument-hill-loop1-230": "Grant PUD's QTEP site says late 2026, but its 2026 WECC progress report gives May 2028; the formal report wins"
+ }
+}

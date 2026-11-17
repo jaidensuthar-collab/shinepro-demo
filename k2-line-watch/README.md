@@ -22,6 +22,8 @@ It watches the public signals that come before a route is approved, earliest fir
 | 3 | Oncor, AEP Texas, LCRA and CPS Energy project-list pages | A new project page usually means open houses with preliminary route links are coming, 4 to 9 months before filing. |
 | 2+ | Google News searches for regional plans and portfolios across the U.S. (SPP ITP, MISO MTEP and tranches, PJM, CAISO, NYISO, ISO-NE, RTO Insider, Utility Dive) | A grid operator's plan is moving: stakeholder or board votes that name many new lines at once. |
 | 3+ | Google News searches (765 kV, open houses, routes, CenterPoint, ERCOT) | Local press and landowner news, often the first public word of an open house. Covers other states too. |
+| 3+ | Trade press feeds: T&D World (overhead transmission, substations) and MYR Group's project feed | Construction starts, energizations and contract awards for named lines and substations anywhere in the U.S. |
+| 4p | U.S. Army Corps of Engineers permit records (public ORM data, every district, last 60 days) | A permit, levee-crossing request or wetland determination for a named line or substation: its route or site is settled enough to permit. Gives a map point. |
 | 4-5 | PUCT Interchange new electric cases | A utility opened a case to amend its CCN for a transmission line: a route filing is starting or has just been made. |
 | 5-6 | New filings inside every route case already in the feed, plus Docket 59475 | Orders, approvals, settlements, rehearing motions and the utility's own route filings. Letters, protests and procedural paperwork are skipped. Works like PUCT's email alerts without an account. |
 
