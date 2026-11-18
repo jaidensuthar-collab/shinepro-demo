@@ -1,9 +1,9 @@
 {
  "source": "https://www.rtoinsider.com/wp-content/uploads/2026/10/2026-ITP-Study-Draft.pdf",
  "title": "SPP 2026 Integrated Transmission Planning and CPP Transition Assessment Report, draft v0.1 (Sept 24, 2026), Table 3.1 Southern Stage 765 kV Lines",
- "status": "Endorsed by SPP's Markets and Operations Policy Committee Oct 14, 2026 ($23.7B portfolio, per RTO Insider Oct 19, 2026); SPP Board final approval vote Nov 17, 2026.",
+ "status": "SPP Board approved the 2026 ITP on Nov 17, 2026 and authorized notices to construct for the recommended lines ($23.7B NTC portfolio; benefits $2.27 to $6.38 per dollar, per SPP's Nov 17, 2026 news release). Endorsed earlier by SPP's Markets and Operations Policy Committee Oct 14, 2026.",
  "board_vote": "2026-11-17",
- "approved": false,
+ "approved": true,
  "note": "Southern Stage lines only (they touch Texas or Oklahoma). The Northern Stage (North and South Dakota, Nebraska, Kansas) is not recommended for construction this cycle and is outside Line Watch's regions. The draft gives no in-service dates; the 2025 ITP 765 kV lines were set for 2032. Southern Paradise is a new substation, tentatively named, north of Kansas City. Station states come from SPP's descriptions (Guava: east Tulsa; Southern Paradise: north Kansas City; Sailor: southwest Kansas City).",
  "projects": [
   {
@@ -127,5 +127,6 @@
   "Holcomb": [
    "KS"
   ]
- }
+ },
+ "approval_source": "https://www.spp.org/newsroom/press-releases/"
 }

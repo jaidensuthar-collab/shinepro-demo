@@ -387,7 +387,7 @@ def itp_lines():
                "rpg": "", "tier": "", "ercot_board": "", "docket": "", "route_status": "end substations only", "card_id": "", "card_ids": [],
                "endpoints": ends, "market": "SPP",
                "state": ", ".join(in_home),
-               "source": src["source"], "checked": "SPP 2026 ITP draft report (Sept 24, 2026)"}
+               "source": src["source"], "checked": "SPP 2026 ITP draft report (Sept 24, 2026); board approval Nov 17, 2026" if src.get("approved") else "SPP 2026 ITP draft report (Sept 24, 2026)"}
         rec["tappable"], rec["tap_note"] = B.tap(p["kv"])
         rec["recommended_next_step"], rec["recommendation_reason"] = B.recommend(rec)
         rec["recommendation_reason"] = rec["recommendation_reason"].replace("ERCOT endorsement", "SPP's board vote")

@@ -144,7 +144,7 @@
  },
  {
   "check": "Time window (2023-11 built to 2031-11 due) and stage names",
-  "checked": 4952,
+  "checked": 4951,
   "errors": [],
   "warnings": [
    "spp-143452 Nashua - St. Joe 345kV New Interconnection Substation (DISIS-2017-002): built, but its source gives no finish date, so the 2023-11 start can't be checked",
@@ -157,7 +157,7 @@
  },
  {
   "check": "Substation points are in their state and in the county the source lists",
-  "checked": 4538,
+  "checked": 4537,
   "errors": [],
   "warnings": [
    "substation Kammer: point is 5 miles outside Marshall County, the county its source lists",
@@ -230,13 +230,13 @@
  },
  {
   "check": "Substation status agrees between lines and substations",
-  "checked": 6073,
+  "checked": 6072,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Downloads match the page (CSV, GeoJSON, KML, new-only layers)",
-  "checked": 19578,
+  "checked": 19574,
   "errors": [],
   "warnings": []
  },
@@ -685,7 +685,7 @@
  },
  {
   "check": "Texas and SPP sweep: researched lines have sources; corrections to official lists are deliberate",
-  "checked": 1878,
+  "checked": 1877,
   "errors": [],
   "warnings": [
    "tpit-102815 SandLake - North McCamey Transmission Line Addition: stage 'built' but ERCOT says 'Under Construction' (changed on purpose: Line Watch research: LCRA (July 2026) says the North McCamey-Sand Lake 345 kV line is complete and energized, and Oncor's Q2 2026 release says it placed its por)",
@@ -760,7 +760,7 @@
  },
  {
   "check": "U.S. only (every line and substation is in a U.S. state)",
-  "checked": 11025,
+  "checked": 11023,
   "errors": [],
   "warnings": [
    "pjms-pjm-east-marl-500-pa-portion MidAtlantic Resiliency Link 500 kV - Pennsylvania portions (502 Junction - WV border, Greene/Fayette): ends at the national border; only the U.S. part is listed",
