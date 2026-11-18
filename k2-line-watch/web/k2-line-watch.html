@@ -227,13 +227,19 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 .hw-sep { width: 1px; height: 22px; background: var(--rule); margin: 0 4px }
 .d-today { background: var(--open) } .d-building { background: var(--fast) } .d-future { background: var(--t3) }
 .hw-flowbox { overflow-x: auto; padding-bottom: 4px }
-.hw-flow { display: grid; grid-template-columns: repeat(6, minmax(170px, 1fr)); min-width: 1080px }
-.hw-stage { display: flex; flex-direction: column; gap: 8px; padding-right: 24px; position: relative }
+.hw-flow { display: grid; grid-template-columns: repeat(6, minmax(170px, 1fr)); min-width: 1080px; position: relative }
+.hw-wires { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 0 }
+.hw-wires path { fill: none; stroke: var(--muted); stroke-width: 1.25; opacity: .32 }
+.hw-wires path.on { stroke: var(--flag); stroke-width: 2; opacity: 1 }
+.hw-wires path.dim { opacity: .08 }
+.hw-wires circle { fill: var(--flag) }
+.hw-note { margin: 2px 0 0; font-size: 13px; color: var(--muted) }
+.hw-stage { display: flex; flex-direction: column; gap: 8px; padding-right: 24px; position: relative; z-index: 1 }
 .hw-stage:not(:last-child)::after { content: ""; position: absolute; right: 9px; top: 28px; width: 9px; height: 9px; border-top: 2px solid var(--muted); border-right: 2px solid var(--muted); transform: rotate(45deg) }
 .hw-head { border-bottom: 2px solid var(--ink); padding-bottom: 5px; min-height: 58px }
 .hw-head .n { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; color: var(--muted) }
 .hw-head h3 { font-family: var(--display); font-size: 17px; line-height: 1.15; margin: 2px 0 0; font-weight: 700; text-transform: uppercase; letter-spacing: .02em }
-.hw-node { all: unset; box-sizing: border-box; cursor: pointer; display: grid; gap: 3px; background: var(--panel); border: 1px solid var(--rule); border-left: 4px solid var(--c); border-radius: 6px; padding: 8px 9px }
+.hw-node { all: unset; box-sizing: border-box; cursor: pointer; position: relative; z-index: 1; display: grid; gap: 3px; background: var(--panel); border: 1px solid var(--rule); border-left: 4px solid var(--c); border-radius: 6px; padding: 8px 9px }
 .hw-node.today { --c: var(--open) } .hw-node.building { --c: var(--fast) } .hw-node.future { --c: var(--t3) }
 .hw-node .k { font-family: var(--mono); font-size: 10.5px; color: var(--muted); display: flex; justify-content: space-between; gap: 6px }
 .hw-node .k i { font-style: normal; color: var(--c) }
@@ -296,6 +302,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
       <button type="button" class="chip" data-hwview="tier3" aria-pressed="true">With Tier 3</button>
     </div>
     <div class="hw-flowbox"><div class="hw-flow" id="hwflow"></div></div>
+    <p class="hw-note">Lines show what feeds what. Click a step to light up its links; the loops back to the start (new value, new plans) are listed in its details.</p>
     <section class="hw-detail" id="hwdetail" aria-live="polite"></section>
   </div>
   <div id="p-watch" role="tabpanel" aria-labelledby="t-watch" class="panel" hidden>
@@ -1369,8 +1376,8 @@ How to answer: plain English for someone new to the grid; short; lead with the a
   const HW = [
     { id: "irp", s: 0, st: "building", t: "Utility plans (IRPs)", who: "Utilities; Line Watch; Tier 3 planning agent", next: ["catalog", "score"], src: "Richard's email Oct 13; Oct 24 call; Tier3 plan",
       d: ["The earliest public sign: a utility's 5 to 15 year plan.", "IRPs show which utilities expect the most load growth, new generation and new transmission.", "Next the project is announced, then work happens behind the scenes, then the exact route comes out."] },
-    { id: "filings", s: 0, st: "building", t: "Grid planner and regulator filings", who: "ERCOT, SPP, PUCT, FERC; Line Watch", next: ["catalog"], src: "Oct 24 and Oct 26 calls; Tier3 plan",
-      d: ["ERCOT planning group submissions and its monthly project report (TPIT); SPP's yearly project list (STEP) for the Panhandle, Northeast Texas and Oklahoma.", "PUC route cases: a preferred route plus alternates; about 6 months to decide.", "In MISO you can file to interconnect once a line is approved, before it is built.", "Tier 3 adds FERC filings, ISO and RTO plans, state CPCNs and DOE grants nationwide."] },
+    { id: "filings", s: 0, st: "building", t: "Grid planner and regulator filings", who: "ERCOT, SPP, PUCT, Army Corps, FERC; Line Watch", next: ["catalog"], src: "Oct 24 and Oct 26 calls; Tier3 plan",
+      d: ["ERCOT planning group submissions and its monthly project report (TPIT); SPP's yearly project list (STEP) for the Panhandle, Northeast Texas and Oklahoma.", "PUC route cases: a preferred route plus alternates; about 6 months to decide.", "In MISO you can file to interconnect once a line is approved, before it is built.", "Army Corps permit records (every district) show when a line's route or a substation site is settled enough to permit.", "Tier 3 adds FERC filings, ISO and RTO plans, state CPCNs and DOE grants nationwide."] },
     { id: "news", s: 0, st: "building", t: "News, grants and open houses", who: "DOE, utilities, local press", next: ["catalog"], src: "First call with Richard; Richard's email Oct 28",
       d: ["Utility open houses show draft route maps 4 to 9 months before a route is filed.", "DOE's $1B upgrade grant: about 1,600 miles of reconductoring, about 23 GW opened up.", "Stories like NextEra's 500 kV MARL line: about $65M to landowners on a $1.17B build."] },
     { id: "loads", s: 0, st: "future", t: "Load, queue and market signals", who: "Tier 3 market intelligence agents", next: ["score"], src: "Tier3 plan",
@@ -1382,7 +1389,7 @@ How to answer: plain English for someone new to the grid; short; lead with the a
     { id: "devs", s: 0, st: "building", t: "Who is building here", who: "Line Watch; Tier 3 land control", next: ["partner"], src: "John's emails Oct 21; Oct 24 call; Tier3 plan",
       d: ["Developers already queued at each end substation, from ERCOT's interconnection queue.", "Trace project companies to the parent developer, then find a contact.", "K2's focus for the rest of the year: developers and partners."] },
     { id: "catalog", s: 1, st: "building", t: "Catalog every new line", who: "Line Watch (Jaiden)", next: ["tap", "decide"], src: "Oct 26 team call; Richard's email Oct 25",
-      d: ["Covers lines built in the last 3 years through everything planned or proposed, in five stages: built, in construction, approved, planned, proposed.", "Fields: voltage, stage, in-service date, builder, end substations (existing, expanding or new), coordinates, county, developers queued.", "It looks 3 years back because Landgate misses about half of last year's lines.", "Texas (ERCOT, SPP, MISO and El Paso), Oklahoma, and MISO's 2025 local projects and 345 kV backbone so far; market by market from here."] },
+      d: ["Covers lines built in the last 3 years through everything planned or proposed, in five stages: built, in construction, approved, planned, proposed.", "Fields: voltage, stage, in-service date, builder, end substations (existing, expanding or new), coordinates, county, developers queued.", "It looks 3 years back because Landgate misses about half of last year's lines.", "All of the continental U.S. in 14 regions, from ERCOT, SPP and MISO to PJM, California, New York, New England, the West and the Southeast, plus work at existing substations of 230 kV and up."] },
     { id: "score", s: 1, st: "future", t: "Score each market", who: "Tier 3 leadership agents", next: ["decide"], src: "Tier3 plan",
       d: ["Market readiness score from 0 to 100: power within 24 months 25%, gas 15%, tax 15%, permitting 15%, land 10%, competition 10%, fiber 5%, stakeholders 5%.", "70 and up: active outreach. 50 to 69: research. Below 50: monitor."] },
     { id: "tap", s: 1, st: "today", t: "Tap rule: line or substation?", who: "Richard's rule", next: ["decide"], src: "Oct 24 and Oct 26 calls",
@@ -1430,7 +1437,7 @@ How to answer: plain English for someone new to the grid; short; lead with the a
     if (!L.length && ["catalog", "tap", "decide", "check", "gis", "map", "devs"].includes(id)) return ["loading...", "", "", "", null];
     switch (id) {
       case "irp": return state.irps.length ? [`${nfmt(state.irps.length)} utility plans read`, nfmt(state.irps.length), "utility plans read so far (IRP pilot)", "Open utility plans", goTab("t-irp")] : ["", "", "", "Open utility plans", goTab("t-irp")];
-      case "filings": if (!state.signals.length) return ["", "", "", "Open early signals", goTab("t-watch")]; { const n = sigCount(/^(puct|rpg|spp|oncorccn):/); return [`${nfmt(n)} filings and planning documents caught`, nfmt(n), "PUC cases, ERCOT and SPP planning documents and Oncor study areas caught by the twice-daily check", "Open early signals", goTab("t-watch")]; }
+      case "filings": if (!state.signals.length) return ["", "", "", "Open early signals", goTab("t-watch")]; { const n = sigCount(/^(puct|rpg|spp|oncorccn|usace):/); return [`${nfmt(n)} filings and planning documents caught`, nfmt(n), "PUC cases, ERCOT and SPP planning documents, Oncor study areas and Army Corps permits caught by the twice-daily check", "Open early signals", goTab("t-watch")]; }
       case "news": if (!state.signals.length) return ["", "", "", "Open early signals", goTab("t-watch")]; { const n = sigCount(/^(news|util):/); return [`${nfmt(n)} news items and project pages`, nfmt(n), "news stories and utility project pages (open houses) caught", "Open early signals", goTab("t-watch")]; }
       case "devs": { const np = new Set(st.flatMap((s) => s.projects.map((p) => p.inr))).size; return [`${nfmt(np)} queued projects at ${nfmt(st.length)} substations`, nfmt(np), `generation and battery projects queued at ${nfmt(st.length)} end substations (ERCOT queue)`, "See the developers", goLines({ fold: "devtable" })]; }
       case "catalog": { const r = LS.regions || {}; const parts = [["ercot-texas", "ERCOT Texas"], ["spp-texas", "SPP Texas"], ["el-paso", "El Paso"], ["miso-texas", "MISO Texas"], ["oklahoma", "Oklahoma"]].filter(([k]) => r[k]).map(([k, l]) => `${nfmt(r[k].lines)} ${l}`);
@@ -1483,8 +1490,30 @@ How to answer: plain English for someone new to the grid; short; lead with the a
         <div><p class="lbl">Leads to</p><div class="hw-links">${links(sel.next)}</div></div>
         ${into.length ? `<div><p class="lbl">Comes from</p><div class="hw-links">${links(into)}</div></div>` : ""}</div>`;
     if (go) $("hwgo").addEventListener("click", go);
+    drawWires();
     $("hwdetail").querySelectorAll("[data-hwgo]").forEach((b) => b.addEventListener("click", () => { HWS.sel = b.dataset.hwgo; if (!HWS.tier3 && HWB[HWS.sel].st === "future") HWS.tier3 = true, syncHwView(); renderFlow(); $("hw-" + HWS.sel).scrollIntoView({ block: "nearest", inline: "nearest" }); }));
   }
+  // The links between steps, drawn behind the cards: forward links curve across the gap between stages,
+  // links inside one stage loop out on its right edge. Links back to an earlier stage are left to the details panel.
+  function drawWires() {
+    const box = $("hwflow"); if (!box || !box.offsetWidth || !box.querySelector(".hw-node")) return;
+    let svg = box.querySelector(".hw-wires");
+    if (!svg) { svg = document.createElementNS("http://www.w3.org/2000/svg", "svg"); svg.setAttribute("class", "hw-wires"); svg.setAttribute("aria-hidden", "true"); box.prepend(svg); }
+    const o = box.getBoundingClientRect(), sel = HWB[HWS.sel], out = [], dots = [];
+    const pos = (id) => { const el = $("hw-" + id); if (!el || el.hidden) return null; const r = el.getBoundingClientRect(); return { l: r.left - o.left, r: r.right - o.left, y: r.top - o.top + r.height / 2 }; };
+    for (const n of HW) for (const t of n.next) {
+      const a = pos(n.id), b = pos(t), m = HWB[t]; if (!a || !b || m.s < n.s) continue;
+      const on = n.id === sel.id || t === sel.id, dim = !on && (!HWS.shown[n.st] || !HWS.shown[m.st]);
+      let d;
+      if (m.s === n.s) { const x = Math.max(a.r, b.r) + 16; d = `M${a.r} ${a.y} C${x} ${a.y} ${x} ${b.y} ${b.r} ${b.y}`; }
+      else { const k = Math.min(70, (b.l - a.r) / 2); d = `M${a.r} ${a.y} C${a.r + k} ${a.y} ${b.l - k} ${b.y} ${b.l} ${b.y}`; }
+      out.push(`<path d="${d}" class="${on ? "on" : dim ? "dim" : ""}"/>`);
+      if (on) dots.push(`<circle cx="${m.s === n.s ? b.r : b.l}" cy="${b.y}" r="3.5"/>`);
+    }
+    out.sort((x, y) => x.includes('"on"') - y.includes('"on"'));   // lit links on top
+    svg.innerHTML = out.join("") + dots.join("");
+  }
+  if (window.ResizeObserver && $("hwflow")) new ResizeObserver(() => drawWires()).observe($("hwflow"));
   function syncHwView() { document.querySelectorAll("[data-hwview]").forEach((b) => b.setAttribute("aria-pressed", String((b.dataset.hwview === "tier3") === HWS.tier3))); }
   document.querySelectorAll("[data-hwst]").forEach((b) => b.addEventListener("click", () => { const k = b.dataset.hwst; HWS.shown[k] = !HWS.shown[k]; b.setAttribute("aria-pressed", String(HWS.shown[k])); renderFlow(); }));
   document.querySelectorAll("[data-hwview]").forEach((b) => b.addEventListener("click", () => { HWS.tier3 = b.dataset.hwview === "tier3"; if (!HWS.tier3 && HWB[HWS.sel].st === "future") HWS.sel = "catalog"; syncHwView(); renderFlow(); }));
