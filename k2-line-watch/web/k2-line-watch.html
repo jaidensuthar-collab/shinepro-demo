@@ -265,6 +265,42 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 .hw-side .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 4px }
 .hw-links { display: flex; flex-wrap: wrap; gap: 6px }
 .hw-links button { font: 600 13px var(--body); background: var(--late-soft); border: 0; border-radius: 6px; padding: 4px 9px; cursor: pointer }
+.hw-node .flags { display: flex; gap: 5px; flex-wrap: wrap }
+.hw-node .flags span { font: 600 10.5px var(--mono); border-radius: 4px; padding: 1px 5px }
+.hw-node .f-gap { background: var(--flag-soft); color: var(--flag) }
+.hw-node .f-ai { background: var(--fast-soft); color: var(--fast) }
+.hw-node .f-note { background: var(--open-soft); color: var(--open) }
+.hw-node.lens-off { opacity: .25 }
+.hw-io { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 12px; margin: 10px 0 0; font-size: 14px }
+.hw-io dt { font: 600 11px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding-top: 2px }
+.hw-io dd { margin: 0 }
+.hw-io dd.unk { color: var(--flag) }
+.hw-box { border-radius: 6px; padding: 9px 12px; margin-top: 12px }
+.hw-box h4 { font: 600 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; margin: 0 0 4px }
+.hw-box ul { margin: 0 !important }
+.hw-box.gap { background: var(--flag-soft) } .hw-box.gap h4 { color: var(--flag) }
+.hw-box.ai { background: var(--fast-soft) } .hw-box.ai h4 { color: var(--fast) }
+.hw-box.notes { border: 1px solid var(--rule) } .hw-box.notes h4 { color: var(--open) }
+.hw-box .nmeta { font: 11px var(--mono); color: var(--muted) }
+.hw-add { display: grid; gap: 6px; margin-top: 8px }
+.hw-add .row { display: flex; gap: 6px; flex-wrap: wrap }
+.hw-add textarea { font: 14px var(--body); border: 1px solid var(--rule); background: var(--bg); color: var(--ink); border-radius: 4px; padding: 6px 8px; min-height: 54px; resize: vertical }
+.hw-add select, .hw-add button { font: 13px var(--body); border: 1px solid var(--rule); background: var(--panel); color: var(--ink); border-radius: 4px; padding: 4px 8px }
+.hw-add button { background: var(--ink); color: var(--bg); border-color: var(--ink); cursor: pointer }
+.hw-more { display: grid; gap: 18px; grid-template-columns: minmax(0, 1fr) }
+@media (min-width: 900px) { .hw-more { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) } }
+.hw-more section { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 14px 16px; min-width: 0 }
+.hw-more h3 { font-family: var(--display); font-size: 20px; margin: 0 0 4px }
+.hw-more p.pmeta { margin: 0 0 8px }
+.hw-q { display: grid; gap: 10px }
+.hw-q h4 { font: 600 12px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 6px 0 2px }
+.hw-q ol { margin: 0; padding-left: 20px; display: grid; gap: 4px; font-size: 14px }
+.hw-q button, .hw-sys button { all: unset; cursor: pointer; font: 11px var(--mono); color: var(--muted); text-decoration: underline; text-underline-offset: 2px }
+.hw-q button:hover, .hw-sys button:hover { color: var(--flag) }
+.hw-sys { width: 100%; border-collapse: collapse; font-size: 14px }
+.hw-sys td { border-top: 1px solid var(--rule); padding: 6px 4px; vertical-align: top }
+.hw-sys td:first-child { font-weight: 600 }
+.hw-sys .unk { color: var(--flag); font-size: 12px }
 .hw-go { font: 600 14px var(--body); background: var(--ink); color: var(--bg); border: 0; border-radius: 6px; padding: 8px 12px; cursor: pointer; justify-self: start }
 @media (max-width: 760px) { .hw-flow { grid-template-columns: 1fr; min-width: 0 } .hw-stage { padding: 0 0 22px } .hw-stage:not(:last-child)::after { right: auto; left: 50%; top: auto; bottom: 6px; transform: rotate(135deg) } .hw-head { min-height: 0 } }
 @media (prefers-reduced-motion: no-preference) { .hw-node { transition: opacity .15s, border-color .15s, background .15s } }
@@ -300,10 +336,21 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
       <span class="hw-sep" aria-hidden="true"></span>
       <button type="button" class="chip" data-hwview="today" aria-pressed="false">Today's business</button>
       <button type="button" class="chip" data-hwview="tier3" aria-pressed="true">With Tier 3</button>
+      <span class="hw-sep" aria-hidden="true"></span>
+      <button type="button" class="chip" data-hwlens="gap" aria-pressed="false">Open questions <span id="hwl-gap"></span></button>
+      <button type="button" class="chip" data-hwlens="ai" aria-pressed="false">AI ideas <span id="hwl-ai"></span></button>
     </div>
     <div class="hw-flowbox"><div class="hw-flow" id="hwflow"></div></div>
     <p class="hw-note">Lines show what feeds what. Click a step to light up its links; the loops back to the start (new value, new plans) are listed in its details.</p>
     <section class="hw-detail" id="hwdetail" aria-live="polite"></section>
+    <div class="hw-more">
+      <section aria-labelledby="hwq-h"><h3 id="hwq-h">Questions to ask</h3>
+        <p class="pmeta">Every blank spot on the map, grouped by who can answer it. Ask “what happens next?” and “who decides?” until each one is filled, then add the answer to its step.</p>
+        <div class="hw-q" id="hwq"></div></section>
+      <section aria-labelledby="hws-h"><h3 id="hws-h">Systems K2 uses</h3>
+        <p class="pmeta">The tools each step runs on, as far as we know. Red means we don't know which tool yet.</p>
+        <table class="hw-sys" id="hwsys"></table></section>
+    </div>
   </div>
   <div id="p-watch" role="tabpanel" aria-labelledby="t-watch" class="panel" hidden>
   <nav class="ladder" id="ladder" aria-label="Projects by stage"></nav>
@@ -1151,6 +1198,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     db.collection("signals").onSnapshot((snap) => { state.signals = snap.docs.map((d) => ({ id: d.id, ...d.data() })); renderSignals(); renderStamp(); }, fail);
     db.collection("irps").onSnapshot((snap) => { state.irps = snap.docs.map((d) => ({ id: d.id, ...d.data() })); renderIrps(); }, () => {});
     db.collection("research").onSnapshot((snap) => { state.research = snap.docs.map((d) => ({ id: d.id, ...d.data() })); renderResearch(); }, () => {});
+    db.collection("flow_notes").onSnapshot((snap) => { HWN.notes = snap.docs.map((d) => ({ id: d.id, ...d.data() })).filter((x) => HWB[x.step]).sort((a, b) => String(a.at).localeCompare(String(b.at))); renderFlow(); }, () => {});
     db.doc("meta/status").onSnapshot((d) => { state.meta = d.exists ? d.data() : null; renderStamp(); }, () => {});
     db.doc("meta/landowners").onSnapshot((d) => { state.land = d.exists ? d.data() : null; renderLand(); renderStamp(); }, () => renderLand());
     db.collection("landowners").onSnapshot((snap) => { state.landSubs = snap.docs.map((d) => ({ id: d.id, ...d.data() })); renderLandSubs(); renderProjects(); }, () => {});
@@ -1419,8 +1467,94 @@ How to answer: plain English for someone new to the grid; short; lead with the a
     { id: "value", s: 5, st: "today", t: "Land value multiplies", who: "Landowner, K2, partner", next: ["irp"], src: "Oct 24 call",
       d: ["Oklahoma example: farmland around $1,200 an acre; the owner next to the substation got a $60,000 purchase option.", "If the data center goes ahead, about $16,000 an acre. “Land around substations is the new gold.”"] },
   ];
+
+  // Process-map layer for each step: what comes in, what goes out, who decides, the systems it runs on,
+  // the blank spots (questions, with who can answer them) and where AI or automation could help.
+  // "?" in a field means nobody has told us yet. Answers people add on the page are saved in the flow_notes collection.
+  const HWX = {
+    irp: { in: "Utility plans (IRPs) filed with state commissions", out: "Lines and substations to watch, sent to the catalog", dec: "Nobody yet: Line Watch reads them", sys: ["Line Watch (IRP pilot)", "State commission websites"],
+      gaps: [["Richard", "Which utilities' plans did you read before Line Watch, and how often?"], ["Richard", "Which part of an IRP tells you the most: load growth, new generation or new lines?"]],
+      ai: "AI reads every utility plan when it is filed and pulls out new lines, substations and dates (the IRP pilot)." },
+    filings: { in: "ERCOT, SPP, PUC, Army Corps and Oncor filings", out: "Early signals in the K2 Watch sheet and on this page", dec: "Line Watch filter (rules agreed with Richard)", sys: ["Line Watch monitor (twice a day)", "Google Sheet: K2 Watch"],
+      gaps: [["John", "Does anyone at K2 read the K2 Watch sheet today? Who, and how often?"], ["Richard", "Which filings would make you act the same day?"]],
+      ai: "Already automated: the monitor checks every source twice a day. Next: a short daily digest of only the High signals." },
+    news: { in: "News, DOE grants, utility open houses", out: "Early signals", dec: "?", sys: ["Line Watch monitor", "Email (Richard forwards stories)"],
+      gaps: [["Richard", "How does news reach the team today: do you forward stories, and to whom?"], ["Richard", "Does anyone from K2 go to utility open houses?"]],
+      ai: "AI summarizes each story and says which line and which counties it touches." },
+    loads: { in: "Interconnection queues, utility RFPs, SEC filings, county agendas", out: "Market scores", dec: "?", sys: ["Not built (Tier 3 plan)"],
+      gaps: [["Richard", "Which of these signals do you trust most when picking a market?"]],
+      ai: "Agents watch queues and filings and raise a flag when a market heats up." },
+    utility: { in: "List of target utilities and co-ops", out: "Substations a utility recommends or warns against", dec: "Richard approves every email", sys: ["Email: which inbox?", "Where replies are tracked: ?"],
+      gaps: [["Richard", "Who sends utility emails today, and from which inbox?"], ["John", "Where are utility replies kept: a CRM, a sheet, or email only?"], ["Richard", "What happens after a utility names a substation? Who gets told?"]],
+      ai: "AI drafts the short personal emails and summarizes replies; Richard approves before anything is sent." },
+    county: { in: "County deed and easement records", out: "Who is buying land near a line (often a future substation)", dec: "?", sys: ["County record websites (each one different)"],
+      gaps: [["Steve", "Does the team check county records today, by hand? Which counties?"], ["Steve", "What would you do differently if a utility just bought land near a target?"]],
+      ai: "An agent searches county records near each target substation and flags new utility purchases." },
+    devs: { in: "ERCOT interconnection queue", out: "Developers already building near each substation", dec: "Richard (who to contact)", sys: ["Line Watch (developer table)", "Contacts: kept where?"],
+      gaps: [["John", "Where do developer contacts live today?"], ["Richard", "Who owns outreach to developers, and how is first contact made?"]],
+      ai: "AI traces each project company to its parent developer and finds the right contact." },
+    catalog: { in: "Every signal plus official grid plans", out: "Lines list and one GIS layer", dec: "Jaiden (rules from Richard)", sys: ["Line Watch", "GitHub"],
+      gaps: [["Steve", "Does the GIS file load cleanly, and how often do you want a new one?"]],
+      ai: "Already automated. Next: a weekly note to Steve listing only what changed." },
+    score: { in: "Market signals", out: "Score from 0 to 100 per market", dec: "?", sys: ["Not built (Tier 3 plan)"],
+      gaps: [["Richard", "Who sets the score weights? Do the ones in the Tier 3 plan match how you pick markets today?"]],
+      ai: "AI scores each market every week and explains what moved the score." },
+    tap: { in: "Line voltage and distance to a substation", out: "Line campaign or substation-only", dec: "Richard's rule", sys: ["Line Watch (applies the rule)"],
+      gaps: [["Richard", "Does the size of the project change the 5 to 10 mile rule?"]],
+      ai: "" },
+    decide: { in: "Catalog plus the tap rule", out: "Campaign type for each target", dec: "Line Watch suggests; who signs off: ?", sys: ["Line Watch"],
+      gaps: [["Richard", "Who says yes to starting a campaign on a target: you or Steve?"], ["Steve", "How does a target reach the GIS request queue: email, a ticket, a sheet?"]],
+      ai: "AI ranks targets and writes a one-page brief for each one." },
+    check: { in: "Lines list", out: "Checked list, with items for a person to look at", dec: "Steve's team", sys: ["Line Watch data checks", "HIFLD", "OpenStreetMap"],
+      gaps: [["Steve", "What does your team check before it maps something?"]],
+      ai: "Already automated: 11 checks run before every publish." },
+    gis: { in: "Items in the GIS request queue", out: "Features in K2's master database", dec: "Steve", sys: ["GIS request queue (how it is sent: ?)", "Master database: which software?"],
+      gaps: [["Steve", "What software holds the master database?"], ["Steve", "Who puts items in the queue, and how long does one take?"]],
+      ai: "Import Line Watch's layer straight into the master database instead of mapping by hand." },
+    parcels: { in: "A target substation or line", out: "Parcels with buildable acres", dec: "?", sys: ["Parcel data: which provider?", "GIS software"],
+      gaps: [["Steve", "Which parcel data do you use (Landgate, Regrid, county)?"], ["Steve", "What is the cutoff for buildable acres, and who picks which parcels go to campaign?"]],
+      ai: "AI screens parcels for slope, wetlands and size and ranks them for the campaign." },
+    map: { in: "Mapped features", out: "Maps shown to landowners and partners", dec: "John", sys: ["Mapbox"],
+      gaps: [["John", "Who updates the Mapbox map, and how often?"]],
+      ai: "The map updates itself from the GIS layer." },
+    campaign: { in: "Parcel list", out: "Landowners who are interested", dec: "Sales team", sys: ["Mail vendor: which?", "Skip trace services", "Phone", "CRM: which?"],
+      gaps: [["Sales team", "Which mail vendor sends the letters, and what does the letter say?"], ["Sales team", "How many tries before you stop? Is it letters, then calls, then texts?"], ["Sales team", "Where are calls and replies logged?"], ["Sales team", "What happens when a landowner says no, or never answers?"]],
+      ai: "AI writes a personal letter for each owner and builds the call list in order of who is most likely to sign." },
+    wendy: { in: "Call list", out: "Warm leads booked for salespeople", dec: "?", sys: ["Wendy (AI caller)", "n8n"],
+      gaps: [["John", "What makes a lead warm enough to book?"]],
+      ai: "On hold while the focus is developers." },
+    sign: { in: "An interested landowner", out: "Signed option, lease or easement, filed with the county", dec: "Richard (price and terms)", sys: ["Agreement template: where? (Google Drive?)", "Signing: DocuSign or something else?", "County filing"],
+      gaps: [["Richard", "Where does the agreement come from, and who fills it in?"], ["Richard", "How is it sent and signed: email, DocuSign, in person?"], ["Richard", "How is the price set, and who can say yes to it?"], ["Richard", "Who files the memorandum with the county, and how?"]],
+      ai: "Fill in the agreement from the parcel record and send it for e-signature automatically." },
+    partner: { in: "Signed land", out: "A developer interested in the site", dec: "Richard", sys: ["?"],
+      gaps: [["Richard", "How do you show land to a developer: a deck, a map, a data room?"], ["Richard", "Where are developer conversations tracked?"], ["Richard", "What do you offer: sell the option, assign it, lease, or partner?"]],
+      ai: "Build a site packet for each property automatically from Line Watch and the GIS layer." },
+    brand: { in: "What K2 learns about transmission land", out: "Posts, sites and talks that bring in partners", dec: "Richard", sys: ["LinkedIn", "Market websites"],
+      gaps: [["Richard", "Who writes and posts today, and how often?"]],
+      ai: "AI drafts posts from what Line Watch finds each week." },
+    project: { in: "A developer who likes the site", out: "A signed project on K2's land", dec: "The partner", sys: ["?"],
+      gaps: [["Richard", "How does K2 get paid: a fee, selling the option, a share of the project?"], ["Richard", "What happens if the partner walks away?"]],
+      ai: "" },
+    value: { in: "A built project", out: "Higher land value; the next market to look at", dec: "?", sys: ["?"],
+      gaps: [["Richard", "How do you know a deal closed and what it was worth? Is that tracked anywhere?"]],
+      ai: "Track every deal from first signal to payout, so the next market is picked on real results." },
+  };
+  const HWN = { notes: [] };
+  const HW_ASK = ["Richard", "John", "Steve", "Sales team"];
+  const unk = (v) => !v || /\?/.test(v);
+  function renderMapExtras() {
+    const tally = (k) => HW.filter((n) => k === "gap" ? HWX[n.id].gaps.length : HWX[n.id].ai).length;
+    $("hwl-gap").textContent = HW.reduce((a, n) => a + HWX[n.id].gaps.length, 0);
+    $("hwl-ai").textContent = tally("ai");
+    $("hwq").innerHTML = HW_ASK.map((who) => { const qs = HW.flatMap((n) => HWX[n.id].gaps.filter((g) => g[0] === who).map((g) => [n, g[1]]));
+      return qs.length ? `<div><h4>${esc(who)} (${qs.length})</h4><ol>${qs.map(([n, q]) => `<li>${esc(q)} <button type="button" data-hwgo2="${n.id}">${esc(n.k || "")} ${esc(n.t)}</button></li>`).join("")}</ol></div>` : ""; }).join("");
+    const sys = {};
+    for (const n of HW) for (const x of HWX[n.id].sys) { if (x === "?" || /^Not built/.test(x)) continue; const k = /^Line Watch/.test(x) ? "Line Watch" : x; if (!(sys[k] = sys[k] || []).includes(n)) sys[k].push(n); }
+    $("hwsys").innerHTML = Object.entries(sys).sort((a, b) => unk(b[0]) - unk(a[0]) || b[1].length - a[1].length).map(([x, ns]) => `<tr><td>${esc(x)}${unk(x) ? ' <span class="unk">tool not known</span>' : ""}</td><td>${ns.map((n) => `<button type="button" data-hwgo2="${n.id}">${esc(n.k || "")} ${esc(n.t)}</button>`).join(", ")}</td></tr>`).join("");
+    document.querySelectorAll("[data-hwgo2]").forEach((b) => b.onclick = () => { HWS.sel = b.dataset.hwgo2; if (HWB[HWS.sel].st === "future" && !HWS.tier3) { HWS.tier3 = true; syncHwView(); } renderFlow(); $("hw-" + HWS.sel).scrollIntoView({ block: "center", inline: "nearest" }); });
+  }
   const HWB = Object.fromEntries(HW.map((n) => [n.id, n]));
-  const HWS = { sel: "catalog", shown: { today: true, building: true, future: true }, tier3: true };
+  const HWS = { sel: "catalog", shown: { today: true, building: true, future: true }, tier3: true, lens: "" };
   const nfmt = (v) => Number(v || 0).toLocaleString();
   const sigCount = (re) => state.signals.filter((g) => re.test(String(g.signal_id || g.id || "").replace("_", ":"))).length;
   // Live numbers: [card line, big number, label under it, button text, action]
@@ -1464,7 +1598,7 @@ How to answer: plain English for someone new to the grid; short; lead with the a
     if (!box.childElementCount) {
       box.innerHTML = HW_STAGES.map((t, i) => `<section class="hw-stage"><div class="hw-head"><div class="n">STAGE 0${i + 1}</div><h3>${esc(t)}</h3></div>${
         HW.filter((n) => n.s === i).map((n) => { const k = `${i + 1}.${HW.filter((m) => m.s === i).indexOf(n) + 1}`; n.k = k;
-          return `<button type="button" class="hw-node ${n.st}" id="hw-${n.id}" data-hw="${n.id}"><span class="k">${k}<i>${esc(HW_LABEL[n.st].split(" (")[0])}</i></span><span class="t">${esc(n.t)}</span><span class="w">${esc(n.who)}</span><span class="live" hidden></span></button>`; }).join("")}</section>`).join("");
+          return `<button type="button" class="hw-node ${n.st}" id="hw-${n.id}" data-hw="${n.id}"><span class="k">${k}<i>${esc(HW_LABEL[n.st].split(" (")[0])}</i></span><span class="t">${esc(n.t)}</span><span class="w">${esc(n.who)}</span><span class="flags"></span><span class="live" hidden></span></button>`; }).join("")}</section>`).join("");
       box.querySelectorAll("[data-hw]").forEach((b) => b.addEventListener("click", () => { HWS.sel = b.dataset.hw; renderFlow();
         if (window.innerWidth < 860) $("hwdetail").scrollIntoView({ block: "start" }); }));
     }
@@ -1477,19 +1611,36 @@ How to answer: plain English for someone new to the grid; short; lead with the a
       el.classList.toggle("sel", n.id === sel.id);
       el.classList.toggle("linked", n.id !== sel.id && (sel.next.includes(n.id) || into.includes(n.id)));
       el.classList.toggle("dim", !HWS.shown[n.st]);
+      const X = HWX[n.id], nn = HWN.notes.filter((x) => x.step === n.id).length;
+      el.querySelector(".flags").innerHTML = (X.gaps.length ? `<span class="f-gap">? ${X.gaps.length}</span>` : "") + (X.ai ? '<span class="f-ai">AI idea</span>' : "") + (nn ? `<span class="f-note">${nn} note${nn > 1 ? "s" : ""}</span>` : "");
+      el.classList.toggle("lens-off", HWS.lens === "gap" ? !X.gaps.length : HWS.lens === "ai" ? !X.ai : false);
       el.setAttribute("aria-pressed", String(n.id === sel.id));
     }
-    const [, big, lbl, goText, go] = hwLive(sel.id);
+    const [, big, lbl, goText, go] = hwLive(sel.id), X = HWX[sel.id], notes = HWN.notes.filter((x) => x.step === sel.id);
     const links = (ids) => ids.map((i) => `<button type="button" data-hwgo="${i}">${esc(HWB[i].t)}</button>`).join("");
     $("hwdetail").innerHTML = `<div><span class="hw-pill ${sel.st}">${esc(HW_LABEL[sel.st])}</span>
         <h3>${esc(sel.k || "")} ${esc(sel.t)}</h3><div class="pmeta mono">${esc(sel.who)}</div>
         <ul>${sel.d.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
-        <p class="pmeta">Source: ${esc(sel.src)}</p></div>
+        <p class="pmeta">Source: ${esc(sel.src)}</p>
+        <dl class="hw-io"><dt>Comes in</dt><dd${unk(X.in) ? ' class="unk"' : ""}>${esc(X.in)}</dd><dt>Goes out</dt><dd${unk(X.out) ? ' class="unk"' : ""}>${esc(X.out)}</dd>
+          <dt>Who decides</dt><dd${unk(X.dec) ? ' class="unk"' : ""}>${esc(X.dec === "?" ? "Not known yet" : X.dec)}</dd><dt>Systems</dt><dd>${X.sys.map((x) => unk(x) ? `<span class="unk" style="color:var(--flag)">${esc(x === "?" ? "Not known yet" : x)}</span>` : esc(x)).join(" · ")}</dd></dl>
+        ${X.gaps.length ? `<div class="hw-box gap"><h4>Open questions</h4><ul>${X.gaps.map(([w, q]) => `<li>${esc(q)} <span class="nmeta">ask ${esc(w)}</span></li>`).join("")}</ul></div>` : ""}
+        ${X.ai ? `<div class="hw-box ai"><h4>AI or automation idea</h4><p style="margin:0">${esc(X.ai)}</p></div>` : ""}
+        <div class="hw-box notes"><h4>What we learned</h4>${notes.length ? `<ul>${notes.map((x) => `<li>${esc(x.text)} <span class="nmeta">${esc(x.kind)} · ${esc(x.at || "")}</span></li>`).join("")}</ul>` : '<p class="pmeta" style="margin:0">Nothing added yet.</p>'}
+          ${db ? `<form class="hw-add" id="hwadd"><textarea id="hwnote" maxlength="1000" placeholder="What did you learn? e.g. “Richard sends the option agreement from Google Drive by email; the owner signs on paper.”" aria-label="Add a note to this step"></textarea>
+            <div class="row"><select id="hwkind" aria-label="Kind of note"><option>answer</option><option>new step</option><option>new question</option><option>idea</option></select><button type="submit">Add to this step</button><span class="nmeta" id="hwaddmsg"></span></div></form>` : ""}</div></div>
       <div class="hw-side">${big ? `<div class="hw-stat"><b>${esc(big)}</b><span>${esc(lbl)}</span></div>` : `<p class="pmeta">${sel.st === "future" ? "Part of the Tier 3 plan: not built yet, so there is nothing to count." : "Done by K2's team today, outside Line Watch."}</p>`}
         ${go ? `<button type="button" class="hw-go" id="hwgo">${esc(goText)}</button>` : ""}
         <div><p class="lbl">Leads to</p><div class="hw-links">${links(sel.next)}</div></div>
         ${into.length ? `<div><p class="lbl">Comes from</p><div class="hw-links">${links(into)}</div></div>` : ""}</div>`;
     if (go) $("hwgo").addEventListener("click", go);
+    if ($("hwadd")) $("hwadd").addEventListener("submit", async (ev) => {
+      ev.preventDefault(); const text = $("hwnote").value.trim(); if (!text) return;
+      const msg = $("hwaddmsg"); msg.textContent = "Saving...";
+      try { await db.collection("flow_notes").add({ step: sel.id, kind: $("hwkind").value, text: text.slice(0, 1000), at: new Date().toISOString().slice(0, 16).replace("T", " ") }); }
+      catch (e) { msg.textContent = "Couldn't save. You may only have view access."; }
+    });
+    renderMapExtras();
     drawWires();
     $("hwdetail").querySelectorAll("[data-hwgo]").forEach((b) => b.addEventListener("click", () => { HWS.sel = b.dataset.hwgo; if (!HWS.tier3 && HWB[HWS.sel].st === "future") HWS.tier3 = true, syncHwView(); renderFlow(); $("hw-" + HWS.sel).scrollIntoView({ block: "nearest", inline: "nearest" }); }));
   }
@@ -1517,6 +1668,8 @@ How to answer: plain English for someone new to the grid; short; lead with the a
   function syncHwView() { document.querySelectorAll("[data-hwview]").forEach((b) => b.setAttribute("aria-pressed", String((b.dataset.hwview === "tier3") === HWS.tier3))); }
   document.querySelectorAll("[data-hwst]").forEach((b) => b.addEventListener("click", () => { const k = b.dataset.hwst; HWS.shown[k] = !HWS.shown[k]; b.setAttribute("aria-pressed", String(HWS.shown[k])); renderFlow(); }));
   document.querySelectorAll("[data-hwview]").forEach((b) => b.addEventListener("click", () => { HWS.tier3 = b.dataset.hwview === "tier3"; if (!HWS.tier3 && HWB[HWS.sel].st === "future") HWS.sel = "catalog"; syncHwView(); renderFlow(); }));
+  document.querySelectorAll("[data-hwlens]").forEach((b) => b.addEventListener("click", () => { HWS.lens = HWS.lens === b.dataset.hwlens ? "" : b.dataset.hwlens;
+    document.querySelectorAll("[data-hwlens]").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.hwlens === HWS.lens))); renderFlow(); }));
   const TABS = [["t-flow", "p-flow"], ["t-lines", "p-lines"], ["t-watch", "p-watch"], ["t-irp", "p-irp"], ["t-help", "p-help"]];
   function showTab(id) {
     for (const [t, panel] of TABS) {
