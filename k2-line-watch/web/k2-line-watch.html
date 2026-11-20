@@ -227,7 +227,21 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 .hw-sep { width: 1px; height: 22px; background: var(--rule); margin: 0 4px }
 .d-today { background: var(--open) } .d-building { background: var(--fast) } .d-future { background: var(--t3) }
 .hw-flowbox { overflow-x: auto; padding-bottom: 4px }
-.hw-flow { display: grid; grid-template-columns: repeat(6, minmax(170px, 1fr)); min-width: 1080px; position: relative }
+.hw-flow { display: grid; grid-template-columns: 170px repeat(6, 290px); width: max-content; position: relative;
+  background-color: var(--bg); background-image: radial-gradient(var(--rule) 1px, transparent 1px); background-size: 20px 20px; border: 1px solid var(--rule); border-radius: 10px; padding: 14px 6px 20px }
+.hw-col { padding: 0 22px 10px; position: relative; z-index: 1 }
+.hw-col .n { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; color: var(--muted) }
+.hw-col h3 { font-family: var(--display); font-size: 19px; line-height: 1.15; margin: 2px 0 0; font-weight: 700; text-transform: uppercase; letter-spacing: .02em; border-bottom: 2px solid var(--ink); padding-bottom: 6px }
+.hw-lane { padding: 16px 12px 16px 10px; position: relative; z-index: 1; border-top: 1px dashed var(--rule) }
+.hw-lane b { font-family: var(--display); font-size: 16px; display: block; line-height: 1.2 }
+.hw-lane span { font-size: 12px; color: var(--muted) }
+.hw-cell { padding: 16px 22px 18px; display: flex; flex-direction: column; gap: 22px; position: relative; z-index: 1; border-top: 1px dashed var(--rule) }
+.hw-proc { display: grid; gap: 0; margin-top: 6px; font-size: 12px; line-height: 1.28 }
+.hw-proc .pi { display: block; background: var(--bg); border: 1px solid var(--rule); border-radius: 4px; padding: 3px 7px; position: relative }
+.hw-proc .pi + .pi { margin-top: 9px }
+.hw-proc .pi + .pi::before { content: ""; position: absolute; left: 14px; top: -9px; height: 8px; border-left: 1.5px solid var(--muted) }
+.hw-proc .pi.blank { background: transparent; border: 1.5px dashed var(--flag); color: var(--flag) }
+.hw-proc .pi.blank::after { content: "?"; position: absolute; right: 6px; top: 3px; font: 700 12px var(--mono) }
 .hw-wires { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 0 }
 .hw-wires path { fill: none; stroke: var(--muted); stroke-width: 1.25; opacity: .32 }
 .hw-wires path.on { stroke: var(--flag); stroke-width: 2; opacity: 1 }
@@ -239,11 +253,11 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 .hw-head { border-bottom: 2px solid var(--ink); padding-bottom: 5px; min-height: 58px }
 .hw-head .n { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; color: var(--muted) }
 .hw-head h3 { font-family: var(--display); font-size: 17px; line-height: 1.15; margin: 2px 0 0; font-weight: 700; text-transform: uppercase; letter-spacing: .02em }
-.hw-node { all: unset; box-sizing: border-box; cursor: pointer; position: relative; z-index: 1; display: grid; gap: 3px; background: var(--panel); border: 1px solid var(--rule); border-left: 4px solid var(--c); border-radius: 6px; padding: 8px 9px }
+.hw-node { all: unset; box-sizing: border-box; cursor: pointer; position: relative; z-index: 1; display: grid; gap: 4px; background: var(--panel); border: 1px solid var(--rule); border-left: 5px solid var(--c); border-radius: 8px; padding: 11px 12px; width: 246px; box-shadow: 0 1px 0 rgba(0,0,0,.05), 0 4px 10px rgba(0,0,0,.06) }
 .hw-node.today { --c: var(--open) } .hw-node.building { --c: var(--fast) } .hw-node.future { --c: var(--t3) }
 .hw-node .k { font-family: var(--mono); font-size: 10.5px; color: var(--muted); display: flex; justify-content: space-between; gap: 6px }
 .hw-node .k i { font-style: normal; color: var(--c) }
-.hw-node .t { font-weight: 600; font-size: 14px; line-height: 1.25 }
+.hw-node .t { font-weight: 700; font-size: 16px; line-height: 1.25 }
 .hw-node .w { font-family: var(--mono); font-size: 11px; color: var(--muted) }
 .hw-node .live { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--ink); border-top: 1px dashed var(--rule); padding-top: 4px; margin-top: 2px }
 .hw-node:hover { border-color: var(--c) }
@@ -302,7 +316,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
 .hw-sys td:first-child { font-weight: 600 }
 .hw-sys .unk { color: var(--flag); font-size: 12px }
 .hw-go { font: 600 14px var(--body); background: var(--ink); color: var(--bg); border: 0; border-radius: 6px; padding: 8px 12px; cursor: pointer; justify-self: start }
-@media (max-width: 760px) { .hw-flow { grid-template-columns: 1fr; min-width: 0 } .hw-stage { padding: 0 0 22px } .hw-stage:not(:last-child)::after { right: auto; left: 50%; top: auto; bottom: 6px; transform: rotate(135deg) } .hw-head { min-height: 0 } }
+@media (max-width: 760px) { .hw-flowbox { margin-inline: -4px } }
 @media (prefers-reduced-motion: no-preference) { .hw-node { transition: opacity .15s, border-color .15s, background .15s } }
 </style>
 
@@ -341,7 +355,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
       <button type="button" class="chip" data-hwlens="ai" aria-pressed="false">AI ideas <span id="hwl-ai"></span></button>
     </div>
     <div class="hw-flowbox"><div class="hw-flow" id="hwflow"></div></div>
-    <p class="hw-note">Lines show what feeds what. Click a step to light up its links; the loops back to the start (new value, new plans) are listed in its details.</p>
+    <p class="hw-note">Each row is who does the work; each card shows how that step works, one box per action. <b style="color:var(--flag)">Dashed red boxes are blank spots</b>: we don't know that part yet, and it's a question to ask. Lines show what feeds what. Click a step to light up its links; the loops back to the start (new value, new plans) are listed in its details.</p>
     <section class="hw-detail" id="hwdetail" aria-live="polite"></section>
     <div class="hw-more">
       <section aria-labelledby="hwq-h"><h3 id="hwq-h">Questions to ask</h3>
@@ -1539,6 +1553,36 @@ How to answer: plain English for someone new to the grid; short; lead with the a
       gaps: [["Richard", "How do you know a deal closed and what it was worth? Is that tracked anywhere?"]],
       ai: "Track every deal from first signal to payout, so the next market is picked on real results." },
   };
+
+  // Swimlanes: who does each step. Process: how the step works, one box per action; "?" boxes are blank spots.
+  const HW_LANES = [["auto", "Line Watch", "Built: finds and checks, automatically"], ["tier3", "Tier 3 plan", "Not built yet: agents"], ["richard", "Richard", "Decides, signs, sells"], ["gis", "Steve and the GIS team", "Maps the land"],
+    ["john", "John", "Team map"], ["sales", "Sales team", "Talks to landowners"], ["outside", "Outside K2", "Utilities, developers, landowners"]];
+  const HW_LANE = { irp: "auto", filings: "auto", news: "auto", loads: "tier3", county: "tier3", devs: "auto", catalog: "auto", score: "tier3", tap: "auto", decide: "auto", check: "auto",
+    utility: "richard", brand: "richard", partner: "richard", sign: "richard", gis: "gis", parcels: "gis", map: "john", campaign: "sales", wendy: "sales", project: "outside", value: "outside" };
+  const HWP = {
+    irp: ["A utility files its long-range plan with the state", "Line Watch's IRP pilot reads it", "Planned lines and substations pulled out", "Added to the catalog", "?Who at K2 reads utility plans today"],
+    filings: ["ERCOT, SPP, PUC, Army Corps and Oncor post filings", "Monitor checks every source twice a day", "K2 filter keeps what matters", "Row added to the K2 Watch sheet and this page", "?Who reads the sheet, and how often"],
+    news: ["Local news, DOE grants, utility open houses", "Monitor catches the story", "Story added as a signal", "?Who goes to open houses", "?How news reaches the team today"],
+    loads: ["Interconnection queues, RFPs, SEC filings", "Agents watch for big new loads", "Market flagged as heating up", "?Which signals Richard trusts most"],
+    utility: ["Pick a target utility or co-op", "AI drafts a short personal email", "Richard approves it", "?Sent from which inbox", "Utility names a substation to use or avoid", "?Where replies are tracked", "?Who gets told next"],
+    county: ["County deed and easement records", "Utility land purchase spotted", "Flag: likely future substation", "?Does anyone check counties today", "?Which counties"],
+    devs: ["ERCOT queue at each end substation", "Line Watch lists the developers", "Trace to the parent developer", "?Where developer contacts are kept", "?Who reaches out, and how"],
+    catalog: ["All signals plus official grid plans", "Lines and substations built into one list", "11 data checks run", "Published to this page and the GIS files"],
+    score: ["Market signals gathered", "Score 0 to 100 per market", "70+: outreach. 50 to 69: research. Under 50: watch", "?Who sets the weights"],
+    tap: ["Look at the line's voltage", "765 kV: substations only", "500 kV: maybe", "345 kV and below: line taps work", "No tap within 5 to 10 miles of a substation", "?Does project size change the rule"],
+    decide: ["Exact substation known: substation campaign", "Route set, 345 kV or below: line campaign", "Proposed: follow updates", "?Who signs off on a campaign", "?How a target reaches the GIS queue"],
+    check: ["Each substation checked against public maps (0.2 mi)", "Items listed for a person to review", "?What Steve's team checks before mapping"],
+    gis: ["?How an item is sent to the GIS queue", "Item mapped into K2's master database", "?Which software holds the database", "?How long a request takes"],
+    parcels: ["Find parcels near the target", "Screen out slope and wetlands", "Count buildable acres", "?Which parcel data is used", "?Cutoff for buildable acres", "?Who picks parcels for the campaign"],
+    map: ["Layers for existing, proposed and planned lines", "Shown to landowners and partners", "?Who updates the map, and how often"],
+    campaign: ["?Which mail vendor sends the letters", "Letters go out by mail", "Skip trace finds phone numbers", "Salespeople call landowners", "?Where calls and replies are logged", "?How many tries before stopping", "?What happens after a no"],
+    wendy: ["Call list ready", "AI makes first-pass calls", "Each call scored", "Warm leads booked for salespeople", "?What makes a lead warm", "On hold while the focus is developers"],
+    sign: ["Interested landowner", "?Who sets the price", "Price: current value plus a premium", "?Where the agreement comes from", "?How it is sent and signed", "Option, lease or easement signed", "?Who files the memorandum with the county"],
+    partner: ["Signed land ready", "Richard shows it to developers", "?How it's presented: deck, map or data room", "?Where developer talks are tracked", "?Terms offered: sell, assign, lease or partner"],
+    brand: ["Richard's LinkedIn pieces", "Market websites for data center and solar land", "?Who writes and posts, and how often"],
+    project: ["Developer likes the site", "Partner signs a project on the land", "Partner files to interconnect, permits, builds", "?How K2 gets paid", "?What happens if the partner walks away"],
+    value: ["Land value multiplies", "?How a closed deal is tracked", "Lessons pick the next market"],
+  };
   const HWN = { notes: [] };
   const HW_ASK = ["Richard", "John", "Steve", "Sales team"];
   const unk = (v) => !v || /\?/.test(v);
@@ -1596,9 +1640,14 @@ How to answer: plain English for someone new to the grid; short; lead with the a
     if (!$("hwflow")) return;
     const box = $("hwflow");
     if (!box.childElementCount) {
-      box.innerHTML = HW_STAGES.map((t, i) => `<section class="hw-stage"><div class="hw-head"><div class="n">STAGE 0${i + 1}</div><h3>${esc(t)}</h3></div>${
-        HW.filter((n) => n.s === i).map((n) => { const k = `${i + 1}.${HW.filter((m) => m.s === i).indexOf(n) + 1}`; n.k = k;
-          return `<button type="button" class="hw-node ${n.st}" id="hw-${n.id}" data-hw="${n.id}"><span class="k">${k}<i>${esc(HW_LABEL[n.st].split(" (")[0])}</i></span><span class="t">${esc(n.t)}</span><span class="w">${esc(n.who)}</span><span class="flags"></span><span class="live" hidden></span></button>`; }).join("")}</section>`).join("");
+      HW_STAGES.forEach((_, i) => HW.filter((n) => n.s === i).forEach((n, j) => { n.k = `${i + 1}.${j + 1}`; }));
+      const nodeHtml = (n) => `<button type="button" class="hw-node ${n.st}" id="hw-${n.id}" data-hw="${n.id}"><span class="k">${n.k}<i>${esc(HW_LABEL[n.st].split(" (")[0])}</i></span><span class="t">${esc(n.t)}</span><span class="w">${esc(n.who)}</span><span class="flags"></span><span class="hw-proc">${(HWP[n.id] || []).map((p) => p[0] === "?" ? `<span class="pi blank">${esc(p.slice(1))}</span>` : `<span class="pi">${esc(p)}</span>`).join("")}</span><span class="live" hidden></span></button>`;
+      let h = `<div></div>` + HW_STAGES.map((t, i) => `<div class="hw-col" style="grid-row:1;grid-column:${i + 2}"><div class="n">STAGE 0${i + 1}</div><h3>${esc(t)}</h3></div>`).join("");
+      HW_LANES.forEach(([id, name, note], r) => {
+        h += `<div class="hw-lane" style="grid-row:${r + 2};grid-column:1"><b>${esc(name)}</b><span>${esc(note)}</span></div>`;
+        HW_STAGES.forEach((_, c) => { h += `<div class="hw-cell" style="grid-row:${r + 2};grid-column:${c + 2}">${HW.filter((n) => n.s === c && HW_LANE[n.id] === id).map(nodeHtml).join("")}</div>`; });
+      });
+      box.innerHTML = h;
       box.querySelectorAll("[data-hw]").forEach((b) => b.addEventListener("click", () => { HWS.sel = b.dataset.hw; renderFlow();
         if (window.innerWidth < 860) $("hwdetail").scrollIntoView({ block: "start" }); }));
     }
@@ -1651,13 +1700,13 @@ How to answer: plain English for someone new to the grid; short; lead with the a
     let svg = box.querySelector(".hw-wires");
     if (!svg) { svg = document.createElementNS("http://www.w3.org/2000/svg", "svg"); svg.setAttribute("class", "hw-wires"); svg.setAttribute("aria-hidden", "true"); box.prepend(svg); }
     const o = box.getBoundingClientRect(), sel = HWB[HWS.sel], out = [], dots = [];
-    const pos = (id) => { const el = $("hw-" + id); if (!el || el.hidden) return null; const r = el.getBoundingClientRect(); return { l: r.left - o.left, r: r.right - o.left, y: r.top - o.top + r.height / 2 }; };
+    const pos = (id) => { const el = $("hw-" + id); if (!el || el.hidden) return null; const r = el.getBoundingClientRect(); return { l: r.left - o.left, r: r.right - o.left, y: r.top - o.top + Math.min(26, r.height / 2) }; };
     for (const n of HW) for (const t of n.next) {
       const a = pos(n.id), b = pos(t), m = HWB[t]; if (!a || !b || m.s < n.s) continue;
       const on = n.id === sel.id || t === sel.id, dim = !on && (!HWS.shown[n.st] || !HWS.shown[m.st]);
       let d;
-      if (m.s === n.s) { const x = Math.max(a.r, b.r) + 16; d = `M${a.r} ${a.y} C${x} ${a.y} ${x} ${b.y} ${b.r} ${b.y}`; }
-      else { const k = Math.min(70, (b.l - a.r) / 2); d = `M${a.r} ${a.y} C${a.r + k} ${a.y} ${b.l - k} ${b.y} ${b.l} ${b.y}`; }
+      if (m.s === n.s) { const x = Math.max(a.r, b.r) + 20; d = `M${a.r} ${a.y} C${x} ${a.y} ${x} ${b.y} ${b.r} ${b.y}`; }
+      else { const k = Math.max(40, (b.l - a.r) / 2); d = `M${a.r} ${a.y} C${a.r + k} ${a.y} ${b.l - k} ${b.y} ${b.l} ${b.y}`; }
       out.push(`<path d="${d}" class="${on ? "on" : dim ? "dim" : ""}"/>`);
       if (on) dots.push(`<circle cx="${m.s === n.s ? b.r : b.l}" cy="${b.y}" r="3.5"/>`);
     }
