@@ -29,7 +29,9 @@ NEWS_NOISE = ("opinion", "op-ed", "editorial", "study finds", "could save", "rat
               "how we build", "letter to the editor", "podcast",
               # accidents, politics and people stories mention a line without saying anything about it
               "fatal", "killed", "dies", "died", "death", "injur", "electrocut", "election", "concede", "concession",
-              "obituary", "arrest", "lawsuit settled", "wildfire")
+              "obituary", "arrest", "lawsuit settled", "wildfire",
+              # paid market-research press releases name kV classes but no real project
+              "openpr", "market size", "market report", "market (20")
 NEWS_SPECIFIC = ("kv", "open house", "route", "transmission line", "power line", "substation", "switching station")
 # Line Watch is U.S. only: plan news about other countries is dropped.
 FOREIGN = re.compile(r"\b(India|Indian|Peru|Chile|Brazil|Mexico|Canada|Canadian|Ontario|Quebec|Alberta|British Columbia|"
