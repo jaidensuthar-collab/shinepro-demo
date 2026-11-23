@@ -111,6 +111,14 @@ aside.chat { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); 
 .tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--flag) }
 .tabs button:focus-visible { outline: 2px solid var(--flag); outline-offset: 2px }
 .panel { display: grid; gap: 18px }
+.off-group h3 { font-family: var(--display); font-size: 18px; margin: 4px 0 6px }
+.off-group h3 small { font: 13px var(--mono); color: var(--muted); margin-left: 6px }
+.off-t { width: 100%; border-collapse: collapse; font-size: 14px; display: block; overflow-x: auto }
+.off-t th, .off-t td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--rule) }
+.off-t th { font: 600 11px var(--mono); text-transform: uppercase; letter-spacing: .04em; color: var(--muted) }
+.off-t td.n { font-family: var(--mono); white-space: nowrap; text-align: right }
+.off-t .pl { font-weight: 600 } .off-t .why { font-size: 13px; color: var(--muted); margin-top: 3px; max-width: 46ch }
+.off-t .chk { font: 600 11px var(--mono); color: var(--flag) }
 .panel[hidden] { display: none }
 .help { max-width: 820px; gap: 26px }
 .help h2 { font-family: var(--display); font-size: 22px; margin: 0 0 6px }
@@ -334,6 +342,7 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
     <button type="button" role="tab" id="t-lines" aria-controls="p-lines" aria-selected="false" tabindex="-1">Lines (U.S.)</button>
     <button type="button" role="tab" id="t-watch" aria-controls="p-watch" aria-selected="false" tabindex="-1">Early signals</button>
     <button type="button" role="tab" id="t-irp" aria-controls="p-irp" aria-selected="false" tabindex="-1">Utility plans (IRPs)</button>
+    <button type="button" role="tab" id="t-off" aria-controls="p-off" aria-selected="false" tabindex="-1">Power going offline</button>
     <button type="button" role="tab" id="t-help" aria-controls="p-help" aria-selected="false" tabindex="-1">How to use</button>
   </nav>
 
@@ -520,6 +529,34 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
       </div>
     </section>
     <div id="irps" class="ledger"><div class="empty">The IRP pilot is being researched. Utilities appear here as they are added.</div></div>
+  </div>
+
+  <div id="p-off" role="tabpanel" aria-labelledby="t-off" class="panel" hidden>
+    <section class="irp-intro">
+      <h2>Power going offline (Texas)</h2>
+      <p>When a power plant retires, the space it used on the grid at its substation can open up for someone else. A new project that connects where a plant just left may need fewer grid upgrades and get through the interconnection study faster. This list shows every Texas plant of 10 MW or more that has retired since 2023, is scheduled to retire in the next 5 years, or has told ERCOT it is shutting down or pausing, with the substation it connects to.</p>
+      <p class="pmeta" id="offmeta"></p>
+      <div class="tools" role="group" aria-label="Filter the list">
+        <span class="pmeta">Show</span>
+        <button class="chip" data-offg="" aria-pressed="true">All</button>
+        <button class="chip" data-offg="offline now" aria-pressed="false">Offline now</button>
+        <button class="chip" data-offg="retiring" aria-pressed="false">Retiring</button>
+        <button class="chip" data-offg="paused (may return)" aria-pressed="false">Paused</button>
+        <span class="pmeta" style="margin-left:8px">Market</span>
+        <button class="chip" data-offm="" aria-pressed="true">All</button>
+        <button class="chip" data-offm="ERCOT" aria-pressed="false">ERCOT</button>
+        <button class="chip" data-offm="other" aria-pressed="false">SPP, MISO, El Paso</button>
+      </div>
+      <div class="tools">
+        <button class="chip" id="offcsv" type="button">Download the list (CSV)</button>
+        <button class="chip" id="offgj" type="button">Download map points (GeoJSON)</button>
+        <span class="pmeta" id="offnote" aria-live="polite"></span>
+      </div>
+    </section>
+    <div id="offlist"><div class="empty">Loading the list...</div></div>
+    <section class="irp-intro">
+      <p class="pmeta" id="offhow"></p>
+    </section>
   </div>
 
   <div id="p-help" role="tabpanel" aria-labelledby="t-help" class="panel help" hidden>
@@ -971,8 +1008,8 @@ section.feed h2, section.research h2 { font-family: var(--display); font-size: 2
   });
   // The downloads capability only saves allowlisted types (csv, json, zip, ...), not .geojson or .kml,
   // so those are zipped with their real extension inside; GIS tools and Google Earth open them from the zip.
-  async function saveExport(file, name, zipName) {
-    const note = $("linesdlnote");
+  async function saveExport(file, name, zipName, noteId) {
+    const note = $(noteId || "linesdlnote");
     const dl = await useCap("downloads");
     // Outside Claude the files are plain links on the same site (.geojson and .kml need no zip there).
     if (!dl && !inClaude()) { note.textContent = ""; directDownload("exports/" + file, name); return; }
@@ -1719,7 +1756,40 @@ How to answer: plain English for someone new to the grid; short; lead with the a
   document.querySelectorAll("[data-hwview]").forEach((b) => b.addEventListener("click", () => { HWS.tier3 = b.dataset.hwview === "tier3"; if (!HWS.tier3 && HWB[HWS.sel].st === "future") HWS.sel = "catalog"; syncHwView(); renderFlow(); }));
   document.querySelectorAll("[data-hwlens]").forEach((b) => b.addEventListener("click", () => { HWS.lens = HWS.lens === b.dataset.hwlens ? "" : b.dataset.hwlens;
     document.querySelectorAll("[data-hwlens]").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.hwlens === HWS.lens))); renderFlow(); }));
-  const TABS = [["t-flow", "p-flow"], ["t-lines", "p-lines"], ["t-watch", "p-watch"], ["t-irp", "p-irp"], ["t-help", "p-help"]];
+  // Power going offline: plants retiring or paused, and the substation each one connects to (data/build_retirements.py)
+  const OFF = { d: null, g: "", m: "" };
+  const STATUS_WORD = { retired: "retired", retiring: "retiring", temporary: "paused", mothball: "mothballed" };
+  function renderOff() {
+    const d = OFF.d, box = $("offlist");
+    if (!d) return;
+    const rows = d.plants.filter((r) => (!OFF.g || (OFF.g === "retiring" ? r.group.startsWith("retiring") : r.group === OFF.g))
+      && (!OFF.m || (OFF.m === "ERCOT" ? r.market === "ERCOT" : r.market !== "ERCOT")));
+    const mw = rows.reduce((a, r) => a + r.mw_going, 0);
+    $("offmeta").textContent = `${rows.length} plants, about ${nfmt(Math.round(mw))} MW. Built ${d.built} from EIA's monthly generator inventory and ERCOT's shutdown notices.`;
+    if (!rows.length) { box.innerHTML = '<div class="empty">Nothing matches this filter.</div>'; return; }
+    const groups = d.groups.filter((g) => rows.some((r) => r.group === g));
+    box.innerHTML = groups.map((g) => {
+      const gr = rows.filter((r) => r.group === g), gmw = gr.reduce((a, r) => a + r.mw_going, 0);
+      return `<section class="off-group"><h3>${esc(g[0].toUpperCase() + g.slice(1))}<small>${gr.length} plants, ${nfmt(Math.round(gmw))} MW</small></h3>
+      <table class="off-t"><thead><tr><th scope="col">Plant</th><th scope="col">MW going</th><th scope="col">When</th><th scope="col">Substation it connects to</th><th scope="col">Line Watch nearby</th><th scope="col">Source</th></tr></thead><tbody>
+      ${gr.map((r) => { const s = r.substation;
+        const what = r.going.map((x) => `${esc(x.what)}: ${nfmt(x.mw)} MW ${esc(STATUS_WORD[x.status] || x.status)}${x.date ? " " + esc(x.date) : ""}`).join("<br>");
+        const detail = r.going.map((x) => x.detail).filter(Boolean).map(esc).join(" ");
+        const sub = s ? `${esc(s.name)} <span class="pmeta">${s.kv ? s.kv + " kV" : ""}, ${s.miles_from_plant} mi from plant</span>${s.check ? ' <span class="chk">CHECK</span>' : ""}` : '<span class="pmeta">none within 3 miles</span>';
+        const near = r.line_watch.length ? r.line_watch.map((n) => `${esc(n.station)}<span class="pmeta"> (${n.lines.length} line${n.lines.length === 1 ? "" : "s"}${n.queued_projects ? `, ${n.queued_projects} queued projects, ${nfmt(Math.round(n.queued_mw))} MW` : ""})</span>`).join("<br>") : '<span class="pmeta">none</span>';
+        const links = [...new Set(r.going.flatMap((x) => x.links || []))].slice(0, 3).map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener">${i ? "more" : esc(r.going[0].source.split(" (")[0])}</a>`).join(", ");
+        return `<tr><td><div class="pl">${esc(r.plant)}</div><div class="pmeta">${esc(r.owner)} · ${esc(r.county)} County · ${esc(r.market)}</div><div class="why">${what}${detail ? "<br>" + detail : ""}</div></td>
+          <td class="n">${nfmt(r.mw_going)}</td><td class="n">${esc(r.first_date || "")}</td><td>${sub}</td><td>${near}</td><td>${links}</td></tr>`; }).join("")}
+      </tbody></table></section>`; }).join("");
+    $("offhow").textContent = d.how + " Plant sizes are nameplate MW from EIA, or ERCOT's summer rating where ERCOT gave one. 'Paused' plants may come back, so check before relying on them.";
+  }
+  fetch("data/retirements.json").then((r) => r.ok ? r.json() : null).then((d) => { if (d) { OFF.d = d; renderOff(); } else $("offlist").innerHTML = '<div class="empty">The list could not be loaded.</div>'; }).catch(() => {});
+  document.querySelectorAll("[data-offg]").forEach((b) => b.addEventListener("click", () => { OFF.g = b.dataset.offg; document.querySelectorAll("[data-offg]").forEach((x) => x.setAttribute("aria-pressed", String(x === b))); renderOff(); }));
+  document.querySelectorAll("[data-offm]").forEach((b) => b.addEventListener("click", () => { OFF.m = b.dataset.offm; document.querySelectorAll("[data-offm]").forEach((x) => x.setAttribute("aria-pressed", String(x === b))); renderOff(); }));
+  $("offcsv").addEventListener("click", () => saveExport("k2-texas-retirements.csv", "k2-texas-retirements.csv", null, "offnote"));
+  $("offgj").addEventListener("click", () => saveExport("k2-texas-retirements.geojson", "k2-texas-retirements.geojson", "k2-texas-retirements-geojson.zip", "offnote"));
+
+  const TABS = [["t-flow", "p-flow"], ["t-lines", "p-lines"], ["t-watch", "p-watch"], ["t-irp", "p-irp"], ["t-off", "p-off"], ["t-help", "p-help"]];
   function showTab(id) {
     for (const [t, panel] of TABS) {
       const on = t === id;

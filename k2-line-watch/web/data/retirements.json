@@ -1,0 +1,1233 @@
+{
+ "built": "2026-11-23",
+ "state": "TX",
+ "window": "retired since 2023 through retiring by 2031",
+ "min_mw": 10,
+ "groups": [
+  "offline now",
+  "retiring by end of 2027",
+  "retiring 2028 to 2031",
+  "paused (may return)"
+ ],
+ "count": 28,
+ "mw_total": 9665,
+ "sources": [
+  {
+   "name": "EIA-860M Monthly Generator Inventory, September 2026",
+   "url": "https://www.eia.gov/electricity/data/eia860m/"
+  },
+  {
+   "name": "ERCOT shutdown notices (NSO), checked 2026-11-23",
+   "url": "https://www.ercot.com/services/comm/mkt_notices/archives?keyword=Suspension"
+  },
+  {
+   "name": "HIFLD Electric Substations (location and voltage)",
+   "url": "https://hifld-geoplatform.hub.arcgis.com/"
+  },
+  {
+   "name": "OpenStreetMap substations (names)",
+   "url": "https://www.openstreetmap.org/"
+  }
+ ],
+ "how": "Each plant is placed at the highest-voltage substation within 3 miles of it (the nearest one if several tie). Rows marked 'check' are more than a mile from the plant, so the match is less certain.",
+ "plants": [
+  {
+   "id": "eia-6181",
+   "eia_plant": 6181,
+   "plant": "J T Deely",
+   "owner": "City of San Antonio - (TX)",
+   "county": "Bexar",
+   "market": "ERCOT",
+   "lat": 29.308056,
+   "lon": -98.3228,
+   "plant_mw": 932.0,
+   "group": "offline now",
+   "mw_going": 932.0,
+   "first_date": "2023-01",
+   "going": [
+    {
+     "what": "Conventional Steam Coal (units 1, 2)",
+     "mw": 932.0,
+     "status": "retired",
+     "date": "2023-01",
+     "detail": "",
+     "source": "EIA-860M (September 2026), Retired",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Calaveras 345 Switchyard",
+    "name_source": "HIFLD",
+    "kv": 345,
+    "lat": 29.31242,
+    "lon": -98.32038,
+    "miles_from_plant": 0.33,
+    "hifld_id": "301747",
+    "check": false
+   },
+   "line_watch": [
+    {
+     "station": "Spruce",
+     "miles": 0.04,
+     "lines": [
+      "tpit-84902",
+      "tpit-100018",
+      "tpit-100020"
+     ],
+     "queued_projects": 3,
+     "queued_mw": 951.3
+    }
+   ]
+  },
+  {
+   "id": "eia-3612",
+   "eia_plant": 3612,
+   "plant": "V H Braunig",
+   "owner": "City of San Antonio - (TX)",
+   "county": "Bexar",
+   "market": "ERCOT",
+   "lat": 29.2567,
+   "lon": -98.3825,
+   "plant_mw": 1138.0,
+   "group": "offline now",
+   "mw_going": 859,
+   "first_date": "2025-04-01",
+   "going": [
+    {
+     "what": "V. H. Braunig units 1 and 2",
+     "mw": 447,
+     "status": "retired",
+     "date": "2025-04-01",
+     "detail": "Offline since April 1, 2025. ERCOT found them needed for reliability but chose portable generators instead of a Reliability Must-Run contract (ERCOT board, Feb 2025).",
+     "source": "ERCOT notice M-C031324-01 (2024-03-13)",
+     "links": [
+      "https://www.ercot.com/services/comm/mkt_notices/M-C031324-01",
+      "https://www.cpsenergy.com/content/dam/corporate/en/Documents/Finance/AppendixANarrative%20_04_30_26_vF_ada.pdf",
+      "https://www.expressnews.com/business/article/ercot-generators-cps-energy-braunig-texas-grid-20187546.php"
+     ]
+    },
+    {
+     "what": "V. H. Braunig unit 3",
+     "mw": 412,
+     "status": "retiring",
+     "date": "2027-03-01",
+     "detail": "Kept running under an ERCOT Reliability Must-Run contract from March 2, 2025 to March 1, 2027; CPS planned to retire it.",
+     "source": "ERCOT notice M-C031324-01 (2024-03-13)",
+     "links": [
+      "https://www.ercot.com/services/comm/mkt_notices/M-C031324-09",
+      "https://www.cpsenergy.com/content/dam/corporate/en/Documents/Finance/CPS_UPDATED_OFFERING_MEMORANDUM.pdf"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Arthur Von Rosenberg",
+    "name_source": "HIFLD",
+    "kv": 345,
+    "lat": 29.25822,
+    "lon": -98.38427,
+    "miles_from_plant": 0.15,
+    "hifld_id": "310305",
+    "check": false
+   },
+   "line_watch": [
+    {
+     "station": "Braunig",
+     "miles": 0.1,
+     "lines": [
+      "tpit-45084A",
+      "txr-load-tx-stec-rodgers-ph3-howard-345-rebuilds"
+     ],
+     "queued_projects": 2,
+     "queued_mw": 34.5
+    }
+   ]
+  },
+  {
+   "id": "eia-7902",
+   "eia_plant": 7902,
+   "plant": "Pirkey",
+   "owner": "Southwestern Electric Power Co",
+   "county": "Harrison",
+   "market": "SPP",
+   "lat": 32.4607,
+   "lon": -94.4852,
+   "plant_mw": 721.0,
+   "group": "offline now",
+   "mw_going": 721.0,
+   "first_date": "2023-03",
+   "going": [
+    {
+     "what": "Conventional Steam Coal (unit 1)",
+     "mw": 721.0,
+     "status": "retired",
+     "date": "2023-03",
+     "detail": "",
+     "source": "EIA-860M (September 2026), Retired",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Pirkey",
+    "name_source": "HIFLD",
+    "kv": 345,
+    "lat": 32.46345,
+    "lon": -94.47861,
+    "miles_from_plant": 0.43,
+    "hifld_id": "304863",
+    "check": false
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-3485",
+   "eia_plant": 3485,
+   "plant": "Plant X",
+   "owner": "Southwestern Public Service Co",
+   "county": "Lamb",
+   "market": "SPP",
+   "lat": 34.1661,
+   "lon": -102.4114,
+   "plant_mw": 434.4,
+   "group": "offline now",
+   "mw_going": 336.4,
+   "first_date": "2023-12",
+   "going": [
+    {
+     "what": "Natural Gas Steam Turbine (units 1, 2)",
+     "mw": 146.0,
+     "status": "retired",
+     "date": "2023-12",
+     "detail": "",
+     "source": "EIA-860M (September 2026), Retired",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    },
+    {
+     "what": "Natural Gas Steam Turbine (unit 4)",
+     "mw": 190.4,
+     "status": "retiring",
+     "date": "2027-12",
+     "detail": "",
+     "source": "EIA-860M (September 2026), planned retirement",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Plant X",
+    "name_source": "HIFLD",
+    "kv": 230,
+    "lat": 34.16505,
+    "lon": -102.40968,
+    "miles_from_plant": 0.12,
+    "hifld_id": "301367",
+    "check": false
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-4939",
+   "eia_plant": 4939,
+   "plant": "Barney M Davis",
+   "owner": "City of San Antonio - (TX)",
+   "county": "Nueces",
+   "market": "ERCOT",
+   "lat": 27.6064,
+   "lon": -97.3117,
+   "plant_mw": 1082.2,
+   "group": "offline now",
+   "mw_going": 292,
+   "first_date": "2025-08-18",
+   "going": [
+    {
+     "what": "Barney M. Davis unit 1 (steam)",
+     "mw": 292,
+     "status": "retired",
+     "date": "2025-08-18",
+     "detail": "Forced outage since Aug 18, 2025; CPS is retiring it permanently. ERCOT found it is not needed for reliability (July 28, 2026).",
+     "source": "ERCOT notice M-C052926-01 (2026-05-29)",
+     "links": [
+      "https://www.ercot.com/services/comm/mkt_notices/M-C052926-01",
+      "https://www.ercot.com/services/comm/mkt_notices/M-C052926-03"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Barney Davis Substation",
+    "name_source": "OpenStreetMap",
+    "kv": 138,
+    "lat": 27.60764,
+    "lon": -97.31299,
+    "miles_from_plant": 0.12,
+    "hifld_id": "306961",
+    "check": false
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-3602",
+   "eia_plant": 3602,
+   "plant": "Ty Cooke",
+   "owner": "City of Lubbock - (TX)",
+   "county": "Lubbock",
+   "market": "SPP",
+   "lat": 33.5211,
+   "lon": -101.7906,
+   "plant_mw": 150.6,
+   "group": "offline now",
+   "mw_going": 138.1,
+   "first_date": "2023-10",
+   "going": [
+    {
+     "what": "Natural Gas Fired Combustion Turbine, Natural Gas Steam Turbine (units 1, 2, GT2, GT3)",
+     "mw": 138.1,
+     "status": "retired",
+     "date": "2023-10",
+     "detail": "",
+     "source": "EIA-860M (September 2026), Retired",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Holly Substation",
+    "name_source": "OpenStreetMap",
+    "kv": 230,
+    "lat": 33.52076,
+    "lon": -101.79238,
+    "miles_from_plant": 0.11,
+    "hifld_id": "303280",
+    "check": false
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-3604",
+   "eia_plant": 3604,
+   "plant": "J Robert Massengale",
+   "owner": "City of Lubbock - (TX)",
+   "county": "Lubbock",
+   "market": "SPP",
+   "lat": 33.6039,
+   "lon": -101.8408,
+   "plant_mw": 107.0,
+   "group": "offline now",
+   "mw_going": 84.0,
+   "first_date": "2023-10",
+   "going": [
+    {
+     "what": "Natural Gas Fired Combined Cycle (units 6A, 7, 8)",
+     "mw": 84.0,
+     "status": "retired",
+     "date": "2023-10",
+     "detail": "",
+     "source": "EIA-860M (September 2026), Retired",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Massengale Station",
+    "name_source": "OpenStreetMap",
+    "kv": 115,
+    "lat": 33.60363,
+    "lon": -101.84223,
+    "miles_from_plant": 0.08,
+    "hifld_id": "300329",
+    "check": false
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-52176",
+   "eia_plant": 52176,
+   "plant": "C R Wing Cogen Plant",
+   "owner": "BHER Power Resources, Inc",
+   "county": "Howard",
+   "market": "ERCOT",
+   "lat": 32.273178,
+   "lon": -101.4224,
+   "plant_mw": 244.8,
+   "group": "offline now",
+   "mw_going": 75.0,
+   "first_date": "2024-05",
+   "going": [
+    {
+     "what": "Natural Gas Fired Combined Cycle (unit GEN3)",
+     "mw": 75.0,
+     "status": "retired",
+     "date": "2024-05",
+     "detail": "",
+     "source": "EIA-860M (September 2026), Retired",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Falcon Seaboard Substation",
+    "name_source": "OpenStreetMap",
+    "kv": 345,
+    "lat": 32.27429,
+    "lon": -101.42274,
+    "miles_from_plant": 0.08,
+    "hifld_id": "306995",
+    "check": false
+   },
+   "line_watch": [
+    {
+     "station": "Big Spring",
+     "miles": 0.91,
+     "lines": [
+      "tpit-99266",
+      "tpit-99243",
+      "txr-oncor-big-spring-natural-dam-138"
+     ],
+     "queued_projects": 1,
+     "queued_mw": 122.5
+    }
+   ]
+  },
+  {
+   "id": "eia-3559",
+   "eia_plant": 3559,
+   "plant": "Silas Ray",
+   "owner": "Brownsville Public Utilities Board",
+   "county": "Cameron",
+   "market": "ERCOT",
+   "lat": 25.9131,
+   "lon": -97.5214,
+   "plant_mw": 170.4,
+   "group": "offline now",
+   "mw_going": 54,
+   "first_date": "2025-10-29",
+   "going": [
+    {
+     "what": "Silas Ray units 6 and 9",
+     "mw": 54,
+     "status": "retired",
+     "date": "2025-10-29",
+     "detail": "Forced outage since Oct 29, 2025; retiring permanently. ERCOT found them not needed for reliability (May 29, 2026).",
+     "source": "ERCOT notice M-C050126-01 (2026-05-01)",
+     "links": [
+      "https://www.ercot.com/services/comm/mkt_notices/M-C050126-01",
+      "https://www.ercot.com/services/comm/mkt_notices/M-C050126-02"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Sila Ray",
+    "name_source": "HIFLD",
+    "kv": 138,
+    "lat": 25.91369,
+    "lon": -97.52232,
+    "miles_from_plant": 0.07,
+    "hifld_id": "306520",
+    "check": false
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-54748",
+   "eia_plant": 54748,
+   "plant": "Port Neches Plant",
+   "owner": "Air Liquide Large Industries U S LP",
+   "county": "Jefferson",
+   "market": "MISO",
+   "lat": 29.97876,
+   "lon": -93.95229,
+   "plant_mw": 38.0,
+   "group": "offline now",
+   "mw_going": 38.0,
+   "first_date": "2023-12",
+   "going": [
+    {
+     "what": "Natural Gas Fired Combustion Turbine (unit G1)",
+     "mw": 38.0,
+     "status": "retired",
+     "date": "2023-12",
+     "detail": "",
+     "source": "EIA-860M (September 2026), Retired",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Linde Substation",
+    "name_source": "OpenStreetMap",
+    "kv": 230,
+    "lat": 29.96336,
+    "lon": -93.92207,
+    "miles_from_plant": 2.1,
+    "hifld_id": "301088",
+    "check": true
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-54338",
+   "eia_plant": 54338,
+   "plant": "Rio Grande Valley Sugar Growers",
+   "owner": "Rio Grande Valley Sugar Growers, Inc.",
+   "county": "Hidalgo",
+   "market": "ERCOT",
+   "lat": 26.269683,
+   "lon": -97.86701,
+   "plant_mw": 24.9,
+   "group": "offline now",
+   "mw_going": 24.9,
+   "first_date": "2024-12",
+   "going": [
+    {
+     "what": "Other Waste Biomass, Petroleum Liquids (units GENA, GENB, GENC, GEND, GENE)",
+     "mw": 24.9,
+     "status": "retired",
+     "date": "2024-12",
+     "detail": "",
+     "source": "EIA-860M (September 2026), Retired",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    }
+   ],
+   "substation": null,
+   "line_watch": []
+  },
+  {
+   "id": "eia-7131",
+   "eia_plant": 7131,
+   "plant": "Brandon Station",
+   "owner": "City of Lubbock - (TX)",
+   "county": "Lubbock",
+   "market": "SPP",
+   "lat": 33.585257,
+   "lon": -101.8861,
+   "plant_mw": 21.0,
+   "group": "offline now",
+   "mw_going": 21.0,
+   "first_date": "2023-10",
+   "going": [
+    {
+     "what": "Natural Gas Fired Combustion Turbine (unit 1)",
+     "mw": 21.0,
+     "status": "retired",
+     "date": "2023-10",
+     "detail": "",
+     "source": "EIA-860M (September 2026), Retired",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Indiana Substation",
+    "name_source": "OpenStreetMap",
+    "kv": 115,
+    "lat": 33.6134,
+    "lon": -101.88732,
+    "miles_from_plant": 1.95,
+    "hifld_id": "305893",
+    "check": true
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-57517",
+   "eia_plant": 57517,
+   "plant": "DeWind Frisco",
+   "owner": "DeWind Co.",
+   "county": "Hansford",
+   "market": "SPP",
+   "lat": 36.498514,
+   "lon": -101.6053,
+   "plant_mw": 20.0,
+   "group": "offline now",
+   "mw_going": 20.0,
+   "first_date": "2023-11",
+   "going": [
+    {
+     "what": "Onshore Wind Turbine (unit FRISC)",
+     "mw": 20.0,
+     "status": "retired",
+     "date": "2023-11",
+     "detail": "",
+     "source": "EIA-860M (September 2026), Retired",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Frisco Wind Farm Substation",
+    "name_source": "OpenStreetMap",
+    "kv": 115,
+    "lat": 36.49616,
+    "lon": -101.58653,
+    "miles_from_plant": 1.06,
+    "hifld_id": "300425",
+    "check": true
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-61848",
+   "eia_plant": 61848,
+   "plant": "PYCO Industries, Inc. Wind Farm",
+   "owner": "PYCO Industries, Inc.",
+   "county": "Lubbock",
+   "market": "ERCOT",
+   "lat": 33.553184,
+   "lon": -101.7924,
+   "plant_mw": 10.0,
+   "group": "offline now",
+   "mw_going": 10.0,
+   "first_date": "2023-12",
+   "going": [
+    {
+     "what": "Onshore Wind Turbine (unit WT1)",
+     "mw": 10.0,
+     "status": "retired",
+     "date": "2023-12",
+     "detail": "",
+     "source": "EIA-860M (September 2026), Retired",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Lubbock East Interchange",
+    "name_source": "OpenStreetMap",
+    "kv": 230,
+    "lat": 33.57117,
+    "lon": -101.79145,
+    "miles_from_plant": 1.24,
+    "hifld_id": "301002",
+    "check": true
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-3459",
+   "eia_plant": 3459,
+   "plant": "Sabine",
+   "owner": "Entergy Texas Inc.",
+   "county": "Orange",
+   "market": "MISO",
+   "lat": 30.0242,
+   "lon": -93.878,
+   "plant_mw": 2051.2,
+   "group": "retiring by end of 2027",
+   "mw_going": 1304.4,
+   "first_date": "2026-10",
+   "going": [
+    {
+     "what": "Natural Gas Steam Turbine (units 1, 3, 4)",
+     "mw": 1304.4,
+     "status": "retiring",
+     "date": "2026-10",
+     "detail": "",
+     "source": "EIA-860M (September 2026), planned retirement",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Unnamed substation",
+    "name_source": "",
+    "kv": 230,
+    "lat": 30.02443,
+    "lon": -93.87923,
+    "miles_from_plant": 0.08,
+    "hifld_id": "304498",
+    "check": false
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-3611",
+   "eia_plant": 3611,
+   "plant": "O W Sommers",
+   "owner": "City of San Antonio - (TX)",
+   "county": "Bexar",
+   "market": "ERCOT",
+   "lat": 29.308056,
+   "lon": -98.3242,
+   "plant_mw": 892.0,
+   "group": "retiring by end of 2027",
+   "mw_going": 892.0,
+   "first_date": "2027-03",
+   "going": [
+    {
+     "what": "Natural Gas Steam Turbine (unit 1)",
+     "mw": 446.0,
+     "status": "retiring",
+     "date": "2027-03",
+     "detail": "",
+     "source": "EIA-860M (September 2026), planned retirement",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    },
+    {
+     "what": "Natural Gas Steam Turbine (unit 2)",
+     "mw": 446.0,
+     "status": "retiring",
+     "date": "2029-03",
+     "detail": "",
+     "source": "EIA-860M (September 2026), planned retirement",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Calaveras 345 Switchyard",
+    "name_source": "HIFLD",
+    "kv": 345,
+    "lat": 29.31242,
+    "lon": -98.32038,
+    "miles_from_plant": 0.38,
+    "hifld_id": "301747",
+    "check": false
+   },
+   "line_watch": [
+    {
+     "station": "Spruce",
+     "miles": 0.04,
+     "lines": [
+      "tpit-84902",
+      "tpit-100018",
+      "tpit-100020"
+     ],
+     "queued_projects": 3,
+     "queued_mw": 951.3
+    }
+   ]
+  },
+  {
+   "id": "eia-3456",
+   "eia_plant": 3456,
+   "plant": "Newman",
+   "owner": "El Paso Electric Co",
+   "county": "El Paso",
+   "market": "El Paso Electric",
+   "lat": 31.983587,
+   "lon": -106.4318,
+   "plant_mw": 1109.8,
+   "group": "retiring by end of 2027",
+   "mw_going": 575.0,
+   "first_date": "2027-12",
+   "going": [
+    {
+     "what": "Natural Gas Steam Turbine (unit 1)",
+     "mw": 81.6,
+     "status": "retiring",
+     "date": "2027-12",
+     "detail": "",
+     "source": "EIA-860M (September 2026), planned retirement",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    },
+    {
+     "what": "Natural Gas Steam Turbine (unit 2)",
+     "mw": 81.6,
+     "status": "retiring",
+     "date": "2028-12",
+     "detail": "",
+     "source": "EIA-860M (September 2026), planned retirement",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    },
+    {
+     "what": "Natural Gas Fired Combined Cycle, Natural Gas Steam Turbine (units 3, 4, CT1, CT2)",
+     "mw": 411.8,
+     "status": "retiring",
+     "date": "2031-12",
+     "detail": "",
+     "source": "EIA-860M (September 2026), planned retirement",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Newman",
+    "name_source": "HIFLD",
+    "kv": 345,
+    "lat": 31.98438,
+    "lon": -106.43481,
+    "miles_from_plant": 0.18,
+    "hifld_id": "310484",
+    "check": false
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-3484",
+   "eia_plant": 3484,
+   "plant": "Nichols",
+   "owner": "Southwestern Public Service Co",
+   "county": "Potter",
+   "market": "SPP",
+   "lat": 35.283357,
+   "lon": -101.7464,
+   "plant_mw": 474.7,
+   "group": "retiring by end of 2027",
+   "mw_going": 474.7,
+   "first_date": "2027-12",
+   "going": [
+    {
+     "what": "Natural Gas Steam Turbine (unit 2)",
+     "mw": 113.6,
+     "status": "retiring",
+     "date": "2027-12",
+     "detail": "",
+     "source": "EIA-860M (September 2026), planned retirement",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    },
+    {
+     "what": "Natural Gas Steam Turbine (unit 1)",
+     "mw": 113.6,
+     "status": "retiring",
+     "date": "2028-12",
+     "detail": "",
+     "source": "EIA-860M (September 2026), planned retirement",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    },
+    {
+     "what": "Natural Gas Steam Turbine (unit 3)",
+     "mw": 247.5,
+     "status": "retiring",
+     "date": "2030-12",
+     "detail": "",
+     "source": "EIA-860M (September 2026), planned retirement",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Nichols",
+    "name_source": "HIFLD",
+    "kv": 230,
+    "lat": 35.28353,
+    "lon": -101.74531,
+    "miles_from_plant": 0.06,
+    "hifld_id": "302147",
+    "check": false
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-63737",
+   "eia_plant": 63737,
+   "plant": "Chisholm Grid Energy Storage System",
+   "owner": "Chisholm Grid, LLC",
+   "county": "Tarrant",
+   "market": "ERCOT",
+   "lat": 32.904444,
+   "lon": -97.38611,
+   "plant_mw": 100.0,
+   "group": "retiring by end of 2027",
+   "mw_going": 101.7,
+   "first_date": "2026-12-28",
+   "going": [
+    {
+     "what": "Chisholm Grid battery",
+     "mw": 101.7,
+     "status": "retiring",
+     "date": "2026-12-28",
+     "detail": "Retiring permanently Dec 28, 2026 (not a forced outage). ERCOT found it not needed for reliability (Aug 28, 2026).",
+     "source": "ERCOT notice M-G073126-01 (2026-07-31)",
+     "links": [
+      "https://www.ercot.com/services/comm/mkt_notices/M-G073126-01"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Hicks",
+    "name_source": "HIFLD",
+    "kv": 345,
+    "lat": 32.90466,
+    "lon": -97.38393,
+    "miles_from_plant": 0.13,
+    "hifld_id": "305844",
+    "check": false
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-60690",
+   "eia_plant": 60690,
+   "plant": "Blue Summit Storage, LLC",
+   "owner": "Blue Summit Storage, LLC",
+   "county": "Wilbarger",
+   "market": "ERCOT",
+   "lat": 34.299,
+   "lon": -99.399,
+   "plant_mw": 30.0,
+   "group": "retiring by end of 2027",
+   "mw_going": 30,
+   "first_date": "2027-02-19",
+   "going": [
+    {
+     "what": "Blue Summit Storage battery",
+     "mw": 30,
+     "status": "retiring",
+     "date": "2027-02-19",
+     "detail": "Retiring permanently Feb 19, 2027. ERCOT found it not needed for reliability (Oct 19, 2026).",
+     "source": "ERCOT notice M-B092126-01 (2026-09-21)",
+     "links": [
+      "https://www.ercot.com/services/comm/mkt_notices/M-B092126-01",
+      "https://www.ercot.com/services/comm/mkt_notices/M-B092126-02"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Blue Summit Wind Substation",
+    "name_source": "OpenStreetMap",
+    "kv": 138,
+    "lat": 34.29416,
+    "lon": -99.36848,
+    "miles_from_plant": 1.77,
+    "hifld_id": "310064",
+    "check": true
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-6194",
+   "eia_plant": 6194,
+   "plant": "Tolk",
+   "owner": "Southwestern Public Service Co",
+   "county": "Lamb",
+   "market": "SPP",
+   "lat": 34.186494,
+   "lon": -102.57,
+   "plant_mw": 1135.8,
+   "group": "retiring 2028 to 2031",
+   "mw_going": 1135.8,
+   "first_date": "2028-12",
+   "going": [
+    {
+     "what": "Conventional Steam Coal (units 1, 2)",
+     "mw": 1135.8,
+     "status": "retiring",
+     "date": "2028-12",
+     "detail": "",
+     "source": "EIA-860M (September 2026), planned retirement",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Tolk Substation",
+    "name_source": "OpenStreetMap",
+    "kv": 345,
+    "lat": 34.18135,
+    "lon": -102.56999,
+    "miles_from_plant": 0.36,
+    "hifld_id": "307714",
+    "check": false
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-7097",
+   "eia_plant": 7097,
+   "plant": "J K Spruce",
+   "owner": "City of San Antonio - (TX)",
+   "county": "Bexar",
+   "market": "ERCOT",
+   "lat": 29.309722,
+   "lon": -98.3203,
+   "plant_mw": 1488.5,
+   "group": "retiring 2028 to 2031",
+   "mw_going": 566.0,
+   "first_date": "2028-12",
+   "going": [
+    {
+     "what": "Conventional Steam Coal (unit 1)",
+     "mw": 566.0,
+     "status": "retiring",
+     "date": "2028-12",
+     "detail": "",
+     "source": "EIA-860M (September 2026), planned retirement",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Calaveras 345 Switchyard",
+    "name_source": "HIFLD",
+    "kv": 345,
+    "lat": 29.31242,
+    "lon": -98.32038,
+    "miles_from_plant": 0.19,
+    "hifld_id": "301747",
+    "check": false
+   },
+   "line_watch": [
+    {
+     "station": "Spruce",
+     "miles": 0.04,
+     "lines": [
+      "tpit-84902",
+      "tpit-100018",
+      "tpit-100020"
+     ],
+     "queued_projects": 3,
+     "queued_mw": 951.3
+    }
+   ]
+  },
+  {
+   "id": "eia-3482",
+   "eia_plant": 3482,
+   "plant": "Jones",
+   "owner": "Southwestern Public Service Co",
+   "county": "Lubbock",
+   "market": "SPP",
+   "lat": 33.5239,
+   "lon": -101.7392,
+   "plant_mw": 860.4,
+   "group": "retiring 2028 to 2031",
+   "mw_going": 247.5,
+   "first_date": "2031-12",
+   "going": [
+    {
+     "what": "Natural Gas Steam Turbine (unit 1)",
+     "mw": 247.5,
+     "status": "retiring",
+     "date": "2031-12",
+     "detail": "",
+     "source": "EIA-860M (September 2026), planned retirement",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Jones",
+    "name_source": "HIFLD",
+    "kv": 230,
+    "lat": 33.52268,
+    "lon": -101.73916,
+    "miles_from_plant": 0.08,
+    "hifld_id": "302099",
+    "check": false
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-9",
+   "eia_plant": 9,
+   "plant": "Copper",
+   "owner": "El Paso Electric Co",
+   "county": "El Paso",
+   "market": "El Paso Electric",
+   "lat": 31.7569,
+   "lon": -106.375,
+   "plant_mw": 86.9,
+   "group": "retiring 2028 to 2031",
+   "mw_going": 86.9,
+   "first_date": "2030-12",
+   "going": [
+    {
+     "what": "Natural Gas Fired Combustion Turbine (unit 1)",
+     "mw": 86.9,
+     "status": "retiring",
+     "date": "2030-12",
+     "detail": "",
+     "source": "EIA-860M (September 2026), planned retirement",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Copper",
+    "name_source": "HIFLD",
+    "kv": 115,
+    "lat": 31.75705,
+    "lon": -106.3745,
+    "miles_from_plant": 0.03,
+    "hifld_id": "302880",
+    "check": false
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-50118",
+   "eia_plant": 50118,
+   "plant": "Hal C Weaver Power Plant",
+   "owner": "University of Texas at Austin",
+   "county": "Travis",
+   "market": "ERCOT",
+   "lat": 30.2867,
+   "lon": -97.7356,
+   "plant_mw": 165.0,
+   "group": "retiring 2028 to 2031",
+   "mw_going": 13.6,
+   "first_date": "2028-01",
+   "going": [
+    {
+     "what": "Natural Gas Fired Combined Cycle (units GEN4, GEN5)",
+     "mw": 13.6,
+     "status": "retiring",
+     "date": "2028-01",
+     "detail": "",
+     "source": "EIA-860M (September 2026), planned retirement",
+     "links": [
+      "https://www.eia.gov/electricity/data/eia860m/"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Fiesta",
+    "name_source": "HIFLD",
+    "kv": 138,
+    "lat": 30.29497,
+    "lon": -97.71861,
+    "miles_from_plant": 1.16,
+    "hifld_id": "304559",
+    "check": true
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-55086",
+   "eia_plant": 55086,
+   "plant": "Gregory Power Plant",
+   "owner": "Gregory Power Partners LLC",
+   "county": "San Patricio",
+   "market": "ERCOT",
+   "lat": 27.88929,
+   "lon": -97.25842,
+   "plant_mw": 469.8,
+   "group": "paused (may return)",
+   "mw_going": 387,
+   "first_date": "2027-03-01",
+   "going": [
+    {
+     "what": "Gregory Power Plant (2 gas turbines + steam turbine)",
+     "mw": 387,
+     "status": "temporary",
+     "date": "2027-03-01",
+     "detail": "Temporarily suspending from March 1, 2027 for 11 to 12 months (expected back about early 2028). ERCOT found it not needed for reliability (Oct 29, 2026).",
+     "source": "ERCOT notice M-C100126-01 (2026-10-01)",
+     "links": [
+      "https://www.ercot.com/services/comm/mkt_notices/M-C100126-01",
+      "https://www.ercot.com/services/comm/mkt_notices/M-C100126-02"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Gregory Switchyard",
+    "name_source": "OpenStreetMap",
+    "kv": 138,
+    "lat": 27.8889,
+    "lon": -97.25757,
+    "miles_from_plant": 0.06,
+    "hifld_id": "303288",
+    "check": false
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-56754",
+   "eia_plant": 56754,
+   "plant": "Goat Wind LP",
+   "owner": "Goat Wind LLC",
+   "county": "Sterling",
+   "market": "ERCOT",
+   "lat": 31.951944,
+   "lon": -100.7914,
+   "plant_mw": 149.6,
+   "group": "paused (may return)",
+   "mw_going": 149.6,
+   "first_date": "2025-06-13",
+   "going": [
+    {
+     "what": "Goat Wind (wind farm)",
+     "mw": 149.6,
+     "status": "temporary",
+     "date": "2025-06-13",
+     "detail": "Mothballed for 6 to 13 months from mid-2025 (not a forced outage). May already be back in service or retired; check before relying on it.",
+     "source": "ERCOT notice M-B061325-01 (2025-06-13)",
+     "links": [
+      "https://www.ercot.com/services/comm/mkt_notices/M-B061325-01"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Goat Wind Substation",
+    "name_source": "OpenStreetMap",
+    "kv": 138,
+    "lat": 31.94076,
+    "lon": -100.82703,
+    "miles_from_plant": 2.23,
+    "hifld_id": "305506",
+    "check": true
+   },
+   "line_watch": []
+  },
+  {
+   "id": "eia-52120",
+   "eia_plant": 52120,
+   "plant": "Freeport Energy",
+   "owner": "Olin Blue Cube Operations",
+   "county": "Brazoria",
+   "market": "ERCOT",
+   "lat": 28.991289,
+   "lon": -95.40748,
+   "plant_mw": 1278.6,
+   "group": "paused (may return)",
+   "mw_going": 95.6,
+   "first_date": "2022-02-11",
+   "going": [
+    {
+     "what": "Freeport Energy unit G66",
+     "mw": 95.6,
+     "status": "mothball",
+     "date": "2022-02-11",
+     "detail": "Forced outage since Feb 11, 2022; mothballed indefinitely (could return).",
+     "source": "ERCOT notice M-A102424-01 (2024-10-24)",
+     "links": [
+      "https://www.ercot.com/services/comm/mkt_notices/M-A102424-01"
+     ]
+    }
+   ],
+   "substation": {
+    "name": "Unnamed substation",
+    "name_source": "",
+    "kv": 138,
+    "lat": 28.98753,
+    "lon": -95.3941,
+    "miles_from_plant": 0.85,
+    "hifld_id": "302859",
+    "check": false
+   },
+   "line_watch": []
+  }
+ ]
+}
