@@ -465,6 +465,8 @@ def oncor_ccn_signals():
     for f in areas.get("features", []):
         a = f["attributes"]
         pid, status = a["project_id"], a.get("status") or ""
+        if pid is None:   # a new study area Oncor hasn't numbered yet: key it by its map object so each one alerts once
+            pid = "area%s" % a.get("OBJECTID")
         if pid in done:
             continue
         done.add(pid)

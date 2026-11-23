@@ -30,11 +30,15 @@ def fetch():
     projects = {}
     for f in query(0, False):   # study areas: one per project (a project can have two rows when it was refiled)
         a = f["attributes"]
+        if a.get("project_id") is None:   # Oncor draws a new study area before giving it a project id; pick it up once it has one
+            continue
         p = projects.setdefault(a["project_id"], {"project_id": a["project_id"], "name": " ".join(a["name"].split()), "status": a["status"], "stations": []})
         if a["status"] == "Filed":
             p["status"] = "Filed"
     for f in query(3, True):    # station endpoints with the project's voltage
         a, g = f["attributes"], f.get("geometry") or {}
+        if a.get("project_id") is None:
+            continue
         p = projects.setdefault(a["project_id"], {"project_id": a["project_id"], "name": "", "status": a.get("route_status") or "", "stations": []})
         p["kv"] = int("".join(c for c in (a.get("project_voltage") or "") if c.isdigit()) or 0)
         if g.get("x") is not None:
