@@ -33,7 +33,6 @@
    "tpit-110819 Add Quantum 345 kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-99622 Establish Pin Oak 345 kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-99791A Additional Facility Ratings Methodology Phase 2 (FRM2) Substation Upgrades.: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
-   "tpit-85947 Euclid_Substation_Addition_Updated: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-71182 Reiter 345/138 kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-89988 McGee 345 kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-99150 Establish Wags 345 kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
@@ -52,6 +51,7 @@
    "tpit-105312 Alba Road 345 kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-92280 Alamo St - Bottlebrush 138kV - Upgrade L12 2024 Permian Basin Study: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-77805 TNMP Pecos County RPG: Leon Creek to Coyanosa 138kV Double Ckt: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
+   "tpit-85947 Euclid_Substation_Addition_Updated: ERCOT gives an actual in-service date (2026-11) but its status still says 'Planned'; counted as built",
    "tpit-76312 Establish Ramhorn 138kV Switch: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-84892 23RPG028: STEC Rio Medina Project: New transmission line between Tally and Ranchtown: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-90161A Install new Mill Creek (MLC) distribution substation with (2) 100 MVA transformers.: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
@@ -157,7 +157,7 @@
  },
  {
   "check": "Substation points are in their state and in the county the source lists",
-  "checked": 4537,
+  "checked": 4536,
   "errors": [],
   "warnings": [
    "substation Kammer: point is 5 miles outside Marshall County, the county its source lists",
@@ -230,13 +230,13 @@
  },
  {
   "check": "Substation status agrees between lines and substations",
-  "checked": 6072,
+  "checked": 6071,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Downloads match the page (CSV, GeoJSON, KML, new-only layers)",
-  "checked": 19574,
+  "checked": 19572,
   "errors": [],
   "warnings": []
  },
@@ -675,7 +675,7 @@
    "pjm-s3978.1 Shelocta 230 kV substation upgrade: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-05 has passed and PJM has not marked it in service)",
    "pjm-s4021.2 Hannibal - Bitdeer 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-09 has passed and PJM has not marked it in service)",
    "pjm-s4031.1: 230 kV / 2029 / planned but PJM gives 230 kV / 2030-12 / planned (changed on purpose: Line Watch research: Dominion's BECO-to-Firehouse page says the new lines are expected in service by early 2029 (application PUR-2026-00062 filed May 8, 2026).)",
-   "pjm-s4058.1 Hannibal - Bitdeer 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-06 has passed and PJM has not marked it in service)",
+   "pjm-s4058.1 Bitdeer - Hannibal 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-06 has passed and PJM has not marked it in service)",
    "pjm-s4058.2 Hannibal - Kammer 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-06 has passed and PJM has not marked it in service)",
    "pjm-s4060.1 Anguin - NBY 138 kV: stage 'in construction' is estimated (estimated: PJM's in-service date 2025-08 has passed and PJM has not marked it in service)",
    "pjm-s4063.1 Jug Street 345 kV substation upgrade: stage 'in construction' is estimated (estimated: PJM's in-service date 2026-07 has passed and PJM has not marked it in service)",
@@ -760,7 +760,7 @@
  },
  {
   "check": "U.S. only (every line and substation is in a U.S. state)",
-  "checked": 11023,
+  "checked": 11022,
   "errors": [],
   "warnings": [
    "pjms-pjm-east-marl-500-pa-portion MidAtlantic Resiliency Link 500 kV - Pennsylvania portions (502 Junction - WV border, Greene/Fayette): ends at the national border; only the U.S. part is listed",
