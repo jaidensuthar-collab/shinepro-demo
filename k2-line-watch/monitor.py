@@ -552,7 +552,22 @@ def docket_signals(controls, days, today):
 
 def parse_news(xml_text):
     items = []
-    root = ET.fromstring(xml_text)
+    try:
+        root = ET.fromstring(xml_text)
+    except ET.ParseError:
+        # Some WordPress feeds put raw HTML in <content:encoded> and break strict XML. Fall back to reading
+        # each <item>'s title, link and date with a regex so one bad post doesn't hide the whole feed.
+        def tag(block, name):
+            m = re.search(r"<%s[^>]*>(.*?)</%s>" % (name, name), block, re.S)
+            text = m.group(1).strip() if m else ""
+            text = re.sub(r"^<!\[CDATA\[(.*)\]\]>$", r"\1", text, flags=re.S)
+            return html.unescape(text)
+        for block in re.findall(r"<item\b.*?</item>", xml_text, re.S):
+            items.append({"title": tag(block, "title"), "link": tag(block, "link"),
+                          "date": tag(block, "pubDate"), "source": tag(block, "source")})
+        if not items:
+            raise
+        return items
     for item in root.iter("item"):
         items.append({"title": item.findtext("title") or "", "link": item.findtext("link") or "",
                       "date": item.findtext("pubDate") or "", "source": item.findtext("source") or ""})
