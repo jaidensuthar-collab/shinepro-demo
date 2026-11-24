@@ -73,6 +73,7 @@
    "tpit-89957 RCEC_Commerce_South_Load: stage 'in construction' is estimated (estimated: planned in-service date 2026-05 has passed and ERCOT has not marked it in service yet)",
    "tpit-102871 Add Fort Bobcat load serving station and Tline to STEC Orange Grove: stage 'in construction' is estimated (estimated: planned in-service date 2026-09 has passed and ERCOT has not marked it in service yet)",
    "tpit-87861 Range Rider - Ranger Camp 138 kV Double-Circuit Line: stage 'in construction' is estimated (estimated: planned in-service date 2026-10 has passed and ERCOT has not marked it in service yet)",
+   "tpit-93679 New BPUB substation: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-88049 24RPG004: Omicron Reliability Project : Loop in Cagnon to Howard into Omicron: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-93163 Diablo: Construct New Distribution Station: stage 'approved' is estimated (estimated: planned to be in service within 18 months, so its route and site should be settled)",
    "tpit-76788 Upgrade Victoria-Rayburn: stage 'in construction' is estimated (estimated: planned in-service date 2026-03 has passed and ERCOT has not marked it in service yet)",
@@ -144,7 +145,7 @@
  },
  {
   "check": "Time window (2023-11 built to 2031-11 due) and stage names",
-  "checked": 4951,
+  "checked": 4953,
   "errors": [],
   "warnings": [
    "spp-143452 Nashua - St. Joe 345kV New Interconnection Substation (DISIS-2017-002): built, but its source gives no finish date, so the 2023-11 start can't be checked",
@@ -152,12 +153,12 @@
    "spp-143518 Buffalo Flats 345kV Interconnection Expansion (DISIS-2017-002): built, but its source gives no finish date, so the 2023-11 start can't be checked",
    "spp-143453 Nashua - St. Joe 345kV GEN-2017-183 Interconnection (TOIF) (KCPL): built, but its source gives no finish date, so the 2023-11 start can't be checked",
    "spp-143343 Stillwell - Clinton 161kV GEN-2017-108 Interconnection (TOIF) (KCPL): built, but its source gives no finish date, so the 2023-11 start can't be checked",
-   "814 lines have no in-service date yet, so the 2031-11 end can't be checked for them (PJM 204, West 198, SPP 159, MISO 85, ERCOT (Texas) 76, Southeast 59, CAISO 16, NYISO 9, ISO-NE 7, WECC 1)"
+   "816 lines have no in-service date yet, so the 2031-11 end can't be checked for them (PJM 204, West 198, SPP 159, MISO 85, ERCOT (Texas) 78, Southeast 59, CAISO 16, NYISO 9, ISO-NE 7, WECC 1)"
   ]
  },
  {
   "check": "Substation points are in their state and in the county the source lists",
-  "checked": 4536,
+  "checked": 4538,
   "errors": [],
   "warnings": [
    "substation Kammer: point is 5 miles outside Marshall County, the county its source lists",
@@ -230,19 +231,19 @@
  },
  {
   "check": "Substation status agrees between lines and substations",
-  "checked": 6071,
+  "checked": 6073,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Downloads match the page (CSV, GeoJSON, KML, new-only layers)",
-  "checked": 19572,
+  "checked": 19580,
   "errors": [],
   "warnings": []
  },
  {
   "check": "Every project on Oncor's CCN Public Viewer is in the list",
-  "checked": 25,
+  "checked": 27,
   "errors": [],
   "warnings": []
  },
@@ -760,7 +761,7 @@
  },
  {
   "check": "U.S. only (every line and substation is in a U.S. state)",
-  "checked": 11022,
+  "checked": 11026,
   "errors": [],
   "warnings": [
    "pjms-pjm-east-marl-500-pa-portion MidAtlantic Resiliency Link 500 kV - Pennsylvania portions (502 Junction - WV border, Greene/Fayette): ends at the national border; only the U.S. part is listed",

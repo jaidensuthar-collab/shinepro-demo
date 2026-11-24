@@ -1,5 +1,5 @@
 {
- "fetched": "2026-11-23",
+ "fetched": "2026-11-24",
  "source": "https://services6.arcgis.com/4U8AckBJXzVfzxBF/arcgis/rest/services/CCN_Data_AGOL/FeatureServer",
  "projects": [
   {
@@ -486,6 +486,42 @@
      "name": "Wilmer Switch",
      "lat": 32.5781,
      "lon": -96.68494
+    }
+   ],
+   "kv": 138
+  },
+  {
+   "project_id": 1059,
+   "name": "Everman Switch-Ironwood Swtich-Sam Switch Study Area",
+   "status": "In-Progress",
+   "stations": [
+    {
+     "name": "Ironwood",
+     "lat": 32.47441,
+     "lon": -97.07407
+    },
+    {
+     "name": "Everman",
+     "lat": 32.46406,
+     "lon": -97.0915
+    }
+   ],
+   "kv": 345
+  },
+  {
+   "project_id": 1060,
+   "name": "Loop Kemp Ranch-Sardis/Soap Creek Study Area",
+   "status": "In-Progress",
+   "stations": [
+    {
+     "name": "Kemp Ranch",
+     "lat": 32.44862,
+     "lon": -97.06554
+    },
+    {
+     "name": "Ironwood",
+     "lat": 32.47437,
+     "lon": -97.07018
     }
    ],
    "kv": 138
