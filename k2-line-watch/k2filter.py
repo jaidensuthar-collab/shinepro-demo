@@ -36,7 +36,7 @@ NEWS_SPECIFIC = ("kv", "open house", "route", "transmission line", "power line",
 # Line Watch is U.S. only: plan news about other countries is dropped.
 FOREIGN = re.compile(r"\b(India|Indian|Peru|Chile|Brazil|Mexico|Canada|Canadian|Ontario|Quebec|Alberta|British Columbia|"
                      r"Australia|UK|Britain|England|Scotland|Ireland|Europe|EU|Germany|France|Spain|China|Japan|Philippines|"
-                     r"Vietnam|Indonesia|Africa|Nigeria|Kenya|Saudi|UAE|Pakistan|Bangladesh|Nepal|Sri Lanka|Powergrid|PGCIL|Gujarat|Maharashtra|Rajasthan|Karnataka|Tamil Nadu|Odisha|Bhaskar|Hindustan|Khambhat|Economic Times|NewsBytes|Power Grid Corp\w*|EnergyWorld|Hydro One|Simcoe)\b")
+                     r"Vietnam|Indonesia|Africa|Nigeria|Kenya|Saudi|UAE|Pakistan|Bangladesh|Nepal|Sri Lanka|Powergrid|PGCIL|Gujarat|Maharashtra|Rajasthan|Karnataka|Tamil Nadu|Odisha|Bhaskar|Hindustan|Khambhat|Economic Times|NewsBytes|Power Grid Corp\w*|EnergyWorld|Hydro One|Simcoe|Jyoti|SolarQuarter|Business Upturn|Crores?|INR|Lakh)\b|₹")
 
 STAGES = {
     "2": "ERCOT review: the grid operator is checking the need. Usually 1 to 2 years before a route is filed.",
